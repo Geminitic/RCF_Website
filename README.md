@@ -19,7 +19,7 @@ This repository contains the source code for the Rhizome Community Foundation we
    ```bash
    npm run lint
    ```
-   If linting fails with a `Cannot find package '@eslint/js'` error, make sure the dependencies have been installed correctly.
+   If linting fails because a package is missing, run `npm install` again to ensure all dependencies are downloaded.
 
 ## Deployment Notes
 
