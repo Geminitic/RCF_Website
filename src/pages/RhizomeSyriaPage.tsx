@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Users, Target, Award, Calendar, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SyriaParticleMap from '../components/common/SyriaParticleMap';
+import VolunteerForms from '../components/common/VolunteerForms';
 
 const RhizomeSyriaPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -436,6 +438,13 @@ const RhizomeSyriaPage: React.FC = () => {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <SyriaParticleMap />
+          <VolunteerForms />
         </div>
       </section>
     </div>

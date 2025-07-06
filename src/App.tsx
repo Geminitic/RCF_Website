@@ -16,6 +16,7 @@ import RhizomeSyriaSubpage from './pages/RhizomeSyriaSubpage';
 import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
+import LoadingScreen from './components/common/LoadingScreen';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <PhotoProvider>
         <Router>
           <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
+            <LoadingScreen />
             <CustomCursor />
             <Navigation />
             <main>

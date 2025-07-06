@@ -27,6 +27,24 @@ const CustomCursor: React.FC = () => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
+
+      const wake = document.createElement('span');
+      wake.className = 'cursor-wake';
+      wake.style.left = `${e.clientX}px`;
+      wake.style.top = `${e.clientY}px`;
+      canvas.appendChild(wake);
+      setTimeout(() => wake.remove(), 600);
+
+      const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
+      if (el) {
+        const bg = window.getComputedStyle(el).backgroundColor;
+        const rgb = bg.match(/\d+/g);
+        if (rgb && rgb.length >= 3) {
+          const [r, g, b] = rgb.map(Number);
+          const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+          cursor.style.backgroundColor = brightness > 128 ? '#064e3b' : '#ffffff';
+        }
+      }
     };
 
     const handleMouseDown = () => {
