@@ -48,7 +48,7 @@ const RhizomeSyriaPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50 pt-16 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#6B46C1]/20 via-[#0EA5E9]/20 via-[#F97316]/20 to-[#EF4444]/20 pt-16 relative overflow-hidden">
       {/* Syrian Map Background */}
       <div 
         className="fixed inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
@@ -104,10 +104,10 @@ const RhizomeSyriaPage: React.FC = () => {
               className="flex justify-center mb-8"
             >
               <div className="relative">
-                <img 
-                  src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png" 
-                  alt="Rhizome Syria Logo" 
-                  className="h-32 w-auto drop-shadow-2xl"
+                <img
+                  src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
+                  alt="Rhizome Syria Logo"
+                  className="h-40 md:h-48 w-auto drop-shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-orange-400/20 rounded-full blur-xl" />
               </div>

@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t('hero-title', 'The Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
           </motion.h1>
           
           <motion.p
