@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Target, Award, Calendar, Globe, Handshake } from 'lucide-react';
+import { MapPin, Users, Target, Award, Calendar, Globe, Handshake, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutPage: React.FC = () => {
@@ -387,6 +388,39 @@ const AboutPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Knowledge Hub CTA */}
+      <section className="py-20 bg-gradient-to-br from-stone-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
+          >
+            <h2 className="text-4xl font-bold text-stone-900 mb-6">
+              {t('about-knowledge-title', 'Dive Deeper', 'تعرف أكثر')}
+            </h2>
+            <p className="text-xl text-stone-600 mb-8">
+              {t(
+                'about-knowledge-text',
+                'Explore detailed resources and project documentation in our growing Knowledge Hub.',
+                'استكشف الموارد التفصيلية ووثائق المشاريع في مركز المعرفة المتنامي لدينا.'
+              )}
+            </p>
+            <Link
+              to="/knowledge-hub"
+              className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all duration-300"
+            >
+              <span className="mr-2">
+                {t('about-knowledge-button', 'Visit Knowledge Hub', 'زيارة مركز المعرفة')}
+              </span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
