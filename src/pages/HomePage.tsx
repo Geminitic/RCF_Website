@@ -5,9 +5,18 @@ import ProgramsPreview from '../components/home/ProgramsPreview';
 import CommunityPreview from '../components/home/CommunityPreview';
 import ImpactStats from '../components/home/ImpactStats';
 import InteractiveMap from '../components/home/InteractiveMap';
-import SentryTestButton from '../components/common/SentryTestButton';
 
 const HomePage: React.FC = () => {
+  const [DevButton, setDevButton] = React.useState<React.FC | null>(null);
+
+  React.useEffect(() => {
+    if (import.meta.env.DEV) {
+      import('../components/common/SentryTestButton').then((module) => {
+        setDevButton(() => module.default);
+      });
+    }
+  }, []);
+
   return (
     <div>
       <HeroSection />
@@ -16,7 +25,7 @@ const HomePage: React.FC = () => {
       <InteractiveMap />
       <ImpactStats />
       <CommunityPreview />
-      <SentryTestButton />
+      {DevButton && <DevButton />}
     </div>
   );
 };
