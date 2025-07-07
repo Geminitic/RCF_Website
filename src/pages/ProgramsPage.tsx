@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  BookOpen, 
-  Palette, 
-  Users, 
-  Laptop, 
-  Heart, 
+  Heart,
   Globe,
   Filter,
   MapPin,
-  Calendar,
   Target,
   ArrowRight,
-  Camera,
-  Shield,
   Handshake
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';

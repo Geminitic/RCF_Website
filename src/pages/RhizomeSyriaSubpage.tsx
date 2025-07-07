@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Calendar, Globe, Heart, Star, Award, Target } from 'lucide-react';
+import { MapPin, Users, Globe, Heart, Star, Target } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/rhizome-syria.css';
 

@@ -17,7 +17,7 @@ import {
   Globe
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { usePhoto } from '../contexts/PhotoContext';
+import { usePhoto, Photo } from '../contexts/PhotoContext';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
@@ -28,7 +28,7 @@ const CommunityWallPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [loadedPhotos, setLoadedPhotos] = useState(12);
   
   const { ref: loadMoreRef, inView } = useInView({

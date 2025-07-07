@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-interface Photo {
+export interface Photo {
   id: string;
   url: string;
   title: string;

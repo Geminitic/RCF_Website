@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Target, Award, Calendar, Globe, Handshake, ArrowRight } from 'lucide-react';
+import { MapPin, Target, Globe, Handshake, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 

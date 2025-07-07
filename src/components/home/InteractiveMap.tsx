@@ -150,6 +150,7 @@ const InteractiveMap: React.FC = () => {
   useEffect(() => {
     // Initialize Leaflet map
     if (typeof window !== 'undefined' && mapRef.current) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const L = (window as any).L;
       if (L) {
         const map = L.map(mapRef.current, {
@@ -190,13 +191,13 @@ const InteractiveMap: React.FC = () => {
         });
 
         cities.forEach(item => {
-          const marker = L.marker([item.lat, item.lng], { icon: customIcon })
+          L.marker([item.lat, item.lng], { icon: customIcon })
             .addTo(map)
             .on('click', () => setSelectedItem(item));
         });
 
         events.forEach(item => {
-          const marker = L.marker([item.lat, item.lng], { icon: eventIcon })
+          L.marker([item.lat, item.lng], { icon: eventIcon })
             .addTo(map)
             .on('click', () => setSelectedItem(item));
         });
@@ -238,6 +239,7 @@ const InteractiveMap: React.FC = () => {
         };
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

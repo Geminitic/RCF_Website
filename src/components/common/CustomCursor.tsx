@@ -101,6 +101,7 @@ const CustomCursor: React.FC = () => {
         el.addEventListener('mouseleave', handleMouseLeave);
 
         // Store cleanup functions
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (el as any)._cursorCleanup = () => {
           el.removeEventListener('mouseenter', handleMouseEnter);
           el.removeEventListener('mouseleave', handleMouseLeave);
@@ -119,7 +120,9 @@ const CustomCursor: React.FC = () => {
       // Clean up old listeners
       const oldElements = document.querySelectorAll('[data-cursor-listener]');
       oldElements.forEach(el => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if ((el as any)._cursorCleanup) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (el as any)._cursorCleanup();
         }
       });
@@ -139,9 +142,13 @@ const CustomCursor: React.FC = () => {
       observer.disconnect();
       
       // Clean up all listeners
-      const elements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .hover-target');
+      const elements = document.querySelectorAll(
+        'a, button, [role="button"], input, textarea, select, .hover-target'
+      );
       elements.forEach(el => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if ((el as any)._cursorCleanup) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (el as any)._cursorCleanup();
         }
       });
