@@ -25,7 +25,8 @@ function App() {
     <LanguageProvider>
       <PhotoProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
+          {/* Use a solid light background instead of a washed-out gradient */}
+          <div className="min-h-screen bg-white text-gray-900">
             <LoadingScreen />
             <CustomCursor />
             <HypersonicCursor />

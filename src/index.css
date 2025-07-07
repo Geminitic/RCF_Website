@@ -59,7 +59,7 @@
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
   border-radius: 50%;
-  mix-blend-mode: overlay;
+  /* Removing blend mode prevents a white haze from covering the page */
   animation: rocket-ripple 0.6s ease-out;
 }
 
@@ -100,8 +100,9 @@
   --primary-color: #064e3b;
   --secondary-color: #047857;
   --accent-color: #b91c1c;
-  --text-color: #1f2937;
-  --bg-color: #fafaf9;
+  /* Darker text and solid background for improved contrast */
+  --text-color: #1a1a1a;
+  --bg-color: #ffffff;
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
