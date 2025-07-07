@@ -17,7 +17,6 @@ import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
 import KnowledgeHubPage from './pages/KnowledgeHubPage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
-import HypersonicCursor from './components/common/HypersonicCursor';
 import LoadingScreen from './components/common/LoadingScreen';
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
           <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
             <LoadingScreen />
             <CustomCursor />
-            <HypersonicCursor />
             <Navigation />
             <main>
               <Routes>
