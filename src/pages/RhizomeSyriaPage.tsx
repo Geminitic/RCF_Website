@@ -425,12 +425,18 @@ const RhizomeSyriaPage: React.FC = () => {
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-purple-700 font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg">
+              <a
+                href="#volunteer"
+                className="px-8 py-4 bg-white text-purple-700 font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
+              >
                 {t('apply-now', 'Apply Now', 'تقدم الآن')}
-              </button>
-              <button className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/50 hover:bg-white/30 transition-colors">
+              </a>
+              <a
+                href="#volunteer"
+                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/50 hover:bg-white/30 transition-colors"
+              >
                 {t('volunteer', 'Volunteer', 'تطوع')}
-              </button>
+              </a>
             </div>
             <div className="mt-6 text-white/80">
               <p>
@@ -441,7 +447,7 @@ const RhizomeSyriaPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section id="volunteer" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <SyriaParticleMap />
           <VolunteerForms />
