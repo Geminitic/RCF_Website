@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Network, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -41,25 +42,24 @@ const Footer: React.FC = () => {
             <h4 className={`font-semibold ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t('quick-links', 'Quick Links', 'روابط سريعة')}
             </h4>
-            <ul className="space-y-2">
+                        <ul className="space-y-2">
               {[
-                { key: 'about', en: 'About Us', ar: 'من نحن' },
-                { key: 'projects', en: 'Our Projects', ar: 'مشاريعنا' },
-                { key: 'community', en: 'Community', ar: 'المجتمع' },
-                { key: 'contact', en: 'Contact', ar: 'اتصل بنا' }
+                { key: 'about', path: '/about', en: 'About Us', ar: 'من نحن' },
+                { key: 'programs', path: '/programs', en: 'Programs', ar: 'البرامج' },
+                { key: 'knowledge', path: '/knowledge-hub', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
+                { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' }
               ].map((link) => (
                 <li key={link.key}>
-                  <a
-                    href="#"
-                    className={`text-gray-300 hover:text-white transition-colors ${
-                      currentLanguage.code === 'ar' ? 'font-arabic' : ''
-                    }`}
+                  <Link
+                    to={link.path}
+                    className={`text-gray-300 hover:text-white transition-colors ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {t(`footer-link-${link.key}`, link.en, link.ar)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
+
           </motion.div>
 
           <motion.div

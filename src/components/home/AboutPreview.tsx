@@ -59,6 +59,13 @@ const AboutPreview: React.FC = () => {
               </span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            <Link
+              to="/knowledge-hub"
+              className="mt-4 inline-flex items-center px-6 py-3 bg-stone-200 text-stone-800 font-semibold rounded-lg hover:bg-stone-300 transition-all duration-300"
+            >
+              {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
+            </Link>
           </motion.div>
         </div>
       </div>
