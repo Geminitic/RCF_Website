@@ -42,7 +42,9 @@ const CustomCursor: React.FC = () => {
         if (rgb && rgb.length >= 3) {
           const [r, g, b] = rgb.map(Number);
           const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-          cursor.style.backgroundColor = brightness > 128 ? '#064e3b' : '#ffffff';
+          const color = brightness > 128 ? '#064e3b' : '#ffffff';
+          cursor.style.backgroundColor = color;
+          follower.style.borderColor = color;
         }
       }
     };
@@ -64,16 +66,16 @@ const CustomCursor: React.FC = () => {
       // Main cursor - faster follow
       const dx = mouseX.current - cursorX.current;
       const dy = mouseY.current - cursorY.current;
-      cursorX.current += dx * 0.3;
-      cursorY.current += dy * 0.3;
+      cursorX.current += dx * 0.35;
+      cursorY.current += dy * 0.35;
       cursor.style.left = cursorX.current + 'px';
       cursor.style.top = cursorY.current + 'px';
 
       // Follower - slower follow
       const fdx = mouseX.current - followerX.current;
       const fdy = mouseY.current - followerY.current;
-      followerX.current += fdx * 0.15;
-      followerY.current += fdy * 0.15;
+      followerX.current += fdx * 0.1;
+      followerY.current += fdy * 0.1;
       follower.style.left = followerX.current + 'px';
       follower.style.top = followerY.current + 'px';
 
