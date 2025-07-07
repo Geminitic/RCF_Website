@@ -17,6 +17,10 @@ const HypersonicCursor: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+    if (prefersReducedMotion || isMobile) return;
+
     let width = window.innerWidth;
     let height = window.innerHeight;
 
@@ -163,7 +167,7 @@ const HypersonicCursor: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id="hypersonic-canvas" />;
+  return <canvas ref={canvasRef} id="cursor-distortion" />;
 };
 
 function createCheckerboardTexture(size: number, checkerSize: number) {

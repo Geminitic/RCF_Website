@@ -109,7 +109,8 @@
 }
 
 /* Hypersonic Cursor Canvas */
-#hypersonic-canvas {
+#hypersonic-canvas,
+#cursor-distortion {
   position: fixed;
   top: 0;
   left: 0;
@@ -549,7 +550,8 @@ html {
     transition-duration: 0.01ms !important;
   }
 
-  #hypersonic-canvas {
+  #hypersonic-canvas,
+  #cursor-distortion {
     display: none !important;
   }
 }
