@@ -533,12 +533,18 @@ const ProgramsPage: React.FC = () => {
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:bg-emerald-50 transition-colors">
+              <a
+                href="/rhizome-syria#volunteer"
+                className="px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:bg-emerald-50 transition-colors"
+              >
                 {t('apply-now', 'Apply Now', 'تقدم الآن')}
-              </button>
-              <button className="px-8 py-4 bg-emerald-800 text-white font-semibold rounded-full hover:bg-emerald-900 transition-colors">
+              </a>
+              <a
+                href="/rhizome-syria#volunteer"
+                className="px-8 py-4 bg-emerald-800 text-white font-semibold rounded-full hover:bg-emerald-900 transition-colors"
+              >
                 {t('volunteer', 'Volunteer', 'تطوع')}
-              </button>
+              </a>
             </div>
             <div className="mt-6 text-emerald-200">
               <p>
