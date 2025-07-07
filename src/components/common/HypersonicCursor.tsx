@@ -28,11 +28,11 @@ const HypersonicCursor: React.FC = () => {
     const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0.1, 10);
     camera.position.z = 1;
 
-    // Render a simple checkerboard as a placeholder background
+    // Render a soft gradient background matching the site
     const geometry = new THREE.PlaneGeometry(1, 1);
     const textureSize = 1024;
-    const checkerTexture = createCheckerboardTexture(textureSize, 16);
-    const material = new THREE.MeshBasicMaterial({ map: checkerTexture });
+    const gradientTexture = createGradientTexture('#fafaf9', '#ecfdf5', textureSize);
+    const material = new THREE.MeshBasicMaterial({ map: gradientTexture });
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
@@ -167,21 +167,21 @@ const HypersonicCursor: React.FC = () => {
   return <canvas ref={canvasRef} id="hypersonic-canvas" />;
 };
 
-function createCheckerboardTexture(size: number, checkerSize: number) {
-  const data = new Uint8Array(size * size * 4);
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < size; x++) {
-      const i = (y * size + x) * 4;
-      const isChecker =
-        (Math.floor(x / checkerSize) + Math.floor(y / checkerSize)) % 2 === 0;
-      const color = isChecker ? 255 : 0;
-      data[i] = color;
-      data[i + 1] = color;
-      data[i + 2] = color;
-      data[i + 3] = 255;
-    }
-  }
-  const texture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat);
+function createGradientTexture(
+  colorStart: string,
+  colorEnd: string,
+  size: number
+) {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+  const gradient = ctx.createLinearGradient(0, 0, 0, size);
+  gradient.addColorStop(0, colorStart);
+  gradient.addColorStop(1, colorEnd);
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, size, size);
+  const texture = new THREE.CanvasTexture(canvas);
   texture.needsUpdate = true;
   return texture;
 }
