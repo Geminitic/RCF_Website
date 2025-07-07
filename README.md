@@ -10,6 +10,11 @@ This repository contains the source code for the Rhizome Community Foundation we
    ```
    Ensure you run this command in an environment with internet access so that packages like `@eslint/js` can be installed.
 
+   If you're using the Codex environment, you can run the helper script instead:
+   ```bash
+   bash .codex/setup.sh
+   ```
+
 2. **Start the development server**
    ```bash
    npm run dev
