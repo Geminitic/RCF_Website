@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               {[
                 { key: 'about', path: '/about', en: 'About Us', ar: 'من نحن' },
                 { key: 'programs', path: '/programs', en: 'Programs', ar: 'البرامج' },
-                { key: 'knowledge', path: '/knowledge-hub', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
+                { key: 'knowledge', path: '/knowledge-hub/rhizomatic-organization.html', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
                 { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' }
               ].map((link) => (
                 <li key={link.key}>
