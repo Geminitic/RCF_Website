@@ -23,6 +23,12 @@ Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are c
    ```
    If linting fails with a `Cannot find package '@eslint/js'` error, make sure the dependencies have been installed correctly.
 
+4. **Run the test suite**
+   ```bash
+   npm test
+   ```
+   Unit tests are powered by [Vitest](https://vitest.dev/) using the `jsdom` environment so browser APIs like `window` and `document` are available during testing.
+
 ## Deployment Notes
 
 - This repository now includes a `_headers` file that sets basic security headers processed by Netlify during deployment.

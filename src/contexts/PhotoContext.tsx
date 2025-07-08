@@ -16,21 +16,24 @@ interface Photo {
   featured: boolean;
 }
 
+/* eslint-disable no-unused-vars */
 interface PhotoContextType {
   photos: Photo[];
   uploadedCount: number;
   targetCount: number;
-  addPhoto: (photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>) => void;
-  approvePhoto: (id: string) => void;
-  deletePhoto: (id: string) => void;
+  addPhoto: (_photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>) => void;
+  approvePhoto: (_id: string) => void;
+  deletePhoto: (_id: string) => void;
   pendingPhotos: Photo[];
   featuredPhotos: Photo[];
   communityPhotos: Photo[];
   allPhotos: Photo[];
 }
+/* eslint-enable no-unused-vars */
 
 const PhotoContext = createContext<PhotoContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePhoto = () => {
   const context = useContext(PhotoContext);
   if (!context) {

@@ -6,11 +6,13 @@ interface Language {
   direction: 'ltr' | 'rtl';
 }
 
+/* eslint-disable no-unused-vars */
 interface LanguageContextType {
   currentLanguage: Language;
-  setLanguage: (language: Language) => void;
-  t: (key: string, enText: string, arText: string) => string;
+  setLanguage: (_language: Language) => void;
+  t: (_key: string, _enText: string, _arText: string) => string;
 }
+/* eslint-enable no-unused-vars */
 
 const languages: Language[] = [
   { code: 'en', name: 'English', direction: 'ltr' },
@@ -19,6 +21,7 @@ const languages: Language[] = [
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -51,4 +54,4 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
-export { languages };
+// eslint-disable-next-line react-refresh/only-export-componentsexport { languages };
