@@ -2,6 +2,8 @@
 
 This repository contains the source code for the Rhizome Community Foundation website. The project is based on the Bolt Vite React TypeScript template.
 
+Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are copied into the final build using `vite-plugin-static-copy`.
+
 ## Getting Started
 
 1. **Install dependencies**
