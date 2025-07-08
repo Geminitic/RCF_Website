@@ -88,10 +88,6 @@ const CalendarPage: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
   const fetchEvents = async () => {
     setLoading(true);
     setError(null);
@@ -125,7 +121,13 @@ const CalendarPage: React.FC = () => {
     }
   };
 
-  const filteredEvents = selectedCategory === 'all' 
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
+
+  const filteredEvents = selectedCategory === 'all'
     ? events 
     : events.filter(event => event.category === selectedCategory);
 

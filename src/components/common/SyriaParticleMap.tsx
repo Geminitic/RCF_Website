@@ -6,6 +6,7 @@ const SyriaParticleMap: React.FC = () => {
 
   useEffect(() => {
     if (!mountRef.current) return;
+    const mount = mountRef.current;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -43,7 +44,7 @@ const SyriaParticleMap: React.FC = () => {
 
     return () => {
       renderer.dispose();
-      mountRef.current?.removeChild(renderer.domElement);
+      mount.removeChild(renderer.domElement);
     };
   }, []);
 
