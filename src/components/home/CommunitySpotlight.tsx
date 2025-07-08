@@ -99,7 +99,7 @@ const CommunitySpotlight: React.FC = () => {
                     {t('member-description', member.description, member.descriptionAr)}
                   </p>
                   <a
-                    href="#"
+                    href="/community-wall"
                     className={`inline-flex items-center space-x-2 text-white underline hover:no-underline transition-all ${
                       currentLanguage.code === 'ar' ? 'font-arabic space-x-reverse' : ''
                     }`}

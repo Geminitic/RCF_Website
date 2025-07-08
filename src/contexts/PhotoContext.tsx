@@ -181,6 +181,66 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadDate: '2024-01-12',
       approved: true,
       featured: true
+    },
+    {
+      id: '10',
+      url: '/Untitled design (1).jpg',
+      title: 'Community Workshop',
+      titleAr: 'ورشة مجتمعية',
+      description: 'Hands-on training session for local residents',
+      descriptionAr: 'جلسة تدريب عملية للسكان المحليين',
+      location: 'Toronto, Canada',
+      locationAr: 'تورونتو، كندا',
+      category: 'community',
+      uploadedBy: 'RCF Team',
+      uploadDate: '2024-01-22',
+      approved: true,
+      featured: true
+    },
+    {
+      id: '11',
+      url: '/WhatsApp Image 2025-06-17 at 12.39.55 AM (1).jpeg',
+      title: 'Arts Event',
+      titleAr: 'فعالية فنية',
+      description: 'Showcasing creative work from youth members',
+      descriptionAr: 'عرض أعمال إبداعية من أعضاء الشباب',
+      location: 'Damascus, Syria',
+      locationAr: 'دمشق، سوريا',
+      category: 'culture',
+      uploadedBy: 'Arts Collective',
+      uploadDate: '2024-01-21',
+      approved: true,
+      featured: true
+    },
+    {
+      id: '12',
+      url: '/WhatsApp Image 2025-06-19 at 12.35.09 PM copy.jpeg',
+      title: 'Food Distribution',
+      titleAr: 'توزيع الطعام',
+      description: 'Volunteers distributing meals to families',
+      descriptionAr: 'متطوعون يوزعون وجبات للأسر',
+      location: 'Aleppo, Syria',
+      locationAr: 'حلب، سوريا',
+      category: 'community',
+      uploadedBy: 'Relief Team',
+      uploadDate: '2024-01-19',
+      approved: true,
+      featured: true
+    },
+    {
+      id: '13',
+      url: '/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg',
+      title: 'Community Meeting',
+      titleAr: 'اجتماع مجتمعي',
+      description: 'Planning upcoming neighbourhood projects',
+      descriptionAr: 'التخطيط لمشاريع الحي القادمة',
+      location: 'Edmonton, Canada',
+      locationAr: 'إدمونتون، كندا',
+      category: 'community',
+      uploadedBy: 'Rhizome Canada',
+      uploadDate: '2024-01-17',
+      approved: true,
+      featured: true
     }
   ]);
 

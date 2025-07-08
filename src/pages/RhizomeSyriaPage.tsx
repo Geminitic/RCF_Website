@@ -440,7 +440,7 @@ const RhizomeSyriaPage: React.FC = () => {
             </div>
             <div className="mt-6 text-white/80">
               <p>
-                {t('contact-info', 'Contact us at', 'اتصل بنا على')} info@rhizomesyria.org
+                {t('contact-info', 'Contact us at', 'اتصل بنا على')} info@rhizomsyria.org
               </p>
             </div>
           </motion.div>

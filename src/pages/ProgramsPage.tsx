@@ -542,7 +542,7 @@ const ProgramsPage: React.FC = () => {
             </div>
             <div className="mt-6 text-emerald-200">
               <p>
-                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomesyria.org | info@rcf-canada.org
+                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhiozmefoundation.ca
               </p>
             </div>
           </motion.div>

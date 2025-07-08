@@ -59,8 +59,8 @@ const ContactPage: React.FC = () => {
       icon: Mail,
       title: 'Email Us',
       titleAr: 'راسلنا',
-      details: ['info@rhizomecommunity.org', 'programs@rhizomecommunity.org'],
-      detailsAr: ['info@rhizomecommunity.org', 'programs@rhizomecommunity.org']
+      details: ['info@rhizomsyria.org', 'info@rhiozmefoundation.ca'],
+      detailsAr: ['info@rhizomsyria.org', 'info@rhiozmefoundation.ca']
     },
     {
       icon: Phone,
@@ -99,7 +99,7 @@ const ContactPage: React.FC = () => {
       address: '123 Community Street, Toronto, ON M5V 3A8, Canada',
       addressAr: '123 شارع المجتمع، تورونتو، أونتاريو M5V 3A8، كندا',
       phone: '+1 (416) 555-0123',
-      email: 'canada@rhizomecommunity.org',
+      email: 'info@rhiozmefoundation.ca',
       hours: 'Mon-Fri: 9AM-6PM EST',
       hoursAr: 'الإثنين-الجمعة: 9ص-6م بتوقيت شرق أمريكا'
     },
@@ -109,7 +109,7 @@ const ContactPage: React.FC = () => {
       address: 'Damascus Community Center, Old City, Damascus, Syria',
       addressAr: 'مركز دمشق المجتمعي، المدينة القديمة، دمشق، سوريا',
       phone: '+963 11 555-0456',
-      email: 'syria@rhizomecommunity.org',
+      email: 'info@rhizomsyria.org',
       hours: 'Sun-Thu: 9AM-5PM Damascus Time',
       hoursAr: 'الأحد-الخميس: 9ص-5م بتوقيت دمشق'
     }
@@ -139,7 +139,7 @@ const ContactPage: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:info@rhizomecommunity.org"
+                href="mailto:info@rhizomsyria.org"
                 className="inline-flex items-center px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-emerald-50 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />
