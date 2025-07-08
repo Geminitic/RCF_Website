@@ -32,8 +32,46 @@ const AboutPage: React.FC = () => {
       year: 'April 2025',
       title: 'Rhizome Network Syria Launch',
       titleAr: 'إطلاق شبكة ريزوم سوريا',
-      description: 'Launch of Rhizome Network Syria. Community Garden in Edmonton established with bi-weekly collaborations. Rhizome formed two new partnerships, one of which is a 300-volunteer base team in North Syria.',
-      descriptionAr: 'إطلاق شبكة ريزوم سوريا. تأسيس حديقة مجتمعية في إدمونتون مع تعاونات كل أسبوعين. شكلت ريزوم شراكتين جديدتين، إحداهما فريق يضم 300 متطوع في شمال سوريا.'
+      description:
+        'Launch of Rhizome Network Syria. Rhizome formed two new partnerships, including a 300-volunteer team in North Syria.',
+      descriptionAr:
+        'إطلاق شبكة ريزوم سوريا. شكّلت ريزوم شراكتين جديدتين، إحداهما فريق يضم 300 متطوع في شمال سوريا.'
+    },
+    {
+      year: 'April 15 2025',
+      title: 'Community Garden Established in Amiskwaciy Wâskahikan',
+      titleAr: 'تأسيس حديقة مجتمعية في أميسكواسي واسكاهيكان',
+      description:
+        'A Community Garden is established in Edmonton (Amiskwaciy Wâskahikan) through a partnership with CO*Lab and local community members knowledgeable in native seed cultivation for teas and food medicines.',
+      descriptionAr:
+        'تم إنشاء حديقة مجتمعية في إدمونتون (أميسكواسي واسكاهيكان) بشراكة مع CO*Lab وأفراد المجتمع المحلي المطلعين على زراعة البذور المحلية للأعشاب والأطعمة الطبية.'
+    },
+    {
+      year: 'April 24 2025',
+      title: 'Amiskwaciy Artist Partnership',
+      titleAr: 'شراكة فنية في أميسكواسي',
+      description:
+        'A local artist from Amiskwaciy begins selling art prints at a city-supported art shop in partnership with the Edmonton Arts Council.',
+      descriptionAr:
+        'فنان محلي من أميسكواسي يبدأ بيع مطبوعات فنية في متجر فني مدعوم من المدينة بالشراكة مع مجلس الفنون في إدمونتون.'
+    },
+    {
+      year: 'May 01 2025 – Ongoing',
+      title: 'Weekly Open Garden Times Begin',
+      titleAr: 'بدء أوقات الحديقة المفتوحة أسبوعياً',
+      description:
+        'Weekly open garden times begin, intentionally inviting both housed and unhoused neighbours to participate in gardening, harvesting, and community-building.',
+      descriptionAr:
+        'بدء أوقات الحديقة المفتوحة أسبوعياً مع دعوة المقيمين وغير المقيمين للمشاركة في الزراعة والحصاد وبناء المجتمع.'
+    },
+    {
+      year: 'June 2025 – Ongoing',
+      title: 'Bi-weekly Garden Collaborations',
+      titleAr: 'إطلاق التعاونات نصف الشهرية في الحديقة',
+      description:
+        'Bi-weekly collaborations are launched, bringing in local groups, collectives, and individuals to co-create within the garden space and share skills.',
+      descriptionAr:
+        'إطلاق تعاونات نصف شهرية تجلب المجموعات والفرق والأفراد المحليين للتشارك في مساحة الحديقة وتبادل المهارات.'
     },
     {
       year: 'May 2025',
@@ -49,41 +87,7 @@ const AboutPage: React.FC = () => {
       description: 'Launch of Digital Literacy & Media Empowerment Initiative and Innovation Hub in Latakia. Rhizome Syria forms its board and seeks legal registration.',
       descriptionAr: 'إطلاق مبادرة محو الأمية الرقمية وتمكين الإعلام ومركز الابتكار في اللاذقية. تشكل ريزوم سوريا مجلس إدارتها وتسعى للتسجيل القانوني.'
     },
-    {
-      year: 'July 2025',
-      title: 'Community Wall Launch',
-      titleAr: 'إطلاق جدار المجتمع',
-      description: 'Launch of Wallfinity, our digital storytelling platform and Community Wall, to preserve and share community stories and experiences.',
-      descriptionAr: 'إطلاق وولفينيتي، منصة السرد الرقمي وجدار المجتمع، للحفاظ على قصص وتجارب المجتمع ومشاركتها.'
-    },
-    {
-      year: 'August - October 2025',
-      title: 'Regional Capacity-Building & Syrian Film Festival',
-      titleAr: 'بناء القدرات الإقليمية ومهرجان الأفلام السورية',
-      description: 'Regional Team Capacity-Building Workshops (North, Coast, East). Syrian Film Festival in Edmonton.',
-      descriptionAr: 'ورش بناء قدرات الفرق الإقليمية (الشمال، الساحل، الشرق). مهرجان الأفلام السورية في إدمونتون.'
-    },
-    {
-      year: 'November 2025',
-      title: 'Interregional Feminist Summit',
-      titleAr: 'القمة النسوية بين المناطق',
-      description: 'Interregional Feminist Summit & Joint Action Planning, bringing together women leaders from across regions.',
-      descriptionAr: 'القمة النسوية بين المناطق والتخطيط للعمل المشترك، تجمع القيادات النسائية من جميع المناطق.'
-    },
-    {
-      year: 'December 2025 - January 2026',
-      title: 'Community Engagement Dialogue Initiatives',
-      titleAr: 'مبادرات حوار المشاركة المجتمعية',
-      description: 'Community Engagement Dialogue Initiatives implemented by regional teams to strengthen local connections.',
-      descriptionAr: 'تنفيذ مبادرات حوار المشاركة المجتمعية من قبل الفرق الإقليمية لتقوية الروابط المحلية.'
-    },
-    {
-      year: 'December 2025 - February 2026',
-      title: 'Advocacy Materials & Digital Storytelling',
-      titleAr: 'مواد المناصرة والسرد الرقمي',
-      description: 'Production and dissemination of Advocacy Materials & Digital Storytelling (videos, written stories).',
-      descriptionAr: 'إنتاج ونشر مواد المناصرة والسرد الرقمي (فيديوهات، قصص مكتوبة).'
-    }
+    // Timeline entries beyond June 2025 have been removed until completed
   ];
 
   const branches = [
@@ -126,8 +130,8 @@ const AboutPage: React.FC = () => {
       nameAr: 'سارة',
       role: 'Board Member',
       roleAr: 'عضو مجلس إدارة',
-      bio: 'Sarah is a creative force and community catalyst shaped by early experiences in her father\'s hometown in the Philippines and a lifelong connection to Edmonton\'s Chinatown. Observing firsthand how communities flourish through collaboration, and falter without it, she dedicates herself tirelessly to community wellness.',
-      bioAr: 'سارة قوة إبداعية ومحفز مجتمعي تشكلت من خلال تجارب مبكرة في مسقط رأس والدها في الفلبين وارتباط مدى الحياة بحي الصينيين في إدمونتون. من خلال ملاحظة مباشرة لكيفية ازدهار المجتمعات من خلال التعاون، وتعثرها بدونه، تكرس نفسها بلا كلل لرفاهية المجتمع.',
+      bio: 'Sarah is a creative force and community catalyst shaped by early experiences in a Philippine hometown and a lifelong connection to Edmonton\'s Chinatown. Observing firsthand how communities flourish through collaboration, and falter without it, they dedicate themselves tirelessly to community wellness.',
+      bioAr: 'سارة قوة إبداعية ومحفز مجتمعي تشكلت من خلال تجارب مبكرة في مسقط رأس في الفلبين وارتباط مدى الحياة بحي الصينيين في إدمونتون. من خلال الملاحظة المباشرة لكيفية ازدهار المجتمعات عبر التعاون وتعثرها بدونه، تكرس نفسها بلا كلل لرفاهية المجتمع.',
       image: '/sarah.jpeg'
     },
     {
@@ -135,8 +139,8 @@ const AboutPage: React.FC = () => {
       nameAr: 'عامر',
       role: 'Board Member',
       roleAr: 'عضو مجلس إدارة',
-      bio: 'Amer moves seamlessly between policy corridors and grassroots communities, blending strategic rigor with genuine empathy. Shaped by experiences spanning Syrian newsrooms, Alberta\'s Indigenous relations, and anti-racism initiatives, he intimately understands how institutional power can be harnessed for meaningful change.',
-      bioAr: 'يتنقل عامر بسلاسة بين أروقة السياسة والمجتمعات الشعبية، مازجاً بين الصرامة الاستراتيجية والتعاطف الحقيقي. تشكل من خلال تجارب تمتد عبر غرف الأخبار السورية، وعلاقات ألبرتا مع السكان الأصليين، ومبادرات مكافحة العنصرية.',
+      bio: 'Amer moves seamlessly between policy corridors and grassroots communities, blending strategic rigor with genuine empathy. Shaped by experiences spanning Syrian newsrooms, Alberta\'s Indigenous relations, and anti-racism initiatives, they intimately understand how institutional power can be harnessed for meaningful change.',
+      bioAr: 'يتنقل عامر بسلاسة بين أروقة السياسة والمجتمعات الشعبية، مازجاً بين الصرامة الاستراتيجية والتعاطف الحقيقي. تشكلت خبراته عبر غرف الأخبار السورية وعلاقات ألبرتا مع السكان الأصليين ومبادرات مكافحة العنصرية، مما يمنحه فهماً عميقاً لكيفية تسخير القوة المؤسسية للتغيير الهادف.',
       image: '/amer.jpeg'
     }
   ];
@@ -225,8 +229,8 @@ const AboutPage: React.FC = () => {
               <p className={`text-lg text-stone-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                 {t(
                   'mission-text',
-                  'We cultivate resilient networks that unite Syrian communities globally, fostering collaboration, safeguarding cultural heritage, and empowering individuals to drive meaningful transformation in their communities.',
-                  'نرعى شبكات مرنة توحد المجتمعات السورية عالمياً، نعزز التعاون ونحمي التراث الثقافي ونمكن الأفراد من قيادة التحول الهادف في مجتمعاتهم.'
+                  'We cultivate resilient networks that unite communities of heritage, resilience, and transformation, fostering collaboration, safeguarding cultural heritage, and empowering individuals to drive meaningful transformation in their communities.',
+                  'نرعى شبكات مرنة توحد مجتمعات الإرث والمرونة والتحول، نعزز التعاون ونحمي التراث الثقافي ونمكن الأفراد من قيادة التحول الهادف في مجتمعاتهم.'
                 )}
               </p>
             </motion.div>
@@ -247,8 +251,8 @@ const AboutPage: React.FC = () => {
               <p className={`text-lg text-stone-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                 {t(
                   'vision-text',
-                  'A world where Syrian communities flourish through interconnected support systems, where cultural identity is celebrated and preserved, and where every individual has the power to contribute to transformative social change.',
-                  'عالم تزدهر فيه المجتمعات السورية من خلال أنظمة الدعم المترابطة، حيث تُحتفى بالهوية الثقافية وتُحفظ، وحيث يملك كل فرد القوة للمساهمة في التغيير الاجتماعي التحويلي.'
+                  'A world where communities of heritage facing local and global exclusion such as Syrians, Queer Asians, and Indigenous peoples of Turtle Island flourish through interconnected support systems, where cultural identity is celebrated and preserved, and where every individual has the power to contribute to transformative social change.',
+                  'عالم تزدهر فيه مجتمعات الإرث التي تواجه الإقصاء المحلي والعالمي مثل السوريين والآسيويين الكوير والسكان الأصليين في جزيرة السلحفاة من خلال أنظمة دعم مترابطة، حيث تُحتفى بالهوية الثقافية وتُحفظ، وحيث يملك كل فرد القدرة على المساهمة في التغيير الاجتماعي التحويلي.'
                 )}
               </p>
             </motion.div>

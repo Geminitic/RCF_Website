@@ -9,38 +9,46 @@ const ProgramsPreview: React.FC = () => {
 
   const programs = [
     {
-      icon: BookOpen,
-      title: 'Data & Research Intelligence',
-      titleAr: 'البيانات والذكاء البحثي',
-      description: 'Providing accurate, timely data for organizations and governments across Syria to support evidence-based decision-making and policy development.',
-      descriptionAr: 'توفير بيانات دقيقة وفي الوقت المناسب للمنظمات والحكومات في جميع أنحاء سوريا لدعم صنع القرار وتطوير السياسات القائمة على الأدلة.',
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'from-blue-50 to-blue-100'
+      icon: Users,
+      title: 'Cultural & Community Engagement',
+      titleAr: 'المشاركة الثقافية والمجتمعية',
+      description:
+        'Artistic and cultural initiatives designed to foster community recovery, preserve heritage, and promote social unity.',
+      descriptionAr:
+        'مبادرات فنية وثقافية مصممة لتعزيز تعافي المجتمع والحفاظ على التراث وتعزيز الوحدة الاجتماعية.',
+      color: 'from-emerald-500 to-emerald-600',
+      bgColor: 'from-emerald-50 to-emerald-100'
     },
     {
       icon: Palette,
-      title: 'Women\'s Empowerment & Leadership',
-      titleAr: 'تمكين المرأة والقيادة',
-      description: 'Community-driven initiatives facilitating economic collaboration and collective productivity among women through practical, sustainable programs.',
-      descriptionAr: 'مبادرات مجتمعية تسهل التعاون الاقتصادي والإنتاجية الجماعية بين النساء من خلال برامج عملية ومستدامة.',
+      title: 'Empowerment & Leadership',
+      titleAr: 'التمكين والقيادة',
+      description:
+        'Community-driven initiatives facilitating economic collaboration and collective productivity through practical, sustainable programs.',
+      descriptionAr:
+        'مبادرات مجتمعية تسهل التعاون الاقتصادي والإنتاجية الجماعية من خلال برامج عملية ومستدامة.',
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100'
     },
     {
-      icon: Users,
-      title: 'Cultural & Community Engagement',
-      titleAr: 'المشاركة الثقافية والمجتمعية',
-      description: 'Artistic and cultural initiatives designed to foster community recovery, preserve heritage, and promote social unity.',
-      descriptionAr: 'مبادرات فنية وثقافية مصممة لتعزيز تعافي المجتمع والحفاظ على التراث وتعزيز الوحدة الاجتماعية.',
-      color: 'from-emerald-500 to-emerald-600',
-      bgColor: 'from-emerald-50 to-emerald-100'
+      icon: BookOpen,
+      title: 'Data & Research Intelligence',
+      titleAr: 'البيانات والذكاء البحثي',
+      description:
+        'Providing accurate, timely data for organizations and governments across Syria to support evidence-based decision-making and policy development.',
+      descriptionAr:
+        'توفير بيانات دقيقة وفي الوقت المناسب للمنظمات والحكومات في جميع أنحاء سوريا لدعم صنع القرار وتطوير السياسات القائمة على الأدلة.',
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'from-blue-50 to-blue-100'
     },
     {
       icon: Laptop,
       title: 'Digital Innovation & Advocacy',
       titleAr: 'الابتكار الرقمي والمناصرة',
-      description: 'Creating accessible online platforms that facilitate inclusive community discussions and democratic participation.',
-      descriptionAr: 'إنشاء منصات إلكترونية يسهل الوصول إليها تسهل المناقشات المجتمعية الشاملة والمشاركة الديمقراطية.',
+      description:
+        'Creating accessible online platforms that facilitate inclusive community discussions and democratic participation.',
+      descriptionAr:
+        'إنشاء منصات إلكترونية يسهل الوصول إليها تسهل المناقشات المجتمعية الشاملة والمشاركة الديمقراطية.',
       color: 'from-orange-500 to-orange-600',
       bgColor: 'from-orange-50 to-orange-100'
     }
