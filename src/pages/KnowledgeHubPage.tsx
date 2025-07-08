@@ -63,6 +63,44 @@ const KnowledgeHubPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl font-bold mb-4"
+          >
+            {t('rhizomatic-org-title', 'The Rhizomatic Organization', 'المنظمة الريزومية')}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg text-stone-600 mb-6"
+          >
+            {t(
+              'rhizomatic-org-desc',
+              'Explore an in-depth guide to rhizomatic structures, complete with interactive diagrams and tools.',
+              'اكتشف دليلاً شاملاً حول البنية الريزومية مع مخططات تفاعلية وأدوات.'
+            )}
+          </motion.p>
+          <a
+            href="/knowledge-hub/rhizomatic-organization.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+          >
+            <span className="mr-2">
+              {t('view-resource', 'View Page', 'عرض الصفحة')}
+            </span>
+            <ArrowRight className="h-5 w-5" />
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

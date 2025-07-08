@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rhizomatic Organization</title>
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #e76f51;
+            --accent: #f4a261;
+            --dark: #264653;
+            --light: #f8f9fa;
+            --node-size: 12px;
+            --connection-width: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        #rhizomeCanvas {
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-quote {
+            font-style: italic;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            padding: 0 3rem;
+        }
+
+        .hero-quote::before, .hero-quote::after {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .hero-quote::before {
+            top: -1rem;
+            left: 0;
+        }
+
+        .hero-quote::after {
+            bottom: -2rem;
+            right: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .principle-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .principle-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .principle-content {
+            opacity: 0.9;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .comparison-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .traditional {
+            color: #999;
+        }
+
+        .rhizomatic {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .structure-section {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 2rem;
+        }
+
+        .structure-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .structure-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .structure-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .structure-item-title {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .structure-item-content {
+            opacity: 0.9;
+        }
+
+        .role {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .role-title {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .implementation-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 6rem 2rem;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 2rem;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -10px;
+        }
+
+        .timeline-circle {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.3);
+        }
+
+        .timeline-phase {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .node-map {
+            height: 400px;
+            position: relative;
+            margin: 4rem 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        #nodeCanvas {
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            opacity: 0.9;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item, .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 50px;
+            }
+            
+            .timeline-content, .timeline-item:nth-child(even) .timeline-content, .timeline-item:nth-child(odd) .timeline-content {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .timeline-circle {
+                left: 20px;
+                transform: none;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before {
+                left: -10px;
+                right: auto;
+            }
+        }
+
+        .interactive-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-button {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-button:hover, .filter-button.active {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Rhizomatic Org</a>
+        <div class="navbar-links">
+            <a href="#principles" class="navbar-link">Principles</a>
+            <a href="#structure" class="navbar-link">Structure</a>
+            <a href="#implementation" class="navbar-link">Implementation</a>
+            <a href="#faq" class="navbar-link">FAQ</a>
+        </div>
+        <div class="menu-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="canvas-container">
+            <canvas id="rhizomeCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <h1>The Rhizomatic Organization</h1>
+            <p class="hero-subtitle">A revolutionary approach to organizational design inspired by nature's most resilient systems</p>
+            <p class="hero-quote">The rhizome thrives not by towering above, but by weaving below.</p>
+            <button class="cta-button" id="exploreButton">Explore the Rhizome</button>
+        </div>
+    </section>
+
+    <section class="section" id="principles">
+        <h2 class="section-title">Core Principles</h2>
+        <p class="section-subtitle">Five foundational ideas that define the rhizomatic approach</p>
+        
+        <div class="interactive-filter">
+            <button class="filter-button active" data-filter="all">All Principles</button>
+            <button class="filter-button" data-filter="distributed">Distributed Intelligence</button>
+            <button class="filter-button" data-filter="adaptive">Adaptive Resilience</button>
+            <button class="filter-button" data-filter="generative">Generative Relationships</button>
+            <button class="filter-button" data-filter="evolutionary">Evolutionary Purpose</button>
+            <button class="filter-button" data-filter="stewardship">Stewardship Ethos</button>
+        </div>
+        
+        <div class="principles">
+            <div class="principle-card" data-principle="distributed">
+                <h3 class="principle-title">Distributed Intelligence</h3>
+                <div class="principle-content">
+                    <div class="comparison">
+                        <p class="comparison-item traditional">Traditional: Knowledge and authority concentrate at the top.</p>
+                        <p class="comparison-item rhizomatic">Rhizomatic: Intelligence spreads throughout the network.</p>
+                    </div>
+                    <p>Every node carries the organization's complete "DNA"—its purpose, values, and operating principles. Solutions can emerge from anywhere, tapping into collective intelligence.</p>
+                </div>
+            </div>
+            
+            <div class="principle-card" data-principle="adaptive">
+                <h3 class="principle-title">Adaptive Resilience</h3>
+                <div class="principle-content">
+                    <div class="comparison">
+                        <p class="comparison-item traditional">Traditional: Stability through control and standardization.</p>
+                        <p class="comparison-item rhizomatic">Rhizomatic: Stability through constant adaptation.</p>
+                    </div>
+                    <p>Like mycelium networks recovering from damage, rhizomatic organizations maintain stability by continuously adapting. When one part faces challenges, adjacent nodes provide support while the system reconfigures.</p>
+                </div>
+            </div>
+            
+            <div class="principle-card" data-principle="generative">
+                <h3 class="principle-title">Generative Relationships</h3>
+                <div class="principle-content">
+                    <div class="comparison">
+                        <p class="comparison-item traditional">Traditional: Strength comes from powerful individual parts.</p>
+                        <p class="comparison-item rhizomatic">Rhizomatic: Strength comes from quality connections between parts.</p>
+                    </div>
+                    <p>Power lies not in individual superstars but in the richness of connections between people and teams. Growth happens by forming new relationships within and beyond organizational boundaries.</p>
+                </div>
+            </div>
+            
+            <div class="principle-card" data-principle="evolutionary">
+                <h3 class="principle-title">Evolutionary Purpose</h3>
+                <div class="principle-content">
+                    <div class="comparison">
+                        <p class="comparison-item traditional">Traditional: Fixed strategic goals set at the top.</p>
+                        <p class="comparison-item rhizomatic">Rhizomatic: Purpose evolves through ongoing dialogue.</p>
+                    </div>
+                    <p>Rather than pursuing predetermined targets, rhizomatic organizations continuously sense and respond to emerging conditions. Purpose evolves through ongoing conversation about what the organization is uniquely positioned to contribute.</p>
+                </div>
+            </div>
+            
+            <div class="principle-card" data-principle="stewardship">
+                <h3 class="principle-title">Stewardship Ethos</h3>
+                <div class="principle-content">
+                    <div class="comparison">
+                        <p class="comparison-item traditional">Traditional: Leaders control resources and direct others.</p>
+                        <p class="comparison-item rhizomatic">Rhizomatic: Everyone stewards resources and serves the whole.</p>
+                    </div>
+                    <p>All members act as stewards—caring for their responsibilities, shared resources, collective knowledge, and impact on wider systems. Leadership focuses on service rather than control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="structure-section" id="structure">
+        <h2 class="section-title structure-title">The Mycelial Architecture</h2>
+        
+        <div class="structure-container">
+            <div class="structure-item">
+                <h3 class="structure-item-title">Self-Governing Pods</h3>
+                <div class="structure-item-content">
+                    <p>Small, cross-functional teams operate as autonomous "nodes" with clear purpose, decision-making authority, and access to shared resources. These nodes form, evolve, and occasionally dissolve based on purpose—like mycelial clusters that shift with environmental conditions.</p>
+                </div>
+            </div>
+            
+            <div class="structure-item">
+                <h3 class="structure-item-title">Dynamic Roles</h3>
+                <div class="structure-item-content">
+                    <p>People move fluidly between roles based on context, needs, and personal growth paths:</p>
+                    
+                    <div class="role">
+                        <p class="role-title">Gardeners</p>
+                        <p>Steward specific domains without controlling them</p>
+                    </div>
+                    
+                    <div class="role">
+                        <p class="role-title">Pollinators</p>
+                        <p>Connect ideas and people across boundaries</p>
+                    </div>
+                    
+                    <div class="role">
+                        <p class="role-title">Sensors</p>
+                        <p>Monitor internal and external environments</p>
+                    </div>
+                    
+                    <div class="role">
+                        <p class="role-title">Mycelium Tenders</p>
+                        <p>Foster cultural health and relationship quality</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="structure-item">
+                <h3 class="structure-item-title">Network Hubs</h3>
+                <div class="structure-item-content">
+                    <p>Coordination points serve as connective tissue between nodes, facilitating rather than controlling:</p>
+                    
+                    <div class="role">
+                        <p class="role-title">Resource Nodes</p>
+                        <p>Steward shared resources (budgets, spaces, tools)</p>
+                    </div>
+                    
+                    <div class="role">
+                        <p class="role-title">Knowledge Commons</p>
+                        <p>Maintain collective intelligence repositories</p>
+                    </div>
+                    
+                    <div class="role">
+                        <p class="role-title">Community Centers</p>
+                        <p>Host cross-boundary gatherings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="node-map">
+            <canvas id="nodeCanvas"></canvas>
+            <div class="node-info"></div>
+        </div>
+    </section>
+
+    <section class="section implementation-section" id="implementation">
+        <h2 class="section-title">Growing Your Rhizome</h2>
+        <p class="section-subtitle">Transforming into a rhizomatic organization happens through an organic, phased approach</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <p class="timeline-phase">Phase 1: 0-6 months</p>
+                    <h3 class="timeline-title">Seeding</h3>
+                    <p>Start small with interconnected experiments:</p>
+                    <ul>
+                        <li>Form pioneer teams operating with rhizomatic principles</li>
+                        <li>Train initial "Spore Agents" to model and spread new ways of working</li>
+                        <li>Establish basic infrastructure to support connection</li>
+                        <li>Document and share early learning through storytelling</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <p class="timeline-phase">Phase 2: 6-12 months</p>
+                    <h3 class="timeline-title">Rooting</h3>
+                    <p>Spread successful patterns:</p>
+                    <ul>
+                        <li>Expand pioneer teams into interconnected networks</li>
+                        <li>Establish initial governance practices</li>
+                        <li>Develop feedback systems to monitor emergence</li>
+                        <li>Create resource allocation mechanisms that support self-organization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <p class="timeline-phase">Phase 3: 12-24 months</p>
+                    <h3 class="timeline-title">Spreading</h3>
+                    <p>Integrate rhizomatic principles across the organization:</p>
+                    <ul>
+                        <li>Transform traditional departments into node networks</li>
+                        <li>Implement full governance ecosystem</li>
+                        <li>Develop advanced sensing and response systems</li>
+                        <li>Establish comprehensive learning pathways</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <p class="timeline-phase">Phase 4: 24+ months</p>
+                    <h3 class="timeline-title">Flowering</h3>
+                    <p>Fully embody rhizomatic principles and extend beyond boundaries:</p>
+                    <ul>
+                        <li>Form ecosystem partnerships based on shared principles</li>
+                        <li>Share frameworks and learnings with broader community</li>
+                        <li>Engage in system-level change initiatives</li>
+                        <li>Evolve practices based on lived experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="org-diagram">
+            <div class="diagram-tabs">
+                <div class="diagram-tab active" data-tab="traditional">Traditional Organization</div>
+                <div class="diagram-tab" data-tab="hybrid">Hybrid Transition</div>
+                <div class="diagram-tab" data-tab="rhizomatic">Rhizomatic Network</div>
+            </div>
+            
+            <div class="diagram-content active" id="traditional-diagram">
+                <h3>Hierarchical Structure</h3>
+                <p>Traditional organizations function as pyramids with clear reporting lines, specialized departments, and concentrated decision-making authority.</p>
+                <div id="traditionalCanvas" style="width: 100%; height: 300px;"></div>
+            </div>
+            
+            <div class="diagram-content" id="hybrid-diagram">
+                <h3>Transition Phase</h3>
+                <p>During transformation, hybrid structures emerge that maintain some hierarchical elements while introducing cross-functional teams and decentralized decision-making.</p>
+                <div id="hybridCanvas" style="width: 100%; height: 300px;"></div>
+            </div>
+            
+            <div class="diagram-content" id="rhizomatic-diagram">
+                <h3>Fully Rhizomatic Network</h3>
+                <p>In a mature rhizomatic organization, interconnected nodes form a resilient network with distributed leadership and intelligence throughout the system.</p>
+                <div id="rhizomaticCanvas" style="width: 100%; height: 300px;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="faq">
+        <h2 class="section-title">Common Questions</h2>
+        <p class="section-subtitle">Addressing key concerns about the rhizomatic approach</p>
+        
+        <div class="faq-section">
+            <div class="faq-item">
+                <h3 class="faq-question">"This sounds great in theory, but how do we actually run a business this way?"</h3>
+                <p class="faq-answer">Start with small experiments in receptive areas rather than wholesale transformation. Develop hybrid models that combine rhizomatic principles with existing structures. The evidence shows that rhizomatic organizations often outperform traditional ones in complex, rapidly changing environments.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">"Without clear reporting lines, how do we ensure accountability?"</h3>
+                <p class="faq-answer">Rhizomatic organizations shift from hierarchical accountability to network accountability through transparency. Clear agreements about commitments and consequences, combined with peer-based accountability systems, often create stronger responsibility than top-down control.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">"How do we prevent chaos when everyone can make decisions?"</h3>
+                <p class="faq-answer">By clarifying decision domains—who can decide what, when, and how—and establishing clear principles that guide decentralized decisions. Feedback systems quickly detect and address misalignments, while training develops people's capacity for responsible autonomy.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">"Our industry/regulators/investors require more traditional structures."</h3>
+                <p class="faq-answer">Many organizations create dual operating systems—rhizomatic internally with traditional interfaces externally. This allows them to meet compliance requirements while maintaining the adaptive benefits of rhizomatic principles.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">"How do you measure success in a rhizomatic organization?"</h3>
+                <p class="faq-answer">Rhizomatic organizations expand beyond traditional financial metrics to measure multiple forms of value creation: the health of their relationships, their impact on wider systems, their capacity for adaptation, and their contribution to stakeholder wellbeing—not just quarterly profits.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2 class="section-title">Tools for Rhizomatic Organizations</h2>
+        <p class="section-subtitle">Practical resources to support your transformation</p>
+        
+        <div class="principles">
+            <div class="principle-card">
+                <h3 class="principle-title">For Governance</h3>
+                <div class="principle-content">
+                    <ul>
+                        <li><strong>Domain Mapping:</strong> Visual tools defining decision responsibilities</li>
+                        <li><strong>Stewardship Rotation:</strong> Scheduled leadership rotations preventing power concentration</li>
+                        <li><strong>Consent Decision Councils:</strong> Formalized procedures for boundary-crossing decisions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <h3 class="principle-title">For Collaboration</h3>
+                <div class="principle-content">
+                    <ul>
+                        <li><strong>Knowledge Commons:</strong> Platforms for collective intelligence</li>
+                        <li><strong>Node Exchanges:</strong> Structured initiatives for cross-team interaction</li>
+                        <li><strong>Practice Libraries:</strong> Documentation of proven methodologies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <h3 class="principle-title">For Innovation</h3>
+                <div class="principle-content">
+                    <ul>
+                        <li><strong>Innovation Gardens:</strong> Protected spaces for nascent ideas</li>
+                        <li><strong>Experiment Dashboards:</strong> Tools tracking outcomes from parallel experiments</li>
+                        <li><strong>Cross-Pollination Workshops:</strong> Events synergizing diverse perspectives</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <h3 class="principle-title">For Resilience</h3>
+                <div class="principle-content">
+                    <ul>
+                        <li><strong>Vulnerability Assessments:</strong> Identification of dependencies and mitigation strategies</li>
+                        <li><strong>Response Simulations:</strong> Exercises practicing responses to potential disruptions</li>
+                        <li><strong>Distributed Reserves:</strong> Resource pools available to nodes for emergent needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">Connect & Learn More</h2>
+            <p>Join our community to explore and implement rhizomatic principles in your organization.</p>
+            
+            <div class="footer-links">
+                <a href="#" class="footer-link">Join Community</a>
+                <a href="#" class="footer-link">Attend Workshop</a>
+                <a href="#" class="footer-link">Request Consultation</a>
+                <a href="#" class="footer-link">Subscribe to Newsletter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rhizomeCanvas = document.getElementById('rhizomeCanvas');
+            const ctx = rhizomeCanvas.getContext('2d');
+            rhizomeCanvas.width = rhizomeCanvas.offsetWidth;
+            rhizomeCanvas.height = rhizomeCanvas.offsetHeight;
+            const nodes = [];
+            const nodeCount = 100;
+            const connectionDistance = 150;
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * rhizomeCanvas.width,
+                    y: Math.random() * rhizomeCanvas.height,
+                    radius: Math.random() * 2 + 1,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    connections: []
+                });
+            }
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, rhizomeCanvas.width, rhizomeCanvas.height);
+                for (let i = 0; i < nodes.length; i++) {
+                    const node = nodes[i];
+                    node.x += node.speedX;
+                    node.y += node.speedY;
+                    if (node.x < 0 || node.x > rhizomeCanvas.width) node.speedX *= -1;
+                    if (node.y < 0 || node.y > rhizomeCanvas.height) node.speedY *= -1;
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#2a9d8f';
+                    ctx.fill();
+                    node.connections = [];
+                    for (let j = 0; j < nodes.length; j++) {
+                        if (i === j) continue;
+                        const otherNode = nodes[j];
+                        const distance = Math.sqrt(Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2));
+                        if (distance < connectionDistance) {
+                            node.connections.push(j);
+                            ctx.beginPath();
+                            ctx.moveTo(node.x, node.y);
+                            ctx.lineTo(otherNode.x, otherNode.y);
+                            ctx.strokeStyle = `rgba(42, 157, 143, ${1 - distance / connectionDistance})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            animate();
+            const nodeCanvas = document.getElementById('nodeCanvas');
+            const nodeCtx = nodeCanvas.getContext('2d');
+            const nodeInfo = document.querySelector('.node-info');
+            nodeCanvas.width = nodeCanvas.offsetWidth;
+            nodeCanvas.height = nodeCanvas.offsetHeight;
+            const interactiveNodes = [];
+            const nodeTypes = [
+                { type: 'Self-Governing Pod', color: '#2a9d8f', description: 'Autonomous cross-functional team with decision-making authority within its domain' },
+                { type: 'Resource Hub', color: '#e76f51', description: 'Coordination point that stewards shared resources across the network' },
+                { type: 'Knowledge Commons', color: '#f4a261', description: 'Repository of collective intelligence and organizational learning' },
+                { type: 'Community Center', color: '#e9c46a', description: 'Space for cross-boundary gatherings and relationship building' }
+            ];
+            for (let i = 0; i < 20; i++) {
+                const typeIndex = Math.floor(Math.random() * nodeTypes.length);
+                interactiveNodes.push({
+                    x: Math.random() * nodeCanvas.width,
+                    y: Math.random() * nodeCanvas.height,
+                    radius: Math.random() * 10 + 5,
+                    speedX: (Math.random() - 0.5) * 0.7,
+                    speedY: (Math.random() - 0.5) * 0.7,
+                    type: nodeTypes[typeIndex].type,
+                    color: nodeTypes[typeIndex].color,
+                    description: nodeTypes[typeIndex].description,
+                    connections: []
+                });
+            }
+            function animateNodeMap() {
+                requestAnimationFrame(animateNodeMap);
+                nodeCtx.clearRect(0, 0, nodeCanvas.width, nodeCanvas.height);
+                for (let i = 0; i < interactiveNodes.length; i++) {
+                    const node = interactiveNodes[i];
+                    node.x += node.speedX;
+                    node.y += node.speedY;
+                    if (node.x < node.radius || node.x > nodeCanvas.width - node.radius) node.speedX *= -1;
+                    if (node.y < node.radius || node.y > nodeCanvas.height - node.radius) node.speedY *= -1;
+                    node.connections = [];
+                    for (let j = 0; j < interactiveNodes.length; j++) {
+                        if (i === j) continue;
+                        const otherNode = interactiveNodes[j];
+                        const distance = Math.sqrt(Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2));
+                        if (distance < 120) {
+                            node.connections.push(j);
+                            nodeCtx.beginPath();
+                            nodeCtx.moveTo(node.x, node.y);
+                            nodeCtx.lineTo(otherNode.x, otherNode.y);
+                            nodeCtx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 120})`;
+                            nodeCtx.lineWidth = 1;
+                            nodeCtx.stroke();
+                        }
+                    }
+                    nodeCtx.beginPath();
+                    nodeCtx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    nodeCtx.fillStyle = node.color;
+                    nodeCtx.fill();
+                    nodeCtx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+                    nodeCtx.lineWidth = 2;
+                    nodeCtx.stroke();
+                }
+            }
+            animateNodeMap();
+            nodeCanvas.addEventListener('mousemove', function(e) {
+                const rect = nodeCanvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                let hoveredNode = null;
+                for (let i = 0; i < interactiveNodes.length; i++) {
+                    const node = interactiveNodes[i];
+                    const distance = Math.sqrt(Math.pow(mouseX - node.x, 2) + Math.pow(mouseY - node.y, 2));
+                    if (distance < node.radius) {
+                        hoveredNode = node;
+                        break;
+                    }
+                }
+                if (hoveredNode) {
+                    nodeInfo.style.opacity = '1';
+                    nodeInfo.style.left = `${e.clientX}px`;
+                    nodeInfo.style.top = `${e.clientY - 100}px`;
+                    nodeInfo.innerHTML = `
+                        <h4 style="color: ${hoveredNode.color}">${hoveredNode.type}</h4>
+                        <p>${hoveredNode.description}</p>
+                    `;
+                } else {
+                    nodeInfo.style.opacity = '0';
+                }
+            });
+            window.addEventListener('resize', function() {
+                rhizomeCanvas.width = rhizomeCanvas.offsetWidth;
+                rhizomeCanvas.height = rhizomeCanvas.offsetHeight;
+                nodeCanvas.width = nodeCanvas.offsetWidth;
+                nodeCanvas.height = nodeCanvas.offsetHeight;
+                for (let i = 0; i < interactiveNodes.length; i++) {
+                    const node = interactiveNodes[i];
+                    node.x = Math.min(node.x, nodeCanvas.width - node.radius);
+                    node.y = Math.min(node.y, nodeCanvas.height - node.radius);
+                }
+            });
+            document.getElementById('exploreButton').addEventListener('click', function() {
+                document.getElementById('principles').scrollIntoView({ behavior: 'smooth' });
+            });
+            const principleCards = document.querySelectorAll('.principle-card');
+            principleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px)';
+                    this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                });
+            });
+            const filterButtons = document.querySelectorAll('.filter-button');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    principleCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-principle') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
