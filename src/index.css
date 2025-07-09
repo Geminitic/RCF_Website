@@ -14,7 +14,7 @@
   position: fixed;
   width: 8px;
   height: 8px;
-  background-color: #064e3b;
+  background-color: #006480;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -30,7 +30,7 @@
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(6, 78, 59, 0.5);
+  border: 1px solid rgba(0, 100, 128, 0.5);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -42,13 +42,13 @@
   width: 30px;
   height: 30px;
   background-color: transparent;
-  border: 1px solid #064e3b;
+  border: 1px solid #006480;
 }
 
 .cursor-follower.hover {
   width: 50px;
   height: 50px;
-  border-color: #064e3b;
+  border-color: #006480;
 }
 
 .cursor-ripple {
@@ -67,7 +67,7 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #00a896;
+  background-color: #0092b9;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
@@ -97,9 +97,10 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #064e3b;
-  --secondary-color: #047857;
-  --accent-color: #b91c1c;
+  /* Updated palette based on the new logo */
+  --primary-color: #006480;
+  --secondary-color: #0092b9;
+  --accent-color: #f4a261;
   --text-color: #1f2937;
   --bg-color: #fafaf9;
   --card-bg: #ffffff;
@@ -246,7 +247,7 @@ body {
 
 /* Morphing Background */
 .morphing-bg {
-  background: linear-gradient(-45deg, #064e3b, #047857, #b91c1c, #dc2626);
+  background: linear-gradient(-45deg, #006480, #0092b9, #f4a261, #e76f51);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
@@ -301,7 +302,7 @@ body {
   position: fixed;
   width: 4px;
   height: 4px;
-  background: radial-gradient(circle, #064e3b, #047857);
+  background: radial-gradient(circle, #006480, #0092b9);
   border-radius: 50%;
   pointer-events: none;
   animation: particleFloat 2s ease-out forwards;
