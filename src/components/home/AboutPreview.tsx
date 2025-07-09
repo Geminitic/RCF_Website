@@ -19,9 +19,9 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img 
-              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg" 
-              alt="Aleppo, Syria" 
+            <img
+              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg"
+              alt="Community collaboration"
               className="w-full h-auto rounded-xl shadow-xl"
             />
             
@@ -45,10 +45,16 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'Rhizome Community Foundation (RCF) is a Canadian-registered nonprofit empowering communities in post-war zones—beginning with Syria—through grassroots initiatives and local leadership. Operating as a decentralized "rhizome" network, RCF bridges Syrian and Canadian teams to foster community-driven development and shared resources.',
+                'مؤسسة ريزوم المجتمعية مسجلة في كندا وتعمل على تمكين المجتمعات في مناطق ما بعد الحرب—بدءاً من سوريا—عبر المبادرات الشعبية والقيادة المحلية. تدير المؤسسة شبكة جذمورية لامركزية تصل الفرق السورية والكندية لدعم التنمية المجتمعية وتبادل الموارد.'
               )}
             </p>
+
+            <ul className="list-disc pl-5 text-stone-600 mb-6">
+              <li>{t('update-workshop', 'Network expansion workshop completed', 'اكتمل ورشة توسيع الشبكة')}</li>
+              <li>{t('update-publication', 'New research publication available', 'تقرير بحثي جديد متاح')}</li>
+              <li>{t('update-training', 'Partner organization training series launched', 'إطلاق سلسلة تدريب للشركاء')}</li>
+            </ul>
 
             <Link
               to="/about"
@@ -72,5 +78,4 @@ const AboutPreview: React.FC = () => {
     </section>
   );
 };
-
 export default AboutPreview;

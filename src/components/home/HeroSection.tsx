@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'The Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
           </motion.h1>
           
           <motion.p
@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-              'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+              'Empowering communities in post-war regions through collaborative, community-led networks.',
+              'نُمكِّن المجتمعات في مناطق ما بعد الحرب عبر شبكات تعاونية تقودها المجتمعات.'
             )}
           </motion.p>
           
@@ -217,10 +217,10 @@ const HeroSection: React.FC = () => {
             </Link>
             
             <Link
-              to="/community-wall"
+              to="/contact"
               className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
             >
-              {t('join-community', 'Join the Movement', 'انضم للحراك')}
+              {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>
           </motion.div>
         </motion.div>
