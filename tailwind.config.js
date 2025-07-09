@@ -47,6 +47,12 @@ export default {
           dark: '#1f2937',
           light: '#f9fafb',
           red: '#9d174d'
+        },
+        rcf: {
+          dark: '#006480',
+          primary: '#0092b9',
+          accent: '#f4a261',
+          secondary: '#e76f51'
         }
       },
       animation: {
@@ -75,10 +81,9 @@ export default {
         }
       },
       fontFamily: {
-        'arabic': ['Noto Sans Arabic', 'Arial', 'sans-serif'],
-        'sans': ['Poppins', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+        arabic: ['Noto Sans Arabic', 'Arial', 'sans-serif'],
+        sans: ['Poppins', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+      }
       },
-    },
   },
-  plugins: [],
-};
+  plugins: [],};

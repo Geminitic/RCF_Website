@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { syrianCoordinates } from '../../data/syriaMapCoords';
 
 const SyriaParticleMap: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -19,14 +20,42 @@ const SyriaParticleMap: React.FC = () => {
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    const particleCount = window.innerWidth < 768 ? 2000 : 5000;
+    const handleResize = () => {
+      if (!mountRef.current) return;
+      camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
+    const latitudes = syrianCoordinates.map(c => c.lat);
+    const longitudes = syrianCoordinates.map(c => c.lng);
+    const minLat = Math.min(...latitudes);
+    const maxLat = Math.max(...latitudes);
+    const minLng = Math.min(...longitudes);
+    const maxLng = Math.max(...longitudes);
+
+    const width = 4;
+    const height = 4;
+    const particlesPerCoord = 50;
+    const particleCount = syrianCoordinates.length * particlesPerCoord;
     const positions = new Float32Array(particleCount * 3);
 
-    for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 4;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 4;
-      positions[i * 3 + 2] = 0;
-    }
+    const toXY = (lat: number, lng: number) => {
+      const x = ((lng - minLng) / (maxLng - minLng)) * width - width / 2;
+      const y = -((lat - minLat) / (maxLat - minLat)) * height + height / 2;
+      return [x, y];
+    };
+
+    syrianCoordinates.forEach((coord, index) => {
+      const [x, y] = toXY(coord.lat, coord.lng);
+      for (let i = 0; i < particlesPerCoord; i++) {
+        const base = (index * particlesPerCoord + i) * 3;
+        positions[base] = x + (Math.random() - 0.5) * 0.05;
+        positions[base + 1] = y + (Math.random() - 0.5) * 0.05;
+        positions[base + 2] = 0;
+      }
+    });
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -42,6 +71,7 @@ const SyriaParticleMap: React.FC = () => {
     animate();
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       renderer.dispose();
       mountRef.current?.removeChild(renderer.domElement);
     };
