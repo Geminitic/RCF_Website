@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
             <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t(
                 'footer-description',
-                'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-                'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+                'Connecting communities through a decentralized rhizome network for collective growth.',
+                'نربط المجتمعات عبر شبكة جذمورية لامركزية من أجل نمو جماعي.'
               )}
             </p>
           </motion.div>
@@ -93,12 +93,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-            {t('copyright', '© 2024 Rhizome Syria. All rights reserved.', '© 2024 ريزوم سوريا. جميع الحقوق محفوظة.')}
+            {t('copyright', '© 2024 Rhizome Community Foundation. All rights reserved.', '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.')}
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;

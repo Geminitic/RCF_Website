@@ -201,8 +201,8 @@ const AboutPage: React.FC = () => {
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
               {t(
                 'about-subtitle',
-                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'Rhizome Community Foundation fosters resilient networks that unite communities through collaboration and shared heritage, empowering people to spark meaningful change.',
+                'ترعى مؤسسة ريزوم المجتمعية شبكات مرنة توحد المجتمعات عبر التعاون والإرث المشترك، مما يمكّن الأفراد من إحداث تغيير هادف.'
               )}
             </p>
           </motion.div>
@@ -251,8 +251,8 @@ const AboutPage: React.FC = () => {
               <p className={`text-lg text-stone-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                 {t(
                   'vision-text',
-                  'A world where communities of heritage facing local and global exclusion such as Syrians, Queer Asians, and Indigenous peoples of Turtle Island flourish through interconnected support systems, where cultural identity is celebrated and preserved, and where every individual has the power to contribute to transformative social change.',
-                  'عالم تزدهر فيه مجتمعات الإرث التي تواجه الإقصاء المحلي والعالمي مثل السوريين والآسيويين الكوير والسكان الأصليين في جزيرة السلحفاة من خلال أنظمة دعم مترابطة، حيث تُحتفى بالهوية الثقافية وتُحفظ، وحيث يملك كل فرد القدرة على المساهمة في التغيير الاجتماعي التحويلي.'
+                  'A world where communities facing local and global exclusion flourish through interconnected support systems, where cultural identity is celebrated and preserved, and where every individual has the power to contribute to transformative social change.',
+                  'عالم تزدهر فيه المجتمعات التي تواجه الإقصاء المحلي والعالمي من خلال أنظمة دعم مترابطة، حيث تُحتفى بالهوية الثقافية وتُحفظ، وحيث يملك كل فرد القدرة على المساهمة في التغيير الاجتماعي التحويلي.'
                 )}
               </p>
             </motion.div>

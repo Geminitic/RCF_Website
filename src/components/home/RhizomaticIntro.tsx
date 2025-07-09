@@ -198,7 +198,7 @@ const RhizomaticIntro: React.FC = () => {
               }}
               transition={{ duration: 5, repeat: Infinity }}
             >
-              {t('hero-title', 'Rhizome Syria', 'ريزوم سوريا')}
+              {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
             </motion.h1>
             
             <motion.p
@@ -209,8 +209,8 @@ const RhizomaticIntro: React.FC = () => {
             >
               {t(
                 'hero-subtitle',
-                'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-                'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+                'Building resilient communities through a decentralized rhizome network for collective growth.',
+                'نبني مجتمعات مرنة عبر شبكة جذمورية لامركزية من أجل نمو جماعي.'
               )}
             </motion.p>
             
