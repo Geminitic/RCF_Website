@@ -19,6 +19,14 @@ const SyriaParticleMap: React.FC = () => {
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
+    const handleResize = () => {
+      if (!mountRef.current) return;
+      camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
     const particleCount = window.innerWidth < 768 ? 2000 : 5000;
     const positions = new Float32Array(particleCount * 3);
 
@@ -42,6 +50,7 @@ const SyriaParticleMap: React.FC = () => {
     animate();
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       renderer.dispose();
       mountRef.current?.removeChild(renderer.domElement);
     };
