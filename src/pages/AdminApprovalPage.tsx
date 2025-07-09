@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePhoto } from '../contexts/PhotoContext';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { useUser } from '../contexts/UserContext';
+import PhotoUploadModal from '../components/community/PhotoUploadModal';
+import { CheckCircle, XCircle, Upload } from 'lucide-react';
 
 const AdminApprovalPage: React.FC = () => {
   const { pendingPhotos, approvePhoto, deletePhoto } = usePhoto();
+  const { setIsAdmin } = useUser();
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(true);
+    return () => setIsAdmin(false);
+  }, [setIsAdmin]);
 
   return (
     <div className="min-h-screen pt-20 px-6">
-      <h1 className="text-2xl font-bold mb-6">Pending Photo Approvals</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">Pending Photo Approvals</h1>
+        <button
+          onClick={() => setShowUploadModal(true)}
+          className="flex items-center space-x-1 bg-emerald-600 text-white px-3 py-1 rounded"
+        >
+          <Upload className="h-4 w-4" />
+          <span>Add Photo</span>
+        </button>
+      </div>
       {pendingPhotos.length === 0 && (
         <p>No pending photos.</p>
       )}
@@ -38,6 +56,10 @@ const AdminApprovalPage: React.FC = () => {
           </div>
         ))}
       </div>
+      <PhotoUploadModal
+        isOpen={showUploadModal}
+        onClose={() => setShowUploadModal(false)}
+      />
     </div>
   );
 };

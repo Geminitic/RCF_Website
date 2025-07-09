@@ -20,7 +20,10 @@ interface PhotoContextType {
   photos: Photo[];
   uploadedCount: number;
   targetCount: number;
-  addPhoto: (photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>) => void;
+  addPhoto: (
+    photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    approved?: boolean
+  ) => void;
   approvePhoto: (id: string) => void;
   deletePhoto: (id: string) => void;
   pendingPhotos: Photo[];
@@ -244,15 +247,21 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
     }
   ]);
 
-  const targetCount = 50000;
-  const uploadedCount = photos.filter(p => p.approved).length + 1247; // Simulated existing count
+  // Total number of stories the community aims to collect
+  const targetCount = 5000;
 
-  const addPhoto = (photoData: Omit<Photo, 'id' | 'uploadDate' | 'approved'>) => {
+  // Count only the photos that have been approved
+  const uploadedCount = photos.filter(p => p.approved).length;
+
+  const addPhoto = (
+    photoData: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    approved = false
+  ) => {
     const newPhoto: Photo = {
       ...photoData,
       id: Date.now().toString(),
       uploadDate: new Date().toISOString(),
-      approved: false
+      approved
     };
     setPhotos(prev => [newPhoto, ...prev]);
   };

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { PhotoProvider } from './contexts/PhotoContext';
+import { UserProvider } from './contexts/UserContext';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
@@ -22,8 +23,9 @@ import LoadingScreen from './components/common/LoadingScreen';
 function App() {
   return (
     <LanguageProvider>
-      <PhotoProvider>
-        <Router>
+      <UserProvider>
+        <PhotoProvider>
+          <Router>
           <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
             <LoadingScreen />
             <CustomCursor />
@@ -47,9 +49,9 @@ function App() {
             <ParticleSystem />
           </div>
         </Router>
-      </PhotoProvider>
+        </PhotoProvider>
+      </UserProvider>
     </LanguageProvider>
   );
 }
-
 export default App;

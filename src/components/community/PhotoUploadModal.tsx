@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Upload, Camera, MapPin, Tag, User } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { usePhoto } from '../../contexts/PhotoContext';
+import { useUser } from '../../contexts/UserContext';
 
 interface PhotoUploadModalProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface PhotoUploadModalProps {
 const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) => {
   const { t, currentLanguage } = useLanguage();
   const { addPhoto } = usePhoto();
+  const { isAdmin } = useUser();
   const [formData, setFormData] = useState({
     title: '',
     titleAr: '',
@@ -60,9 +62,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
       featured: false
     };
 
-    addPhoto(newPhoto);
+    addPhoto(newPhoto, isAdmin);
 
-    alert('Your photo has been submitted for admin approval.');
+    if (isAdmin) {
+      alert('Photo uploaded successfully.');
+    } else {
+      alert('Your photo has been submitted for admin approval.');
+    }
 
     // Reset form
     setFormData({
