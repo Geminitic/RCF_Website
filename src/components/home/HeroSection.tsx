@@ -178,14 +178,23 @@ const HeroSection: React.FC = () => {
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
+            className="text-5xl md:text-7xl font-bold mb-3 text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'The Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+          {t('hero-title', 'The Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
           </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-2xl md:text-3xl text-emerald-100 mb-4"
+          >
+            {t('hero-tagline', 'Hidden weave, lasting impact', 'نسيجٌ خَفي، وأثرٌ دائم')}
+          </motion.h2>
           
           <motion.p
             initial={{ opacity: 0 }}
@@ -195,8 +204,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-              'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+              'Rhizome Syria brings together the vibrant voices of Syrian civil society through a decentralized network of nodes. Through this initiative, we aim to rebuild Syria with the will and hands of its people.',
+              'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني السوري عبر شبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم.'
             )}
           </motion.p>
           
