@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
             <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t(
                 'footer-description',
-                'Catalyzing Systems Change Through Collective Intelligence and Distributed Networks.',
-                'تحفيز التغيير المنظومي عبر الذكاء الجمعي والشبكات الموزعة.'
+                'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
+                'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
               )}
             </p>
           </motion.div>

@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Catalyzing Systems Change Through Collective Intelligence and Distributed Networks.',
-              'تحفيز التغيير المنظومي عبر الذكاء الجمعي والشبكات الموزعة.'
+              'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
+              'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
             )}
           </motion.p>
           

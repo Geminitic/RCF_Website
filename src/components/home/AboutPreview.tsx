@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'We cultivate resilient communities through the power of connection—preserving heritage, fostering innovation, and creating pathways for meaningful change.',
-                'نرعى مجتمعات مرنة من خلال قوة التواصل—نحافظ على التراث ونعزز الابتكار وننشئ مسارات للتغيير الهادف.'
+                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
+                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
               )}
             </p>
 
