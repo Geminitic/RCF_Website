@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Users, Target, Award, Calendar, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import SyriaParticleMap from '../components/common/SyriaParticleMap';
+import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
 
 const RhizomeSyriaPage: React.FC = () => {
@@ -449,12 +449,11 @@ const RhizomeSyriaPage: React.FC = () => {
 
       <section id="volunteer" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <SyriaParticleMap />
+          <SyrianCitiesMap />
           <VolunteerForms />
         </div>
       </section>
     </div>
   );
 };
-
 export default RhizomeSyriaPage;
