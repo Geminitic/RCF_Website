@@ -26,8 +26,8 @@ const InteractiveMap: React.FC = () => {
       lng: 35.7796,
       name: 'Latakia (HQ)',
       nameAr: 'اللاذقية (المقر الرئيسي)',
-      description: 'Headquarters of Rhizome Syria',
-      descriptionAr: 'المقر الرئيسي لريزوم سوريا'
+      description: 'Headquarters of the Rhizome Community Foundation',
+      descriptionAr: 'المقر الرئيسي لمؤسسة ريزوم المجتمعية'
     },
     {
       id: 'aleppo',
@@ -35,8 +35,8 @@ const InteractiveMap: React.FC = () => {
       lng: 37.1343,
       name: 'Aleppo',
       nameAr: 'حلب',
-      description: 'Aleppo Roots, Crystal Media, Masraha, Syrian Sect, Dawen',
-      descriptionAr: 'جذور حلب، كريستال ميديا، مسرحة، السوريان سكت، دوّن'
+      description: 'Aleppo Roots, Crystal Media, Masraha, Community Partners, Dawen',
+      descriptionAr: 'جذور حلب، كريستال ميديا، مسرحة، شركاء مجتمعيون، دوّن'
     },
     {
       id: 'izazz',
@@ -53,8 +53,8 @@ const InteractiveMap: React.FC = () => {
       lng: 36.7200,
       name: 'Homs',
       nameAr: 'حمص',
-      description: 'Syrian Youth Compass',
-      descriptionAr: 'بوصلة الشباب السوري'
+      description: 'Youth Compass',
+      descriptionAr: 'بوصلة الشباب'
     },
     {
       id: 'salamiah',
