@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { BookOpen, Palette, Users, Laptop, ArrowRight } from 'lucide-react';
+import { BookOpen, FileText, Users, Laptop, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const ProgramsPreview: React.FC = () => {
@@ -10,45 +10,45 @@ const ProgramsPreview: React.FC = () => {
   const programs = [
     {
       icon: Users,
-      title: 'Cultural & Community Engagement',
-      titleAr: 'المشاركة الثقافية والمجتمعية',
+      title: 'Network Building',
+      titleAr: 'بناء الشبكات',
       description:
-        'Artistic and cultural initiatives designed to foster community recovery, preserve heritage, and promote social unity.',
+        'Connecting grassroots organizations and community initiatives through decentralized collaboration models.',
       descriptionAr:
-        'مبادرات فنية وثقافية مصممة لتعزيز تعافي المجتمع والحفاظ على التراث وتعزيز الوحدة الاجتماعية.',
+        'ربط المنظمات والمبادرات المجتمعية من خلال نماذج تعاون لامركزية.',
       color: 'from-emerald-500 to-emerald-600',
       bgColor: 'from-emerald-50 to-emerald-100'
     },
     {
-      icon: Palette,
-      title: 'Empowerment & Leadership',
-      titleAr: 'التمكين والقيادة',
+      icon: Laptop,
+      title: 'Capacity Development',
+      titleAr: 'تنمية القدرات',
       description:
-        'Community-driven initiatives facilitating economic collaboration and collective productivity through practical, sustainable programs.',
+        'Providing training, resources, and technical support to strengthen organizational effectiveness.',
       descriptionAr:
-        'مبادرات مجتمعية تسهل التعاون الاقتصادي والإنتاجية الجماعية من خلال برامج عملية ومستدامة.',
+        'تقديم التدريب والموارد والدعم الفني لتعزيز فعالية المنظمات.',
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100'
     },
     {
       icon: BookOpen,
-      title: 'Data & Research Intelligence',
-      titleAr: 'البيانات والذكاء البحثي',
+      title: 'Knowledge Sharing',
+      titleAr: 'تبادل المعرفة',
       description:
-        'Providing accurate, timely data for organizations and governments across Syria to support evidence-based decision-making and policy development.',
+        'Creating platforms and resources for best practice exchange and collaborative learning.',
       descriptionAr:
-        'توفير بيانات دقيقة وفي الوقت المناسب للمنظمات والحكومات في جميع أنحاء سوريا لدعم صنع القرار وتطوير السياسات القائمة على الأدلة.',
+        'إنشاء منصات وموارد لتبادل أفضل الممارسات والتعلم التعاوني.',
       color: 'from-blue-500 to-blue-600',
       bgColor: 'from-blue-50 to-blue-100'
     },
     {
-      icon: Laptop,
-      title: 'Digital Innovation & Advocacy',
-      titleAr: 'الابتكار الرقمي والمناصرة',
+      icon: FileText,
+      title: 'Research & Documentation',
+      titleAr: 'البحث والتوثيق',
       description:
-        'Creating accessible online platforms that facilitate inclusive community discussions and democratic participation.',
+        'Evidence-based research to inform community development and policy recommendations.',
       descriptionAr:
-        'إنشاء منصات إلكترونية يسهل الوصول إليها تسهل المناقشات المجتمعية الشاملة والمشاركة الديمقراطية.',
+        'بحوث مبنية على الأدلة لإرشاد تنمية المجتمع والتوصيات السياساتية.',
       color: 'from-orange-500 to-orange-600',
       bgColor: 'from-orange-50 to-orange-100'
     }

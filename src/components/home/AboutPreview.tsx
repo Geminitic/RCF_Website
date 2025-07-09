@@ -19,9 +19,9 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img 
-              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg" 
-              alt="Aleppo, Syria" 
+            <img
+              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg"
+              alt="Community collaboration"
               className="w-full h-auto rounded-xl shadow-xl"
             />
             
@@ -45,10 +45,16 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'The Rhizome Community Foundation builds networks that connect civil society organizations. We support community-led development through resource sharing, capacity building, and collaborative platforms that strengthen local initiatives.',
+                'تبني مؤسسة ريزوم المجتمعية شبكات تصل منظمات المجتمع المدني. ندعم التنمية المجتمعية عبر مشاركة الموارد وبناء القدرات ومنصات التعاون التي تعزز المبادرات المحلية.'
               )}
             </p>
+
+            <ul className="list-disc pl-5 text-stone-600 mb-6">
+              <li>{t('update-workshop', 'Network expansion workshop completed', 'اكتمل ورشة توسيع الشبكة')}</li>
+              <li>{t('update-publication', 'New research publication available', 'تقرير بحثي جديد متاح')}</li>
+              <li>{t('update-training', 'Partner organization training series launched', 'إطلاق سلسلة تدريب للشركاء')}</li>
+            </ul>
 
             <Link
               to="/about"
@@ -72,5 +78,4 @@ const AboutPreview: React.FC = () => {
     </section>
   );
 };
-
 export default AboutPreview;

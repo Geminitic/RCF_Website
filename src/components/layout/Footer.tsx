@@ -20,14 +20,14 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3">
               <Network className="h-6 w-6 text-green-400" />
               <h3 className={`text-lg font-semibold ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                {t('footer-title', 'Rhizome Community', 'ريزوم المجتمعية')}
+              {t('footer-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
               </h3>
             </div>
             <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t(
                 'footer-description',
-                'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-                'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+                'Building collaborative networks for civil society.',
+                'نبني شبكات تعاونية للمجتمع المدني.'
               )}
             </p>
           </motion.div>
@@ -40,14 +40,14 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <h4 className={`font-semibold ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-              {t('quick-links', 'Quick Links', 'روابط سريعة')}
+              {t('quick-links', 'Quick Access', 'روابط سريعة')}
             </h4>
                         <ul className="space-y-2">
               {[
-                { key: 'about', path: '/about', en: 'About Us', ar: 'من نحن' },
-                { key: 'programs', path: '/programs', en: 'Programs', ar: 'البرامج' },
                 { key: 'knowledge', path: '/knowledge-hub', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
-                { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' }
+                { key: 'calendar', path: '/calendar', en: 'Event Calendar', ar: 'رزنامة الفعاليات' },
+                { key: 'join', path: '/contact', en: 'Join Our Network', ar: 'انضم لشبكتنا' },
+                { key: 'contact', path: '/contact', en: 'Contact Us', ar: 'اتصل بنا' }
               ].map((link) => (
                 <li key={link.key}>
                   <Link
@@ -75,16 +75,12 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">info@rhizomsyria.org</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">+963 XXX XXX XXX</span>
+                <span className="text-gray-300">info@rhizomecf.org</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-green-400" />
                 <span className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  {t('location', 'Syria & Regional Offices', 'سوريا والمكاتب الإقليمية')}
+                  {t('location', 'Regional Offices', 'المكاتب الإقليمية')}
                 </span>
               </div>
             </div>
@@ -93,12 +89,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-            {t('copyright', '© 2024 Rhizome Syria. All rights reserved.', '© 2024 ريزوم سوريا. جميع الحقوق محفوظة.')}
+            {t('copyright', '© 2024 Rhizome Community Foundation. All rights reserved.', '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.')}
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;

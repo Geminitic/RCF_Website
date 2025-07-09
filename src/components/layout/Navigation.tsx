@@ -24,11 +24,8 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { key: 'home', path: '/', en: 'Home', ar: 'الرئيسية' },
     { key: 'about', path: '/about', en: 'About', ar: 'من نحن' },
     { key: 'programs', path: '/programs', en: 'Programs', ar: 'البرامج' },
-    { key: 'rhizome-syria', path: '/rhizome-syria', en: 'Rhizome Syria', ar: 'ريزوم سوريا' },
-    { key: 'community-wall', path: '/community-wall', en: 'Wallfinity', ar: 'وولفينيتي' },
     { key: 'knowledge', path: '/knowledge-hub', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' }
