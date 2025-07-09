@@ -19,9 +19,9 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img 
-              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg" 
-              alt="Aleppo, Syria" 
+            <img
+              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg"
+              alt="Community collaboration"
               className="w-full h-auto rounded-xl shadow-xl"
             />
             
@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'The Rhizome Community Foundation builds networks that connect civil society organizations. We support community-led development through resource sharing, capacity building, and collaborative platforms that strengthen local initiatives.',
+                'تعمل مؤسسة ريزوم المجتمعية على بناء شبكات تربط منظمات المجتمع المدني. ندعم التنمية التي يقودها المجتمع عبر مشاركة الموارد وبناء القدرات ومنصات التعاون التي تعزز المبادرات المحلية.'
               )}
             </p>
 
@@ -66,11 +66,27 @@ const AboutPreview: React.FC = () => {
             >
               {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
             </Link>
+
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-2">{t('recent-updates', 'Recent Updates', 'آخر المستجدات')}</h3>
+              <ul className="list-disc list-inside text-stone-600 mb-4">
+                <li>{t('update-1', 'Network expansion workshop completed', 'انتهاء ورشة توسيع الشبكة')}</li>
+                <li>{t('update-2', 'New research publication available', 'نشر بحث جديد')}</li>
+                <li>{t('update-3', 'Partner organization training series launched', 'إطلاق سلسلة تدريبات للشركاء')}</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold mb-2">{t('quick-access', 'Quick Access', 'وصول سريع')}</h3>
+              <ul className="list-disc list-inside text-stone-600">
+                <li><Link to="/knowledge-hub" className="underline">{t('quick-knowledge', 'Knowledge Hub', 'مركز المعرفة')}</Link></li>
+                <li><Link to="/calendar" className="underline">{t('quick-calendar', 'Event Calendar', 'تقويم الفعاليات')}</Link></li>
+                <li><Link to="/contact" className="underline">{t('quick-join', 'Join Our Network', 'انضم لشبكتنا')}</Link></li>
+                <li><Link to="/contact" className="underline">{t('quick-contact', 'Contact Us', 'اتصل بنا')}</Link></li>
+              </ul>
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 };
-
 export default AboutPreview;

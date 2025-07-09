@@ -35,9 +35,9 @@ const ProgramsPreview: React.FC = () => {
       title: 'Data & Research Intelligence',
       titleAr: 'البيانات والذكاء البحثي',
       description:
-        'Providing accurate, timely data for organizations and governments across Syria to support evidence-based decision-making and policy development.',
+        'Providing accurate, timely data for organizations and governments in affected regions to support evidence-based decision-making and policy development.',
       descriptionAr:
-        'توفير بيانات دقيقة وفي الوقت المناسب للمنظمات والحكومات في جميع أنحاء سوريا لدعم صنع القرار وتطوير السياسات القائمة على الأدلة.',
+        'توفير بيانات دقيقة وفي الوقت المناسب للمنظمات والحكومات في المناطق المتأثرة لدعم صنع القرار وتطوير السياسات القائمة على الأدلة.',
       color: 'from-blue-500 to-blue-600',
       bgColor: 'from-blue-50 to-blue-100'
     },

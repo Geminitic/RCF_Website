@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
             <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t(
                 'footer-description',
-                'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-                'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+                'Building collaborative networks for civil society.',
+                'نبني شبكات تعاونية للمجتمع المدني.'
               )}
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">info@rhizomsyria.org</span>
+                <span className="text-gray-300">info@rhizomecf.org</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-green-400" />
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-green-400" />
                 <span className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  {t('location', 'Syria & Regional Offices', 'سوريا والمكاتب الإقليمية')}
+                  {t('location', 'Regional Offices: [List actual office locations]', 'المكاتب الإقليمية: [قائمة المواقع الفعلية]')}
                 </span>
               </div>
             </div>
@@ -93,12 +93,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-            {t('copyright', '© 2024 Rhizome Syria. All rights reserved.', '© 2024 ريزوم سوريا. جميع الحقوق محفوظة.')}
+            {t('copyright', '© 2024 Rhizome Community Foundation. All rights reserved.', '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.')}
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;

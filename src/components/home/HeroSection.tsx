@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Uniting all vibrant voices in Syrian civil society through a decentralized rhizome network to rebuild our country together.',
-              'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
+              'Building collaborative networks to strengthen civil society through community-led initiatives.',
+              'بناء شبكات تعاونية لتعزيز المجتمع المدني من خلال مبادرات يقودها المجتمع.'
             )}
           </motion.p>
           
