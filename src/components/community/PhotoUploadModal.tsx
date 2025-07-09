@@ -52,22 +52,26 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
 
     setIsSubmitting(true);
 
-    // Simulate upload delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // Create photo object
-    const newPhoto = {
-      ...formData,
-      url: previewUrl, // In real app, this would be the uploaded file URL
-      featured: false
-    };
-
-    addPhoto(newPhoto, isAdmin);
-
-    if (isAdmin) {
-      alert('Photo uploaded successfully.');
-    } else {
-      alert('Your photo has been submitted for admin approval.');
+    try {
+      const payload = {
+        ...formData,
+        fileName: selectedFile?.name || '',
+        fileData: previewUrl
+      };
+      await fetch('/.netlify/functions/upload-photo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const newPhoto = { ...formData, url: previewUrl, featured: false };
+      addPhoto(newPhoto, isAdmin);
+      if (isAdmin) {
+        alert('Photo uploaded successfully.');
+      } else {
+        alert('Your photo has been submitted for admin approval.');
+      }
+    } catch (err) {
+      console.error('Upload failed', err);
     }
 
     // Reset form

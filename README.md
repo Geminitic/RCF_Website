@@ -27,5 +27,7 @@ Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are c
 
 - This repository now includes a `_headers` file that sets basic security headers processed by Netlify during deployment.
 - To deploy on Netlify, create a new site pointing to this repository and enable SSL in the Netlify dashboard. If Netlify refuses to provision SSL, verify that your domain DNS records point to Netlify and that no conflicting certificates exist.
+- Netlify serverless functions live in `netlify/functions` and handle contact,
+  registration and photo uploads.
 - The codebase does not currently integrate with Supabase or Neon. Any references to those services are likely from previous experiments or external configurations not present in this repository.
 

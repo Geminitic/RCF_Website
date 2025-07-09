@@ -3,9 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 
-// Logo image sourced from the public folder. This image was provided in the
-// repository and represents the Rhizome branding colors.
-import LogoImage from '/5-removebg-preview.png';
 import { useLanguage, languages } from '../../contexts/LanguageContext';
 
 const Navigation: React.FC = () => {
@@ -46,16 +43,8 @@ const Navigation: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo section now uses the provided image with a subtle animation */}
+          {/* Foundation title without logo image */}
           <Link to="/" className="flex items-center space-x-3">
-            <motion.img
-              src={LogoImage}
-              alt="Rhizome logo"
-              className="w-10 h-10 object-contain rounded-md shadow-md"
-              initial={{ rotate: -10, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            />
             <div className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'}`}>
               <div className="font-bold text-emerald-800 text-sm">
                 {t('nav-title', 'Rhizome Community', 'ريزوم المجتمعية')}
