@@ -42,7 +42,7 @@ const CustomCursor: React.FC = () => {
         if (rgb && rgb.length >= 3) {
           const [r, g, b] = rgb.map(Number);
           const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-          const color = brightness > 128 ? '#064e3b' : '#ffffff';
+          const color = brightness > 128 ? '#006480' : '#ffffff';
           cursor.style.backgroundColor = color;
           follower.style.borderColor = color;
         }
