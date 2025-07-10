@@ -25,8 +25,8 @@ const ImpactStats: React.FC = () => {
             <p className="text-xl text-stone-600 mb-8">
               {t(
                 'impact-narrative',
-                'We weave connections that transcend borders, uniting communities through shared heritage and collective hope. Our grassroots approach creates spaces where diverse voices flourish, traditional wisdom meets innovation, and individual stories become powerful narratives of resilience and renewal.',
-                'ننسج روابط تتجاوز الحدود، نوحد المجتمعات من خلال التراث المشترك والأمل الجماعي. نهجنا الشعبي ينشئ مساحات تزدهر فيها الأصوات المتنوعة، حيث تلتقي الحكمة التقليدية بالابتكار، وتصبح القصص الفردية سرديات قوية للمرونة والتجديد.'
+                'We weave connections that transcend borders, uniting communities through shared heritage and collective hope. Our grassroots approach creates spaces where Syrian voices flourish, traditional wisdom meets innovation, and individual stories become powerful narratives of resilience and renewal.',
+                'ننسج روابط تتجاوز الحدود، نوحد المجتمعات من خلال التراث المشترك والأمل الجماعي. نهجنا الشعبي ينشئ مساحات تزدهر فيها الأصوات السورية، حيث تلتقي الحكمة التقليدية بالابتكار، وتصبح القصص الفردية سرديات قوية للمرونة والتجديد.'
               )}
             </p>
             <p className="text-lg text-stone-600">

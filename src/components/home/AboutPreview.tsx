@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'Rhizome Community Foundation fosters resilient networks that unite communities through collaboration and shared heritage, empowering people to spark meaningful change.',
-                'ترعى مؤسسة ريزوم المجتمعية شبكات مرنة توحد المجتمعات عبر التعاون والإرث المشترك، مما يمكّن الأفراد من إحداث تغيير هادف.'
+                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
+                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
               )}
             </p>
 
