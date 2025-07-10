@@ -201,8 +201,8 @@ const AboutPage: React.FC = () => {
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
               {t(
                 'about-subtitle',
-                'Weaving connections across continents through transformative programs, cultural stewardship, and collaborative innovation.',
-                'ننسج الروابط عبر القارات من خلال برامج تحويلية ورعاية ثقافية وابتكار تشاركي.'
+                'Rhizome Community Foundation (RCF) is a decentralized network linking Syrian communities worldwide. We empower grassroots initiatives, foster knowledge exchange, and cultivate sustainable growth.',
+                'مؤسسة ريزوم المجتمعية (RCF) شبكة لا مركزية تربط المجتمعات السورية حول العالم. نمكّن المبادرات الشعبية، ونعزز تبادل المعرفة، ونرعى النمو المستدام.'
               )}
             </p>
           </motion.div>

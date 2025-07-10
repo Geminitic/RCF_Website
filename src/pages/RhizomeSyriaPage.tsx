@@ -183,8 +183,8 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="text-lg leading-relaxed">
                     {t(
                       'mission-text-1',
-                      'Rhizome Syria is the Syrian partner in a joint venture agreement with Rhizome Canada, together forming the Rhizome Community Foundation. Both branches operate with full legal independence while remaining strategically connected through shared governance principles, coordinated programming, and mutual accountability.',
-                      'ريزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع ريزوم كندا، وتشكلان معاً مؤسسة مجتمع الريزوم. يعمل كلا الفرعين باستقلالية قانونية كاملة مع البقاء مترابطين استراتيجياً من خلال مبادئ الحوكمة المشتركة والبرمجة المنسقة والمساءلة المتبادلة.'
+                      'Rhizome Syria is the Syrian partner in a joint venture agreement with Rhizome Canada, operating under an interlocking director model. Each branch retains full legal independence while sharing governance, coordinated programs, and mutual accountability.',
+                      'ريزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع ريزوم كندا وتعملان وفق نموذج الإدارة المتداخلة. يحتفظ كل فرع باستقلال قانوني كامل مع تشارك الحوكمة والبرامج المنسقة والمساءلة المتبادلة.'
                     )}
                   </p>
                   
@@ -228,8 +228,8 @@ const RhizomeSyriaPage: React.FC = () => {
                 <p className={`text-gray-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t(
                     'structure-text',
-                    'Rhizome Syria and Rhizome Canada operate as two legally distinct entities under a joint venture cooperation agreement, facilitating coordinated strategic planning, knowledge exchange, and dual accountability.',
-                    'تعمل ريزوم سوريا وريزوم كندا ككيانين قانونيين منفصلين تحت اتفاقية تعاون مشروع مشترك، مما يسهل التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المزدوجة.'
+                    'Rhizome Syria and Rhizome Canada operate as two legally distinct entities under a joint venture agreement with interlocking directors, enabling coordinated strategic planning, knowledge exchange, and shared accountability.',
+                    'تعمل ريزوم سوريا وريزوم كندا ككيانين قانونيين منفصلين في إطار اتفاقية مشروع مشترك وبهيكل إدارة متداخلة، مما يتيح التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المشتركة.'
                   )}
                 </p>
               </div>

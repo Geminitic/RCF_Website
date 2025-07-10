@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'We cultivate resilient communities through the power of connection—preserving heritage, fostering innovation, and creating pathways for meaningful change.',
-                'نرعى مجتمعات مرنة من خلال قوة التواصل—نحافظ على التراث ونعزز الابتكار وننشئ مسارات للتغيير الهادف.'
+                'Rhizome Community Foundation (RCF) is a decentralized network linking Syrian communities in Syria and the diaspora. We empower grassroots initiatives and connect expertise for sustainable growth in every circumstance.',
+                'مؤسسة ريزوم المجتمعية (RCF) شبكة لا مركزية تربط المجتمعات السورية في الداخل والشتات. نمكّن المبادرات المحلية ونربط الخبرات لتحقيق نمو مستدام في كافة الظروف.'
               )}
             </p>
 
