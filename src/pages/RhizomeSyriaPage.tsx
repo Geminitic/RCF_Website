@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Users, Target, Award, Calendar, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
+import SyriaLeafletMap from '../components/common/SyriaLeafletMap';
 import VolunteerForms from '../components/common/VolunteerForms';
 
 const RhizomeSyriaPage: React.FC = () => {
@@ -449,7 +449,7 @@ const RhizomeSyriaPage: React.FC = () => {
 
       <section id="volunteer" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <SyrianCitiesMap />
+          <SyriaLeafletMap />
           <VolunteerForms />
         </div>
       </section>
