@@ -20,12 +20,18 @@ const SyrianCitiesMap: React.FC = () => {
       .style('position', 'absolute')
       .style('top', 0)
       .style('left', 0);
+    const lngExtent = d3.extent(syrianCities, d => d.lng) as [number, number];
+    const latExtent = d3.extent(syrianCities, d => d.lat) as [number, number];
 
-    const projection = d3
-      .geoMercator()
-      .center([38.9968, 34.8021])
-      .scale(2500)
-      .translate([width / 2, height / 2]);
+    const xScale = d3
+      .scaleLinear()
+      .domain(lngExtent)
+      .range([0, width]);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([latExtent[1], latExtent[0]])
+      .range([0, height]);
 
     const tooltip = d3
       .select(container)
@@ -44,10 +50,11 @@ const SyrianCitiesMap: React.FC = () => {
       .data(syrianCities)
       .enter()
       .append('circle')
-      .attr('cx', d => projection([d.lng, d.lat])[0])
-      .attr('cy', d => projection([d.lng, d.lat])[1])
-      .attr('r', 2)
+      .attr('cx', d => xScale(d.lng))
+      .attr('cy', d => yScale(d.lat))
+      .attr('r', 3)
       .attr('fill', '#b91c1c')
+      .style('cursor', 'pointer')
       .on('mouseenter', (event, d) => {
         tooltip.style('display', 'block').text(d.name);
       })
