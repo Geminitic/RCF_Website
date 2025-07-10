@@ -4,89 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Cursor - Disabled for hypersonic effect */
+
+/* Custom Cursor */
 * {
   cursor: none;
-}
-
-/* Custom Cursor Styles */
-.cursor {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background-color: #064e3b;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
-}
-
-.cursor.active {
-  background-color: var(--accent-color);
-}
-
-.cursor-follower {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(6, 78, 59, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out;
-}
-
-.cursor.hover {
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: 1px solid #064e3b;
-}
-
-.cursor-follower.hover {
-  width: 50px;
-  height: 50px;
-  border-color: #064e3b;
-}
-
-.cursor-ripple {
-  position: absolute;
-  width: 60px;
-  height: 20px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5), transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  mix-blend-mode: overlay;
-  animation: rocket-ripple 0.6s ease-out;
-}
-
-.cursor-wake {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: #00a896;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0.4;
-  animation: wake-fade 0.6s ease-out;
-}
-
-@keyframes wake-fade {
-  to {
-    transform: translate(-50%, -50%) scale(3);
-    opacity: 0;
-  }
-}
-
-@keyframes rocket-ripple {
-  to {
-    transform: translate(-50%, -50%) scale(1.5, 0.4);
-    opacity: 0;
-  }
 }
 
 /* Custom styles for Arabic text */
@@ -108,16 +29,47 @@
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Hypersonic Cursor Canvas */
-#hypersonic-canvas {
+/* Cursor Styles - Fixed sizes */
+.cursor {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--accent-color);
+  border-radius: 50%;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: screen;
+  transition: all 0.15s ease;
+  transition-property: width, height, border-width, background-color;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  opacity: 0.15;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.25s ease;
+  transition-property: width, height, opacity, background-color;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.hover {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+  background-color: rgba(185, 28, 28, 0.2);
+}
+
+.cursor-follower.hover {
+  width: 32px;
+  height: 32px;
+  opacity: 0.08;
+  background-color: var(--primary-color);
 }
 
 /* Base Styles */
