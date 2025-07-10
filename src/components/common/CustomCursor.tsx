@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react';
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLDivElement>(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
   const cursorX = useRef(0);
@@ -14,68 +13,36 @@ const CustomCursor: React.FC = () => {
   useEffect(() => {
     const cursor = cursorRef.current;
     const follower = followerRef.current;
-    const canvas = canvasRef.current;
 
-    if (!cursor || !follower || !canvas) return;
+    if (!cursor || !follower) return;
 
+    // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    // Check if device is mobile/touch
     const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
     if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
-
-      const wake = document.createElement('span');
-      wake.className = 'cursor-wake';
-      wake.style.left = `${e.clientX}px`;
-      wake.style.top = `${e.clientY}px`;
-      canvas.appendChild(wake);
-      setTimeout(() => wake.remove(), 600);
-
-      const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
-      if (el) {
-        const bg = window.getComputedStyle(el).backgroundColor;
-        const rgb = bg.match(/\d+/g);
-        if (rgb && rgb.length >= 3) {
-          const [r, g, b] = rgb.map(Number);
-          const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-          const color = brightness > 128 ? '#064e3b' : '#ffffff';
-          cursor.style.backgroundColor = color;
-          follower.style.borderColor = color;
-        }
-      }
-    };
-
-    const handleMouseDown = () => {
-      cursor.classList.add('active');
-      const ripple = document.createElement('span');
-      ripple.className = 'cursor-ripple';
-      ripple.style.left = `${mouseX.current}px`;
-      ripple.style.top = `${mouseY.current}px`;
-      canvas.appendChild(ripple);
-      setTimeout(() => {
-        ripple.remove();
-        cursor.classList.remove('active');
-      }, 600);
     };
 
     const animateCursor = () => {
       // Main cursor - faster follow
       const dx = mouseX.current - cursorX.current;
       const dy = mouseY.current - cursorY.current;
-      cursorX.current += dx * 0.35;
-      cursorY.current += dy * 0.35;
+      cursorX.current += dx * 0.3;
+      cursorY.current += dy * 0.3;
       cursor.style.left = cursorX.current + 'px';
       cursor.style.top = cursorY.current + 'px';
 
       // Follower - slower follow
       const fdx = mouseX.current - followerX.current;
       const fdy = mouseY.current - followerY.current;
-      followerX.current += fdx * 0.1;
-      followerY.current += fdy * 0.1;
+      followerX.current += fdx * 0.15;
+      followerY.current += fdy * 0.15;
       follower.style.left = followerX.current + 'px';
       follower.style.top = followerY.current + 'px';
 
@@ -110,7 +77,6 @@ const CustomCursor: React.FC = () => {
 
     // Initial setup
     document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
     animateCursor();
     addHoverListeners();
 
@@ -135,7 +101,6 @@ const CustomCursor: React.FC = () => {
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
       observer.disconnect();
       
       // Clean up all listeners
@@ -152,7 +117,6 @@ const CustomCursor: React.FC = () => {
     <>
       <div ref={cursorRef} className="cursor" />
       <div ref={followerRef} className="cursor-follower" />
-      <div ref={canvasRef} id="hypersonic-canvas" />
     </>
   );
 };
