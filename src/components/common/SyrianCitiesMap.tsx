@@ -1,85 +1,58 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
 import { syrianCities } from '../../data/syrian_cities';
 
-const width = 378;
-const height = 368;
-
 const SyrianCitiesMap: React.FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const container = ref.current;
+    if (typeof window === 'undefined' || !mapRef.current) return;
+    const L = (window as any).L;
+    if (!L) return;
 
-    const svg = d3
-      .select(container)
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .style('position', 'absolute')
-      .style('top', 0)
-      .style('left', 0);
+    const map = L.map(mapRef.current, {
+      zoomControl: false,
+      attributionControl: false
+    }).setView([35, 38.5], 7);
 
-    const projection = d3
-      .geoMercator()
-      .center([38.9968, 34.8021])
-      .scale(2500)
-      .translate([width / 2, height / 2]);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
 
-    const tooltip = d3
-      .select(container)
-      .append('div')
-      .style('position', 'absolute')
-      .style('pointer-events', 'none')
-      .style('background', 'rgba(0,0,0,0.6)')
-      .style('color', '#fff')
-      .style('padding', '2px 4px')
-      .style('border-radius', '4px')
-      .style('font-size', '12px')
-      .style('display', 'none');
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    svg
-      .selectAll('circle')
-      .data(syrianCities)
-      .enter()
-      .append('circle')
-      .attr('cx', d => projection([d.lng, d.lat])[0])
-      .attr('cy', d => projection([d.lng, d.lat])[1])
-      .attr('r', 2)
-      .attr('fill', '#b91c1c')
-      .on('mouseenter', (event, d) => {
-        tooltip.style('display', 'block').text(d.name);
-      })
-      .on('mousemove', event => {
-        tooltip
-          .style('left', event.offsetX + 10 + 'px')
-          .style('top', event.offsetY + 10 + 'px');
-      })
-      .on('mouseleave', () => {
-        tooltip.style('display', 'none');
-      });
+    const cityIcon = L.divIcon({
+      className: 'custom-div-icon',
+      html: `<div style="background-color: #b91c1c; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></div>`,
+      iconSize: [12, 12],
+      iconAnchor: [6, 6]
+    });
+
+    syrianCities.forEach(city => {
+      L.marker([city.lat, city.lng], { icon: cityIcon })
+        .addTo(map)
+        .bindPopup(city.name);
+    });
+
+    const container = mapRef.current;
+    if (container) {
+      container.style.border = '2px solid #b91c1c';
+      container.style.borderRadius = '12px';
+      container.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    }
 
     return () => {
-      svg.remove();
-      tooltip.remove();
+      map.remove();
     };
   }, []);
 
   return (
     <div
-      ref={ref}
-      style={{
-        position: 'relative',
-        width: `${width}px`,
-        height: `${height}px`,
-        backgroundImage: "url('/slide0007_image015.png')",
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        margin: '0 auto',
-      }}
+      ref={mapRef}
+      style={{ height: '400px', width: '100%', maxWidth: '400px', margin: '0 auto' }}
     />
   );
 };
 
 export default SyrianCitiesMap;
+
