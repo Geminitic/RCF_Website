@@ -30,12 +30,13 @@
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(6, 78, 59, 0.5);
   border-radius: 50%;
+  border: 1px solid rgba(6, 78, 59, 0.5);
+  background-color: rgba(6, 78, 59, 0.2);
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out;
+  transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .cursor.hover {
@@ -49,6 +50,7 @@
   width: 50px;
   height: 50px;
   border-color: #064e3b;
+  background-color: rgba(6, 78, 59, 0.2);
 }
 
 .cursor-ripple {

@@ -6,6 +6,9 @@ const CustomCursor: React.FC = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
+  const lastX = useRef(0);
+  const lastY = useRef(0);
+  const lastTime = useRef(performance.now());
   const cursorX = useRef(0);
   const cursorY = useRef(0);
   const followerX = useRef(0);
@@ -25,6 +28,16 @@ const CustomCursor: React.FC = () => {
     if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
+      const now = performance.now();
+      const dx = e.clientX - lastX.current;
+      const dy = e.clientY - lastY.current;
+      const dt = now - lastTime.current || 1;
+      const speed = Math.sqrt(dx * dx + dy * dy) / dt;
+
+      lastX.current = e.clientX;
+      lastY.current = e.clientY;
+      lastTime.current = now;
+
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
 
@@ -35,18 +48,10 @@ const CustomCursor: React.FC = () => {
       canvas.appendChild(wake);
       setTimeout(() => wake.remove(), 600);
 
-      const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
-      if (el) {
-        const bg = window.getComputedStyle(el).backgroundColor;
-        const rgb = bg.match(/\d+/g);
-        if (rgb && rgb.length >= 3) {
-          const [r, g, b] = rgb.map(Number);
-          const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-          const color = brightness > 128 ? '#064e3b' : '#ffffff';
-          cursor.style.backgroundColor = color;
-          follower.style.borderColor = color;
-        }
-      }
+      const color = speed > 0.7 ? '#b91c1c' : '#064e3b';
+      cursor.style.backgroundColor = color;
+      follower.style.borderColor = color;
+      follower.style.backgroundColor = color + '33';
     };
 
     const handleMouseDown = () => {
