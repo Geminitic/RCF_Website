@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+Cross-Origin-Embedder-Policy: require-corp
 
 const Header: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
