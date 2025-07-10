@@ -35,10 +35,16 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setSubmitted(true);
+    try {
+      await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Failed to submit contact form', err);
+    }
     setIsSubmitting(false);
     
     // Reset form after 3 seconds
