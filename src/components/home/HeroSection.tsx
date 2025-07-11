@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t('hero-title', 'Cultivating Community-Led Solutions', 'زراعة حلول بقيادة المجتمع')}
           </motion.h1>
           
           <motion.p
@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Empowering communities in post-war regions through collaborative, community-led networks.',
-              'نُمكِّن المجتمعات في مناطق ما بعد الحرب عبر شبكات تعاونية تقودها المجتمعات.'
+              'At the Rhizome Community Foundation, we believe lasting change grows from the ground up. We support community-driven initiatives that alleviate poverty, advance education, and promote health.',
+              'في مؤسسة ريزوم المجتمعية، نؤمن بأن التغيير الدائم ينمو من الجذور. ندعم المبادرات المجتمعية التي تخفف الفقر وتعزز التعليم والصحة.'
             )}
           </motion.p>
           
@@ -207,11 +207,11 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/programs"
+              to="/contact"
               className="group inline-flex items-center px-8 py-4 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="mr-2">
-                {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
+                {t('explore-programs', 'Get Involved', 'شارك معنا')}
               </span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>

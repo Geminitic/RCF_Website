@@ -2,10 +2,9 @@ import React from 'react';
 import HeroSection from '../components/home/HeroSection';
 import AboutPreview from '../components/home/AboutPreview';
 import ProgramsPreview from '../components/home/ProgramsPreview';
-import CommunityPreview from '../components/home/CommunityPreview';
-import ImpactStats from '../components/home/ImpactStats';
-import InteractiveMap from '../components/home/InteractiveMap';
-import SentryTestButton from '../components/common/SentryTestButton';
+// Landing page now focuses on a streamlined introduction. Detailed
+// content like maps, community walls, and stats were moved to
+// dedicated pages to keep the home concise.
 
 const HomePage: React.FC = () => {
   return (
@@ -13,10 +12,7 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <AboutPreview />
       <ProgramsPreview />
-      <InteractiveMap />
-      <ImpactStats />
-      <CommunityPreview />
-      <SentryTestButton />
+      {/* Additional sections are now available on subpages. */}
     </div>
   );
 };
