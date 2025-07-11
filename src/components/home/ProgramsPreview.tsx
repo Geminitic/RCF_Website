@@ -8,12 +8,8 @@ const ProgramsPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
 
-const programs = [
-  { icon: Users, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-emerald-500 to-emerald-600', bgColor: 'from-emerald-50 to-emerald-100' },
-  { icon: Laptop, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-purple-500 to-purple-600', bgColor: 'from-purple-50 to-purple-100' },
-  { icon: BookOpen, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-blue-500 to-blue-600', bgColor: 'from-blue-50 to-blue-100' },
-  { icon: FileText, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-orange-500 to-orange-600', bgColor: 'from-orange-50 to-orange-100' }
-];
+const programs: any[] = [];
+
   return (
     <section className="py-20 bg-gradient-to-br from-stone-50 to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,14 +21,11 @@ const programs = [
           className={`text-center mb-16 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
           <h2 className="text-4xl font-bold text-stone-900 mb-6">
-            {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
+            {t('programs-title', '', '')}
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
             {t(
-              'programs-description',
-              'Innovative programs that bridge communities, amplify voices, and create lasting impact through education, culture, and collaborative action.',
-              'برامج مبتكرة تربط المجتمعات وتضخم الأصوات وتخلق تأثيراً دائماً من خلال التعليم والثقافة والعمل التشاركي.'
-            )}
+              'programs-description', '', '')}
           </p>
         </motion.div>
 

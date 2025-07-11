@@ -4,6 +4,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { PhotoProvider } from './contexts/PhotoContext';
 import { UserProvider } from './contexts/UserContext';
 import Navigation from './components/layout/Navigation';
+import ExperimentalBanner from './components/common/ExperimentalBanner';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -30,6 +31,7 @@ function App() {
             <LoadingScreen />
             <CustomCursor />
             <Navigation />
+            <ExperimentalBanner />
             <main>
               <Routes>
                 <Route path="/" element={<HomePage />} />

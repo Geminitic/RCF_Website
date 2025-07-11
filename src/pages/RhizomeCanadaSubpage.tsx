@@ -7,44 +7,7 @@ import '../styles/rhizome-canada.css';
 const RhizomeCanadaSubpage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
-  const programs = [
-    {
-      id: '1',
-      title: 'Community Garden Project',
-      titleAr: 'مشروع الحديقة المجتمعية',
-      description: 'Urban agriculture initiative fostering food security and intercultural connections in Edmonton.',
-      descriptionAr: 'مبادرة زراعة حضرية تعزز الأمن الغذائي والروابط الثقافية في إدمونتون.',
-      participants: 85,
-      location: 'Edmonton, Canada',
-      locationAr: 'إدمونتون، كندا',
-      icon: Leaf,
-      gradient: 'var(--rc-gradient-nature)'
-    },
-    {
-      id: '2',
-      title: 'Syrian Film Festival',
-      titleAr: 'مهرجان الأفلام السورية',
-      description: 'Annual celebration of Syrian cinema and storytelling, building cultural bridges.',
-      descriptionAr: 'احتفال سنوي بالسينما السورية والسرد، بناء الجسور الثقافية.',
-      participants: 200,
-      location: 'Edmonton, Canada',
-      locationAr: 'إدمونتون، كندا',
-      icon: Star,
-      gradient: 'var(--rc-gradient-canadian)'
-    },
-    {
-      id: '3',
-      title: 'Nonprofit Partnerships',
-      titleAr: 'شراكات المنظمات غير الربحية',
-      description: 'Convening Syrian and allied organizations across Western Canada for collaborative impact.',
-      descriptionAr: 'تجميع المنظمات السورية والمتحالفة عبر غرب كندا للتأثير التعاوني.',
-      participants: 150,
-      location: 'Western Canada',
-      locationAr: 'غرب كندا',
-      icon: Mountain,
-      gradient: 'var(--rc-gradient-forest)'
-    }
-  ];
+  const programs: any[] = [];
 
   const products = [
     {

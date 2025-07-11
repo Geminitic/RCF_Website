@@ -71,14 +71,10 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
-              {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
+              {t('programs-title', '', '')}
             </h1>
             <p className="text-xl text-emerald-100 mb-8 max-w-4xl mx-auto">
-              {t(
-                'programs-subtitle',
-                'Bridging Syrian communities across Syria and Canada through grassroots innovation, cultural exchange, and collaborative leadership. Our cross-border partnership delivers transformative programs that amplify local voices and diaspora expertise.',
-                'نربط المجتمعات السورية عبر سوريا وكندا من خلال الابتكار الشعبي والتبادل الثقافي والقيادة التشاركية. شراكتنا عبر الحدود تقدم برامج تحويلية تضخم الأصوات المحلية وخبرات الشتات.'
-              )}
+              {t('programs-subtitle', '', '')}
             </p>
 
             {/* Stats */}
@@ -259,26 +255,22 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
             <h2 className="text-4xl font-bold mb-6">
-              {t('join-network-title', 'Join Our Network', 'انضم إلى شبكتنا')}
+              {t('join-network-title', '', '')}
             </h2>
             <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
-              {t(
-                'join-network-description',
-                'Whether in Syria or Canada, your participation helps us grow resilient, empowered communities.',
-                'سواء في سوريا أو كندا، مشاركتك تساعدنا في نمو مجتمعات مرنة وممكنة.'
-              )}
+              {t('join-network-description', '', '')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:bg-emerald-50 transition-colors">
-                {t('apply-now', 'Apply Now', 'تقدم الآن')}
+                {t('apply-now', '', '')}
               </button>
               <button className="px-8 py-4 bg-emerald-800 text-white font-semibold rounded-full hover:bg-emerald-900 transition-colors">
-                {t('volunteer', 'Volunteer', 'تطوع')}
+                {t('volunteer', '', '')}
               </button>
             </div>
             <div className="mt-6 text-emerald-200">
               <p>
-                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhiozmefoundation.ca
+                {t('contact-programs', '', '')}
               </p>
             </div>
           </motion.div>
