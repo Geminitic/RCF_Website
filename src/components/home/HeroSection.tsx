@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t('hero-title', 'Cultivating Community-Led Solutions', 'زراعة حلول يقودها المجتمع')}
           </motion.h1>
           
           <motion.p
@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Empowering communities in post-war regions through collaborative, community-led networks.',
-              'نُمكِّن المجتمعات في مناطق ما بعد الحرب عبر شبكات تعاونية تقودها المجتمعات.'
+              'At the Rhizome Community Foundation, we believe that true, lasting change grows from the ground up. Like the rhizome plant—spreading horizontally and connecting deeply—our work builds resilient networks that empower communities to create their own solutions. We support community-driven initiatives to alleviate poverty, advance education, and promote health, honoring local knowledge and fostering sustainable wellbeing. Connect. Support. Transform.',
+              'في مؤسسة ريزوم المجتمعية نؤمن أن التغيير المستدام يبدأ من القاعدة. مثل جذور الريزوم التي تنتشر أفقياً وتتصل بعمق، نبني شبكات مرنة تمكّن المجتمعات من ابتكار حلولها الخاصة. ندعم المبادرات المجتمعية التي تخفف الفقر وتعزز التعليم والصحة مع احترام المعرفة المحلية وبناء سبل رفاهٍ مستدامة. تواصل، دعم، تحول.'
             )}
           </motion.p>
           
@@ -207,20 +207,11 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/programs"
+              to="/contact"
               className="group inline-flex items-center px-8 py-4 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              <span className="mr-2">
-                {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
-              </span>
+              <span className="mr-2">{t('get-involved', 'Get Involved', 'شارك')}</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
-            >
-              {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>
           </motion.div>
         </motion.div>

@@ -39,14 +39,14 @@ const AboutPreview: React.FC = () => {
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
             <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
-              {t('about-title', 'Our Purpose', 'رسالتنا')}
+              {t('about-title', 'Cultivating Community-Led Solutions', 'زراعة حلول يقودها المجتمع')}
             </h2>
             
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'The Rhizome Community Foundation is a Canadian not-for-profit organization dedicated to amplifying the voices and agency of communities disproportionately affected by intersecting challenges. Our mission is to empower these communities to identify and drive their own priorities, fostering innovative, locally-led solutions that address their distinct and evolving needs.',
-                'مؤسسة مجتمع رايزوم هي منظمة غير ربحية كندية مكرسة لتعزيز صوت ووكالة المجتمعات المتأثرة بشكل غير متناسب بالتحديات المتقاطعة. رسالتنا هي تمكين هذه المجتمعات من تحديد أولوياتها وقيادتها بنفسها من خلال حلول مبتكرة محلية تستجيب لاحتياجاتها المميزة والمتطورة.'
+                'At the Rhizome Community Foundation, we believe in the power of communities to create their own solutions. Like our namesake, we spread horizontally, creating resilient networks that adapt, grow, and thrive even in challenging environments. We work to alleviate poverty, advance education, and promote health through community-centered approaches that honor local wisdom and build sustainable pathways to wellbeing.',
+                'نؤمن في مؤسسة ريزوم المجتمعية بقدرة المجتمعات على ابتكار حلولها الخاصة. مثل اسمنا، نمتد أفقياً لننشئ شبكات مرنة تتكيف وتنمو حتى في البيئات الصعبة. نعمل على تخفيف الفقر وتعزيز التعليم والصحة عبر طرق تتمحور حول المجتمع وتحترم المعرفة المحلية وتبني مسارات مستدامة للرفاه.'
               )}
             </p>
 

@@ -41,52 +41,7 @@ const CalendarPage: React.FC = () => {
     { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
   ];
 
-  const initialEvents: CalendarEvent[] = [
-    {
-      id: '1',
-      title: 'Digital Literacy Workshop',
-      titleAr: 'ورشة محو الأمية الرقمية',
-      category: 'workshop',
-      date: '2024-02-15',
-      time: '10:00 AM',
-      timeAr: '10:00 صباحاً',
-      duration: '3 hours',
-      durationAr: '3 ساعات',
-      location: 'Toronto Community Center',
-      locationAr: 'مركز تورونتو المجتمعي',
-      description: 'Learn essential digital skills for job searching and online communication.',
-      descriptionAr: 'تعلم المهارات الرقمية الأساسية للبحث عن عمل والتواصل عبر الإنترنت.',
-      attendees: 25,
-      maxAttendees: 30,
-      isOnline: false,
-      registrationRequired: true,
-      organizer: 'Rhizome Canada',
-      organizerAr: 'ريزوم كندا',
-      priority: 3
-    },
-    {
-      id: '2',
-      title: 'Syrian Heritage Storytelling Night',
-      titleAr: 'ليلة سرد التراث السوري',
-      category: 'cultural',
-      date: '2024-02-18',
-      time: '7:00 PM',
-      timeAr: '7:00 مساءً',
-      duration: '2 hours',
-      durationAr: 'ساعتان',
-      location: 'Virtual Event',
-      locationAr: 'فعالية افتراضية',
-      description: 'Share and listen to stories that preserve our cultural heritage.',
-      descriptionAr: 'شارك واستمع إلى القصص التي تحافظ على تراثنا الثقافي.',
-      attendees: 45,
-      maxAttendees: 100,
-      isOnline: true,
-      registrationRequired: true,
-      organizer: 'Cultural Preservation Team',
-      organizerAr: 'فريق الحفاظ على الثقافة',
-      priority: 2
-    }
-  ];
+  const initialEvents: CalendarEvent[] = [];
 
   useEffect(() => {
     fetchEvents();
