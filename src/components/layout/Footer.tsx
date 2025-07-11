@@ -87,8 +87,14 @@ const Footer: React.FC = () => {
           </motion.div>
         </div>
 
+        <div className="text-center mt-8">
+          <p className={`text-sm text-amber-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}> 
+            {t('experimental-note', 'This website is an experimental release. Features may change.', 'هذا الموقع إصدار تجريبي وقد تتغير خصائصه.')}
+          </p>
+        </div>
+
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}> 
             {t('copyright', '© 2024 Rhizome Community Foundation. All rights reserved.', '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.')}
           </p>
         </div>
