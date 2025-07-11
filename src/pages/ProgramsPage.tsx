@@ -71,13 +71,13 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
-              {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
+              {t('programs-title', 'Programs Coming Soon', 'البرامج قيد الإعداد')}
             </h1>
             <p className="text-xl text-emerald-100 mb-8 max-w-4xl mx-auto">
               {t(
                 'programs-subtitle',
-                'Bridging Syrian communities across Syria and Canada through grassroots innovation, cultural exchange, and collaborative leadership. Our cross-border partnership delivers transformative programs that amplify local voices and diaspora expertise.',
-                'نربط المجتمعات السورية عبر سوريا وكندا من خلال الابتكار الشعبي والتبادل الثقافي والقيادة التشاركية. شراكتنا عبر الحدود تقدم برامج تحويلية تضخم الأصوات المحلية وخبرات الشتات.'
+                'We are developing a range of community-led initiatives. Details will be posted here as programs launch.',
+                'نعمل على تطوير مجموعة من المبادرات التي يقودها المجتمع، وسيتم نشر التفاصيل هنا عند إطلاق البرامج.'
               )}
             </p>
 

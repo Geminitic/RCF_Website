@@ -25,13 +25,13 @@ const programs = [
           className={`text-center mb-16 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
           <h2 className="text-4xl font-bold text-stone-900 mb-6">
-            {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
+            {t('programs-title', 'Programs Coming Soon', 'البرامج قيد الإعداد')}
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
             {t(
               'programs-description',
-              'Innovative programs that bridge communities, amplify voices, and create lasting impact through education, culture, and collaborative action.',
-              'برامج مبتكرة تربط المجتمعات وتضخم الأصوات وتخلق تأثيراً دائماً من خلال التعليم والثقافة والعمل التشاركي.'
+              'We are preparing a lineup of initiatives. Please check back later for details.',
+              'نقوم حالياً بإعداد مجموعة من المبادرات. يرجى العودة لاحقاً لمعرفة التفاصيل.'
             )}
           </p>
         </motion.div>

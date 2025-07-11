@@ -196,13 +196,13 @@ const AboutPage: React.FC = () => {
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
-              {t('about-title', 'About Rhizome Community Foundation', 'عن مؤسسة ريزوم المجتمعية')}
+              {t('about-title', 'Cultivating Community-Led Solutions', 'زراعة حلول يقودها المجتمع')}
             </h1>
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
               {t(
                 'about-subtitle',
-                'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'At the Rhizome Community Foundation, we believe that true, lasting change grows from the ground up. Like the rhizome plant—spreading horizontally and connecting deeply—our work builds resilient networks that empower communities to create their own solutions. We support community-driven initiatives to alleviate poverty, advance education, and promote health, honoring local knowledge and fostering sustainable wellbeing.',
+                'في مؤسسة ريزوم المجتمعية نؤمن أن التغيير المستدام يبدأ من القاعدة. مثل جذور الريزوم التي تنتشر أفقياً وتتصل بعمق، نبني شبكات مرنة تمكّن المجتمعات من ابتكار حلولها الخاصة. ندعم المبادرات المجتمعية التي تخفف الفقر وتعزز التعليم والصحة مع احترام المعرفة المحلية وبناء سبل رفاه مستدامة.'
               )}
             </p>
           </motion.div>
