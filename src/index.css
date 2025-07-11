@@ -28,14 +28,15 @@
 
 .cursor-follower {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(6, 78, 59, 0.5);
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  border: 1px solid rgba(185, 28, 28, 0.5);
+  background-color: rgba(185, 28, 28, 0.2);
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out;
+  transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .cursor.hover {
@@ -46,9 +47,10 @@
 }
 
 .cursor-follower.hover {
-  width: 50px;
-  height: 50px;
-  border-color: #064e3b;
+  width: 40px;
+  height: 40px;
+  border-color: #b91c1c;
+  background-color: rgba(185, 28, 28, 0.2);
 }
 
 .cursor-ripple {
