@@ -7,53 +7,13 @@ import { useLanguage } from '../../contexts/LanguageContext';
 const ProgramsPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
-  const programs = [
-    {
-      icon: Users,
-      title: 'Network Building',
-      titleAr: 'بناء الشبكات',
-      description:
-        'Connecting grassroots organizations and community initiatives through decentralized collaboration models.',
-      descriptionAr:
-        'ربط المنظمات والمبادرات المجتمعية من خلال نماذج تعاون لامركزية.',
-      color: 'from-emerald-500 to-emerald-600',
-      bgColor: 'from-emerald-50 to-emerald-100'
-    },
-    {
-      icon: Laptop,
-      title: 'Capacity Development',
-      titleAr: 'تنمية القدرات',
-      description:
-        'Providing training, resources, and technical support to strengthen organizational effectiveness.',
-      descriptionAr:
-        'تقديم التدريب والموارد والدعم الفني لتعزيز فعالية المنظمات.',
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'from-purple-50 to-purple-100'
-    },
-    {
-      icon: BookOpen,
-      title: 'Knowledge Sharing',
-      titleAr: 'تبادل المعرفة',
-      description:
-        'Creating platforms and resources for best practice exchange and collaborative learning.',
-      descriptionAr:
-        'إنشاء منصات وموارد لتبادل أفضل الممارسات والتعلم التعاوني.',
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'from-blue-50 to-blue-100'
-    },
-    {
-      icon: FileText,
-      title: 'Research & Documentation',
-      titleAr: 'البحث والتوثيق',
-      description:
-        'Evidence-based research to inform community development and policy recommendations.',
-      descriptionAr:
-        'بحوث مبنية على الأدلة لإرشاد تنمية المجتمع والتوصيات السياساتية.',
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'from-orange-50 to-orange-100'
-    }
-  ];
 
+const programs = [
+  { icon: Users, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-emerald-500 to-emerald-600', bgColor: 'from-emerald-50 to-emerald-100' },
+  { icon: Laptop, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-purple-500 to-purple-600', bgColor: 'from-purple-50 to-purple-100' },
+  { icon: BookOpen, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-blue-500 to-blue-600', bgColor: 'from-blue-50 to-blue-100' },
+  { icon: FileText, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-orange-500 to-orange-600', bgColor: 'from-orange-50 to-orange-100' }
+];
   return (
     <section className="py-20 bg-gradient-to-br from-stone-50 to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
