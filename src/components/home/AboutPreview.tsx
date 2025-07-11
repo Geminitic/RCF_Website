@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'Rhizome Community Foundation (RCF) is a Canadian-registered nonprofit empowering communities in post-war zones—beginning with Syria—through grassroots initiatives and local leadership. Operating as a decentralized "rhizome" network, RCF bridges Syrian and Canadian teams to foster community-driven development and shared resources.',
-                'مؤسسة ريزوم المجتمعية مسجلة في كندا وتعمل على تمكين المجتمعات في مناطق ما بعد الحرب—بدءاً من سوريا—عبر المبادرات الشعبية والقيادة المحلية. تدير المؤسسة شبكة جذمورية لامركزية تصل الفرق السورية والكندية لدعم التنمية المجتمعية وتبادل الموارد.'
+                'The Rhizome Community Foundation is a Canadian not-for-profit organization dedicated to amplifying the voices and agency of communities disproportionately affected by intersecting challenges. Our mission is to empower these communities to identify and drive their own priorities, fostering innovative, locally-led solutions that address their distinct and evolving needs.',
+                'مؤسسة مجتمع رايزوم هي منظمة غير ربحية كندية مكرسة لتعزيز صوت ووكالة المجتمعات المتأثرة بشكل غير متناسب بالتحديات المتقاطعة. رسالتنا هي تمكين هذه المجتمعات من تحديد أولوياتها وقيادتها بنفسها من خلال حلول مبتكرة محلية تستجيب لاحتياجاتها المميزة والمتطورة.'
               )}
             </p>
 

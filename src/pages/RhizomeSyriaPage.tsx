@@ -47,6 +47,56 @@ const RhizomeSyriaPage: React.FC = () => {
     }
   ];
 
+  const methods = [
+    {
+      en: 'Open dialogue: bridging gaps between rural and urban areas and between experts and communities without intermediaries.',
+      ar: 'الحوار المفتوح: جسر الفجوات بين الريف والمدن، وبين الخبراء والمجتمع، دون وسطاء.'
+    },
+    {
+      en: 'Capacity building: empowering individuals and community organizations to manage their resources independently.',
+      ar: 'بناء القدرات: تمكين الأفراد والمؤسسات المجتمعية لإدارة مواردها باستقلالية.'
+    },
+    {
+      en: 'Local networks: a flexible development model relying on youth creativity and horizontal collaboration.',
+      ar: 'الشبكات المحلية: نموذج تنموي مرن يعتمد على إبداع الشباب والتعاون الأفقي.'
+    },
+    {
+      en: 'Justice and empowerment: strengthening civil society sovereignty and embracing restorative justice.',
+      ar: 'العدالة والتمكين: تعزيز سيادة المجتمع المدني وتبني العدالة غير الانتقامية.'
+    },
+    {
+      en: 'Participatory leadership: involving local communities in decision making from planning to implementation.',
+      ar: 'القيادة التشاركية: إشراك المجتمعات المحلية في صناعة القرار من التخطيط حتى التنفيذ.'
+    },
+    {
+      en: 'Economic transformation: shifting from relief to business incubators that support small projects and create jobs.',
+      ar: 'التحول الاقتصادي: الانتقال من الإغاثة إلى حاضنات الأعمال التي تدعم المشاريع الصغيرة وتخلق فرص العمل.'
+    },
+    {
+      en: 'Productive infrastructure: investing in competitive sectors such as agriculture and handicrafts.',
+      ar: 'البنية التحتية المنتجة: استثمار الموارد في القطاعات ذات الميزة التنافسية كالزراعة والصناعات الحرفية.'
+    },
+    {
+      en: 'Integrative methodology: combining scientific data with traditional knowledge to craft pathways of change.',
+      ar: 'منهجية تكاملية: الجمع بين البيانات العلمية والمعرفة التقليدية لصياغة مسارات التغيير.'
+    }
+  ];
+
+  const goals = [
+    {
+      en: 'Data-driven transformation – informed decisions and collective advancement.',
+      ar: 'تحوّل تقوده البيانات\nقرارات مستنيرة، ونهوض جماعي'
+    },
+    {
+      en: 'Empowering self-determination – communities in the lead.',
+      ar: 'تمكين الإرادة الذاتية\nالمجتمعات في موقع القيادة'
+    },
+    {
+      en: 'Shifting power dynamics – dismantling hierarchy and radical collaboration.',
+      ar: 'قلب موازين القوة\nتفكيك الهرمية، وتعاون جذري'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#6B46C1]/20 via-[#0EA5E9]/20 via-[#F97316]/20 to-[#EF4444]/20 pt-16 relative overflow-hidden">
       {/* Syrian Map Background */}
@@ -153,6 +203,56 @@ const RhizomeSyriaPage: React.FC = () => {
                 {t('join-community', 'Join the Movement', 'انضم للحراك')}
               </button>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="py-16 bg-white/90">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              {t('overview-title', 'About Rhizome Syria', 'عن ريزوم سوريا')}
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              {t(
+                'overview-intro',
+                'Rhizome Syria brings together the vibrant voices of Syrian civil society in a complementary alliance and decentralized nodal network. Through this initiative we aim to rebuild Syria with the will and hands of its people. We believe horizontal and vertical cooperation and quick adaptation require a decentralized organizational fabric akin to a natural rhizome: without beginning or end, with interwoven growth sustainable in all circumstances, forming integrated networked pathways for a cohesive, stable society.',
+                'رايزوم سوريا تجمع كافة الأصوات النابضة في المجتمع المدني السوري ضمن تحالف تكاملي وشبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم. نؤمن بأن التعاون الأفقي والعمودي والتكيف السريع يتطلب نسيجاً تنظيمياً لامركزياً يشبه شبكة الجذمور الطبيعية‏ بلا بداية ولا نهاية ونمو متداخل مستدام في كل الظروف، ومسارات عمل شبكية متكاملة لبناء مجتمع متماسك ومستقر.'
+              )}
+            </p>
+
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              {t('methods-heading', 'Our Approach', 'الوسائل')}
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 mb-6">
+              {methods.map((item, index) => (
+                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+              ))}
+            </ul>
+
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              {t('goals-heading', 'Our Goals', 'الأهداف')}
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 mb-6">
+              {goals.map((item, index) => (
+                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+              ))}
+            </ul>
+
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t(
+                'partnership-text',
+                'Rhizome Syria works in partnership with the Canadian Rhizome Community Foundation, under Syrian leadership, to reimagine international funding and enhance the agency of communities affected by intersecting challenges. This model empowers local communities to set their priorities and craft solutions rooted in their reality, linking them to global resources while protecting them from external pressure without compromising international standards.',
+                'تعمل ريزوم سوريا بالشراكة مع مؤسسة ريزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
+              )}
+            </p>
           </motion.div>
         </div>
       </section>
