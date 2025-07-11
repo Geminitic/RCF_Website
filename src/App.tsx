@@ -16,6 +16,8 @@ import AdminApprovalPage from './pages/AdminApprovalPage';
 import RhizomeSyriaSubpage from './pages/RhizomeSyriaSubpage';
 import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
 import KnowledgeHubPage from './pages/KnowledgeHubPage';
+import ImpactPage from './pages/ImpactPage';
+import MapPage from './pages/MapPage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
 import LoadingScreen from './components/common/LoadingScreen';
@@ -38,6 +40,8 @@ function App() {
                 <Route path="/rhizome-syria" element={<RhizomeSyriaPage />} />
                 <Route path="/community-wall" element={<CommunityWallPage />} />
                 <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
+                <Route path="/impact" element={<ImpactPage />} />
+                <Route path="/map" element={<MapPage />} />
                 <Route path="/calendar" element={<CalendarPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/admin" element={<AdminApprovalPage />} />

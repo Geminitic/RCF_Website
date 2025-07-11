@@ -3,9 +3,7 @@ import HeroSection from '../components/home/HeroSection';
 import AboutPreview from '../components/home/AboutPreview';
 import ProgramsPreview from '../components/home/ProgramsPreview';
 import CommunityPreview from '../components/home/CommunityPreview';
-import ImpactStats from '../components/home/ImpactStats';
-import InteractiveMap from '../components/home/InteractiveMap';
-import SentryTestButton from '../components/common/SentryTestButton';
+// Landing page now focuses on key highlights only
 
 const HomePage: React.FC = () => {
   return (
@@ -13,10 +11,7 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <AboutPreview />
       <ProgramsPreview />
-      <InteractiveMap />
-      <ImpactStats />
       <CommunityPreview />
-      <SentryTestButton />
     </div>
   );
 };
