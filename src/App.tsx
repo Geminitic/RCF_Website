@@ -29,6 +29,9 @@ function App() {
           <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
             <LoadingScreen />
             <CustomCursor />
+            <div className="bg-yellow-300 text-center text-xs py-2 text-stone-800 font-semibold">
+              Experimental Release - This website is a work in progress
+            </div>
             <Navigation />
             <main>
               <Routes>
