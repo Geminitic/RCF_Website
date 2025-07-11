@@ -54,9 +54,9 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
     : programs.filter(program => program.category === selectedCategory);
 
   const stats = [
-    { label: 'Active Programs', labelAr: 'برامج نشطة', value: programs.filter(p => p.status === 'active').length },
-    { label: 'Anticipated Participants', labelAr: 'المشاركون المتوقعون', value: 5000 },
-    { label: 'Countries', labelAr: 'دولة', value: 2 }
+    { label: 'Active Programs', labelAr: 'برامج نشطة', value: 0 },
+    { label: 'Anticipated Participants', labelAr: 'المشاركون المتوقعون', value: 0 },
+    { label: 'Countries', labelAr: 'دولة', value: 0 }
   ];
 
   return (
@@ -152,11 +152,11 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={program.image}
-                    alt={t('program-title', program.title, program.titleAr)}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
+                  <div className="w-full h-full flex items-center justify-center bg-stone-200">
+                    <span className="text-stone-500 text-xs">
+                      {t('image-placeholder', 'Image pending', 'لا توجد صورة')}
+                    </span>
+                  </div>
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       program.status === 'active' 

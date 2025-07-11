@@ -33,12 +33,13 @@ const Navigation: React.FC = () => {
   ];
 
   return (
+    <>
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -189,6 +190,14 @@ const Navigation: React.FC = () => {
         )}
       </AnimatePresence>
     </motion.nav>
+    <div className="bg-yellow-100 text-yellow-800 text-center text-sm py-2">
+      {t(
+        'experimental-release',
+        'This website is an experimental release. Content may change.',
+        'هذا الموقع إصدار تجريبي والمحتوى قابل للتغيير.'
+      )}
+    </div>
+    </>
   );
 };
 

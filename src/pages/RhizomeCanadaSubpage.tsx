@@ -7,44 +7,18 @@ import '../styles/rhizome-canada.css';
 const RhizomeCanadaSubpage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
-  const programs = [
-    {
-      id: '1',
-      title: 'Community Garden Project',
-      titleAr: 'مشروع الحديقة المجتمعية',
-      description: 'Urban agriculture initiative fostering food security and intercultural connections in Edmonton.',
-      descriptionAr: 'مبادرة زراعة حضرية تعزز الأمن الغذائي والروابط الثقافية في إدمونتون.',
-      participants: 85,
-      location: 'Edmonton, Canada',
-      locationAr: 'إدمونتون، كندا',
-      icon: Leaf,
-      gradient: 'var(--rc-gradient-nature)'
-    },
-    {
-      id: '2',
-      title: 'Syrian Film Festival',
-      titleAr: 'مهرجان الأفلام السورية',
-      description: 'Annual celebration of Syrian cinema and storytelling, building cultural bridges.',
-      descriptionAr: 'احتفال سنوي بالسينما السورية والسرد، بناء الجسور الثقافية.',
-      participants: 200,
-      location: 'Edmonton, Canada',
-      locationAr: 'إدمونتون، كندا',
-      icon: Star,
-      gradient: 'var(--rc-gradient-canadian)'
-    },
-    {
-      id: '3',
-      title: 'Nonprofit Partnerships',
-      titleAr: 'شراكات المنظمات غير الربحية',
-      description: 'Convening Syrian and allied organizations across Western Canada for collaborative impact.',
-      descriptionAr: 'تجميع المنظمات السورية والمتحالفة عبر غرب كندا للتأثير التعاوني.',
-      participants: 150,
-      location: 'Western Canada',
-      locationAr: 'غرب كندا',
-      icon: Mountain,
-      gradient: 'var(--rc-gradient-forest)'
-    }
-  ];
+  const programs = Array.from({ length: 3 }, (_, i) => ({
+    id: String(i + 1),
+    title: '',
+    titleAr: '',
+    description: '',
+    descriptionAr: '',
+    participants: 0,
+    location: '',
+    locationAr: '',
+    icon: [Leaf, Star, Mountain][i],
+    gradient: ['var(--rc-gradient-nature)', 'var(--rc-gradient-canadian)', 'var(--rc-gradient-forest)'][i]
+  }));
 
   const products = [
     {
@@ -382,11 +356,11 @@ const RhizomeCanadaSubpage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <img 
-                src="/WhatsApp Image 2025-06-19 at 12.35.10 PM.jpeg" 
-                alt="Community Garden" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+              <div className="w-full h-64 rounded-2xl shadow-2xl bg-stone-200 flex items-center justify-center">
+                <span className="text-stone-500 text-sm">
+                  {t('image-placeholder', 'Image pending', 'لا توجد صورة')}
+                </span>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent rounded-2xl" />
             </motion.div>
           </div>
