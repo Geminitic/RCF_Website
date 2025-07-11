@@ -59,8 +59,8 @@ const ContactPage: React.FC = () => {
       icon: Mail,
       title: 'Email Us',
       titleAr: 'راسلنا',
-      details: ['info@rhizomsyria.org', 'info@rhiozmefoundation.ca'],
-      detailsAr: ['info@rhizomsyria.org', 'info@rhiozmefoundation.ca']
+      details: ['info@rhizomsyria.org', 'info@rhizomefoundation.ca'],
+      detailsAr: ['info@rhizomsyria.org', 'info@rhizomefoundation.ca']
     },
     {
       icon: Phone,
@@ -73,8 +73,8 @@ const ContactPage: React.FC = () => {
       icon: MapPin,
       title: 'Visit Us',
       titleAr: 'زرنا',
-      details: ['Toronto, Canada', 'Damascus, Syria'],
-      detailsAr: ['تورونتو، كندا', 'دمشق، سوريا']
+      details: ['Edmonton, Canada', 'Latakia, Syria'],
+      detailsAr: ['إدمونتون، كندا', 'اللاذقية، سوريا']
     },
     {
       icon: Clock,
@@ -96,22 +96,26 @@ const ContactPage: React.FC = () => {
     {
       name: 'Rhizome Canada',
       nameAr: 'ريزوم كندا',
-      address: '123 Community Street, Toronto, ON M5V 3A8, Canada',
-      addressAr: '123 شارع المجتمع، تورونتو، أونتاريو M5V 3A8، كندا',
+      address: '2028 157 St S.W, T6W 5ER Edmonton, Canada',
+      addressAr: '2028 157 ستريت جنوب غرب، T6W 5ER، إدمونتون، كندا',
       phone: '+1 (416) 555-0123',
-      email: 'info@rhiozmefoundation.ca',
+      email: 'info@rhizomefoundation.ca',
       hours: 'Mon-Fri: 9AM-6PM EST',
-      hoursAr: 'الإثنين-الجمعة: 9ص-6م بتوقيت شرق أمريكا'
+      hoursAr: 'الإثنين-الجمعة: 9ص-6م بتوقيت شرق أمريكا',
+      mapUrl:
+        'https://www.openstreetmap.org/export/embed.html?bbox=-113.7138411%2C53.3372558%2C-113.2714783%2C53.7162646&layer=mapnik'
     },
     {
       name: 'Rhizome Syria',
       nameAr: 'ريزوم سوريا',
-      address: 'Damascus Community Center, Old City, Damascus, Syria',
-      addressAr: 'مركز دمشق المجتمعي، المدينة القديمة، دمشق، سوريا',
+      address: 'Latakia Sheikh Daher Square, 1st floor facing Saladin bookstore',
+      addressAr: 'اللاذقية، ساحة الشيخ ضاهر، الطابق الأول مقابل مكتبة صلاح الدين',
       phone: '+963 11 555-0456',
       email: 'info@rhizomsyria.org',
       hours: 'Sun-Thu: 9AM-5PM Damascus Time',
-      hoursAr: 'الأحد-الخميس: 9ص-5م بتوقيت دمشق'
+      hoursAr: 'الأحد-الخميس: 9ص-5م بتوقيت دمشق',
+      mapUrl:
+        'https://www.openstreetmap.org/export/embed.html?bbox=35.6181044%2C35.3600185%2C35.9381044%2C35.6800185&layer=mapnik'
     }
   ];
 
@@ -430,6 +434,19 @@ const ContactPage: React.FC = () => {
                       {t(`office-${index}-hours`, office.hours, office.hoursAr)}
                     </p>
                   </div>
+
+                  {office.mapUrl && (
+                    <div className="mt-4">
+                      <iframe
+                        src={office.mapUrl}
+                        style={{ border: 0 }}
+                        width="100%"
+                        height="200"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-stone-200">

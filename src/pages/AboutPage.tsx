@@ -99,7 +99,7 @@ const AboutPage: React.FC = () => {
       focus: 'On-ground community building and direct support',
       focusAr: 'بناء المجتمع الميداني والدعم المباشر',
       programs: 6,
-      members: 800,
+      beneficiaries: 800,
       image: '/WhatsApp Image 2025-06-19 at 12.35.09 PM.jpeg'
     },
     {
@@ -110,7 +110,7 @@ const AboutPage: React.FC = () => {
       focus: 'Diaspora engagement and international coordination',
       focusAr: 'إشراك الشتات والتنسيق الدولي',
       programs: 3,
-      members: 650,
+      beneficiaries: 650,
       image: '/WhatsApp Image 2025-06-19 at 12.35.10 PM.jpeg'
     }
   ];
@@ -381,9 +381,9 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
                     <div className="text-center bg-stone-100 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-stone-600">{branch.members}</div>
+                      <div className="text-2xl font-bold text-stone-600">{branch.beneficiaries}</div>
                       <div className={`text-sm text-stone-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                        {t('members', 'Members', 'أعضاء')}
+                        {t('beneficiaries', 'Beneficiaries', 'المستفيدون')}
                       </div>
                     </div>
                   </div>

@@ -278,7 +278,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             </div>
             <div className="mt-6 text-emerald-200">
               <p>
-                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhiozmefoundation.ca
+                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhizomefoundation.ca
               </p>
             </div>
           </motion.div>
