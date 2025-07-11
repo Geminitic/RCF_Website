@@ -59,8 +59,8 @@ const ContactPage: React.FC = () => {
       icon: Mail,
       title: 'Email Us',
       titleAr: 'راسلنا',
-      details: ['info@rhizomsyria.org', 'info@rhizomefoundation.ca'],
-      detailsAr: ['info@rhizomsyria.org', 'info@rhizomefoundation.ca']
+      details: ['info@rhizomefoundation.ca'],
+      detailsAr: ['info@rhizomefoundation.ca']
     },
     {
       icon: Phone,
@@ -73,8 +73,14 @@ const ContactPage: React.FC = () => {
       icon: MapPin,
       title: 'Visit Us',
       titleAr: 'زرنا',
-      details: ['Edmonton, Canada', 'Latakia, Syria'],
-      detailsAr: ['إدمونتون، كندا', 'اللاذقية، سوريا']
+      details: [
+        '2028 157 St S.W T6W 5ER Edmonton, Canada',
+        'Latakia Sheikh Daher Square, 1st floor facing Saladin bookstore'
+      ],
+      detailsAr: [
+        '2028 157 ستريت جنوب غرب، T6W 5ER، إدمونتون، كندا',
+        'اللاذقية، ساحة الشيخ ضاهر، الطابق الأول مقابل مكتبة صلاح الدين'
+      ]
     },
     {
       icon: Clock,

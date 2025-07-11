@@ -229,8 +229,8 @@ const AboutPage: React.FC = () => {
               <p className={`text-lg text-stone-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                 {t(
                   'mission-text',
-                  'We cultivate resilient networks that unite communities of heritage, resilience, and transformation, fostering collaboration, safeguarding cultural heritage, and empowering individuals to drive meaningful transformation in their communities.',
-                  'نرعى شبكات مرنة توحد مجتمعات الإرث والمرونة والتحول، نعزز التعاون ونحمي التراث الثقافي ونمكن الأفراد من قيادة التحول الهادف في مجتمعاتهم.'
+                  'We empower underrepresented communities through local solutions that build resilience, leadership, and sustainable development.',
+                  'نمكن المجتمعات المهمشة من خلال حلول محلية تبني المرونة والقيادة والتنمية المستدامة.'
                 )}
               </p>
             </motion.div>
