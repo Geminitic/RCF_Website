@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.3 }}
             style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
           >
-            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t('hero-title', 'Cultivating Community-Led Solutions', 'نزرع حلولاً بقيادة المجتمع')}
           </motion.h1>
           
           <motion.p
@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Empowering communities in post-war regions through collaborative, community-led networks.',
-              'نُمكِّن المجتمعات في مناطق ما بعد الحرب عبر شبكات تعاونية تقودها المجتمعات.'
+              'At the Rhizome Community Foundation, we believe true change grows from the ground up. We support community initiatives that alleviate poverty, advance education, and promote health through local wisdom.',
+              'في مؤسسة ريزوم المجتمعية نؤمن بأن التغيير الحقيقي ينمو من القاعدة. ندعم المبادرات المجتمعية التي تخفف الفقر وتعزز التعليم والصحة مستندين إلى المعرفة المحلية.'
             )}
           </motion.p>
           
