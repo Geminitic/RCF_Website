@@ -199,6 +199,15 @@ const HeroSection: React.FC = () => {
               'في مؤسسة ريزوم المجتمعية، نؤمن بأن التغيير الدائم ينمو من الجذور. ندعم المبادرات المجتمعية التي تخفف الفقر وتعزز التعليم والصحة.'
             )}
           </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="text-lg md:text-xl text-emerald-100 mb-8"
+          >
+            {t('hero-tagline', 'Connect. Support. Transform.', 'تواصل. ادعم. غيّر.')}
+          </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
