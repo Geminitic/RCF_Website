@@ -7,44 +7,7 @@ import '../styles/rhizome-syria.css';
 const RhizomeSyriaSubpage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
-  const programs = [
-    {
-      id: '1',
-      title: 'Digital Literacy & Media Empowerment',
-      titleAr: 'محو الأمية الرقمية وتمكين الإعلام',
-      description: 'Empowering Syrian voices through multimedia storytelling and digital preservation of cultural heritage.',
-      descriptionAr: 'تمكين الأصوات السورية من خلال السرد متعدد الوسائط والحفظ الرقمي للتراث الثقافي.',
-      participants: 450,
-      location: 'Syria-wide',
-      locationAr: 'في جميع أنحاء سوريا',
-      icon: Globe,
-      gradient: 'var(--rs-gradient-primary)'
-    },
-    {
-      id: '2',
-      title: 'Cultural Heritage Documentation',
-      titleAr: 'توثيق التراث الثقافي',
-      description: 'Preserving Syria\'s collective memory through oral histories and storytelling.',
-      descriptionAr: 'الحفاظ على الذاكرة الجماعية السورية من خلال التواريخ الشفوية والسرد.',
-      participants: 320,
-      location: 'Aleppo, Latakia, Damascus',
-      locationAr: 'حلب، اللاذقية، دمشق',
-      icon: Heart,
-      gradient: 'var(--rs-gradient-warm)'
-    },
-    {
-      id: '3',
-      title: 'Women Empowerment Circle',
-      titleAr: 'دائرة تمكين المرأة',
-      description: 'National women\'s leadership network focused on economic empowerment and feminist organizing.',
-      descriptionAr: 'شبكة قيادة نسائية وطنية تركز على التمكين الاقتصادي والتنظيم النسوي.',
-      participants: 350,
-      location: 'National network',
-      locationAr: 'شبكة وطنية',
-      icon: Star,
-      gradient: 'var(--rs-gradient-cool)'
-    }
-  ];
+  const programs: any[] = [];
 
   const achievements = [
     {
@@ -144,6 +107,11 @@ const RhizomeSyriaSubpage: React.FC = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
+            {programs.length === 0 && (
+              <div className="col-span-full text-center text-gray-600">
+                {t('programs-coming-soon', 'Programs will be announced soon.', 'سيتم الإعلان عن البرامج قريباً.')}
+              </div>
+            )}
             {programs.map((program, index) => {
               const IconComponent = program.icon;
               return (

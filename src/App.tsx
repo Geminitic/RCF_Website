@@ -19,6 +19,7 @@ import KnowledgeHubPage from './pages/KnowledgeHubPage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
 import LoadingScreen from './components/common/LoadingScreen';
+import ExperimentalBanner from './components/layout/ExperimentalBanner';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <LoadingScreen />
             <CustomCursor />
             <Navigation />
+            <ExperimentalBanner />
             <main>
               <Routes>
                 <Route path="/" element={<HomePage />} />
