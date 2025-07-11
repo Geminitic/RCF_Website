@@ -45,8 +45,8 @@ const AboutPreview: React.FC = () => {
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
-                'The Rhizome Community Foundation is a Canadian not-for-profit organization dedicated to amplifying the voices and agency of communities disproportionately affected by intersecting challenges. Our mission is to empower these communities to identify and drive their own priorities, fostering innovative, locally-led solutions that address their distinct and evolving needs.',
-                'مؤسسة مجتمع رايزوم هي منظمة غير ربحية كندية مكرسة لتعزيز صوت ووكالة المجتمعات المتأثرة بشكل غير متناسب بالتحديات المتقاطعة. رسالتنا هي تمكين هذه المجتمعات من تحديد أولوياتها وقيادتها بنفسها من خلال حلول مبتكرة محلية تستجيب لاحتياجاتها المميزة والمتطورة.'
+                'Founded in Edmonton in 2025, Rhizome Community Foundation empowers communities to shape their own futures. We cultivate networks that alleviate poverty, advance education, and promote health through grassroots leadership.',
+                'تأسست في إدمونتون عام 2025 لتمكين المجتمعات من تشكيل مستقبلها. نزرع شبكات تخفف الفقر وتعزز التعليم والصحة بقيادة المجتمعات المحلية.'
               )}
             </p>
 
