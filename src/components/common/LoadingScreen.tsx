@@ -5,21 +5,25 @@ const LoadingScreen: React.FC = () => {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const wrapper = document.getElementById('app-content');
+    if (!wrapper) return;
+
     const scale = 1.1 - 0.1 * (count / 100);
-    document.body.style.transform = `scale(${scale})`;
+    wrapper.style.transform = `scale(${scale})`;
 
     return () => {
-      document.body.style.transform = '';
+      wrapper.style.transform = '';
     };
   }, [count]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount(c => {
+      setCount((c) => {
         if (c >= 100) {
           clearInterval(interval);
           document.body.classList.add('loaded');
-          document.body.style.transform = '';
+          const wrapper = document.getElementById('app-content');
+          if (wrapper) wrapper.style.transform = '';
           setDone(true);
           return 100;
         }
@@ -34,7 +38,12 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="rhizome-loader">
-      <div className="counter" style={{ transform: `scale(${1 + count / 100})` }}>{count}%</div>
+      <div
+        className="counter"
+        style={{ transform: `scale(${1 + count / 100})` }}
+      >
+        {count}%
+      </div>
     </div>
   );
 };
