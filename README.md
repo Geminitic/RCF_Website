@@ -31,3 +31,48 @@ Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are c
 - To deploy on Netlify, create a new site pointing to this repository and enable SSL in the Netlify dashboard. If Netlify refuses to provision SSL, verify that your domain DNS records point to Netlify and that no conflicting certificates exist.
 - The codebase does not currently integrate with Supabase or Neon. Any references to those services are likely from previous experiments or external configurations not present in this repository.
 
+
+## Server API
+
+The `server/` folder contains an Express based scraping API that powers the calendar. To run it locally:
+
+```bash
+cp .env.example .env   # adjust values if needed
+npm run start:server
+```
+
+The server exposes the following endpoints:
+
+- `GET /api/events` – scrape or return cached events
+- `GET /api/events/featured` – high priority events
+- `GET /api/events/deadlines` – events with deadlines
+- `GET /api/health` – basic health check
+
+### Environment Variables
+
+- `PORT` – port to run the API on (default: 3001)
+- `CACHE_FILE` – path to the events cache file
+- `CACHE_DURATION` – how long to keep the cache in milliseconds
+- `CONCURRENCY` – number of pages to scrape in parallel
+
+## Tests
+
+Basic tests for the API can be run with:
+
+```bash
+npm test
+```
+
+## Docker
+
+A `Dockerfile` is provided to build a production image:
+
+```bash
+docker build -t rcf-website .
+docker run -p 3001:3001 rcf-website
+```
+
+## Continuous Integration
+
+GitHub Actions runs linting, tests and the scraper on a daily schedule. See `.github/workflows/node-ci.yml` for details.
+

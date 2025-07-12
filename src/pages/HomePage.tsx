@@ -6,6 +6,7 @@ import CommunityPreview from '../components/home/CommunityPreview';
 import ImpactStats from '../components/home/ImpactStats';
 import InteractiveMap from '../components/home/InteractiveMap';
 import SentryTestButton from '../components/common/SentryTestButton';
+import CalendarWidget from '../components/calendar/CalendarWidget';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage: React.FC = () => {
       <ProgramsPreview />
       <InteractiveMap />
       <ImpactStats />
+      <CalendarWidget />
       <CommunityPreview />
       <SentryTestButton />
     </div>
