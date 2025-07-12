@@ -54,6 +54,7 @@ The server exposes the following endpoints:
 - `CACHE_FILE` – path to the events cache file
 - `CACHE_DURATION` – how long to keep the cache in milliseconds
 - `CONCURRENCY` – number of pages to scrape in parallel
+- `ORG_CONCURRENCY` – number of organization sites to scrape concurrently
 
 ## Tests
 

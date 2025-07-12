@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_FILE = process.env.CACHE_FILE || path.join(__dirname, 'cache', 'events.json');
 const CACHE_DURATION = Number(process.env.CACHE_DURATION || 21600000);
 const CONCURRENCY = Number(process.env.CONCURRENCY || 5);
+const ORG_CONCURRENCY = Number(process.env.ORG_CONCURRENCY || 3);
 
 // Enhanced organization website discovery
 async function fetchOrgSites() {
@@ -531,8 +532,8 @@ function removeDuplicateEvents(events) {
 async function mapLimit(items, limit, task) {
   const results = [];
   const executing = [];
-  for (const item of items) {
-    const p = Promise.resolve().then(() => task(item));
+  for (const [index, item] of items.entries()) {
+    const p = Promise.resolve().then(() => task(item, index));
     results.push(p);
     if (limit <= items.length) {
       const e = p.then(() => executing.splice(executing.indexOf(e), 1));
@@ -552,10 +553,9 @@ async function scrapeEvents() {
   const allEvents = [];
   
   console.log(`Scraping ${orgSites.length} organization websites...`);
-  
-  for (let i = 0; i < orgSites.length; i++) {
-    const site = orgSites[i];
-    console.log(`Processing ${i + 1}/${orgSites.length}: ${site}`);
+
+  await mapLimit(orgSites, ORG_CONCURRENCY, async (site, index) => {
+    console.log(`Processing ${index + 1}/${orgSites.length}: ${site}`);
 
     try {
       const eventPages = await discoverEventPages(site);
@@ -581,7 +581,7 @@ async function scrapeEvents() {
     } catch (err) {
       console.error(`Failed to process organization ${site}:`, err.message);
     }
-  }
+  });
   
   console.log(`Scraping complete. Found ${allEvents.length} total events.`);
   
