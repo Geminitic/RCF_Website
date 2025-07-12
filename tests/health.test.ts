@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const request = require('supertest');
-const express = require('express');
+import request from 'supertest';
+import express from 'express';
 
 const app = express();
-app.get('/api/health', (req, res) => res.json({status:'healthy'}));
+app.get('/api/health', (req, res) => res.json({ status: 'healthy' }));
 
 describe('health endpoint', () => {
   it('returns healthy', async () => {
