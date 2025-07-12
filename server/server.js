@@ -531,19 +531,22 @@ function removeDuplicateEvents(events) {
 // Utility to run async tasks with limited concurrency
 async function mapLimit(items, limit, task) {
   const results = [];
-  const executing = [];
+  const executing = new Set();
+
   for (const [index, item] of items.entries()) {
     const p = Promise.resolve().then(() => task(item, index));
     results.push(p);
-    if (limit <= items.length) {
-      const e = p.then(() => executing.splice(executing.indexOf(e), 1));
-      executing.push(e);
-      if (executing.length >= limit) {
-        await Promise.race(executing);
-      }
+    executing.add(p);
+
+    p.finally(() => executing.delete(p));
+
+    if (executing.size >= limit) {
+      await Promise.race(executing);
     }
   }
-  return Promise.all(results);
+
+  await Promise.all(results);
+  return results;
 }
 
 // Main scraping function with enhanced capabilities
