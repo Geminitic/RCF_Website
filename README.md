@@ -25,6 +25,21 @@ Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are c
    ```
    If linting fails with a `Cannot find package '@eslint/js'` error, make sure the dependencies have been installed correctly.
 
+## Running the Scraper API
+
+The `server/` directory contains an Express + Cheerio scraper that exposes REST
+endpoints. To start it locally:
+
+1. Create a `.env` file at the project root based on `.env.example` and set the
+   port number if you do not want the default of `3001`.
+2. Run the server:
+   ```bash
+   npm run start:server
+   ```
+
+The server provides several endpoints under `/api/` including `/api/events` and
+`/api/health`.
+
 ## Deployment Notes
 
 - This repository now includes a `_headers` file that sets basic security headers processed by Netlify during deployment.
