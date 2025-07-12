@@ -5,11 +5,21 @@ const LoadingScreen: React.FC = () => {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const scale = 1.1 - 0.1 * (count / 100);
+    document.body.style.transform = `scale(${scale})`;
+
+    return () => {
+      document.body.style.transform = '';
+    };
+  }, [count]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCount(c => {
         if (c >= 100) {
           clearInterval(interval);
           document.body.classList.add('loaded');
+          document.body.style.transform = '';
           setDone(true);
           return 100;
         }
@@ -24,7 +34,7 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="rhizome-loader">
-      <div className="counter">{count}%</div>
+      <div className="counter" style={{ transform: `scale(${1 + count / 100})` }}>{count}%</div>
     </div>
   );
 };
