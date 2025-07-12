@@ -50,11 +50,6 @@ const AboutPreview: React.FC = () => {
               )}
             </p>
 
-            <ul className="list-disc pl-5 text-stone-600 mb-6">
-              <li>{t('update-workshop', 'Network expansion workshop completed', 'اكتمل ورشة توسيع الشبكة')}</li>
-              <li>{t('update-publication', 'New research publication available', 'تقرير بحثي جديد متاح')}</li>
-              <li>{t('update-training', 'Partner organization training series launched', 'إطلاق سلسلة تدريب للشركاء')}</li>
-            </ul>
 
             <Link
               to="/about"

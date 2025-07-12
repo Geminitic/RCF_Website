@@ -103,6 +103,20 @@ const Footer: React.FC = () => {
               '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.'
             )}
           </p>
+          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            {t(
+              'acknowledgment',
+              'Acknowledgment: We respectfully acknowledge our work takes place on traditional Indigenous territories in Canada and globally, and commit to building relationships grounded in respect, reciprocity, and justice.',
+              'نُقِرُّ باحترام بأن عملنا يتم على أراضٍ تقليدية للشعوب الأصيلة في كندا وحول العالم، ونتعهد ببناء علاقات قائمة على الاحترام والتبادل والعدالة.'
+            )}
+          </p>
+          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            {t(
+              'legal-information',
+              'Legal Information: Rhizome Community Foundation is federally incorporated under the Canada Not-for-profit Corporations Act. Corporation Number: 1672383-7.',
+              'المعلومات القانونية: مؤسسة ريزوم المجتمعية مسجلة اتحاديًا بموجب قانون المؤسسات غير الربحية الكندي. رقم المؤسسة: 1672383-7.'
+            )}
+          </p>
         </div>
       </div>
     </footer>
