@@ -195,8 +195,8 @@ const HeroSection: React.FC = () => {
           >
             {t(
               'hero-subtitle',
-              'Cultivating Community-Led Solutions. At the Rhizome Community Foundation, we believe that true, lasting change grows from the ground up. Like the rhizome plant—spreading horizontally and connecting deeply—our work builds resilient networks that empower communities to create their own solutions.',
-              'نزرع حلولاً تقودها المجتمعات. في مؤسسة ريزوم المجتمعية، نؤمن أن التغيير الحقيقي والدائم ينمو من الأرض. مثل جذور الريزوم التي تمتد أفقياً وتتصل بعمق، نبني شبكات مرنة تمكِّن المجتمعات من ابتكار حلولها الخاصة.'
+              'Cultivating Community-Led Solutions.',
+              'نزرع حلولاً تقودها المجتمعات.'
             )}
           </motion.p>
           
