@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_FILE = process.env.CACHE_FILE || path.join(__dirname, 'cache', 'events.json');
 const CACHE_DURATION = Number(process.env.CACHE_DURATION || 21600000);
+const CONCURRENCY = Number(process.env.CONCURRENCY || 5);
 
 // Enhanced organization website discovery
 async function fetchOrgSites() {
@@ -526,6 +527,24 @@ function removeDuplicateEvents(events) {
   });
 }
 
+// Utility to run async tasks with limited concurrency
+async function mapLimit(items, limit, task) {
+  const results = [];
+  const executing = [];
+  for (const item of items) {
+    const p = Promise.resolve().then(() => task(item));
+    results.push(p);
+    if (limit <= items.length) {
+      const e = p.then(() => executing.splice(executing.indexOf(e), 1));
+      executing.push(e);
+      if (executing.length >= limit) {
+        await Promise.race(executing);
+      }
+    }
+  }
+  return Promise.all(results);
+}
+
 // Main scraping function with enhanced capabilities
 async function scrapeEvents() {
   console.log('Starting enhanced event scraping...');
@@ -537,37 +556,28 @@ async function scrapeEvents() {
   for (let i = 0; i < orgSites.length; i++) {
     const site = orgSites[i];
     console.log(`Processing ${i + 1}/${orgSites.length}: ${site}`);
-    
+
     try {
-      // Discover event-specific pages
       const eventPages = await discoverEventPages(site);
       console.log(`Found ${eventPages.length} pages to scrape for ${site}`);
-      
-      // Scrape each event page
-      for (const page of eventPages) {
+
+      await mapLimit(eventPages, CONCURRENCY, async page => {
         try {
-          const { data } = await axios.get(page, { 
+          const { data } = await axios.get(page, {
             timeout: 8000,
             headers: {
               'User-Agent': 'Mozilla/5.0 (compatible; EventScraper/1.0)'
             }
           });
-          
+
           const events = extractEvents(data, site);
           allEvents.push(...events);
           console.log(`Extracted ${events.length} events from ${page}`);
-          
-          // Rate limiting - wait between requests
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          
         } catch (err) {
           console.error(`Failed to scrape page ${page}:`, err.message);
         }
-      }
-      
-      // Longer delay between organizations
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      });
+
     } catch (err) {
       console.error(`Failed to process organization ${site}:`, err.message);
     }
@@ -677,7 +687,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-if (process.env.NODE_ENV !== 'test') {
+const runningDirectly = process.argv[1] === fileURLToPath(import.meta.url);
+if (process.env.NODE_ENV !== 'test' && runningDirectly) {
   app.listen(PORT, () => {
     console.log(`Enhanced Calendar API server listening on port ${PORT}`);
     console.log('Available endpoints:');

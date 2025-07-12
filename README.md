@@ -53,6 +53,7 @@ The server exposes the following endpoints:
 - `PORT` – port to run the API on (default: 3001)
 - `CACHE_FILE` – path to the events cache file
 - `CACHE_DURATION` – how long to keep the cache in milliseconds
+- `CONCURRENCY` – number of pages to scrape in parallel
 
 ## Tests
 
