@@ -1,9 +1,15 @@
 import express from 'express';
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const CACHE_FILE = process.env.CACHE_FILE || path.join(__dirname, 'cache', 'events.json');
+const CACHE_DURATION = Number(process.env.CACHE_DURATION || 21600000);
 
 // Enhanced organization website discovery
 async function fetchOrgSites() {
@@ -577,11 +583,35 @@ async function scrapeEvents() {
   return sortedEvents.slice(0, 100); // Limit to top 100 events
 }
 
+async function readCache() {
+  try {
+    const data = await fs.readFile(CACHE_FILE, 'utf8');
+    const parsed = JSON.parse(data);
+    if (Date.now() - parsed.timestamp < CACHE_DURATION) {
+      return parsed.events;
+    }
+  } catch {}
+  return null;
+}
+
+async function writeCache(events) {
+  await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
+  await fs.writeFile(CACHE_FILE, JSON.stringify({ timestamp: Date.now(), events }));
+}
+
+export async function getEvents() {
+  const cached = await readCache();
+  if (cached) return cached;
+  const events = await scrapeEvents();
+  await writeCache(events);
+  return events;
+}
+
 // API endpoints
 app.get('/api/events', async (req, res) => {
   try {
     console.log('API request received for events');
-    const events = await scrapeEvents();
+    const events = await getEvents();
     
     // Add metadata to response
     const response = {
@@ -606,7 +636,7 @@ app.get('/api/events', async (req, res) => {
 
 app.get('/api/events/featured', async (req, res) => {
   try {
-    const events = await scrapeEvents();
+    const events = await getEvents();
     const featuredEvents = events
       .filter(event => event.priority && event.priority > 3)
       .slice(0, 10);
@@ -623,7 +653,7 @@ app.get('/api/events/featured', async (req, res) => {
 
 app.get('/api/events/deadlines', async (req, res) => {
   try {
-    const events = await scrapeEvents();
+    const events = await getEvents();
     const deadlineEvents = events
       .filter(event => event.deadline)
       .slice(0, 20);
@@ -647,11 +677,15 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Enhanced Calendar API server listening on port ${PORT}`);
-  console.log('Available endpoints:');
-  console.log('  GET /api/events - All scraped events');
-  console.log('  GET /api/events/featured - High priority events');
-  console.log('  GET /api/events/deadlines - Deadline events');
-  console.log('  GET /api/health - Health check');
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Enhanced Calendar API server listening on port ${PORT}`);
+    console.log('Available endpoints:');
+    console.log('  GET /api/events - All scraped events');
+    console.log('  GET /api/events/featured - High priority events');
+    console.log('  GET /api/events/deadlines - Deadline events');
+    console.log('  GET /api/health - Health check');
+  });
+}
+
+export default app;
