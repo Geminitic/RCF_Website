@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
 import { 
   Calendar as CalendarIcon, 
@@ -24,7 +25,6 @@ const CalendarPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   const [viewMode, setViewMode] = useState<'calendar' | 'list'>('list');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [currentDate, setCurrentDate] = useState(new Date());
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -84,77 +84,18 @@ const CalendarPage: React.FC = () => {
     ? events 
     : events.filter(event => event.category === selectedCategory);
 
-  const getDaysInMonth = (date: Date) => {
-    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  };
-
-  const getFirstDayOfMonth = (date: Date) => {
-    return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-  };
-
-  const navigateMonth = (direction: 'prev' | 'next') => {
-    setCurrentDate(prev => {
-      const newDate = new Date(prev);
-      if (direction === 'prev') {
-        newDate.setMonth(prev.getMonth() - 1);
-      } else {
-        newDate.setMonth(prev.getMonth() + 1);
-      }
-      return newDate;
-    });
-  };
+  // react-big-calendar handles navigation and month calculations internally
 
   const renderCalendarView = () => {
-    const daysInMonth = getDaysInMonth(currentDate);
-    const firstDay = getFirstDayOfMonth(currentDate);
-    const days = [];
-
-    // Empty cells for days before the first day of the month
-    for (let i = 0; i < firstDay; i++) {
-      days.push(<div key={`empty-${i}`} className="h-24 border border-stone-200" />);
-    }
-
-    // Days of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-      const dateStr = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-      const dayEvents = filteredEvents.filter(event => event.date === dateStr);
-
-      days.push(
-        <div key={day} className="h-24 border border-stone-200 p-1 hover:bg-stone-50 transition-colors">
-          <div className="font-medium text-sm text-stone-900 mb-1">{day}</div>
-          <div className="space-y-1">
-            {dayEvents.slice(0, 2).map(event => {
-              const category = categories.find(cat => cat.key === event.category);
-              return (
-                <div
-                  key={event.id}
-                  className={`text-xs p-1 rounded text-white truncate cursor-pointer ${category?.color || 'bg-gray-500'}`}
-                  title={t('event-title', event.title, event.titleAr)}
-                >
-                  {event.priority && event.priority > 3 && <Star className="inline h-2 w-2 mr-1" />}
-                  {event.deadline && <AlertCircle className="inline h-2 w-2 mr-1" />}
-                  {t('event-title', event.title, event.titleAr)}
-                </div>
-              );
-            })}
-            {dayEvents.length > 2 && (
-              <div className="text-xs text-stone-500">+{dayEvents.length - 2} more</div>
-            )}
-          </div>
-        </div>
-      );
-    }
+    const bigCalendarEvents = filteredEvents.map(e => ({
+      title: t('event-title', e.title, e.titleAr),
+      start: e.date ? new Date(e.date) : new Date(),
+      end: e.date ? new Date(e.date) : new Date(),
+      allDay: true,
+    }));
 
     return (
-      <div className="grid grid-cols-7 gap-0 border border-stone-200 rounded-lg overflow-hidden">
-        {/* Header */}
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-          <div key={day} className="bg-stone-100 p-3 text-center font-semibold text-stone-700 border-b border-stone-200">
-            {t(`day-${day.toLowerCase()}`, day, day)}
-          </div>
-        ))}
-        {days}
-      </div>
+      <BigCalendar events={bigCalendarEvents} language={currentLanguage.code} />
     );
   };
 
@@ -395,26 +336,7 @@ const CalendarPage: React.FC = () => {
               </button>
             </div>
 
-            {/* Month Navigation (for calendar view) */}
-            {viewMode === 'calendar' && (
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => navigateMonth('prev')}
-                  className="p-2 hover:bg-stone-100 rounded-lg transition-colors"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <h2 className="text-xl font-bold text-stone-900 min-w-[200px] text-center">
-                  {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                </h2>
-                <button
-                  onClick={() => navigateMonth('next')}
-                  className="p-2 hover:bg-stone-100 rounded-lg transition-colors"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-            )}
+            {/* Month Navigation handled by BigCalendar */}
 
             {/* Category Filter */}
             <div className="flex items-center space-x-2">

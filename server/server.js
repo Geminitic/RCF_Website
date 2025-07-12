@@ -5,6 +5,10 @@ import cheerio from 'cheerio';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+let cachedEvents = null;
+let cacheTimestamp = 0;
+const CACHE_DURATION_MS = 60 * 60 * 1000; // one hour
+
 // Enhanced organization website discovery
 async function fetchOrgSites() {
   const url = 'https://www.madaniya-csn.org/madaniya-member-organisations-1';
@@ -522,6 +526,11 @@ function removeDuplicateEvents(events) {
 
 // Main scraping function with enhanced capabilities
 async function scrapeEvents() {
+  if (cachedEvents && Date.now() - cacheTimestamp < CACHE_DURATION_MS) {
+    console.log('Returning events from cache');
+    return cachedEvents;
+  }
+
   console.log('Starting enhanced event scraping...');
   const orgSites = await fetchOrgSites();
   const allEvents = [];
@@ -572,9 +581,12 @@ async function scrapeEvents() {
   // Remove duplicates and sort by priority
   const uniqueEvents = removeDuplicateEvents(allEvents);
   const sortedEvents = uniqueEvents.sort((a, b) => (b.priority || 0) - (a.priority || 0));
-  
+
   console.log(`Returning ${sortedEvents.length} unique events after deduplication.`);
-  return sortedEvents.slice(0, 100); // Limit to top 100 events
+  const finalEvents = sortedEvents.slice(0, 100); // Limit to top 100 events
+  cachedEvents = finalEvents;
+  cacheTimestamp = Date.now();
+  return finalEvents;
 }
 
 // API endpoints
