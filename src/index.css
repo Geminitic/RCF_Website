@@ -81,8 +81,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  transform-origin: center center;
+  transition: background-color 0.3s ease;
 }
 
 /* Custom selection colors */
@@ -525,5 +524,4 @@ html {
   font-size: 5rem;
   color: #ffffff;
   font-weight: bold;
-  transition: transform 0.2s ease-in-out;
 }
