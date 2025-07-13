@@ -30,7 +30,7 @@ const SyriaParticleMap: React.FC = () => {
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const material = new THREE.PointsMaterial({ color: 0xb91c1c, size: 0.02 });
+    const material = new THREE.PointsMaterial({ color: 0x03729d, size: 0.02 });
     const particles = new THREE.Points(geometry, material);
     scene.add(particles);
 

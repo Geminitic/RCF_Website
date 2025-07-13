@@ -47,7 +47,7 @@ const SyrianCitiesMap: React.FC = () => {
       .attr('cx', d => projection([d.lng, d.lat])[0])
       .attr('cy', d => projection([d.lng, d.lat])[1])
       .attr('r', 2)
-      .attr('fill', '#b91c1c')
+      .attr('fill', '#03729d')
       .on('mouseenter', (event, d) => {
         tooltip.style('display', 'block').text(d.name);
       })

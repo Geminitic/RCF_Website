@@ -153,7 +153,7 @@ const AboutPage: React.FC = () => {
       descriptionAr: 'شبكة متطوعين مكرسة تقدم الدعم الشعبي والتنظيم المجتمعي عبر مناطق متعددة.',
       type: 'Community Partner',
       typeAr: 'شريك مجتمعي',
-      image: 'https://via.placeholder.com/400x300/059669/FFFFFF?text=Partner+Organization'
+      image: 'https://via.placeholder.com/400x300/03729d/FFFFFF?text=Partner+Organization'
     },
     {
       name: 'Crystal Media Foundation',

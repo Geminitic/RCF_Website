@@ -16,7 +16,7 @@ const FeaturedLeaders: React.FC = () => {
       titleAr: 'منظم مجتمعي',
       location: 'Toronto, Canada',
       locationAr: 'تورونتو، كندا',
-      image: 'https://via.placeholder.com/600x600/059669/FFFFFF?text=Community+Leader',
+      image: 'https://via.placeholder.com/600x600/03729d/FFFFFF?text=Community+Leader',
       achievement: 'Leading community initiatives',
       achievementAr: 'يقود المبادرات المجتمعية',
       description: 'Dedicated to building stronger communities through collaborative action.',

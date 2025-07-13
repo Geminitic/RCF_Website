@@ -3,16 +3,16 @@
 /* Color Palette - Extracted from Rhizome Canada Logo */
 :root {
   /* Primary Colors from Logo */
-  --rc-primary-teal: #0D9488;
-  --rc-primary-emerald: #059669;
-  --rc-primary-forest: #064E3B;
-  --rc-accent-mint: #6EE7B7;
+  --rc-primary-teal: #03729d;
+  --rc-primary-emerald: #4eb5cb;
+  --rc-primary-forest: #023b4b;
+  --rc-accent-mint: #0bd2d1;
   
   /* Secondary Colors */
-  --rc-deep-teal: #134E4A;
-  --rc-sage: #6B7280;
-  --rc-pine: #1F2937;
-  --rc-seafoam: #A7F3D0;
+  --rc-deep-teal: #03729d;
+  --rc-sage: #4eb5cb;
+  --rc-pine: #023b4b;
+  --rc-seafoam: #a3dbe4;
   
   /* Neutral Colors */
   --rc-charcoal: #374151;
