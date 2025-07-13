@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&family=Tajawal:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 /* Custom Cursor */
 * {
@@ -12,17 +11,17 @@
 
 /* Custom styles for Arabic text */
 .font-arabic {
-  font-family: 'Noto Sans Arabic', Arial, sans-serif;
+  font-family: 'Tajawal', 'Noto Sans Arabic', Arial, sans-serif;
   direction: rtl;
 }
 
 /* Design System Variables */
 :root {
-  --primary-color: #064e3b;
-  --secondary-color: #047857;
-  --accent-color: #b91c1c;
-  --text-color: #1f2937;
-  --bg-color: #fafaf9;
+  --primary-color: #4f46e5;
+  --secondary-color: #14b8a6;
+  --accent-color: #d946ef;
+  --text-color: #1e293b;
+  --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -74,7 +73,17 @@
 
 /* Base Styles */
 body {
-  font-family: 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    'Inter',
+    'Tajawal',
+    'Noto Sans Arabic',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -113,7 +122,7 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
   line-height: 1.2;
-  font-family: 'Playfair Display', 'Noto Sans Arabic', serif;
+  font-family: 'Merriweather', 'Tajawal', serif;
 }
 
 .section-description {
@@ -151,7 +160,12 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -161,7 +175,12 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -170,7 +189,9 @@ body {
 
 /* Hover Effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -198,15 +219,21 @@ body {
 
 /* Morphing Background */
 .morphing-bg {
-  background: linear-gradient(-45deg, #064e3b, #047857, #b91c1c, #dc2626);
+  background: linear-gradient(-45deg, #4f46e5, #14b8a6, #d946ef, #f59e0b);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Scroll Reveal Animation */
@@ -299,7 +326,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
   z-index: 1;
 }
 
@@ -420,20 +447,20 @@ select:focus {
   .container {
     padding: 0 1rem;
   }
-  
+
   .section-padding {
     padding: 3rem 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .community-wall {
     grid-template-columns: 1fr;
     grid-auto-rows: 250px;
   }
-  
+
   .item-wide,
   .item-tall,
   .item-large {
@@ -446,7 +473,7 @@ select:focus {
   .section-title {
     font-size: 1.75rem;
   }
-  
+
   .section-description {
     font-size: 1rem;
   }
