@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-stone-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -191,7 +191,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-xl md:text-2xl text-emerald-100 mb-8 leading-relaxed max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-indigo-100 mb-8 leading-relaxed max-w-4xl mx-auto"
           >
             {t(
               'hero-subtitle',
@@ -208,7 +208,7 @@ const HeroSection: React.FC = () => {
           >
             <Link
               to="/programs"
-              className="group inline-flex items-center px-8 py-4 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="mr-2">
                 {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
