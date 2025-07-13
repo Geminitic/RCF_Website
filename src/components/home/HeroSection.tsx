@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
       color: string;
     }> = [];
 
-    const colors = ['#064e3b', '#065f46', '#047857', '#b91c1c', '#dc2626', '#ea580c', '#d97706'];
+    const colors = ['#03729d', '#4eb5cb', '#0bd2d1', '#a3dbe4', '#fefeff'];
     const nodeCount = 40;
 
     // Initialize nodes with more organic properties
