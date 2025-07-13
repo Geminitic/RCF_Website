@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 
-// Logo image sourced from the public folder. This image was provided in the
-// repository and represents the Rhizome branding colors.
-import LogoImage from '/5-removebg-preview.png';
+// Logo image sourced from the public folder. Using the new branding
+// provided by `20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png`.
+import LogoImage from '/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png';
 import { useLanguage, languages } from '../../contexts/LanguageContext';
 
 const Navigation: React.FC = () => {
