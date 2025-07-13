@@ -23,6 +23,15 @@ export class EventCache {
     }
   }
 
+  async ttl(key: string): Promise<number> {
+    try {
+      return await this.redis.ttl(key);
+    } catch (error) {
+      console.error('Cache ttl error:', error);
+      return -2;
+    }
+  }
+
   async set(key: string, events: Event[]): Promise<void> {
     try {
       await this.redis.setex(key, this.TTL, JSON.stringify(events));

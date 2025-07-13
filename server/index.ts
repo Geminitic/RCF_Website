@@ -8,6 +8,8 @@ import { swaggerSpec } from './swagger';
 import swaggerUi from 'swagger-ui-express';
 import eventRoutes from './routes/events';
 import healthRoutes from './routes/health';
+import './jobs/scraper.job';
+import { scrapeAndCache } from './utils/scrape';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -56,6 +58,9 @@ process.on('SIGTERM', () => {
 const server = app.listen(PORT, () => {
   logger.info(`Enhanced Calendar API server listening on port ${PORT}`);
   logger.info(`API Documentation available at http://localhost:${PORT}/api-docs`);
+  scrapeAndCache().catch((err) =>
+    logger.error('Initial scrape failed:', err)
+  );
 });
 
 export default app;

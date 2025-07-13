@@ -1,12 +1,15 @@
 import { Router } from 'express';
-import { EventCache } from '../db/cache';
 import { validateEvent } from '../validators/event.validator';
+import { scrapeAndCache, cache } from '../utils/scrape';
 
 const router = Router();
-const cache = new EventCache();
 
 router.get('/', async (_req, res) => {
-  const events = await cache.get('events');
+  let events = await cache.get('events');
+  const ttl = await cache.ttl('events');
+  if (!events || ttl <= 0) {
+    events = await scrapeAndCache();
+  }
   res.json(events || []);
 });
 
