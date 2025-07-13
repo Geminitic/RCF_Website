@@ -35,4 +35,10 @@ Copy `.env.example` to `.env` and adjust the values as needed. Currently only `P
 - To deploy on Netlify, create a new site pointing to this repository and enable SSL in the Netlify dashboard. If Netlify refuses to provision SSL, verify that your domain DNS records point to Netlify and that no conflicting certificates exist.
 - The codebase does not currently integrate with Supabase or Neon. Any references to those services are likely from previous experiments or external configurations not present in this repository.
 
-\n## License\n\nThis project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Visual Identity Proposal
+
+An experimental theme is available under `src/styles/modern-identity.css`. Import this stylesheet and add the `modern-theme` class to the `<body>` element to try a new purple-based color palette and updated typography.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

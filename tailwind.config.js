@@ -40,6 +40,18 @@ export default {
           800: '#9d174d',
           900: '#831843',
         },
+        modern: {
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7e22ce',
+          700: '#6b21a8',
+          800: '#581c87',
+          900: '#4c1d95',
+        },
         rhizome: {
           green: '#065f46',
           blue: '#3b82f6',
@@ -77,6 +89,7 @@ export default {
       fontFamily: {
         'arabic': ['Noto Sans Arabic', 'Arial', 'sans-serif'],
         'sans': ['Poppins', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+        'inter': ['Inter', 'Poppins', 'Noto Sans Arabic', 'sans-serif'],
       },
     },
   },

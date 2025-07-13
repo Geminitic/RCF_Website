@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Modern Visual Identity */
+:root {
+  --primary-color: #4c1d95;
+  --secondary-color: #7e22ce;
+  --accent-color: #a21caf;
+  --text-color: #1e293b;
+  --bg-color: #f5f3ff;
+  --card-bg: #ffffff;
+  --border-radius: 10px;
+  --shadow: 0 4px 18px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+}
+
+body.modern-theme {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
