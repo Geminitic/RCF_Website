@@ -3,16 +3,16 @@
 /* Color Palette - Extracted from Rhizome Canada Logo */
 :root {
   /* Primary Colors from Logo */
-  --rc-primary-teal: #0D9488;
-  --rc-primary-emerald: #059669;
-  --rc-primary-forest: #064E3B;
-  --rc-accent-mint: #6EE7B7;
+  --rc-primary-teal: #00A2CE;
+  --rc-primary-emerald: #0097AD;
+  --rc-primary-forest: #014C63;
+  --rc-accent-mint: #00D2D1;
   
   /* Secondary Colors */
-  --rc-deep-teal: #134E4A;
-  --rc-sage: #6B7280;
-  --rc-pine: #1F2937;
-  --rc-seafoam: #A7F3D0;
+  --rc-deep-teal: #006A86;
+  --rc-sage: #004E62;
+  --rc-pine: #00323F;
+  --rc-seafoam: #A5ECFF;
   
   /* Neutral Colors */
   --rc-charcoal: #374151;
@@ -27,10 +27,10 @@
   --rc-golden-wheat: #F59E0B;
   
   /* Gradient Combinations */
-  --rc-gradient-primary: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-primary-emerald));
+  --rc-gradient-primary: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-accent-mint));
   --rc-gradient-forest: linear-gradient(135deg, var(--rc-primary-forest), var(--rc-primary-teal));
   --rc-gradient-nature: linear-gradient(135deg, var(--rc-primary-emerald), var(--rc-accent-mint));
-  --rc-gradient-canadian: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-maple-red));
+  --rc-gradient-canadian: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-accent-mint));
   
   /* Typography */
   --rc-font-primary: 'Inter', 'Poppins', sans-serif;
