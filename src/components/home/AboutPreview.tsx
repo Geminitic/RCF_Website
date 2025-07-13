@@ -38,7 +38,7 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
-            <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
+            <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Montserrat", "Noto Sans Arabic", sans-serif' }}>
               {t('about-title', 'Our Purpose', 'رسالتنا')}
             </h2>
             

@@ -249,7 +249,7 @@ const InteractiveMap: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className={`text-3xl font-bold text-center mb-8 text-emerald-800 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`} style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
+          <h2 className={`text-3xl font-bold text-center mb-8 text-emerald-800 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`} style={{ fontFamily: '"Montserrat", "Noto Sans Arabic", sans-serif' }}>
             {t('map-title', 'Interactive Activities Map', 'خريطة الأنشطة التفاعلية')}
           </h2>
           <p className={`text-center text-gray-600 mb-10 max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>

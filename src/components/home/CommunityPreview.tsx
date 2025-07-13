@@ -38,7 +38,7 @@ const CommunityPreview: React.FC = () => {
           transition={{ duration: 0.8 }}
           className={`text-center mb-16 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
-          <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
+          <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Montserrat", "Noto Sans Arabic", sans-serif' }}>
             {t('community-wall-title', 'Community Canvas', 'لوحة المجتمع')}
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto mb-8">

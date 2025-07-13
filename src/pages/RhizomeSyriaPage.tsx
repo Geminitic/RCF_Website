@@ -168,7 +168,7 @@ const RhizomeSyriaPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-500 to-red-500 bg-clip-text text-transparent"
-              style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
+              style={{ fontFamily: '"Montserrat", "Noto Sans Arabic", sans-serif' }}
             >
               {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
             </motion.h1>
