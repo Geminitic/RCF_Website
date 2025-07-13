@@ -18,9 +18,9 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #064e3b;
-  --secondary-color: #047857;
-  --accent-color: #b91c1c;
+  --primary-color: #0079a2;
+  --secondary-color: #00c3ce;
+  --accent-color: #016a7b;
   --text-color: #1f2937;
   --bg-color: #fafaf9;
   --card-bg: #ffffff;
@@ -198,7 +198,7 @@ body {
 
 /* Morphing Background */
 .morphing-bg {
-  background: linear-gradient(-45deg, #064e3b, #047857, #b91c1c, #dc2626);
+  background: linear-gradient(-45deg, #016a7b, #0079a2, #00c3ce, #009fd5);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
@@ -253,7 +253,7 @@ body {
   position: fixed;
   width: 4px;
   height: 4px;
-  background: radial-gradient(circle, #064e3b, #047857);
+  background: radial-gradient(circle, #016a7b, #0079a2);
   border-radius: 50%;
   pointer-events: none;
   animation: particleFloat 2s ease-out forwards;

@@ -170,7 +170,7 @@ const InteractiveMap: React.FC = () => {
         // Custom marker icon
         const customIcon = L.divIcon({
           className: 'custom-div-icon',
-          html: `<div style="background-color: #b91c1c; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+          html: `<div style="background-color: #016a7b; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
           iconSize: [15, 15],
           iconAnchor: [7, 7]
         });
@@ -227,7 +227,7 @@ const InteractiveMap: React.FC = () => {
         // Add custom styles to the map
         const mapContainer = mapRef.current;
         if (mapContainer) {
-          mapContainer.style.border = '2px solid #b91c1c';
+          mapContainer.style.border = '2px solid #016a7b';
           mapContainer.style.borderRadius = '12px';
           mapContainer.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
         }
