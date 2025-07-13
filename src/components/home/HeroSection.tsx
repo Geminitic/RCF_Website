@@ -182,7 +182,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
+            style={{ fontFamily: '"Montserrat", "Noto Sans Arabic", sans-serif' }}
           >
             {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
           </motion.h1>

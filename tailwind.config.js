@@ -75,8 +75,9 @@ export default {
         }
       },
       fontFamily: {
-        'arabic': ['Noto Sans Arabic', 'Arial', 'sans-serif'],
-        'sans': ['Poppins', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+        arabic: ['Noto Sans Arabic', 'Arial', 'sans-serif'],
+        sans: ['Lato', 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+        heading: ['Montserrat', 'Noto Sans Arabic', 'sans-serif'],
       },
     },
   },
