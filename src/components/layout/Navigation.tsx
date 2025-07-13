@@ -5,7 +5,7 @@ import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 
 // Logo image sourced from the public folder. This image was provided in the
 // repository and represents the Rhizome branding colors.
-import LogoImage from '/5-removebg-preview.png';
+import LogoImage from '/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png';
 import { useLanguage, languages } from '../../contexts/LanguageContext';
 
 const Navigation: React.FC = () => {

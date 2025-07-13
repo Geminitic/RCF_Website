@@ -91,9 +91,9 @@ const RhizomeCanadaSubpage: React.FC = () => {
           >
             {/* Logo Integration */}
             <div className="rc-logo-container justify-center mb-8">
-              <img 
-                src="/public/20250626_0153_Upscaled Vector Design_remix_01jynkghz8fg4v5w094qqj0epj.png" 
-                alt="Rhizome Canada Logo" 
+              <img
+                src="/public/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
+                alt="Rhizome Canada Logo"
                 className="h-20 w-auto rc-float"
               />
             </div>
