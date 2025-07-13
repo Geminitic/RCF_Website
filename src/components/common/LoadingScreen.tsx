@@ -5,7 +5,7 @@ const LoadingScreen: React.FC = () => {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const scale = 1.1 - 0.1 * (count / 100);
+    const scale = 1 + 0.2 * (count / 100);
     document.body.style.transform = `scale(${scale})`;
 
     return () => {
