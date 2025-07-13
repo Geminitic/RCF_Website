@@ -523,7 +523,11 @@ html {
 
 .counter {
   font-size: 5rem;
-  color: #ffffff;
   font-weight: bold;
   transition: transform 0.2s ease-in-out;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  background: url('/5-removebg-preview.png') center/cover no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
 }

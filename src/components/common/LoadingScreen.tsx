@@ -34,7 +34,12 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="rhizome-loader">
-      <div className="counter" style={{ transform: `scale(${1 + count / 100})` }}>{count}%</div>
+      <div
+        className="counter"
+        style={{ transform: `scale(${1 + count / 10})` }}
+      >
+        {count}%
+      </div>
     </div>
   );
 };
