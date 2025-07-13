@@ -81,6 +81,9 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: background-color 0.3s ease;
 }
 
