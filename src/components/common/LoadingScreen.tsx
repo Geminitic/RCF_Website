@@ -5,7 +5,7 @@ const LoadingScreen: React.FC = () => {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const scale = 1.1 - 0.1 * (count / 100);
+    const scale = 1 + 1.5 * (count / 100);
     document.body.style.transform = `scale(${scale})`;
 
     return () => {
@@ -34,7 +34,12 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="rhizome-loader">
-      <div className="counter" style={{ transform: `scale(${1 + count / 100})` }}>{count}%</div>
+      <div
+        className="counter"
+        style={{ transform: `scale(${1 + 9 * (count / 100)})` }}
+      >
+        {count}%
+      </div>
     </div>
   );
 };
