@@ -23,7 +23,12 @@ Copy `.env.example` to `.env` and adjust the values as needed. Currently only `P
    npm run dev
    ```
 
-3. **Lint the project**
+3. **Run the API server**
+   ```bash
+   npm run dev:server
+   ```
+
+4. **Lint the project**
    ```bash
    npm run lint
    ```
