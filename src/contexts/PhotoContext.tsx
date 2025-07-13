@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { photoList } from '../data/photoList';
 
 interface Photo {
   id: string;
@@ -47,7 +48,8 @@ interface PhotoProviderProps {
 }
 
 export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
-  const [photos, setPhotos] = useState<Photo[]>([
+  const [photos, setPhotos] = useState<Photo[]>(() => {
+    const base: Photo[] = [
     // Real community photos
     {
       id: '1',
@@ -245,7 +247,29 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       approved: true,
       featured: true
     }
-  ]);
+    ];
+
+    const existingUrls = new Set(base.map(p => p.url));
+    const extras: Photo[] = photoList
+      .filter(url => !existingUrls.has(url))
+      .map((url, index) => ({
+        id: `auto-${index}`,
+        url,
+        title: 'Community Photo',
+        titleAr: 'صورة المجتمع',
+        description: 'Shared by the community.',
+        descriptionAr: 'صورة تمت مشاركتها من المجتمع.',
+        location: 'Unknown',
+        locationAr: 'غير معروف',
+        category: 'community',
+        uploadedBy: 'Community',
+        uploadDate: new Date().toISOString(),
+        approved: true,
+        featured: false
+      }));
+
+    return [...base, ...extras];
+  });
 
   // Total number of stories the community aims to collect
   const targetCount = 5000;
