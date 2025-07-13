@@ -49,50 +49,50 @@ const RhizomeSyriaPage: React.FC = () => {
 
   const methods = [
     {
-      en: 'Open dialogue: bridging gaps between rural and urban areas and between experts and communities without intermediaries.',
+      en: 'Direct Dialogue: We bridge gaps by connecting communities and experts directly, fostering open conversations without intermediaries.',
       ar: 'الحوار المفتوح: جسر الفجوات بين الريف والمدن، وبين الخبراء والمجتمع، دون وسطاء.'
     },
     {
-      en: 'Capacity building: empowering individuals and community organizations to manage their resources independently.',
+      en: 'Community-Led Decisions: From planning to implementation, local communities are involved in every decision, ensuring solutions are rooted in their reality.',
       ar: 'بناء القدرات: تمكين الأفراد والمؤسسات المجتمعية لإدارة مواردها باستقلالية.'
     },
     {
-      en: 'Local networks: a flexible development model relying on youth creativity and horizontal collaboration.',
+      en: "From Aid to Enterprise: We are shifting the focus from short-term relief to sustainable economic transformation by launching business incubators that support small projects and create lasting jobs.",
       ar: 'الشبكات المحلية: نموذج تنموي مرن يعتمد على إبداع الشباب والتعاون الأفقي.'
     },
     {
-      en: 'Justice and empowerment: strengthening civil society sovereignty and embracing restorative justice.',
+      en: "Youth-Led Innovation: We build a flexible development model that relies on the creativity and horizontal collaboration of Syria's youth.",
       ar: 'العدالة والتمكين: تعزيز سيادة المجتمع المدني وتبني العدالة غير الانتقامية.'
     },
     {
-      en: 'Participatory leadership: involving local communities in decision making from planning to implementation.',
+      en: 'Restorative Justice & Empowerment: We work to strengthen civil society’s sovereignty and champion restorative justice principles that heal and unite.',
       ar: 'القيادة التشاركية: إشراك المجتمعات المحلية في صناعة القرار من التخطيط حتى التنفيذ.'
     },
     {
-      en: 'Economic transformation: shifting from relief to business incubators that support small projects and create jobs.',
+      en: 'Investing in Local Economies: We focus on productive infrastructure, investing in competitive sectors like agriculture and handicrafts to build economic independence.',
       ar: 'التحول الاقتصادي: الانتقال من الإغاثة إلى حاضنات الأعمال التي تدعم المشاريع الصغيرة وتخلق فرص العمل.'
     },
     {
-      en: 'Productive infrastructure: investing in competitive sectors such as agriculture and handicrafts.',
+      en: 'Blending Tradition and Data: We craft powerful pathways for change by combining scientific data and analytics with the invaluable traditional knowledge of local communities.',
       ar: 'البنية التحتية المنتجة: استثمار الموارد في القطاعات ذات الميزة التنافسية كالزراعة والصناعات الحرفية.'
-    },
-    {
-      en: 'Integrative methodology: combining scientific data with traditional knowledge to craft pathways of change.',
-      ar: 'منهجية تكاملية: الجمع بين البيانات العلمية والمعرفة التقليدية لصياغة مسارات التغيير.'
     }
   ];
 
   const goals = [
     {
-      en: 'Data-driven transformation – informed decisions and collective advancement.',
+      en: 'Decentralized: No single point of failure.',
       ar: 'تحوّل تقوده البيانات\nقرارات مستنيرة، ونهوض جماعي'
     },
     {
-      en: 'Empowering self-determination – communities in the lead.',
+      en: 'Interconnected: Strength through collaboration.',
       ar: 'تمكين الإرادة الذاتية\nالمجتمعات في موقع القيادة'
     },
     {
-      en: 'Shifting power dynamics – dismantling hierarchy and radical collaboration.',
+      en: 'Adaptable: Able to navigate complex and changing environments.',
+      ar: 'قلب موازين القوة\nتفكيك الهرمية، وتعاون جذري'
+    },
+    {
+      en: 'Community-Rooted: Growing from local needs and knowledge.',
       ar: 'قلب موازين القوة\nتفكيك الهرمية، وتعاون جذري'
     }
   ];
@@ -181,7 +181,7 @@ const RhizomeSyriaPage: React.FC = () => {
             >
               {t(
                 'rhizome-syria-subtitle',
-                'Syria\'s voice in the Rhizome Community Foundation – independent, community-centered, and united beyond divisions.',
+                'Syria, Reimagined From the Roots Up.',
                 'صوت سوريا في مؤسسة ريزوم المجتمعية - مستقل، متمحور حول المجتمع، وموحد فوق الانقسامات.'
               )}
             </motion.p>
@@ -218,18 +218,18 @@ const RhizomeSyriaPage: React.FC = () => {
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              {t('overview-title', 'About Rhizome Syria', 'عن ريزوم سوريا')}
+              {t('overview-title', 'About Us', 'عن ريزوم سوريا')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               {t(
                 'overview-intro',
-                'Rhizome Syria brings together the vibrant voices of Syrian civil society in a complementary alliance and decentralized nodal network. Through this initiative we aim to rebuild Syria with the will and hands of its people. We believe horizontal and vertical cooperation and quick adaptation require a decentralized organizational fabric akin to a natural rhizome: without beginning or end, with interwoven growth sustainable in all circumstances, forming integrated networked pathways for a cohesive, stable society.',
+                'Rhizome Syria is a network of Syrian civil society leaders, activists, and communities dedicated to rebuilding a cohesive and stable nation through the will and hands of its own people. We are a decentralized alliance of vibrant Syrian voices, bridging the gaps between urban and rural areas, experts and communities, and tradition and innovation. We believe that to build a future that is sustainable in all circumstances, we must operate like a rhizome: an interconnected, non-hierarchical network that grows stronger and more resilient as it expands. With Syrian leadership at our core, we are explicitly anti-sectarian and unaffiliated with any previous regime institutions. We work to strengthen social cohesion through cultural, feminist, and community-led initiatives.',
                 'رايزوم سوريا تجمع كافة الأصوات النابضة في المجتمع المدني السوري ضمن تحالف تكاملي وشبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم. نؤمن بأن التعاون الأفقي والعمودي والتكيف السريع يتطلب نسيجاً تنظيمياً لامركزياً يشبه شبكة الجذمور الطبيعية‏ بلا بداية ولا نهاية ونمو متداخل مستدام في كل الظروف، ومسارات عمل شبكية متكاملة لبناء مجتمع متماسك ومستقر.'
               )}
             </p>
 
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              {t('methods-heading', 'Our Approach', 'الوسائل')}
+              {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
             </h3>
             <ul className="list-disc pl-5 space-y-2 mb-6">
               {methods.map((item, index) => (
@@ -238,7 +238,7 @@ const RhizomeSyriaPage: React.FC = () => {
             </ul>
 
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              {t('goals-heading', 'Our Goals', 'الأهداف')}
+              {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
             </h3>
             <ul className="list-disc pl-5 space-y-2 mb-6">
               {goals.map((item, index) => (
@@ -249,7 +249,7 @@ const RhizomeSyriaPage: React.FC = () => {
             <p className="text-lg text-gray-700 leading-relaxed">
               {t(
                 'partnership-text',
-                'Rhizome Syria works in partnership with the Canadian Rhizome Community Foundation, under Syrian leadership, to reimagine international funding and enhance the agency of communities affected by intersecting challenges. This model empowers local communities to set their priorities and craft solutions rooted in their reality, linking them to global resources while protecting them from external pressure without compromising international standards.',
+                'Rhizome Syria is reimagining international cooperation. We operate in a unique partnership with the Rhizome Community Foundation in Canada. While both organizations are fully independent legal entities, we share governance, coordinate programs, and hold each other accountable through a shared strategic vision. This model ensures Syrian leadership, global connection with local protection, and radical collaboration built on mutual respect and shared goals.',
                 'تعمل ريزوم سوريا بالشراكة مع مؤسسة ريزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
               )}
             </p>
@@ -275,7 +275,7 @@ const RhizomeSyriaPage: React.FC = () => {
                     <Target className="h-6 w-6 text-white" />
                   </div>
                   <h2 className={`text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('our-mission', 'Our Mission', 'مهمتنا')}
+                    {t('our-mission', 'Our Mission & Vision', 'مهمتنا')}
                   </h2>
                 </div>
                 
@@ -283,7 +283,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="text-lg leading-relaxed">
                     {t(
                       'mission-text-1',
-                      'Rhizome Syria is the Syrian partner in a joint venture agreement with Rhizome Canada, operating under an interlocking director model. Each branch retains full legal independence while sharing governance, coordinated programs, and mutual accountability.',
+                      'Our Mission: To empower Syrian communities to lead their own transformation. We connect local ingenuity with global resources, shifting power from traditional hierarchies to the people themselves.',
                       'ريزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع ريزوم كندا وتعملان وفق نموذج الإدارة المتداخلة. يحتفظ كل فرع باستقلال قانوني كامل مع تشارك الحوكمة والبرامج المنسقة والمساءلة المتبادلة.'
                     )}
                   </p>
@@ -291,7 +291,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="text-lg leading-relaxed">
                     {t(
                       'mission-text-2',
-                      'Rhizome Syria works to strengthen social cohesion through cultural, feminist, and community initiatives. It is unaffiliated with any previous regime institutions and is explicitly anti-sectarian.',
+                      'Our Vision: We envision a just and prosperous Syria, where decentralized, community-led development creates a society that is cohesive, self-determined, and empowered from within.',
                       'تعمل ريزوم سوريا على تعزيز التماسك الاجتماعي من خلال المبادرات الثقافية والنسوية والمجتمعية. وهي غير منتسبة لأي مؤسسات نظام سابقة وهي صراحة مناهضة للطائفية.'
                     )}
                   </p>
@@ -321,16 +321,16 @@ const RhizomeSyriaPage: React.FC = () => {
                     <Globe className="h-5 w-5 text-white" />
                   </div>
                   <h3 className={`text-xl font-bold text-orange-800 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('our-structure', 'Our Structure', 'هيكلنا')}
+                      {t('our-structure', 'Our Model: A Unique Global Partnership', 'هيكلنا')}
                   </h3>
                 </div>
                 
                 <p className={`text-gray-700 leading-relaxed ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t(
-                    'structure-text',
-                    'Rhizome Syria and Rhizome Canada operate as two legally distinct entities under a joint venture agreement with interlocking directors, enabling coordinated strategic planning, knowledge exchange, and shared accountability.',
-                    'تعمل ريزوم سوريا وريزوم كندا ككيانين قانونيين منفصلين في إطار اتفاقية مشروع مشترك وبهيكل إدارة متداخلة، مما يتيح التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المشتركة.'
-                  )}
+                      'structure-text',
+                      'We operate in close partnership with the Rhizome Community Foundation in Canada. Both organizations remain independent while sharing governance, coordinating programs, and holding each other accountable through a common strategic vision.',
+                      'تعمل ريزوم سوريا وريزوم كندا ككيانين قانونيين منفصلين في إطار اتفاقية مشروع مشترك وبهيكل إدارة متداخلة، مما يتيح التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المشتركة.'
+                    )}
                 </p>
               </div>
             </motion.div>
@@ -363,46 +363,46 @@ const RhizomeSyriaPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Feminist-led Community Support Center in Latakia',
-                titleAr: 'مركز الدعم المجتمعي بقيادة نسوية في اللاذقية',
-                description: 'Providing economic and organizational empowerment to women.',
+                {
+                  title: 'Feminist-Led Community Center (Latakia)',
+                  titleAr: 'مركز الدعم المجتمعي بقيادة نسوية في اللاذقية',
+                  description: 'A dedicated space providing economic opportunities, skills training, and organizational empowerment for women.',
                 descriptionAr: 'توفير التمكين الاقتصادي والتنظيمي للنساء.',
                 icon: Heart,
                 gradient: 'from-purple-500 to-pink-500'
               },
-              {
-                title: 'Collaborative Cultural Projects',
-                titleAr: 'المشاريع الثقافية التعاونية',
-                description: 'Theater, visual arts, and oral history initiatives in Aleppo and Latakia.',
+                {
+                  title: 'Collaborative Cultural Projects (Aleppo & Latakia)',
+                  titleAr: 'المشاريع الثقافية التعاونية',
+                  description: 'Preserving and celebrating Syrian culture through community-based theater, visual arts, and oral history initiatives.',
                 descriptionAr: 'مبادرات المسرح والفنون البصرية والتاريخ الشفوي في حلب واللاذقية.',
                 icon: Palette,
                 gradient: 'from-blue-500 to-cyan-500'
               },
-              {
-                title: 'Peacebuilding Dialogues',
-                titleAr: 'حوارات بناء السلام',
-                description: 'Participatory workshops across northern and central regions.',
+                {
+                  title: 'Peacebuilding Dialogues (Northern & Central Regions)',
+                  titleAr: 'حوارات بناء السلام',
+                  description: 'Facilitating participatory workshops that build trust, resolve conflict, and foster social cohesion across diverse communities.',
                 descriptionAr: 'ورش عمل تشاركية في المناطق الشمالية والوسطى.',
                 icon: Shield,
                 gradient: 'from-orange-500 to-red-500'
               },
-              {
-                title: 'Fundraising Campaigns',
-                titleAr: 'حملات جمع التبرعات',
-                description: 'Community platforms and fundraising initiatives on the coast.',
-                descriptionAr: 'منصات مجتمعية ومبادرات جمع التبرعات على الساحل.',
-                icon: Target,
-                gradient: 'from-yellow-500 to-orange-500'
-              },
-              {
-                title: 'Digital Storytelling',
-                titleAr: 'السرد الرقمي',
-                description: 'Memory preservation through participatory digital tools.',
-                descriptionAr: 'الحفاظ على الذاكرة من خلال الأدوات الرقمية التشاركية.',
-                icon: Image,
-                gradient: 'from-green-500 to-blue-500'
-              }
+                {
+                  title: 'Digital Storytelling & Memory Preservation',
+                  titleAr: 'السرد الرقمي',
+                  description: 'Using participatory digital tools to create a collective archive of Syrian stories and experiences, ensuring our history is not forgotten.',
+                  descriptionAr: 'الحفاظ على الذاكرة من خلال الأدوات الرقمية التشاركية.',
+                  icon: Image,
+                  gradient: 'from-green-500 to-blue-500'
+                },
+                {
+                  title: 'Community Fundraising Platforms (Coastal Region)',
+                  titleAr: 'حملات جمع التبرعات',
+                  description: 'Developing local fundraising initiatives that empower communities to generate and manage their own resources independently.',
+                  descriptionAr: 'منصات مجتمعية ومبادرات جمع التبرعات على الساحل.',
+                  icon: Target,
+                  gradient: 'from-yellow-500 to-orange-500'
+                }
             ].map((activity, index) => (
               <motion.div
                 key={index}
