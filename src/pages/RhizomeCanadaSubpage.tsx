@@ -78,10 +78,10 @@ const RhizomeCanadaSubpage: React.FC = () => {
   ];
 
   return (
-    <div className="rhizome-canada min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-green-50">
+    <div className="rhizome-canada min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-100">
       {/* Hero Section with Canadian Logo Integration */}
       <section className="rc-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 via-emerald-600/90 to-green-600/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -106,7 +106,7 @@ const RhizomeCanadaSubpage: React.FC = () => {
               {t(
                 'canada-hero-description',
                 'Fostering Syrian-Canadian community connections through sustainable initiatives, cultural celebration, and collaborative partnerships.',
-                'تعزيز الروابط المجتمعية السورية الكندية من خلال المبادرات المستدامة والاحتفال الثقافي والشراكات التعاونية.'
+                'تعزيز الروابط بين السوريين في كندا عبر مبادرات مستدامة واحتفاء ثقافي وشراكات تعاونية.'
               )}
             </p>
             

@@ -60,9 +60,9 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-100 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -77,7 +77,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
               {t(
                 'programs-subtitle',
                 'Bridging Syrian communities across Syria and Canada through grassroots innovation, cultural exchange, and collaborative leadership. Our cross-border partnership delivers transformative programs that amplify local voices and diaspora expertise.',
-                'نربط المجتمعات السورية عبر سوريا وكندا من خلال الابتكار الشعبي والتبادل الثقافي والقيادة التشاركية. شراكتنا عبر الحدود تقدم برامج تحويلية تضخم الأصوات المحلية وخبرات الشتات.'
+                'نصل المجتمعات السورية في الداخل والخارج عبر الابتكار الشعبي والتبادل الثقافي والقيادة التشاركية. شراكاتنا العابرة للحدود تقدّم برامج نوعية تعزّز الأصوات المحلية وخبرات الشتات.'
               )}
             </p>
 
@@ -249,7 +249,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

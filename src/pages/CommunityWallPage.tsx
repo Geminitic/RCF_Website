@@ -116,9 +116,9 @@ const CommunityWallPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-100 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -133,7 +133,7 @@ const CommunityWallPage: React.FC = () => {
               {t(
                 'community-wall-subtitle',
                 'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.',
-                'نسيج نابض من القصص واللحظات والذكريات التي تحتفي بمجتمعنا السوري العالمي.'
+                'لوحة زاخرة بالقصص واللحظات والذكريات التي تحتفي بالمجتمع السوري حول العالم.'
               )}
             </p>
 

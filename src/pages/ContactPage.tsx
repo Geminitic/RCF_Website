@@ -126,9 +126,9 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-100 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -143,7 +143,7 @@ const ContactPage: React.FC = () => {
               {t(
                 'contact-subtitle',
                 'Your voice matters to us. Reach out and let\'s start a conversation about creating change together.',
-                'صوتك مهم لنا. تواصل معنا ولنبدأ حواراً حول خلق التغيير معاً.'
+                'صوتك محل اهتمامنا. تواصل معنا ولنبدأ حواراً لصناعة التغيير معاً.'
               )}
             </p>
 

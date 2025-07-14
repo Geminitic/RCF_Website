@@ -1,4 +1,5 @@
 import Redis from 'ioredis';
+import RedisMock from 'ioredis-mock';
 import { Event } from '../types/event';
 
 export class EventCache {
@@ -6,10 +7,14 @@ export class EventCache {
   private TTL = 3600; // 1 hour
 
   constructor() {
-    this.redis = new Redis({
+    const RedisCtor: any =
+      process.env.NODE_ENV === 'test'
+        ? (RedisMock as any).default || RedisMock
+        : Redis;
+    this.redis = new RedisCtor({
       host: process.env.REDIS_HOST || 'localhost',
       port: parseInt(process.env.REDIS_PORT || '6379'),
-      retryStrategy: (times) => Math.min(times * 50, 2000)
+      retryStrategy: (times: number) => Math.min(times * 50, 2000)
     });
   }
 

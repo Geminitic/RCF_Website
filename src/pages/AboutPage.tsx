@@ -185,9 +185,9 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-slate-100 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -202,7 +202,7 @@ const AboutPage: React.FC = () => {
               {t(
                 'about-subtitle',
                 'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'يجمع ريزوم سوريا أصوات المجتمع المدني في شبكة لامركزية حيوية، ونؤمن بأن النمو المستدام ينبع من مسارات مجتمعية متشابكة قادرة على التكيف مع مختلف الظروف.'
               )}
             </p>
           </motion.div>
