@@ -19,6 +19,7 @@ import {
   Loader
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import type { CalendarEvent } from '../types';
 
 const CalendarPage: React.FC = () => {
@@ -156,12 +157,17 @@ const CalendarPage: React.FC = () => {
                   )}
                 </div>
                 {event.registrationRequired && (
-                  <button className="ml-4 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors flex items-center">
+                  <a
+                    href={event.link || '/contact'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-4 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors flex items-center"
+                  >
                     <span className={`mr-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('register', 'Register', 'سجل')}
                     </span>
                     <ExternalLink className="h-4 w-4" />
-                  </button>
+                  </a>
                 )}
               </div>
 
@@ -298,9 +304,12 @@ const CalendarPage: React.FC = () => {
                 )}
                 {t('refresh-events', 'Refresh Events', 'تحديث الفعاليات')}
               </button>
-              <button className="px-6 py-3 bg-emerald-800 text-white font-semibold rounded-lg hover:bg-emerald-900 transition-colors">
+              <Link
+                to="/contact"
+                className="px-6 py-3 bg-emerald-800 text-white font-semibold rounded-lg hover:bg-emerald-900 transition-colors"
+              >
                 {t('subscribe-calendar', 'Subscribe to Calendar', 'اشترك في التقويم')}
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
