@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, MapPin, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { mockCommunityMembers } from '../../data/mockData';
@@ -242,7 +242,7 @@ const CommunityCarousel: React.FC = () => {
                             
                             {member.social && (
                               <div className="flex space-x-3 pt-2">
-                                {Object.entries(member.social).map(([platform, handle]) => (
+                                {Object.entries(member.social).map(([platform, _handle]) => (
                                   <MagneticHover key={platform} strength={0.3}>
                                     <motion.button
                                       whileHover={{ scale: 1.2, rotate: 10 }}

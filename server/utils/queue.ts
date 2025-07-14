@@ -1,5 +1,4 @@
 import Queue from 'bull';
-import { Event } from '../types/event';
 
 export const scraperQueue = new Queue('event-scraping', {
   redis: {

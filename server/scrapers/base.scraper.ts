@@ -5,7 +5,7 @@ import { Event } from '../types/event';
 export abstract class BaseScraper {
   protected httpClient = createHttpClient();
 
-  abstract scrape(url: string): Promise<Event[]>;
+  abstract scrape(_url: string): Promise<Event[]>;
 
   protected async fetchPage(url: string): Promise<string | null> {
     try {

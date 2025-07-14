@@ -7,17 +7,18 @@ const SyriaParticleMap: React.FC = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    const currentMount = mountRef.current;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
+      currentMount.clientWidth / currentMount.clientHeight,
       0.1,
       1000
     );
     camera.position.z = 5;
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
-    mountRef.current.appendChild(renderer.domElement);
+    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    currentMount.appendChild(renderer.domElement);
 
     const particleCount = window.innerWidth < 768 ? 2000 : 5000;
     const positions = new Float32Array(particleCount * 3);
@@ -43,7 +44,7 @@ const SyriaParticleMap: React.FC = () => {
 
     return () => {
       renderer.dispose();
-      mountRef.current?.removeChild(renderer.domElement);
+      currentMount?.removeChild(renderer.domElement);
     };
   }, []);
 
