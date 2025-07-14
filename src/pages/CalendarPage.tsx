@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import parse from 'date-fns/parse';
 import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
 import { 
@@ -42,6 +43,19 @@ const CalendarPage: React.FC = () => {
   ];
 
   const initialEvents: CalendarEvent[] = [];
+
+  const parseEventDate = (date?: string): Date | null => {
+    if (!date) return null;
+    const formats = ['dd/MM/yyyy', 'MM/dd/yyyy', 'yyyy-MM-dd'];
+    for (const fmt of formats) {
+      const parsed = parse(date, fmt, new Date());
+      if (!isNaN(parsed.getTime())) {
+        return parsed;
+      }
+    }
+    const parsed = new Date(date);
+    return isNaN(parsed.getTime()) ? null : parsed;
+  };
 
   useEffect(() => {
     fetchEvents();
@@ -87,12 +101,15 @@ const CalendarPage: React.FC = () => {
   // react-big-calendar handles navigation and month calculations internally
 
   const renderCalendarView = () => {
-    const bigCalendarEvents = filteredEvents.map(e => ({
-      title: t('event-title', e.title, e.titleAr),
-      start: e.date ? new Date(e.date) : new Date(),
-      end: e.date ? new Date(e.date) : new Date(),
-      allDay: true,
-    }));
+    const bigCalendarEvents = filteredEvents.map(e => {
+      const parsedDate = parseEventDate(e.date) || new Date();
+      return {
+        title: t('event-title', e.title, e.titleAr),
+        start: parsedDate,
+        end: parsedDate,
+        allDay: true,
+      };
+    });
 
     return (
       <BigCalendar events={bigCalendarEvents} language={currentLanguage.code} />
@@ -169,7 +186,7 @@ const CalendarPage: React.FC = () => {
                 {event.date && (
                   <div className="flex items-center">
                     <CalendarIcon className="h-4 w-4 mr-2" />
-                    <span>{new Date(event.date).toLocaleDateString()}</span>
+                    <span>{(parseEventDate(event.date) || new Date()).toLocaleDateString()}</span>
                   </div>
                 )}
                 {event.time && (
