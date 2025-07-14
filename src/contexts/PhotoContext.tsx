@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { photoList } from '../data/photoList';
 
 interface Photo {
@@ -305,10 +305,10 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
   const pendingPhotos = photos.filter(photo => !photo.approved);
   
   // Generate additional random photos for the full wall
-  const generateRandomPhotos = () => {
-    const randomPhotos = [];
+  const randomPhotos = useMemo(() => {
+    const generated = [];
     for (let i = 10; i <= 50; i++) {
-      randomPhotos.push({
+      generated.push({
         id: `random-${i}`,
         url: `https://source.unsplash.com/600x600/?syria&sig=${i}`,
         title: `Community Story ${i}`,
@@ -324,10 +324,10 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         featured: false
       });
     }
-    return randomPhotos;
-  };
+    return generated;
+  }, []);
 
-  const allPhotos = [...communityPhotos, ...generateRandomPhotos()];
+  const allPhotos = useMemo(() => [...communityPhotos, ...randomPhotos], [communityPhotos, randomPhotos]);
 
   return (
     <PhotoContext.Provider value={{
