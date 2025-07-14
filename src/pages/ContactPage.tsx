@@ -126,9 +126,9 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -139,25 +139,25 @@ const ContactPage: React.FC = () => {
             <h1 className="text-5xl font-bold mb-6">
               {t('contact-title', 'Connect With Us', 'تواصل معنا')}
             </h1>
-            <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
               {t(
                 'contact-subtitle',
                 'Your voice matters to us. Reach out and let\'s start a conversation about creating change together.',
-                'صوتك مهم لنا. تواصل معنا ولنبدأ حواراً حول خلق التغيير معاً.'
+                'صوتك يهمنا. تواصل معنا ولنجعل التغيير واقعًا معًا.'
               )}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:info@rhizomsyria.org"
-                className="inline-flex items-center px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-emerald-50 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />
                 {t('email-us', 'Email Us', 'راسلنا')}
               </a>
               <a
                 href="tel:+14165550123"
-                className="inline-flex items-center px-6 py-3 bg-emerald-800 text-white font-semibold rounded-lg hover:bg-emerald-900 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 {t('call-us', 'Call Us', 'اتصل بنا')}
@@ -210,7 +210,7 @@ const ContactPage: React.FC = () => {
                         type="text"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
-                        className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
+                        className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                         required
                       />
                     </div>
@@ -222,7 +222,7 @@ const ContactPage: React.FC = () => {
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
-                        className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         required
                       />
                     </div>
@@ -236,7 +236,7 @@ const ContactPage: React.FC = () => {
                       type="text"
                       value={formData.subject}
                       onChange={(e) => handleInputChange('subject', e.target.value)}
-                      className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
+                      className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                       required
                     />
                   </div>
@@ -249,7 +249,7 @@ const ContactPage: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       rows={6}
-                      className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
+                      className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                       required
                     />
                   </div>
@@ -260,7 +260,7 @@ const ContactPage: React.FC = () => {
                       id="newsletter"
                       checked={formData.newsletter}
                       onChange={(e) => handleInputChange('newsletter', e.target.checked)}
-                      className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-stone-300 rounded"
+                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-stone-300 rounded"
                     />
                     <label htmlFor="newsletter" className={`ml-2 text-sm text-stone-600 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('newsletter-signup', 'Subscribe to our newsletter for updates', 'اشترك في نشرتنا الإخبارية للحصول على التحديثات')}
@@ -270,7 +270,7 @@ const ContactPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="w-full flex items-center justify-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     {isSubmitting ? (
                       <>
@@ -308,7 +308,7 @@ const ContactPage: React.FC = () => {
                   {t(
                     'contact-info-desc',
                     'Reach out to us through any of these channels. We\'re here to help and answer your questions.',
-                    'تواصل معنا من خلال أي من هذه القنوات. نحن هنا للمساعدة والإجابة على أسئلتك.'
+                    'تواصل معنا عبر أي من هذه القنوات؛ نحن جاهزون للمساعدة والإجابة عن أسئلتك.'
                   )}
                 </p>
               </div>
@@ -325,8 +325,8 @@ const ContactPage: React.FC = () => {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
                     >
-                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="h-6 w-6 text-emerald-600" />
+                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="h-6 w-6 text-indigo-600" />
                       </div>
                       <div>
                         <h3 className={`font-semibold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
@@ -388,7 +388,7 @@ const ContactPage: React.FC = () => {
               {t(
                 'offices-description',
                 'Visit us at our locations or connect with our regional teams.',
-                'زرنا في مواقعنا أو تواصل مع فرقنا الإقليمية.'
+                'تفضل بزيارتنا في مواقعنا أو تواصل مع فرقنا الإقليمية.'
               )}
             </p>
           </motion.div>
@@ -401,10 +401,10 @@ const ContactPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-gradient-to-br from-emerald-50 to-stone-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-gradient-to-br from-indigo-50 to-stone-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
                     <Globe className="h-6 w-6 text-white" />
                   </div>
                   <h3 className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
@@ -414,28 +414,28 @@ const ContactPage: React.FC = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-indigo-600 mt-1 mr-3 flex-shrink-0" />
                     <p className={`text-stone-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t(`office-${index}-address`, office.address, office.addressAr)}
                     </p>
                   </div>
 
                   <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-emerald-600 mr-3" />
-                    <a href={`tel:${office.phone}`} className="text-stone-700 hover:text-emerald-600 transition-colors">
+                    <Phone className="h-5 w-5 text-indigo-600 mr-3" />
+                    <a href={`tel:${office.phone}`} className="text-stone-700 hover:text-indigo-600 transition-colors">
                       {office.phone}
                     </a>
                   </div>
 
                   <div className="flex items-center">
-                    <Mail className="h-5 w-5 text-emerald-600 mr-3" />
-                    <a href={`mailto:${office.email}`} className="text-stone-700 hover:text-emerald-600 transition-colors">
+                    <Mail className="h-5 w-5 text-indigo-600 mr-3" />
+                    <a href={`mailto:${office.email}`} className="text-stone-700 hover:text-indigo-600 transition-colors">
                       {office.email}
                     </a>
                   </div>
 
                   <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-emerald-600 mr-3" />
+                    <Clock className="h-5 w-5 text-indigo-600 mr-3" />
                     <p className={`text-stone-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t(`office-${index}-hours`, office.hours, office.hoursAr)}
                     </p>
@@ -456,7 +456,7 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-stone-200">
-                  <button className="w-full flex items-center justify-center px-4 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+                  <button className="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors">
                     <MessageCircle className="h-5 w-5 mr-2" />
                     {t('contact-office', 'Contact This Office', 'اتصل بهذا المكتب')}
                   </button>

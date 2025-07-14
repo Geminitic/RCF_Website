@@ -103,7 +103,7 @@ const CalendarPage: React.FC = () => {
     if (loading) {
       return (
         <div className="flex items-center justify-center py-12">
-          <Loader className="h-8 w-8 animate-spin text-emerald-600 mr-3" />
+          <Loader className="h-8 w-8 animate-spin text-indigo-600 mr-3" />
           <span className="text-lg text-stone-600">Loading events...</span>
         </div>
       );
@@ -156,7 +156,7 @@ const CalendarPage: React.FC = () => {
                   )}
                 </div>
                 {event.registrationRequired && (
-                  <button className="ml-4 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors flex items-center">
+                  <button className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center">
                     <span className={`mr-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('register', 'Register', 'سجل')}
                     </span>
@@ -234,7 +234,7 @@ const CalendarPage: React.FC = () => {
                     href={event.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center"
+                    className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center"
                   >
                     {t('view-details', 'View Details', 'عرض التفاصيل')}
                     <ExternalLink className="h-4 w-4 ml-1" />
@@ -249,9 +249,9 @@ const CalendarPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -262,7 +262,7 @@ const CalendarPage: React.FC = () => {
             <h1 className="text-5xl font-bold mb-6">
               {t('calendar-title', 'Events & Opportunities', 'الفعاليات والفرص')}
             </h1>
-            <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
               {t(
                 'calendar-subtitle',
                 'Discover live events, workshops, and opportunities from Syrian organizations and partners worldwide.',
@@ -280,7 +280,7 @@ const CalendarPage: React.FC = () => {
             )}
 
             {lastUpdated && (
-              <div className="text-sm text-emerald-200 mb-6">
+              <div className="text-sm text-indigo-200 mb-6">
                 {t('last-updated', 'Last updated', 'آخر تحديث')}: {new Date(lastUpdated).toLocaleString()}
               </div>
             )}
@@ -289,7 +289,7 @@ const CalendarPage: React.FC = () => {
               <button 
                 onClick={fetchEvents}
                 disabled={loading}
-                className="px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-emerald-50 transition-colors flex items-center justify-center disabled:opacity-50"
+                className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors flex items-center justify-center disabled:opacity-50"
               >
                 {loading ? (
                   <Loader className="h-5 w-5 animate-spin mr-2" />
@@ -298,7 +298,7 @@ const CalendarPage: React.FC = () => {
                 )}
                 {t('refresh-events', 'Refresh Events', 'تحديث الفعاليات')}
               </button>
-              <button className="px-6 py-3 bg-emerald-800 text-white font-semibold rounded-lg hover:bg-emerald-900 transition-colors">
+              <button className="px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors">
                 {t('subscribe-calendar', 'Subscribe to Calendar', 'اشترك في التقويم')}
               </button>
             </div>
@@ -316,7 +316,7 @@ const CalendarPage: React.FC = () => {
                 onClick={() => setViewMode('calendar')}
                 className={`flex items-center px-4 py-2 rounded-md font-medium transition-colors ${
                   viewMode === 'calendar'
-                    ? 'bg-white text-emerald-600 shadow-sm'
+                    ? 'bg-white text-indigo-600 shadow-sm'
                     : 'text-stone-600 hover:text-stone-900'
                 }`}
               >
@@ -327,7 +327,7 @@ const CalendarPage: React.FC = () => {
                 onClick={() => setViewMode('list')}
                 className={`flex items-center px-4 py-2 rounded-md font-medium transition-colors ${
                   viewMode === 'list'
-                    ? 'bg-white text-emerald-600 shadow-sm'
+                    ? 'bg-white text-indigo-600 shadow-sm'
                     : 'text-stone-600 hover:text-stone-900'
                 }`}
               >
@@ -344,7 +344,7 @@ const CalendarPage: React.FC = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className={`px-4 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${
+                className={`px-4 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
                   currentLanguage.code === 'ar' ? 'font-arabic' : ''
                 }`}
               >

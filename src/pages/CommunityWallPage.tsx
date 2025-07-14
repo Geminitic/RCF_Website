@@ -116,9 +116,9 @@ const CommunityWallPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -129,7 +129,7 @@ const CommunityWallPage: React.FC = () => {
             <h1 className="text-5xl font-bold mb-6">
               {t('community-wall-title', 'Community Canvas', 'لوحة المجتمع')}
             </h1>
-            <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
               {t(
                 'community-wall-subtitle',
                 'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.',
@@ -150,7 +150,7 @@ const CommunityWallPage: React.FC = () => {
                   {uploadedCount.toLocaleString()} / {targetCount.toLocaleString()}
                 </span>
               </div>
-              <div className="w-full bg-emerald-800 rounded-full h-4">
+              <div className="w-full bg-indigo-800 rounded-full h-4">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercentage}%` }}
@@ -160,7 +160,7 @@ const CommunityWallPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse" />
                 </motion.div>
               </div>
-              <p className="text-sm text-emerald-200 mt-2">
+              <p className="text-sm text-indigo-200 mt-2">
                 {progressPercentage.toFixed(1)}% {t('completed', 'completed', 'مكتمل')}
               </p>
             </div>
@@ -170,21 +170,21 @@ const CommunityWallPage: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Users className="h-8 w-8 mx-auto mb-2" />
                 <div className="text-2xl font-bold">{Math.floor(uploadedCount / 10)}+</div>
-                <div className="text-sm text-emerald-200">
+                <div className="text-sm text-indigo-200">
                   {t('contributors', 'Contributors', 'مساهمون')}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Globe className="h-8 w-8 mx-auto mb-2" />
                 <div className="text-2xl font-bold">15+</div>
-                <div className="text-sm text-emerald-200">
+                <div className="text-sm text-indigo-200">
                   {t('countries', 'Countries', 'دولة')}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Camera className="h-8 w-8 mx-auto mb-2" />
                 <div className="text-2xl font-bold">{filteredPhotos.length}+</div>
-                <div className="text-sm text-emerald-200">
+                <div className="text-sm text-indigo-200">
                   {t('stories', 'Stories', 'قصة')}
                 </div>
               </div>
@@ -208,7 +208,7 @@ const CommunityWallPage: React.FC = () => {
                 placeholder={t('search-placeholder', 'Search stories...', 'البحث في القصص...')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${
+                className={`w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
                   currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''
                 }`}
               />
@@ -220,7 +220,7 @@ const CommunityWallPage: React.FC = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className={`px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${
+                className={`px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
                   currentLanguage.code === 'ar' ? 'font-arabic' : ''
                 }`}
               >
@@ -235,7 +235,7 @@ const CommunityWallPage: React.FC = () => {
             {/* Upload Button */}
             <button
               onClick={() => setShowUploadModal(true)}
-              className="flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+              className="flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
             >
               <Upload className="h-5 w-5 mr-2" />
               {t('upload-story', 'Upload Story', 'رفع قصة')}
@@ -289,7 +289,7 @@ const CommunityWallPage: React.FC = () => {
                           <span>{Math.floor(Math.random() * 20) + 1}</span>
                         </button>
                       </div>
-                      <button className="hover:text-emerald-300 transition-colors">
+                      <button className="hover:text-indigo-300 transition-colors">
                         <Share2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -317,9 +317,9 @@ const CommunityWallPage: React.FC = () => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                  className="w-6 h-6 border-2 border-emerald-600 border-t-transparent rounded-full"
+                  className="w-6 h-6 border-2 border-indigo-600 border-t-transparent rounded-full"
                 />
-                <span className={`text-emerald-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <span className={`text-indigo-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t('loading-more', 'Loading more stories...', 'تحميل المزيد من القصص...')}
                 </span>
               </motion.div>
@@ -394,7 +394,7 @@ const CommunityWallPage: React.FC = () => {
                       <span>{Math.floor(Math.random() * 20) + 1}</span>
                     </button>
                   </div>
-                  <button className="flex items-center space-x-2 px-4 py-2 bg-emerald-50 text-emerald-600 rounded-lg hover:bg-emerald-100 transition-colors">
+                  <button className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors">
                     <Share2 className="h-5 w-5" />
                     <span>{t('share', 'Share', 'مشاركة')}</span>
                   </button>

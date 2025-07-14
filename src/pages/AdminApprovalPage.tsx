@@ -20,7 +20,7 @@ const AdminApprovalPage: React.FC = () => {
         <h1 className="text-2xl font-bold">Pending Photo Approvals</h1>
         <button
           onClick={() => setShowUploadModal(true)}
-          className="flex items-center space-x-1 bg-emerald-600 text-white px-3 py-1 rounded"
+          className="flex items-center space-x-1 bg-indigo-600 text-white px-3 py-1 rounded"
         >
           <Upload className="h-4 w-4" />
           <span>Add Photo</span>
@@ -39,7 +39,7 @@ const AdminApprovalPage: React.FC = () => {
               <div className="flex justify-end space-x-2">
                 <button
                   onClick={() => approvePhoto(photo.id)}
-                  className="flex items-center space-x-1 bg-emerald-600 text-white px-3 py-1 rounded"
+                  className="flex items-center space-x-1 bg-indigo-600 text-white px-3 py-1 rounded"
                 >
                   <CheckCircle className="h-4 w-4" />
                   <span>Approve</span>

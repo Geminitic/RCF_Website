@@ -185,9 +185,9 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -198,7 +198,7 @@ const AboutPage: React.FC = () => {
             <h1 className="text-5xl font-bold mb-6">
               {t('about-title', 'About Rhizome Community Foundation', 'عن مؤسسة ريزوم المجتمعية')}
             </h1>
-            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
               {t(
                 'about-subtitle',
                 'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
@@ -213,7 +213,7 @@ const AboutPage: React.FC = () => {
 <section className="py-16 bg-white">
   <div className="max-w-4xl mx-auto px-4">
     <h2 className="text-3xl font-bold text-stone-900 mb-4">About Us</h2>
-    <h3 className="text-xl font-semibold text-emerald-700 mb-3">How We Began</h3>
+    <h3 className="text-xl font-semibold text-indigo-700 mb-3">How We Began</h3>
     <p className="text-lg text-stone-700 mb-3">
       Rhizome Community Foundation was established in 2025 by Amer, Akshya, and Sarah—three Edmonton-based advocates with strong international ties connecting India, the Philippines, Syria, and Canada—alongside Aboudi, a Syrian designer based in Italy. Inspired by the urgent need for community-driven solutions after the defunding of Edmonton's social sector, and recognizing the opportunity for meaningful action in post-Assad Syria, our founders came together to launch an organization focused on empowering grassroots innovation and resilience.
     </p>
@@ -231,10 +231,10 @@ const AboutPage: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8"
+              className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8"
             >
               <div className="flex items-center mb-6">
-                <Target className="h-8 w-8 text-emerald-600 mr-3" />
+                <Target className="h-8 w-8 text-indigo-600 mr-3" />
                 <h2 className={`text-3xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t('our-mission', 'Our Purpose', 'رسالتنا')}
                 </h2>
@@ -274,7 +274,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gradient-to-br from-stone-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-stone-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -297,7 +297,7 @@ const AboutPage: React.FC = () => {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-emerald-200" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-indigo-200" />
 
             {timeline.map((item, index) => (
               <motion.div
@@ -312,7 +312,7 @@ const AboutPage: React.FC = () => {
               >
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-lg font-bold text-emerald-600 mb-2">{item.year}</div>
+                    <div className="text-lg font-bold text-indigo-600 mb-2">{item.year}</div>
                     <h3 className={`text-xl font-bold text-stone-900 mb-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t(`timeline-${index}-title`, item.title, item.titleAr)}
                     </h3>
@@ -323,7 +323,7 @@ const AboutPage: React.FC = () => {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-emerald-600 rounded-full border-4 border-white shadow-lg" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white shadow-lg" />
               </motion.div>
             ))}
           </div>
@@ -387,9 +387,9 @@ const AboutPage: React.FC = () => {
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center bg-emerald-50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-emerald-600">{branch.programs}</div>
-                      <div className={`text-sm text-emerald-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <div className="text-center bg-indigo-50 rounded-lg p-4">
+                      <div className="text-2xl font-bold text-indigo-600">{branch.programs}</div>
+                      <div className={`text-sm text-indigo-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('active-programs', 'Active Programs', 'برامج نشطة')}
                       </div>
                     </div>
@@ -408,7 +408,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 to-stone-50">
+      <section className="py-20 bg-gradient-to-br from-indigo-50 to-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -443,14 +443,14 @@ const AboutPage: React.FC = () => {
                 <img
                   src={member.image}
                   alt={t('member-name', member.name, member.nameAr)}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-emerald-100"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-100"
                 />
                 
                 <h3 className={`text-xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t('member-name', member.name, member.nameAr)}
                 </h3>
                 
-                <p className={`text-emerald-600 font-semibold mb-4 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <p className={`text-indigo-600 font-semibold mb-4 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t('member-role', member.role, member.roleAr)}
                 </p>
                 
@@ -480,7 +480,7 @@ const AboutPage: React.FC = () => {
               {t(
                 'partners-description',
                 'Collaborating with dedicated organizations to amplify our impact and reach.',
-                'التعاون مع منظمات مكرسة لتضخيم تأثيرنا ووصولنا.'
+                'نتعاون مع منظمات رائدة لتعزيز أثرنا وتوسيع نطاق وصولنا.'
               )}
             </p>
           </motion.div>
@@ -509,8 +509,8 @@ const AboutPage: React.FC = () => {
                       {t('partner-name', partner.name, partner.nameAr)}
                     </h3>
                     <div className="flex items-center">
-                      <Handshake className="h-5 w-5 text-emerald-600 mr-2" />
-                      <span className={`text-sm text-emerald-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                      <Handshake className="h-5 w-5 text-indigo-600 mr-2" />
+                      <span className={`text-sm text-indigo-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('partner-type', partner.type, partner.typeAr)}
                       </span>
                     </div>
