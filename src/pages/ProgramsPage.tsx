@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
   Palette, 
@@ -235,12 +236,15 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                     </ul>
                   </div>
 
-                  <button className="w-full flex items-center justify-center px-4 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors group">
+                  <Link
+                    to="/contact"
+                    className="w-full flex items-center justify-center px-4 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors group"
+                  >
                     <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
                       {t('learn-more', 'Learn More', 'اعرف المزيد')}
                     </span>
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -269,12 +273,12 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:bg-emerald-50 transition-colors">
+              <Link to="/contact" className="px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:bg-emerald-50 transition-colors">
                 {t('apply-now', 'Apply Now', 'تقدم الآن')}
-              </button>
-              <button className="px-8 py-4 bg-emerald-800 text-white font-semibold rounded-full hover:bg-emerald-900 transition-colors">
+              </Link>
+              <Link to="/contact" className="px-8 py-4 bg-emerald-800 text-white font-semibold rounded-full hover:bg-emerald-900 transition-colors">
                 {t('volunteer', 'Volunteer', 'تطوع')}
-              </button>
+              </Link>
             </div>
             <div className="mt-6 text-emerald-200">
               <p>

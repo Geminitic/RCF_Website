@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MapPin, Users, Calendar, Leaf, Mountain, Droplets, Star, Award, Target } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/rhizome-canada.css';
@@ -111,12 +112,12 @@ const RhizomeCanadaSubpage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="rc-button-primary">
+              <Link to="/programs" className="rc-button-primary">
                 {t('explore-programs', 'Explore Programs', 'استكشف البرامج')}
-              </button>
-              <button className="rc-button-secondary bg-white/20 border-white/50 text-white hover:bg-white hover:text-teal-600">
+              </Link>
+              <a href="#products" className="rc-button-secondary bg-white/20 border-white/50 text-white hover:bg-white hover:text-teal-600">
                 {t('shop-products', 'Shop Products', 'تسوق المنتجات')}
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -188,9 +189,12 @@ const RhizomeCanadaSubpage: React.FC = () => {
                     </div>
                   </div>
                   
-                  <button className="rc-button-primary w-full mt-6 group-hover:scale-105 transition-transform">
+                  <Link
+                    to="/programs"
+                    className="rc-button-primary w-full mt-6 group-hover:scale-105 transition-transform"
+                  >
                     {t('learn-more', 'Learn More', 'اعرف المزيد')}
-                  </button>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -199,7 +203,7 @@ const RhizomeCanadaSubpage: React.FC = () => {
       </section>
 
       {/* Product Showcase Section */}
-      <section className="rc-section-alt">
+      <section id="products" className="rc-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -247,7 +251,10 @@ const RhizomeCanadaSubpage: React.FC = () => {
                   
                   <div className="flex items-center justify-between">
                     <span className="rc-product-price">{product.price}</span>
-                    <button className="rc-button-primary">
+                    <button
+                      className="rc-button-primary"
+                      onClick={() => alert('Added to cart!')}
+                    >
                       {t('add-to-cart', 'Add to Cart', 'أضف للسلة')}
                     </button>
                   </div>
@@ -389,12 +396,12 @@ const RhizomeCanadaSubpage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="rc-button-primary bg-white text-teal-600 hover:bg-gray-100">
+              <Link to="/contact" className="rc-button-primary bg-white text-teal-600 hover:bg-gray-100">
                 {t('get-involved', 'Get Involved', 'شارك معنا')}
-              </button>
-              <button className="rc-button-secondary border-white text-white hover:bg-white hover:text-teal-600">
+              </Link>
+              <a href="#products" className="rc-button-secondary border-white text-white hover:bg-white hover:text-teal-600">
                 {t('shop-now', 'Shop Now', 'تسوق الآن')}
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

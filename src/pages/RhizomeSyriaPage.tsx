@@ -192,16 +192,22 @@ const RhizomeSyriaPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <Link
+                to="/programs"
+                className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
                 <span className="flex items-center">
                   <Sparkles className="h-5 w-5 mr-2 group-hover:animate-spin" />
                   {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
                 </span>
-              </button>
+              </Link>
               
-              <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-full border-2 border-purple-300 hover:bg-purple-50 transition-all duration-300">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-full border-2 border-purple-300 hover:bg-purple-50 transition-all duration-300"
+              >
                 {t('join-community', 'Join the Movement', 'انضم للحراك')}
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
@@ -24,12 +25,19 @@ import PhotoUploadModal from '../components/community/PhotoUploadModal';
 const CommunityWallPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   const { photos, uploadedCount, targetCount } = usePhoto();
+  const [searchParams] = useSearchParams();
   const [filteredPhotos, setFilteredPhotos] = useState(photos);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
   const [loadedPhotos, setLoadedPhotos] = useState(12);
+
+  useEffect(() => {
+    if (searchParams.get('upload')) {
+      setShowUploadModal(true);
+    }
+  }, [searchParams]);
   
   const { ref: loadMoreRef, inView } = useInView({
     threshold: 0.1,
@@ -280,16 +288,25 @@ const CommunityWallPage: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <button className="flex items-center space-x-1 hover:text-red-300 transition-colors">
+                        <button
+                          onClick={() => alert('Feature coming soon!')}
+                          className="flex items-center space-x-1 hover:text-red-300 transition-colors"
+                        >
                           <Heart className="h-4 w-4" />
                           <span>{Math.floor(Math.random() * 50) + 5}</span>
                         </button>
-                        <button className="flex items-center space-x-1 hover:text-blue-300 transition-colors">
+                        <button
+                          onClick={() => alert('Feature coming soon!')}
+                          className="flex items-center space-x-1 hover:text-blue-300 transition-colors"
+                        >
                           <MessageCircle className="h-4 w-4" />
                           <span>{Math.floor(Math.random() * 20) + 1}</span>
                         </button>
                       </div>
-                      <button className="hover:text-emerald-300 transition-colors">
+                      <button
+                        onClick={() => alert('Feature coming soon!')}
+                        className="hover:text-emerald-300 transition-colors"
+                      >
                         <Share2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -385,16 +402,25 @@ const CommunityWallPage: React.FC = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+                    <button
+                      onClick={() => alert('Feature coming soon!')}
+                      className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+                    >
                       <Heart className="h-5 w-5" />
                       <span>{Math.floor(Math.random() * 50) + 5}</span>
                     </button>
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
+                    <button
+                      onClick={() => alert('Feature coming soon!')}
+                      className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+                    >
                       <MessageCircle className="h-5 w-5" />
                       <span>{Math.floor(Math.random() * 20) + 1}</span>
                     </button>
                   </div>
-                  <button className="flex items-center space-x-2 px-4 py-2 bg-emerald-50 text-emerald-600 rounded-lg hover:bg-emerald-100 transition-colors">
+                  <button
+                    onClick={() => alert('Feature coming soon!')}
+                    className="flex items-center space-x-2 px-4 py-2 bg-emerald-50 text-emerald-600 rounded-lg hover:bg-emerald-100 transition-colors"
+                  >
                     <Share2 className="h-5 w-5" />
                     <span>{t('share', 'Share', 'مشاركة')}</span>
                   </button>

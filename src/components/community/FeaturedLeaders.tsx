@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Award, MapPin, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const FeaturedLeaders: React.FC = () => {
@@ -172,12 +173,15 @@ const FeaturedLeaders: React.FC = () => {
                           </p>
                         </div>
 
-                        <button className="flex items-center justify-center space-x-2 w-full py-2 text-emerald-600 hover:text-emerald-700 transition-colors">
+                        <Link
+                          to="/community-wall"
+                          className="flex items-center justify-center space-x-2 w-full py-2 text-emerald-600 hover:text-emerald-700 transition-colors"
+                        >
                           <span className={`text-sm font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                             {t('learn-more', 'Learn More', 'اعرف المزيد')}
                           </span>
                           <ExternalLink className="h-4 w-4" />
-                        </button>
+                        </Link>
                       </div>
                     </motion.div>
                   );
