@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MapPin, Users, Calendar, Globe, Heart, Star, Award, Target } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/rhizome-syria.css';
@@ -81,12 +82,12 @@ const RhizomeSyriaSubpage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="rs-button-primary">
+              <Link to="/programs" className="rs-button-primary">
                 {t('explore-programs', 'Explore Programs', 'استكشف البرامج')}
-              </button>
-              <button className="rs-button-secondary bg-white/20 border-white/50 text-white hover:bg-white hover:text-purple-600">
+              </Link>
+              <Link to="/contact" className="rs-button-secondary bg-white/20 border-white/50 text-white hover:bg-white hover:text-purple-600">
                 {t('join-network', 'Join Our Network', 'انضم إلى شبكتنا')}
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -158,9 +159,12 @@ const RhizomeSyriaSubpage: React.FC = () => {
                     </div>
                   </div>
                   
-                  <button className="rs-button-primary w-full mt-6 group-hover:scale-105 transition-transform">
+                  <Link
+                    to="/programs"
+                    className="rs-button-primary w-full mt-6 group-hover:scale-105 transition-transform"
+                  >
                     {t('learn-more', 'Learn More', 'اعرف المزيد')}
-                  </button>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -299,12 +303,12 @@ const RhizomeSyriaSubpage: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="rs-button-primary bg-white text-purple-600 hover:bg-gray-100">
+              <Link to="/contact" className="rs-button-primary bg-white text-purple-600 hover:bg-gray-100">
                 {t('get-involved', 'Get Involved', 'شارك معنا')}
-              </button>
-              <button className="rs-button-secondary border-white text-white hover:bg-white hover:text-purple-600">
+              </Link>
+              <Link to="/programs" className="rs-button-secondary border-white text-white hover:bg-white hover:text-purple-600">
                 {t('learn-more', 'Learn More', 'اعرف المزيد')}
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

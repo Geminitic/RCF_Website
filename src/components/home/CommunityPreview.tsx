@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Camera, Upload, Target, Eye, Grid } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { usePhoto } from '../../contexts/PhotoContext';
@@ -8,6 +8,7 @@ import { usePhoto } from '../../contexts/PhotoContext';
 const CommunityPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   const { communityPhotos, allPhotos, uploadedCount, targetCount } = usePhoto();
+  const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
 
   const progressPercentage = (uploadedCount / targetCount) * 100;
@@ -154,7 +155,10 @@ const CommunityPreview: React.FC = () => {
             <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 
-          <button className="group inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-semibold rounded-full border-2 border-emerald-700 hover:bg-emerald-50 transition-all duration-300">
+          <button
+            onClick={() => navigate('/community-wall?upload=1')}
+            className="group inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-semibold rounded-full border-2 border-emerald-700 hover:bg-emerald-50 transition-all duration-300"
+          >
             <Upload className="h-5 w-5 mr-2" />
             <span>
               {t('contribute-story', 'Contribute Your Story', 'ساهم بقصتك')}
