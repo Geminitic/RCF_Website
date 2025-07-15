@@ -103,6 +103,13 @@ const Footer: React.FC = () => {
               '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.'
             )}
           </p>
+          <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            {t(
+              'footer-donate',
+              'Donate via e-transfer, crypto, or PayPal to support our mission.',
+              'ادعمنا عبر التحويل الإلكتروني أو العملات الرقمية أو باي بال.'
+            )}
+          </p>
           <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
             {t(
               'acknowledgment',
