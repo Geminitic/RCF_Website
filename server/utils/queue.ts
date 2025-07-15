@@ -1,11 +1,15 @@
 import Queue from 'bull';
 
-export const scraperQueue = new Queue('event-scraping', {
-  redis: {
-    host: process.env.REDIS_HOST || 'localhost',
-    port: parseInt(process.env.REDIS_PORT || '6379')
-  }
-});
+const isTest = process.env.NODE_ENV === 'test';
+
+export const scraperQueue = isTest
+  ? ({ add: async () => Promise.resolve() } as any)
+  : new Queue('event-scraping', {
+      redis: {
+        host: process.env.REDIS_HOST || 'localhost',
+        port: parseInt(process.env.REDIS_PORT || '6379')
+      }
+    });
 
 export const rateLimiter = new Map<string, number>();
 

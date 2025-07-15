@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { PhotoProvider } from './contexts/PhotoContext';
 import { UserProvider } from './contexts/UserContext';
+import { TaglineProvider } from './contexts/TaglineContext';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
@@ -25,6 +26,7 @@ function App() {
     <LanguageProvider>
       <UserProvider>
         <PhotoProvider>
+          <TaglineProvider>
           <Router>
           <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
             <LoadingScreen />
@@ -49,6 +51,7 @@ function App() {
             <ParticleSystem />
           </div>
         </Router>
+          </TaglineProvider>
         </PhotoProvider>
       </UserProvider>
     </LanguageProvider>

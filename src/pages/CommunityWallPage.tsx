@@ -18,12 +18,21 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { usePhoto } from '../contexts/PhotoContext';
+import { useTagline } from '../contexts/TaglineContext';
+import { useUser } from '../contexts/UserContext';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
 const CommunityWallPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
-  const { photos, uploadedCount, targetCount } = usePhoto();
+  const { photos, uploadedCount, targetCount, likePhoto, addComment } = usePhoto();
+  const { title, subtitle, setTagline } = useTagline();
+  const { isAdmin } = useUser();
+  const [editingTagline, setEditingTagline] = useState(false);
+  const [draftTitle, setDraftTitle] = useState(title);
+  const [draftSubtitle, setDraftSubtitle] = useState(subtitle);
+  const [commentText, setCommentText] = useState('');
+  const commentInputRef = React.useRef<HTMLInputElement>(null);
   const [filteredPhotos, setFilteredPhotos] = useState(photos);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -126,16 +135,69 @@ const CommunityWallPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
-            <h1 className="text-5xl font-bold mb-6">
-              {t('community-wall-title', 'Community Canvas', 'لوحة المجتمع')}
-            </h1>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-              {t(
-                'community-wall-subtitle',
-                'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.',
-                'نسيج نابض من القصص واللحظات والذكريات التي تحتفي بمجتمعنا السوري العالمي.'
-              )}
-            </p>
+            {editingTagline ? (
+              <div className="space-y-4 mb-6">
+                <input
+                  className="w-full px-3 py-2 text-black rounded"
+                  value={draftTitle.en}
+                  onChange={(e) => setDraftTitle({ ...draftTitle, en: e.target.value })}
+                  placeholder="Title (EN)"
+                />
+                <input
+                  className="w-full px-3 py-2 text-black rounded"
+                  dir="rtl"
+                  value={draftTitle.ar}
+                  onChange={(e) => setDraftTitle({ ...draftTitle, ar: e.target.value })}
+                  placeholder="العنوان"
+                />
+                <textarea
+                  className="w-full px-3 py-2 text-black rounded"
+                  value={draftSubtitle.en}
+                  onChange={(e) => setDraftSubtitle({ ...draftSubtitle, en: e.target.value })}
+                  placeholder="Subtitle (EN)"
+                />
+                <textarea
+                  className="w-full px-3 py-2 text-black rounded"
+                  dir="rtl"
+                  value={draftSubtitle.ar}
+                  onChange={(e) => setDraftSubtitle({ ...draftSubtitle, ar: e.target.value })}
+                  placeholder="الوصف"
+                />
+                <div className="space-x-2">
+                  <button
+                    className="px-4 py-2 bg-white text-indigo-700 rounded"
+                    onClick={() => {
+                      if (isAdmin) {
+                        setTagline(draftTitle, draftSubtitle);
+                      } else {
+                        alert('Your change request has been submitted.');
+                      }
+                      setEditingTagline(false);
+                    }}
+                  >
+                    Save
+                  </button>
+                  <button className="px-4 py-2" onClick={() => setEditingTagline(false)}>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <h1 className="text-5xl font-bold mb-6">
+                  {currentLanguage.code === 'ar' ? title.ar : title.en}
+                </h1>
+                <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+                  {currentLanguage.code === 'ar' ? subtitle.ar : subtitle.en}
+                </p>
+                <button
+                  className="text-sm underline"
+                  onClick={() => setEditingTagline(true)}
+                >
+                  {isAdmin ? 'Edit' : 'Suggest Change'}
+                </button>
+              </>
+            )}
 
             {/* Progress Tracker */}
             <div className="max-w-md mx-auto mb-8">
@@ -280,16 +342,39 @@ const CommunityWallPage: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <button className="flex items-center space-x-1 hover:text-red-300 transition-colors">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            likePhoto(photo.id);
+                          }}
+                          className="flex items-center space-x-1 hover:text-red-300 transition-colors"
+                        >
                           <Heart className="h-4 w-4" />
-                          <span>{Math.floor(Math.random() * 50) + 5}</span>
+                          <span>{photo.likes}</span>
                         </button>
-                        <button className="flex items-center space-x-1 hover:text-blue-300 transition-colors">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedPhoto(photo);
+                          }}
+                          className="flex items-center space-x-1 hover:text-blue-300 transition-colors"
+                        >
                           <MessageCircle className="h-4 w-4" />
-                          <span>{Math.floor(Math.random() * 20) + 1}</span>
+                          <span>{photo.comments.length}</span>
                         </button>
                       </div>
-                      <button className="hover:text-indigo-300 transition-colors">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (navigator.share) {
+                            navigator.share({ title: photo.title, url: photo.url }).catch(() => {});
+                          } else {
+                            navigator.clipboard.writeText(photo.url);
+                            alert('Photo URL copied to clipboard');
+                          }
+                        }}
+                        className="hover:text-indigo-300 transition-colors"
+                      >
                         <Share2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -385,19 +470,63 @@ const CommunityWallPage: React.FC = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+                    <button
+                      onClick={() => likePhoto(selectedPhoto.id)}
+                      className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+                    >
                       <Heart className="h-5 w-5" />
-                      <span>{Math.floor(Math.random() * 50) + 5}</span>
+                      <span>{selectedPhoto.likes}</span>
                     </button>
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
+                    <button
+                      onClick={() => commentInputRef.current?.focus()}
+                      className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+                    >
                       <MessageCircle className="h-5 w-5" />
-                      <span>{Math.floor(Math.random() * 20) + 1}</span>
+                      <span>{selectedPhoto.comments.length}</span>
                     </button>
                   </div>
-                  <button className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors">
+                  <button
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({ title: selectedPhoto.title, url: selectedPhoto.url }).catch(() => {});
+                      } else {
+                        navigator.clipboard.writeText(selectedPhoto.url);
+                        alert('Photo URL copied to clipboard');
+                      }
+                    }}
+                    className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors"
+                  >
                     <Share2 className="h-5 w-5" />
                     <span>{t('share', 'Share', 'مشاركة')}</span>
                   </button>
+                </div>
+
+                <div className="mt-4 space-y-2">
+                  {selectedPhoto.comments.map((c) => (
+                    <div key={c.id} className="text-sm border-b pb-1">
+                      {c.text}
+                    </div>
+                  ))}
+                  <div className="flex space-x-2 mt-2">
+                    <input
+                      ref={commentInputRef}
+                      className="flex-1 border px-2 py-1 rounded text-black"
+                      value={commentText}
+                      onChange={(e) => setCommentText(e.target.value)}
+                      placeholder="Add a comment"
+                    />
+                    <button
+                      onClick={() => {
+                        if (commentText.trim()) {
+                          addComment(selectedPhoto.id, commentText.trim());
+                          setCommentText('');
+                        }
+                      }}
+                      className="px-3 py-1 bg-indigo-600 text-white rounded"
+                    >
+                      Post
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

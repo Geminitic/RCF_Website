@@ -1,6 +1,12 @@
 import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { photoList } from '../data/photoList';
 
+interface Comment {
+  id: string;
+  text: string;
+  timestamp: string;
+}
+
 interface Photo {
   id: string;
   url: string;
@@ -15,6 +21,8 @@ interface Photo {
   uploadDate: string;
   approved: boolean;
   featured: boolean;
+  likes: number;
+  comments: Comment[];
 }
 
 interface PhotoContextType {
@@ -27,6 +35,8 @@ interface PhotoContextType {
   ) => void;
   approvePhoto: (id: string) => void;
   deletePhoto: (id: string) => void;
+  likePhoto: (id: string) => void;
+  addComment: (id: string, text: string) => void;
   pendingPhotos: Photo[];
   featuredPhotos: Photo[];
   communityPhotos: Photo[];
@@ -48,8 +58,17 @@ interface PhotoProviderProps {
 }
 
 export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
+  const loadLikes = (id: string) => {
+    const val = localStorage.getItem(`likes-${id}`);
+    return val ? parseInt(val, 10) : 0;
+  };
+  const loadComments = (id: string): Comment[] => {
+    const val = localStorage.getItem(`comments-${id}`);
+    return val ? JSON.parse(val) : [];
+  };
+
   const [photos, setPhotos] = useState<Photo[]>(() => {
-    const base: Photo[] = [
+    const baseData: Omit<Photo, 'likes' | 'comments'>[] = [
     // Real community photos
     {
       id: '1',
@@ -249,8 +268,14 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
     }
     ];
 
+    const base = baseData.map(p => ({
+      ...p,
+      likes: loadLikes(p.id),
+      comments: loadComments(p.id)
+    }));
+
     const existingUrls = new Set(base.map(p => p.url));
-    const extras: Photo[] = photoList
+    const extrasData: Omit<Photo, 'likes' | 'comments'>[] = photoList
       .filter(url => !existingUrls.has(url))
       .map((url, index) => ({
         id: `auto-${index}`,
@@ -267,6 +292,12 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         approved: true,
         featured: false
       }));
+
+    const extras = extrasData.map(p => ({
+      ...p,
+      likes: loadLikes(p.id),
+      comments: loadComments(p.id)
+    }));
 
     return [...base, ...extras];
   });
@@ -285,7 +316,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       ...photoData,
       id: Date.now().toString(),
       uploadDate: new Date().toISOString(),
-      approved
+      approved,
+      likes: 0,
+      comments: []
     };
     setPhotos(prev => [newPhoto, ...prev]);
   };
@@ -298,6 +331,37 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
 
   const deletePhoto = (id: string) => {
     setPhotos(prev => prev.filter(photo => photo.id !== id));
+  };
+
+  const likePhoto = (id: string) => {
+    const liked = JSON.parse(localStorage.getItem('likedPhotos') || '{}');
+    if (liked[id]) return;
+    setPhotos(prev => prev.map(photo => {
+      if (photo.id === id) {
+        const newLikes = photo.likes + 1;
+        localStorage.setItem(`likes-${id}`, newLikes.toString());
+        return { ...photo, likes: newLikes };
+      }
+      return photo;
+    }));
+    liked[id] = true;
+    localStorage.setItem('likedPhotos', JSON.stringify(liked));
+  };
+
+  const addComment = (id: string, text: string) => {
+    const comment: Comment = {
+      id: Date.now().toString(),
+      text,
+      timestamp: new Date().toISOString()
+    };
+    setPhotos(prev => prev.map(photo => {
+      if (photo.id === id) {
+        const newComments = [...photo.comments, comment];
+        localStorage.setItem(`comments-${id}`, JSON.stringify(newComments));
+        return { ...photo, comments: newComments };
+      }
+      return photo;
+    }));
   };
 
   const featuredPhotos = photos.filter(photo => photo.featured && photo.approved);
@@ -321,7 +385,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         uploadedBy: 'Community Member',
         uploadDate: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(),
         approved: true,
-        featured: false
+        featured: false,
+        likes: loadLikes(`random-${i}`),
+        comments: loadComments(`random-${i}`)
       });
     }
     return generated;
@@ -337,6 +403,8 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       addPhoto,
       approvePhoto,
       deletePhoto,
+      likePhoto,
+      addComment,
       pendingPhotos,
       featuredPhotos,
       communityPhotos,
