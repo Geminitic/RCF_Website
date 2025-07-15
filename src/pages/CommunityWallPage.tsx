@@ -18,12 +18,23 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { usePhoto } from '../contexts/PhotoContext';
+import { useUser } from '../contexts/UserContext';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
 const CommunityWallPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
-  const { photos, uploadedCount, targetCount } = usePhoto();
+  const { likePhoto, addComment, photos, uploadedCount, targetCount } = usePhoto();
+  const { isAdmin } = useUser();
+  const [taglineEn, setTaglineEn] = useState(
+    () => localStorage.getItem('cw-tagline-en') ||
+      'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.'
+  );
+  const [taglineAr, setTaglineAr] = useState(
+    () => localStorage.getItem('cw-tagline-ar') ||
+      'نسيج نابض من القصص واللحظات والذكريات التي تحتفي بمجتمعنا السوري العالمي.'
+  );
+  const [editingTagline, setEditingTagline] = useState(false);
   const [filteredPhotos, setFilteredPhotos] = useState(photos);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -129,13 +140,43 @@ const CommunityWallPage: React.FC = () => {
             <h1 className="text-5xl font-bold mb-6">
               {t('community-wall-title', 'Community Canvas', 'لوحة المجتمع')}
             </h1>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-              {t(
-                'community-wall-subtitle',
-                'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.',
-                'نسيج نابض من القصص واللحظات والذكريات التي تحتفي بمجتمعنا السوري العالمي.'
-              )}
-            </p>
+            {editingTagline ? (
+              <div className="mb-8 max-w-3xl mx-auto space-y-2">
+                <input
+                  className="w-full px-3 py-2 text-stone-800 rounded"
+                  value={taglineEn}
+                  onChange={(e) => setTaglineEn(e.target.value)}
+                />
+                <input
+                  className="w-full px-3 py-2 text-stone-800 rounded"
+                  value={taglineAr}
+                  onChange={(e) => setTaglineAr(e.target.value)}
+                  dir="rtl"
+                />
+                <button
+                  className="mt-2 px-4 py-2 bg-indigo-500 text-white rounded"
+                  onClick={() => {
+                    localStorage.setItem('cw-tagline-en', taglineEn);
+                    localStorage.setItem('cw-tagline-ar', taglineAr);
+                    setEditingTagline(false);
+                  }}
+                >
+                  Save
+                </button>
+              </div>
+            ) : (
+              <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+                {currentLanguage.code === 'ar' ? taglineAr : taglineEn}
+              </p>
+            )}
+            {isAdmin && !editingTagline && (
+              <button
+                className="mb-4 underline"
+                onClick={() => setEditingTagline(true)}
+              >
+                Edit Tagline
+              </button>
+            )}
 
             {/* Progress Tracker */}
             <div className="max-w-md mx-auto mb-8">
@@ -280,16 +321,38 @@ const CommunityWallPage: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <button className="flex items-center space-x-1 hover:text-red-300 transition-colors">
+                        <button
+                          className="flex items-center space-x-1 hover:text-red-300 transition-colors"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            likePhoto(photo.id);
+                          }}
+                        >
                           <Heart className="h-4 w-4" />
-                          <span>{Math.floor(Math.random() * 50) + 5}</span>
+                          <span>{photo.likes}</span>
                         </button>
-                        <button className="flex items-center space-x-1 hover:text-blue-300 transition-colors">
+                        <button
+                          className="flex items-center space-x-1 hover:text-blue-300 transition-colors"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedPhoto(photo);
+                          }}
+                        >
                           <MessageCircle className="h-4 w-4" />
-                          <span>{Math.floor(Math.random() * 20) + 1}</span>
+                          <span>{photo.comments.length}</span>
                         </button>
                       </div>
-                      <button className="hover:text-indigo-300 transition-colors">
+                      <button
+                        className="hover:text-indigo-300 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (navigator.share) {
+                            navigator.share({ url: window.location.href });
+                          } else {
+                            navigator.clipboard.writeText(window.location.href);
+                          }
+                        }}
+                      >
                         <Share2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -385,20 +448,45 @@ const CommunityWallPage: React.FC = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+                    <button
+                      className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+                      onClick={() => likePhoto(selectedPhoto.id)}
+                    >
                       <Heart className="h-5 w-5" />
-                      <span>{Math.floor(Math.random() * 50) + 5}</span>
+                      <span>{selectedPhoto.likes}</span>
                     </button>
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
+                    <button
+                      className="flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+                      onClick={() => {
+                        const name = prompt('Name');
+                        const text = name ? prompt('Comment') : null;
+                        if (name && text) addComment(selectedPhoto.id, name, text);
+                      }}
+                    >
                       <MessageCircle className="h-5 w-5" />
-                      <span>{Math.floor(Math.random() * 20) + 1}</span>
+                      <span>{selectedPhoto.comments.length}</span>
                     </button>
                   </div>
-                  <button className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors">
+                  <button
+                    className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors"
+                    onClick={() => {
+                      if (navigator.share) navigator.share({ url: window.location.href });
+                      else navigator.clipboard.writeText(window.location.href);
+                    }}
+                  >
                     <Share2 className="h-5 w-5" />
                     <span>{t('share', 'Share', 'مشاركة')}</span>
                   </button>
                 </div>
+                {selectedPhoto.comments.length > 0 && (
+                  <div className="mt-4 space-y-2">
+                    {selectedPhoto.comments.map((c) => (
+                      <div key={c.id} className="text-sm text-stone-800 border-b pb-1">
+                        <strong>{c.name}:</strong> {c.text}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>

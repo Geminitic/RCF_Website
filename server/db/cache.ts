@@ -1,4 +1,8 @@
 import Redis from 'ioredis';
+
+// Use in-memory Redis mock when running tests to avoid external dependency
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const MockRedis = process.env.NODE_ENV === 'test' ? require('ioredis-mock') : null;
 import { Event } from '../types/event';
 
 export class EventCache {
@@ -6,10 +10,11 @@ export class EventCache {
   private TTL = 3600; // 1 hour
 
   constructor() {
-    this.redis = new Redis({
+    const RedisClient = (process.env.NODE_ENV === 'test' && MockRedis) || Redis;
+    this.redis = new RedisClient({
       host: process.env.REDIS_HOST || 'localhost',
       port: parseInt(process.env.REDIS_PORT || '6379'),
-      retryStrategy: (times) => Math.min(times * 50, 2000)
+      retryStrategy: (times: number) => Math.min(times * 50, 2000)
     });
   }
 

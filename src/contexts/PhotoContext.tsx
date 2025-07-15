@@ -15,6 +15,8 @@ interface Photo {
   uploadDate: string;
   approved: boolean;
   featured: boolean;
+  likes: number;
+  comments: { id: string; name: string; text: string }[];
 }
 
 interface PhotoContextType {
@@ -25,6 +27,8 @@ interface PhotoContextType {
     photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
     approved?: boolean
   ) => void;
+  likePhoto: (id: string) => void;
+  addComment: (id: string, name: string, text: string) => void;
   approvePhoto: (id: string) => void;
   deletePhoto: (id: string) => void;
   pendingPhotos: Photo[];
@@ -268,7 +272,19 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         featured: false
       }));
 
-    return [...base, ...extras];
+    const initial = [...base, ...extras].map((p) => ({
+      ...p,
+      likes: parseInt(
+        typeof window !== 'undefined'
+          ? localStorage.getItem(`likes-${p.id}`) || '0'
+          : '0'
+      ),
+      comments: typeof window !== 'undefined'
+        ? JSON.parse(localStorage.getItem(`comments-${p.id}`) || '[]')
+        : []
+    }));
+
+    return initial;
   });
 
   // Total number of stories the community aims to collect
@@ -285,9 +301,37 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       ...photoData,
       id: Date.now().toString(),
       uploadDate: new Date().toISOString(),
-      approved
+      approved,
+      likes: 0,
+      comments: []
     };
     setPhotos(prev => [newPhoto, ...prev]);
+  };
+
+  const likePhoto = (id: string) => {
+    if (typeof window === 'undefined') return;
+    if (localStorage.getItem(`liked-${id}`)) return;
+    setPhotos(prev =>
+      prev.map(p =>
+        p.id === id ? { ...p, likes: p.likes + 1 } : p
+      )
+    );
+    const current = parseInt(localStorage.getItem(`likes-${id}`) || '0') + 1;
+    localStorage.setItem(`likes-${id}`, String(current));
+    localStorage.setItem(`liked-${id}`, '1');
+  };
+
+  const addComment = (id: string, name: string, text: string) => {
+    if (typeof window === 'undefined') return;
+    const comment = { id: Date.now().toString(), name, text };
+    setPhotos(prev =>
+      prev.map(p =>
+        p.id === id ? { ...p, comments: [...p.comments, comment] } : p
+      )
+    );
+    const stored = JSON.parse(localStorage.getItem(`comments-${id}`) || '[]');
+    stored.push(comment);
+    localStorage.setItem(`comments-${id}`, JSON.stringify(stored));
   };
 
   const approvePhoto = (id: string) => {
@@ -321,7 +365,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         uploadedBy: 'Community Member',
         uploadDate: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(),
         approved: true,
-        featured: false
+        featured: false,
+        likes: 0,
+        comments: []
       });
     }
     return generated;
@@ -335,6 +381,8 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedCount,
       targetCount,
       addPhoto,
+      likePhoto,
+      addComment,
       approvePhoto,
       deletePhoto,
       pendingPhotos,
