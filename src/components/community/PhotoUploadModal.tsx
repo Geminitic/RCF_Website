@@ -52,17 +52,24 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
 
     setIsSubmitting(true);
 
-    // Simulate upload delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
     // Create photo object
     const newPhoto = {
       ...formData,
-      url: previewUrl, // In real app, this would be the uploaded file URL
+      url: previewUrl,
       featured: false
     };
 
     addPhoto(newPhoto, isAdmin);
+
+    try {
+      await fetch('/.netlify/functions/submit-photo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newPhoto)
+      });
+    } catch (err) {
+      console.error('Upload failed', err);
+    }
 
     if (isAdmin) {
       alert('Photo uploaded successfully.');
@@ -123,7 +130,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                data-netlify="true"
+                name="community-photo"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="community-photo" />
                 {/* File Upload */}
                 <div>
                   <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
