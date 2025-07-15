@@ -89,6 +89,11 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center space-y-2">
+          <p className="text-gray-300">
+            <Link to="/#donate" className="underline hover:text-white">
+              {t('donate-short', 'Support our work', 'ادعم عملنا')}
+            </Link>
+          </p>
           <p className={`text-yellow-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
             {t(
               'experimental-release',

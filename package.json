@@ -37,6 +37,7 @@
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.453.0",
+    "qrcode.react": "^3.2.0",
     "react": "^18.3.1",
     "react-big-calendar": "^1.19.4",
     "react-dom": "^18.3.1",
