@@ -1,4 +1,3 @@
-import React from 'react';
 import HeroSection from '../components/home/HeroSection';
 import AboutPreview from '../components/home/AboutPreview';
 import ProgramsPreview from '../components/home/ProgramsPreview';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Network, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';

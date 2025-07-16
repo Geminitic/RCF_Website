@@ -1,4 +1,3 @@
-import React from 'react';
 
 const VolunteerForms: React.FC = () => {
   const handleSubmit = () => {
