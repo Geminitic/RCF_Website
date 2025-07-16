@@ -24,13 +24,13 @@ interface PhotoContextType {
   uploadedCount: number;
   targetCount: number;
   addPhoto: (
-    photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
-    approved?: boolean
+    _photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    _approved?: boolean
   ) => void;
-  likePhoto: (id: string) => void;
-  addComment: (id: string, name: string, text: string) => void;
-  approvePhoto: (id: string) => void;
-  deletePhoto: (id: string) => void;
+  likePhoto: (_id: string) => void;
+  addComment: (_id: string, _name: string, _text: string) => void;
+  approvePhoto: (_id: string) => void;
+  deletePhoto: (_id: string) => void;
   pendingPhotos: Photo[];
   featuredPhotos: Photo[];
   communityPhotos: Photo[];

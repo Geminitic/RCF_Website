@@ -155,7 +155,7 @@ const InteractiveMap: React.FC = () => {
         const map = L.map(mapRef.current, {
           zoomControl: false,
           attributionControl: false
-        }).setView([35.0, 38.5], 6);
+        }).setView([40.0, -30.0], 2);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
           subdomains: 'abcd',
@@ -190,13 +190,13 @@ const InteractiveMap: React.FC = () => {
         });
 
         cities.forEach(item => {
-          const marker = L.marker([item.lat, item.lng], { icon: customIcon })
+          L.marker([item.lat, item.lng], { icon: customIcon })
             .addTo(map)
             .on('click', () => setSelectedItem(item));
         });
 
         events.forEach(item => {
-          const marker = L.marker([item.lat, item.lng], { icon: eventIcon })
+          L.marker([item.lat, item.lng], { icon: eventIcon })
             .addTo(map)
             .on('click', () => setSelectedItem(item));
         });

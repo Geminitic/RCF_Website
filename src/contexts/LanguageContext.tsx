@@ -8,8 +8,8 @@ interface Language {
 
 interface LanguageContextType {
   currentLanguage: Language;
-  setLanguage: (language: Language) => void;
-  t: (key: string, enText: string, arText: string) => string;
+  setLanguage: (_language: Language) => void;
+  t: (_key: string, _enText: string, _arText: string) => string;
 }
 
 const languages: Language[] = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Users, Calendar, Leaf, Mountain, Droplets, Star, Award, Target } from 'lucide-react';
+import { MapPin, Users, Leaf, Mountain, Star, Target } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/rhizome-canada.css';
 

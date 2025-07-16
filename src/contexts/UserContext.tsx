@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserContextType {
   isAdmin: boolean;
-  setIsAdmin: (value: boolean) => void;
+  setIsAdmin: (_value: boolean) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);

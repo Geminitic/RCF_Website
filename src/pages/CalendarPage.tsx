@@ -9,8 +9,6 @@ import {
   Filter,
   Grid,
   List,
-  ChevronLeft,
-  ChevronRight,
   Plus,
   ExternalLink,
   AlertCircle,

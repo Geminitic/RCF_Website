@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
       });
 
       // Draw connections with varied thickness and opacity
-      nodes.forEach((node, _i) => {
+      nodes.forEach((node) => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(
