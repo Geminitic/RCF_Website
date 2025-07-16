@@ -6,6 +6,7 @@ import eventRoutes from '../routes/events';
 import { EventCache } from '../db/cache';
 import Redis from 'ioredis';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 jest.mock('ioredis', () => require('ioredis-mock'));
 
 describe('Events API integration', () => {

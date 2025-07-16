@@ -1,7 +1,8 @@
 import Redis from 'ioredis';
 
 // Use in-memory Redis mock when running tests to avoid external dependency
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+ 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const MockRedis = process.env.NODE_ENV === 'test' ? require('ioredis-mock') : null;
 import { Event } from '../types/event';
 
