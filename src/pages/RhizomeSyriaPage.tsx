@@ -157,21 +157,11 @@ const RhizomeSyriaPage: React.FC = () => {
                 <img
                   src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
                   alt="Rhizome Syria Logo"
-                  className="h-40 md:h-48 w-auto drop-shadow-2xl"
+                  className="h-[30rem] md:h-[36rem] w-auto drop-shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-orange-400/20 rounded-full blur-xl" />
               </div>
             </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-500 to-red-500 bg-clip-text text-transparent"
-              style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
-            >
-              {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
-            </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
