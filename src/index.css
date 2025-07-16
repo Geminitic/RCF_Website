@@ -20,7 +20,7 @@
 :root {
   --primary-color: #4338ca; /* indigo */
   --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #f59e0b; /* amber */
+  --accent-color: #b45309; /* dark amber for better contrast */
   --text-color: #1e293b; /* slate */
   --bg-color: #f5f3ff; /* violet */
   --card-bg: #ffffff;
