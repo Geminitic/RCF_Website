@@ -203,11 +203,13 @@ const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                      <label htmlFor="contact-name" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('your-name', 'Your Name', 'اسمك')}
                       </label>
                       <input
                         type="text"
+                        id="contact-name"
+                        name="name"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
                         className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
@@ -215,11 +217,13 @@ const ContactPage: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                      <label htmlFor="contact-email" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('your-email', 'Your Email', 'بريدك الإلكتروني')}
                       </label>
                       <input
                         type="email"
+                        id="contact-email"
+                        name="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
                         className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -229,11 +233,13 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="contact-subject" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('subject', 'Subject', 'الموضوع')}
                     </label>
                     <input
                       type="text"
+                      id="contact-subject"
+                      name="subject"
                       value={formData.subject}
                       onChange={(e) => handleInputChange('subject', e.target.value)}
                       className={`w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
@@ -242,10 +248,12 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="contact-message" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('message', 'Message', 'الرسالة')}
                     </label>
                     <textarea
+                      id="contact-message"
+                      name="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       rows={6}

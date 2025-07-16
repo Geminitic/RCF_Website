@@ -177,11 +177,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 {/* Title */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-2">
+                    <label htmlFor="story-title-en" className="block text-sm font-medium text-stone-700 mb-2">
                       {t('title-english', 'Title (English)', 'العنوان (إنجليزي)')}
                     </label>
                     <input
                       type="text"
+                      id="story-title-en"
+                      name="title"
                       value={formData.title}
                       onChange={(e) => handleInputChange('title', e.target.value)}
                       className="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -189,11 +191,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="story-title-ar" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('title-arabic', 'Title (Arabic)', 'العنوان (عربي)')}
                     </label>
                     <input
                       type="text"
+                      id="story-title-ar"
+                      name="titleAr"
                       value={formData.titleAr}
                       onChange={(e) => handleInputChange('titleAr', e.target.value)}
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
@@ -205,10 +209,12 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 {/* Description */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-2">
+                    <label htmlFor="story-description-en" className="block text-sm font-medium text-stone-700 mb-2">
                       {t('description-english', 'Description (English)', 'الوصف (إنجليزي)')}
                     </label>
                     <textarea
+                      id="story-description-en"
+                      name="description"
                       value={formData.description}
                       onChange={(e) => handleInputChange('description', e.target.value)}
                       rows={3}
@@ -217,10 +223,12 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="story-description-ar" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('description-arabic', 'Description (Arabic)', 'الوصف (عربي)')}
                     </label>
                     <textarea
+                      id="story-description-ar"
+                      name="descriptionAr"
                       value={formData.descriptionAr}
                       onChange={(e) => handleInputChange('descriptionAr', e.target.value)}
                       rows={3}
@@ -233,12 +241,14 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 {/* Location */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-2">
+                    <label htmlFor="story-location-en" className="block text-sm font-medium text-stone-700 mb-2">
                       <MapPin className="h-4 w-4 inline mr-1" />
                       {t('location-english', 'Location (English)', 'الموقع (إنجليزي)')}
                     </label>
                     <input
                       type="text"
+                      id="story-location-en"
+                      name="location"
                       value={formData.location}
                       onChange={(e) => handleInputChange('location', e.target.value)}
                       className="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
@@ -246,12 +256,14 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="story-location-ar" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       <MapPin className="h-4 w-4 inline mr-1" />
                       {t('location-arabic', 'Location (Arabic)', 'الموقع (عربي)')}
                     </label>
                     <input
                       type="text"
+                      id="story-location-ar"
+                      name="locationAr"
                       value={formData.locationAr}
                       onChange={(e) => handleInputChange('locationAr', e.target.value)}
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
@@ -263,11 +275,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 {/* Category and Uploader */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-2">
+                    <label htmlFor="story-category" className="block text-sm font-medium text-stone-700 mb-2">
                       <Tag className="h-4 w-4 inline mr-1" />
                       {t('category', 'Category', 'الفئة')}
                     </label>
                     <select
+                      id="story-category"
+                      name="category"
                       value={formData.category}
                       onChange={(e) => handleInputChange('category', e.target.value)}
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
@@ -280,12 +294,14 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-2">
+                    <label htmlFor="story-uploader" className="block text-sm font-medium text-stone-700 mb-2">
                       <User className="h-4 w-4 inline mr-1" />
                       {t('your-name', 'Your Name', 'اسمك')}
                     </label>
                     <input
                       type="text"
+                      id="story-uploader"
+                      name="uploadedBy"
                       value={formData.uploadedBy}
                       onChange={(e) => handleInputChange('uploadedBy', e.target.value)}
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
