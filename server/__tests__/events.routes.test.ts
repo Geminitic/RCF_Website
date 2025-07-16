@@ -6,7 +6,7 @@ import eventRoutes from '../routes/events';
 import { EventCache } from '../db/cache';
 import Redis from 'ioredis';
 
-jest.mock('ioredis', () => require('ioredis-mock'));
+jest.mock('ioredis', () => jest.requireActual('ioredis-mock'));
 
 describe('Events API integration', () => {
   let app: express.Express;

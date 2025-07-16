@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
     }
 
     // Create more organic connections
-    nodes.forEach((node, i) => {
+    nodes.forEach((node, _i) => {
       const nearbyNodes = nodes
         .map((otherNode, j) => ({
           index: j,
@@ -63,7 +63,7 @@ const HeroSection: React.FC = () => {
             Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
           ),
         }))
-        .filter((item) => item.index !== i && item.distance < 180)
+        .filter((item) => item.index !== _i && item.distance < 180)
         .sort((a, b) => a.distance - b.distance)
         .slice(0, Math.floor(Math.random() * 4) + 2);
 
@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
       });
 
       // Draw connections with varied thickness and opacity
-      nodes.forEach((node, i) => {
+      nodes.forEach((node, _i) => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(
