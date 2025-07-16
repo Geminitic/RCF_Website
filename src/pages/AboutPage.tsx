@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Users, Target, Award, Calendar, Globe, Handshake } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import DonateSection from '../components/common/DonateSection';
 
 const AboutPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -525,6 +526,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      <DonateSection />
     </div>
   );
 };

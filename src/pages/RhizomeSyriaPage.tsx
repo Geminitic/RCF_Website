@@ -4,6 +4,7 @@ import { MapPin, Users, Target, Award, Calendar, Globe, Image, Palette, Heart, S
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
+import DonateSection from '../components/common/DonateSection';
 
 const RhizomeSyriaPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -553,6 +554,7 @@ const RhizomeSyriaPage: React.FC = () => {
           <VolunteerForms />
         </div>
       </section>
+      <DonateSection />
     </div>
   );
 };
