@@ -203,10 +203,12 @@ const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                      <label htmlFor="contact-name" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('your-name', 'Your Name', 'اسمك')}
                       </label>
                       <input
+                        id="contact-name"
+                        name="name"
                         type="text"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
@@ -215,10 +217,12 @@ const ContactPage: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                      <label htmlFor="contact-email" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('your-email', 'Your Email', 'بريدك الإلكتروني')}
                       </label>
                       <input
+                        id="contact-email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
@@ -229,10 +233,12 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="contact-subject" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('subject', 'Subject', 'الموضوع')}
                     </label>
                     <input
+                      id="contact-subject"
+                      name="subject"
                       type="text"
                       value={formData.subject}
                       onChange={(e) => handleInputChange('subject', e.target.value)}
@@ -242,10 +248,12 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label htmlFor="contact-message" className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('message', 'Message', 'الرسالة')}
                     </label>
                     <textarea
+                      id="contact-message"
+                      name="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       rows={6}

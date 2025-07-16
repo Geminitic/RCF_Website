@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               {t('footer-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
               </h3>
             </div>
-            <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            <p className={`text-gray-600 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t(
                 'footer-description',
                 'Building collaborative networks for civil society.',
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                 <li key={link.key}>
                   <Link
                     to={link.path}
-                    className={`text-gray-300 hover:text-white transition-colors ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    className={`text-gray-600 hover:text-white transition-colors ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {t(`footer-link-${link.key}`, link.en, link.ar)}
                   </Link>
@@ -75,11 +75,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">info@rhizomefoundation.ca</span>
+                <span className="text-gray-600">info@rhizomefoundation.ca</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-green-400 mt-1" />
-                <div className={`text-gray-300 text-sm ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <div className={`text-gray-600 text-sm ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   <p>Rhizome Canada: 2028 157 St S.W T6W 5ER Edmonton, Canada</p>
                   <p>Rhizome Syria: Latakia Sheikh Daher Square, 1st floor facing Saladin bookstore</p>
                 </div>
@@ -96,21 +96,21 @@ const Footer: React.FC = () => {
               'هذا الموقع إصدار تجريبي والمحتوى قابل للتغيير.'
             )}
           </p>
-          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+          <p className={`text-gray-600 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
             {t(
               'copyright',
               '© 2024 Rhizome Community Foundation. All rights reserved.',
               '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.'
             )}
           </p>
-          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+          <p className={`text-gray-600 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
             {t(
               'acknowledgment',
               'Acknowledgment: We respectfully acknowledge our work takes place on traditional Indigenous territories in Canada and globally, and commit to building relationships grounded in respect, reciprocity, and justice.',
               'نُقِرُّ باحترام بأن عملنا يتم على أراضٍ تقليدية للشعوب الأصيلة في كندا وحول العالم، ونتعهد ببناء علاقات قائمة على الاحترام والتبادل والعدالة.'
             )}
           </p>
-          <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+          <p className={`text-gray-600 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
             {t(
               'legal-information',
               'Legal Information: Rhizome Community Foundation is federally incorporated under the Canada Not-for-profit Corporations Act. Corporation Number: 1672383-7.',
