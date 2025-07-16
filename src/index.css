@@ -528,3 +528,23 @@ html {
   color: #ffffff;
   font-weight: bold;
 }
+
+/* Numeric Zoom Intro */
+.numeric-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0a1128;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.number-mask {
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 0.8;
+  mix-blend-mode: destination-out;
+}
