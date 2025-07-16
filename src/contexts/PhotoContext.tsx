@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { photoList } from '../data/photoList';
 
@@ -39,6 +40,7 @@ interface PhotoContextType {
 
 const PhotoContext = createContext<PhotoContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePhoto = () => {
   const context = useContext(PhotoContext);
   if (!context) {
