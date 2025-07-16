@@ -45,6 +45,7 @@ const Footer: React.FC = () => {
                         <ul className="space-y-2">
               {[
                 { key: 'knowledge', path: '/knowledge-hub', en: 'Knowledge Hub', ar: 'مركز المعرفة' },
+                { key: 'donate', path: '/donate', en: 'Donate', ar: 'تبرع' },
                 { key: 'calendar', path: '/calendar', en: 'Event Calendar', ar: 'رزنامة الفعاليات' },
                 { key: 'join', path: '/contact', en: 'Join Our Network', ar: 'انضم لشبكتنا' },
                 { key: 'contact', path: '/contact', en: 'Contact Us', ar: 'اتصل بنا' }
@@ -101,6 +102,13 @@ const Footer: React.FC = () => {
               'copyright',
               '© 2024 Rhizome Community Foundation. All rights reserved.',
               '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.'
+            )}
+          </p>
+          <p className={`text-gray-300 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            {t(
+              'footer-donate',
+              'Donate via e-transfer, crypto, or PayPal to support our mission.',
+              'ادعمنا عبر التحويل الإلكتروني أو العملات الرقمية أو باي بال.'
             )}
           </p>
           <p className={`text-gray-400 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
