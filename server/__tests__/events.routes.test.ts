@@ -6,7 +6,9 @@ import eventRoutes from '../routes/events';
 import { EventCache } from '../db/cache';
 import Redis from 'ioredis';
 
-jest.mock('ioredis', () => import('ioredis-mock'));
+// Use ioredis-mock for tests to avoid requiring a running Redis instance
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+jest.mock('ioredis', () => require('ioredis-mock'));
 
 describe('Events API integration', () => {
   let app: express.Express;

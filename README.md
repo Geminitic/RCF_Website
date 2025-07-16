@@ -9,6 +9,13 @@ Static resources for the Knowledge Hub now live in `src/knowledge-hub` and are c
 Images and other assets have been moved under `public/assets` to keep the repository root clean.
 
 Copy `.env.example` to `.env` and adjust the values as needed. Currently only `PORT` is required for the Express API.
+The example also exposes optional donation variables used by the home page:
+
+```
+VITE_PAYPAL_URL=https://www.paypal.com/donate/example
+VITE_ETRANSFER_EMAIL=donate@example.com
+VITE_CRYPTO_ADDRESS=0x0000000000000000000000000000000000000000
+```
 
 ## Getting Started
 
