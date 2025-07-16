@@ -98,7 +98,7 @@ const RhizomaticIntro: React.FC = () => {
       // Draw enhanced connections
       ctx.strokeStyle = 'rgba(16, 185, 129, 0.4)';
       ctx.lineWidth = 1.5;
-      nodes.forEach((node, i) => {
+      nodes.forEach((node) => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(

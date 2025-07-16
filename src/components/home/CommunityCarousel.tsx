@@ -242,7 +242,7 @@ const CommunityCarousel: React.FC = () => {
                             
                             {member.social && (
                               <div className="flex space-x-3 pt-2">
-                                {Object.entries(member.social).map(([platform, _handle]) => (
+                                {Object.entries(member.social).map(([platform]) => (
                                   <MagneticHover key={platform} strength={0.3}>
                                     <motion.button
                                       whileHover={{ scale: 1.2, rotate: 10 }}
