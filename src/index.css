@@ -521,10 +521,15 @@ html {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  isolation: isolate;
+  overflow: hidden;
 }
 
-.counter {
-  font-size: 5rem;
-  color: #ffffff;
-  font-weight: bold;
+.count-number {
+  font-size: 20vw;
+  font-weight: 700;
+  color: #000;
+  mix-blend-mode: destination-out;
+  transition: transform 0.3s ease-out;
+  line-height: 1;
 }
