@@ -3,6 +3,7 @@ import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lu
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
+import DonateSection from '../components/common/DonateSection';
 
 const RhizomeSyriaPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -552,6 +553,7 @@ const RhizomeSyriaPage: React.FC = () => {
           <VolunteerForms />
         </div>
       </section>
+      <DonateSection />
     </div>
   );
 };
