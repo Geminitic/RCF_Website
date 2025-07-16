@@ -1,10 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-
-interface Language {
-  code: 'en' | 'ar';
-  name: string;
-  direction: 'ltr' | 'rtl';
-}
+import { languages, Language } from '../data/languages';
 
 interface LanguageContextType {
   currentLanguage: Language;
@@ -12,13 +8,10 @@ interface LanguageContextType {
   t: (key: string, enText: string, arText: string) => string;
 }
 
-const languages: Language[] = [
-  { code: 'en', name: 'English', direction: 'ltr' },
-  { code: 'ar', name: 'العربية', direction: 'rtl' },
-];
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -50,5 +43,3 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     </LanguageContext.Provider>
   );
 };
-
-export { languages };

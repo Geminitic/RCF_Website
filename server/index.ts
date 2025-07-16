@@ -38,15 +38,19 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api/events', eventRoutes);
 app.use('/api/health', healthRoutes);
 
-app.use(
-  (err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+const errorHandler: express.ErrorRequestHandler = (
+  err: Error,
+  _req: express.Request,
+  res: express.Response
+) => {
     logger.error('Unhandled error:', err);
     res.status(500).json({
       error: 'Internal server error',
       message: process.env.NODE_ENV === 'development' ? err.message : undefined
     });
-  }
-);
+  };
+
+app.use(errorHandler);
 
 process.on('SIGTERM', () => {
   logger.info('SIGTERM signal received: closing HTTP server');
