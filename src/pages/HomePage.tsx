@@ -1,4 +1,5 @@
 import HeroSection from '../components/home/HeroSection';
+import NumberZoomIntro from '../components/home/NumberZoomIntro';
 import AboutPreview from '../components/home/AboutPreview';
 import ProgramsPreview from '../components/home/ProgramsPreview';
 import CommunityPreview from '../components/home/CommunityPreview';
@@ -8,6 +9,7 @@ import SentryTestButton from '../components/common/SentryTestButton';
 const HomePage: React.FC = () => {
   return (
     <div>
+      <NumberZoomIntro />
       <HeroSection />
       <AboutPreview />
       <ProgramsPreview />
