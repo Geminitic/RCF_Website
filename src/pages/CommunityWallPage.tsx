@@ -19,7 +19,6 @@ import {
 import { useLanguage } from '../contexts/LanguageContext';
 import { usePhoto } from '../contexts/PhotoContext';
 import { useUser } from '../contexts/UserContext';
-import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
 const CommunityWallPage: React.FC = () => {
@@ -233,9 +232,6 @@ const CommunityWallPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Featured Leaders */}
-      <FeaturedLeaders />
 
       {/* Controls */}
       <section className="py-8 bg-white border-b border-stone-200">

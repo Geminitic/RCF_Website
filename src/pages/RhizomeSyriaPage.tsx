@@ -3,6 +3,7 @@ import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lu
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
+import FeaturedLeaders from '../components/community/FeaturedLeaders';
 
 const RhizomeSyriaPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -480,10 +481,13 @@ const RhizomeSyriaPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* Call to Action with Spiral Design */}
-      <section className="py-20 relative overflow-hidden">
+        {/* Community Champions */}
+        <FeaturedLeaders />
+
+        {/* Call to Action with Spiral Design */}
+        <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-500 to-red-500" />
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
