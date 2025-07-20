@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import QuantumReveal from '../common/QuantumReveal';
 
 const AboutPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
   return (
-    <section className="py-20 bg-white">
+    <QuantumReveal>
+      <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Visual - New Aleppo aerial shot */}
@@ -69,7 +71,8 @@ const AboutPreview: React.FC = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+      </section>
+    </QuantumReveal>
   );
 };
 export default AboutPreview;
