@@ -18,11 +18,11 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #4338ca; /* indigo */
-  --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #b45309; /* dark amber for better contrast */
+  --primary-color: #10B2A3; /* Quantum Teal */
+  --secondary-color: #8338EC; /* Probability Purple */
+  --accent-color: #FFD700; /* Particle Gold */
   --text-color: #1e293b; /* slate */
-  --bg-color: #f5f3ff; /* violet */
+  --bg-color: #ACBDBA; /* Uncertainty Gray */
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -527,4 +527,40 @@ html {
   font-size: 5rem;
   color: #ffffff;
   font-weight: bold;
+}
+
+/* Quantum Gradient Animation */
+.quantum-gradient {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background-size: 200% 200%;
+  animation: quantumGradient 6s ease-in-out infinite;
+  border-radius: 9999px;
+}
+
+@keyframes quantumGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Probability Cloud */
+.probability-cloud {
+  display: inline-block;
+  pointer-events: auto;
+  transform: translateZ(0);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  filter: blur(6px);
+}
+
+.probability-cloud:hover {
+  filter: blur(0);
+}
+
+.probability-cloud-content {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.probability-cloud:hover .probability-cloud-content {
+  opacity: 1;
 }
