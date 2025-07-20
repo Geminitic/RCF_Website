@@ -1,0 +1,54 @@
+/* Neo-Futurist Night Style */
+:root {
+  --nn-black: #10131A;
+  --nn-gray: #232836;
+  --nn-cyan: #14F1D9;
+  --nn-magenta: #FF43C0;
+  --nn-lime: #B3FF29;
+  --nn-offwhite: #F6F8FF;
+  --nn-silver: #C2D4E2;
+
+  --nn-font-primary: 'Roboto Mono', 'Montserrat', sans-serif;
+}
+
+.neo-futurist-night {
+  font-family: var(--nn-font-primary);
+  color: var(--nn-offwhite);
+  background: var(--nn-black);
+  line-height: 1.6;
+}
+
+.nn-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nn-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.nn-button-primary {
+  background: linear-gradient(135deg, var(--nn-cyan), var(--nn-magenta));
+  color: var(--nn-black);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--nn-cyan);
+  transition: opacity 0.2s ease;
+}
+
+.nn-button-primary:hover {
+  opacity: 0.9;
+}
+
+.nn-section-alt {
+  background: var(--nn-gray);
+}
