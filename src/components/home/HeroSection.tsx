@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#EDF6FF] to-[#F5F7FA]">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -167,7 +167,7 @@ const HeroSection: React.FC = () => {
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-white/60" />
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
@@ -178,7 +178,7 @@ const HeroSection: React.FC = () => {
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
+            className="text-5xl md:text-7xl font-bold mb-6 text-[var(--accent-color)]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
@@ -191,7 +191,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-xl md:text-2xl text-indigo-100 mb-8 leading-relaxed max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-[var(--accent-color)] opacity-70 mb-8 leading-relaxed max-w-4xl mx-auto"
           >
             {t(
               'hero-subtitle',
@@ -208,7 +208,7 @@ const HeroSection: React.FC = () => {
           >
             <Link
               to="/programs"
-              className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-[var(--primary-color)] text-white font-semibold rounded-full shadow-lg hover:bg-[var(--primary-color)]/80 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="mr-2">
                 {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
@@ -218,7 +218,7 @@ const HeroSection: React.FC = () => {
             
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white/70 backdrop-blur-sm text-[var(--accent-color)] font-semibold rounded-full border-2 border-white hover:bg-white transition-all duration-300"
             >
               {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>
