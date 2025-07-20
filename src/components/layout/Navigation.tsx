@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import RhizomePath, { RhizomePathHandle } from './RhizomePath';
 
 // Logo image sourced from the public folder. This image was provided in the
 // repository and represents the Rhizome branding colors.
@@ -14,6 +15,8 @@ const Navigation: React.FC = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const { t, currentLanguage, setLanguage } = useLanguage();
   const location = useLocation();
+  const pathRef = useRef<RhizomePathHandle>(null);
+  const logoRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,10 @@ const Navigation: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    recordPath(logoRef.current);
   }, []);
 
   const navItems = [
@@ -31,6 +38,14 @@ const Navigation: React.FC = () => {
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' }
   ];
+
+  const recordPath = (el: HTMLElement | null) => {
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    pathRef.current?.addNode(x, y);
+  };
 
   return (
     <>
@@ -46,7 +61,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo section now uses the provided image with a subtle animation */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3" ref={logoRef}>
             <motion.img
               src={LogoImage}
               alt="Rhizome logo"
@@ -56,7 +71,7 @@ const Navigation: React.FC = () => {
               transition={{ duration: 0.6 }}
             />
             <div className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'}`}>
-              <div className="font-bold text-indigo-800 text-sm">
+              <div className="font-bold text-[var(--primary-color)] text-sm">
                 {t('nav-title', 'Rhizome Community', 'ريزوم المجتمعية')}
               </div>
               <div className="text-xs text-stone-600">
@@ -71,19 +86,20 @@ const Navigation: React.FC = () => {
               <Link
                 key={item.key}
                 to={item.path}
+                onClick={(e) => recordPath(e.currentTarget)}
                 className={`relative px-2 py-2 text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.path
-                    ? 'text-indigo-700'
+                    ? 'text-[var(--primary-color)]'
                     : isScrolled
-                    ? 'text-stone-700 hover:text-indigo-700'
-                    : 'text-white hover:text-indigo-200'
+                    ? 'text-stone-700 hover:text-[var(--primary-color)]'
+                    : 'text-white hover:text-[var(--primary-color)]/60'
                 } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
               >
                 {t(`nav-${item.key}`, item.en, item.ar)}
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-700"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--primary-color)]"
                   />
                 )}
               </Link>
@@ -94,7 +110,7 @@ const Navigation: React.FC = () => {
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
                 className={`flex items-center space-x-1 px-2 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isScrolled ? 'text-stone-700 hover:text-indigo-700' : 'text-white hover:text-indigo-200'
+                  isScrolled ? 'text-stone-700 hover:text-[var(--primary-color)]' : 'text-white hover:text-[var(--primary-color)]/60'
                 }`}
               >
                 <Globe className="h-4 w-4" />
@@ -117,8 +133,8 @@ const Navigation: React.FC = () => {
                           setLanguage(lang);
                           setShowLangMenu(false);
                         }}
-                        className={`w-full text-left px-4 py-2 text-sm hover:bg-indigo-50 transition-colors ${
-                          currentLanguage.code === lang.code ? 'text-indigo-700 font-medium' : 'text-stone-700'
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-[var(--primary-color)]/10 transition-colors ${
+                          currentLanguage.code === lang.code ? 'text-[var(--primary-color)] font-medium' : 'text-stone-700'
                         } ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                       >
                         {lang.name}
@@ -156,11 +172,14 @@ const Navigation: React.FC = () => {
                 <Link
                   key={item.key}
                   to={item.path}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    recordPath(e.currentTarget);
+                    setIsOpen(false);
+                  }}
                   className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
                     location.pathname === item.path
-                      ? 'text-indigo-700 bg-indigo-50'
-                      : 'text-stone-700 hover:text-indigo-700 hover:bg-stone-50'
+                      ? 'text-[var(--primary-color)] bg-[var(--primary-color)]/10'
+                      : 'text-stone-700 hover:text-[var(--primary-color)] hover:bg-stone-50'
                   } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
                   {t(`nav-${item.key}`, item.en, item.ar)}
@@ -177,8 +196,8 @@ const Navigation: React.FC = () => {
                     }}
                     className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors ${
                       currentLanguage.code === lang.code
-                        ? 'text-indigo-700 bg-indigo-50'
-                        : 'text-stone-700 hover:text-indigo-700 hover:bg-stone-50'
+                        ? 'text-[var(--primary-color)] bg-[var(--primary-color)]/10'
+                        : 'text-stone-700 hover:text-[var(--primary-color)] hover:bg-stone-50'
                     } ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {lang.name}
@@ -190,6 +209,7 @@ const Navigation: React.FC = () => {
         )}
       </AnimatePresence>
     </motion.nav>
+    <RhizomePath ref={pathRef} />
     <div className="bg-yellow-100 text-yellow-800 text-center text-sm py-2">
       {t(
         'experimental-release',
