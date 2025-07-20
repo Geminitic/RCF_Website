@@ -18,15 +18,16 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #4338ca; /* indigo */
-  --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #b45309; /* dark amber for better contrast */
-  --text-color: #1e293b; /* slate */
-  --bg-color: #f5f3ff; /* violet */
-  --card-bg: #ffffff;
-  --border-radius: 12px;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+  /* Luminous Minimalism palette */
+  --primary-color: #338FFF; /* electric blue */
+  --secondary-color: #57E6B5; /* mint green */
+  --accent-color: #222831; /* charcoal gray */
+  --text-color: #222831; /* primary text */
+  --bg-color: #F5F7FA; /* misty silver */
+  --card-bg: #FFFFFF;
+  --border-radius: 16px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Cursor Styles - Fixed sizes */
