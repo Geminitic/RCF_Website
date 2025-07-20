@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import ProbabilityCloud from '../common/ProbabilityCloud';
 
 const AboutPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -50,22 +50,16 @@ const AboutPreview: React.FC = () => {
             </p>
 
 
-            <Link
-              to="/about"
-              className="group inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105"
-            >
-              <span className="mr-2">
-                {t('learn-more', 'Explore Our Story', 'اكتشف قصتنا')}
-              </span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <ProbabilityCloud to="/about">
+              <span>{t('learn-more', 'Explore Our Story', 'اكتشف قصتنا')}</span>
+              <ArrowRight className="h-5 w-5" />
+            </ProbabilityCloud>
 
-            <Link
-              to="/knowledge-hub"
-              className="mt-4 inline-flex items-center px-6 py-3 bg-stone-200 text-stone-800 font-semibold rounded-lg hover:bg-stone-300 transition-all duration-300"
-            >
-              {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
-            </Link>
+            <div className="mt-4">
+              <ProbabilityCloud to="/knowledge-hub">
+                {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
+              </ProbabilityCloud>
+            </div>
           </motion.div>
         </div>
       </div>
