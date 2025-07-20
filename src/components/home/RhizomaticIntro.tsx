@@ -224,7 +224,7 @@ const RhizomaticIntro: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-enhanced px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-glow"
+                  className="btn-enhanced neon-btn px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-glow"
                 >
                   {t('explore-projects', 'Explore Projects', 'استكشف المشاريع')}
                 </motion.button>
@@ -234,7 +234,7 @@ const RhizomaticIntro: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-enhanced px-8 py-4 bg-white text-primary-600 font-semibold rounded-full border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300"
+                  className="btn-enhanced neon-btn px-8 py-4 bg-white text-primary-600 font-semibold rounded-full border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300"
                 >
                   {t('join-community', 'Join Community', 'انضم للمجتمع')}
                 </motion.button>
