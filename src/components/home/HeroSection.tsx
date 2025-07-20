@@ -208,7 +208,7 @@ const HeroSection: React.FC = () => {
           >
             <Link
               to="/programs"
-              className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-full shadow-lg hover:bg-primary-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105 neon-btn"
             >
               <span className="mr-2">
                 {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
@@ -218,7 +218,7 @@ const HeroSection: React.FC = () => {
             
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300 neon-btn"
             >
               {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>

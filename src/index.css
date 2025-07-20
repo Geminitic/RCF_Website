@@ -18,11 +18,14 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #4338ca; /* indigo */
-  --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #b45309; /* dark amber for better contrast */
-  --text-color: #1e293b; /* slate */
-  --bg-color: #f5f3ff; /* violet */
+  --primary-color: #10b981; /* emerald */
+  --secondary-color: #8b5cf6; /* violet */
+  --accent-color: #f43f5e; /* rose */
+  --text-color: #0f172a; /* dark slate */
+  --bg-color: #f0fdfa; /* mint */
+  --gradient-start: #8b5cf6;
+  --gradient-mid: #10b981;
+  --gradient-end: #f43f5e;
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -77,14 +80,16 @@ body {
   font-family: 'Inter', 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
+  background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-mid));
+  background-size: 400% 400%;
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: background-color 0.3s ease;
+  animation: gradientShift 15s ease infinite;
+  transition: background 0.3s ease;
 }
 
 /* Custom selection colors */
@@ -162,6 +167,17 @@ body {
   left: 100%;
 }
 
+/* Neon Button Effect */
+.neon-btn {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.neon-btn:hover {
+  box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color);
+  transform: translateY(-2px);
+}
+
 /* Gradient Text */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
@@ -169,6 +185,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.animate-gradient {
+  animation: gradientShift 10s ease infinite;
 }
 
 /* Hover Effects */
@@ -204,6 +224,23 @@ body {
   background: linear-gradient(-45deg, #064e3b, #047857, #b91c1c, #dc2626);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
+}
+
+/* Intro Section Styling */
+.rhizome-intro {
+  position: relative;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.rhizome-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, var(--gradient-start), transparent),
+              radial-gradient(circle at bottom right, var(--accent-color), transparent);
+  opacity: 0.25;
+  z-index: -1;
 }
 
 @keyframes gradientShift {
