@@ -34,6 +34,13 @@ Copy `.env.example` to `.env` and adjust the values as needed. Currently only `P
    ```
    If linting fails with a `Cannot find package '@eslint/js'` error, make sure the dependencies have been installed correctly.
 
+5. **Configure scraping sources**
+   
+   Set the `SCRAPE_URLS` environment variable to a comma separated list of URLs to scrape. These can be normal web pages or `.ics` calendar feeds. Example:
+   ```bash
+   export SCRAPE_URLS="https://calendar.example/events.ics,https://another.org/events"
+   ```
+
 ## Deployment Notes
 
 - This repository now includes a `_headers` file that sets basic security headers processed by Netlify during deployment.

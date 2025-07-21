@@ -19,10 +19,10 @@ export class EventCache {
     });
   }
 
-  async get(key: string): Promise<Event[] | null> {
+  async get<T = Event[]>(key: string): Promise<T | null> {
     try {
       const data = await this.redis.get(key);
-      return data ? JSON.parse(data) : null;
+      return data ? (JSON.parse(data) as T) : null;
     } catch (error) {
       console.error('Cache get error:', error);
       return null;
@@ -38,7 +38,7 @@ export class EventCache {
     }
   }
 
-  async set(key: string, events: Event[]): Promise<void> {
+  async set<T = Event[]>(key: string, events: T): Promise<void> {
     try {
       await this.redis.setex(key, this.TTL, JSON.stringify(events));
     } catch (error) {

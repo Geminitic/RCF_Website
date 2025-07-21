@@ -47,7 +47,8 @@ describe('Events API integration', () => {
 
     const res = await request(app).get('/api/events');
     expect(res.status).toBe(200);
-    expect(res.body).toHaveLength(1);
-    expect(res.body[0].title).toBe('Community Meetup');
+    expect(res.body.events).toHaveLength(1);
+    expect(res.body.events[0].title).toBe('Community Meetup');
+    expect(res.body.metadata).toBeDefined();
   });
 });

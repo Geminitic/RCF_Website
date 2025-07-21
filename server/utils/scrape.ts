@@ -16,6 +16,7 @@ export async function scrapeAndCache(): Promise<Event[]> {
 
   if (events.length > 0) {
     await cache.set('events', events);
+    await cache.set('events:lastUpdated', { lastUpdated: new Date().toISOString() });
   }
 
   return events;
