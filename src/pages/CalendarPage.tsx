@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BigCalendar from '../components/calendar/BigCalendar';
+import SimpleCalendar from '../components/calendar/SimpleCalendar';
 import { motion } from 'framer-motion';
 import { 
   Calendar as CalendarIcon, 
@@ -27,6 +27,7 @@ const CalendarPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [currentCalendarDate, setCurrentCalendarDate] = useState(new Date());
 
   const categories = [
     { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: 'bg-gray-500' },
@@ -82,18 +83,17 @@ const CalendarPage: React.FC = () => {
     ? events 
     : events.filter(event => event.category === selectedCategory);
 
-  // react-big-calendar handles navigation and month calculations internally
+  // SimpleCalendar handles month navigation and event rendering
 
   const renderCalendarView = () => {
-    const bigCalendarEvents = filteredEvents.map(e => ({
-      title: t('event-title', e.title, e.titleAr),
-      start: e.date ? new Date(e.date) : new Date(),
-      end: e.date ? new Date(e.date) : new Date(),
-      allDay: true,
-    }));
-
     return (
-      <BigCalendar events={bigCalendarEvents} language={currentLanguage.code} />
+      <SimpleCalendar
+        events={filteredEvents}
+        currentDate={currentCalendarDate}
+        onDateChange={setCurrentCalendarDate}
+        currentLanguage={currentLanguage}
+        t={t}
+      />
     );
   };
 
@@ -334,7 +334,7 @@ const CalendarPage: React.FC = () => {
               </button>
             </div>
 
-            {/* Month Navigation handled by BigCalendar */}
+            {/* Month Navigation handled by SimpleCalendar */}
 
             {/* Category Filter */}
             <div className="flex items-center space-x-2">
