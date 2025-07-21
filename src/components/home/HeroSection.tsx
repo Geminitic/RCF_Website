@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-800 to-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-sunset-600 via-sunset-700 to-sunset-800">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -218,7 +218,7 @@ const HeroSection: React.FC = () => {
             
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-sunset-500 to-sunset-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>

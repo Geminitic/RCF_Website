@@ -18,11 +18,11 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #4338ca; /* indigo */
-  --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #b45309; /* dark amber for better contrast */
+  --primary-color: #ff704c; /* sunset orange */
+  --secondary-color: #fb572e; /* deep sunset */
+  --accent-color: #e03f18; /* dark sunset */
   --text-color: #1e293b; /* slate */
-  --bg-color: #f5f3ff; /* violet */
+  --bg-color: #fff1f0; /* light sunset */
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
