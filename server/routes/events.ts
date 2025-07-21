@@ -10,7 +10,15 @@ router.get('/', async (_req, res) => {
   if (!events || ttl <= 0) {
     events = await scrapeAndCache();
   }
-  res.json(events || []);
+
+  const metadata = {
+    totalEvents: events ? events.length : 0,
+    lastUpdated: new Date().toISOString(),
+    categories: events ? Array.from(new Set(events.map((e) => e.category))) : [],
+    sources: events ? Array.from(new Set(events.map((e) => e.source))) : [],
+  };
+
+  res.json({ events: events || [], metadata });
 });
 
 router.post('/', async (req, res) => {
