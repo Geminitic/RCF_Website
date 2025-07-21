@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
@@ -40,6 +40,8 @@ const CommunityWallPage: React.FC = () => {
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
   const [loadedPhotos, setLoadedPhotos] = useState(12);
+  const MAX_PHOTOS = 200;
+  const PHOTOS_TO_KEEP = 100;
   
   const { ref: loadMoreRef, inView } = useInView({
     threshold: 0.1,
@@ -55,7 +57,6 @@ const CommunityWallPage: React.FC = () => {
     { key: 'events', en: 'Events', ar: 'الفعاليات' }
   ];
 
-  // Generate additional photos for infinite scroll
   const generateMorePhotos = useCallback(() => {
     const additionalPhotos = [];
     const basePhotos = photos.filter(p => p.approved);
@@ -80,16 +81,19 @@ const CommunityWallPage: React.FC = () => {
   ]);
 
   useEffect(() => {
-    if (inView && loadedPhotos < allPhotos.length) {
+    if (inView && loadedPhotos < MAX_PHOTOS) {
       setTimeout(() => {
         const newPhotos = generateMorePhotos();
-        setAllPhotos(prev => [...prev, ...newPhotos]);
-        setLoadedPhotos(prev => prev + 12);
+        setAllPhotos(prev => {
+          const combined = [...prev, ...newPhotos];
+          return combined.length > PHOTOS_TO_KEEP ? combined.slice(-PHOTOS_TO_KEEP) : combined;
+        });
+        setLoadedPhotos(prev => Math.min(prev + 12, MAX_PHOTOS));
       }, 500);
     }
-  }, [inView, loadedPhotos, allPhotos.length, generateMorePhotos]);
+  }, [inView, loadedPhotos, generateMorePhotos]);
 
-  useEffect(() => {
+  const filteredPhotosData = useMemo(() => {
     let filtered = allPhotos.slice(0, loadedPhotos);
     
     if (selectedCategory !== 'all') {
@@ -105,8 +109,12 @@ const CommunityWallPage: React.FC = () => {
       );
     }
     
-    setFilteredPhotos(filtered);
+    return filtered;
   }, [allPhotos, loadedPhotos, selectedCategory, searchTerm]);
+
+  useEffect(() => {
+    setFilteredPhotos(filteredPhotosData);
+  }, [filteredPhotosData]);
 
   const progressPercentage = (uploadedCount / targetCount) * 100;
 
@@ -476,7 +484,7 @@ const CommunityWallPage: React.FC = () => {
                 </div>
                 {selectedPhoto.comments.length > 0 && (
                   <div className="mt-4 space-y-2">
-                    {selectedPhoto.comments.map((c) => (
+                    {selectedPhoto.comments.map((c: any) => (
                       <div key={c.id} className="text-sm text-stone-800 border-b pb-1">
                         <strong>{c.name}:</strong> {c.text}
                       </div>
