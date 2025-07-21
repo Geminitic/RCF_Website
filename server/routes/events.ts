@@ -10,7 +10,20 @@ router.get('/', async (_req, res) => {
   if (!events || ttl <= 0) {
     events = await scrapeAndCache();
   }
-  res.json(events || []);
+  const meta = (await cache.get<{ lastUpdated: string }>('events:lastUpdated')) || {
+    lastUpdated: new Date().toISOString()
+  };
+  const categories = Array.from(new Set((events || []).map(e => e.category)));
+  const sources = Array.from(new Set((events || []).map(e => e.source)));
+  res.json({
+    events: events || [],
+    metadata: {
+      totalEvents: (events || []).length,
+      lastUpdated: meta.lastUpdated,
+      categories,
+      sources
+    }
+  });
 });
 
 router.post('/', async (req, res) => {
@@ -21,6 +34,7 @@ router.post('/', async (req, res) => {
   const events = (await cache.get('events')) || [];
   events.push(event);
   await cache.set('events', events);
+  await cache.set('events:lastUpdated', { lastUpdated: new Date().toISOString() });
   res.status(201).json(event);
 });
 

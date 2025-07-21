@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
+/* eslint-disable react-refresh/only-export-components */
 import { photoList } from '../data/photoList';
 
 interface Photo {
