@@ -5,6 +5,7 @@ import { Event } from '../types/event';
 export abstract class BaseScraper {
   protected httpClient = createHttpClient();
 
+  // eslint-disable-next-line no-unused-vars
   abstract scrape(_url: string): Promise<Event[]>;
 
   protected async fetchPage(url: string): Promise<string | null> {

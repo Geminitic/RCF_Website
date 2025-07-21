@@ -2,11 +2,13 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserContextType {
   isAdmin: boolean;
+  // eslint-disable-next-line no-unused-vars
   setIsAdmin: (_value: boolean) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {

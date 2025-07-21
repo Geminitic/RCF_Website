@@ -8,7 +8,9 @@ interface Language {
 
 interface LanguageContextType {
   currentLanguage: Language;
+  // eslint-disable-next-line no-unused-vars
   setLanguage: (_language: Language) => void;
+  // eslint-disable-next-line no-unused-vars
   t: (_key: string, _enText: string, _arText: string) => string;
 }
 
@@ -19,6 +21,7 @@ const languages: Language[] = [
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -40,8 +43,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     document.documentElement.lang = language.code;
   };
 
-  const t = (_key: string, enText: string, arText: string): string => {
-    return currentLanguage.code === 'ar' ? arText : enText;
+  const t = (_key: string, _enText: string, _arText: string): string => {
+    return currentLanguage.code === 'ar' ? _arText : _enText;
   };
 
   return (
@@ -51,4 +54,5 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { languages };

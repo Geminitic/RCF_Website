@@ -24,12 +24,18 @@ interface PhotoContextType {
   uploadedCount: number;
   targetCount: number;
   addPhoto: (
+    // eslint-disable-next-line no-unused-vars
     _photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    // eslint-disable-next-line no-unused-vars
     _approved?: boolean
   ) => void;
+  // eslint-disable-next-line no-unused-vars
   likePhoto: (_id: string) => void;
+  // eslint-disable-next-line no-unused-vars
   addComment: (_id: string, _name: string, _text: string) => void;
+  // eslint-disable-next-line no-unused-vars
   approvePhoto: (_id: string) => void;
+  // eslint-disable-next-line no-unused-vars
   deletePhoto: (_id: string) => void;
   pendingPhotos: Photo[];
   featuredPhotos: Photo[];
@@ -39,6 +45,7 @@ interface PhotoContextType {
 
 const PhotoContext = createContext<PhotoContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePhoto = () => {
   const context = useContext(PhotoContext);
   if (!context) {
