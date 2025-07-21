@@ -32,6 +32,7 @@ describe('GET /api/events', () => {
   it('returns events from scraper when cache empty', async () => {
     const res = await request(app).get('/api/events');
     expect(res.status).toBe(200);
-    expect(res.body.length).toBeGreaterThan(0);
+    expect(res.body.events.length).toBeGreaterThan(0);
+    expect(res.body.metadata).toBeDefined();
   });
 });
