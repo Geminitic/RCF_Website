@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import BigCalendar from '../components/calendar/BigCalendar';
+import React, { useState, useEffect, useCallback } from 'react';
+import SimpleCalendar from '../components/calendar/SimpleCalendar';
 import { motion } from 'framer-motion';
 import { 
   Calendar as CalendarIcon, 
@@ -19,6 +19,45 @@ import {
 import { useLanguage } from '../contexts/LanguageContext';
 import type { CalendarEvent } from '../types';
 
+const initialEvents: CalendarEvent[] = [
+  {
+    id: '1',
+    title: 'Syrian Innovation Summit',
+    titleAr: 'قمة الابتكار السوري',
+    description: 'Annual gathering of Syrian entrepreneurs and innovators',
+    descriptionAr: 'التجمع السنوي لرواد الأعمال والمبتكرين السوريين',
+    date: new Date(2025, 0, 25).toISOString(),
+    time: '10:00 AM - 6:00 PM',
+    timeAr: '10:00 ص - 6:00 م',
+    location: 'Virtual Event',
+    locationAr: 'حدث افتراضي',
+    category: 'conference',
+    organizer: 'Syrian Innovation Network',
+    organizerAr: 'شبكة الابتكار السورية',
+    isOnline: true,
+    registrationRequired: true,
+    link: '#'
+  },
+  {
+    id: '2',
+    title: 'Community Grant Workshop',
+    titleAr: 'ورشة عمل المنح المجتمعية',
+    description: 'Learn how to apply for community development grants',
+    descriptionAr: 'تعلم كيفية التقديم على منح التنمية المجتمعية',
+    date: new Date(2025, 0, 28).toISOString(),
+    time: '2:00 PM - 4:00 PM',
+    timeAr: '2:00 م - 4:00 م',
+    location: 'Online',
+    locationAr: 'عبر الإنترنت',
+    category: 'funding',
+    organizer: 'Rhizome Foundation',
+    organizerAr: 'مؤسسة ريزوم',
+    isOnline: true,
+    registrationRequired: false,
+    link: '#'
+  }
+];
+
 const CalendarPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   const [viewMode, setViewMode] = useState<'calendar' | 'list'>('list');
@@ -27,6 +66,7 @@ const CalendarPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [currentCalendarDate, setCurrentCalendarDate] = useState(new Date());
 
   const categories = [
     { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: 'bg-gray-500' },
@@ -39,13 +79,12 @@ const CalendarPage: React.FC = () => {
     { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
   ];
 
-  const initialEvents: CalendarEvent[] = [];
 
   useEffect(() => {
     fetchEvents();
-  }, []);
+  }, [fetchEvents]);
 
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async () => {
     setLoading(true);
     setError(null);
     
@@ -76,24 +115,21 @@ const CalendarPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const filteredEvents = selectedCategory === 'all' 
     ? events 
     : events.filter(event => event.category === selectedCategory);
 
-  // react-big-calendar handles navigation and month calculations internally
-
   const renderCalendarView = () => {
-    const bigCalendarEvents = filteredEvents.map(e => ({
-      title: t('event-title', e.title, e.titleAr),
-      start: e.date ? new Date(e.date) : new Date(),
-      end: e.date ? new Date(e.date) : new Date(),
-      allDay: true,
-    }));
-
     return (
-      <BigCalendar events={bigCalendarEvents} language={currentLanguage.code} />
+      <SimpleCalendar
+        events={filteredEvents}
+        currentDate={currentCalendarDate}
+        onDateChange={setCurrentCalendarDate}
+        currentLanguage={currentLanguage}
+        t={t}
+      />
     );
   };
 
@@ -102,7 +138,7 @@ const CalendarPage: React.FC = () => {
       return (
         <div className="flex items-center justify-center py-12">
           <Loader className="h-8 w-8 animate-spin text-indigo-600 mr-3" />
-          <span className="text-lg text-stone-600">Loading events...</span>
+          <span className="text-lg text-stone-600">{t('loading','Loading events...','جاري تحميل الفعاليات...')}</span>
         </div>
       );
     }
@@ -111,8 +147,8 @@ const CalendarPage: React.FC = () => {
       return (
         <div className="text-center py-12">
           <CalendarIcon className="h-16 w-16 text-stone-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-stone-600 mb-2">No events found</h3>
-          <p className="text-stone-500">Try adjusting your filters or check back later.</p>
+          <h3 className={`text-xl font-semibold text-stone-600 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>{t('no-events-found','No events found','لم يتم العثور على فعاليات')}</h3>
+          <p className={`text-stone-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>{t('try-adjusting','Try adjusting your filters or check back later.','حاول تعديل الفلاتر أو تحقق لاحقًا.')}</p>
         </div>
       );
     }
@@ -128,7 +164,18 @@ const CalendarPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4"
-              style={{ borderLeftColor: category?.color?.replace('bg-', '#') || '#6b7280' }}
+              style={{
+                borderLeftColor:
+                  category?.color
+                    ?.replace('bg-', '#')
+                    .replace('gray-500', '#6b7280')
+                    .replace('green-500', '#10b981')
+                    .replace('blue-500', '#3b82f6')
+                    .replace('purple-500', '#8b5cf6')
+                    .replace('pink-500', '#ec4899')
+                    .replace('orange-500', '#f97316')
+                    .replace('indigo-500', '#6366f1') || '#6b7280'
+              }}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
