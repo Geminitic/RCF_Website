@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
 import { 
@@ -27,6 +27,8 @@ const CalendarPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [lastFetch, setLastFetch] = useState<number>(0);
+  const CACHE_DURATION = 5 * 60 * 1000;
 
   const categories = [
     { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: 'bg-gray-500' },
@@ -39,13 +41,9 @@ const CalendarPage: React.FC = () => {
     { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
   ];
 
-  const initialEvents: CalendarEvent[] = [];
+  const initialEvents: CalendarEvent[] = useMemo(() => [], []);
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async () => {
     setLoading(true);
     setError(null);
     
@@ -59,26 +57,32 @@ const CalendarPage: React.FC = () => {
       const data = await response.json();
       
       if (data.events) {
-        // Merge scraped events with initial events
         const allEvents = [...initialEvents, ...data.events];
         setEvents(allEvents);
         setLastUpdated(data.metadata?.lastUpdated || new Date().toISOString());
       } else {
-        // Fallback to just scraped events if no metadata
         const scrapedEvents = Array.isArray(data) ? data : [];
         setEvents([...initialEvents, ...scrapedEvents]);
         setLastUpdated(new Date().toISOString());
       }
+      setLastFetch(Date.now());
     } catch (err) {
       console.error('Failed to fetch calendar events:', err);
       setError('Failed to load live events. Showing sample events.');
-      setEvents(initialEvents); // Fallback to initial events
+      setEvents(initialEvents);
     } finally {
       setLoading(false);
     }
-  };
+  }, [initialEvents]);
 
-  const filteredEvents = selectedCategory === 'all' 
+  useEffect(() => {
+    const now = Date.now();
+    if (now - lastFetch > CACHE_DURATION) {
+      fetchEvents();
+    }
+  }, [lastFetch, CACHE_DURATION, fetchEvents]);
+
+  const filteredEvents = selectedCategory === 'all'
     ? events 
     : events.filter(event => event.category === selectedCategory);
 
@@ -86,7 +90,7 @@ const CalendarPage: React.FC = () => {
 
   const renderCalendarView = () => {
     const bigCalendarEvents = filteredEvents.map(e => ({
-      title: t('event-title', e.title, e.titleAr),
+      title: t('event-title', e.title || '', e.titleAr || ''),
       start: e.date ? new Date(e.date) : new Date(),
       end: e.date ? new Date(e.date) : new Date(),
       allDay: true,
@@ -135,7 +139,7 @@ const CalendarPage: React.FC = () => {
                   <div className="flex items-center mb-2">
                     <div className={`w-3 h-3 rounded-full mr-3 ${category?.color || 'bg-gray-500'}`} />
                     <span className={`text-xs font-medium text-stone-500 uppercase tracking-wide ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                      {t(`category-${event.category}`, event.category, event.category)}
+                      {t(`category-${event.category}`, event.category || '', event.category || '')}
                     </span>
                     {event.priority && event.priority > 3 && (
                       <Star className="h-4 w-4 text-yellow-500 ml-2" />
@@ -145,11 +149,11 @@ const CalendarPage: React.FC = () => {
                     )}
                   </div>
                   <h3 className={`text-xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('event-title', event.title, event.titleAr)}
+                    {t('event-title', event.title || '', event.titleAr || '')}
                   </h3>
                   {event.description && (
                     <p className={`text-stone-600 mb-4 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                      {t('event-description', event.description, event.descriptionAr)}
+                      {t('event-description', event.description, event.descriptionAr || '')}
                     </p>
                   )}
                 </div>
@@ -174,8 +178,8 @@ const CalendarPage: React.FC = () => {
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-2" />
                     <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
-                      {t('event-time', event.time, event.timeAr)}
-                      {event.duration && ` (${t('event-duration', event.duration, event.durationAr)})`}
+                      {t('event-time', event.time || '', event.timeAr || '')}
+                      {event.duration && ` (${t('event-duration', event.duration, event.durationAr || '')})`}
                     </span>
                   </div>
                 )}
@@ -183,7 +187,7 @@ const CalendarPage: React.FC = () => {
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
                     <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
-                      {t('event-location', event.location, event.locationAr)}
+                      {t('event-location', event.location || '', event.locationAr || '')}
                     </span>
                   </div>
                 )}
@@ -214,7 +218,7 @@ const CalendarPage: React.FC = () => {
               <div className="flex items-center justify-between pt-4 border-t border-stone-200">
                 <div className="flex items-center space-x-4">
                   <span className={`text-sm text-stone-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('organized-by', 'Organized by', 'نظمت من قبل')} {t('event-organizer', event.organizer, event.organizerAr)}
+                    {t('organized-by', 'Organized by', 'نظمت من قبل')} {t('event-organizer', event.organizer || '', event.organizerAr || '')}
                   </span>
                   {event.isOnline && (
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">

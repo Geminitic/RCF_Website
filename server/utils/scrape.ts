@@ -7,12 +7,16 @@ const cache = new EventCache();
 
 export async function scrapeAndCache(): Promise<Event[]> {
   const scraper = new EventScraper();
-  let events: Event[] = [];
-
-  for (const url of SCRAPE_URLS) {
-    const scraped = await scraper.scrape(url);
-    events = events.concat(scraped);
-  }
+  
+  const scrapePromises = SCRAPE_URLS.map(url => 
+    scraper.scrape(url).catch(error => {
+      console.error(`Failed to scrape ${url}:`, error);
+      return [];
+    })
+  );
+  
+  const results = await Promise.all(scrapePromises);
+  const events = results.flat();
 
   if (events.length > 0) {
     await cache.set('events', events);

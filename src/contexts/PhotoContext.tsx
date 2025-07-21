@@ -68,7 +68,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'RCF Team',
       uploadDate: '2024-01-15',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '2',
@@ -83,7 +85,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Community Member',
       uploadDate: '2024-01-10',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '3',
@@ -98,7 +102,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Youth Coordinator',
       uploadDate: '2024-01-08',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '4',
@@ -113,7 +119,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Education Team',
       uploadDate: '2024-01-05',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     // New community photos from attachments
     {
@@ -129,7 +137,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Rhizome Canada',
       uploadDate: '2024-01-20',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '6',
@@ -144,7 +154,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'RCF Team',
       uploadDate: '2024-01-18',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '7',
@@ -159,7 +171,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Environmental Team',
       uploadDate: '2024-01-16',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '8',
@@ -174,7 +188,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Green Team',
       uploadDate: '2024-01-14',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '9',
@@ -189,7 +205,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Garden Team',
       uploadDate: '2024-01-12',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '10',
@@ -204,7 +222,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'RCF Team',
       uploadDate: '2024-01-22',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '11',
@@ -219,7 +239,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Arts Collective',
       uploadDate: '2024-01-21',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '12',
@@ -234,7 +256,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Relief Team',
       uploadDate: '2024-01-19',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     },
     {
       id: '13',
@@ -249,7 +273,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
       uploadedBy: 'Rhizome Canada',
       uploadDate: '2024-01-17',
       approved: true,
-      featured: true
+      featured: true,
+      likes: 0,
+      comments: []
     }
     ];
 
@@ -269,7 +295,9 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
         uploadedBy: 'Community',
         uploadDate: new Date().toISOString(),
         approved: true,
-        featured: false
+        featured: false,
+        likes: 0,
+        comments: []
       }));
 
     const initial = [...base, ...extras].map((p) => ({

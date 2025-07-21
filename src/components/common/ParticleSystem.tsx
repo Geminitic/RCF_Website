@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 interface ParticleSystemProps {
   trigger?: boolean;
@@ -9,7 +9,7 @@ interface ParticleSystemProps {
 const ParticleSystem: React.FC<ParticleSystemProps> = ({ trigger, x = 0, y = 0 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const createParticle = (clientX: number, clientY: number) => {
+  const createParticle = useCallback((clientX: number, clientY: number) => {
     if (!containerRef.current) return;
 
     const particle = document.createElement('div');
@@ -17,22 +17,32 @@ const ParticleSystem: React.FC<ParticleSystemProps> = ({ trigger, x = 0, y = 0 }
     particle.style.left = `${clientX + (Math.random() - 0.5) * 20}px`;
     particle.style.top = `${clientY + (Math.random() - 0.5) * 20}px`;
     
-    document.body.appendChild(particle);
+    containerRef.current.appendChild(particle);
     
-    setTimeout(() => {
-      particle.remove();
+    const timeoutId = setTimeout(() => {
+      if (particle.parentNode) {
+        particle.remove();
+      }
     }, 2000);
-  };
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   useEffect(() => {
     if (trigger && x && y) {
+      const cleanupFunctions: (() => void)[] = [];
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
-          createParticle(x, y);
+          const cleanup = createParticle(x, y);
+          if (cleanup) cleanupFunctions.push(cleanup);
         }, i * 100);
       }
+      
+      return () => {
+        cleanupFunctions.forEach(cleanup => cleanup());
+      };
     }
-  }, [trigger, x, y]);
+  }, [trigger, x, y, createParticle]);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -41,7 +51,7 @@ const ParticleSystem: React.FC<ParticleSystemProps> = ({ trigger, x = 0, y = 0 }
 
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);
-  }, []);
+  }, [createParticle]);
 
   return <div ref={containerRef} className="fixed inset-0 pointer-events-none z-50" />;
 };

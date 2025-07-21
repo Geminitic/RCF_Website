@@ -40,7 +40,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     document.documentElement.lang = language.code;
   };
 
-  const t = (key: string, enText: string, arText: string): string => {
+  const t = (_key: string, enText: string, arText: string): string => {
     return currentLanguage.code === 'ar' ? arText : enText;
   };
 
