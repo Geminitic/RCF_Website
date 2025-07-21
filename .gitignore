@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Python pipeline outputs
+events.json
+processed_events.json
+__pycache__/
