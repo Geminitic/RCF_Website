@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&family=Roboto+Slab:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -18,11 +18,11 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #4338ca; /* indigo */
-  --secondary-color: #06b6d4; /* cyan */
-  --accent-color: #b45309; /* dark amber for better contrast */
-  --text-color: #1e293b; /* slate */
-  --bg-color: #f5f3ff; /* violet */
+  --primary-color: #005f73; /* teal */
+  --secondary-color: #0a9396; /* deep teal */
+  --accent-color: #ee9b00; /* amber */
+  --text-color: #001219; /* dark slate */
+  --bg-color: #e0fbfc; /* light cyan */
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -74,7 +74,7 @@
 
 /* Base Styles */
 body {
-  font-family: 'Inter', 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Inter', 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -116,7 +116,7 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
   line-height: 1.2;
-  font-family: 'Playfair Display', 'Noto Sans Arabic', serif;
+  font-family: 'Roboto Slab', 'Noto Sans Arabic', serif;
 }
 
 .section-description {

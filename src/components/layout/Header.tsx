@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           initial={{ filter: 'blur(12px)', opacity: 0 }}
           animate={{ filter: 'blur(0px)', opacity: 1 }}
           transition={{ duration: 1.5, ease: [0.55, 0.085, 0.68, 0.53] }}
-          className="text-white text-4xl md:text-5xl font-semibold mb-4"
+          className="text-4xl md:text-5xl font-semibold mb-4 bg-gradient-to-r from-teal-400 via-emerald-400 to-yellow-400 bg-clip-text text-transparent"
         >
           {t('title', 'Rhizome Syria', 'ريزوم سوريا')}
         </motion.h1>

@@ -56,7 +56,7 @@ const Navigation: React.FC = () => {
               transition={{ duration: 0.6 }}
             />
             <div className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'}`}>
-              <div className="font-bold text-indigo-800 text-sm">
+              <div className="font-bold text-teal-800 text-sm">
                 {t('nav-title', 'Rhizome Community', 'ريزوم المجتمعية')}
               </div>
               <div className="text-xs text-stone-600">
@@ -73,17 +73,17 @@ const Navigation: React.FC = () => {
                 to={item.path}
                 className={`relative px-2 py-2 text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.path
-                    ? 'text-indigo-700'
+                    ? 'text-teal-700'
                     : isScrolled
-                    ? 'text-stone-700 hover:text-indigo-700'
-                    : 'text-white hover:text-indigo-200'
+                    ? 'text-stone-700 hover:text-teal-700'
+                    : 'text-white hover:text-teal-200'
                 } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
               >
                 {t(`nav-${item.key}`, item.en, item.ar)}
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-700"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-700"
                   />
                 )}
               </Link>
@@ -94,7 +94,7 @@ const Navigation: React.FC = () => {
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
                 className={`flex items-center space-x-1 px-2 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isScrolled ? 'text-stone-700 hover:text-indigo-700' : 'text-white hover:text-indigo-200'
+                  isScrolled ? 'text-stone-700 hover:text-teal-700' : 'text-white hover:text-teal-200'
                 }`}
               >
                 <Globe className="h-4 w-4" />
@@ -117,8 +117,8 @@ const Navigation: React.FC = () => {
                           setLanguage(lang);
                           setShowLangMenu(false);
                         }}
-                        className={`w-full text-left px-4 py-2 text-sm hover:bg-indigo-50 transition-colors ${
-                          currentLanguage.code === lang.code ? 'text-indigo-700 font-medium' : 'text-stone-700'
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-teal-50 transition-colors ${
+                          currentLanguage.code === lang.code ? 'text-teal-700 font-medium' : 'text-stone-700'
                         } ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                       >
                         {lang.name}
@@ -159,8 +159,8 @@ const Navigation: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
                     location.pathname === item.path
-                      ? 'text-indigo-700 bg-indigo-50'
-                      : 'text-stone-700 hover:text-indigo-700 hover:bg-stone-50'
+                      ? 'text-teal-700 bg-teal-50'
+                      : 'text-stone-700 hover:text-teal-700 hover:bg-stone-50'
                   } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
                   {t(`nav-${item.key}`, item.en, item.ar)}
@@ -177,8 +177,8 @@ const Navigation: React.FC = () => {
                     }}
                     className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors ${
                       currentLanguage.code === lang.code
-                        ? 'text-indigo-700 bg-indigo-50'
-                        : 'text-stone-700 hover:text-indigo-700 hover:bg-stone-50'
+                        ? 'text-teal-700 bg-teal-50'
+                        : 'text-stone-700 hover:text-teal-700 hover:bg-stone-50'
                     } ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {lang.name}
