@@ -31,7 +31,7 @@ export default tseslint.config(
           varsIgnorePattern: '^_',
         },
       ],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
     },
   }
 );

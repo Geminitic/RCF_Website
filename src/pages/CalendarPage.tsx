@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
 import { 
@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { CalendarEvent } from '../types';
+
+const initialEvents: CalendarEvent[] = [];
 
 const CalendarPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -39,13 +41,8 @@ const CalendarPage: React.FC = () => {
     { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
   ];
 
-  const initialEvents: CalendarEvent[] = [];
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async () => {
     setLoading(true);
     setError(null);
     
@@ -76,7 +73,11 @@ const CalendarPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
 
   const filteredEvents = selectedCategory === 'all' 
     ? events 
