@@ -29,7 +29,7 @@ const CommunityPreview: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-50 to-stone-50">
+    <section className="py-20 banner-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,22 +53,22 @@ const CommunityPreview: React.FC = () => {
           <div className="max-w-md mx-auto mb-8">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-2">
-                <Target className="h-5 w-5 text-emerald-600" />
+                <Target className="h-5 w-5 text-teal-600" />
                 <span className="text-sm font-medium text-stone-700">
                   {t('documentation-goal', 'Community Stories', 'قصص المجتمع')}
                 </span>
               </div>
-              <span className="text-sm font-bold text-emerald-600">
+              <span className="text-sm font-bold text-teal-700">
                 {uploadedCount.toLocaleString()} / {targetCount.toLocaleString()}
               </span>
             </div>
-            <div className="w-full bg-stone-200 rounded-full h-3">
+            <div className="w-full bg-indigo-100 rounded-full h-3">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${progressPercentage}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className="bg-gradient-to-r from-emerald-600 to-emerald-700 h-3 rounded-full relative overflow-hidden"
+                className="bg-gradient-to-r from-teal-600 via-sky-600 to-indigo-700 h-3 rounded-full relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse" />
               </motion.div>
@@ -145,7 +145,7 @@ const CommunityPreview: React.FC = () => {
         >
           <Link
             to="/community-wall"
-            className="group inline-flex items-center px-8 py-4 bg-emerald-700 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="btn-primary group"
           >
             <Camera className="h-5 w-5 mr-2" />
             <span>
@@ -154,7 +154,7 @@ const CommunityPreview: React.FC = () => {
             <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 
-          <button className="group inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-semibold rounded-full border-2 border-emerald-700 hover:bg-emerald-50 transition-all duration-300">
+          <button className="group inline-flex items-center px-8 py-4 bg-white text-teal-700 font-semibold rounded-full border-2 border-teal-700 hover:bg-teal-50 transition-all duration-300">
             <Upload className="h-5 w-5 mr-2" />
             <span>
               {t('contribute-story', 'Contribute Your Story', 'ساهم بقصتك')}
