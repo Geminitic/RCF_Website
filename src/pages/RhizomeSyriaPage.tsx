@@ -13,8 +13,8 @@ const RhizomeSyriaPage: React.FC = () => {
     {
       name: 'Ritta Alhayek',
       nameAr: 'ريتا الحايك',
-      role: 'Chair',
-      roleAr: 'رئيسة',
+      role: 'President',
+      roleAr: 'الرئيسة',
       bio: 'Oversees governance and direction with experience in strategic planning, community systems, and feminist organizing.',
       bioAr: 'تشرف على الحوكمة والتوجه بخبرة في التخطيط الاستراتيجي والأنظمة المجتمعية والتنظيم النسوي.',
       image: 'https://via.placeholder.com/400x400/6B46C1/FFFFFF?text=Board+Member'
@@ -38,8 +38,8 @@ const RhizomeSyriaPage: React.FC = () => {
       image: 'https://via.placeholder.com/400x400/F97316/FFFFFF?text=Board+Member'
     },
     {
-      name: 'Silva',
-      nameAr: 'سيلفا',
+      name: 'Silva Ismael',
+      nameAr: 'سيلفا إسماعيل',
       role: 'Programs Lead',
       roleAr: 'قائدة البرامج',
       bio: 'Manages Rhizome Syria\'s programmatic portfolio, with a focus on feminist frameworks, coastal civic organizing, and training modules.',
@@ -437,11 +437,11 @@ const RhizomeSyriaPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-              {t('our-board-syria', 'Our Board (Syria)', 'مجلس إدارتنا (سوريا)')}
+              {t('our-board-syria', 'Syria Team', 'فريق سوريا')}
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {board.map((member, index) => (
               <motion.div
                 key={index}
@@ -453,7 +453,7 @@ const RhizomeSyriaPage: React.FC = () => {
               >
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 via-blue-400 to-orange-400 rounded-2xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity" />
                 <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     <img 
                       src={member.image} 
                       alt={member.name} 
