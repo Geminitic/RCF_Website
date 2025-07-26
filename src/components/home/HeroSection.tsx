@@ -34,10 +34,13 @@ const HeroSection: React.FC = () => {
       opacity: number;
       pulsePhase: number;
       color: string;
+      health: number;
+      isDragging: boolean;
     }> = [];
 
     const colors = ['#064e3b', '#065f46', '#047857', '#b91c1c', '#dc2626', '#ea580c', '#d97706'];
     const nodeCount = 40;
+    const maxNodes = nodeCount * 2;
 
     // Initialize nodes with more organic properties
     for (let i = 0; i < nodeCount; i++) {
@@ -50,7 +53,9 @@ const HeroSection: React.FC = () => {
         connections: [],
         opacity: Math.random() * 0.6 + 0.2,
         pulsePhase: Math.random() * Math.PI * 2,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        color: colors[Math.floor(Math.random() * colors.length)],
+        health: 1,
+        isDragging: false,
       });
     }
 
@@ -73,14 +78,93 @@ const HeroSection: React.FC = () => {
     let animationFrame: number;
     let time = 0;
 
+    let draggedIndex: number | null = null;
+
+    const getMousePos = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    };
+
+    const onMouseDown = (e: MouseEvent) => {
+      const { x, y } = getMousePos(e);
+      let hit = false;
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+        const d = Math.hypot(node.x - x, node.y - y);
+        if (d < node.size * 2) {
+          draggedIndex = i;
+          node.isDragging = true;
+          hit = true;
+          break;
+        }
+      }
+      if (!hit && nodes.length < maxNodes) {
+        nodes.push({
+          x,
+          y,
+          vx: (Math.random() - 0.5) * 1.2,
+          vy: (Math.random() - 0.5) * 1.2,
+          size: Math.random() * 5 + 2,
+          connections: [],
+          opacity: Math.random() * 0.6 + 0.2,
+          pulsePhase: Math.random() * Math.PI * 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          health: 1,
+          isDragging: false,
+        });
+      }
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (draggedIndex === null) return;
+      const { x, y } = getMousePos(e);
+      const node = nodes[draggedIndex];
+      const dx = x - node.x;
+      const dy = y - node.y;
+      node.vx += dx * 0.05;
+      node.vy += dy * 0.05;
+    };
+
+    const onMouseUp = (e: MouseEvent) => {
+      if (draggedIndex === null) return;
+      const { x, y } = getMousePos(e);
+      const node = nodes[draggedIndex];
+      node.isDragging = false;
+
+      for (let i = 0; i < nodes.length; i++) {
+        if (i === draggedIndex) continue;
+        const other = nodes[i];
+        const dist = Math.hypot(other.x - x, other.y - y);
+        if (dist < 20) {
+          if (node.connections.includes(i)) {
+            node.connections = node.connections.filter((c) => c !== i);
+            other.connections = other.connections.filter((c) => c !== draggedIndex);
+          } else {
+            node.connections.push(i);
+            other.connections.push(draggedIndex);
+          }
+          break;
+        }
+      }
+
+      draggedIndex = null;
+    };
+
+    canvas.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+
     const animate = () => {
       time += 0.01;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update nodes with more organic movement
-      nodes.forEach((node) => {
-        node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
-        node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
+      for (let i = nodes.length - 1; i >= 0; i--) {
+        const node = nodes[i];
+        if (!node.isDragging) {
+          node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
+          node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
+        }
 
         if (node.x <= 0 || node.x >= canvas.width) {
           node.vx *= -0.9;
@@ -92,7 +176,22 @@ const HeroSection: React.FC = () => {
         }
 
         node.opacity = 0.2 + Math.sin(time * 1.5 + node.pulsePhase) * 0.3;
-      });
+
+        if (node.connections.length < 2) {
+          node.health -= 0.002;
+        } else {
+          node.health = Math.min(1, node.health + 0.001);
+        }
+        if (node.health <= 0) {
+          nodes.splice(i, 1);
+          nodes.forEach((n) => {
+            n.connections = n.connections
+              .filter((c) => c !== i)
+              .map((c) => (c > i ? c - 1 : c));
+          });
+          continue;
+        }
+      }
 
       // Draw connections with varied thickness and opacity
       nodes.forEach((node) => {
@@ -130,14 +229,14 @@ const HeroSection: React.FC = () => {
       nodes.forEach((node) => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-        ctx.fillStyle = node.color + Math.floor(node.opacity * 255).toString(16).padStart(2, '0');
+        ctx.fillStyle = node.color + Math.floor(node.opacity * node.health * 255).toString(16).padStart(2, '0');
         ctx.fill();
         
         const gradient = ctx.createRadialGradient(
           node.x, node.y, 0,
           node.x, node.y, node.size * 3
         );
-        gradient.addColorStop(0, node.color + '40');
+        gradient.addColorStop(0, node.color + Math.floor(node.health * 64).toString(16).padStart(2, '0'));
         gradient.addColorStop(1, node.color + '00');
         
         ctx.beginPath();
@@ -153,6 +252,9 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
