@@ -20,6 +20,31 @@ const HeroSection: React.FC = () => {
       canvas.height = window.innerHeight;
     };
 
+    const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const cx = e.clientX - rect.left;
+      const cy = e.clientY - rect.top;
+      nodes.forEach((node) => {
+        const dx = node.x - cx;
+        const dy = node.y - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const force = 3;
+        node.vx += (dx / dist) * force;
+        node.vy += (dy / dist) * force;
+      });
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('click', handleClick);
+
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
@@ -81,6 +106,15 @@ const HeroSection: React.FC = () => {
       nodes.forEach((node) => {
         node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
         node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
+
+        const dx = node.x - mouse.x;
+        const dy = node.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          const force = ((150 - dist) / 150) * 0.3;
+          node.vx += (dx / dist) * force;
+          node.vy += (dy / dist) * force;
+        }
 
         if (node.x <= 0 || node.x >= canvas.width) {
           node.vx *= -0.9;
@@ -153,6 +187,8 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('click', handleClick);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
