@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sample1",
+    "title": "Community Workshop",
+    "description": "Learn and share best practices with fellow community members.",
+    "date": "2025-08-01",
+    "location": "Aleppo",
+    "category": "workshop",
+    "organizer": "RCF"
+  },
+  {
+    "id": "sample2",
+    "title": "Funding Opportunity",
+    "description": "Apply now for microgrants to support local initiatives.",
+    "date": "2025-08-15",
+    "location": "Online",
+    "category": "funding",
+    "organizer": "RCF"
+  }
+]

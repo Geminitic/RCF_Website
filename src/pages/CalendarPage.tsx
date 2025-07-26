@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
 import { 
@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { CalendarEvent } from '../types';
+
+const initialEvents: CalendarEvent[] = [];
 
 const CalendarPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -39,23 +41,18 @@ const CalendarPage: React.FC = () => {
     { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
   ];
 
-  const initialEvents: CalendarEvent[] = [];
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async () => {
     setLoading(true);
     setError(null);
     
     try {
       const response = await fetch('/api/events');
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
       
       if (data.events) {
@@ -71,12 +68,26 @@ const CalendarPage: React.FC = () => {
       }
     } catch (err) {
       console.error('Failed to fetch calendar events:', err);
+      try {
+        const fallbackRes = await fetch('/sample-events.json');
+        if (fallbackRes.ok) {
+          const fallbackData: CalendarEvent[] = await fallbackRes.json();
+          setEvents(fallbackData);
+        } else {
+          setEvents(initialEvents);
+        }
+      } catch {
+        setEvents(initialEvents);
+      }
       setError('Failed to load live events. Showing sample events.');
-      setEvents(initialEvents); // Fallback to initial events
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
 
   const filteredEvents = selectedCategory === 'all' 
     ? events 

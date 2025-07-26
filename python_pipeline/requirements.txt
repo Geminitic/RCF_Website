@@ -1,0 +1,8 @@
+celery
+redis
+scrapy
+spacy
+psycopg2-binary
+fastapi
+uvicorn
+python-dotenv

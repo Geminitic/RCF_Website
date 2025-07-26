@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { photoList } from '../data/photoList';
 
