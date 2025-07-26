@@ -23,7 +23,7 @@ const AboutPreview: React.FC = () => {
               alt="Community collaboration"
               className="w-full h-auto rounded-xl shadow-xl"
             />
-            
+
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200 rounded-full opacity-20 animate-pulse" />
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-stone-200 rounded-full opacity-30 animate-pulse" />
@@ -37,10 +37,15 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
-            <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
+            <h2
+              className="text-4xl font-bold text-stone-900 mb-6"
+              style={{
+                fontFamily: '"Playfair Display", "Noto Sans Arabic", serif',
+              }}
+            >
               {t('about-title', 'Our Purpose', 'رسالتنا')}
             </h2>
-            
+
             <p className="text-lg text-stone-600 mb-8 leading-relaxed">
               {t(
                 'about-description',
@@ -49,10 +54,9 @@ const AboutPreview: React.FC = () => {
               )}
             </p>
 
-
             <Link
               to="/about"
-              className="group inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105"
+              className="btn-rhizome group transform hover:scale-105"
             >
               <span className="mr-2">
                 {t('learn-more', 'Explore Our Story', 'اكتشف قصتنا')}
@@ -62,9 +66,13 @@ const AboutPreview: React.FC = () => {
 
             <Link
               to="/knowledge-hub"
-              className="mt-4 inline-flex items-center px-6 py-3 bg-stone-200 text-stone-800 font-semibold rounded-lg hover:bg-stone-300 transition-all duration-300"
+              className="mt-4 inline-flex items-center px-6 py-3 border-2 rounded-lg text-white btn-rhizome hover:filter brightness-110"
             >
-              {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
+              {t(
+                'browse-knowledge-hub',
+                'Browse Knowledge Hub',
+                'تصفح مركز المعرفة'
+              )}
             </Link>
           </motion.div>
         </div>

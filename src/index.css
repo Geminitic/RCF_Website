@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Custom Cursor */
 * {
   cursor: none;
@@ -18,15 +17,52 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #005f73; /* teal */
-  --secondary-color: #0a9396; /* deep teal */
-  --accent-color: #ee9b00; /* amber */
+  /* Unified color palette */
+  --rhizome-start: #115e59; /* teal-800 */
+  --rhizome-middle: #075985; /* sky-800 */
+  --rhizome-end: #312e81; /* indigo-900 */
+
+  /* Legacy variable names mapped to new palette */
+  --primary-color: var(--rhizome-start);
+  --secondary-color: var(--rhizome-middle);
+  --accent-color: var(--rhizome-end);
+
   --text-color: #001219; /* dark slate */
   --bg-color: #e0fbfc; /* light cyan */
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+
+  /* Knowledge hub variables */
+  --primary: var(--rhizome-start);
+  --secondary: var(--rhizome-middle);
+  --accent: var(--rhizome-end);
+  --dark: #264653;
+  --light: #f8f9fa;
+}
+
+/* Gradient utilities */
+.bg-rhizome-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--rhizome-start),
+    var(--rhizome-middle),
+    var(--rhizome-end)
+  );
+}
+
+.btn-rhizome {
+  @apply inline-flex items-center px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 text-white;
+  background-image: linear-gradient(
+    to right,
+    var(--rhizome-start),
+    var(--rhizome-end)
+  );
+}
+
+.btn-rhizome:hover {
+  filter: brightness(1.1);
 }
 
 /* Cursor Styles - Fixed sizes */
@@ -74,7 +110,18 @@
 
 /* Base Styles */
 body {
-  font-family: 'Open Sans', 'Inter', 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    'Open Sans',
+    'Inter',
+    'Poppins',
+    'Noto Sans Arabic',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -154,7 +201,12 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -164,7 +216,12 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -173,7 +230,9 @@ body {
 
 /* Hover Effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -207,9 +266,15 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Scroll Reveal Animation */
@@ -302,7 +367,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
   z-index: 1;
 }
 
@@ -423,20 +488,20 @@ select:focus {
   .container {
     padding: 0 1rem;
   }
-  
+
   .section-padding {
     padding: 3rem 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .community-wall {
     grid-template-columns: 1fr;
     grid-auto-rows: 250px;
   }
-  
+
   .item-wide,
   .item-tall,
   .item-large {
@@ -449,7 +514,7 @@ select:focus {
   .section-title {
     font-size: 1.75rem;
   }
-  
+
   .section-description {
     font-size: 1rem;
   }

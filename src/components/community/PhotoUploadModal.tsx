@@ -10,7 +10,10 @@ interface PhotoUploadModalProps {
   onClose: () => void;
 }
 
-const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) => {
+const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({
+  isOpen,
+  onClose,
+}) => {
   const { t, currentLanguage } = useLanguage();
   const { addPhoto } = usePhoto();
   const { isAdmin } = useUser();
@@ -23,7 +26,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
     locationAr: '',
     category: 'community',
     uploadedBy: '',
-    featured: false
+    featured: false,
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string>('');
@@ -34,7 +37,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
     { key: 'culture', en: 'Culture', ar: 'الثقافة' },
     { key: 'education', en: 'Education', ar: 'التعليم' },
     { key: 'youth', en: 'Youth', ar: 'الشباب' },
-    { key: 'events', en: 'Events', ar: 'الفعاليات' }
+    { key: 'events', en: 'Events', ar: 'الفعاليات' },
   ];
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,13 +56,13 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
     setIsSubmitting(true);
 
     // Simulate upload delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // Create photo object
     const newPhoto = {
       ...formData,
       url: previewUrl, // In real app, this would be the uploaded file URL
-      featured: false
+      featured: false,
     };
 
     addPhoto(newPhoto, isAdmin);
@@ -80,7 +83,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
       locationAr: '',
       category: 'community',
       uploadedBy: '',
-      featured: false
+      featured: false,
     });
     setSelectedFile(null);
     setPreviewUrl('');
@@ -89,7 +92,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -112,7 +115,9 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
             <div className="p-6">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
-                <h2 className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <h2
+                  className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
                   {t('upload-story-title', 'Share Your Story', 'شارك قصتك')}
                 </h2>
                 <button
@@ -126,7 +131,9 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* File Upload */}
                 <div>
-                  <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                  <label
+                    className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
                     {t('photo-upload', 'Upload Photo', 'رفع صورة')}
                   </label>
                   <div className="border-2 border-dashed border-stone-300 rounded-lg p-6 text-center hover:border-emerald-400 transition-colors">
@@ -151,8 +158,14 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     ) : (
                       <div>
                         <Camera className="h-12 w-12 text-stone-400 mx-auto mb-4" />
-                        <p className={`text-stone-600 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                          {t('drag-drop', 'Drag and drop your photo here, or click to select', 'اسحب وأفلت صورتك هنا، أو انقر للاختيار')}
+                        <p
+                          className={`text-stone-600 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                        >
+                          {t(
+                            'drag-drop',
+                            'Drag and drop your photo here, or click to select',
+                            'اسحب وأفلت صورتك هنا، أو انقر للاختيار'
+                          )}
                         </p>
                         <input
                           type="file"
@@ -164,7 +177,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                         />
                         <label
                           htmlFor="photo-upload"
-                          className="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 cursor-pointer transition-colors"
+                          className="inline-flex items-center px-4 py-2 btn-rhizome rounded-lg cursor-pointer"
                         >
                           <Upload className="h-4 w-4 mr-2" />
                           {t('select-photo', 'Select Photo', 'اختر صورة')}
@@ -178,24 +191,34 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-stone-700 mb-2">
-                      {t('title-english', 'Title (English)', 'العنوان (إنجليزي)')}
+                      {t(
+                        'title-english',
+                        'Title (English)',
+                        'العنوان (إنجليزي)'
+                      )}
                     </label>
                     <input
                       type="text"
                       value={formData.title}
-                      onChange={(e) => handleInputChange('title', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('title', e.target.value)
+                      }
                       className="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label
+                      className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
                       {t('title-arabic', 'Title (Arabic)', 'العنوان (عربي)')}
                     </label>
                     <input
                       type="text"
                       value={formData.titleAr}
-                      onChange={(e) => handleInputChange('titleAr', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('titleAr', e.target.value)
+                      }
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                       dir="rtl"
                     />
@@ -206,23 +229,37 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-stone-700 mb-2">
-                      {t('description-english', 'Description (English)', 'الوصف (إنجليزي)')}
+                      {t(
+                        'description-english',
+                        'Description (English)',
+                        'الوصف (إنجليزي)'
+                      )}
                     </label>
                     <textarea
                       value={formData.description}
-                      onChange={(e) => handleInputChange('description', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('description', e.target.value)
+                      }
                       rows={3}
                       className="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                      {t('description-arabic', 'Description (Arabic)', 'الوصف (عربي)')}
+                    <label
+                      className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
+                      {t(
+                        'description-arabic',
+                        'Description (Arabic)',
+                        'الوصف (عربي)'
+                      )}
                     </label>
                     <textarea
                       value={formData.descriptionAr}
-                      onChange={(e) => handleInputChange('descriptionAr', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('descriptionAr', e.target.value)
+                      }
                       rows={3}
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                       dir="rtl"
@@ -235,25 +272,39 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                   <div>
                     <label className="block text-sm font-medium text-stone-700 mb-2">
                       <MapPin className="h-4 w-4 inline mr-1" />
-                      {t('location-english', 'Location (English)', 'الموقع (إنجليزي)')}
+                      {t(
+                        'location-english',
+                        'Location (English)',
+                        'الموقع (إنجليزي)'
+                      )}
                     </label>
                     <input
                       type="text"
                       value={formData.location}
-                      onChange={(e) => handleInputChange('location', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('location', e.target.value)
+                      }
                       className="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <label
+                      className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
                       <MapPin className="h-4 w-4 inline mr-1" />
-                      {t('location-arabic', 'Location (Arabic)', 'الموقع (عربي)')}
+                      {t(
+                        'location-arabic',
+                        'Location (Arabic)',
+                        'الموقع (عربي)'
+                      )}
                     </label>
                     <input
                       type="text"
                       value={formData.locationAr}
-                      onChange={(e) => handleInputChange('locationAr', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('locationAr', e.target.value)
+                      }
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic text-right' : ''}`}
                       dir="rtl"
                     />
@@ -269,12 +320,18 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     </label>
                     <select
                       value={formData.category}
-                      onChange={(e) => handleInputChange('category', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('category', e.target.value)
+                      }
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                     >
                       {categories.map((category) => (
                         <option key={category.key} value={category.key}>
-                          {t(`category-${category.key}`, category.en, category.ar)}
+                          {t(
+                            `category-${category.key}`,
+                            category.en,
+                            category.ar
+                          )}
                         </option>
                       ))}
                     </select>
@@ -287,7 +344,9 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                     <input
                       type="text"
                       value={formData.uploadedBy}
-                      onChange={(e) => handleInputChange('uploadedBy', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange('uploadedBy', e.target.value)
+                      }
                       className={`w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                       required
                     />
@@ -306,13 +365,17 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                   <button
                     type="submit"
                     disabled={!selectedFile || isSubmitting}
-                    className="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
+                    className="px-6 py-3 btn-rhizome rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
                   >
                     {isSubmitting ? (
                       <>
                         <motion.div
                           animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: 'linear',
+                          }}
                           className="w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"
                         />
                         {t('uploading', 'Uploading...', 'جاري الرفع...')}
@@ -329,14 +392,50 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
 
               {/* Guidelines */}
               <div className="mt-6 p-4 bg-emerald-50 rounded-lg">
-                <h3 className={`font-semibold text-emerald-800 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  {t('guidelines-title', 'Community Guidelines', 'إرشادات المجتمع')}
+                <h3
+                  className={`font-semibold text-emerald-800 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
+                  {t(
+                    'guidelines-title',
+                    'Community Guidelines',
+                    'إرشادات المجتمع'
+                  )}
                 </h3>
-                <ul className={`text-sm text-emerald-700 space-y-1 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  <li>• {t('guideline-1', 'Share authentic stories and experiences', 'شارك القصص والتجارب الأصيلة')}</li>
-                  <li>• {t('guideline-2', 'Respect privacy and obtain consent when featuring others', 'احترم الخصوصية واحصل على الموافقة عند عرض الآخرين')}</li>
-                  <li>• {t('guideline-3', 'Use appropriate language and content', 'استخدم لغة ومحتوى مناسبين')}</li>
-                  <li>• {t('guideline-4', 'All submissions are reviewed before publication', 'جميع المساهمات تُراجع قبل النشر')}</li>
+                <ul
+                  className={`text-sm text-emerald-700 space-y-1 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
+                  <li>
+                    •{' '}
+                    {t(
+                      'guideline-1',
+                      'Share authentic stories and experiences',
+                      'شارك القصص والتجارب الأصيلة'
+                    )}
+                  </li>
+                  <li>
+                    •{' '}
+                    {t(
+                      'guideline-2',
+                      'Respect privacy and obtain consent when featuring others',
+                      'احترم الخصوصية واحصل على الموافقة عند عرض الآخرين'
+                    )}
+                  </li>
+                  <li>
+                    •{' '}
+                    {t(
+                      'guideline-3',
+                      'Use appropriate language and content',
+                      'استخدم لغة ومحتوى مناسبين'
+                    )}
+                  </li>
+                  <li>
+                    •{' '}
+                    {t(
+                      'guideline-4',
+                      'All submissions are reviewed before publication',
+                      'جميع المساهمات تُراجع قبل النشر'
+                    )}
+                  </li>
                 </ul>
               </div>
             </div>
