@@ -317,3 +317,39 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Syria Team Grid */
+.rs-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--rs-space-xl);
+}
+
+.rs-team-card {
+  background: var(--rs-white);
+  border-radius: var(--rs-radius-xl);
+  box-shadow: var(--rs-shadow-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rs-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--rs-shadow-xl);
+}
+
+.rs-team-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.rs-team-info {
+  padding: var(--rs-space-md);
+}
+
+.rs-team-role {
+  color: var(--rs-primary-purple);
+  font-weight: 600;
+  margin-bottom: var(--rs-space-sm);
+}
