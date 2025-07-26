@@ -36,7 +36,15 @@ const HeroSection: React.FC = () => {
       color: string;
     }> = [];
 
-    const colors = ['#064e3b', '#065f46', '#047857', '#b91c1c', '#dc2626', '#ea580c', '#d97706'];
+    const colors = [
+      '#064e3b',
+      '#065f46',
+      '#047857',
+      '#b91c1c',
+      '#dc2626',
+      '#ea580c',
+      '#d97706',
+    ];
     const nodeCount = 40;
 
     // Initialize nodes with more organic properties
@@ -50,7 +58,7 @@ const HeroSection: React.FC = () => {
         connections: [],
         opacity: Math.random() * 0.6 + 0.2,
         pulsePhase: Math.random() * Math.PI * 2,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
 
@@ -60,7 +68,8 @@ const HeroSection: React.FC = () => {
         .map((otherNode, j) => ({
           index: j,
           distance: Math.sqrt(
-            Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+            Math.pow(node.x - otherNode.x, 2) +
+              Math.pow(node.y - otherNode.y, 2)
           ),
         }))
         .filter((item) => item.index !== _i && item.distance < 180)
@@ -99,27 +108,44 @@ const HeroSection: React.FC = () => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(
-            Math.pow(node.x - connectedNode.x, 2) + Math.pow(node.y - connectedNode.y, 2)
+            Math.pow(node.x - connectedNode.x, 2) +
+              Math.pow(node.y - connectedNode.y, 2)
           );
-          
+
           if (distance < 200) {
             const opacity = (200 - distance) / 200;
-            const lineWidth = 0.5 + (1 - distance/200) * 1.5;
-            
+            const lineWidth = 0.5 + (1 - distance / 200) * 1.5;
+
             const gradient = ctx.createLinearGradient(
-              node.x, node.y, connectedNode.x, connectedNode.y
+              node.x,
+              node.y,
+              connectedNode.x,
+              connectedNode.y
             );
-            gradient.addColorStop(0, node.color + Math.floor(opacity * 70).toString(16).padStart(2, '0'));
-            gradient.addColorStop(1, connectedNode.color + Math.floor(opacity * 70).toString(16).padStart(2, '0'));
-            
+            gradient.addColorStop(
+              0,
+              node.color +
+                Math.floor(opacity * 70)
+                  .toString(16)
+                  .padStart(2, '0')
+            );
+            gradient.addColorStop(
+              1,
+              connectedNode.color +
+                Math.floor(opacity * 70)
+                  .toString(16)
+                  .padStart(2, '0')
+            );
+
             ctx.strokeStyle = gradient;
             ctx.lineWidth = lineWidth;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
-            
+
             const midX = (node.x + connectedNode.x) / 2;
-            const midY = (node.y + connectedNode.y) / 2 + (Math.random() - 0.5) * 20;
-            
+            const midY =
+              (node.y + connectedNode.y) / 2 + (Math.random() - 0.5) * 20;
+
             ctx.quadraticCurveTo(midX, midY, connectedNode.x, connectedNode.y);
             ctx.stroke();
           }
@@ -130,16 +156,24 @@ const HeroSection: React.FC = () => {
       nodes.forEach((node) => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-        ctx.fillStyle = node.color + Math.floor(node.opacity * 255).toString(16).padStart(2, '0');
+        ctx.fillStyle =
+          node.color +
+          Math.floor(node.opacity * 255)
+            .toString(16)
+            .padStart(2, '0');
         ctx.fill();
-        
+
         const gradient = ctx.createRadialGradient(
-          node.x, node.y, 0,
-          node.x, node.y, node.size * 3
+          node.x,
+          node.y,
+          0,
+          node.x,
+          node.y,
+          node.size * 3
         );
         gradient.addColorStop(0, node.color + '40');
         gradient.addColorStop(1, node.color + '00');
-        
+
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size * 3, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -165,10 +199,10 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0 w-full h-full"
         style={{ filter: 'blur(0.5px)' }}
       />
-      
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" />
-      
+
       {/* Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
         <motion.div
@@ -182,11 +216,17 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
+            style={{
+              fontFamily: '"Playfair Display", "Noto Sans Arabic", serif',
+            }}
           >
-            {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            {t(
+              'hero-title',
+              'Rhizome Community Foundation',
+              'مؤسسة ريزوم المجتمعية'
+            )}
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -199,33 +239,30 @@ const HeroSection: React.FC = () => {
               'نزرع حلولاً تقودها المجتمعات.'
             )}
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link
-              to="/programs"
-              className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
+            <Link to="/programs" className="btn-gradient group">
               <span className="mr-2">
                 {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
               </span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            
+
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+              className="btn-gradient bg-white/10 backdrop-blur-sm border-2 border-white/30"
             >
               {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
             </Link>
           </motion.div>
         </motion.div>
       </div>
-      
+
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -235,12 +272,17 @@ const HeroSection: React.FC = () => {
       >
         <motion.div
           animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center relative overflow-hidden"
         >
           <motion.div
             animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5, ease: "easeInOut" }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 0.5,
+              ease: 'easeInOut',
+            }}
             className="w-2 h-4 bg-white/70 rounded-full mt-2"
           />
         </motion.div>

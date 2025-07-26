@@ -1,20 +1,20 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Upload, 
-  Filter, 
-  Search, 
-  Heart, 
-  MessageCircle, 
-  Share2, 
-  MapPin, 
+import {
+  Upload,
+  Filter,
+  Search,
+  Heart,
+  MessageCircle,
+  Share2,
+  MapPin,
   Calendar,
   X,
   Camera,
   Target,
   Users,
-  Globe
+  Globe,
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { usePhoto } from '../contexts/PhotoContext';
@@ -23,14 +23,17 @@ import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
 const CommunityWallPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
-  const { likePhoto, addComment, photos, uploadedCount, targetCount } = usePhoto();
+  const { likePhoto, addComment, photos, uploadedCount, targetCount } =
+    usePhoto();
   const { isAdmin } = useUser();
   const [taglineEn, setTaglineEn] = useState(
-    () => localStorage.getItem('cw-tagline-en') ||
+    () =>
+      localStorage.getItem('cw-tagline-en') ||
       'A vibrant tapestry of stories, moments, and memories that celebrate our global Syrian community.'
   );
   const [taglineAr, setTaglineAr] = useState(
-    () => localStorage.getItem('cw-tagline-ar') ||
+    () =>
+      localStorage.getItem('cw-tagline-ar') ||
       'نسيج نابض من القصص واللحظات والذكريات التي تحتفي بمجتمعنا السوري العالمي.'
   );
   const [editingTagline, setEditingTagline] = useState(false);
@@ -40,10 +43,10 @@ const CommunityWallPage: React.FC = () => {
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
   const [loadedPhotos, setLoadedPhotos] = useState(12);
-  
+
   const { ref: loadMoreRef, inView } = useInView({
     threshold: 0.1,
-    rootMargin: '100px'
+    rootMargin: '100px',
   });
 
   const categories = [
@@ -52,14 +55,14 @@ const CommunityWallPage: React.FC = () => {
     { key: 'culture', en: 'Culture', ar: 'الثقافة' },
     { key: 'education', en: 'Education', ar: 'التعليم' },
     { key: 'youth', en: 'Youth', ar: 'الشباب' },
-    { key: 'events', en: 'Events', ar: 'الفعاليات' }
+    { key: 'events', en: 'Events', ar: 'الفعاليات' },
   ];
 
   // Generate additional photos for infinite scroll
   const generateMorePhotos = useCallback(() => {
     const additionalPhotos = [];
-    const basePhotos = photos.filter(p => p.approved);
-    
+    const basePhotos = photos.filter((p) => p.approved);
+
     for (let i = 0; i < 12; i++) {
       const basePhoto = basePhotos[i % basePhotos.length];
       additionalPhotos.push({
@@ -68,43 +71,48 @@ const CommunityWallPage: React.FC = () => {
         title: `${basePhoto.title} ${Math.floor(Math.random() * 100)}`,
         titleAr: `${basePhoto.titleAr} ${Math.floor(Math.random() * 100)}`,
         url: `https://source.unsplash.com/600x600/?syria&sig=${Date.now() + i}`,
-        uploadDate: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString()
+        uploadDate: new Date(
+          Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000
+        ).toISOString(),
       });
     }
     return additionalPhotos;
   }, [photos]);
 
   const [allPhotos, setAllPhotos] = useState(() => [
-    ...photos.filter(p => p.approved),
-    ...generateMorePhotos()
+    ...photos.filter((p) => p.approved),
+    ...generateMorePhotos(),
   ]);
 
   useEffect(() => {
     if (inView && loadedPhotos < allPhotos.length) {
       setTimeout(() => {
         const newPhotos = generateMorePhotos();
-        setAllPhotos(prev => [...prev, ...newPhotos]);
-        setLoadedPhotos(prev => prev + 12);
+        setAllPhotos((prev) => [...prev, ...newPhotos]);
+        setLoadedPhotos((prev) => prev + 12);
       }, 500);
     }
   }, [inView, loadedPhotos, allPhotos.length, generateMorePhotos]);
 
   useEffect(() => {
     let filtered = allPhotos.slice(0, loadedPhotos);
-    
+
     if (selectedCategory !== 'all') {
-      filtered = filtered.filter(photo => photo.category === selectedCategory);
-    }
-    
-    if (searchTerm) {
-      filtered = filtered.filter(photo =>
-        photo.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        photo.titleAr.includes(searchTerm) ||
-        photo.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        photo.locationAr.includes(searchTerm)
+      filtered = filtered.filter(
+        (photo) => photo.category === selectedCategory
       );
     }
-    
+
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (photo) =>
+          photo.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          photo.titleAr.includes(searchTerm) ||
+          photo.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          photo.locationAr.includes(searchTerm)
+      );
+    }
+
     setFilteredPhotos(filtered);
   }, [allPhotos, loadedPhotos, selectedCategory, searchTerm]);
 
@@ -115,9 +123,9 @@ const CommunityWallPage: React.FC = () => {
       '', // normal
       'md:col-span-2', // wide
       'md:row-span-2', // tall
-      'md:col-span-2 md:row-span-2' // large
+      'md:col-span-2 md:row-span-2', // large
     ];
-    
+
     // Create interesting patterns
     if (index % 7 === 0) return patterns[3]; // large every 7th
     if (index % 5 === 0) return patterns[2]; // tall every 5th
@@ -126,9 +134,9 @@ const CommunityWallPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-sky-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -183,25 +191,31 @@ const CommunityWallPage: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <Target className="h-5 w-5" />
                   <span className="font-medium">
-                    {t('documentation-goal', 'Documentation Goal', 'هدف التوثيق')}
+                    {t(
+                      'documentation-goal',
+                      'Documentation Goal',
+                      'هدف التوثيق'
+                    )}
                   </span>
                 </div>
                 <span className="font-bold">
-                  {uploadedCount.toLocaleString()} / {targetCount.toLocaleString()}
+                  {uploadedCount.toLocaleString()} /{' '}
+                  {targetCount.toLocaleString()}
                 </span>
               </div>
               <div className="w-full bg-indigo-800 rounded-full h-4">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercentage}%` }}
-                  transition={{ duration: 2, ease: "easeOut" }}
+                  transition={{ duration: 2, ease: 'easeOut' }}
                   className="bg-gradient-to-r from-yellow-400 to-orange-400 h-4 rounded-full relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse" />
                 </motion.div>
               </div>
               <p className="text-sm text-indigo-200 mt-2">
-                {progressPercentage.toFixed(1)}% {t('completed', 'completed', 'مكتمل')}
+                {progressPercentage.toFixed(1)}%{' '}
+                {t('completed', 'completed', 'مكتمل')}
               </p>
             </div>
 
@@ -209,7 +223,9 @@ const CommunityWallPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Users className="h-8 w-8 mx-auto mb-2" />
-                <div className="text-2xl font-bold">{Math.floor(uploadedCount / 10)}+</div>
+                <div className="text-2xl font-bold">
+                  {Math.floor(uploadedCount / 10)}+
+                </div>
                 <div className="text-sm text-indigo-200">
                   {t('contributors', 'Contributors', 'مساهمون')}
                 </div>
@@ -223,7 +239,9 @@ const CommunityWallPage: React.FC = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Camera className="h-8 w-8 mx-auto mb-2" />
-                <div className="text-2xl font-bold">{filteredPhotos.length}+</div>
+                <div className="text-2xl font-bold">
+                  {filteredPhotos.length}+
+                </div>
                 <div className="text-sm text-indigo-200">
                   {t('stories', 'Stories', 'قصة')}
                 </div>
@@ -242,7 +260,11 @@ const CommunityWallPage: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-stone-400" />
               <input
                 type="text"
-                placeholder={t('search-placeholder', 'Search stories...', 'البحث في القصص...')}
+                placeholder={t(
+                  'search-placeholder',
+                  'Search stories...',
+                  'البحث في القصص...'
+                )}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={`w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${
@@ -303,15 +325,21 @@ const CommunityWallPage: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className={`font-semibold mb-1 line-clamp-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <h3
+                      className={`font-semibold mb-1 line-clamp-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
                       {t('photo-title', photo.title, photo.titleAr)}
                     </h3>
                     <div className="flex items-center text-xs opacity-90 mb-2">
                       <MapPin className="h-3 w-3 mr-1" />
-                      <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
+                      <span
+                        className={
+                          currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                        }
+                      >
                         {t('photo-location', photo.location, photo.locationAr)}
                       </span>
                     </div>
@@ -357,7 +385,11 @@ const CommunityWallPage: React.FC = () => {
                   {/* Category Badge */}
                   <div className="absolute top-3 left-3">
                     <span className="px-2 py-1 bg-black/50 text-white text-xs rounded-full backdrop-blur-sm">
-                      {t(`category-${photo.category}`, photo.category, photo.category)}
+                      {t(
+                        `category-${photo.category}`,
+                        photo.category,
+                        photo.category
+                      )}
                     </span>
                   </div>
                 </div>
@@ -375,11 +407,17 @@ const CommunityWallPage: React.FC = () => {
               >
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                   className="w-6 h-6 border-2 border-indigo-600 border-t-transparent rounded-full"
                 />
-                <span className={`text-indigo-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  {t('loading-more', 'Loading more stories...', 'تحميل المزيد من القصص...')}
+                <span
+                  className={`text-indigo-600 font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
+                  {t(
+                    'loading-more',
+                    'Loading more stories...',
+                    'تحميل المزيد من القصص...'
+                  )}
                 </span>
               </motion.div>
             )}
@@ -413,7 +451,11 @@ const CommunityWallPage: React.FC = () => {
               <div className="relative">
                 <img
                   src={selectedPhoto.url}
-                  alt={t('photo-title', selectedPhoto.title, selectedPhoto.titleAr)}
+                  alt={t(
+                    'photo-title',
+                    selectedPhoto.title,
+                    selectedPhoto.titleAr
+                  )}
                   className="w-full h-96 object-cover"
                 />
                 <button
@@ -423,25 +465,43 @@ const CommunityWallPage: React.FC = () => {
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              
+
               <div className="p-6">
-                <h2 className={`text-2xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <h2
+                  className={`text-2xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
                   {t('photo-title', selectedPhoto.title, selectedPhoto.titleAr)}
                 </h2>
-                
+
                 <div className="flex items-center text-stone-600 mb-4">
                   <MapPin className="h-4 w-4 mr-2" />
-                  <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
-                    {t('photo-location', selectedPhoto.location, selectedPhoto.locationAr)}
+                  <span
+                    className={
+                      currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                    }
+                  >
+                    {t(
+                      'photo-location',
+                      selectedPhoto.location,
+                      selectedPhoto.locationAr
+                    )}
                   </span>
                   <Calendar className="h-4 w-4 ml-4 mr-2" />
-                  <span>{new Date(selectedPhoto.uploadDate).toLocaleDateString()}</span>
+                  <span>
+                    {new Date(selectedPhoto.uploadDate).toLocaleDateString()}
+                  </span>
                 </div>
-                
-                <p className={`text-stone-700 mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                  {t('photo-description', selectedPhoto.description, selectedPhoto.descriptionAr)}
+
+                <p
+                  className={`text-stone-700 mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
+                  {t(
+                    'photo-description',
+                    selectedPhoto.description,
+                    selectedPhoto.descriptionAr
+                  )}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <button
@@ -456,7 +516,8 @@ const CommunityWallPage: React.FC = () => {
                       onClick={() => {
                         const name = prompt('Name');
                         const text = name ? prompt('Comment') : null;
-                        if (name && text) addComment(selectedPhoto.id, name, text);
+                        if (name && text)
+                          addComment(selectedPhoto.id, name, text);
                       }}
                     >
                       <MessageCircle className="h-5 w-5" />
@@ -466,7 +527,8 @@ const CommunityWallPage: React.FC = () => {
                   <button
                     className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors"
                     onClick={() => {
-                      if (navigator.share) navigator.share({ url: window.location.href });
+                      if (navigator.share)
+                        navigator.share({ url: window.location.href });
                       else navigator.clipboard.writeText(window.location.href);
                     }}
                   >
@@ -477,7 +539,10 @@ const CommunityWallPage: React.FC = () => {
                 {selectedPhoto.comments.length > 0 && (
                   <div className="mt-4 space-y-2">
                     {selectedPhoto.comments.map((c) => (
-                      <div key={c.id} className="text-sm text-stone-800 border-b pb-1">
+                      <div
+                        key={c.id}
+                        className="text-sm text-stone-800 border-b pb-1"
+                      >
                         <strong>{c.name}:</strong> {c.text}
                       </div>
                     ))}

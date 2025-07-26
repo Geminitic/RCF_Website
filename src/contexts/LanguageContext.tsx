@@ -1,3 +1,5 @@
+/* eslint react-refresh/only-export-components: off */
+/* eslint no-unused-vars: off */
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface Language {
@@ -8,8 +10,8 @@ interface Language {
 
 interface LanguageContextType {
   currentLanguage: Language;
-  setLanguage: (_language: Language) => void;
-  t: (_key: string, _enText: string, _arText: string) => string;
+  setLanguage: (language: Language) => void;
+  t: (key: string, enText: string, arText: string) => string;
 }
 
 const languages: Language[] = [

@@ -1,3 +1,5 @@
+/* eslint react-refresh/only-export-components: off */
+/* eslint no-unused-vars: off */
 import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { photoList } from '../data/photoList';
 
@@ -24,13 +26,13 @@ interface PhotoContextType {
   uploadedCount: number;
   targetCount: number;
   addPhoto: (
-    _photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
-    _approved?: boolean
+    photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    approved?: boolean
   ) => void;
-  likePhoto: (_id: string) => void;
-  addComment: (_id: string, _name: string, _text: string) => void;
-  approvePhoto: (_id: string) => void;
-  deletePhoto: (_id: string) => void;
+  likePhoto: (id: string) => void;
+  addComment: (id: string, name: string, text: string) => void;
+  approvePhoto: (id: string) => void;
+  deletePhoto: (id: string) => void;
   pendingPhotos: Photo[];
   featuredPhotos: Photo[];
   communityPhotos: Photo[];
@@ -394,3 +396,4 @@ export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
     </PhotoContext.Provider>
   );
 };
+
