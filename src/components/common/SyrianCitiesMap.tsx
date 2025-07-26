@@ -21,11 +21,13 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const projection = d3
-      .geoMercator()
-      .center([38.9968, 34.8021])
-      .scale(2500)
-      .translate([width / 2, height / 2]);
+    const lonMin = 35.79011;
+    const lonMax = 42.14006;
+    const latMin = 32.492;
+    const latMax = 37.17701;
+
+    const xScale = d3.scaleLinear().domain([lonMin, lonMax]).range([0, width]);
+    const yScale = d3.scaleLinear().domain([latMin, latMax]).range([height, 0]);
 
     const tooltip = d3
       .select(container)
@@ -44,8 +46,8 @@ const SyrianCitiesMap: React.FC = () => {
       .data(syrianCities)
       .enter()
       .append('circle')
-      .attr('cx', d => projection([d.lng, d.lat])[0])
-      .attr('cy', d => projection([d.lng, d.lat])[1])
+      .attr('cx', d => xScale(d.lng))
+      .attr('cy', d => yScale(d.lat))
       .attr('r', 2)
       .attr('fill', '#b91c1c')
       .on('mouseenter', (event, d) => {
