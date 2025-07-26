@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
@@ -209,42 +210,46 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={currentLanguage.code === 'ar' ? 'rs-arabic' : ''}
           >
-            <h2 className="rs-heading-2 mb-6">
-              {t('overview-title', 'About Us', 'عن ريزوم سوريا')}
-            </h2>
-            <p className="rs-body-large mb-6">
-              {t(
-                'overview-intro',
-                'Rhizome Syria is a network of Syrian civil society leaders, activists, and communities dedicated to rebuilding a cohesive and stable nation through the will and hands of its own people. We are a decentralized alliance of vibrant Syrian voices, bridging the gaps between urban and rural areas, experts and communities, and tradition and innovation. We believe that to build a future that is sustainable in all circumstances, we must operate like a rhizome: an interconnected, non-hierarchical network that grows stronger and more resilient as it expands. With Syrian leadership at our core, we are explicitly anti-sectarian and unaffiliated with any previous regime institutions. We work to strengthen social cohesion through cultural, feminist, and community-led initiatives.',
-                'رايزوم سوريا تجمع كافة الأصوات النابضة في المجتمع المدني السوري ضمن تحالف تكاملي وشبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم. نؤمن بأن التعاون الأفقي والعمودي والتكيف السريع يتطلب نسيجاً تنظيمياً لامركزياً يشبه شبكة الجذمور الطبيعية‏ بلا بداية ولا نهاية ونمو متداخل مستدام في كل الظروف، ومسارات عمل شبكية متكاملة لبناء مجتمع متماسك ومستقر.'
-              )}
-            </p>
+            <div className="rs-card space-y-6">
+              <h2 className="rs-heading-2">
+                {t('overview-title', 'About Us', 'عن ريزوم سوريا')}
+              </h2>
+              <p className="rs-body-large">
+                {t(
+                  'overview-intro',
+                  'Rhizome Syria is a network of Syrian civil society leaders, activists, and communities dedicated to rebuilding a cohesive and stable nation through the will and hands of its own people. We are a decentralized alliance of vibrant Syrian voices, bridging the gaps between urban and rural areas, experts and communities, and tradition and innovation. We believe that to build a future that is sustainable in all circumstances, we must operate like a rhizome: an interconnected, non-hierarchical network that grows stronger and more resilient as it expands. With Syrian leadership at our core, we are explicitly anti-sectarian and unaffiliated with any previous regime institutions. We work to strengthen social cohesion through cultural, feminist, and community-led initiatives.',
+                  'رايزوم سوريا تجمع كافة الأصوات النابضة في المجتمع المدني السوري ضمن تحالف تكاملي وشبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم. نؤمن بأن التعاون الأفقي والعمودي والتكيف السريع يتطلب نسيجاً تنظيمياً لامركزياً يشبه شبكة الجذمور الطبيعية‏ بلا بداية ولا نهاية ونمو متداخل مستدام في كل الظروف، ومسارات عمل شبكية متكاملة لبناء مجتمع متماسك ومستقر.'
+                )}
+              </p>
 
-            <h3 className="rs-heading-3 mb-4">
-              {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
-              {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
-              ))}
-            </ul>
+              <h3 className="rs-heading-3">
+                {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
+              </h3>
+              <ul className="rs-feature-list mb-6">
+                {methods.map((item, index) => (
+                  <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+                ))}
+              </ul>
 
-            <h3 className="rs-heading-3 mb-4">
-              {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
-              {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
-              ))}
-            </ul>
+              <h3 className="rs-heading-3">
+                <Link to="/knowledge-hub" className="underline hover:text-purple-700">
+                  {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
+                </Link>
+              </h3>
+              <ul className="rs-feature-list mb-6">
+                {goals.map((item, index) => (
+                  <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+                ))}
+              </ul>
 
-            <p className="rs-body-large">
-              {t(
-                'partnership-text',
-                'Rhizome Syria is reimagining international cooperation. We operate in a unique partnership with the Rhizome Community Foundation in Canada. While both organizations are fully independent legal entities, we share governance, coordinate programs, and hold each other accountable through a shared strategic vision. This model ensures Syrian leadership, global connection with local protection, and radical collaboration built on mutual respect and shared goals.',
-                'تعمل ريزوم سوريا بالشراكة مع مؤسسة ريزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
-              )}
-            </p>
+              <p className="rs-body-large">
+                {t(
+                  'partnership-text',
+                  'Rhizome Syria is reimagining international cooperation. We operate in a unique partnership with the Rhizome Community Foundation in Canada. While both organizations are fully independent legal entities, we share governance, coordinate programs, and hold each other accountable through a shared strategic vision. This model ensures Syrian leadership, global connection with local protection, and radical collaboration built on mutual respect and shared goals.',
+                  'تعمل ريزوم سوريا بالشراكة مع مؤسسة ريزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
+                )}
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
