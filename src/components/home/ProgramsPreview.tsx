@@ -8,13 +8,13 @@ const ProgramsPreview: React.FC = () => {
 
 
 const programs = [
-  { icon: Users, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-emerald-500 to-emerald-600', bgColor: 'from-emerald-50 to-emerald-100' },
-  { icon: Laptop, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-purple-500 to-purple-600', bgColor: 'from-purple-50 to-purple-100' },
-  { icon: BookOpen, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-blue-500 to-blue-600', bgColor: 'from-blue-50 to-blue-100' },
-  { icon: FileText, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-orange-500 to-orange-600', bgColor: 'from-orange-50 to-orange-100' }
+  { icon: Users, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-teal-600 via-sky-600 to-indigo-700', bgColor: 'from-teal-50 via-sky-50 to-indigo-100' },
+  { icon: Laptop, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-teal-600 via-sky-600 to-indigo-700', bgColor: 'from-teal-50 via-sky-50 to-indigo-100' },
+  { icon: BookOpen, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-teal-600 via-sky-600 to-indigo-700', bgColor: 'from-teal-50 via-sky-50 to-indigo-100' },
+  { icon: FileText, title: '', titleAr: '', description: '', descriptionAr: '', color: 'from-teal-600 via-sky-600 to-indigo-700', bgColor: 'from-teal-50 via-sky-50 to-indigo-100' }
 ];
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-emerald-50">
+    <section className="py-20 banner-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const programs = [
         >
           <Link
             to="/programs"
-            className="group inline-flex items-center px-8 py-4 bg-emerald-700 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="btn-primary group"
           >
             <span className="mr-2">
               {t('view-all-programs', 'Explore All Initiatives', 'استكشف جميع المبادرات')}

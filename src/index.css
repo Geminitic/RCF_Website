@@ -18,11 +18,11 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #005f73; /* teal */
-  --secondary-color: #0a9396; /* deep teal */
-  --accent-color: #ee9b00; /* amber */
+  --primary-color: #115e59; /* teal-800 */
+  --secondary-color: #075985; /* sky-800 */
+  --accent-color: #312e81; /* indigo-900 */
   --text-color: #001219; /* dark slate */
-  --bg-color: #e0fbfc; /* light cyan */
+  --bg-color: #f0fdfa; /* very light teal */
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -527,4 +527,13 @@ html {
   font-size: 5rem;
   color: #ffffff;
   font-weight: bold;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 text-white bg-gradient-to-r from-teal-700 via-sky-700 to-indigo-800 hover:opacity-90;
+  }
+  .banner-gradient {
+    @apply bg-gradient-to-br from-teal-50 via-sky-50 to-indigo-100;
+  }
 }

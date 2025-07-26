@@ -7,7 +7,7 @@ const AboutPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 banner-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Visual - New Aleppo aerial shot */}
@@ -25,8 +25,8 @@ const AboutPreview: React.FC = () => {
             />
             
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-stone-200 rounded-full opacity-30 animate-pulse" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-200 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-indigo-100 rounded-full opacity-30 animate-pulse" />
           </motion.div>
 
           {/* Content */}
@@ -52,7 +52,7 @@ const AboutPreview: React.FC = () => {
 
             <Link
               to="/about"
-              className="group inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105"
+              className="btn-primary group"
             >
               <span className="mr-2">
                 {t('learn-more', 'Explore Our Story', 'اكتشف قصتنا')}
@@ -62,7 +62,7 @@ const AboutPreview: React.FC = () => {
 
             <Link
               to="/knowledge-hub"
-              className="mt-4 inline-flex items-center px-6 py-3 bg-stone-200 text-stone-800 font-semibold rounded-lg hover:bg-stone-300 transition-all duration-300"
+              className="mt-4 inline-flex items-center px-6 py-3 bg-white text-teal-700 font-semibold rounded-lg border-2 border-teal-700 hover:bg-teal-50 transition-all duration-300"
             >
               {t('browse-knowledge-hub', 'Browse Knowledge Hub', 'تصفح مركز المعرفة')}
             </Link>

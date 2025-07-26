@@ -126,9 +126,9 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen banner-gradient pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-700 via-sky-700 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -150,14 +150,14 @@ const ContactPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:info@rhizomsyria.org"
-                className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white text-teal-700 font-semibold rounded-lg border-2 border-teal-700 hover:bg-teal-50 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />
                 {t('email-us', 'Email Us', 'راسلنا')}
               </a>
               <a
                 href="tel:+14165550123"
-                className="inline-flex items-center px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors"
+                className="btn-primary inline-flex items-center"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 {t('call-us', 'Call Us', 'اتصل بنا')}
