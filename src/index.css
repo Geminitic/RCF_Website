@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Custom Cursor */
 * {
   cursor: none;
@@ -18,11 +17,17 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #005f73; /* teal */
-  --secondary-color: #0a9396; /* deep teal */
-  --accent-color: #ee9b00; /* amber */
-  --text-color: #001219; /* dark slate */
-  --bg-color: #e0fbfc; /* light cyan */
+  --primary-color: #115e59; /* teal-800 */
+  --secondary-color: #075985; /* sky-800 */
+  --accent-color: #312e81; /* indigo-900 */
+  --text-color: #0f172a; /* slate-900 */
+  --bg-color: #f0f9ff; /* light sky */
+  --gradient-main: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
   --card-bg: #ffffff;
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -74,7 +79,18 @@
 
 /* Base Styles */
 body {
-  font-family: 'Open Sans', 'Inter', 'Poppins', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    'Open Sans',
+    'Inter',
+    'Poppins',
+    'Noto Sans Arabic',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -154,7 +170,12 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -162,9 +183,32 @@ body {
   left: 100%;
 }
 
+/* Primary Gradient Button */
+.btn-gradient {
+  background: var(--gradient-main);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.btn-gradient:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -173,7 +217,9 @@ body {
 
 /* Hover Effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -207,9 +253,15 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Scroll Reveal Animation */
@@ -302,7 +354,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
   z-index: 1;
 }
 
@@ -423,20 +475,20 @@ select:focus {
   .container {
     padding: 0 1rem;
   }
-  
+
   .section-padding {
     padding: 3rem 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .community-wall {
     grid-template-columns: 1fr;
     grid-auto-rows: 250px;
   }
-  
+
   .item-wide,
   .item-tall,
   .item-large {
@@ -449,7 +501,7 @@ select:focus {
   .section-title {
     font-size: 1.75rem;
   }
-  
+
   .section-description {
     font-size: 1rem;
   }

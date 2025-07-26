@@ -1,8 +1,10 @@
+/* eslint react-refresh/only-export-components: off */
+/* eslint no-unused-vars: off */
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserContextType {
   isAdmin: boolean;
-  setIsAdmin: (_value: boolean) => void;
+  setIsAdmin: (value: boolean) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -28,3 +30,4 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     </UserContext.Provider>
   );
 };
+

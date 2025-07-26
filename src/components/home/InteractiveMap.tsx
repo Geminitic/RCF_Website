@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -19,7 +19,7 @@ const InteractiveMap: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<MapItem | null>(null);
   const { t, currentLanguage } = useLanguage();
 
-  const cities: MapItem[] = [
+  const cities: MapItem[] = useMemo(() => [
     {
       id: 'latakia',
       lat: 35.5311,
@@ -74,9 +74,9 @@ const InteractiveMap: React.FC = () => {
       description: 'Mini TV, Dopamine',
       descriptionAr: 'ميني تي في، دوبامين'
     }
-  ];
+  ], []);
 
-  const events: MapItem[] = [
+  const events: MapItem[] = useMemo(() => [
     {
       id: 'rural-engagement',
       lat: 35.5311,
@@ -106,9 +106,10 @@ const InteractiveMap: React.FC = () => {
       descriptionAr: 'فعالية عيد القلعة - 10 حزيران 2025',
       date: '2025-06-10'
     }
-  ];
+  ], []);
 
-  const towns: { id: string; lat: number; lng: number }[] = [
+  const towns: { id: string; lat: number; lng: number }[] = useMemo(
+    () => [
     { id: 'qanjarah', lat: 35.627, lng: 35.915 },
     { id: 'jannata', lat: 35.63, lng: 35.92 },
     { id: 'kirsana', lat: 35.58, lng: 35.95 },
@@ -133,9 +134,12 @@ const InteractiveMap: React.FC = () => {
     { id: 'sqilbieh', lat: 35.37, lng: 36.39 },
     { id: 'sheikhbadr', lat: 34.96, lng: 36.05 },
     { id: 'khreibat', lat: 34.9, lng: 35.97 }
-  ];
+    ],
+    []
+  );
 
-  const globalNodes: MapItem[] = [
+  const globalNodes: MapItem[] = useMemo(
+    () => [
     {
       id: 'edmonton',
       lat: 53.5461,
@@ -145,7 +149,9 @@ const InteractiveMap: React.FC = () => {
       description: 'CO*LAB, RE:VITA, HQ',
       descriptionAr: 'CO*LAB، RE:VITA، المقر'
     }
-  ];
+    ],
+    []
+  );
 
   useEffect(() => {
     // Initialize Leaflet map
@@ -238,7 +244,7 @@ const InteractiveMap: React.FC = () => {
         };
       }
     }
-  }, []);
+  }, [cities, events, towns, globalNodes]);
 
   return (
     <section className="py-16 bg-white">
