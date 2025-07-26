@@ -38,6 +38,7 @@ const HeroSection: React.FC = () => {
 
     const colors = ['#064e3b', '#065f46', '#047857', '#b91c1c', '#dc2626', '#ea580c', '#d97706'];
     const nodeCount = 40;
+    const maxNodes = nodeCount * 2;
 
     // Initialize nodes with more organic properties
     for (let i = 0; i < nodeCount; i++) {
@@ -69,6 +70,87 @@ const HeroSection: React.FC = () => {
 
       node.connections = nearbyNodes.map((item) => item.index);
     });
+
+    // --- Interaction helpers ---
+    let draggingIndex: number | null = null;
+    let selectedIndex: number | null = null;
+
+    const getMousePos = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+    };
+
+    const findNodeIndex = (x: number, y: number) =>
+      nodes.findIndex((n) => Math.hypot(n.x - x, n.y - y) <= n.size * 2);
+
+    const onPointerDown = (e: MouseEvent) => {
+      const { x, y } = getMousePos(e);
+      const idx = findNodeIndex(x, y);
+      if (idx >= 0) {
+        draggingIndex = idx;
+      } else if (nodes.length < maxNodes) {
+        nodes.push({
+          x,
+          y,
+          vx: (Math.random() - 0.5) * 1.2,
+          vy: (Math.random() - 0.5) * 1.2,
+          size: Math.random() * 5 + 2,
+          connections: [],
+          opacity: Math.random() * 0.6 + 0.2,
+          pulsePhase: Math.random() * Math.PI * 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        });
+      }
+    };
+
+    const onPointerMove = (e: MouseEvent) => {
+      if (draggingIndex !== null) {
+        const { x, y } = getMousePos(e);
+        nodes[draggingIndex].x = x;
+        nodes[draggingIndex].y = y;
+        nodes[draggingIndex].vx = 0;
+        nodes[draggingIndex].vy = 0;
+      }
+    };
+
+    const onPointerUp = (e: MouseEvent) => {
+      const { x, y } = getMousePos(e);
+      const idx = findNodeIndex(x, y);
+
+      if (draggingIndex !== null) {
+        nodes[draggingIndex].vx = (Math.random() - 0.5) * 1.2;
+        nodes[draggingIndex].vy = (Math.random() - 0.5) * 1.2;
+        draggingIndex = null;
+      } else if (idx >= 0) {
+        if (selectedIndex === null) {
+          selectedIndex = idx;
+        } else if (selectedIndex !== idx) {
+          const a = nodes[selectedIndex];
+          const b = nodes[idx];
+          const aConn = a.connections.indexOf(idx);
+          if (aConn === -1) {
+            a.connections.push(idx);
+            b.connections.push(selectedIndex);
+          } else {
+            a.connections.splice(aConn, 1);
+            const bConn = b.connections.indexOf(selectedIndex);
+            if (bConn !== -1) b.connections.splice(bConn, 1);
+          }
+          selectedIndex = null;
+        } else {
+          selectedIndex = null;
+        }
+      } else {
+        selectedIndex = null;
+      }
+    };
+
+    canvas.addEventListener('mousedown', onPointerDown);
+    canvas.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('mouseup', onPointerUp);
 
     let animationFrame: number;
     let time = 0;
@@ -127,11 +209,19 @@ const HeroSection: React.FC = () => {
       });
 
       // Draw nodes with enhanced visual effects
-      nodes.forEach((node) => {
+      nodes.forEach((node, idx) => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
         ctx.fillStyle = node.color + Math.floor(node.opacity * 255).toString(16).padStart(2, '0');
         ctx.fill();
+
+        if (selectedIndex === idx) {
+          ctx.strokeStyle = '#ffffff88';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.size + 4, 0, Math.PI * 2);
+          ctx.stroke();
+        }
         
         const gradient = ctx.createRadialGradient(
           node.x, node.y, 0,
@@ -154,6 +244,9 @@ const HeroSection: React.FC = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrame);
+      canvas.removeEventListener('mousedown', onPointerDown);
+      canvas.removeEventListener('mousemove', onPointerMove);
+      window.removeEventListener('mouseup', onPointerUp);
     };
   }, []);
 
