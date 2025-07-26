@@ -29,14 +29,14 @@ const CalendarPage: React.FC = () => {
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   const categories = [
-    { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: 'bg-gray-500' },
-    { key: 'funding', en: 'Funding', ar: 'التمويل', color: 'bg-green-500' },
-    { key: 'workshop', en: 'Workshops', ar: 'ورش العمل', color: 'bg-blue-500' },
-    { key: 'conference', en: 'Conferences', ar: 'المؤتمرات', color: 'bg-purple-500' },
-    { key: 'cultural', en: 'Cultural', ar: 'ثقافية', color: 'bg-pink-500' },
-    { key: 'educational', en: 'Educational', ar: 'تعليمية', color: 'bg-orange-500' },
-    { key: 'networking', en: 'Networking', ar: 'تواصل', color: 'bg-indigo-500' },
-    { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
+    { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: '#6b7280' },
+    { key: 'funding', en: 'Funding', ar: 'التمويل', color: '#22c55e' },
+    { key: 'workshop', en: 'Workshops', ar: 'ورش العمل', color: '#3b82f6' },
+    { key: 'conference', en: 'Conferences', ar: 'المؤتمرات', color: '#a855f7' },
+    { key: 'cultural', en: 'Cultural', ar: 'ثقافية', color: '#ec4899' },
+    { key: 'educational', en: 'Educational', ar: 'تعليمية', color: '#f97316' },
+    { key: 'networking', en: 'Networking', ar: 'تواصل', color: '#6366f1' },
+    { key: 'general', en: 'General', ar: 'عام', color: '#6b7280' }
   ];
 
   const initialEvents: CalendarEvent[] = [];
@@ -128,12 +128,15 @@ const CalendarPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4"
-              style={{ borderLeftColor: category?.color?.replace('bg-', '#') || '#6b7280' }}
+              style={{ borderLeftColor: category?.color || '#6b7280' }}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center mb-2">
-                    <div className={`w-3 h-3 rounded-full mr-3 ${category?.color || 'bg-gray-500'}`} />
+                    <div
+                      className="w-3 h-3 rounded-full mr-3"
+                      style={{ backgroundColor: category?.color || '#6b7280' }}
+                    />
                     <span className={`text-xs font-medium text-stone-500 uppercase tracking-wide ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t(`category-${event.category}`, event.category, event.category)}
                     </span>
