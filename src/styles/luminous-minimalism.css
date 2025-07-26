@@ -1,0 +1,50 @@
+/* Luminous Minimalism Style */
+:root {
+  --lm-white: #FFFFFF;
+  --lm-silver: #F5F7FA;
+  --lm-blue: #338FFF;
+  --lm-mint: #57E6B5;
+  --lm-charcoal: #222831;
+  --lm-soft-sky: #EDF6FF;
+
+  --lm-font-primary: 'Inter', 'Poppins', sans-serif;
+}
+
+.luminous-minimalism {
+  font-family: var(--lm-font-primary);
+  color: var(--lm-charcoal);
+  background: var(--lm-white);
+  line-height: 1.6;
+}
+
+.lm-card {
+  background: var(--lm-white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lm-button-primary {
+  background: linear-gradient(135deg, var(--lm-blue), var(--lm-mint));
+  color: var(--lm-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.lm-button-primary:hover {
+  opacity: 0.9;
+}
+
+.lm-section-alt {
+  background: var(--lm-soft-sky);
+}
