@@ -1,9 +1,19 @@
 import { motion } from 'framer-motion';
-import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
+import {
+  Target,
+  Globe,
+  Image,
+  Palette,
+  Heart,
+  Shield,
+  Star,
+  Sparkles
+} from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
+import '../styles/rhizome-syria.css';
 
 const RhizomeSyriaPage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -98,7 +108,7 @@ const RhizomeSyriaPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#6B46C1]/20 via-[#0EA5E9]/20 via-[#F97316]/20 to-[#EF4444]/20 pt-16 relative overflow-hidden">
+    <div className="rhizome-syria min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50 pt-16 relative overflow-hidden">
       {/* Syrian Map Background */}
       <div 
         className="fixed inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
@@ -110,14 +120,7 @@ const RhizomeSyriaPage: React.FC = () => {
       />
 
       {/* Hero Section with Logo-Inspired Design */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
-          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-15 animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }} />
-        </div>
+      <section className="rs-hero relative overflow-hidden">
 
         {/* Spiral Pattern Overlay */}
         <div className="absolute inset-0 opacity-10">
@@ -151,23 +154,24 @@ const RhizomeSyriaPage: React.FC = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex justify-center mb-8"
+              className="rs-logo-container justify-center mb-8"
             >
-              <div className="relative">
-                <img
-                  src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
-                  alt="Rhizome Syria Logo"
-                  className="h-[30rem] md:h-[36rem] w-auto drop-shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-orange-400/20 rounded-full blur-xl" />
-              </div>
+              <img
+                src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
+                alt="Rhizome Syria Logo"
+                className="h-40 w-auto"
+              />
             </motion.div>
+
+            <h1 className={`rs-heading-1 mb-4 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}> 
+              {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
+            </h1>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed"
+              className="rs-body-large text-gray-700 max-w-4xl mx-auto mb-8"
             >
               {t(
                 'rhizome-syria-subtitle',
@@ -182,14 +186,14 @@ const RhizomeSyriaPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <button className="rs-button-primary">
                 <span className="flex items-center">
                   <Sparkles className="h-5 w-5 mr-2 group-hover:animate-spin" />
                   {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
                 </span>
               </button>
-              
-              <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-purple-700 font-semibold rounded-full border-2 border-purple-300 hover:bg-purple-50 transition-all duration-300">
+
+              <button className="rs-button-secondary">
                 {t('join-community', 'Join the Movement', 'انضم للحراك')}
               </button>
             </motion.div>
@@ -198,7 +202,7 @@ const RhizomeSyriaPage: React.FC = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 bg-white/90">
+      <section className="rs-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -207,7 +211,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            <h2 className="rs-heading-2 mb-6">
               {t('overview-title', 'About Us', 'عن ريزوم سوريا')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -248,7 +252,7 @@ const RhizomeSyriaPage: React.FC = () => {
       </section>
 
       {/* Mission Section with Vibrant Cards */}
-      <section className="py-20 relative">
+      <section className="rs-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16">
             <motion.div
@@ -329,7 +333,7 @@ const RhizomeSyriaPage: React.FC = () => {
       </section>
 
       {/* Current Activities with Colorful Grid */}
-      <section className="py-20 relative">
+      <section className="rs-section relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-50/50 via-blue-50/50 to-orange-50/50" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
@@ -339,7 +343,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`text-4xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t('current-activities', 'Current Activities', 'الأنشطة الحالية')}
             </h2>
             <p className={`text-xl text-gray-600 max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
@@ -434,7 +438,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`text-4xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
               {t('our-board-syria', 'Our Board (Syria)', 'مجلس إدارتنا (سوريا)')}
             </h2>
           </motion.div>
@@ -487,7 +491,7 @@ const RhizomeSyriaPage: React.FC = () => {
         <FeaturedLeaders />
 
         {/* Call to Action with Spiral Design */}
-        <section className="py-20 relative overflow-hidden">
+        <section className="rs-section relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-500 to-red-500" />
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -507,7 +511,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`text-white ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="rs-heading-2 mb-6">
               {t('get-involved-title', 'Ready to join or partner?', 'مستعد للانضمام أو الشراكة؟')}
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -518,16 +522,10 @@ const RhizomeSyriaPage: React.FC = () => {
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#volunteer"
-                className="px-8 py-4 bg-white text-purple-700 font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
-              >
+              <a href="#volunteer" className="rs-button-primary">
                 {t('apply-now', 'Apply Now', 'تقدم الآن')}
               </a>
-              <a
-                href="#volunteer"
-                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/50 hover:bg-white/30 transition-colors"
-              >
+              <a href="#volunteer" className="rs-button-secondary border-white text-white hover:bg-white hover:text-purple-600">
                 {t('volunteer', 'Volunteer', 'تطوع')}
               </a>
             </div>
@@ -540,7 +538,7 @@ const RhizomeSyriaPage: React.FC = () => {
         </div>
       </section>
 
-      <section id="volunteer" className="py-20 bg-white">
+      <section id="volunteer" className="rs-section-alt">
         <div className="container mx-auto px-4">
           <SyrianCitiesMap />
           <VolunteerForms />
