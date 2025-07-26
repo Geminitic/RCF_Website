@@ -18,14 +18,16 @@ import KnowledgeHubPage from './pages/KnowledgeHubPage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
 import LoadingScreen from './components/common/LoadingScreen';
+import { useChronoTheme } from './hooks/useChronoTheme';
 
 function App() {
+  useChronoTheme();
   return (
     <LanguageProvider>
       <UserProvider>
         <PhotoProvider>
           <Router>
-          <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
+          <div className="min-h-screen">
             <LoadingScreen />
             <CustomCursor />
             <Navigation />
