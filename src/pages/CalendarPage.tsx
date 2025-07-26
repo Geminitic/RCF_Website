@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import BigCalendar from '../components/calendar/BigCalendar';
 import { motion } from 'framer-motion';
-import { 
-  Calendar as CalendarIcon, 
-  Clock, 
-  MapPin, 
-  Users, 
+import {
+  Calendar as CalendarIcon,
+  Clock,
+  MapPin,
+  Users,
   Filter,
   Grid,
   List,
@@ -14,7 +14,7 @@ import {
   AlertCircle,
   Star,
   Tag,
-  Loader
+  Loader,
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { CalendarEvent } from '../types';
@@ -29,14 +29,34 @@ const CalendarPage: React.FC = () => {
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   const categories = [
-    { key: 'all', en: 'All Events', ar: 'جميع الفعاليات', color: 'bg-gray-500' },
+    {
+      key: 'all',
+      en: 'All Events',
+      ar: 'جميع الفعاليات',
+      color: 'bg-gray-500',
+    },
     { key: 'funding', en: 'Funding', ar: 'التمويل', color: 'bg-green-500' },
     { key: 'workshop', en: 'Workshops', ar: 'ورش العمل', color: 'bg-blue-500' },
-    { key: 'conference', en: 'Conferences', ar: 'المؤتمرات', color: 'bg-purple-500' },
+    {
+      key: 'conference',
+      en: 'Conferences',
+      ar: 'المؤتمرات',
+      color: 'bg-purple-500',
+    },
     { key: 'cultural', en: 'Cultural', ar: 'ثقافية', color: 'bg-pink-500' },
-    { key: 'educational', en: 'Educational', ar: 'تعليمية', color: 'bg-orange-500' },
-    { key: 'networking', en: 'Networking', ar: 'تواصل', color: 'bg-indigo-500' },
-    { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' }
+    {
+      key: 'educational',
+      en: 'Educational',
+      ar: 'تعليمية',
+      color: 'bg-orange-500',
+    },
+    {
+      key: 'networking',
+      en: 'Networking',
+      ar: 'تواصل',
+      color: 'bg-indigo-500',
+    },
+    { key: 'general', en: 'General', ar: 'عام', color: 'bg-gray-500' },
   ];
 
   const initialEvents: CalendarEvent[] = [];
@@ -48,16 +68,16 @@ const CalendarPage: React.FC = () => {
   const fetchEvents = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const response = await fetch('/api/events');
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       if (data.events) {
         // Merge scraped events with initial events
         const allEvents = [...initialEvents, ...data.events];
@@ -78,14 +98,15 @@ const CalendarPage: React.FC = () => {
     }
   };
 
-  const filteredEvents = selectedCategory === 'all' 
-    ? events 
-    : events.filter(event => event.category === selectedCategory);
+  const filteredEvents =
+    selectedCategory === 'all'
+      ? events
+      : events.filter((event) => event.category === selectedCategory);
 
   // react-big-calendar handles navigation and month calculations internally
 
   const renderCalendarView = () => {
-    const bigCalendarEvents = filteredEvents.map(e => ({
+    const bigCalendarEvents = filteredEvents.map((e) => ({
       title: t('event-title', e.title, e.titleAr),
       start: e.date ? new Date(e.date) : new Date(),
       end: e.date ? new Date(e.date) : new Date(),
@@ -111,8 +132,12 @@ const CalendarPage: React.FC = () => {
       return (
         <div className="text-center py-12">
           <CalendarIcon className="h-16 w-16 text-stone-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-stone-600 mb-2">No events found</h3>
-          <p className="text-stone-500">Try adjusting your filters or check back later.</p>
+          <h3 className="text-xl font-semibold text-stone-600 mb-2">
+            No events found
+          </h3>
+          <p className="text-stone-500">
+            Try adjusting your filters or check back later.
+          </p>
         </div>
       );
     }
@@ -120,7 +145,7 @@ const CalendarPage: React.FC = () => {
     return (
       <div className="space-y-4">
         {filteredEvents.map((event, index) => {
-          const category = categories.find(cat => cat.key === event.category);
+          const category = categories.find((cat) => cat.key === event.category);
           return (
             <motion.div
               key={event.id}
@@ -128,14 +153,25 @@ const CalendarPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4"
-              style={{ borderLeftColor: category?.color?.replace('bg-', '#') || '#6b7280' }}
+              style={{
+                borderLeftColor:
+                  category?.color?.replace('bg-', '#') || '#6b7280',
+              }}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center mb-2">
-                    <div className={`w-3 h-3 rounded-full mr-3 ${category?.color || 'bg-gray-500'}`} />
-                    <span className={`text-xs font-medium text-stone-500 uppercase tracking-wide ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                      {t(`category-${event.category}`, event.category, event.category)}
+                    <div
+                      className={`w-3 h-3 rounded-full mr-3 ${category?.color || 'bg-gray-500'}`}
+                    />
+                    <span
+                      className={`text-xs font-medium text-stone-500 uppercase tracking-wide ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
+                      {t(
+                        `category-${event.category}`,
+                        event.category,
+                        event.category
+                      )}
                     </span>
                     {event.priority && event.priority > 3 && (
                       <Star className="h-4 w-4 text-yellow-500 ml-2" />
@@ -144,18 +180,28 @@ const CalendarPage: React.FC = () => {
                       <AlertCircle className="h-4 w-4 text-red-500 ml-2" />
                     )}
                   </div>
-                  <h3 className={`text-xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                  <h3
+                    className={`text-xl font-bold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
                     {t('event-title', event.title, event.titleAr)}
                   </h3>
                   {event.description && (
-                    <p className={`text-stone-600 mb-4 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                      {t('event-description', event.description, event.descriptionAr)}
+                    <p
+                      className={`text-stone-600 mb-4 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
+                      {t(
+                        'event-description',
+                        event.description,
+                        event.descriptionAr
+                      )}
                     </p>
                   )}
                 </div>
                 {event.registrationRequired && (
                   <button className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center">
-                    <span className={`mr-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <span
+                      className={`mr-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
                       {t('register', 'Register', 'سجل')}
                     </span>
                     <ExternalLink className="h-4 w-4" />
@@ -173,16 +219,25 @@ const CalendarPage: React.FC = () => {
                 {event.time && (
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-2" />
-                    <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
+                    <span
+                      className={
+                        currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                      }
+                    >
                       {t('event-time', event.time, event.timeAr)}
-                      {event.duration && ` (${t('event-duration', event.duration, event.durationAr)})`}
+                      {event.duration &&
+                        ` (${t('event-duration', event.duration, event.durationAr)})`}
                     </span>
                   </div>
                 )}
                 {event.location && (
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
-                    <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
+                    <span
+                      className={
+                        currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                      }
+                    >
                       {t('event-location', event.location, event.locationAr)}
                     </span>
                   </div>
@@ -191,7 +246,8 @@ const CalendarPage: React.FC = () => {
                   <div className="flex items-center">
                     <Users className="h-4 w-4 mr-2" />
                     <span>
-                      {event.attendees}/{event.maxAttendees} {t('attendees', 'attendees', 'حاضر')}
+                      {event.attendees}/{event.maxAttendees}{' '}
+                      {t('attendees', 'attendees', 'حاضر')}
                     </span>
                   </div>
                 )}
@@ -213,8 +269,11 @@ const CalendarPage: React.FC = () => {
 
               <div className="flex items-center justify-between pt-4 border-t border-stone-200">
                 <div className="flex items-center space-x-4">
-                  <span className={`text-sm text-stone-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('organized-by', 'Organized by', 'نظمت من قبل')} {t('event-organizer', event.organizer, event.organizerAr)}
+                  <span
+                    className={`text-sm text-stone-500 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
+                    {t('organized-by', 'Organized by', 'نظمت من قبل')}{' '}
+                    {t('event-organizer', event.organizer, event.organizerAr)}
                   </span>
                   {event.isOnline && (
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
@@ -247,9 +306,9 @@ const CalendarPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-sky-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -258,7 +317,11 @@ const CalendarPage: React.FC = () => {
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
-              {t('calendar-title', 'Events & Opportunities', 'الفعاليات والفرص')}
+              {t(
+                'calendar-title',
+                'Events & Opportunities',
+                'الفعاليات والفرص'
+              )}
             </h1>
             <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
               {t(
@@ -279,12 +342,13 @@ const CalendarPage: React.FC = () => {
 
             {lastUpdated && (
               <div className="text-sm text-indigo-200 mb-6">
-                {t('last-updated', 'Last updated', 'آخر تحديث')}: {new Date(lastUpdated).toLocaleString()}
+                {t('last-updated', 'Last updated', 'آخر تحديث')}:{' '}
+                {new Date(lastUpdated).toLocaleString()}
               </div>
             )}
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <button
                 onClick={fetchEvents}
                 disabled={loading}
                 className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors flex items-center justify-center disabled:opacity-50"
@@ -297,7 +361,11 @@ const CalendarPage: React.FC = () => {
                 {t('refresh-events', 'Refresh Events', 'تحديث الفعاليات')}
               </button>
               <button className="px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors">
-                {t('subscribe-calendar', 'Subscribe to Calendar', 'اشترك في التقويم')}
+                {t(
+                  'subscribe-calendar',
+                  'Subscribe to Calendar',
+                  'اشترك في التقويم'
+                )}
               </button>
             </div>
           </motion.div>
@@ -357,9 +425,19 @@ const CalendarPage: React.FC = () => {
 
           {/* Event Count */}
           <div className="mt-4 text-center text-stone-600">
-            {t('showing-events', 'Showing', 'عرض')} {filteredEvents.length} {t('events', 'events', 'فعالية')}
+            {t('showing-events', 'Showing', 'عرض')} {filteredEvents.length}{' '}
+            {t('events', 'events', 'فعالية')}
             {selectedCategory !== 'all' && (
-              <span> {t('in-category', 'in category', 'في فئة')} "{t(`category-${selectedCategory}`, selectedCategory, selectedCategory)}"</span>
+              <span>
+                {' '}
+                {t('in-category', 'in category', 'في فئة')} "
+                {t(
+                  `category-${selectedCategory}`,
+                  selectedCategory,
+                  selectedCategory
+                )}
+                "
+              </span>
             )}
           </div>
         </div>
