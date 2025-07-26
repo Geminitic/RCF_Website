@@ -49,8 +49,8 @@ const Navigation: React.FC = () => {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg'
-            : 'bg-transparent'
+            ? 'bg-white/80 backdrop-blur-lg shadow-md'
+            : 'bg-white/20 backdrop-blur-lg'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,8 +87,8 @@ const Navigation: React.FC = () => {
                     location.pathname === item.path
                       ? 'text-teal-700'
                       : isScrolled
-                        ? 'text-stone-700 hover:text-teal-700'
-                        : 'text-white hover:text-teal-200'
+                        ? 'text-stone-800 hover:text-teal-700'
+                        : 'bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent hover:text-teal-200'
                   } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
                   {t(`nav-${item.key}`, item.en, item.ar)}
@@ -107,8 +107,8 @@ const Navigation: React.FC = () => {
                   onClick={() => setShowLangMenu(!showLangMenu)}
                   className={`flex items-center space-x-1 px-2 py-2 text-sm font-medium transition-colors duration-200 ${
                     isScrolled
-                      ? 'text-stone-700 hover:text-teal-700'
-                      : 'text-white hover:text-teal-200'
+                      ? 'text-stone-800 hover:text-teal-700'
+                      : 'bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent hover:text-teal-200'
                   }`}
                 >
                   <Globe className="h-4 w-4" />
@@ -182,7 +182,7 @@ const Navigation: React.FC = () => {
                     className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
                       location.pathname === item.path
                         ? 'text-teal-700 bg-teal-50'
-                        : 'text-stone-700 hover:text-teal-700 hover:bg-stone-50'
+                        : 'text-stone-800 hover:text-teal-700 hover:bg-stone-50'
                     } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {t(`nav-${item.key}`, item.en, item.ar)}
@@ -200,7 +200,7 @@ const Navigation: React.FC = () => {
                       className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors ${
                         currentLanguage.code === lang.code
                           ? 'text-teal-700 bg-teal-50'
-                          : 'text-stone-700 hover:text-teal-700 hover:bg-stone-50'
+                          : 'text-stone-800 hover:text-teal-700 hover:bg-stone-50'
                       } ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                     >
                       {lang.name}
