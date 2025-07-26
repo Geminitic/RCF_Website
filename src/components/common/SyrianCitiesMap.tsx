@@ -27,19 +27,7 @@ const SyrianCitiesMap: React.FC = () => {
       .scale(2500)
       .translate([width / 2, height / 2]);
 
-    const tooltip = d3
-      .select(container)
-      .append('div')
-      .style('position', 'absolute')
-      .style('pointer-events', 'none')
-      .style('background', 'rgba(0,0,0,0.6)')
-      .style('color', '#fff')
-      .style('padding', '2px 4px')
-      .style('border-radius', '4px')
-      .style('font-size', '12px')
-      .style('display', 'none');
-
-    svg
+    const circles = svg
       .selectAll('circle')
       .data(syrianCities)
       .enter()
@@ -48,21 +36,18 @@ const SyrianCitiesMap: React.FC = () => {
       .attr('cy', d => projection([d.lng, d.lat])[1])
       .attr('r', 2)
       .attr('fill', '#b91c1c')
-      .on('mouseenter', (event, d) => {
-        tooltip.style('display', 'block').text(d.name);
+      .attr('class', 'city-dot');
+
+    circles
+      .on('mouseenter', function () {
+        d3.select(this).classed('animate-wobble', true);
       })
-      .on('mousemove', event => {
-        tooltip
-          .style('left', event.offsetX + 10 + 'px')
-          .style('top', event.offsetY + 10 + 'px');
-      })
-      .on('mouseleave', () => {
-        tooltip.style('display', 'none');
+      .on('mouseleave', function () {
+        d3.select(this).classed('animate-wobble', false);
       });
 
     return () => {
       svg.remove();
-      tooltip.remove();
     };
   }, []);
 
