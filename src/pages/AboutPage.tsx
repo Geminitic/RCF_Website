@@ -184,9 +184,9 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-sky-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -296,7 +296,7 @@ const AboutPage: React.FC = () => {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-indigo-200" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-teal-200" />
 
             {timeline.map((item, index) => (
               <motion.div
@@ -322,7 +322,7 @@ const AboutPage: React.FC = () => {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white shadow-lg" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 rounded-full border-4 border-white shadow-lg" />
               </motion.div>
             ))}
           </div>
@@ -386,9 +386,9 @@ const AboutPage: React.FC = () => {
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center bg-indigo-50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-indigo-600">{branch.programs}</div>
-                      <div className={`text-sm text-indigo-700 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <div className="text-center bg-teal-50 rounded-lg p-4">
+                      <div className="text-2xl font-bold text-indigo-900">{branch.programs}</div>
+                      <div className={`text-sm text-indigo-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                         {t('active-programs', 'Active Programs', 'برامج نشطة')}
                       </div>
                     </div>
@@ -407,7 +407,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 bg-gradient-to-br from-indigo-50 to-stone-50">
+      <section className="py-20 bg-gradient-to-br from-teal-50 via-sky-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

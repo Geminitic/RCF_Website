@@ -154,7 +154,7 @@ const CalendarPage: React.FC = () => {
                   )}
                 </div>
                 {event.registrationRequired && (
-                  <button className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center">
+                  <button className="ml-4 px-4 py-2 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white rounded-lg hover:shadow-xl transition-colors flex items-center">
                     <span className={`mr-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                       {t('register', 'Register', 'سجل')}
                     </span>
@@ -247,9 +247,9 @@ const CalendarPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-sky-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,7 +287,7 @@ const CalendarPage: React.FC = () => {
               <button 
                 onClick={fetchEvents}
                 disabled={loading}
-                className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors flex items-center justify-center disabled:opacity-50"
+                className="px-6 py-3 bg-white text-indigo-900 font-semibold rounded-lg hover:bg-indigo-50 transition-colors flex items-center justify-center disabled:opacity-50"
               >
                 {loading ? (
                   <Loader className="h-5 w-5 animate-spin mr-2" />
@@ -296,7 +296,7 @@ const CalendarPage: React.FC = () => {
                 )}
                 {t('refresh-events', 'Refresh Events', 'تحديث الفعاليات')}
               </button>
-              <button className="px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors">
+              <button className="px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl transition-colors">
                 {t('subscribe-calendar', 'Subscribe to Calendar', 'اشترك في التقويم')}
               </button>
             </div>

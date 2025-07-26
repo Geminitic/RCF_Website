@@ -25,7 +25,7 @@ const AboutPreview: React.FC = () => {
             />
             
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200 rounded-full opacity-20 animate-pulse" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-200 rounded-full opacity-20 animate-pulse" />
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-stone-200 rounded-full opacity-30 animate-pulse" />
           </motion.div>
 
@@ -52,7 +52,7 @@ const AboutPreview: React.FC = () => {
 
             <Link
               to="/about"
-              className="group inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105"
+              className="group inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="mr-2">
                 {t('learn-more', 'Explore Our Story', 'اكتشف قصتنا')}

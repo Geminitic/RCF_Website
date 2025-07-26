@@ -6,13 +6,14 @@
     <title>The Rhizomatic Organization</title>
     <style>
         :root {
-            --primary: #2a9d8f;
-            --secondary: #e76f51;
-            --accent: #f4a261;
+            --primary: #115e59;
+            --secondary: #075985;
+            --accent: #312e81;
             --dark: #264653;
             --light: #f8f9fa;
             --node-size: 12px;
             --connection-width: 2px;
+            --primary-gradient: linear-gradient(to right, #115e59, #075985, #312e81);
         }
 
         * {
@@ -68,7 +69,7 @@
             margin-bottom: 1rem;
             line-height: 1.2;
             font-weight: 800;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: var(--primary-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -174,7 +175,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: var(--primary-gradient);
         }
 
         .principle-title {
@@ -275,7 +276,7 @@
             bottom: 0;
             left: 50%;
             width: 4px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            background: var(--primary-gradient);
             transform: translateX(-50%);
             border-radius: 2px;
         }

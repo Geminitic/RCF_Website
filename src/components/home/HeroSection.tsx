@@ -208,7 +208,7 @@ const HeroSection: React.FC = () => {
           >
             <Link
               to="/programs"
-              className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="mr-2">
                 {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}

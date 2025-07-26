@@ -164,7 +164,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                         />
                         <label
                           htmlFor="photo-upload"
-                          className="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 cursor-pointer transition-colors"
+                          className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white rounded-lg hover:shadow-xl cursor-pointer transition-colors"
                         >
                           <Upload className="h-4 w-4 mr-2" />
                           {t('select-photo', 'Select Photo', 'اختر صورة')}
@@ -306,7 +306,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                   <button
                     type="submit"
                     disabled={!selectedFile || isSubmitting}
-                    className="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
+                    className="px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
                   >
                     {isSubmitting ? (
                       <>
@@ -328,11 +328,11 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
               </form>
 
               {/* Guidelines */}
-              <div className="mt-6 p-4 bg-emerald-50 rounded-lg">
-                <h3 className={`font-semibold text-emerald-800 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+              <div className="mt-6 p-4 bg-teal-50 rounded-lg">
+                <h3 className={`font-semibold text-teal-800 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   {t('guidelines-title', 'Community Guidelines', 'إرشادات المجتمع')}
                 </h3>
-                <ul className={`text-sm text-emerald-700 space-y-1 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <ul className={`text-sm text-teal-700 space-y-1 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                   <li>• {t('guideline-1', 'Share authentic stories and experiences', 'شارك القصص والتجارب الأصيلة')}</li>
                   <li>• {t('guideline-2', 'Respect privacy and obtain consent when featuring others', 'احترم الخصوصية واحصل على الموافقة عند عرض الآخرين')}</li>
                   <li>• {t('guideline-3', 'Use appropriate language and content', 'استخدم لغة ومحتوى مناسبين')}</li>
