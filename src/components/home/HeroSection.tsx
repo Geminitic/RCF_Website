@@ -178,11 +178,11 @@ const HeroSection: React.FC = () => {
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
+            className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}
+            style={{ fontFamily: 'Merriweather, "Noto Sans Arabic", serif' }}
           >
             {t('hero-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
           </motion.h1>

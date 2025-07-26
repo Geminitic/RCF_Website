@@ -55,14 +55,14 @@ const Navigation: React.FC = () => {
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
             />
-            <div className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'}`}>
-              <div className="font-bold text-teal-800 text-sm">
-                {t('nav-title', 'Rhizome Community', 'ريزوم المجتمعية')}
-              </div>
-              <div className="text-xs text-stone-600">
-                {t('nav-subtitle', 'Foundation', 'مؤسسة')}
-              </div>
-            </div>
+            <motion.div
+              animate={{ scale: isScrolled ? 0.85 : 1 }}
+              transition={{ duration: 0.3 }}
+              className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'} font-bold gradient-text`}
+              style={{ fontFamily: 'Merriweather, "Noto Sans Arabic", serif' }}
+            >
+              {t('nav-title', 'Rhizome Community Foundation', 'مؤسسة ريزوم المجتمعية')}
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
