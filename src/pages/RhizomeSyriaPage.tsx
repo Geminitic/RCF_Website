@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
+import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
@@ -200,7 +201,7 @@ const RhizomeSyriaPage: React.FC = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="rs-section bg-white">
+      <section className="rs-section bg-white rs-pattern-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -223,18 +224,32 @@ const RhizomeSyriaPage: React.FC = () => {
             <h3 className="rs-heading-3 mb-4">
               {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <ul className="grid md:grid-cols-2 gap-4 mb-6">
               {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+                <li
+                  key={index}
+                  className="flex items-start gap-3 bg-white/90 rounded-xl shadow p-4 border border-purple-100"
+                >
+                  <CheckCircle className="text-purple-600 mt-1 w-5 h-5 flex-shrink-0" />
+                  <span>{t(`method-${index}`, item.en, item.ar)}</span>
+                </li>
               ))}
             </ul>
 
             <h3 className="rs-heading-3 mb-4">
-              {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
+              <Link to="/knowledge-hub" className="hover:underline">
+                {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
+              </Link>
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <ul className="grid md:grid-cols-2 gap-4 mb-6">
               {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+                <li
+                  key={index}
+                  className="flex items-start gap-3 bg-white/90 rounded-xl shadow p-4 border border-purple-100"
+                >
+                  <CheckCircle className="text-purple-600 mt-1 w-5 h-5 flex-shrink-0" />
+                  <span>{t(`goal-${index}`, item.en, item.ar)}</span>
+                </li>
               ))}
             </ul>
 
