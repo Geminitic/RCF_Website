@@ -21,11 +21,20 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const projection = d3
-      .geoMercator()
-      .center([38.9968, 34.8021])
-      .scale(2500)
-      .translate([width / 2, height / 2]);
+    // Fit projection to provided city coordinates to better match the
+    // underlying map image and ensure dots align with existing markers.
+    const geoCities = syrianCities.map((c) => ({
+      type: 'Feature' as const,
+      geometry: { type: 'Point' as const, coordinates: [c.lng, c.lat] },
+    }));
+
+    const projection = d3.geoMercator().fitExtent(
+      [
+        [0, 0],
+        [width, height],
+      ],
+      { type: 'FeatureCollection', features: geoCities }
+    );
 
     const tooltip = d3
       .select(container)
@@ -44,14 +53,14 @@ const SyrianCitiesMap: React.FC = () => {
       .data(syrianCities)
       .enter()
       .append('circle')
-      .attr('cx', d => projection([d.lng, d.lat])[0])
-      .attr('cy', d => projection([d.lng, d.lat])[1])
-      .attr('r', 2)
+      .attr('cx', (d) => projection([d.lng, d.lat])[0])
+      .attr('cy', (d) => projection([d.lng, d.lat])[1])
+      .attr('r', 3)
       .attr('fill', '#b91c1c')
       .on('mouseenter', (event, d) => {
         tooltip.style('display', 'block').text(d.name);
       })
-      .on('mousemove', event => {
+      .on('mousemove', (event) => {
         tooltip
           .style('left', event.offsetX + 10 + 'px')
           .style('top', event.offsetY + 10 + 'px');
