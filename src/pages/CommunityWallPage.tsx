@@ -126,9 +126,9 @@ const CommunityWallPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-sky-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +153,7 @@ const CommunityWallPage: React.FC = () => {
                   dir="rtl"
                 />
                 <button
-                  className="mt-2 px-4 py-2 bg-indigo-500 text-white rounded"
+                  className="mt-2 px-4 py-2 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white rounded"
                   onClick={() => {
                     localStorage.setItem('cw-tagline-en', taglineEn);
                     localStorage.setItem('cw-tagline-ar', taglineAr);
@@ -190,7 +190,7 @@ const CommunityWallPage: React.FC = () => {
                   {uploadedCount.toLocaleString()} / {targetCount.toLocaleString()}
                 </span>
               </div>
-              <div className="w-full bg-indigo-800 rounded-full h-4">
+              <div className="w-full bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 rounded-full h-4">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercentage}%` }}
@@ -272,7 +272,7 @@ const CommunityWallPage: React.FC = () => {
             {/* Upload Button */}
             <button
               onClick={() => setShowUploadModal(true)}
-              className="flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+              className="flex items-center px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl transition-colors"
             >
               <Upload className="h-5 w-5 mr-2" />
               {t('upload-story', 'Upload Story', 'رفع قصة')}
@@ -464,7 +464,7 @@ const CommunityWallPage: React.FC = () => {
                     </button>
                   </div>
                   <button
-                    className="flex items-center space-x-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors"
+                    className="flex items-center space-x-2 px-4 py-2 bg-teal-50 text-indigo-900 rounded-lg hover:bg-teal-100 transition-colors"
                     onClick={() => {
                       if (navigator.share) navigator.share({ url: window.location.href });
                       else navigator.clipboard.writeText(window.location.href);

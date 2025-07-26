@@ -93,13 +93,13 @@ const FeaturedLeaders: React.FC = () => {
           <div className="flex justify-center space-x-4 mb-8">
             <button
               onClick={prevSlide}
-              className="p-3 bg-emerald-100 text-emerald-600 rounded-full hover:bg-emerald-200 transition-colors"
+              className="p-3 bg-teal-50 text-teal-800 rounded-full hover:bg-teal-100 transition-colors"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 bg-emerald-100 text-emerald-600 rounded-full hover:bg-emerald-200 transition-colors"
+              className="p-3 bg-teal-50 text-teal-800 rounded-full hover:bg-teal-100 transition-colors"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -134,9 +134,9 @@ const FeaturedLeaders: React.FC = () => {
                           <img
                             src={leader.image}
                             alt={t('leader-name', leader.name, leader.nameAr)}
-                            className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-emerald-200"
+                          className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-teal-200"
                           />
-                          <div className="absolute -bottom-2 -right-2 bg-emerald-600 text-white p-2 rounded-full">
+                          <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white p-2 rounded-full">
                             <Award className="h-4 w-4" />
                           </div>
                         </div>
@@ -145,7 +145,7 @@ const FeaturedLeaders: React.FC = () => {
                           {t('leader-name', leader.name, leader.nameAr)}
                         </h3>
 
-                        <p className={`text-emerald-600 font-semibold mb-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                        <p className={`text-teal-800 font-semibold mb-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                           {t('leader-title', leader.title, leader.titleAr)}
                         </p>
 
@@ -156,8 +156,8 @@ const FeaturedLeaders: React.FC = () => {
                           </span>
                         </div>
 
-                        <div className="bg-emerald-50 rounded-lg p-3 mb-4">
-                          <p className={`text-sm font-semibold text-emerald-800 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                        <div className="bg-teal-50 rounded-lg p-3 mb-4">
+                          <p className={`text-sm font-semibold text-teal-800 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                             {t('leader-achievement', leader.achievement, leader.achievementAr)}
                           </p>
                         </div>
@@ -172,7 +172,7 @@ const FeaturedLeaders: React.FC = () => {
                           </p>
                         </div>
 
-                        <button className="flex items-center justify-center space-x-2 w-full py-2 text-emerald-600 hover:text-emerald-700 transition-colors">
+                        <button className="flex items-center justify-center space-x-2 w-full py-2 text-teal-800 hover:text-teal-900 transition-colors">
                           <span className={`text-sm font-medium ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                             {t('learn-more', 'Learn More', 'اعرف المزيد')}
                           </span>
@@ -194,7 +194,7 @@ const FeaturedLeaders: React.FC = () => {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-emerald-600 scale-125'
+                    ? 'bg-teal-800 scale-125'
                     : 'bg-stone-300 hover:bg-stone-400'
                 }`}
               />

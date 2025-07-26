@@ -126,9 +126,9 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-sky-50 to-indigo-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -150,14 +150,14 @@ const ContactPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:info@rhizomsyria.org"
-                className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white text-indigo-900 font-semibold rounded-lg hover:bg-indigo-50 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />
                 {t('email-us', 'Email Us', 'راسلنا')}
               </a>
               <a
                 href="tel:+14165550123"
-                className="inline-flex items-center px-6 py-3 bg-indigo-800 text-white font-semibold rounded-lg hover:bg-indigo-900 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 {t('call-us', 'Call Us', 'اتصل بنا')}
@@ -278,7 +278,7 @@ const ContactPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     {isSubmitting ? (
                       <>
@@ -333,7 +333,7 @@ const ContactPage: React.FC = () => {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
                     >
-                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center flex-shrink-0">
                         <IconComponent className="h-6 w-6 text-indigo-600" />
                       </div>
                       <div>
@@ -412,7 +412,7 @@ const ContactPage: React.FC = () => {
                 className="bg-gradient-to-br from-indigo-50 to-stone-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 rounded-lg flex items-center justify-center mr-4">
                     <Globe className="h-6 w-6 text-white" />
                   </div>
                   <h3 className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
@@ -464,7 +464,7 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-stone-200">
-                  <button className="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors">
+                  <button className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-lg hover:shadow-xl transition-colors">
                     <MessageCircle className="h-5 w-5 mr-2" />
                     {t('contact-office', 'Contact This Office', 'اتصل بهذا المكتب')}
                   </button>

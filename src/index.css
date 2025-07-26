@@ -18,9 +18,10 @@
 
 /* Design System Variables */
 :root {
-  --primary-color: #005f73; /* teal */
-  --secondary-color: #0a9396; /* deep teal */
-  --accent-color: #ee9b00; /* amber */
+  --primary-color: #115e59; /* teal-800 */
+  --secondary-color: #075985; /* sky-800 */
+  --accent-color: #312e81; /* indigo-900 */
+  --primary-gradient: linear-gradient(to right, #115e59, #075985, #312e81);
   --text-color: #001219; /* dark slate */
   --bg-color: #e0fbfc; /* light cyan */
   --card-bg: #ffffff;
@@ -145,6 +146,8 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  background: var(--primary-gradient);
+  color: #fff;
 }
 
 .btn-enhanced::before {

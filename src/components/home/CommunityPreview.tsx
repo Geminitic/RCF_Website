@@ -84,7 +84,7 @@ const CommunityPreview: React.FC = () => {
               onClick={() => setShowAll(false)}
               className={`flex items-center px-4 py-2 rounded-full font-medium transition-colors ${
                 !showAll
-                  ? 'bg-emerald-600 text-white'
+                  ? 'bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white'
                   : 'bg-stone-200 text-stone-700 hover:bg-stone-300'
               }`}
             >
@@ -95,7 +95,7 @@ const CommunityPreview: React.FC = () => {
               onClick={() => setShowAll(true)}
               className={`flex items-center px-4 py-2 rounded-full font-medium transition-colors ${
                 showAll
-                  ? 'bg-emerald-600 text-white'
+                  ? 'bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white'
                   : 'bg-stone-200 text-stone-700 hover:bg-stone-300'
               }`}
             >
@@ -145,7 +145,7 @@ const CommunityPreview: React.FC = () => {
         >
           <Link
             to="/community-wall"
-            className="group inline-flex items-center px-8 py-4 bg-emerald-700 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <Camera className="h-5 w-5 mr-2" />
             <span>
@@ -154,7 +154,7 @@ const CommunityPreview: React.FC = () => {
             <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 
-          <button className="group inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-semibold rounded-full border-2 border-emerald-700 hover:bg-emerald-50 transition-all duration-300">
+          <button className="group inline-flex items-center px-8 py-4 bg-white text-teal-800 font-semibold rounded-full border-2 border-teal-800 hover:bg-teal-50 transition-all duration-300">
             <Upload className="h-5 w-5 mr-2" />
             <span>
               {t('contribute-story', 'Contribute Your Story', 'ساهم بقصتك')}

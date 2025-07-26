@@ -73,7 +73,7 @@ const programs = [
         >
           <Link
             to="/programs"
-            className="group inline-flex items-center px-8 py-4 bg-emerald-700 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <span className="mr-2">
               {t('view-all-programs', 'Explore All Initiatives', 'استكشف جميع المبادرات')}
