@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
@@ -223,20 +224,36 @@ const RhizomeSyriaPage: React.FC = () => {
             <h3 className="rs-heading-3 mb-4">
               {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
               {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+                <div
+                  key={index}
+                  className={`rs-card flex items-start gap-3 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                >
+                  <Star className="w-5 h-5 text-purple-600 mt-1 flex-shrink-0" />
+                  <span>{t(`method-${index}`, item.en, item.ar)}</span>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <h3 className="rs-heading-3 mb-4">
               {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
               {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+                <div
+                  key={index}
+                  className={`rs-card flex items-start gap-3 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                >
+                  <Sparkles className="w-5 h-5 text-orange-600 mt-1 flex-shrink-0" />
+                  <span>{t(`goal-${index}`, item.en, item.ar)}</span>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            <Link to="/knowledge-hub" className="rs-button-primary inline-block mb-6">
+              {t('learn-more-knowledge', 'Explore the Knowledge Hub', 'اقرأ المزيد في مركز المعرفة')}
+            </Link>
 
             <p className="rs-body-large">
               {t(
