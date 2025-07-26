@@ -36,6 +36,28 @@ const HeroSection: React.FC = () => {
       color: string;
     }> = [];
 
+    const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const handleClick = () => {
+      nodes.forEach((node) => {
+        const dx = node.x - mouse.x;
+        const dy = node.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const strength = 2;
+        node.vx += (dx / dist) * strength;
+        node.vy += (dy / dist) * strength;
+      });
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('click', handleClick);
+
     const colors = ['#064e3b', '#065f46', '#047857', '#b91c1c', '#dc2626', '#ea580c', '#d97706'];
     const nodeCount = 40;
 
@@ -76,6 +98,17 @@ const HeroSection: React.FC = () => {
     const animate = () => {
       time += 0.01;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Gently attract nodes toward the mouse position
+      nodes.forEach((node) => {
+        const dx = mouse.x - node.x;
+        const dy = mouse.y - node.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          node.vx += (dx / dist) * 0.05;
+          node.vy += (dy / dist) * 0.05;
+        }
+      });
 
       // Update nodes with more organic movement
       nodes.forEach((node) => {
@@ -153,6 +186,8 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('click', handleClick);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
