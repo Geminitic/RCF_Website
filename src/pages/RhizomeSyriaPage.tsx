@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Globe, Image, Palette, Heart, Shield, Star, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import VolunteerForms from '../components/common/VolunteerForms';
@@ -223,20 +224,30 @@ const RhizomeSyriaPage: React.FC = () => {
             <h3 className="rs-heading-3 mb-4">
               {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
               {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+                <div key={index} className="rs-card">
+                  <p className="rs-body">
+                    {t(`method-${index}`, item.en, item.ar)}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <h3 className="rs-heading-3 mb-4">
-              {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
+              <Link to="/knowledge-hub" className="underline hover:text-purple-700">
+                {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
+              </Link>
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
               {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+                <div key={index} className="rs-card">
+                  <p className="rs-body">
+                    {t(`goal-${index}`, item.en, item.ar)}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <p className="rs-body-large">
               {t(
