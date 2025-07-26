@@ -59,7 +59,8 @@ const RhizomaticIntro: React.FC = () => {
         .map((otherNode, j) => ({
           index: j,
           distance: Math.sqrt(
-            Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+            Math.pow(node.x - otherNode.x, 2) +
+              Math.pow(node.y - otherNode.y, 2)
           ),
         }))
         .filter((item) => item.index !== i)
@@ -102,9 +103,10 @@ const RhizomaticIntro: React.FC = () => {
         node.connections.forEach((connectionIndex) => {
           const connectedNode = nodes[connectionIndex];
           const distance = Math.sqrt(
-            Math.pow(node.x - connectedNode.x, 2) + Math.pow(node.y - connectedNode.y, 2)
+            Math.pow(node.x - connectedNode.x, 2) +
+              Math.pow(node.y - connectedNode.y, 2)
           );
-          
+
           if (distance < 200) {
             const opacity = (200 - distance) / 200;
             ctx.strokeStyle = `rgba(16, 185, 129, ${opacity * 0.6})`;
@@ -123,15 +125,19 @@ const RhizomaticIntro: React.FC = () => {
         ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(16, 185, 129, ${node.opacity})`;
         ctx.fill();
-        
+
         // Glow effect
         const gradient = ctx.createRadialGradient(
-          node.x, node.y, 0,
-          node.x, node.y, node.size * 3
+          node.x,
+          node.y,
+          0,
+          node.x,
+          node.y,
+          node.size * 3
         );
         gradient.addColorStop(0, `rgba(16, 185, 129, ${node.opacity * 0.3})`);
         gradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
-        
+
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size * 3, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -157,7 +163,7 @@ const RhizomaticIntro: React.FC = () => {
         className="absolute inset-0 w-full h-full gpu-accelerated"
         style={{ width: '100%', height: '100%' }}
       />
-      
+
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (
@@ -176,12 +182,12 @@ const RhizomaticIntro: React.FC = () => {
             transition={{
               duration: 8 + i * 2,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           />
         ))}
       </div>
-      
+
       {/* Content Overlay */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <ScrollReveal>
@@ -193,14 +199,14 @@ const RhizomaticIntro: React.FC = () => {
           >
             <motion.h1
               className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
-              animate={{ 
+              animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
               transition={{ duration: 5, repeat: Infinity }}
             >
               {t('hero-title', 'Rhizome Syria', 'ريزوم سوريا')}
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -213,7 +219,7 @@ const RhizomaticIntro: React.FC = () => {
                 'نجمع كافة الأصوات النابضة في المجتمع المدني السوري عبر شبكة جذمورية لامركزية لنبني وطننا معاً.'
               )}
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -224,17 +230,17 @@ const RhizomaticIntro: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-enhanced px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-glow"
+                  className="btn-enhanced px-8 py-4 btn-rhizome hover-glow"
                 >
                   {t('explore-projects', 'Explore Projects', 'استكشف المشاريع')}
                 </motion.button>
               </RippleEffect>
-              
+
               <RippleEffect>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-enhanced px-8 py-4 bg-white text-primary-600 font-semibold rounded-full border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300"
+                  className="btn-enhanced px-8 py-4 border-2 rounded-full text-white btn-rhizome hover:filter brightness-110"
                 >
                   {t('join-community', 'Join Community', 'انضم للمجتمع')}
                 </motion.button>
@@ -243,7 +249,7 @@ const RhizomaticIntro: React.FC = () => {
           </motion.div>
         </ScrollReveal>
       </div>
-      
+
       {/* Enhanced Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -253,12 +259,17 @@ const RhizomaticIntro: React.FC = () => {
       >
         <motion.div
           animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="w-8 h-12 border-2 border-primary-600 rounded-full flex justify-center relative overflow-hidden"
         >
           <motion.div
             animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5, ease: "easeInOut" }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 0.5,
+              ease: 'easeInOut',
+            }}
             className="w-2 h-4 bg-gradient-to-b from-primary-600 to-primary-400 rounded-full mt-2"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-100 to-transparent opacity-30 animate-pulse" />

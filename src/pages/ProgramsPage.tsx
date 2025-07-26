@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Users,
   Heart,
   Globe,
@@ -9,7 +9,7 @@ import {
   Calendar,
   Target,
   ArrowRight,
-  Handshake
+  Handshake,
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -19,45 +19,60 @@ const ProgramsPage: React.FC = () => {
 
   const categories = [
     { key: 'all', en: 'All Programs', ar: 'جميع البرامج', icon: Globe },
-    { key: 'syria', en: 'In Syria & Region', ar: 'في سوريا والمنطقة', icon: MapPin },
+    {
+      key: 'syria',
+      en: 'In Syria & Region',
+      ar: 'في سوريا والمنطقة',
+      icon: MapPin,
+    },
     { key: 'canada', en: 'In Canada', ar: 'في كندا', icon: Heart },
-    { key: 'cross-border', en: 'Cross-Border', ar: 'عبر الحدود', icon: Handshake }
+    {
+      key: 'cross-border',
+      en: 'Cross-Border',
+      ar: 'عبر الحدود',
+      icon: Handshake,
+    },
   ];
 
-const programs = Array.from({ length: 9 }, (_, i) => ({
-  id: String(i + 1),
-  title: '',
-  titleAr: '',
-  category: i < 6 ? 'syria' : 'canada',
-  description: '',
-  descriptionAr: '',
-  location: '',
-  locationAr: '',
-  participants: 0,
-  duration: '',
-  durationAr: '',
-  status: '',
-  impact: '',
-  impactAr: '',
-  image: '',
-  features: [],
-  featuresAr: []
-}));
+  const programs = Array.from({ length: 9 }, (_, i) => ({
+    id: String(i + 1),
+    title: '',
+    titleAr: '',
+    category: i < 6 ? 'syria' : 'canada',
+    description: '',
+    descriptionAr: '',
+    location: '',
+    locationAr: '',
+    participants: 0,
+    duration: '',
+    durationAr: '',
+    status: '',
+    impact: '',
+    impactAr: '',
+    image: '',
+    features: [],
+    featuresAr: [],
+  }));
 
-  const filteredPrograms = selectedCategory === 'all' 
-    ? programs 
-    : programs.filter(program => program.category === selectedCategory);
+  const filteredPrograms =
+    selectedCategory === 'all'
+      ? programs
+      : programs.filter((program) => program.category === selectedCategory);
 
   const stats = [
     { label: 'Active Programs', labelAr: 'برامج نشطة', value: 0 },
-    { label: 'Anticipated Participants', labelAr: 'المشاركون المتوقعون', value: 0 },
-    { label: 'Countries', labelAr: 'دولة', value: 0 }
+    {
+      label: 'Anticipated Participants',
+      labelAr: 'المشاركون المتوقعون',
+      value: 0,
+    },
+    { label: 'Countries', labelAr: 'دولة', value: 0 },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-sky-50 to-indigo-100 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,7 +81,11 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
-              {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
+              {t(
+                'programs-title',
+                'Transformative Initiatives',
+                'مبادرات تحويلية'
+              )}
             </h1>
             <p className="text-xl text-indigo-100 mb-8 max-w-4xl mx-auto">
               {t(
@@ -87,7 +106,9 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                   className="bg-white/10 backdrop-blur-sm rounded-lg p-4"
                 >
                   <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                  <div className={`text-sm text-indigo-200 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                  <div
+                    className={`text-sm text-indigo-200 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
                     {t(`stat-${index}`, stat.label, stat.labelAr)}
                   </div>
                 </motion.div>
@@ -101,12 +122,17 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
       <section className="py-8 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+            <h2
+              className={`text-2xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+            >
               {t('filter-programs', 'Filter Programs', 'تصفية البرامج')}
             </h2>
             <div className="flex items-center text-stone-600">
               <Filter className="h-5 w-5 mr-2" />
-              <span>{filteredPrograms.length} {t('programs-found', 'programs found', 'برنامج موجود')}</span>
+              <span>
+                {filteredPrograms.length}{' '}
+                {t('programs-found', 'programs found', 'برنامج موجود')}
+              </span>
             </div>
           </div>
 
@@ -153,85 +179,144 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                     </span>
                   </div>
                   <div className="absolute top-4 left-4 flex gap-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      program.status === 'active' 
-                        ? 'bg-green-100 text-green-800' 
-                        : program.status === 'planned'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-gray-100 text-gray-800'
-                    }`}>
-                      {t(`status-${program.status}`, program.status, program.status)}
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        program.status === 'active'
+                          ? 'bg-green-100 text-green-800'
+                          : program.status === 'planned'
+                            ? 'bg-blue-100 text-blue-800'
+                            : 'bg-gray-100 text-gray-800'
+                      }`}
+                    >
+                      {t(
+                        `status-${program.status}`,
+                        program.status,
+                        program.status
+                      )}
                     </span>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      program.category === 'syria' 
-                        ? 'bg-indigo-100 text-indigo-800'
-                        : program.category === 'canada'
-                        ? 'bg-red-100 text-red-800'
-                        : 'bg-blue-100 text-blue-800'
-                    }`}>
-                      {t(`category-${program.category}`, 
-                        program.category === 'syria' ? 'Syria' : 
-                        program.category === 'canada' ? 'Canada' : 'Cross-Border',
-                        program.category === 'syria' ? 'سوريا' : 
-                        program.category === 'canada' ? 'كندا' : 'عبر الحدود'
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        program.category === 'syria'
+                          ? 'bg-indigo-100 text-indigo-800'
+                          : program.category === 'canada'
+                            ? 'bg-red-100 text-red-800'
+                            : 'bg-blue-100 text-blue-800'
+                      }`}
+                    >
+                      {t(
+                        `category-${program.category}`,
+                        program.category === 'syria'
+                          ? 'Syria'
+                          : program.category === 'canada'
+                            ? 'Canada'
+                            : 'Cross-Border',
+                        program.category === 'syria'
+                          ? 'سوريا'
+                          : program.category === 'canada'
+                            ? 'كندا'
+                            : 'عبر الحدود'
                       )}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className={`text-xl font-bold text-stone-900 mb-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                  <h3
+                    className={`text-xl font-bold text-stone-900 mb-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
                     {t('program-title', program.title, program.titleAr)}
                   </h3>
 
-                  <p className={`text-stone-600 mb-4 line-clamp-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                    {t('program-description', program.description, program.descriptionAr)}
+                  <p
+                    className={`text-stone-600 mb-4 line-clamp-3 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                  >
+                    {t(
+                      'program-description',
+                      program.description,
+                      program.descriptionAr
+                    )}
                   </p>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center text-sm text-stone-500">
                       <MapPin className="h-4 w-4 mr-2" />
-                      <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
-                        {t('program-location', program.location, program.locationAr)}
+                      <span
+                        className={
+                          currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                        }
+                      >
+                        {t(
+                          'program-location',
+                          program.location,
+                          program.locationAr
+                        )}
                       </span>
                     </div>
 
                     <div className="flex items-center text-sm text-stone-500">
                       <Calendar className="h-4 w-4 mr-2" />
-                      <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
-                        {t('program-duration', program.duration, program.durationAr)}
+                      <span
+                        className={
+                          currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                        }
+                      >
+                        {t(
+                          'program-duration',
+                          program.duration,
+                          program.durationAr
+                        )}
                       </span>
                     </div>
 
                     <div className="flex items-center text-sm text-stone-500">
                       <Users className="h-4 w-4 mr-2" />
-                      <span>{program.participants} {t('participants', 'participants', 'مشارك')}</span>
+                      <span>
+                        {program.participants}{' '}
+                        {t('participants', 'participants', 'مشارك')}
+                      </span>
                     </div>
 
                     <div className="flex items-center text-sm text-indigo-600">
                       <Target className="h-4 w-4 mr-2" />
-                      <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
+                      <span
+                        className={
+                          currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                        }
+                      >
                         {t('program-impact', program.impact, program.impactAr)}
                       </span>
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className={`font-semibold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                    <h4
+                      className={`font-semibold text-stone-900 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                    >
                       {t('key-features', 'Key Features:', 'الميزات الرئيسية:')}
                     </h4>
                     <ul className="space-y-1">
-                      {program.features.slice(0, 3).map((feature, featureIndex) => (
-                        <li key={featureIndex} className={`text-sm text-stone-600 flex items-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                          <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 flex-shrink-0" />
-                          {currentLanguage.code === 'ar' ? program.featuresAr[featureIndex] : feature}
-                        </li>
-                      ))}
+                      {program.features
+                        .slice(0, 3)
+                        .map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className={`text-sm text-stone-600 flex items-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                          >
+                            <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 flex-shrink-0" />
+                            {currentLanguage.code === 'ar'
+                              ? program.featuresAr[featureIndex]
+                              : feature}
+                          </li>
+                        ))}
                     </ul>
                   </div>
 
-                  <button className="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors group">
-                    <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
+                  <button className="w-full flex items-center justify-center px-4 py-3 btn-rhizome rounded-lg group">
+                    <span
+                      className={
+                        currentLanguage.code === 'ar' ? 'font-arabic' : ''
+                      }
+                    >
                       {t('learn-more', 'Learn More', 'اعرف المزيد')}
                     </span>
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -244,7 +329,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -273,7 +358,8 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
             </div>
             <div className="mt-6 text-indigo-200">
               <p>
-                {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhizomefoundation.ca
+                {t('contact-programs', 'Contact:', 'اتصل:')}{' '}
+                info@rhizomsyria.org | info@rhizomefoundation.ca
               </p>
             </div>
           </motion.div>

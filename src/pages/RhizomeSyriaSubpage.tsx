@@ -16,7 +16,11 @@ const RhizomeSyriaSubpage: React.FC = () => {
     location: '',
     locationAr: '',
     icon: [Globe, Heart, Star][i],
-    gradient: ['var(--rs-gradient-primary)', 'var(--rs-gradient-warm)', 'var(--rs-gradient-cool)'][i]
+    gradient: [
+      'var(--rs-gradient-primary)',
+      'var(--rs-gradient-warm)',
+      'var(--rs-gradient-cool)',
+    ][i],
   }));
 
   const achievements = [
@@ -24,33 +28,33 @@ const RhizomeSyriaSubpage: React.FC = () => {
       number: '1,200+',
       label: 'Stories Documented',
       labelAr: 'قصة موثقة',
-      icon: Heart
+      icon: Heart,
     },
     {
       number: '15',
       label: 'Initiatives Launched',
       labelAr: 'مبادرة أُطلقت',
-      icon: Target
+      icon: Target,
     },
     {
       number: '8',
       label: 'Cities Served',
       labelAr: 'مدن مخدومة',
-      icon: MapPin
+      icon: MapPin,
     },
     {
       number: '500+',
       label: 'Volunteers',
       labelAr: 'متطوع',
-      icon: Users
-    }
+      icon: Users,
+    },
   ];
 
   return (
-    <div className="rhizome-syria min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50">
+    <div className="rhizome-syria min-h-screen bg-gradient-to-br from-teal-50 via-sky-50 to-indigo-100">
       {/* Hero Section with Syrian Logo Integration */}
       <section className="rs-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/90 via-blue-600/90 to-orange-600/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -60,25 +64,29 @@ const RhizomeSyriaSubpage: React.FC = () => {
           >
             {/* Logo Integration */}
             <div className="rs-logo-container justify-center mb-8">
-              <img 
-                src="/public/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png" 
-                alt="Rhizome Syria Logo" 
+              <img
+                src="/public/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
+                alt="Rhizome Syria Logo"
                 className="h-20 w-auto"
               />
             </div>
-            
-            <h1 className={`rs-heading-1 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+
+            <h1
+              className={`rs-heading-1 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
             </h1>
-            
-            <p className={`rs-body-large text-white/90 max-w-4xl mx-auto mb-8 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+
+            <p
+              className={`rs-body-large text-white/90 max-w-4xl mx-auto mb-8 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t(
                 'syria-hero-description',
                 'Building resilient communities through cultural preservation, feminist organizing, and grassroots empowerment across Syria.',
                 'بناء مجتمعات مرنة من خلال الحفاظ على الثقافة والتنظيم النسوي والتمكين الشعبي في جميع أنحاء سوريا.'
               )}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="rs-button-primary">
                 {t('explore-programs', 'Explore Programs', 'استكشف البرامج')}
@@ -89,7 +97,7 @@ const RhizomeSyriaSubpage: React.FC = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Cultural Pattern Overlay */}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 opacity-30" />
       </section>
@@ -104,10 +112,14 @@ const RhizomeSyriaSubpage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <h2
+              className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t('our-programs', 'Our Programs', 'برامجنا')}
             </h2>
-            <p className={`rs-body-large max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <p
+              className={`rs-body-large max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t(
                 'programs-description',
                 'Comprehensive initiatives designed to strengthen communities and preserve Syrian heritage.',
@@ -128,35 +140,58 @@ const RhizomeSyriaSubpage: React.FC = () => {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="rs-card rs-fade-in group"
                 >
-                  <div 
+                  <div
                     className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-white"
                     style={{ background: program.gradient }}
                   >
                     <IconComponent className="h-8 w-8" />
                   </div>
-                  
-                  <h3 className={`rs-heading-3 mb-4 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-                    {t(`program-${index}-title`, program.title, program.titleAr)}
+
+                  <h3
+                    className={`rs-heading-3 mb-4 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                  >
+                    {t(
+                      `program-${index}-title`,
+                      program.title,
+                      program.titleAr
+                    )}
                   </h3>
-                  
-                  <p className={`rs-body mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-                    {t(`program-${index}-desc`, program.description, program.descriptionAr)}
+
+                  <p
+                    className={`rs-body mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                  >
+                    {t(
+                      `program-${index}-desc`,
+                      program.description,
+                      program.descriptionAr
+                    )}
                   </p>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-center text-sm text-gray-600">
                       <MapPin className="h-4 w-4 mr-2" />
-                      <span className={currentLanguage.code === 'ar' ? 'rs-arabic' : ''}>
-                        {t(`program-${index}-location`, program.location, program.locationAr)}
+                      <span
+                        className={
+                          currentLanguage.code === 'ar' ? 'rs-arabic' : ''
+                        }
+                      >
+                        {t(
+                          `program-${index}-location`,
+                          program.location,
+                          program.locationAr
+                        )}
                       </span>
                     </div>
-                    
+
                     <div className="flex items-center text-sm text-gray-600">
                       <Users className="h-4 w-4 mr-2" />
-                      <span>{program.participants} {t('participants', 'participants', 'مشارك')}</span>
+                      <span>
+                        {program.participants}{' '}
+                        {t('participants', 'participants', 'مشارك')}
+                      </span>
                     </div>
                   </div>
-                  
+
                   <button className="rs-button-primary w-full mt-6 group-hover:scale-105 transition-transform">
                     {t('learn-more', 'Learn More', 'اعرف المزيد')}
                   </button>
@@ -177,7 +212,9 @@ const RhizomeSyriaSubpage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <h2
+              className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t('our-impact', 'Our Impact', 'تأثيرنا')}
             </h2>
           </motion.div>
@@ -197,13 +234,19 @@ const RhizomeSyriaSubpage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
-                  
+
                   <div className="text-3xl font-bold text-purple-600 mb-2">
                     {achievement.number}
                   </div>
-                  
-                  <div className={`rs-caption ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-                    {t(`achievement-${index}`, achievement.label, achievement.labelAr)}
+
+                  <div
+                    className={`rs-caption ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                  >
+                    {t(
+                      `achievement-${index}`,
+                      achievement.label,
+                      achievement.labelAr
+                    )}
                   </div>
                 </motion.div>
               );
@@ -222,24 +265,38 @@ const RhizomeSyriaSubpage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-                {t('cultural-heritage', 'Preserving Our Heritage', 'الحفاظ على تراثنا')}
+              <h2
+                className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+              >
+                {t(
+                  'cultural-heritage',
+                  'Preserving Our Heritage',
+                  'الحفاظ على تراثنا'
+                )}
               </h2>
-              
-              <p className={`rs-body-large mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+
+              <p
+                className={`rs-body-large mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+              >
                 {t(
                   'heritage-description',
                   'Through digital storytelling and community-led documentation, we preserve the rich cultural tapestry of Syria for future generations.',
                   'من خلال السرد الرقمي والتوثيق بقيادة المجتمع، نحافظ على النسيج الثقافي الغني لسوريا للأجيال القادمة.'
                 )}
               </p>
-              
+
               <div className="space-y-4">
                 {[
-                  { label: 'Oral History Collection', labelAr: 'جمع التاريخ الشفوي' },
+                  {
+                    label: 'Oral History Collection',
+                    labelAr: 'جمع التاريخ الشفوي',
+                  },
                   { label: 'Cultural Events', labelAr: 'الفعاليات الثقافية' },
                   { label: 'Digital Archives', labelAr: 'الأرشيف الرقمي' },
-                  { label: 'Community Storytelling', labelAr: 'السرد المجتمعي' }
+                  {
+                    label: 'Community Storytelling',
+                    labelAr: 'السرد المجتمعي',
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -250,14 +307,16 @@ const RhizomeSyriaSubpage: React.FC = () => {
                     className="flex items-center"
                   >
                     <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3" />
-                    <span className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+                    <span
+                      className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+                    >
                       {t(`heritage-item-${index}`, item.label, item.labelAr)}
                     </span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -285,18 +344,22 @@ const RhizomeSyriaSubpage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={`rs-heading-2 text-white mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <h2
+              className={`rs-heading-2 text-white mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t('join-movement', 'Join Our Movement', 'انضم إلى حركتنا')}
             </h2>
-            
-            <p className={`rs-body-large text-white/90 max-w-3xl mx-auto mb-8 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+
+            <p
+              className={`rs-body-large text-white/90 max-w-3xl mx-auto mb-8 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
               {t(
                 'join-description',
                 'Be part of building resilient communities and preserving Syrian heritage for future generations.',
                 'كن جزءاً من بناء مجتمعات مرنة والحفاظ على التراث السوري للأجيال القادمة.'
               )}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="rs-button-primary bg-white text-purple-600 hover:bg-gray-100">
                 {t('get-involved', 'Get Involved', 'شارك معنا')}

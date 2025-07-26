@@ -11,7 +11,9 @@ const CommunityPreview: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
 
   const progressPercentage = (uploadedCount / targetCount) * 100;
-  const displayPhotos = showAll ? allPhotos.slice(0, 20) : communityPhotos.slice(0, 6);
+  const displayPhotos = showAll
+    ? allPhotos.slice(0, 20)
+    : communityPhotos.slice(0, 6);
 
   const getGridClass = (index: number) => {
     if (showAll) {
@@ -38,7 +40,12 @@ const CommunityPreview: React.FC = () => {
           transition={{ duration: 0.8 }}
           className={`text-center mb-16 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
-          <h2 className="text-4xl font-bold text-stone-900 mb-6" style={{ fontFamily: '"Playfair Display", "Noto Sans Arabic", serif' }}>
+          <h2
+            className="text-4xl font-bold text-stone-900 mb-6"
+            style={{
+              fontFamily: '"Playfair Display", "Noto Sans Arabic", serif',
+            }}
+          >
             {t('community-wall-title', 'Community Canvas', 'لوحة المجتمع')}
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto mb-8">
@@ -59,7 +66,8 @@ const CommunityPreview: React.FC = () => {
                 </span>
               </div>
               <span className="text-sm font-bold text-emerald-600">
-                {uploadedCount.toLocaleString()} / {targetCount.toLocaleString()}
+                {uploadedCount.toLocaleString()} /{' '}
+                {targetCount.toLocaleString()}
               </span>
             </div>
             <div className="w-full bg-stone-200 rounded-full h-3">
@@ -67,14 +75,15 @@ const CommunityPreview: React.FC = () => {
                 initial={{ width: 0 }}
                 whileInView={{ width: `${progressPercentage}%` }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
                 className="bg-gradient-to-r from-emerald-600 to-emerald-700 h-3 rounded-full relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse" />
               </motion.div>
             </div>
             <p className="text-xs text-stone-500 mt-1">
-              {progressPercentage.toFixed(1)}% {t('completed', 'completed', 'مكتمل')}
+              {progressPercentage.toFixed(1)}%{' '}
+              {t('completed', 'completed', 'مكتمل')}
             </p>
           </div>
 
@@ -106,7 +115,9 @@ const CommunityPreview: React.FC = () => {
         </motion.div>
 
         {/* Photos Grid */}
-        <div className={`grid grid-cols-2 ${showAll ? 'md:grid-cols-4 lg:grid-cols-5' : 'md:grid-cols-3'} gap-4 mb-12 auto-rows-[200px]`}>
+        <div
+          className={`grid grid-cols-2 ${showAll ? 'md:grid-cols-4 lg:grid-cols-5' : 'md:grid-cols-3'} gap-4 mb-12 auto-rows-[200px]`}
+        >
           {displayPhotos.map((photo, index) => (
             <motion.div
               key={photo.id}
@@ -124,10 +135,14 @@ const CommunityPreview: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className={`font-semibold text-sm mb-1 line-clamp-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <h3
+                  className={`font-semibold text-sm mb-1 line-clamp-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
                   {t('photo-title', photo.title, photo.titleAr)}
                 </h3>
-                <p className={`text-xs opacity-90 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                <p
+                  className={`text-xs opacity-90 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                >
                   {t('photo-location', photo.location, photo.locationAr)}
                 </p>
               </div>
@@ -145,7 +160,7 @@ const CommunityPreview: React.FC = () => {
         >
           <Link
             to="/community-wall"
-            className="group inline-flex items-center px-8 py-4 bg-emerald-700 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="btn-rhizome group transform hover:scale-105"
           >
             <Camera className="h-5 w-5 mr-2" />
             <span>
@@ -154,7 +169,7 @@ const CommunityPreview: React.FC = () => {
             <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 
-          <button className="group inline-flex items-center px-8 py-4 bg-white text-emerald-700 font-semibold rounded-full border-2 border-emerald-700 hover:bg-emerald-50 transition-all duration-300">
+          <button className="group inline-flex items-center px-8 py-4 border-2 rounded-full text-white btn-rhizome hover:filter brightness-110">
             <Upload className="h-5 w-5 mr-2" />
             <span>
               {t('contribute-story', 'Contribute Your Story', 'ساهم بقصتك')}
