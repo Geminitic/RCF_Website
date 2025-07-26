@@ -317,3 +317,27 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Feature list styling */
+.rs-feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.rs-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--rs-space-sm);
+  margin-bottom: var(--rs-space-sm);
+}
+
+.rs-feature-list li::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: var(--rs-gradient-primary);
+  flex-shrink: 0;
+}
