@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-800 via-sky-800 to-indigo-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-800 via-sky-800 to-indigo-900">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
