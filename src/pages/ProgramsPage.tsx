@@ -55,20 +55,20 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-indigo-50 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-sky-50 pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className={`text-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
           >
             <h1 className="text-5xl font-bold mb-6">
               {t('programs-title', 'Transformative Initiatives', 'مبادرات تحويلية')}
             </h1>
-            <p className="text-xl text-indigo-100 mb-8 max-w-4xl mx-auto">
+            <p className="text-xl text-sky-100 mb-8 max-w-4xl mx-auto">
               {t(
                 'programs-subtitle',
                 'Bridging Syrian communities across Syria and Canada through grassroots innovation, cultural exchange, and collaborative leadership. Our cross-border partnership delivers transformative programs that amplify local voices and diaspora expertise.',
@@ -83,11 +83,11 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
                   className="bg-white/10 backdrop-blur-sm rounded-lg p-4"
                 >
                   <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                  <div className={`text-sm text-indigo-200 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
+                  <div className={`text-sm text-sky-200 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
                     {t(`stat-${index}`, stat.label, stat.labelAr)}
                   </div>
                 </motion.div>
@@ -119,7 +119,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                   onClick={() => setSelectedCategory(category.key)}
                   className={`flex items-center px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                     selectedCategory === category.key
-                      ? 'bg-indigo-600 text-white shadow-lg'
+                      ? 'bg-primary-600 text-white shadow-lg'
                       : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
                   } ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
@@ -142,8 +142,8 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
+                whileHover={{ y: -10, scale: 1.02 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative h-48 overflow-hidden">
@@ -164,7 +164,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                     </span>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       program.category === 'syria' 
-                        ? 'bg-indigo-100 text-indigo-800'
+                        ? 'bg-primary-100 text-primary-800'
                         : program.category === 'canada'
                         ? 'bg-red-100 text-red-800'
                         : 'bg-blue-100 text-blue-800'
@@ -208,7 +208,7 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                       <span>{program.participants} {t('participants', 'participants', 'مشارك')}</span>
                     </div>
 
-                    <div className="flex items-center text-sm text-indigo-600">
+                    <div className="flex items-center text-sm text-primary-600">
                       <Target className="h-4 w-4 mr-2" />
                       <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
                         {t('program-impact', program.impact, program.impactAr)}
@@ -223,14 +223,14 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
                     <ul className="space-y-1">
                       {program.features.slice(0, 3).map((feature, featureIndex) => (
                         <li key={featureIndex} className={`text-sm text-stone-600 flex items-center ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
-                          <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 flex-shrink-0" />
                           {currentLanguage.code === 'ar' ? program.featuresAr[featureIndex] : feature}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <button className="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors group">
+                  <button className="w-full flex items-center justify-center px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors group">
                     <span className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}>
                       {t('learn-more', 'Learn More', 'اعرف المزيد')}
                     </span>
@@ -244,19 +244,19 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className={currentLanguage.code === 'ar' ? 'font-arabic' : ''}
           >
             <h2 className="text-4xl font-bold mb-6">
               {t('join-network-title', 'Join Our Network', 'انضم إلى شبكتنا')}
             </h2>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-sky-100 mb-8 max-w-3xl mx-auto">
               {t(
                 'join-network-description',
                 'Whether in Syria or Canada, your participation helps us grow resilient, empowered communities.',
@@ -264,14 +264,14 @@ const programs = Array.from({ length: 9 }, (_, i) => ({
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-full hover:bg-indigo-50 transition-colors">
+              <button className="px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:bg-primary-50 transition-colors">
                 {t('apply-now', 'Apply Now', 'تقدم الآن')}
               </button>
-              <button className="px-8 py-4 bg-indigo-800 text-white font-semibold rounded-full hover:bg-indigo-900 transition-colors">
+              <button className="px-8 py-4 bg-primary-800 text-white font-semibold rounded-full hover:bg-primary-900 transition-colors">
                 {t('volunteer', 'Volunteer', 'تطوع')}
               </button>
             </div>
-            <div className="mt-6 text-indigo-200">
+            <div className="mt-6 text-sky-200">
               <p>
                 {t('contact-programs', 'Contact:', 'اتصل:')} info@rhizomsyria.org | info@rhizomefoundation.ca
               </p>
