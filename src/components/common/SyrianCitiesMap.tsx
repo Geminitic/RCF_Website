@@ -21,13 +21,18 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const lonMin = 35.79011;
-    const lonMax = 42.14006;
-    const latMin = 32.492;
-    const latMax = 37.17701;
+const padding = 4;
+const lonExtent = d3.extent(syrianCities, c => c.lng) as [number, number];
+const latExtent = d3.extent(syrianCities, c => c.lat) as [number, number];
 
-    const xScale = d3.scaleLinear().domain([lonMin, lonMax]).range([0, width]);
-    const yScale = d3.scaleLinear().domain([latMin, latMax]).range([height, 0]);
+const xScale = d3
+  .scaleLinear()
+  .domain(lonExtent)
+  .range([padding, width - padding]);
+const yScale = d3
+  .scaleLinear()
+  .domain(latExtent)
+  .range([height - padding, padding]);
 
     const tooltip = d3
       .select(container)
@@ -41,26 +46,59 @@ const SyrianCitiesMap: React.FC = () => {
       .style('font-size', '12px')
       .style('display', 'none');
 
-    svg
+    const showTooltip = (x: number, y: number, name: string) => {
+      tooltip
+        .style('display', 'block')
+        .style('left', x + 10 + 'px')
+        .style('top', y + 10 + 'px')
+        .text(name);
+    };
+
+    const hideTooltip = () => {
+      tooltip.style('display', 'none');
+    };
+
+    const colorScale = d3
+      .scaleSequential(
+        d3.interpolateRgbBasis([
+          '#6B46C1',
+          '#0EA5E9',
+          '#fb923c',
+          '#EF4444',
+          '#F59E0B',
+        ])
+      )
+      .domain([0, syrianCities.length - 1]);
+
+    const circles = svg
       .selectAll('circle')
       .data(syrianCities)
       .enter()
       .append('circle')
       .attr('cx', d => xScale(d.lng))
       .attr('cy', d => yScale(d.lat))
-      .attr('r', 2)
-      .attr('fill', '#b91c1c')
+      .attr('r', 1.5)
+      .attr('fill', (_, i) => colorScale(i));
+
+    circles
       .on('mouseenter', (event, d) => {
-        tooltip.style('display', 'block').text(d.name);
+        const [x, y] = d3.pointer(event);
+        showTooltip(x, y, d.name);
       })
       .on('mousemove', event => {
-        tooltip
-          .style('left', event.offsetX + 10 + 'px')
-          .style('top', event.offsetY + 10 + 'px');
+        const [x, y] = d3.pointer(event);
+        tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
       })
-      .on('mouseleave', () => {
-        tooltip.style('display', 'none');
-      });
+      .on('mouseleave', hideTooltip)
+      .on('touchstart', (event, d) => {
+        const [x, y] = d3.pointer(event);
+        showTooltip(x, y, d.name);
+      })
+      .on('touchmove', event => {
+        const [x, y] = d3.pointer(event);
+        tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
+      })
+      .on('touchend touchcancel', hideTooltip);
 
     return () => {
       svg.remove();
