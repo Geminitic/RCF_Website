@@ -109,7 +109,7 @@ const RhizomeCanadaSubpage: React.FC = () => {
             <h1
               className={`rc-heading-1 mb-6 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
             >
-              {t('rhizome-canada-title', 'Rhizome Canada', 'ريزوم كندا')}
+              {t('rhizome-canada-title', 'Rhizome Canada', 'رايزوم كندا')}
             </h1>
 
             <p

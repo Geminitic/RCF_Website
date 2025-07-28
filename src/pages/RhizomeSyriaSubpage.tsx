@@ -68,7 +68,7 @@ const RhizomeSyriaSubpage: React.FC = () => {
             </div>
             
             <h1 className={`rs-heading-1 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
-              {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
+              {t('rhizome-syria-title', 'Rhizome Syria', 'رايزوم سوريا')}
             </h1>
             
             <p className={`rs-body-large text-white/90 max-w-4xl mx-auto mb-8 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>

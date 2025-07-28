@@ -43,7 +43,7 @@ const RhizomeSyriaPage: React.FC = () => {
       role: 'Programs Lead',
       roleAr: 'قائدة البرامج',
       bio: 'Manages Rhizome Syria\'s programmatic portfolio, with a focus on feminist frameworks, coastal civic organizing, and training modules.',
-      bioAr: 'تدير محفظة برامج ريزوم سوريا، مع التركيز على الأطر النسوية والتنظيم المدني الساحلي ووحدات التدريب.',
+      bioAr: 'تدير محفظة برامج رايزوم سوريا، مع التركيز على الأطر النسوية والتنظيم المدني الساحلي ووحدات التدريب.',
       image: 'https://via.placeholder.com/400x400/EF4444/FFFFFF?text=Board+Member'
     }
   ];
@@ -162,7 +162,7 @@ const RhizomeSyriaPage: React.FC = () => {
             </motion.div>
 
             <h1 className="rs-heading-1 mb-6">
-              {t('rhizome-syria-title', 'Rhizome Syria', 'ريزوم سوريا')}
+              {t('rhizome-syria-title', 'Rhizome Syria', 'رايزوم سوريا')}
             </h1>
 
             <motion.p
@@ -174,7 +174,7 @@ const RhizomeSyriaPage: React.FC = () => {
               {t(
                 'rhizome-syria-subtitle',
                 'Syria, Reimagined From the Roots Up.',
-                'صوت سوريا في مؤسسة ريزوم المجتمعية - مستقل، متمحور حول المجتمع، وموحد فوق الانقسامات.'
+                'صوت سوريا في مؤسسة رايزوم المجتمعية - مستقل، متمحور حول المجتمع، وموحد فوق الانقسامات.'
               )}
             </motion.p>
 
@@ -210,13 +210,13 @@ const RhizomeSyriaPage: React.FC = () => {
             className={currentLanguage.code === 'ar' ? 'rs-arabic' : ''}
           >
             <h2 className="rs-heading-2 mb-6">
-              {t('overview-title', 'About Us', 'عن ريزوم سوريا')}
+              {t('overview-title', 'About Us', 'عن رايزوم سوريا')}
             </h2>
             <p className="rs-body-large mb-6">
               {t(
                 'overview-intro',
                 'Rhizome Syria is a network of Syrian civil society leaders, activists, and communities dedicated to rebuilding a cohesive and stable nation through the will and hands of its own people. We are a decentralized alliance of vibrant Syrian voices, bridging the gaps between urban and rural areas, experts and communities, and tradition and innovation. We believe that to build a future that is sustainable in all circumstances, we must operate like a rhizome: an interconnected, non-hierarchical network that grows stronger and more resilient as it expands. With Syrian leadership at our core, we are explicitly anti-sectarian and unaffiliated with any previous regime institutions. We work to strengthen social cohesion through cultural, feminist, and community-led initiatives.',
-                'رايزوم سوريا تجمع كافة الأصوات النابضة في المجتمع المدني السوري ضمن تحالف تكاملي وشبكة عقدية لامركزية. نسعى من خلال هذه المبادرة إلى إعادة بناء سوريا بإرادة أبنائها وسواعدهم. نؤمن بأن التعاون الأفقي والعمودي والتكيف السريع يتطلب نسيجاً تنظيمياً لامركزياً يشبه شبكة الجذمور الطبيعية‏ بلا بداية ولا نهاية ونمو متداخل مستدام في كل الظروف، ومسارات عمل شبكية متكاملة لبناء مجتمع متماسك ومستقر.'
+                  'رايزوم شبكة مجتمع مدني سورية غير مركزية، تؤمن بالتغيير المجتمعي من خلال نموذج تشاركي مفتوح، ينبني على العدالة الاجتماعية، النسوية السياسية، والتحرّر من الهياكل السلطوية التقليدية. نعمل من خلال ربط المبادرات المحلية بالمصادر والبيانات، لتشكيل فضاءات مجتمعية مستقلة تُعيد توزيع السلطة والمعرفة.'
               )}
             </p>
 
@@ -242,7 +242,7 @@ const RhizomeSyriaPage: React.FC = () => {
               {t(
                 'partnership-text',
                 'Rhizome Syria is reimagining international cooperation. We operate in a unique partnership with the Rhizome Community Foundation in Canada. While both organizations are fully independent legal entities, we share governance, coordinate programs, and hold each other accountable through a shared strategic vision. This model ensures Syrian leadership, global connection with local protection, and radical collaboration built on mutual respect and shared goals.',
-                'تعمل ريزوم سوريا بالشراكة مع مؤسسة ريزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
+                'تعمل رايزوم سوريا بالشراكة مع مؤسسة رايزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
               )}
             </p>
           </motion.div>
@@ -276,7 +276,7 @@ const RhizomeSyriaPage: React.FC = () => {
                     {t(
                       'mission-text-1',
                       'Our Mission: To empower Syrian communities to lead their own transformation. We connect local ingenuity with global resources, shifting power from traditional hierarchies to the people themselves.',
-                      'ريزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع ريزوم كندا وتعملان وفق نموذج الإدارة المتداخلة. يحتفظ كل فرع باستقلال قانوني كامل مع تشارك الحوكمة والبرامج المنسقة والمساءلة المتبادلة.'
+                      'رايزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع رايزوم كندا وتعملان وفق نموذج الإدارة المتداخلة. يحتفظ كل فرع باستقلال قانوني كامل مع تشارك الحوكمة والبرامج المنسقة والمساءلة المتبادلة.'
                     )}
                   </p>
                   
@@ -284,7 +284,7 @@ const RhizomeSyriaPage: React.FC = () => {
                     {t(
                       'mission-text-2',
                       'Our Vision: We envision a just and prosperous Syria, where decentralized, community-led development creates a society that is cohesive, self-determined, and empowered from within.',
-                      'تعمل ريزوم سوريا على تعزيز التماسك الاجتماعي من خلال المبادرات الثقافية والنسوية والمجتمعية. وهي غير منتسبة لأي مؤسسات نظام سابقة وهي صراحة مناهضة للطائفية.'
+                      'تعمل رايزوم سوريا على تعزيز التماسك الاجتماعي من خلال المبادرات الثقافية والنسوية والمجتمعية. وهي غير منتسبة لأي مؤسسات نظام سابقة وهي صراحة مناهضة للطائفية.'
                     )}
                   </p>
                 </div>
@@ -321,7 +321,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   {t(
                       'structure-text',
                       'We operate in close partnership with the Rhizome Community Foundation in Canada. Both organizations remain independent while sharing governance, coordinating programs, and holding each other accountable through a common strategic vision.',
-                      'تعمل ريزوم سوريا وريزوم كندا ككيانين قانونيين منفصلين في إطار اتفاقية مشروع مشترك وبهيكل إدارة متداخلة، مما يتيح التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المشتركة.'
+                      'تعمل رايزوم سوريا ورايزوم كندا ككيانين قانونيين منفصلين في إطار اتفاقية مشروع مشترك وبهيكل إدارة متداخلة، مما يتيح التخطيط الاستراتيجي المنسق وتبادل المعرفة والمساءلة المشتركة.'
                     )}
                 </p>
               </div>
@@ -348,7 +348,7 @@ const RhizomeSyriaPage: React.FC = () => {
               {t(
                 'activities-description',
                 'Rhizome Syria operates a decentralized network of local partnerships while maintaining full adaptability in its engagement with formal and informal structures.',
-                'تدير ريزوم سوريا شبكة لامركزية من الشراكات المحلية مع الحفاظ على قدرة تكيف كاملة في تفاعلها مع الهياكل الرسمية وغير الرسمية.'
+                'تدير رايزوم سوريا شبكة لامركزية من الشراكات المحلية مع الحفاظ على قدرة تكيف كاملة في تفاعلها مع الهياكل الرسمية وغير الرسمية.'
               )}
             </p>
           </motion.div>

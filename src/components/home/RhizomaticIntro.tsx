@@ -198,7 +198,7 @@ const RhizomaticIntro: React.FC = () => {
               }}
               transition={{ duration: 5, repeat: Infinity }}
             >
-              {t('hero-title', 'Rhizome Syria', 'ريزوم سوريا')}
+              {t('hero-title', 'Rhizome Syria', 'رايزوم سوريا')}
             </motion.h1>
             
             <motion.p

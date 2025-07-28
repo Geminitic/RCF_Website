@@ -101,7 +101,7 @@ const ContactPage: React.FC = () => {
   const offices = [
     {
       name: 'Rhizome Canada',
-      nameAr: 'ريزوم كندا',
+      nameAr: 'رايزوم كندا',
       address: '2028 157 St S.W, T6W 5ER Edmonton, Canada',
       addressAr: '2028 157 ستريت جنوب غرب، T6W 5ER، إدمونتون، كندا',
       phone: '+1 (416) 555-0123',
@@ -113,7 +113,7 @@ const ContactPage: React.FC = () => {
     },
     {
       name: 'Rhizome Syria',
-      nameAr: 'ريزوم سوريا',
+      nameAr: 'رايزوم سوريا',
       address:
         'Latakia Sheikh Daher Square, 1st floor facing Saladin bookstore',
       addressAr:

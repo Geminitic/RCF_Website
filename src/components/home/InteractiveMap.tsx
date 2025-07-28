@@ -27,7 +27,7 @@ const InteractiveMap: React.FC = () => {
       name: 'Latakia (HQ)',
       nameAr: 'اللاذقية (المقر الرئيسي)',
       description: 'Headquarters of Rhizome Syria',
-      descriptionAr: 'المقر الرئيسي لريزوم سوريا'
+      descriptionAr: 'المقر الرئيسي لرايزوم سوريا'
     },
     {
       id: 'aleppo',

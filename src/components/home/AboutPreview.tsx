@@ -45,7 +45,7 @@ const AboutPreview: React.FC = () => {
               {t(
                 'about-description',
                 'At the Rhizome Community Foundation, we believe in the power of communities to craft their own solutions. Like our namesake, we spread horizontally, creating resilient networks that adapt, grow, and thrive even in challenging environments. We work to alleviate poverty, advance education, and promote health through community-centered approaches that honor local wisdom and build sustainable pathways to wellbeing.',
-                'في مؤسسة ريزوم المجتمعية نؤمن بقدرة المجتمعات على ابتكار حلولها الخاصة. مثل نبتة الريزوم، نتمدّد أفقياً لننشئ شبكات مرنة تتكيف وتنمو رغم الظروف الصعبة. نعمل على تخفيف الفقر وتعزيز التعليم والصحة من خلال أساليب مجتمعية تحترم المعرفة المحلية وتبني مسارات مستدامة للعافية.'
+                'في مؤسسة رايزوم المجتمعية نؤمن بقدرة المجتمعات على ابتكار حلولها الخاصة. مثل نبتة الرايزوم، نتمدّد أفقياً لننشئ شبكات مرنة تتكيف وتنمو رغم الظروف الصعبة. نعمل على تخفيف الفقر وتعزيز التعليم والصحة من خلال أساليب مجتمعية تحترم المعرفة المحلية وتبني مسارات مستدامة للعافية.'
               )}
             </p>
 

@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
       key: 'rhizome-syria',
       path: '/rhizome-syria',
       en: 'Rhizome Syria',
-      ar: 'ريزوم سوريا',
+      ar: 'رايزوم سوريا',
     },
     {
       key: 'knowledge',
@@ -69,7 +69,7 @@ const Navigation: React.FC = () => {
                 className={`${currentLanguage.code === 'ar' ? 'font-arabic text-xs' : 'text-xs'}`}
               >
                 <div className="font-bold text-sm bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent">
-                  {t('nav-title', 'Rhizome Community', 'ريزوم المجتمعية')}
+                  {t('nav-title', 'Rhizome Community', 'رايزوم المجتمعية')}
                 </div>
                 <div className="text-xs text-stone-600">
                   {t('nav-subtitle', 'Foundation', 'مؤسسة')}
