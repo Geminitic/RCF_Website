@@ -41,6 +41,19 @@ const SyrianCitiesMap: React.FC = () => {
       .style('font-size', '12px')
       .style('display', 'none');
 
+    const show = (event: any, d: { name: string }) => {
+      const [x, y] = d3.pointer(event);
+      tooltip
+        .style('display', 'block')
+        .style('left', x + 10 + 'px')
+        .style('top', y + 10 + 'px')
+        .text(d.name);
+    };
+
+    const hide = () => {
+      tooltip.style('display', 'none');
+    };
+
     svg
       .selectAll('circle')
       .data(syrianCities)
@@ -48,19 +61,14 @@ const SyrianCitiesMap: React.FC = () => {
       .append('circle')
       .attr('cx', d => xScale(d.lng))
       .attr('cy', d => yScale(d.lat))
-      .attr('r', 2)
+      .attr('r', 3)
       .attr('fill', '#b91c1c')
-      .on('mouseenter', (event, d) => {
-        tooltip.style('display', 'block').text(d.name);
-      })
-      .on('mousemove', event => {
-        tooltip
-          .style('left', event.offsetX + 10 + 'px')
-          .style('top', event.offsetY + 10 + 'px');
-      })
-      .on('mouseleave', () => {
-        tooltip.style('display', 'none');
-      });
+      .on('mouseenter', show)
+      .on('mousemove', show)
+      .on('mouseleave', hide)
+      .on('touchstart', show)
+      .on('touchmove', show)
+      .on('touchend', hide);
 
     return () => {
       svg.remove();
@@ -75,9 +83,8 @@ const SyrianCitiesMap: React.FC = () => {
         position: 'relative',
         width: `${width}px`,
         height: `${height}px`,
-        backgroundImage: "url('/slide0007_image015.png')",
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#fff',
+        border: '1px solid #e5e7eb',
         margin: '0 auto',
       }}
     />
