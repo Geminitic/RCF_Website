@@ -31,7 +31,7 @@ const VolunteerForms: React.FC = () => {
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
         <input type="hidden" name="form-name" value="rhizome-syria-volunteer" />
-        <h3 className="text-xl font-bold text-emerald-700">تطوع مع ريزوم سوريا</h3>
+        <h3 className="text-xl font-bold text-emerald-700">تطوع مع رايزوم سوريا</h3>
         <input type="text" name="name" placeholder="الاسم" className="w-full border p-2 rounded text-right" required />
         <input type="email" name="email" placeholder="البريد الإلكتروني" className="w-full border p-2 rounded text-right" required />
         <textarea name="message" placeholder="حدثنا عن نفسك" className="w-full border p-2 rounded text-right" />

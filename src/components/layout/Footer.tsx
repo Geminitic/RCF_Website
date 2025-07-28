@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                 {t(
                   'footer-title',
                   'Rhizome Community Foundation',
-                  'مؤسسة ريزوم المجتمعية'
+                  'مؤسسة رايزوم المجتمعية'
                 )}
               </h3>
             </div>
@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
             {t(
               'copyright',
               '© 2024 Rhizome Community Foundation. All rights reserved.',
-              '© 2024 مؤسسة ريزوم المجتمعية. جميع الحقوق محفوظة.'
+              '© 2024 مؤسسة رايزوم المجتمعية. جميع الحقوق محفوظة.'
             )}
           </p>
           <p
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
             {t(
               'legal-information',
               'Legal Information: Rhizome Community Foundation is federally incorporated under the Canada Not-for-profit Corporations Act. Corporation Number: 1672383-7.',
-              'المعلومات القانونية: مؤسسة ريزوم المجتمعية مسجلة اتحاديًا بموجب قانون المؤسسات غير الربحية الكندي. رقم المؤسسة: 1672383-7.'
+              'المعلومات القانونية: مؤسسة رايزوم المجتمعية مسجلة اتحاديًا بموجب قانون المؤسسات غير الربحية الكندي. رقم المؤسسة: 1672383-7.'
             )}
           </p>
         </div>

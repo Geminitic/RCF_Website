@@ -223,7 +223,7 @@ const HeroSection: React.FC = () => {
             {t(
               'hero-title',
               'Rhizome Community Foundation',
-              'مؤسسة ريزوم المجتمعية'
+              'مؤسسة رايزوم المجتمعية'
             )}
           </motion.h1>
 

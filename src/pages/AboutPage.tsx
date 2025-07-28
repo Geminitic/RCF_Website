@@ -9,11 +9,11 @@ const AboutPage: React.FC = () => {
     {
       year: 'December 2024',
       title: 'Rhizome Syria & Diaspora Work Group Formation',
-      titleAr: 'تشكيل مجموعة عمل ريزوم سوريا والشتات',
+      titleAr: 'تشكيل مجموعة عمل رايزوم سوريا والشتات',
       description:
         'Rhizome Syria & Diaspora Work Group formed in the wake of major political changes in Syria, marking a new chapter in Syrian community organizing.',
       descriptionAr:
-        'تشكلت مجموعة عمل ريزوم سوريا والشتات في أعقاب التغييرات السياسية الكبرى في سوريا، مما يمثل فصلاً جديداً في التنظيم المجتمعي السوري.',
+        'تشكلت مجموعة عمل رايزوم سوريا والشتات في أعقاب التغييرات السياسية الكبرى في سوريا، مما يمثل فصلاً جديداً في التنظيم المجتمعي السوري.',
     },
     {
       year: 'February 2025',
@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
       description:
         'Rhizome Community Foundation achieves federal registration in Canada. Board members: Syrian, Indian, and Filipina originated Canadians.',
       descriptionAr:
-        'حققت مؤسسة مجتمع الريزوم التسجيل الفيدرالي في كندا. أعضاء مجلس الإدارة: كنديون من أصول سورية وهندية وفلبينية.',
+        'حققت مؤسسة مجتمع الرايزوم التسجيل الفيدرالي في كندا. أعضاء مجلس الإدارة: كنديون من أصول سورية وهندية وفلبينية.',
     },
     {
       year: 'March 2025',
@@ -36,11 +36,11 @@ const AboutPage: React.FC = () => {
     {
       year: 'April 2025',
       title: 'Rhizome Network Syria Launch',
-      titleAr: 'إطلاق شبكة ريزوم سوريا',
+      titleAr: 'إطلاق شبكة رايزوم سوريا',
       description:
         'Launch of Rhizome Network Syria. Rhizome formed two new partnerships, including a 300-volunteer team in North Syria.',
       descriptionAr:
-        'إطلاق شبكة ريزوم سوريا. شكّلت ريزوم شراكتين جديدتين، إحداهما فريق يضم 300 متطوع في شمال سوريا.',
+        'إطلاق شبكة رايزوم سوريا. شكّلت رايزوم شراكتين جديدتين، إحداهما فريق يضم 300 متطوع في شمال سوريا.',
     },
     {
       year: 'April 15 2025',
@@ -95,7 +95,7 @@ const AboutPage: React.FC = () => {
       description:
         'Launch of Digital Literacy & Media Empowerment Initiative and Innovation Hub in Latakia. Rhizome Syria forms its board and seeks legal registration.',
       descriptionAr:
-        'إطلاق مبادرة محو الأمية الرقمية وتمكين الإعلام ومركز الابتكار في اللاذقية. تشكل ريزوم سوريا مجلس إدارتها وتسعى للتسجيل القانوني.',
+        'إطلاق مبادرة محو الأمية الرقمية وتمكين الإعلام ومركز الابتكار في اللاذقية. تشكل رايزوم سوريا مجلس إدارتها وتسعى للتسجيل القانوني.',
     },
     // Timeline entries beyond June 2025 have been removed until completed
   ];
@@ -103,7 +103,7 @@ const AboutPage: React.FC = () => {
   const branches = [
     {
       name: 'Rhizome Syria',
-      nameAr: 'ريزوم سوريا',
+      nameAr: 'رايزوم سوريا',
       location: 'Damascus, Aleppo, Homs, Latakia',
       locationAr: 'دمشق، حلب، حمص، اللاذقية',
       focus: 'On-ground community building and direct support',
@@ -114,7 +114,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: 'Rhizome Canada',
-      nameAr: 'ريزوم كندا',
+      nameAr: 'رايزوم كندا',
       location: 'Edmonton, Toronto, Montreal, Vancouver',
       locationAr: 'إدمونتون، تورونتو، مونتريال، فانكوفر',
       focus: 'Diaspora engagement and international coordination',
@@ -161,7 +161,7 @@ const AboutPage: React.FC = () => {
   const partners = [
     {
       name: 'Anamil Baidaa Volunteer Team',
-      nameAr: 'فريق متطوعي أناميل بيضاء',
+      nameAr: 'فريق متطوعي أنامل بيضاء',
       description:
         'Dedicated volunteer network providing grassroots support and community organizing across multiple regions.',
       descriptionAr:
@@ -224,14 +224,14 @@ const AboutPage: React.FC = () => {
               {t(
                 'about-title',
                 'About Rhizome Community Foundation',
-                'عن مؤسسة ريزوم المجتمعية'
+                'عن مؤسسة رايزوم المجتمعية'
               )}
             </h1>
             <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
               {t(
                 'about-subtitle',
                 'Rhizome Syria gathers the vibrant voices of civil society into a decentralized network. We believe sustainable growth comes from interwoven, community-led pathways that adapt in every circumstance.',
-                'يجمع ريزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
+                'يجمع رايزوم سوريا الأصوات النابضة في المجتمع المدني بشبكة لامركزية. نؤمن بأن النمو المستدام يأتي من مسارات مجتمعية متداخلة قادرة على التكيف في كل الظروف.'
               )}
             </p>
           </motion.div>
@@ -279,7 +279,7 @@ const AboutPage: React.FC = () => {
                 <h2
                   className={`text-3xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
-                  {t('our-mission', 'Our Purpose', 'رسالتنا')}
+                  {t('our-mission', 'Our Purpose', 'مهمتنا')}
                 </h2>
               </div>
               <p
@@ -288,7 +288,7 @@ const AboutPage: React.FC = () => {
                 {t(
                   'mission-text',
                   'We empower underrepresented communities through local solutions that build resilience, leadership, and sustainable development.',
-                  'نمكن المجتمعات المهمشة من خلال حلول محلية تبني المرونة والقيادة والتنمية المستدامة.'
+                  'نعمل على تفكيك الأنظمة المركزية واستبدالها بشبكات تفاعلية مرنة، تعطي الأولوية للمشاركة الشعبية، والتواصل الأفقي بين المجتمعات المحلية. نستثمر في المعرفة المفتوحة، الفنون، والتكنولوجيا لتعزيز قدرات المجتمعات السورية داخل وخارج سوريا.'
                 )}
               </p>
             </motion.div>
@@ -305,7 +305,7 @@ const AboutPage: React.FC = () => {
                 <h2
                   className={`text-3xl font-bold text-stone-900 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
                 >
-                  {t('our-vision', 'Our Aspiration', 'تطلعنا')}
+                  {t('our-vision', 'Our Aspiration', 'رؤيتنا')}
                 </h2>
               </div>
               <p
@@ -314,7 +314,7 @@ const AboutPage: React.FC = () => {
                 {t(
                   'vision-text',
                   'A world where communities of heritage facing local and global exclusion such as Syrians, Queer Asians, and Indigenous peoples of Turtle Island flourish through interconnected support systems, where cultural identity is celebrated and preserved, and where every individual has the power to contribute to transformative social change.',
-                  'عالم تزدهر فيه مجتمعات الإرث التي تواجه الإقصاء المحلي والعالمي مثل السوريين والآسيويين الكوير والسكان الأصليين في جزيرة السلحفاة من خلال أنظمة دعم مترابطة، حيث تُحتفى بالهوية الثقافية وتُحفظ، وحيث يملك كل فرد القدرة على المساهمة في التغيير الاجتماعي التحويلي.'
+                  'مجتمعات عادلة قادرة على التغيير الذاتي، يكون فيها الصوت النسوي محركًا مركزيًا لإعادة صياغة العلاقات الاجتماعية والسياسية، وتُبنى فيها السلطة من الأسفل نحو الأعلى.'
                 )}
               </p>
             </motion.div>

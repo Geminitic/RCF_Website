@@ -19,7 +19,7 @@ const Header: React.FC = () => {
           transition={{ duration: 1.5, ease: [0.55, 0.085, 0.68, 0.53] }}
           className="text-4xl md:text-5xl font-semibold mb-4 bg-gradient-to-r from-teal-400 via-emerald-400 to-yellow-400 bg-clip-text text-transparent"
         >
-          {t('title', 'Rhizome Syria', 'ريزوم سوريا')}
+          {t('title', 'Rhizome Syria', 'رايزوم سوريا')}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
