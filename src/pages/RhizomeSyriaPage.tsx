@@ -35,7 +35,7 @@ const RhizomeSyriaPage: React.FC = () => {
       roleAr: 'الاستراتيجية والتوعية',
       bio: 'Guides long-term planning and stakeholder engagement, focusing on interregional networks and strategic alliances.',
       bioAr: 'توجه التخطيط طويل المدى ومشاركة أصحاب المصلحة، مع التركيز على الشبكات بين المناطق والتحالفات الاستراتيجية.',
-      image: 'https://via.placeholder.com/400x400/F97316/FFFFFF?text=Board+Member'
+      image: 'https://via.placeholder.com/400x400/fb923c/FFFFFF?text=Board+Member'
     },
     {
       name: 'Silva Ismael',
@@ -115,9 +115,9 @@ const RhizomeSyriaPage: React.FC = () => {
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
-          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-orange-300 to-red-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-15 animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-br from-yellow-400 to-orange-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }} />
         </div>
 
         {/* Spiral Pattern Overlay */}
@@ -127,7 +127,7 @@ const RhizomeSyriaPage: React.FC = () => {
               <linearGradient id="spiralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#6B46C1" />
                 <stop offset="25%" stopColor="#0EA5E9" />
-                <stop offset="50%" stopColor="#F97316" />
+                <stop offset="50%" stopColor="#fb923c" />
                 <stop offset="75%" stopColor="#EF4444" />
                 <stop offset="100%" stopColor="#F59E0B" />
               </linearGradient>
@@ -184,7 +184,7 @@ const RhizomeSyriaPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-400 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center">
                   <Sparkles className="h-5 w-5 mr-2 group-hover:animate-spin" />
                   {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
@@ -309,7 +309,7 @@ const RhizomeSyriaPage: React.FC = () => {
               
               <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 rounded-2xl p-6 shadow-xl border border-orange-200">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center mr-3">
                     <Globe className="h-5 w-5 text-white" />
                   </div>
                   <h3 className={`rs-heading-3 text-orange-800 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
@@ -341,7 +341,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-400 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
               {t('current-activities', 'Current Activities', 'الأنشطة الحالية')}
             </h2>
             <p className={`rs-body-large text-gray-600 max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
@@ -377,7 +377,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   description: 'Facilitating participatory workshops that build trust, resolve conflict, and foster social cohesion across diverse communities.',
                 descriptionAr: 'ورش عمل تشاركية في المناطق الشمالية والوسطى.',
                 icon: Shield,
-                gradient: 'from-orange-500 to-red-500'
+                gradient: 'from-orange-400 to-red-500'
               },
                 {
                   title: 'Digital Storytelling & Memory Preservation',
@@ -393,7 +393,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   description: 'Developing local fundraising initiatives that empower communities to generate and manage their own resources independently.',
                   descriptionAr: 'منصات مجتمعية ومبادرات جمع التبرعات على الساحل.',
                   icon: Target,
-                  gradient: 'from-yellow-500 to-orange-500'
+                  gradient: 'from-yellow-500 to-orange-400'
                 }
             ].map((activity, index) => (
               <motion.div
@@ -436,7 +436,7 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-500 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+            <h2 className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-400 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
               {t('our-board-syria', 'Syria Team', 'فريق سوريا')}
             </h2>
           </motion.div>
@@ -475,7 +475,7 @@ const RhizomeSyriaPage: React.FC = () => {
 
         {/* Call to Action with Spiral Design */}
         <section className="rs-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-500 to-red-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-400 to-red-500" />
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M50,50 Q20,20 50,5 Q80,20 95,50 Q80,80 50,95 Q20,80 5,50 Q20,20 50,50" 
