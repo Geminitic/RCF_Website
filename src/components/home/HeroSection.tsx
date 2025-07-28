@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+// Logo image placed in the public directory
+import LogoImage from '/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png';
 
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -211,6 +213,15 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1 }}
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
+          {/* Logo animation above the hero text */}
+          <motion.img
+            src={LogoImage}
+            alt="Rhizome logo"
+            className="mx-auto h-24 w-auto mb-6 drop-shadow-lg"
+            initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.2 }}
+          />
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 text-white"
             initial={{ opacity: 0, scale: 0.8 }}
