@@ -47,6 +47,22 @@ const HeroSection: React.FC = () => {
     ];
     const nodeCount = 40;
 
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+    let clickForce = 0;
+
+    const handleMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    const handleClick = () => {
+      clickForce = 1;
+    };
+
+    canvas.addEventListener('mousemove', handleMove);
+    canvas.addEventListener('click', handleClick);
+
     // Initialize nodes with more organic properties
     for (let i = 0; i < nodeCount; i++) {
       nodes.push({
@@ -88,6 +104,16 @@ const HeroSection: React.FC = () => {
 
       // Update nodes with more organic movement
       nodes.forEach((node) => {
+        const dx = node.x - mouseX;
+        const dy = node.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+        if (dist < 120) {
+          const force = ((clickForce > 0 ? 0.4 : 0.1) * (120 - dist)) / 120;
+          node.vx += (dx / dist) * force;
+          node.vy += (dy / dist) * force;
+        }
+
         node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
         node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
 
@@ -180,6 +206,7 @@ const HeroSection: React.FC = () => {
         ctx.fill();
       });
 
+      clickForce *= 0.95;
       animationFrame = requestAnimationFrame(animate);
     };
 
@@ -187,6 +214,8 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMove);
+      canvas.removeEventListener('click', handleClick);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
