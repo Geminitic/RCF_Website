@@ -156,6 +156,16 @@ const AboutPage: React.FC = () => {
         'يتنقل عامر بسلاسة بين أروقة السياسة والمجتمعات الشعبية، مازجاً بين الصرامة الاستراتيجية والتعاطف الحقيقي. تشكلت خبراته عبر غرف الأخبار السورية وعلاقات ألبرتا مع السكان الأصليين ومبادرات مكافحة العنصرية، مما يمنحه فهماً عميقاً لكيفية تسخير القوة المؤسسية للتغيير الهادف.',
       image: '/amer.jpeg',
     },
+    {
+      name: 'Abdullah Akkari',
+      nameAr: 'عبدالله عكاري',
+      role: 'Board Member',
+      roleAr: 'عضو مجلس إدارة',
+      bio: "Abdullah Akkari is a Syrian designer and project manager based in Italy. Drawing from extensive firsthand experience with NGOs in Beirut, Abdullah excels in strategic relationship-building, team management, and impactful communication. His combined strength in organizational leadership and creative design brings a uniquely dynamic and effective perspective to Rhizome's initiatives.",
+      bioAr:
+        'عبدالله عكاري مصمم ومدير مشاريع سوري مقيم في إيطاليا. يملك خبرة واسعة اكتسبها مباشرةً من العمل مع المنظمات غير الحكومية في بيروت، ويتميّز ببراعته في بناء العلاقات الاستراتيجية، وإدارة الفِرق، والتواصل الفعّال، بالإضافة إلى رؤيته الإبداعية في التصميم. يجمع عبدالله بين القيادة التنظيمية والفكر الإبداعي، مما يضيف منظوراً فريداً وفاعلاً لمبادرات رايزوم.',
+      image: '/abdullah.jpeg',
+    },
   ];
 
   const partners = [
@@ -249,7 +259,9 @@ const AboutPage: React.FC = () => {
             Rhizome Community Foundation was established in 2025 by Amer,
             Akshya, and Sarah—three Edmonton-based advocates with strong
             international ties connecting India, the Philippines, Syria, and
-            Canada—alongside Aboudi, a Syrian designer based in Italy. Inspired
+            Canada—alongside Abdullah Akkari, a Syrian designer and project
+            manager based in Italy with extensive firsthand NGO experience in
+            Beirut. Inspired
             by the urgent need for community-driven solutions after the
             defunding of Edmonton's social sector, and recognizing the
             opportunity for meaningful action in post-Assad Syria, our founders
