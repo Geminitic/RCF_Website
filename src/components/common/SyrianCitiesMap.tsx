@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import syriaDots from '../../data/syria_dots.json';
+import syrianCities from '../../data/syrian_cities.json';
 
 const width = 378;
 const height = 368;
@@ -21,9 +21,32 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const dots = (syriaDots as { x: number; y: number }[]).map((d, i) => ({
-      ...d,
-      name: `Town ${i + 1}`,
+    const latExtent = d3.extent(
+      syrianCities as { lat: number; lng: number }[],
+      (d) => d.lat
+    ) as [number, number];
+    const lngExtent = d3.extent(
+      syrianCities as { lat: number; lng: number }[],
+      (d) => d.lng
+    ) as [number, number];
+
+    const xScale = d3
+      .scaleLinear()
+      .domain(lngExtent)
+      .range([0, width])
+      .clamp(true);
+    const yScale = d3
+      .scaleLinear()
+      .domain(latExtent)
+      .range([height, 0])
+      .clamp(true);
+
+    const dots = (
+      syrianCities as { name: string; lat: number; lng: number }[]
+    ).map((c) => ({
+      x: Math.round(xScale(c.lng)),
+      y: Math.round(yScale(c.lat)),
+      name: c.name,
     }));
 
     const tooltip = d3
@@ -61,15 +84,18 @@ const SyrianCitiesMap: React.FC = () => {
     gradient.append('stop').attr('offset', '0%').attr('stop-color', '#6B46C1');
     gradient.append('stop').attr('offset', '33%').attr('stop-color', '#0EA5E9');
     gradient.append('stop').attr('offset', '66%').attr('stop-color', '#fb923c');
-    gradient.append('stop').attr('offset', '100%').attr('stop-color', '#EF4444');
+    gradient
+      .append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', '#EF4444');
 
     const circles = svg
       .selectAll('circle')
       .data(dots)
       .enter()
       .append('circle')
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y)
+      .attr('cx', (d) => d.x)
+      .attr('cy', (d) => d.y)
       .attr('r', 1.5)
       .attr('fill', 'url(#cityGradient)');
 
@@ -78,7 +104,7 @@ const SyrianCitiesMap: React.FC = () => {
         const [x, y] = d3.pointer(event);
         showTooltip(x, y, d.name);
       })
-      .on('mousemove', event => {
+      .on('mousemove', (event) => {
         const [x, y] = d3.pointer(event);
         tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
       })
@@ -87,7 +113,7 @@ const SyrianCitiesMap: React.FC = () => {
         const [x, y] = d3.pointer(event);
         showTooltip(x, y, d.name);
       })
-      .on('touchmove', event => {
+      .on('touchmove', (event) => {
         const [x, y] = d3.pointer(event);
         tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
       })
