@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import syriaDots from '../../data/syria_dots.json';
+import syrianCities from '../../data/syrian_cities.json';
 
 const width = 378;
 const height = 368;
@@ -21,10 +21,23 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const dots = (syriaDots as { x: number; y: number }[]).map((d, i) => ({
-      ...d,
-      name: `Town ${i + 1}`,
-    }));
+    const [minLat, maxLat] = d3.extent(syrianCities, d => d.lat) as [number, number];
+    const [minLng, maxLng] = d3.extent(syrianCities, d => d.lng) as [number, number];
+    const marginX = 12;
+    const marginY = 10;
+
+    const project = (lat: number, lng: number) => ({
+      x:
+        ((lng - minLng) / (maxLng - minLng)) * (width - 2 * marginX) +
+        marginX,
+      y:
+        ((maxLat - lat) / (maxLat - minLat)) * (height - 2 * marginY) +
+        marginY,
+    });
+
+    const dots = syrianCities
+      .map(city => ({ ...project(city.lat, city.lng), name: city.name }))
+      .filter(d => d.x >= 0 && d.x <= width && d.y >= 0 && d.y <= height);
 
     const tooltip = d3
       .select(container)
