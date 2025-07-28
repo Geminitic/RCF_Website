@@ -5,7 +5,8 @@
   /* Primary Colors from Logo */
   --rs-primary-purple: #6B46C1;
   --rs-primary-blue: #0EA5E9;
-  --rs-primary-orange: #F97316;
+  /* Softer orange for a less intense palette */
+  --rs-primary-orange: #FDBA74;
   --rs-primary-red: #EF4444;
   --rs-primary-yellow: #F59E0B;
   
