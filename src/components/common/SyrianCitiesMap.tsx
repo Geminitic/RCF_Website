@@ -41,26 +41,47 @@ const SyrianCitiesMap: React.FC = () => {
       .style('font-size', '12px')
       .style('display', 'none');
 
-    svg
+    const showTooltip = (x: number, y: number, name: string) => {
+      tooltip
+        .style('display', 'block')
+        .style('left', x + 10 + 'px')
+        .style('top', y + 10 + 'px')
+        .text(name);
+    };
+
+    const hideTooltip = () => {
+      tooltip.style('display', 'none');
+    };
+
+    const circles = svg
       .selectAll('circle')
       .data(syrianCities)
       .enter()
       .append('circle')
       .attr('cx', d => xScale(d.lng))
       .attr('cy', d => yScale(d.lat))
-      .attr('r', 2)
-      .attr('fill', '#b91c1c')
+      .attr('r', 3)
+      .attr('fill', '#b91c1c');
+
+    circles
       .on('mouseenter', (event, d) => {
-        tooltip.style('display', 'block').text(d.name);
+        const [x, y] = d3.pointer(event);
+        showTooltip(x, y, d.name);
       })
       .on('mousemove', event => {
-        tooltip
-          .style('left', event.offsetX + 10 + 'px')
-          .style('top', event.offsetY + 10 + 'px');
+        const [x, y] = d3.pointer(event);
+        tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
       })
-      .on('mouseleave', () => {
-        tooltip.style('display', 'none');
-      });
+      .on('mouseleave', hideTooltip)
+      .on('touchstart', (event, d) => {
+        const [x, y] = d3.pointer(event);
+        showTooltip(x, y, d.name);
+      })
+      .on('touchmove', event => {
+        const [x, y] = d3.pointer(event);
+        tooltip.style('left', x + 10 + 'px').style('top', y + 10 + 'px');
+      })
+      .on('touchend touchcancel', hideTooltip);
 
     return () => {
       svg.remove();
@@ -75,9 +96,7 @@ const SyrianCitiesMap: React.FC = () => {
         position: 'relative',
         width: `${width}px`,
         height: `${height}px`,
-        backgroundImage: "url('/slide0007_image015.png')",
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f9fafb',
         margin: '0 auto',
       }}
     />
