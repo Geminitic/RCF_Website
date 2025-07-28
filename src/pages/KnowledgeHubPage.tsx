@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 
 const KnowledgeHubPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,7 +27,19 @@ const KnowledgeHubPage: React.FC = () => {
       });
   }, []);
 
-  return <div ref={containerRef} />;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="px-4 py-8"
+    >
+      <div className="flex justify-center mb-10">
+        <SyrianCitiesMap />
+      </div>
+      <div ref={containerRef} />
+    </motion.div>
+  );
 };
 
 export default KnowledgeHubPage;
