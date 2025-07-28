@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import LogoImage from '/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const HeroSection: React.FC = () => {
@@ -211,8 +212,17 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1 }}
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
+        <motion.img
+          src={LogoImage}
+          alt="Rhizome logo"
+          className="mx-auto mb-6 h-24 w-auto"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
+
+        <motion.h1
+          className="text-5xl md:text-7xl font-bold mb-6 text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
