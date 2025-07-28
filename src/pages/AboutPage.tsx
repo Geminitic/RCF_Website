@@ -131,9 +131,9 @@ const AboutPage: React.FC = () => {
       nameAr: 'أكشيا',
       role: 'Board Member',
       roleAr: 'عضو مجلس إدارة',
-      bio: 'Akshya moves through communities with curiosity and care, blending psychology, anthropology, and a deep commitment to social justice. With roots stretching from Chennai, through Kuwait and Saudi Arabia, to amiskwacîwâskahikan (Edmonton), they understand intimately how cultural histories and systemic challenges shape our shared realities.',
+      bio: 'Akshya moves through communities with curiosity and care, blending psychology, anthropology, and a deep commitment to social justice. With roots stretching from Chennai, through Kuwait and Saudi Arabia, to amiskwacîwâskahikan (Edmonton), they intimately understand how cultural histories and systemic challenges shape our shared realities.',
       bioAr:
-        'تتنقل أكشيا عبر المجتمعات بفضول واهتمام، مازجة بين علم النفس والأنثروبولوجيا والالتزام العميق بالعدالة الاجتماعية. مع جذور تمتد من تشيناي، عبر الكويت والسعودية، إلى إدمونتون، تفهم بشكل وثيق كيف تشكل التواريخ الثقافية والتحديات النظامية واقعنا المشترك.',
+        'تتنقل أكشيا بين المجتمعات بفضول واهتمام، مازجة بين علم النفس والأنثروبولوجيا والتزام عميق بالعدالة الاجتماعية. مع جذور تمتد من تشيناي مروراً بالكويت والسعودية وصولاً إلى إدمونتون (أميسكواتشي واسكاهكان)، تفهم بعمق كيف تشكل التواريخ الثقافية والتحديات البنيوية واقعنا المشترك.',
       image: '/akshya.jpeg',
     },
     {
@@ -141,9 +141,9 @@ const AboutPage: React.FC = () => {
       nameAr: 'سارة',
       role: 'Board Member',
       roleAr: 'عضو مجلس إدارة',
-      bio: "Sarah is a creative force and community catalyst shaped by early experiences in a Philippine hometown and a lifelong connection to Edmonton's Chinatown. Observing firsthand how communities flourish through collaboration, and falter without it, they dedicate themselves tirelessly to community wellness.",
+      bio: "Sarah is a creative force and community catalyst shaped by early experiences in a Philippine hometown and a lifelong connection to Edmonton's Chinatown. Observing firsthand how communities flourish through collaboration and falter without it, they dedicate themselves tirelessly to community wellness.",
       bioAr:
-        'سارة قوة إبداعية ومحفز مجتمعي تشكلت من خلال تجارب مبكرة في مسقط رأس في الفلبين وارتباط مدى الحياة بحي الصينيين في إدمونتون. من خلال الملاحظة المباشرة لكيفية ازدهار المجتمعات عبر التعاون وتعثرها بدونه، تكرس نفسها بلا كلل لرفاهية المجتمع.',
+        'سارة قوة إبداعية ومحفّز مجتمعي، تشكّلت من تجارب مبكرة في مسقط رأسها في الفلبين وارتباط عميق ومستمر بحيّ الصينيين في إدمونتون. من خلال الملاحظة المباشرة لكيفية ازدهار المجتمعات عبر التعاون وتعثرها بدونه، تكرّس نفسها بلا كلل لتعزيز رفاه المجتمع.',
       image: '/sarah.jpeg',
     },
     {
@@ -151,10 +151,20 @@ const AboutPage: React.FC = () => {
       nameAr: 'عامر',
       role: 'Board Member',
       roleAr: 'عضو مجلس إدارة',
-      bio: "Amer moves seamlessly between policy corridors and grassroots communities, blending strategic rigor with genuine empathy. Shaped by experiences spanning Syrian newsrooms, Alberta's Indigenous relations, and anti-racism initiatives, they intimately understand how institutional power can be harnessed for meaningful change.",
+      bio: "Amer moves seamlessly between policy corridors and grassroots communities, blending strategic rigor with genuine empathy. Shaped by experiences spanning Coverage in Syria and Lebanon, Alberta's Indigenous relations, and anti-racism initiatives, they intimately understand how institutional power can be harnessed for meaningful change.",
       bioAr:
-        'يتنقل عامر بسلاسة بين أروقة السياسة والمجتمعات الشعبية، مازجاً بين الصرامة الاستراتيجية والتعاطف الحقيقي. تشكلت خبراته عبر غرف الأخبار السورية وعلاقات ألبرتا مع السكان الأصليين ومبادرات مكافحة العنصرية، مما يمنحه فهماً عميقاً لكيفية تسخير القوة المؤسسية للتغيير الهادف.',
+        'يتنقل عامر بسلاسة بين أروقة السياسات والمجتمعات الشعبية، جامعاً بين الصرامة الاستراتيجية والتعاطف الأصيل. تشكلت تجربته بين العمل الصحفي في سوريا ولبنان وعلاقات ألبرتا مع الشعوب الأصلية ومبادرات مكافحة العنصرية، ما يمنحه فهماً عميقاً لكيفية تسخير القوة المؤسسية في تحقيق التغيير الهادف.',
       image: '/amer.jpeg',
+    },
+    {
+      name: 'Abdullah Akkari',
+      nameAr: 'عبدالله عكاري',
+      role: 'Board Member',
+      roleAr: 'عضو مجلس إدارة',
+      bio: "Abdullah Akkari is a Syrian designer and project manager based in Italy. Drawing from extensive firsthand experience with NGOs in Beirut, Abdullah excels in strategic relationship-building, team management, and impactful communication. His combined strength in organizational leadership and creative design brings a uniquely dynamic and effective perspective to Rhizome's initiatives.",
+      bioAr:
+        'عبدالله عكاري مصمم ومدير مشاريع سوري مقيم في إيطاليا. يملك خبرة واسعة اكتسبها مباشرةً من العمل مع المنظمات غير الحكومية في بيروت، ويتميّز ببراعته في بناء العلاقات الاستراتيجية، وإدارة الفِرق، والتواصل الفعّال، بالإضافة إلى رؤيته الإبداعية في التصميم. يجمع عبدالله بين القيادة التنظيمية والفكر الإبداعي، مما يضيف منظوراً فريداً وفاعلاً لمبادرات رايزوم.',
+      image: '/abdullah.jpeg',
     },
   ];
 
@@ -249,7 +259,9 @@ const AboutPage: React.FC = () => {
             Rhizome Community Foundation was established in 2025 by Amer,
             Akshya, and Sarah—three Edmonton-based advocates with strong
             international ties connecting India, the Philippines, Syria, and
-            Canada—alongside Aboudi, a Syrian designer based in Italy. Inspired
+            Canada—alongside Abdullah Akkari, a Syrian designer and project
+            manager based in Italy with extensive firsthand NGO experience in
+            Beirut. Inspired
             by the urgent need for community-driven solutions after the
             defunding of Edmonton's social sector, and recognizing the
             opportunity for meaningful action in post-Assad Syria, our founders
