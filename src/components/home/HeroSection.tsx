@@ -23,6 +23,23 @@ const HeroSection: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    // Track mouse position for interactivity
+    const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    let clickIntensity = 1;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const handleClick = () => {
+      clickIntensity = 5; // temporary boost on click
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('click', handleClick);
+
     // Enhanced rhizome network animation with darker colors
     const nodes: Array<{
       x: number;
@@ -88,6 +105,10 @@ const HeroSection: React.FC = () => {
 
       // Update nodes with more organic movement
       nodes.forEach((node) => {
+        // gently attract nodes towards the mouse position
+        node.vx += (mouse.x - node.x) * 0.0005 * clickIntensity;
+        node.vy += (mouse.y - node.y) * 0.0005 * clickIntensity;
+
         node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
         node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
 
@@ -180,6 +201,7 @@ const HeroSection: React.FC = () => {
         ctx.fill();
       });
 
+      clickIntensity = Math.max(1, clickIntensity * 0.95);
       animationFrame = requestAnimationFrame(animate);
     };
 
@@ -187,6 +209,8 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('click', handleClick);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
