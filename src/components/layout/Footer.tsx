@@ -66,8 +66,14 @@ const Footer: React.FC = () => {
                   ar: 'رزنامة الفعاليات',
                 },
                 {
+                  key: 'interactive',
+                  path: '/interactive',
+                  en: 'Interactive',
+                  ar: 'تفاعلي',
+                },
+                {
                   key: 'join',
-                  path: '/contact',
+                  path: '/join',
                   en: 'Join Our Network',
                   ar: 'انضم لشبكتنا',
                 },

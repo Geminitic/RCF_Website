@@ -39,6 +39,12 @@ const Navigation: React.FC = () => {
       ar: 'مركز المعرفة',
     },
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
+    {
+      key: 'interactive',
+      path: '/interactive',
+      en: 'Interactive',
+      ar: 'تفاعلي',
+    },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
   ];
 

@@ -254,7 +254,7 @@ const HeroSection: React.FC = () => {
             </Link>
 
             <Link
-              to="/contact"
+              to="/join"
               className="btn-gradient bg-white/10 backdrop-blur-sm border-2 border-white/30"
             >
               {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
