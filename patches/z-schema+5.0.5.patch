@@ -1,0 +1,60 @@
+diff --git a/node_modules/z-schema/src/Report.js b/node_modules/z-schema/src/Report.js
+index a2d79bb..ca9101b 100644
+--- a/node_modules/z-schema/src/Report.js
++++ b/node_modules/z-schema/src/Report.js
+@@ -1,6 +1,13 @@
+ "use strict";
+ 
+-var get    = require("lodash.get");
++function get(obj, path, def) {
++  if (!path) return obj === undefined ? def : obj;
++  return path
++    .replace(/\[(\w+)\]/g, ".$1")
++    .split('.')
++    .filter(Boolean)
++    .reduce((o, k) => (o ? o[k] : undefined), obj) ?? def;
++}
+ var Errors = require("./Errors");
+ var Utils  = require("./Utils");
+ 
+diff --git a/node_modules/z-schema/src/SchemaCache.js b/node_modules/z-schema/src/SchemaCache.js
+index 02ee33c..4a799bd 100644
+--- a/node_modules/z-schema/src/SchemaCache.js
++++ b/node_modules/z-schema/src/SchemaCache.js
+@@ -1,6 +1,6 @@
+ "use strict";
+ 
+-var isequal             = require("lodash.isequal");
++const { isDeepStrictEqual } = require('node:util');
+ var Report              = require("./Report");
+ var SchemaCompilation   = require("./SchemaCompilation");
+ var SchemaValidation    = require("./SchemaValidation");
+@@ -115,7 +115,7 @@ exports.getSchema = function (report, schema) {
+ exports.getSchemaByReference = function (report, key) {
+     var i = this.referenceCache.length;
+     while (i--) {
+-        if (isequal(this.referenceCache[i][0], key)) {
++        if (isDeepStrictEqual(this.referenceCache[i][0], key)) {
+             return this.referenceCache[i][1];
+         }
+     }
+diff --git a/node_modules/z-schema/src/ZSchema.js b/node_modules/z-schema/src/ZSchema.js
+index cc97d96..bd74922 100644
+--- a/node_modules/z-schema/src/ZSchema.js
++++ b/node_modules/z-schema/src/ZSchema.js
+@@ -1,7 +1,14 @@
+ "use strict";
+ 
+ require("./Polyfills");
+-var get               = require("lodash.get");
++function get(obj, path, def) {
++  if (!path) return obj === undefined ? def : obj;
++  return path
++    .replace(/\[(\w+)\]/g, ".$1")
++    .split('.')
++    .filter(Boolean)
++    .reduce((o, k) => (o ? o[k] : undefined), obj) ?? def;
++}
+ var Report            = require("./Report");
+ var FormatValidators  = require("./FormatValidators");
+ var JsonValidation    = require("./JsonValidation");
