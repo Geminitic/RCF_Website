@@ -50,7 +50,7 @@ const RhizomeSyriaSubpage: React.FC = () => {
     <div className="rhizome-syria min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50">
       {/* Hero Section with Syrian Logo Integration */}
       <section className="rs-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/90 via-blue-600/90 to-orange-600/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-700/90 via-purple-700/90 to-amber-500/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ const RhizomeSyriaSubpage: React.FC = () => {
         </div>
         
         {/* Cultural Pattern Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 opacity-30" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-r from-teal-700 via-purple-700 to-amber-500 opacity-30" />
       </section>
 
       {/* Programs Section */}
@@ -249,7 +249,7 @@ const RhizomeSyriaSubpage: React.FC = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex items-center"
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-gradient-to-r from-teal-700 to-amber-500 rounded-full mr-3" />
                     <span className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
                       {t(`heritage-item-${index}`, item.label, item.labelAr)}
                     </span>

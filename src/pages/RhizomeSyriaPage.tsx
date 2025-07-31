@@ -65,14 +65,14 @@ const RhizomeSyriaPage: React.FC = () => {
 
   const methods = [
     { en: 'Open dialogue', ar: 'الحوار المفتوح' },
-    { en: 'Capacity building', ar: 'بناء القدرات' },
+    { en: 'Building capacity', ar: 'بناء القدرات' },
     { en: 'Local networking', ar: 'التشبيك المحلي' },
     { en: 'Economic reconciliation', ar: 'المصالحة الاقتصادية' },
-    { en: 'Independent financing', ar: 'التمويل المتسقل' },
+    { en: 'Independent funding', ar: 'التمويل المستقل' },
     { en: 'Dismantling hierarchy', ar: 'تفكيك الهرمية' },
     { en: 'Data analysis', ar: 'التحليل البياني' },
-    { en: 'Coordinating local resources and knowledge', ar: 'تنسيق المصادر والمعارف المحلية' },
-    { en: 'Sustainable healthy relations', ar: 'علاقات صحية مستديمة' },
+    { en: 'Coordination of local resources and knowledge', ar: 'تنسيق المصادر والمعارف المحلية' },
+    { en: 'Sustainable, healthy relationships', ar: 'علاقات صحية مستديمة' },
   ];
 
   const goals = [
@@ -541,7 +541,7 @@ const RhizomeSyriaPage: React.FC = () => {
 
       {/* Call to Action with Spiral Design */}
       <section className="rs-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-400 to-red-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-700 via-purple-700 to-amber-500" />
         <div className="absolute inset-0 opacity-20">
           <svg
             className="w-full h-full"
