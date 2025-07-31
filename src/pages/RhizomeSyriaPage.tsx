@@ -68,7 +68,7 @@ const RhizomeSyriaPage: React.FC = () => {
     { en: 'Capacity building', ar: 'بناء القدرات' },
     { en: 'Local networking', ar: 'التشبيك المحلي' },
     { en: 'Economic reconciliation', ar: 'المصالحة الاقتصادية' },
-    { en: 'Independent financing', ar: 'التمويل المتسقل' },
+    { en: 'Independent financing', ar: 'التمويل المستقل' },
     { en: 'Dismantling hierarchy', ar: 'تفكيك الهرمية' },
     { en: 'Data analysis', ar: 'التحليل البياني' },
     { en: 'Coordinating local resources and knowledge', ar: 'تنسيق المصادر والمعارف المحلية' },
@@ -79,7 +79,7 @@ const RhizomeSyriaPage: React.FC = () => {
     { en: 'Interwoven networking', ar: 'الشبكة المتشابكة' },
     { en: 'Dialogue and horizontality', ar: 'الحوار والأفقية' },
     { en: 'Adaptability and liberation', ar: 'التكيف والتحرر' },
-    { en: 'Diversity and decentralized renewal', ar: 'التنوع والتجدد اللامركزية' },
+    { en: 'Diversity and decentralized renewal', ar: 'التنوع والتجدد اللامركزي' },
     { en: 'Deep collaboration and intersection', ar: 'التعاون والتداخل العميق' },
     { en: 'Reach and spread across the land', ar: 'الامتداد والانتشار في الأرض' },
     { en: 'Change through community participation', ar: 'التغيير بالمشاركة المجتمعية' },
@@ -99,7 +99,7 @@ const RhizomeSyriaPage: React.FC = () => {
       />
 
       {/* Hero Section with Logo-Inspired Design */}
-      <section className="rs-hero relative overflow-hidden">
+      <section className="rs-hero rs-banner relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
@@ -596,11 +596,11 @@ const RhizomeSyriaPage: React.FC = () => {
             </div>
             <div className="mt-6 text-white/80 space-y-1">
               <p>
-                {t('contact-info', 'Reach us anywhere at', 'أينما كنتم تواصلوا بلا حواجز عبر')}{' '}
+                {t('contact-info', 'Connect with us anytime:', 'تواصل معنا بلا حواجز:')}{' '}
                 info@rhizomsyria.org | 0958461227 | rhizomsyria.org
               </p>
               <p>
-                {t('address-info', 'For registration and volunteering visit', 'للتسجيل والتطوع مع رايزوم')}{' '}
+                {t('address-info', 'For registration or volunteering visit', 'للتسجيل أو التطوع مع رايزوم')}{' '}
                 {t('address-details', 'Latakia, Sheikh Khalaf Square, Joule Jamal Building 1, opposite Salah Al-Din Library', 'اللاذقية ساحة الشيخ خلف جول جمال ط 1 مقابل مكتبة صلاح الدين')}
               </p>
             </div>
