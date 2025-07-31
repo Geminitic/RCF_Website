@@ -46,6 +46,7 @@ const HeroSection: React.FC = () => {
       '#d97706',
     ];
     const nodeCount = 40;
+    const maxNodes = nodeCount * 2;
 
     // Initialize nodes with more organic properties
     for (let i = 0; i < nodeCount; i++) {
@@ -79,6 +80,74 @@ const HeroSection: React.FC = () => {
       node.connections = nearbyNodes.map((item) => item.index);
     });
 
+    let isDragging = false;
+    let dragIndex: number | null = null;
+
+    const getMousePos = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    };
+
+    const handleMouseDown = (e: MouseEvent) => {
+      const { x, y } = getMousePos(e);
+      const index = nodes.findIndex(
+        (n) => Math.hypot(n.x - x, n.y - y) < n.size * 2
+      );
+      if (index !== -1) {
+        isDragging = true;
+        dragIndex = index;
+      } else if (nodes.length < maxNodes) {
+        nodes.push({
+          x,
+          y,
+          vx: 0,
+          vy: 0,
+          size: Math.random() * 5 + 2,
+          connections: [],
+          opacity: Math.random() * 0.6 + 0.2,
+          pulsePhase: Math.random() * Math.PI * 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        });
+      }
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || dragIndex === null) return;
+      const { x, y } = getMousePos(e);
+      const node = nodes[dragIndex];
+      node.x += (x - node.x) * 0.2;
+      node.y += (y - node.y) * 0.2;
+    };
+
+    const handleMouseUp = (e: MouseEvent) => {
+      if (dragIndex !== null) {
+        const { x, y } = getMousePos(e);
+        const targetIndex = nodes.findIndex(
+          (n, idx) =>
+            idx !== dragIndex && Math.hypot(n.x - x, n.y - y) < n.size * 2
+        );
+        if (targetIndex !== -1) {
+          const node = nodes[dragIndex];
+          const tNode = nodes[targetIndex];
+          const exists = node.connections.includes(targetIndex);
+          if (exists) {
+            node.connections = node.connections.filter((c) => c !== targetIndex);
+            tNode.connections = tNode.connections.filter((c) => c !== dragIndex);
+          } else {
+            node.connections.push(targetIndex);
+            tNode.connections.push(dragIndex);
+          }
+        }
+      }
+      isDragging = false;
+      dragIndex = null;
+    };
+
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    canvas.addEventListener('mouseleave', handleMouseUp);
+
     let animationFrame: number;
     let time = 0;
 
@@ -87,9 +156,11 @@ const HeroSection: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update nodes with more organic movement
-      nodes.forEach((node) => {
+      nodes.forEach((node, i) => {
         node.x += node.vx + Math.sin(time + node.pulsePhase) * 0.5;
         node.y += node.vy + Math.cos(time * 0.8 + node.pulsePhase) * 0.5;
+        node.vx *= 0.99;
+        node.vy *= 0.99;
 
         if (node.x <= 0 || node.x >= canvas.width) {
           node.vx *= -0.9;
@@ -101,6 +172,17 @@ const HeroSection: React.FC = () => {
         }
 
         node.opacity = 0.2 + Math.sin(time * 1.5 + node.pulsePhase) * 0.3;
+
+        // Connection decay
+        node.connections = node.connections.filter((idx) => {
+          const other = nodes[idx];
+          const dist = Math.hypot(node.x - other.x, node.y - other.y);
+          if (dist > 220 || Math.random() < 0.0005) {
+            other.connections = other.connections.filter((c) => c !== i);
+            return false;
+          }
+          return true;
+        });
       });
 
       // Draw connections with varied thickness and opacity
@@ -187,6 +269,10 @@ const HeroSection: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousedown', handleMouseDown);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      canvas.removeEventListener('mouseleave', handleMouseUp);
       cancelAnimationFrame(animationFrame);
     };
   }, []);
