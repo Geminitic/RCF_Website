@@ -32,6 +32,10 @@
   --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+  --quantum-teal: #10B2A3;
+  --probability-purple: #8338EC;
+  --particle-gold: #FFD700;
+  --uncertainty-gray: #ACBDBA;
 }
 
 /* Cursor Styles - Fixed sizes */
@@ -579,4 +583,25 @@ html {
   font-size: 5rem;
   color: #ffffff;
   font-weight: bold;
+}
+
+/* Quantum Reveal Styles */
+.quantum-cloud {
+  filter: blur(20px);
+  opacity: 0.7;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+  background: linear-gradient(60deg, var(--quantum-teal), var(--probability-purple), var(--particle-gold));
+  background-size: 200% 200%;
+  animation: quantumShift 6s ease infinite;
+}
+
+.quantum-revealed {
+  filter: blur(0);
+  opacity: 1;
+}
+
+@keyframes quantumShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
