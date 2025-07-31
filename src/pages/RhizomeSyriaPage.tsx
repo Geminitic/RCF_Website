@@ -66,32 +66,40 @@ const RhizomeSyriaPage: React.FC = () => {
 
   const methods = [
     {
-      en: 'Direct Dialogue: We bridge gaps by connecting communities and experts directly, fostering open conversations without intermediaries.',
-      ar: 'الحوار المفتوح: جسر الفجوات بين الريف والمدن، وبين الخبراء والمجتمع، دون وسطاء.',
+      en: 'Open dialogue',
+      ar: 'الحوار المفتوح',
     },
     {
-      en: 'Community-Led Decisions: From planning to implementation, local communities are involved in every decision, ensuring solutions are rooted in their reality.',
-      ar: 'بناء القدرات: تمكين الأفراد والمؤسسات المجتمعية لإدارة مواردها باستقلالية.',
+      en: 'Capacity building',
+      ar: 'بناء القدرات',
     },
     {
-      en: 'From Aid to Enterprise: We are shifting the focus from short-term relief to sustainable economic transformation by launching business incubators that support small projects and create lasting jobs.',
-      ar: 'الشبكات المحلية: نموذج تنموي مرن يعتمد على إبداع الشباب والتعاون الأفقي.',
+      en: 'Local networking',
+      ar: 'التشبيك المحلي',
     },
     {
-      en: "Youth-Led Innovation: We build a flexible development model that relies on the creativity and horizontal collaboration of Syria's youth.",
-      ar: 'العدالة والتمكين: تعزيز سيادة المجتمع المدني وتبني العدالة غير الانتقامية.',
+      en: 'Economic reconciliation',
+      ar: 'المصالحة الاقتصادية',
     },
     {
-      en: 'Restorative Justice & Empowerment: We work to strengthen civil society’s sovereignty and champion restorative justice principles that heal and unite.',
-      ar: 'القيادة التشاركية: إشراك المجتمعات المحلية في صناعة القرار من التخطيط حتى التنفيذ.',
+      en: 'Independent funding',
+      ar: 'التمويل المتسقل',
     },
     {
-      en: 'Investing in Local Economies: We focus on productive infrastructure, investing in competitive sectors like agriculture and handicrafts to build economic independence.',
-      ar: 'التحول الاقتصادي: الانتقال من الإغاثة إلى حاضنات الأعمال التي تدعم المشاريع الصغيرة وتخلق فرص العمل.',
+      en: 'Dismantling hierarchy',
+      ar: 'تفكيك الهرمية',
     },
     {
-      en: 'Blending Tradition and Data: We craft powerful pathways for change by combining scientific data and analytics with the invaluable traditional knowledge of local communities.',
-      ar: 'البنية التحتية المنتجة: استثمار الموارد في القطاعات ذات الميزة التنافسية كالزراعة والصناعات الحرفية.',
+      en: 'Data analysis',
+      ar: 'التحليل البياني',
+    },
+    {
+      en: 'Coordinating local resources and knowledge',
+      ar: 'تنسيق المصادر والمعارف المحلية',
+    },
+    {
+      en: 'Sustainable, healthy relationships',
+      ar: 'علاقات صحية مستديمة',
     },
   ];
 
@@ -210,8 +218,8 @@ const RhizomeSyriaPage: React.FC = () => {
             >
               {t(
                 'rhizome-syria-subtitle',
-                'Syria, Reimagined From the Roots Up.',
-                'رايزوم سوريا، تنميةٌ تُبنى من الجذور'
+                'Development From the Roots and Back',
+                'التنمية من الجذور وإليها'
               )}
             </motion.p>
 
@@ -259,8 +267,8 @@ const RhizomeSyriaPage: React.FC = () => {
             <p className="rs-body-large mb-6">
               {t(
                 'overview-intro',
-                'Rhizome Syria is a network of Syrian civil society leaders, activists, and communities dedicated to rebuilding a cohesive and stable nation through the will and hands of its own people. We are a decentralized alliance of vibrant Syrian voices, bridging the gaps between urban and rural areas, experts and communities, and tradition and innovation. We believe that to build a future that is sustainable in all circumstances, we must operate like a rhizome: an interconnected, non-hierarchical network that grows stronger and more resilient as it expands. With Syrian leadership at our core, we are explicitly anti-sectarian and unaffiliated with any previous regime institutions. We work to strengthen social cohesion through cultural, feminist, and community-led initiatives.',
-                'رايزوم شبكة مجتمع مدني سورية غير مركزية، تؤمن بالتغيير المجتمعي من خلال نموذج تشاركي مفتوح، ينبني على العدالة الاجتماعية، النسوية السياسية، والتحرّر من الهياكل السلطوية التقليدية. نعمل من خلال ربط المبادرات المحلية بالمصادر والبيانات، لتشكيل فضاءات مجتمعية مستقلة تُعيد توزيع السلطة والمعرفة.'
+                'A decentralized Syrian civil society network that believes in the power of local communities to create change.',
+                'شبكة سورية لامركزية من المجتمع المدني تؤمن بقوة المجتمعات المحلية في صناعة التغيير'
               )}
             </p>
 
@@ -323,16 +331,16 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="rs-body">
                     {t(
                       'mission-text-1',
-                      'Our Mission: To empower Syrian communities to lead their own transformation. We connect local ingenuity with global resources, shifting power from traditional hierarchies to the people themselves.',
-                      'رايزوم سوريا هي الشريك السوري في اتفاقية مشروع مشترك مع رايزوم كندا وتعملان وفق نموذج الإدارة المتداخلة. يحتفظ كل فرع باستقلال قانوني كامل مع تشارك الحوكمة والبرامج المنسقة والمساءلة المتبادلة.'
+                      'Rhizome is a development philosophy inspired by natural, decentralized growth where knowledge spreads horizontally. Every part can initiate action, and decisions emerge through a constant flow of experience within a living network. Our aim is to build community capacity to lead development and change.',
+                      'الجذمور فلسفة تنموية تستلهم النمو الطبيعي الذي يتمدّد بلا مركز، وتنتقل المعرفة والتجارب فيها بشكل أفقي. كل جزء يمتلك قوة المبادرة الذاتية، وتتشكل القرارات من خلال تدفق دائم للمعرفة والخبرة ضمن شبكة حية متصلة. الهدف بناء قدرة المجتمع المحلي على قيادة التنمية والتغيير.'
                     )}
                   </p>
 
                   <p className="rs-body">
                     {t(
                       'mission-text-2',
-                      'Our Vision: We envision a just and prosperous Syria, where decentralized, community-led development creates a society that is cohesive, self-determined, and empowered from within.',
-                      'تعمل رايزوم سوريا على تعزيز التماسك الاجتماعي من خلال المبادرات الثقافية والنسوية والمجتمعية. وهي غير منتسبة لأي مؤسسات نظام سابقة وهي صراحة مناهضة للطائفية.'
+                      'Our initiatives are flexible and community-led, ensuring sustainable development suited to local realities. We build broad local partnerships and collaborate with the Rhizome Community Foundation in Canada to guarantee independence and coordination.',
+                      'مبادرات مرنة تبدأ من المجتمع وتستمر به، لضمان استدامة التنمية وملاءمتها للواقع المحلي. نعقد شراكات محلية واسعة، وشراكة تنموية مع مؤسسة رايزوم المجتمعية في كندا، لضمان الاستقلالية والتنسيق.'
                     )}
                   </p>
                 </div>
@@ -630,10 +638,18 @@ const RhizomeSyriaPage: React.FC = () => {
                 {t('volunteer', 'Volunteer', 'تطوع')}
               </a>
             </div>
-            <div className="mt-6 text-white/80">
+            <div className="mt-6 text-white/80 space-y-1">
               <p>
-                {t('contact-info', 'Contact us at', 'اتصل بنا على')}{' '}
-                info@rhizomsyria.org
+                {t('contact-info', 'Connect with us:', 'تواصلوا معنا بلا حواجز:')}
+              </p>
+              <p>
+                {t('contact-phone', 'Phone:', 'الهاتف:')} 0958461227
+              </p>
+              <p>
+                {t('contact-email', 'Email:', 'البريد الإلكتروني:')} info@rhizomsyria.org
+              </p>
+              <p>
+                {t('contact-web', 'Website:', 'الموقع:')} rhizomsyria.org
               </p>
             </div>
           </motion.div>
@@ -642,7 +658,25 @@ const RhizomeSyriaPage: React.FC = () => {
 
       <section id="volunteer" className="rs-section bg-white">
         <div className="container mx-auto px-4">
+          <h3
+            className={`rs-heading-3 text-center mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+          >
+            {t(
+              'volunteer-registration',
+              'Register and volunteer with Rhizome',
+              'للتسجيل والتطوع مع رايزوم'
+            )}
+          </h3>
           <VolunteerForms />
+          <p
+            className={`text-center mt-4 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+          >
+            {t(
+              'address',
+              'Latakia, Sheikh Khalaf Square, Jol Jamal Bldg. 1st Floor, opposite Salah al-Din Library',
+              'اللاذقية ساحة الشيخ خلف، جول جمال ط 1 مقابل مكتبة صلاح الدين'
+            )}
+          </p>
         </div>
       </section>
     </div>
