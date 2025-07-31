@@ -76,14 +76,14 @@ const RhizomeSyriaPage: React.FC = () => {
   ];
 
   const goals = [
-    { en: 'Interwoven networking', ar: 'الشبكة المتشابكة' },
-    { en: 'Dialogue and horizontality', ar: 'الحوار والأفقية' },
-    { en: 'Adaptability and liberation', ar: 'التكيف والتحرر' },
+    { en: 'Interwoven networks', ar: 'الشبكة المتشابكة' },
+    { en: 'Dialogue and horizontal decision-making', ar: 'الحوار والأفقية' },
+    { en: 'Adaptability and freedom', ar: 'التكيف والتحرر' },
     { en: 'Diversity and decentralized renewal', ar: 'التنوع والتجدد اللامركزية' },
     { en: 'Deep collaboration and intersection', ar: 'التعاون والتداخل العميق' },
-    { en: 'Reach and spread across the land', ar: 'الامتداد والانتشار في الأرض' },
+    { en: 'Expanding reach across the land', ar: 'الامتداد والانتشار في الأرض' },
     { en: 'Change through community participation', ar: 'التغيير بالمشاركة المجتمعية' },
-    { en: 'Empowerment, freedom and resilience', ar: 'التمكين والحرية والمرونة' },
+    { en: 'Empowerment, freedom, and resilience', ar: 'التمكين والحرية والمرونة' },
   ];
 
   return (
@@ -99,7 +99,7 @@ const RhizomeSyriaPage: React.FC = () => {
       />
 
       {/* Hero Section with Logo-Inspired Design */}
-      <section className="rs-hero relative overflow-hidden">
+      <section className="rs-hero relative overflow-hidden" style={{ background: "var(--rs-gradient-dawn)" }}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
@@ -182,7 +182,7 @@ const RhizomeSyriaPage: React.FC = () => {
             >
               {t(
                 'rhizome-syria-subtitle',
-                'Development from the roots for the roots.',
+                'Development by and for the grassroots.',
                 'التنمية من الجذور وإليها'
               )}
             </motion.p>
@@ -231,7 +231,7 @@ const RhizomeSyriaPage: React.FC = () => {
             <p className="rs-body-large mb-6">
               {t(
                 'overview-intro',
-                'Rhizome Syria is a decentralized Syrian civil society network that believes in the power of local communities to drive change.',
+                'Rhizome Syria is a decentralized civil-society network that harnesses local communities to drive real change.',
                 'شبكة سورية لامركزية من المجتمع المدني تؤمن بقوة المجتمعات المحلية في صناعة التغيير'
               )}
             </p>
@@ -257,7 +257,7 @@ const RhizomeSyriaPage: React.FC = () => {
             <p className="rs-body-large">
               {t(
                 'partnership-text',
-                'Rhizome Syria is reimagining international cooperation. We operate in a unique partnership with the Rhizome Community Foundation in Canada. While both organizations are fully independent legal entities, we share governance, coordinate programs, and hold each other accountable through a shared strategic vision. This model ensures Syrian leadership, global connection with local protection, and radical collaboration built on mutual respect and shared goals.',
+                'Rhizome Syria partners closely with the Rhizome Community Foundation in Canada. Both organizations remain legally independent, yet share governance and coordinate programs under a single strategic vision. This approach keeps Syrians in the lead while connecting them to global resources in a spirit of mutual respect.',
                 'تعمل رايزوم سوريا بالشراكة مع مؤسسة رايزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
               )}
             </p>
@@ -295,7 +295,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="rs-body">
                     {t(
                       'mission-text-1',
-                      'The idea: Activate the latent power in communities through a decentralized horizontal network.',
+                      "Our vision: unleash each community's potential through a decentralized, horizontal network.",
                       'الفكرة: تفعيل القوة الكامنة في المجتمعات عبر شبكة علاقات أفقية غير مركزية.'
                     )}
                   </p>
@@ -303,7 +303,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="rs-body">
                     {t(
                       'mission-text-2',
-                      'The need: Syrian communities require a development model rooted in local realities.',
+                      'Syrian communities need a development model anchored in their lived realities.',
                       'الحاجة: حاجة المجتمعات السورية المتنوعة إلى نموذج تنموي من قلب الواقع المحلي.'
                     )}
                   </p>
@@ -596,12 +596,16 @@ const RhizomeSyriaPage: React.FC = () => {
             </div>
             <div className="mt-6 text-white/80 space-y-1">
               <p>
-                {t('contact-info', 'Reach us anywhere at', 'أينما كنتم تواصلوا بلا حواجز عبر')}{' '}
+                {t('contact-info', 'Reach us anytime at', 'أينما كنتم تواصلوا بلا حواجز عبر')}{' '}
                 info@rhizomsyria.org | 0958461227 | rhizomsyria.org
               </p>
               <p>
-                {t('address-info', 'For registration and volunteering visit', 'للتسجيل والتطوع مع رايزوم')}{' '}
-                {t('address-details', 'Latakia, Sheikh Khalaf Square, Joule Jamal Building 1, opposite Salah Al-Din Library', 'اللاذقية ساحة الشيخ خلف جول جمال ط 1 مقابل مكتبة صلاح الدين')}
+                {t('address-info', 'For registration or volunteering visit', 'للتسجيل والتطوع مع رايزوم')}{' '}
+                {t(
+                  'address-details',
+                  'Latakia, Sheikh Khalaf Square, Joule Jamal Building 1, opposite Salah Al-Din Library',
+                  'اللاذقية ساحة الشيخ خلف جول جمال ط 1 مقابل مكتبة صلاح الدين'
+                )}
               </p>
             </div>
           </motion.div>

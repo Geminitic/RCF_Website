@@ -27,6 +27,7 @@
   --rs-gradient-warm: linear-gradient(135deg, var(--rs-primary-orange), var(--rs-primary-red));
   --rs-gradient-cool: linear-gradient(135deg, var(--rs-primary-blue), var(--rs-teal));
   --rs-gradient-sunset: linear-gradient(135deg, var(--rs-primary-yellow), var(--rs-primary-orange), var(--rs-primary-red));
+  --rs-gradient-dawn: linear-gradient(135deg, #6EE7B7, #3B82F6, #9333EA);
   
   /* Typography */
   --rs-font-primary: 'Noto Sans Arabic', 'Poppins', sans-serif;
