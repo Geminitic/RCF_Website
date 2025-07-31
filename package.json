@@ -33,13 +33,9 @@
     "date-fns": "^4.1.0",
     "express": "^4.21.0",
     "framer-motion": "^11.3.0",
-    "glob": "^11.0.3",
-    "inflight": "^1.0.6",
     "ioredis": "^5.6.1",
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",
-    "lodash.get": "^4.4.2",
-    "lodash.isequal": "^4.5.0",
     "lucide-react": "^0.453.0",
     "node-ical": "^0.20.1",
     "react": "^18.3.1",
@@ -57,7 +53,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
-    "@eslint/js": "^8.57.0",
+    "@eslint/js": "^9.32.0",
     "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^15.0.0",
     "@testing-library/user-event": "^14.5.0",
@@ -68,7 +64,7 @@
     "@types/express": "^4.17.21",
     "@types/express-rate-limit": "^5.1.3",
     "@types/helmet": "^0.0.48",
-    "@types/jest": "^29.5.11",
+    "@types/jest": "^30.0.0",
     "@types/leaflet": "^1.9.8",
     "@types/node": "^20.11.0",
     "@types/react": "^18.3.5",
@@ -85,14 +81,14 @@
     "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.32.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
     "husky": "^9.0.0",
     "ioredis-mock": "^8.9.0",
-    "jest": "^29.7.0",
+    "jest": "^30.0.5",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.0",
     "msw": "^2.3.0",
@@ -119,5 +115,12 @@
     "*.{json,css,md}": [
       "prettier --write"
     ]
+  },
+  "overrides": {
+    "glob": "^11.0.3",
+    "rimraf": "^6.0.1",
+    "lodash.get": false,
+    "lodash.isequal": false,
+    "inflight": false
   }
 }
