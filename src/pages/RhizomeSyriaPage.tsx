@@ -157,22 +157,19 @@ const RhizomeSyriaPage: React.FC = () => {
             className={`text-center ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
           >
             {/* Logo Integration */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="flex justify-center mb-8"
-            >
-              <img
-                src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
-                alt="Rhizome Syria Logo"
-                className="h-64 md:h-80 w-auto drop-shadow-xl"
-              />
-            </motion.div>
+          <motion.h1
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex justify-center mb-8"
+          >
+            <img
+              src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
+              alt="Rhizome Syria Logo"
+              className="h-64 md:h-80 w-auto drop-shadow-xl"
+            />
+          </motion.h1>
 
-            <h1 className="rs-heading-1 mb-6">
-              {t('rhizome-syria-title', 'Rhizome Syria', 'رايزوم سوريا')}
-            </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
