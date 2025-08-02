@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react';
 /* eslint-disable react-refresh/only-export-components */
 
 interface Language {
@@ -33,12 +39,19 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(languages[0]);
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
+    return window.location.pathname.includes('/rhizome-syria')
+      ? languages[1]
+      : languages[0];
+  });
+
+  useEffect(() => {
+    document.documentElement.dir = currentLanguage.direction;
+    document.documentElement.lang = currentLanguage.code;
+  }, [currentLanguage]);
 
   const setLanguage = (language: Language) => {
     setCurrentLanguage(language);
-    document.documentElement.dir = language.direction;
-    document.documentElement.lang = language.code;
   };
 
   const t = (key: string, enText: string, arText: string): string => {
@@ -53,3 +66,5 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 };
 
 export { languages };
+
+
