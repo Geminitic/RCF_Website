@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
 /* eslint-disable react-refresh/only-export-components */
 
 interface Language {
@@ -33,13 +39,26 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(languages[0]);
+  const getInitialLanguage = (): Language => {
+    if (typeof window !== 'undefined') {
+      const { hostname, pathname } = window.location;
+      if (hostname.includes('rhizomsyria.org') || pathname.startsWith('/rhizome-syria')) {
+        return languages[1];
+      }
+    }
+    return languages[0];
+  };
+
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(getInitialLanguage);
 
   const setLanguage = (language: Language) => {
     setCurrentLanguage(language);
-    document.documentElement.dir = language.direction;
-    document.documentElement.lang = language.code;
   };
+
+  useEffect(() => {
+    document.documentElement.dir = currentLanguage.direction;
+    document.documentElement.lang = currentLanguage.code;
+  }, [currentLanguage]);
 
   const t = (key: string, enText: string, arText: string): string => {
     return currentLanguage.code === 'ar' ? arText : enText;
