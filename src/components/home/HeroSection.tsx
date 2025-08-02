@@ -1,12 +1,49 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useLayoutEffect, useState } from 'react';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import LogoImage from '/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { t, currentLanguage } = useLanguage();
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const wordRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null]);
+  const [wordPositions, setWordPositions] = useState<number[]>([0, 0, 0]);
+  const [activeWord, setActiveWord] = useState(0);
+
+  useLayoutEffect(() => {
+    const updatePositions = () => {
+      if (!headingRef.current) return;
+      const headingRect = headingRef.current.getBoundingClientRect();
+      const positions = wordRefs.current.map((ref) => {
+        const rect = ref?.getBoundingClientRect();
+        if (!rect) return 0;
+        return rect.left - headingRect.left + rect.width / 2;
+      });
+      setWordPositions(positions);
+    };
+    updatePositions();
+    window.addEventListener('resize', updatePositions);
+    return () => window.removeEventListener('resize', updatePositions);
+  }, [wordRefs]);
+
+  const { scrollYProgress } = useScroll({
+    target: headingRef,
+    offset: ['start start', 'end start'],
+  });
+  const logoX = useTransform(scrollYProgress, [0, 0.5, 1], wordPositions);
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (v < 0.33) setActiveWord(0);
+    else if (v < 0.66) setActiveWord(1);
+    else setActiveWord(2);
+  });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -211,6 +248,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1 }}
           className={`${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
         >
+        {currentLanguage.code === 'ar' ? (
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 text-white"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -226,6 +264,43 @@ const HeroSection: React.FC = () => {
               'مؤسسة رايزوم المجتمعية'
             )}
           </motion.h1>
+        ) : (
+          <motion.h1
+            ref={headingRef}
+            className="relative text-5xl md:text-7xl font-bold mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+            style={{
+              fontFamily: '"Playfair Display", "Noto Sans Arabic", serif',
+            }}
+          >
+            <motion.img
+              src={LogoImage}
+              alt="Rhizome logo"
+              className="absolute -top-16 md:-top-24 h-20 md:h-32 w-auto left-0 pointer-events-none"
+              style={{ x: logoX, translateX: '-50%' }}
+            />
+            <span
+              ref={(el) => (wordRefs.current[0] = el)}
+              className={`${activeWord === 0 ? 'gradient-text' : 'text-white'}`}
+            >
+              Rhizome
+            </span>{' '}
+            <span
+              ref={(el) => (wordRefs.current[1] = el)}
+              className={`${activeWord === 1 ? 'gradient-text' : 'text-white'}`}
+            >
+              Community
+            </span>{' '}
+            <span
+              ref={(el) => (wordRefs.current[2] = el)}
+              className={`${activeWord === 2 ? 'gradient-text' : 'text-white'}`}
+            >
+              Foundation
+            </span>
+          </motion.h1>
+        )}
 
           <motion.p
             initial={{ opacity: 0 }}
