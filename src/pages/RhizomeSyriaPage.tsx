@@ -310,7 +310,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="rs-body">
                     {t(
                       'mission-text-1',
-                      'The idea: Activate the latent power in communities through a decentralized horizontal network.',
+                      'Our idea is to unleash community potential through a decentralized, horizontal network.',
                       'الفكرة: تفعيل القوة الكامنة في المجتمعات عبر شبكة علاقات أفقية غير مركزية.'
                     )}
                   </p>
@@ -318,7 +318,7 @@ const RhizomeSyriaPage: React.FC = () => {
                   <p className="rs-body">
                     {t(
                       'mission-text-2',
-                      'The need: Syrian communities require a development model rooted in local realities.',
+                      'Syrian communities need a development model grounded in their own local realities.',
                       'الحاجة: حاجة المجتمعات السورية المتنوعة إلى نموذج تنموي من قلب الواقع المحلي.'
                     )}
                   </p>
@@ -363,7 +363,7 @@ const RhizomeSyriaPage: React.FC = () => {
                 >
                   {t(
                     'structure-text',
-                    'Strategic partnerships: broad local cooperation and a development partnership with the Rhizome Community Foundation in Canada ensure autonomy and coordination.',
+                    'Through wide local cooperation and a development partnership with the Rhizome Community Foundation in Canada, we ensure autonomy and coordinated efforts.',
                     'شراكات استراتيجية: شراكات محلية واسعة، وشراكة تنموية مع مؤسسة رايزوم المجتمعية كندا، لضمان الاستقلالية والتنسيق.'
                   )}
                 </p>
