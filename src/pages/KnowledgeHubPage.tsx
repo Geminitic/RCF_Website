@@ -1,10 +1,17 @@
 import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const KnowledgeHubPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { currentLanguage } = useLanguage();
 
   useEffect(() => {
-    fetch('/knowledge-hub/rhizomatic-organization.html')
+    const filePath =
+      currentLanguage.code === 'ar'
+        ? '/knowledge-hub/rhizomatic-organization.ar.html'
+        : '/knowledge-hub/rhizomatic-organization.html';
+
+    fetch(filePath)
       .then((res) => res.text())
       .then((html) => {
         if (containerRef.current) {
@@ -23,7 +30,7 @@ const KnowledgeHubPage: React.FC = () => {
       .catch((err) => {
         console.error('Failed to load Knowledge Hub page', err);
       });
-  }, []);
+  }, [currentLanguage]);
 
   return <div ref={containerRef} />;
 };
