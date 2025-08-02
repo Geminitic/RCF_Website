@@ -27,6 +27,8 @@
   --rs-gradient-warm: linear-gradient(135deg, var(--rs-primary-orange), var(--rs-primary-red));
   --rs-gradient-cool: linear-gradient(135deg, var(--rs-primary-blue), var(--rs-teal));
   --rs-gradient-sunset: linear-gradient(135deg, var(--rs-primary-yellow), var(--rs-primary-orange), var(--rs-primary-red));
+  /* Updated banner gradient */
+  --rs-gradient-banner: linear-gradient(135deg, #14B8A6, #F59E0B, #EC4899);
   
   /* Typography */
   --rs-font-primary: 'Noto Sans Arabic', 'Poppins', sans-serif;
@@ -188,6 +190,11 @@
   padding: var(--rs-space-3xl) 0;
   position: relative;
   overflow: hidden;
+}
+
+/* New banner style */
+.rs-banner {
+  background: var(--rs-gradient-banner);
 }
 
 .rs-hero::before {
