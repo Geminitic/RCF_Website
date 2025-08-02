@@ -1,21 +1,30 @@
 import React from 'react';
 
 const OrgRegistrationForms: React.FC = () => {
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      payload[key] = value.toString();
+    });
+    await fetch('/api/engage/organization', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
     alert('Thank you for registering!');
+    form.reset();
   };
 
   return (
     <div className="grid gap-8 md:grid-cols-2 mt-8">
       <form
         id="org-registration-form-en"
-        name="org-registration-en"
-        method="POST"
-        data-netlify="true"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
-        <input type="hidden" name="form-name" value="org-registration-en" />
         <h3 className="text-xl font-bold text-emerald-700">
           Register Your Organization
         </h3>
@@ -54,14 +63,10 @@ const OrgRegistrationForms: React.FC = () => {
       </form>
       <form
         id="org-registration-form-ar"
-        name="org-registration-ar"
-        method="POST"
-        data-netlify="true"
         dir="rtl"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
-        <input type="hidden" name="form-name" value="org-registration-ar" />
         <h3 className="text-xl font-bold text-emerald-700">سجل منظمتك</h3>
         <input
           type="text"

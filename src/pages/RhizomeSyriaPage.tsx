@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -7,14 +8,35 @@ import {
   Heart,
   Shield,
   Sparkles,
+  CheckCircle,
 } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage, languages } from '../contexts/LanguageContext';
 import VolunteerForms from '../components/common/VolunteerForms';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import '../styles/rhizome-syria.css';
 
 const RhizomeSyriaPage: React.FC = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t, currentLanguage, setLanguage } = useLanguage();
+
+  useEffect(() => {
+    const host = window.location.hostname;
+    const path = window.location.pathname;
+    if (host.includes('rhizomsyria.org') || path.startsWith('/rhizome-syria')) {
+      const arabic = languages.find((l) => l.code === 'ar');
+      if (arabic) {
+        setLanguage(arabic);
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      }
+    } else {
+      const english = languages.find((l) => l.code === 'en');
+      if (english) {
+        setLanguage(english);
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+      }
+    }
+  }, [setLanguage]);
 
   const board = [
     {
@@ -156,29 +178,25 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`text-center ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
           >
-            {/* Logo Integration */}
-            <motion.div
+          {/* Logo Integration */}
+          <h1 className="rs-heading-1 mb-6 flex justify-center">
+            <motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex justify-center mb-8"
-            >
-              <img
-                src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
-                alt="Rhizome Syria Logo"
-                className="h-64 md:h-80 w-auto drop-shadow-xl"
-              />
-            </motion.div>
-
-            <h1 className="rs-heading-1 mb-6">
-              {t('rhizome-syria-title', 'Rhizome Syria', 'رايزوم سوريا')}
-            </h1>
+              src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
+              alt="Rhizome Syria Logo"
+              className="h-72 md:h-96 w-auto drop-shadow-xl"
+            />
+          </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="rs-body-large text-white/90 max-w-4xl mx-auto mb-8"
+              className={`rs-tagline max-w-4xl mx-auto mb-8 ${
+                currentLanguage.code === 'ar' ? 'rs-arabic' : ''
+              }`}
             >
               {t(
                 'rhizome-syria-subtitle',
@@ -239,20 +257,32 @@ const RhizomeSyriaPage: React.FC = () => {
             <h3 className="rs-heading-3 mb-4">
               {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
               {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
+                <div
+                  key={index}
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-100 rounded-lg px-4 py-2 shadow-sm"
+                >
+                  <CheckCircle className="h-4 w-4 text-purple-600" />
+                  <span>{t(`method-${index}`, item.en, item.ar)}</span>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <h3 className="rs-heading-3 mb-4">
               {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
             </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
               {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
+                <div
+                  key={index}
+                  className="flex items-center gap-2 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 rounded-lg px-4 py-2 shadow-sm"
+                >
+                  <Sparkles className="h-4 w-4 text-orange-500" />
+                  <span>{t(`goal-${index}`, item.en, item.ar)}</span>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <p className="rs-body-large">
               {t(

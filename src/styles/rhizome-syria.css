@@ -103,6 +103,14 @@
   color: var(--rs-warm-gray);
 }
 
+.rs-tagline {
+  font-family: var(--rs-font-heading);
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--rs-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .rs-body {
   font-size: 1rem;
   line-height: 1.6;
