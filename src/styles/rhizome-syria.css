@@ -143,6 +143,35 @@
   transform: translateY(-4px);
 }
 
+/* Icon list cards */
+.rs-icon-card {
+  display: flex;
+  align-items: center;
+  gap: var(--rs-space-md);
+  background: var(--rs-white);
+  border-radius: var(--rs-radius-lg);
+  padding: var(--rs-space-md) var(--rs-space-lg);
+  box-shadow: var(--rs-shadow-sm);
+  border: 1px solid rgba(107, 70, 193, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rs-icon-card:hover {
+  box-shadow: var(--rs-shadow-md);
+  transform: translateY(-2px);
+}
+
+.rs-icon-bullet {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--rs-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--rs-white);
+}
+
 .rs-button-primary {
   background: var(--rs-gradient-primary);
   color: var(--rs-white);
