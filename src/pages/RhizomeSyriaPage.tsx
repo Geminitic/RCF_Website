@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -8,13 +9,33 @@ import {
   Shield,
   Sparkles,
 } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage, languages } from '../contexts/LanguageContext';
 import VolunteerForms from '../components/common/VolunteerForms';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import '../styles/rhizome-syria.css';
 
 const RhizomeSyriaPage: React.FC = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t, currentLanguage, setLanguage } = useLanguage();
+
+  useEffect(() => {
+    const host = window.location.hostname;
+    const path = window.location.pathname;
+    if (host.includes('rhizomsyria.org') || path.startsWith('/rhizome-syria')) {
+      const arabic = languages.find((l) => l.code === 'ar');
+      if (arabic) {
+        setLanguage(arabic);
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      }
+    } else {
+      const english = languages.find((l) => l.code === 'en');
+      if (english) {
+        setLanguage(english);
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+      }
+    }
+  }, [setLanguage]);
 
   const board = [
     {
