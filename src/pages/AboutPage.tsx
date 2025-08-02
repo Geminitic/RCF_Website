@@ -134,7 +134,7 @@ const AboutPage: React.FC = () => {
       bio: 'Akshya moves through communities with curiosity and care, blending psychology, anthropology, and a deep commitment to social justice. With roots stretching from Chennai, through Kuwait and Saudi Arabia, to amiskwacîwâskahikan (Edmonton), they understand intimately how cultural histories and systemic challenges shape our shared realities.',
       bioAr:
         'تتنقل أكشيا عبر المجتمعات بفضول واهتمام، مازجة بين علم النفس والأنثروبولوجيا والالتزام العميق بالعدالة الاجتماعية. مع جذور تمتد من تشيناي، عبر الكويت والسعودية، إلى إدمونتون، تفهم بشكل وثيق كيف تشكل التواريخ الثقافية والتحديات النظامية واقعنا المشترك.',
-      image: '/akshya.jpeg',
+      image: '/WhatsApp Image 2025-06-17 at 12.39.55 AM (1).jpeg',
     },
     {
       name: 'Sarah',
@@ -144,7 +144,7 @@ const AboutPage: React.FC = () => {
       bio: "Sarah is a creative force and community catalyst shaped by early experiences in a Philippine hometown and a lifelong connection to Edmonton's Chinatown. Observing firsthand how communities flourish through collaboration, and falter without it, they dedicate themselves tirelessly to community wellness.",
       bioAr:
         'سارة قوة إبداعية ومحفز مجتمعي تشكلت من خلال تجارب مبكرة في مسقط رأس في الفلبين وارتباط مدى الحياة بحي الصينيين في إدمونتون. من خلال الملاحظة المباشرة لكيفية ازدهار المجتمعات عبر التعاون وتعثرها بدونه، تكرس نفسها بلا كلل لرفاهية المجتمع.',
-      image: '/sarah.jpeg',
+      image: '/Untitled design (1).jpg',
     },
     {
       name: 'Amer',
@@ -154,7 +154,8 @@ const AboutPage: React.FC = () => {
       bio: "Amer moves seamlessly between policy corridors and grassroots communities, blending strategic rigor with genuine empathy. Shaped by experiences spanning Syrian newsrooms, Alberta's Indigenous relations, and anti-racism initiatives, they intimately understand how institutional power can be harnessed for meaningful change.",
       bioAr:
         'يتنقل عامر بسلاسة بين أروقة السياسة والمجتمعات الشعبية، مازجاً بين الصرامة الاستراتيجية والتعاطف الحقيقي. تشكلت خبراته عبر غرف الأخبار السورية وعلاقات ألبرتا مع السكان الأصليين ومبادرات مكافحة العنصرية، مما يمنحه فهماً عميقاً لكيفية تسخير القوة المؤسسية للتغيير الهادف.',
-      image: '/amer.jpeg',
+      image: '/Untitled design (13).png',
+      imageClass: 'filter grayscale',
     },
   ];
 
@@ -520,7 +521,7 @@ const AboutPage: React.FC = () => {
                 <img
                   src={member.image}
                   alt={t('member-name', member.name, member.nameAr)}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-100"
+                  className={`w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-100 ${member.imageClass ?? ''}`}
                 />
 
                 <h3
