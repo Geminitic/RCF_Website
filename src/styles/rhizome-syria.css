@@ -354,3 +354,30 @@
   font-weight: 600;
   margin-bottom: var(--rs-space-sm);
 }
+
+/* Tagline and Tag Lists */
+.rs-tagline {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--rs-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rs-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rs-space-sm);
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--rs-space-xl);
+}
+
+.rs-tag {
+  background: var(--rs-gradient-primary);
+  color: var(--rs-white);
+  padding: var(--rs-space-xs) var(--rs-space-md);
+  border-radius: var(--rs-radius-lg);
+  font-size: 0.875rem;
+  box-shadow: var(--rs-shadow-sm);
+}

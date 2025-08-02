@@ -1,21 +1,27 @@
 import React from 'react';
 
 const OrgRegistrationForms: React.FC = () => {
-  const handleSubmit = () => {
-    alert('Thank you for registering!');
-  };
+  const createSubmitHandler = (endpoint: string) =>
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      e.currentTarget.reset();
+      alert('Thank you for registering!');
+    };
 
   return (
     <div className="grid gap-8 md:grid-cols-2 mt-8">
       <form
         id="org-registration-form-en"
-        name="org-registration-en"
-        method="POST"
-        data-netlify="true"
-        onSubmit={handleSubmit}
+        onSubmit={createSubmitHandler('/api/submissions/join')}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
-        <input type="hidden" name="form-name" value="org-registration-en" />
         <h3 className="text-xl font-bold text-emerald-700">
           Register Your Organization
         </h3>
@@ -54,14 +60,10 @@ const OrgRegistrationForms: React.FC = () => {
       </form>
       <form
         id="org-registration-form-ar"
-        name="org-registration-ar"
-        method="POST"
-        data-netlify="true"
         dir="rtl"
-        onSubmit={handleSubmit}
+        onSubmit={createSubmitHandler('/api/submissions/join')}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
-        <input type="hidden" name="form-name" value="org-registration-ar" />
         <h3 className="text-xl font-bold text-emerald-700">سجل منظمتك</h3>
         <input
           type="text"
