@@ -1,7 +1,16 @@
 import React from 'react';
 
 const OrgRegistrationForms: React.FC = () => {
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+    await fetch('/api/organizations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    e.currentTarget.reset();
     alert('Thank you for registering!');
   };
 
@@ -11,7 +20,6 @@ const OrgRegistrationForms: React.FC = () => {
         id="org-registration-form-en"
         name="org-registration-en"
         method="POST"
-        data-netlify="true"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
@@ -56,7 +64,6 @@ const OrgRegistrationForms: React.FC = () => {
         id="org-registration-form-ar"
         name="org-registration-ar"
         method="POST"
-        data-netlify="true"
         dir="rtl"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"

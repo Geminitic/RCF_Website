@@ -1,6 +1,15 @@
 
 const VolunteerForms: React.FC = () => {
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+    await fetch('/api/volunteers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    e.currentTarget.reset();
     alert('Thank you for volunteering!');
   };
 
@@ -10,7 +19,6 @@ const VolunteerForms: React.FC = () => {
         id="rcf-volunteer-form"
         name="rcf-volunteer"
         method="POST"
-        data-netlify="true"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"
       >
@@ -25,7 +33,6 @@ const VolunteerForms: React.FC = () => {
         id="rhizome-syria-form"
         name="rhizome-syria-volunteer"
         method="POST"
-        data-netlify="true"
         dir="rtl"
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-6 rounded-xl shadow"

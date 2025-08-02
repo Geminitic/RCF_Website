@@ -8,6 +8,7 @@ import { swaggerSpec } from './swagger';
 import swaggerUi from 'swagger-ui-express';
 import eventRoutes from './routes/events';
 import healthRoutes from './routes/health';
+import requestRoutes from './routes/requests';
 import './jobs/scraper.job';
 import { scrapeAndCache } from './utils/scrape';
 
@@ -37,6 +38,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/events', eventRoutes);
 app.use('/api/health', healthRoutes);
+app.use('/api', requestRoutes);
 
 app.use(
   (err: Error, _req: express.Request, res: express.Response) => {
