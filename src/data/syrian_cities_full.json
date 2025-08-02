@@ -1,0 +1,5002 @@
+[
+  {
+    "name": "Ma‘arrīyah",
+    "lat": 32.76883,
+    "lng": 35.79176
+  },
+  {
+    "name": "Al Musayritīyah",
+    "lat": 32.84256,
+    "lng": 35.86062
+  },
+  {
+    "name": "Jisr Ruqqād",
+    "lat": 32.86912,
+    "lng": 35.89147
+  },
+  {
+    "name": "Kafr as Sāmir",
+    "lat": 32.77019,
+    "lng": 35.97664
+  },
+  {
+    "name": "Khirbat Baraq",
+    "lat": 32.80383,
+    "lng": 35.97763
+  },
+  {
+    "name": "Jisr Mişrī",
+    "lat": 32.86071,
+    "lng": 35.94993
+  },
+  {
+    "name": "Tall al Jumū‘",
+    "lat": 32.8605,
+    "lng": 35.99766
+  },
+  {
+    "name": "Şanawbar",
+    "lat": 32.99722,
+    "lng": 35.68056
+  },
+  {
+    "name": "Khirbat Khasfayn",
+    "lat": 32.8956,
+    "lng": 35.86356
+  },
+  {
+    "name": "Al Khushnīyah",
+    "lat": 32.99444,
+    "lng": 35.82222
+  },
+  {
+    "name": "Al Miyāh",
+    "lat": 33.99167,
+    "lng": 39.22778
+  },
+  {
+    "name": "Fayyāḑ al Ḩammād",
+    "lat": 33.9573,
+    "lng": 39.06272
+  },
+  {
+    "name": "Wādī ash Shutaywī",
+    "lat": 33.87602,
+    "lng": 39.25219
+  },
+  {
+    "name": "Wādī Sulūbī",
+    "lat": 33.70972,
+    "lng": 38.98061
+  },
+  {
+    "name": "Wādī al Khuwaymāt",
+    "lat": 33.66349,
+    "lng": 39.19106
+  },
+  {
+    "name": "Al Khuwaymāt",
+    "lat": 33.64234,
+    "lng": 39.23507
+  },
+  {
+    "name": "Wādī al Walij",
+    "lat": 33.78768,
+    "lng": 39.24321
+  },
+  {
+    "name": "Khabrat az Zaqf",
+    "lat": 33.80936,
+    "lng": 39.23532
+  },
+  {
+    "name": "Ţār Ḩumr az Zaqf",
+    "lat": 33.90206,
+    "lng": 39.25873
+  },
+  {
+    "name": "Wādī as Sajrī",
+    "lat": 33.95931,
+    "lng": 39.25881
+  },
+  {
+    "name": "Wādī al Miyāh",
+    "lat": 33.93333,
+    "lng": 39.275
+  },
+  {
+    "name": "Bi’r al Ḩazm",
+    "lat": 33.97378,
+    "lng": 39.26139
+  },
+  {
+    "name": "Wādī al Buţmīyah",
+    "lat": 34.05964,
+    "lng": 39.43846
+  },
+  {
+    "name": "Fayḑat al Kammūnāt",
+    "lat": 33.79139,
+    "lng": 39.47213
+  },
+  {
+    "name": "Turāq al Kammūnāt",
+    "lat": 33.80976,
+    "lng": 39.46031
+  },
+  {
+    "name": "Wādī al Wusţā",
+    "lat": 34.02523,
+    "lng": 39.93234
+  },
+  {
+    "name": "Ghudrān an Na‘ām",
+    "lat": 35.14439,
+    "lng": 41.1582
+  },
+  {
+    "name": "Qanţarat al Milḩ",
+    "lat": 35.12251,
+    "lng": 41.15149
+  },
+  {
+    "name": "Maţabb Qa‘bān",
+    "lat": 35.33793,
+    "lng": 41.23018
+  },
+  {
+    "name": "Al A‘waj",
+    "lat": 35.43397,
+    "lng": 41.01975
+  },
+  {
+    "name": "Khishām",
+    "lat": 35.55208,
+    "lng": 41.10205
+  },
+  {
+    "name": "Bīr aş Şayyāḩ",
+    "lat": 35.61737,
+    "lng": 41.05468
+  },
+  {
+    "name": "Bīr ‘Iwaḑ az Zāwid",
+    "lat": 35.65961,
+    "lng": 41.06027
+  },
+  {
+    "name": "‘Ināyāt",
+    "lat": 35.62116,
+    "lng": 41.09939
+  },
+  {
+    "name": "Bīr al Fāḑil",
+    "lat": 35.69067,
+    "lng": 41.03386
+  },
+  {
+    "name": "‘Abbūd al Jad‘ān",
+    "lat": 35.75908,
+    "lng": 41.10015
+  },
+  {
+    "name": "Bīr as Sahl",
+    "lat": 35.74727,
+    "lng": 41.30078
+  },
+  {
+    "name": "Wādī Umm ar Rūs",
+    "lat": 35.71389,
+    "lng": 41.35
+  },
+  {
+    "name": "Ḩabbāt Nazzāl",
+    "lat": 35.80254,
+    "lng": 41.07847
+  },
+  {
+    "name": "Bi’r al Lazqā",
+    "lat": 35.80268,
+    "lng": 41.04919
+  },
+  {
+    "name": "‘Annād",
+    "lat": 35.81096,
+    "lng": 41.02632
+  },
+  {
+    "name": "Ḩusayn al A‘war",
+    "lat": 35.809,
+    "lng": 41.07804
+  },
+  {
+    "name": "Amrī",
+    "lat": 35.82701,
+    "lng": 41.06885
+  },
+  {
+    "name": "Aḩmad al Muḩammad",
+    "lat": 35.82156,
+    "lng": 41.05336
+  },
+  {
+    "name": "Ma‘īsh",
+    "lat": 35.83854,
+    "lng": 41.04351
+  },
+  {
+    "name": "Bi’r ‘Urmān",
+    "lat": 35.83841,
+    "lng": 41.12458
+  },
+  {
+    "name": "Qārat al Faras",
+    "lat": 35.79673,
+    "lng": 41.12398
+  },
+  {
+    "name": "Wādī as Salmas",
+    "lat": 35.8938,
+    "lng": 40.97
+  },
+  {
+    "name": "Tuwaymīn",
+    "lat": 35.91901,
+    "lng": 41.26551
+  },
+  {
+    "name": "Kulaywah",
+    "lat": 35.98643,
+    "lng": 41.03296
+  },
+  {
+    "name": "Ad Dabḩah",
+    "lat": 35.97509,
+    "lng": 41.03522
+  },
+  {
+    "name": "Bi’r Ḩabbāt Kilwah",
+    "lat": 35.94589,
+    "lng": 41.04172
+  },
+  {
+    "name": "Jalgham",
+    "lat": 35.95612,
+    "lng": 41.06929
+  },
+  {
+    "name": "Bi’r al Ḩamrah",
+    "lat": 35.94703,
+    "lng": 41.0771
+  },
+  {
+    "name": "Bi’r al Ḩabāyā",
+    "lat": 35.95473,
+    "lng": 41.09187
+  },
+  {
+    "name": "Bi’r Kafr",
+    "lat": 35.96075,
+    "lng": 41.14001
+  },
+  {
+    "name": "Bi’r al Bādī",
+    "lat": 35.9766,
+    "lng": 41.06939
+  },
+  {
+    "name": "Bi’r Muḩammad as Sirāj",
+    "lat": 35.98267,
+    "lng": 41.19178
+  },
+  {
+    "name": "Ar Rayḩānīyah",
+    "lat": 35.96357,
+    "lng": 41.19998
+  },
+  {
+    "name": "Bi’r Tall adh Dhahab",
+    "lat": 35.95787,
+    "lng": 41.15406
+  },
+  {
+    "name": "Bi’r Khirbat al Kalb",
+    "lat": 35.94492,
+    "lng": 41.29542
+  },
+  {
+    "name": "Tall al Baydar",
+    "lat": 34.10417,
+    "lng": 37.00797
+  },
+  {
+    "name": "Arḑ al Buq‘ah",
+    "lat": 34.11248,
+    "lng": 37.26151
+  },
+  {
+    "name": "Jabal Qannāş",
+    "lat": 34.1244,
+    "lng": 37.29646
+  },
+  {
+    "name": "Bi’r Ma‘yūf",
+    "lat": 34.07876,
+    "lng": 37.25552
+  },
+  {
+    "name": "Jabal ‘Unaybah",
+    "lat": 34.02987,
+    "lng": 37.31476
+  },
+  {
+    "name": "Bīr Khān ‘Unaybah",
+    "lat": 34.04055,
+    "lng": 37.34392
+  },
+  {
+    "name": "Jabal Ţunb ‘Ādah",
+    "lat": 34.02519,
+    "lng": 37.46293
+  },
+  {
+    "name": "Wādī Rimāḩ",
+    "lat": 34.15655,
+    "lng": 37.58973
+  },
+  {
+    "name": "Bi’r Rimāḩ",
+    "lat": 34.08201,
+    "lng": 37.49781
+  },
+  {
+    "name": "Wādī ‘Iddah",
+    "lat": 34.13299,
+    "lng": 37.62545
+  },
+  {
+    "name": "Bi’r Mughar‘idah",
+    "lat": 34.03665,
+    "lng": 37.61296
+  },
+  {
+    "name": "Jabal ‘Ādah",
+    "lat": 34.01977,
+    "lng": 37.57241
+  },
+  {
+    "name": "Jabal Watad Ḩāyij ‘Ādah",
+    "lat": 34.02621,
+    "lng": 37.78125
+  },
+  {
+    "name": "Wādī al Watāyid",
+    "lat": 34.00967,
+    "lng": 38.09936
+  },
+  {
+    "name": "Wādī Şawwānat Shahbā’",
+    "lat": 34.13653,
+    "lng": 38.14544
+  },
+  {
+    "name": "Wādī Ghadīr al Ḩamal",
+    "lat": 34.14157,
+    "lng": 37.98264
+  },
+  {
+    "name": "Tulūl aţ Ţaḩīn",
+    "lat": 34.13884,
+    "lng": 37.07222
+  },
+  {
+    "name": "Wādī Muzaybilah",
+    "lat": 34.16498,
+    "lng": 37.22886
+  },
+  {
+    "name": "Ra’s al ‘Ayn",
+    "lat": 34.19972,
+    "lng": 37.22956
+  },
+  {
+    "name": "Wādī Qannāş",
+    "lat": 34.13192,
+    "lng": 37.24996
+  },
+  {
+    "name": "Wādī Ḩafāyir",
+    "lat": 34.16768,
+    "lng": 37.28298
+  },
+  {
+    "name": "Ḩufayr",
+    "lat": 34.13641,
+    "lng": 37.32524
+  },
+  {
+    "name": "Wādī Kharrār",
+    "lat": 34.12917,
+    "lng": 37.35
+  },
+  {
+    "name": "Wādī Mu‘adhdhab Şalīb",
+    "lat": 34.24402,
+    "lng": 37.43399
+  },
+  {
+    "name": "Jabal Ghānim",
+    "lat": 34.16834,
+    "lng": 37.46263
+  },
+  {
+    "name": "Wādī Rimāḩ",
+    "lat": 34.11667,
+    "lng": 37.56667
+  },
+  {
+    "name": "Wādī al Başīrī",
+    "lat": 34.15327,
+    "lng": 37.59704
+  },
+  {
+    "name": "Wādī Abū Judrīyah",
+    "lat": 34.13312,
+    "lng": 37.62983
+  },
+  {
+    "name": "Wādī Şawwānat al Ḩamrā",
+    "lat": 34.10485,
+    "lng": 37.68246
+  },
+  {
+    "name": "Jabal Şawwānat al Ḩamrā",
+    "lat": 34.16605,
+    "lng": 37.90185
+  },
+  {
+    "name": "Al ‘Amyā",
+    "lat": 34.29013,
+    "lng": 37.02468
+  },
+  {
+    "name": "Wādī al Kahf",
+    "lat": 34.32161,
+    "lng": 37.15714
+  },
+  {
+    "name": "Ḩazm al Abyaḑ",
+    "lat": 34.2247,
+    "lng": 37.1625
+  },
+  {
+    "name": "Jabal ar Rumaylī",
+    "lat": 34.27489,
+    "lng": 37.18654
+  },
+  {
+    "name": "Wādī Sahl",
+    "lat": 34.25394,
+    "lng": 37.30279
+  },
+  {
+    "name": "Wādī al Biţāḩ",
+    "lat": 34.25046,
+    "lng": 37.29864
+  },
+  {
+    "name": "Wādī Kharrār",
+    "lat": 34.27588,
+    "lng": 37.3489
+  },
+  {
+    "name": "Tulūl Şadārīyat al Bayḑā",
+    "lat": 34.21179,
+    "lng": 37.36926
+  },
+  {
+    "name": "Wādī Sha‘īb al Khaddārīyah",
+    "lat": 34.29135,
+    "lng": 37.63194
+  },
+  {
+    "name": "Thanīyat az Zarqā",
+    "lat": 34.20676,
+    "lng": 37.53399
+  },
+  {
+    "name": "Wādī al Bāridah",
+    "lat": 34.24095,
+    "lng": 37.61803
+  },
+  {
+    "name": "Jabal Zuqāq Khalāyil",
+    "lat": 34.22578,
+    "lng": 37.70356
+  },
+  {
+    "name": "Bi’r Khunayfis",
+    "lat": 34.24256,
+    "lng": 37.75226
+  },
+  {
+    "name": "Bi’r an Naqnāqīyah",
+    "lat": 34.24948,
+    "lng": 37.74892
+  },
+  {
+    "name": "Wādī al Luwayzah",
+    "lat": 34.36196,
+    "lng": 38.19645
+  },
+  {
+    "name": "Khirbat al Bayḑā",
+    "lat": 34.39671,
+    "lng": 37.05926
+  },
+  {
+    "name": "Jabal an Nahrayn",
+    "lat": 34.37917,
+    "lng": 37.05
+  },
+  {
+    "name": "Al Fayyāḑīyah",
+    "lat": 34.35712,
+    "lng": 37.03793
+  },
+  {
+    "name": "Qanāt Qaşabah",
+    "lat": 34.32341,
+    "lng": 37.15455
+  },
+  {
+    "name": "Mazra‘at Ḩabl at Tīn",
+    "lat": 34.34968,
+    "lng": 37.10351
+  },
+  {
+    "name": "Ḩazm al Gharbī",
+    "lat": 34.39343,
+    "lng": 37.12443
+  },
+  {
+    "name": "Wādī al ‘Abbār",
+    "lat": 34.36737,
+    "lng": 37.1569
+  },
+  {
+    "name": "Al Jabbāt",
+    "lat": 34.3848,
+    "lng": 37.28013
+  },
+  {
+    "name": "Tulūl al Faţāyir",
+    "lat": 34.33793,
+    "lng": 37.2949
+  },
+  {
+    "name": "Wādī Ghadīr Dīb",
+    "lat": 34.37071,
+    "lng": 37.47328
+  },
+  {
+    "name": "Bi’r Wādī al Kabīr",
+    "lat": 34.35334,
+    "lng": 37.51891
+  },
+  {
+    "name": "Wādī Qaşr al Ḩayr",
+    "lat": 34.37569,
+    "lng": 37.61472
+  },
+  {
+    "name": "Wādī Qaşr al Ḩallābāt",
+    "lat": 34.36276,
+    "lng": 38.14183
+  },
+  {
+    "name": "Bi’r Biktāl",
+    "lat": 34.32455,
+    "lng": 37.99253
+  },
+  {
+    "name": "Ar Ruḑayfah",
+    "lat": 34.44922,
+    "lng": 37.01311
+  },
+  {
+    "name": "Wādī al Fayḑ",
+    "lat": 34.46308,
+    "lng": 37.07142
+  },
+  {
+    "name": "Al Bayḑā",
+    "lat": 34.4186,
+    "lng": 37.02173
+  },
+  {
+    "name": "Kubayshah",
+    "lat": 34.44137,
+    "lng": 37.10688
+  },
+  {
+    "name": "Arḑ Mukaymin ‘Antar",
+    "lat": 34.44959,
+    "lng": 37.14268
+  },
+  {
+    "name": "Khirbat al Ḩurūq",
+    "lat": 34.46586,
+    "lng": 37.17629
+  },
+  {
+    "name": "Arḑ al Jubbāt",
+    "lat": 34.41424,
+    "lng": 37.24743
+  },
+  {
+    "name": "Tulūl al Faras",
+    "lat": 34.44695,
+    "lng": 37.34016
+  },
+  {
+    "name": "Tulūl ad Dayl‘ī",
+    "lat": 34.40463,
+    "lng": 37.38824
+  },
+  {
+    "name": "Bi’r Samarmadah",
+    "lat": 34.42288,
+    "lng": 37.64052
+  },
+  {
+    "name": "Bi’r al Fawā‘irah",
+    "lat": 34.44758,
+    "lng": 37.71461
+  },
+  {
+    "name": "Wādī al Wa‘rīyah",
+    "lat": 34.46152,
+    "lng": 37.81859
+  },
+  {
+    "name": "Bi’r al Ghanāyim",
+    "lat": 34.42526,
+    "lng": 37.8792
+  },
+  {
+    "name": "Wādī al Bīsah",
+    "lat": 34.44847,
+    "lng": 37.86788
+  },
+  {
+    "name": "Wādī Umm Jurn",
+    "lat": 34.49099,
+    "lng": 37.92364
+  },
+  {
+    "name": "Wādī al Bayḑā",
+    "lat": 34.50113,
+    "lng": 37.94854
+  },
+  {
+    "name": "Khirbat ar Rashīdīyah",
+    "lat": 34.50673,
+    "lng": 37.09468
+  },
+  {
+    "name": "Jubb ash Shāmī",
+    "lat": 34.52177,
+    "lng": 37.09169
+  },
+  {
+    "name": "Rujm Ţuqqū",
+    "lat": 34.56534,
+    "lng": 37.16976
+  },
+  {
+    "name": "Ghalwā",
+    "lat": 34.54476,
+    "lng": 37.14454
+  },
+  {
+    "name": "Khirbat al Jajar",
+    "lat": 34.49057,
+    "lng": 37.12126
+  },
+  {
+    "name": "Khirbat Buhaydilah",
+    "lat": 34.50272,
+    "lng": 37.177
+  },
+  {
+    "name": "Wādī al Būlīyah",
+    "lat": 34.45553,
+    "lng": 37.14856
+  },
+  {
+    "name": "Al Būlīyah",
+    "lat": 34.50926,
+    "lng": 37.20823
+  },
+  {
+    "name": "Khirbat as Sahlah",
+    "lat": 34.53169,
+    "lng": 37.19255
+  },
+  {
+    "name": "Khirbat aḑ Ḑāhirīyah",
+    "lat": 34.54392,
+    "lng": 37.19134
+  },
+  {
+    "name": "Farḩah",
+    "lat": 34.55996,
+    "lng": 37.21211
+  },
+  {
+    "name": "Ţubayjīyah",
+    "lat": 34.5461,
+    "lng": 37.31125
+  },
+  {
+    "name": "Ţaraq al Būlīyah",
+    "lat": 34.51992,
+    "lng": 37.24318
+  },
+  {
+    "name": "Tulūl Ţaraq al Ghanam",
+    "lat": 34.50833,
+    "lng": 37.30833
+  },
+  {
+    "name": "Khirbat al ‘Arāminah",
+    "lat": 34.48299,
+    "lng": 37.26265
+  },
+  {
+    "name": "Wādī al Mukaymin",
+    "lat": 34.54753,
+    "lng": 37.38328
+  },
+  {
+    "name": "Wādī Ghurayrīyāt",
+    "lat": 34.5,
+    "lng": 37.5
+  },
+  {
+    "name": "Sharīfah",
+    "lat": 34.51924,
+    "lng": 37.50546
+  },
+  {
+    "name": "Arḑ Sharīfah",
+    "lat": 34.52809,
+    "lng": 37.55163
+  },
+  {
+    "name": "Bi’r al Mawr",
+    "lat": 34.47222,
+    "lng": 37.61966
+  },
+  {
+    "name": "Dār al ‘Abd",
+    "lat": 34.54977,
+    "lng": 37.72161
+  },
+  {
+    "name": "Bayt Jarbū‘ al ‘Azw",
+    "lat": 34.46449,
+    "lng": 37.78986
+  },
+  {
+    "name": "Dār Abū Shāyish",
+    "lat": 34.55122,
+    "lng": 37.7735
+  },
+  {
+    "name": "Bi’r Marḩiţān",
+    "lat": 34.47609,
+    "lng": 37.88051
+  },
+  {
+    "name": "Al Qulaybah",
+    "lat": 34.53258,
+    "lng": 37.98357
+  },
+  {
+    "name": "Al Mushayrifah",
+    "lat": 34.63535,
+    "lng": 37.1459
+  },
+  {
+    "name": "Mat‘ab",
+    "lat": 34.61103,
+    "lng": 37.15568
+  },
+  {
+    "name": "Umm al ‘Ulaymāt",
+    "lat": 34.63209,
+    "lng": 37.16029
+  },
+  {
+    "name": "Wādī Murrān al Fawā‘irah",
+    "lat": 34.61142,
+    "lng": 37.20104
+  },
+  {
+    "name": "Jabal Abū ‘Aqbīn",
+    "lat": 34.61836,
+    "lng": 37.22212
+  },
+  {
+    "name": "Wādī al Marāmī",
+    "lat": 34.59857,
+    "lng": 37.32958
+  },
+  {
+    "name": "Wādī Baghlīyah",
+    "lat": 34.59821,
+    "lng": 37.32781
+  },
+  {
+    "name": "Wādī Ghurayrīyāt",
+    "lat": 34.47454,
+    "lng": 37.52947
+  },
+  {
+    "name": "Wādī ad Duraybīl",
+    "lat": 34.59011,
+    "lng": 37.36778
+  },
+  {
+    "name": "Wādī al Yafayr",
+    "lat": 34.58326,
+    "lng": 37.42657
+  },
+  {
+    "name": "Jabal Abū aḑ Ḑuhūr",
+    "lat": 34.60464,
+    "lng": 37.61749
+  },
+  {
+    "name": "Ābār at Tiyās",
+    "lat": 34.5702,
+    "lng": 37.66723
+  },
+  {
+    "name": "Jabal Shaqrā",
+    "lat": 34.64167,
+    "lng": 37.68333
+  },
+  {
+    "name": "Tulūl ar Rawḑah",
+    "lat": 34.6152,
+    "lng": 37.70053
+  },
+  {
+    "name": "Tār an Nakhlah",
+    "lat": 34.56939,
+    "lng": 37.72492
+  },
+  {
+    "name": "Al Jamālīyah",
+    "lat": 34.68507,
+    "lng": 37.04735
+  },
+  {
+    "name": "Ar Razzūqīyah",
+    "lat": 34.70338,
+    "lng": 37.04926
+  },
+  {
+    "name": "Al Ḩammūdīyah",
+    "lat": 34.74081,
+    "lng": 37.05194
+  },
+  {
+    "name": "Al Mushayrifah",
+    "lat": 34.7378,
+    "lng": 37.08939
+  },
+  {
+    "name": "Umm Dālī",
+    "lat": 34.75296,
+    "lng": 37.11061
+  },
+  {
+    "name": "Al Muhashsham",
+    "lat": 34.70822,
+    "lng": 37.17103
+  },
+  {
+    "name": "Umm Jāmi’",
+    "lat": 34.74056,
+    "lng": 37.17004
+  },
+  {
+    "name": "Baghlīyah",
+    "lat": 34.68129,
+    "lng": 37.30715
+  },
+  {
+    "name": "Ţal‘at al Gharbīyah",
+    "lat": 34.67896,
+    "lng": 37.32805
+  },
+  {
+    "name": "Maţallat Rasm Kasād",
+    "lat": 34.69583,
+    "lng": 37.35
+  },
+  {
+    "name": "Manūkh",
+    "lat": 34.70775,
+    "lng": 37.45096
+  },
+  {
+    "name": "Abū Līyah",
+    "lat": 34.70586,
+    "lng": 37.33737
+  },
+  {
+    "name": "Ţal‘at ash Sharqīyah",
+    "lat": 34.68164,
+    "lng": 37.3373
+  },
+  {
+    "name": "Jabal Şafḩah",
+    "lat": 34.675,
+    "lng": 37.4875
+  },
+  {
+    "name": "Ţafḩah",
+    "lat": 34.6573,
+    "lng": 37.45216
+  },
+  {
+    "name": "Qārat al ‘Abd",
+    "lat": 34.69738,
+    "lng": 37.53658
+  },
+  {
+    "name": "Wādī al Mafraq",
+    "lat": 34.65192,
+    "lng": 37.59367
+  },
+  {
+    "name": "Wādī al Awābid",
+    "lat": 34.71323,
+    "lng": 37.62413
+  },
+  {
+    "name": "Jubb ash Shuyūkh",
+    "lat": 34.71052,
+    "lng": 37.58554
+  },
+  {
+    "name": "Wādī Jubb ash Shuyūkh",
+    "lat": 34.68768,
+    "lng": 37.59793
+  },
+  {
+    "name": "Wādī Abū Qaylah",
+    "lat": 34.66187,
+    "lng": 37.61592
+  },
+  {
+    "name": "Bi’r Abū Qaylah",
+    "lat": 34.65252,
+    "lng": 37.61441
+  },
+  {
+    "name": "Jabal al Jidmā",
+    "lat": 34.7251,
+    "lng": 37.9182
+  },
+  {
+    "name": "Wādī Zumlat al Maharr ash Sharqī",
+    "lat": 34.62189,
+    "lng": 37.69506
+  },
+  {
+    "name": "Ţaraq Şawwānat al Ḩasw",
+    "lat": 34.72682,
+    "lng": 37.67494
+  },
+  {
+    "name": "Bi’r Ţurayfāwī",
+    "lat": 34.68015,
+    "lng": 37.68501
+  },
+  {
+    "name": "Jabal Zumlat al Maharr",
+    "lat": 34.69823,
+    "lng": 37.75956
+  },
+  {
+    "name": "Ḩasw Jihār",
+    "lat": 34.65124,
+    "lng": 37.8291
+  },
+  {
+    "name": "Wādī al Jidmā",
+    "lat": 34.62866,
+    "lng": 37.91174
+  },
+  {
+    "name": "Wādī ash Shalāshil",
+    "lat": 34.62001,
+    "lng": 37.98138
+  },
+  {
+    "name": "Wādī ‘Alālī Gharbūn",
+    "lat": 34.62429,
+    "lng": 38.00701
+  },
+  {
+    "name": "Rasm aţ Ţuwaylīyah",
+    "lat": 34.85,
+    "lng": 37.1
+  },
+  {
+    "name": "Tall al Qashlah",
+    "lat": 34.8375,
+    "lng": 37.075
+  },
+  {
+    "name": "Mazra‘at ‘Abd ad Dāyim",
+    "lat": 34.825,
+    "lng": 37.08333
+  },
+  {
+    "name": "Karīmah",
+    "lat": 34.76473,
+    "lng": 37.09572
+  },
+  {
+    "name": "Jubb Umm Murayghān",
+    "lat": 34.75994,
+    "lng": 37.10249
+  },
+  {
+    "name": "Khirbat as Sanānīyah",
+    "lat": 34.77142,
+    "lng": 37.13763
+  },
+  {
+    "name": "Al Khān",
+    "lat": 34.76776,
+    "lng": 37.3502
+  },
+  {
+    "name": "Aţ Ţawīl",
+    "lat": 34.75833,
+    "lng": 37.35417
+  },
+  {
+    "name": "Rasm ad Dābah",
+    "lat": 34.75568,
+    "lng": 37.39129
+  },
+  {
+    "name": "Shaymān",
+    "lat": 34.7674,
+    "lng": 37.43785
+  },
+  {
+    "name": "Abū Jurayş",
+    "lat": 34.81015,
+    "lng": 37.39807
+  },
+  {
+    "name": "Al Ḩabā",
+    "lat": 34.82439,
+    "lng": 37.45183
+  },
+  {
+    "name": "Umm Ḩuwaysh",
+    "lat": 34.82478,
+    "lng": 37.48141
+  },
+  {
+    "name": "Al Mukarram",
+    "lat": 34.81265,
+    "lng": 37.4773
+  },
+  {
+    "name": "Qaşr al Mukarram",
+    "lat": 34.80765,
+    "lng": 37.48033
+  },
+  {
+    "name": "Darwīshīyah",
+    "lat": 34.77227,
+    "lng": 37.47057
+  },
+  {
+    "name": "An Nuşayr",
+    "lat": 34.76177,
+    "lng": 37.45293
+  },
+  {
+    "name": "Zaghrūtīyah",
+    "lat": 34.75237,
+    "lng": 37.46401
+  },
+  {
+    "name": "Al Mashqūqah",
+    "lat": 34.7698,
+    "lng": 37.5111
+  },
+  {
+    "name": "Al Khāwīyah",
+    "lat": 34.79018,
+    "lng": 37.51636
+  },
+  {
+    "name": "An Nabaţīyah",
+    "lat": 34.81768,
+    "lng": 37.52246
+  },
+  {
+    "name": "Munţār ash Shaykh",
+    "lat": 34.81697,
+    "lng": 37.55214
+  },
+  {
+    "name": "Munţār al Mu‘allaq",
+    "lat": 34.79622,
+    "lng": 37.54352
+  },
+  {
+    "name": "Al ‘Amūdīyah",
+    "lat": 34.77971,
+    "lng": 37.53156
+  },
+  {
+    "name": "Khirbat al Ḩaywānīyah",
+    "lat": 34.74602,
+    "lng": 37.52855
+  },
+  {
+    "name": "Aş Şawwānah",
+    "lat": 34.76986,
+    "lng": 37.55804
+  },
+  {
+    "name": "Al ‘Aybidīyah",
+    "lat": 34.7659,
+    "lng": 37.61131
+  },
+  {
+    "name": "Wādī al ‘Illīyah",
+    "lat": 34.76349,
+    "lng": 37.58731
+  },
+  {
+    "name": "Ḩaz̧īrat al Mu‘allaq",
+    "lat": 34.78743,
+    "lng": 37.54463
+  },
+  {
+    "name": "Al ‘Illīyah",
+    "lat": 34.81384,
+    "lng": 37.5762
+  },
+  {
+    "name": "Wādī Ḩanjaf",
+    "lat": 34.79808,
+    "lng": 37.61813
+  },
+  {
+    "name": "Ḩanjaf",
+    "lat": 34.81462,
+    "lng": 37.62557
+  },
+  {
+    "name": "Ābār Abū Ḩayāyā",
+    "lat": 34.803,
+    "lng": 37.68326
+  },
+  {
+    "name": "Tulūl al ‘Awābidah",
+    "lat": 34.7563,
+    "lng": 37.64325
+  },
+  {
+    "name": "Kūr ar Rawthah",
+    "lat": 34.78219,
+    "lng": 37.71274
+  },
+  {
+    "name": "Wādī Zumlat al Maharr al Gharbī",
+    "lat": 34.7124,
+    "lng": 37.74665
+  },
+  {
+    "name": "Qārat al ‘Arīḑah",
+    "lat": 34.73333,
+    "lng": 37.7875
+  },
+  {
+    "name": "Jabal al Ḩayţ",
+    "lat": 34.73348,
+    "lng": 37.90057
+  },
+  {
+    "name": "Ābār Ḩasw ad Dalīl",
+    "lat": 34.75879,
+    "lng": 37.925
+  },
+  {
+    "name": "Jabal ad Dalīl",
+    "lat": 34.73942,
+    "lng": 37.93524
+  },
+  {
+    "name": "Wādī ad Dalīl",
+    "lat": 34.75532,
+    "lng": 37.91385
+  },
+  {
+    "name": "Wādī al Mu’addabah",
+    "lat": 34.76715,
+    "lng": 37.97691
+  },
+  {
+    "name": "Khirbat aş Şawwānah",
+    "lat": 34.82321,
+    "lng": 37.93054
+  },
+  {
+    "name": "Sunaydah",
+    "lat": 34.90597,
+    "lng": 37.00287
+  },
+  {
+    "name": "Burayşat as Sunayd",
+    "lat": 34.90389,
+    "lng": 37.03731
+  },
+  {
+    "name": "Tall ‘Urun",
+    "lat": 34.88648,
+    "lng": 37.04345
+  },
+  {
+    "name": "Rayyānīyah",
+    "lat": 34.89886,
+    "lng": 37.09885
+  },
+  {
+    "name": "Tall Ḩasan Bāshā",
+    "lat": 34.90781,
+    "lng": 37.07053
+  },
+  {
+    "name": "Shaykh Rīḩ",
+    "lat": 34.9248,
+    "lng": 37.16615
+  },
+  {
+    "name": "Abū Ḩakfā ash Shamālī",
+    "lat": 34.90347,
+    "lng": 37.13176
+  },
+  {
+    "name": "Abū Ḩakfā al Janūbī",
+    "lat": 34.88658,
+    "lng": 37.14095
+  },
+  {
+    "name": "As Sa‘dīyah",
+    "lat": 34.85177,
+    "lng": 37.13499
+  },
+  {
+    "name": "Khirbat Khilfah",
+    "lat": 34.87099,
+    "lng": 37.23311
+  },
+  {
+    "name": "Khalfah",
+    "lat": 34.8875,
+    "lng": 37.2
+  },
+  {
+    "name": "Khaţţāb",
+    "lat": 34.90664,
+    "lng": 37.32237
+  },
+  {
+    "name": "Rasm at Taḩtā",
+    "lat": 34.85798,
+    "lng": 37.38239
+  },
+  {
+    "name": "Aş Şāliḩīyah",
+    "lat": 34.91593,
+    "lng": 37.34457
+  },
+  {
+    "name": "Rasm al ‘Ukaydāt",
+    "lat": 34.85979,
+    "lng": 37.46001
+  },
+  {
+    "name": "Umm Fusūs",
+    "lat": 34.83184,
+    "lng": 37.4871
+  },
+  {
+    "name": "Wādī al Hajl",
+    "lat": 34.87856,
+    "lng": 37.4817
+  },
+  {
+    "name": "Ar Rab‘ah",
+    "lat": 34.88144,
+    "lng": 37.48706
+  },
+  {
+    "name": "Al Jurf al Janūbī",
+    "lat": 34.89843,
+    "lng": 37.49669
+  },
+  {
+    "name": "Al Jurf ash Shamālī",
+    "lat": 34.90734,
+    "lng": 37.49943
+  },
+  {
+    "name": "Tall Shihāb",
+    "lat": 34.91615,
+    "lng": 37.50286
+  },
+  {
+    "name": "Umm Qubaybah",
+    "lat": 34.90668,
+    "lng": 37.52975
+  },
+  {
+    "name": "Jabal Umm Qubaybah ash Sharqī",
+    "lat": 34.89434,
+    "lng": 37.55765
+  },
+  {
+    "name": "Jabal Manqūr",
+    "lat": 34.85742,
+    "lng": 37.54356
+  },
+  {
+    "name": "Al Muhaynīyah",
+    "lat": 34.83412,
+    "lng": 37.5511
+  },
+  {
+    "name": "Al Khāfiyah",
+    "lat": 34.848,
+    "lng": 37.56704
+  },
+  {
+    "name": "Khirbat Sinnū al Fāḑil",
+    "lat": 34.89371,
+    "lng": 37.5708
+  },
+  {
+    "name": "Ābār Ḩimār",
+    "lat": 34.90096,
+    "lng": 37.62633
+  },
+  {
+    "name": "Al Mushayrifah",
+    "lat": 34.85916,
+    "lng": 37.65396
+  },
+  {
+    "name": "Ābār Muqranāt",
+    "lat": 34.84437,
+    "lng": 37.7324
+  },
+  {
+    "name": "Wādī aş Şawwānah",
+    "lat": 34.72724,
+    "lng": 37.70797
+  },
+  {
+    "name": "Wādī al Fţās",
+    "lat": 34.83333,
+    "lng": 37.86667
+  },
+  {
+    "name": "Wādī ash Shinā‘ah",
+    "lat": 34.76858,
+    "lng": 38.00806
+  },
+  {
+    "name": "Shakārah",
+    "lat": 34.94127,
+    "lng": 37.00268
+  },
+  {
+    "name": "‘Arbīd",
+    "lat": 34.98388,
+    "lng": 37.01673
+  },
+  {
+    "name": "Al Mulayḩah",
+    "lat": 34.99622,
+    "lng": 37.01447
+  },
+  {
+    "name": "Fir‘awnīyah",
+    "lat": 34.96468,
+    "lng": 37.04691
+  },
+  {
+    "name": "Muḩammadīyah",
+    "lat": 34.94957,
+    "lng": 37.07409
+  },
+  {
+    "name": "Baḩdalīyah",
+    "lat": 34.95734,
+    "lng": 37.05822
+  },
+  {
+    "name": "Ghuzaylah",
+    "lat": 34.97946,
+    "lng": 37.06733
+  },
+  {
+    "name": "Tall ‘Arak",
+    "lat": 34.98874,
+    "lng": 37.0707
+  },
+  {
+    "name": "Fayrūzah",
+    "lat": 34.96405,
+    "lng": 37.12564
+  },
+  {
+    "name": "Al Qalbīyah",
+    "lat": 34.94465,
+    "lng": 37.14381
+  },
+  {
+    "name": "Malţah",
+    "lat": 34.96017,
+    "lng": 37.14878
+  },
+  {
+    "name": "Khirbat Tall Qaţā",
+    "lat": 34.94583,
+    "lng": 37.23333
+  },
+  {
+    "name": "Furaytān",
+    "lat": 34.95833,
+    "lng": 37.24167
+  },
+  {
+    "name": "Fānūsīyah",
+    "lat": 34.97835,
+    "lng": 37.26752
+  },
+  {
+    "name": "Barghūtīyah",
+    "lat": 34.95833,
+    "lng": 37.275
+  },
+  {
+    "name": "Abū al ‘Alāyā",
+    "lat": 34.93318,
+    "lng": 37.2894
+  },
+  {
+    "name": "An Nashmī",
+    "lat": 34.92798,
+    "lng": 37.40794
+  },
+  {
+    "name": "Jubb ar Rayyān",
+    "lat": 34.97843,
+    "lng": 37.50324
+  },
+  {
+    "name": "Rasm Ḩasan al Mir‘ī",
+    "lat": 34.99492,
+    "lng": 37.49828
+  },
+  {
+    "name": "Mu‘aḑḑamīyah",
+    "lat": 34.99643,
+    "lng": 37.51654
+  },
+  {
+    "name": "Al Makhbūţah",
+    "lat": 34.96311,
+    "lng": 37.527
+  },
+  {
+    "name": "Al Lujj",
+    "lat": 34.93495,
+    "lng": 37.51251
+  },
+  {
+    "name": "Bustān Şubayḩ",
+    "lat": 34.95844,
+    "lng": 37.56381
+  },
+  {
+    "name": "Jawwāşīyah al Janūbīyah",
+    "lat": 34.98104,
+    "lng": 37.58565
+  },
+  {
+    "name": "Jawwāşīyah ash Shamālīyah",
+    "lat": 34.99708,
+    "lng": 37.5763
+  },
+  {
+    "name": "Ābār al Bātijānah",
+    "lat": 34.98573,
+    "lng": 37.60543
+  },
+  {
+    "name": "Ābār al Muzayri‘ah",
+    "lat": 34.9248,
+    "lng": 37.71386
+  },
+  {
+    "name": "Rasm al ‘Arbā",
+    "lat": 34.98083,
+    "lng": 37.7323
+  },
+  {
+    "name": "Wādī al Mallūḩ",
+    "lat": 34.98208,
+    "lng": 37.69889
+  },
+  {
+    "name": "Ābār al Makāmin",
+    "lat": 34.99167,
+    "lng": 37.71667
+  },
+  {
+    "name": "Wādī Abū aḑ Ḑuhūr",
+    "lat": 34.98136,
+    "lng": 37.8599
+  },
+  {
+    "name": "Wādī ash Shaţb",
+    "lat": 35.00607,
+    "lng": 37.8697
+  },
+  {
+    "name": "Khirbat al Bayḑā",
+    "lat": 34.92376,
+    "lng": 37.84399
+  },
+  {
+    "name": "Khirbat Şāliḩ Ḩamīd",
+    "lat": 34.92795,
+    "lng": 37.89413
+  },
+  {
+    "name": "Ābār Aḩmad Dibs",
+    "lat": 34.93757,
+    "lng": 37.94235
+  },
+  {
+    "name": "Rasm Ḩamdāwī",
+    "lat": 34.94469,
+    "lng": 37.94962
+  },
+  {
+    "name": "Khirbat ad Dablāt",
+    "lat": 34.95414,
+    "lng": 37.90182
+  },
+  {
+    "name": "Ābār Farwān",
+    "lat": 34.95788,
+    "lng": 37.95619
+  },
+  {
+    "name": "Bi’r al Madḩūr",
+    "lat": 34.99649,
+    "lng": 37.92495
+  },
+  {
+    "name": "Z̧ahrat al Ghannāmīyah",
+    "lat": 34.3482,
+    "lng": 36.96133
+  },
+  {
+    "name": "Wādī Z̧ahr al Quşayr",
+    "lat": 34.82826,
+    "lng": 36.32719
+  },
+  {
+    "name": "Z̧ahr al Gharbī",
+    "lat": 34.7478,
+    "lng": 36.4881
+  },
+  {
+    "name": "Tall Waşadī",
+    "lat": 34.98255,
+    "lng": 36.78605
+  },
+  {
+    "name": "Khirbat Ţabshīsh",
+    "lat": 34.58714,
+    "lng": 36.92638
+  },
+  {
+    "name": "Butaysah",
+    "lat": 34.78593,
+    "lng": 36.50279
+  },
+  {
+    "name": "Tasnīn",
+    "lat": 34.8702,
+    "lng": 36.65383
+  },
+  {
+    "name": "Salīm at Taḩtānī",
+    "lat": 34.91918,
+    "lng": 36.94499
+  },
+  {
+    "name": "Sammūqah",
+    "lat": 34.89302,
+    "lng": 36.20916
+  },
+  {
+    "name": "Şīrat Jubb ash Shā‘ir",
+    "lat": 34.18967,
+    "lng": 36.95506
+  },
+  {
+    "name": "Sahl at Tulūl",
+    "lat": 34.34162,
+    "lng": 36.83522
+  },
+  {
+    "name": "Şunūn",
+    "lat": 34.67736,
+    "lng": 36.47853
+  },
+  {
+    "name": "Şufr",
+    "lat": 34.78386,
+    "lng": 36.47318
+  },
+  {
+    "name": "Tall aş Şafā",
+    "lat": 34.72374,
+    "lng": 36.39431
+  },
+  {
+    "name": "Khirbat as Sawdah",
+    "lat": 34.78274,
+    "lng": 36.62311
+  },
+  {
+    "name": "Qub‘ Wādī al Mafdan",
+    "lat": 34.05862,
+    "lng": 36.86221
+  },
+  {
+    "name": "Ra’s al Mashqūqah",
+    "lat": 34.1412,
+    "lng": 36.99917
+  },
+  {
+    "name": "Qubayḩah",
+    "lat": 34.98695,
+    "lng": 36.86826
+  },
+  {
+    "name": "Nizārīyah",
+    "lat": 34.43216,
+    "lng": 36.54424
+  },
+  {
+    "name": "Tall al Muzayri‘ah",
+    "lat": 34.98833,
+    "lng": 36.98861
+  },
+  {
+    "name": "Arāḑī Ḩufar",
+    "lat": 34.24558,
+    "lng": 36.85102
+  },
+  {
+    "name": "Baḩrat al Mawāshī",
+    "lat": 34.93414,
+    "lng": 36.6105
+  },
+  {
+    "name": "Jabal Mashqūqat Mahīn",
+    "lat": 34.15299,
+    "lng": 36.99053
+  },
+  {
+    "name": "Tall Maḩjūt",
+    "lat": 34.8895,
+    "lng": 36.81494
+  },
+  {
+    "name": "Tall Ma‘marī",
+    "lat": 34.93001,
+    "lng": 36.6879
+  },
+  {
+    "name": "Arḑ al Kuswah",
+    "lat": 34.92035,
+    "lng": 36.85963
+  },
+  {
+    "name": "Khirbat Warwar",
+    "lat": 34.40597,
+    "lng": 36.65771
+  },
+  {
+    "name": "Khirbat Şahyā",
+    "lat": 34.87523,
+    "lng": 36.6167
+  },
+  {
+    "name": "Khirbat Jumrāḩ",
+    "lat": 34.3311,
+    "lng": 36.68615
+  },
+  {
+    "name": "Khirbat Dabak",
+    "lat": 34.38678,
+    "lng": 36.89791
+  },
+  {
+    "name": "Khirbat Buzliyā",
+    "lat": 34.93056,
+    "lng": 36.66667
+  },
+  {
+    "name": "Khirbat ar Ruḑayfāt ash Shamālīyah",
+    "lat": 34.46347,
+    "lng": 36.97855
+  },
+  {
+    "name": "Khirbat Umm al Qawāfi‘",
+    "lat": 34.47141,
+    "lng": 36.79838
+  },
+  {
+    "name": "Khirbat al Maḑa‘",
+    "lat": 34.44022,
+    "lng": 36.68696
+  },
+  {
+    "name": "Khirbat Wādī al Yūsufīyah",
+    "lat": 34.41655,
+    "lng": 36.63494
+  },
+  {
+    "name": "Wādī Khashūn",
+    "lat": 34.68957,
+    "lng": 36.79013
+  },
+  {
+    "name": "Khān Kafr Jālī",
+    "lat": 34.88333,
+    "lng": 36.73611
+  },
+  {
+    "name": "Jabal al Kawdan",
+    "lat": 34.20556,
+    "lng": 36.81944
+  },
+  {
+    "name": "Sawḩ Jubb ash Shā‘ir",
+    "lat": 34.19584,
+    "lng": 36.96908
+  },
+  {
+    "name": "Jibāb az Zayt",
+    "lat": 34.40943,
+    "lng": 36.87365
+  },
+  {
+    "name": "Hubūb ar Rīḩ",
+    "lat": 34.80423,
+    "lng": 36.68406
+  },
+  {
+    "name": "Ḑuhūr al Hawā",
+    "lat": 34.075,
+    "lng": 36.975
+  },
+  {
+    "name": "Ḩuwayk",
+    "lat": 34.54737,
+    "lng": 36.42271
+  },
+  {
+    "name": "Ḩadāthah",
+    "lat": 34.80195,
+    "lng": 36.47812
+  },
+  {
+    "name": "Ḩāmūsh Raslān",
+    "lat": 34.93473,
+    "lng": 36.16273
+  },
+  {
+    "name": "Nahr Qays",
+    "lat": 34.96319,
+    "lng": 35.96565
+  },
+  {
+    "name": "Dayr Mār Jirjis",
+    "lat": 34.77754,
+    "lng": 36.2869
+  },
+  {
+    "name": "Quşayr Dayr Ḩuwayt",
+    "lat": 34.99167,
+    "lng": 36.41667
+  },
+  {
+    "name": "Dallāk",
+    "lat": 34.97494,
+    "lng": 36.9751
+  },
+  {
+    "name": "Tall ad Daḩḩ",
+    "lat": 34.79722,
+    "lng": 36.80556
+  },
+  {
+    "name": "Jawbar",
+    "lat": 34.6835,
+    "lng": 36.66259
+  },
+  {
+    "name": "Dār al Kūkh",
+    "lat": 34.63689,
+    "lng": 36.63836
+  },
+  {
+    "name": "Buşayrah",
+    "lat": 34.91349,
+    "lng": 36.2821
+  },
+  {
+    "name": "Burayghith",
+    "lat": 34.9846,
+    "lng": 36.91331
+  },
+  {
+    "name": "Tall al Baḩrah",
+    "lat": 34.62068,
+    "lng": 36.53341
+  },
+  {
+    "name": "Az Zaybaq",
+    "lat": 34.80775,
+    "lng": 36.54948
+  },
+  {
+    "name": "Az Zurzūrīyah",
+    "lat": 34.7299,
+    "lng": 36.63643
+  },
+  {
+    "name": "Az̧ Z̧āhirīyah",
+    "lat": 34.50225,
+    "lng": 36.53556
+  },
+  {
+    "name": "Arḑ Ma‘tá al Ḩajar",
+    "lat": 34.28039,
+    "lng": 36.8053
+  },
+  {
+    "name": "Arḑ Naqbīn",
+    "lat": 34.72127,
+    "lng": 36.82617
+  },
+  {
+    "name": "An Nuzhah",
+    "lat": 34.55913,
+    "lng": 36.8093
+  },
+  {
+    "name": "An Nāşifah",
+    "lat": 34.03474,
+    "lng": 36.96383
+  },
+  {
+    "name": "Al Wāzi‘īyah",
+    "lat": 34.72148,
+    "lng": 36.93241
+  },
+  {
+    "name": "Al Khālidīyah",
+    "lat": 34.50738,
+    "lng": 36.51145
+  },
+  {
+    "name": "Al Maz̧harīyah",
+    "lat": 34.58688,
+    "lng": 36.83142
+  },
+  {
+    "name": "Al Ḩashmah",
+    "lat": 34.79456,
+    "lng": 36.56488
+  },
+  {
+    "name": "Al Ḩamrā’",
+    "lat": 34.56258,
+    "lng": 36.67052
+  },
+  {
+    "name": "Al Ḩaddādīyāt",
+    "lat": 34.84684,
+    "lng": 36.03573
+  },
+  {
+    "name": "Al Ghāşibīyah",
+    "lat": 34.77742,
+    "lng": 36.68346
+  },
+  {
+    "name": "Al Barjūdīyah",
+    "lat": 34.75858,
+    "lng": 36.93686
+  },
+  {
+    "name": "Al Baghālīyah",
+    "lat": 34.47238,
+    "lng": 36.87736
+  },
+  {
+    "name": "Al ‘Azīzīyah",
+    "lat": 34.36472,
+    "lng": 36.85307
+  },
+  {
+    "name": "Al ‘Awjah",
+    "lat": 34.84819,
+    "lng": 36.48268
+  },
+  {
+    "name": "Al ‘Ādilīyah",
+    "lat": 34.66773,
+    "lng": 36.92881
+  },
+  {
+    "name": "Khirbat adh Dhukūr",
+    "lat": 34.64167,
+    "lng": 36.70833
+  },
+  {
+    "name": "Adh Dhībah",
+    "lat": 34.55964,
+    "lng": 36.77682
+  },
+  {
+    "name": "Z̧uhūr al ‘Azīzīyah",
+    "lat": 34.35858,
+    "lng": 36.84316
+  },
+  {
+    "name": "‘Ayn Ḩajal",
+    "lat": 34.91057,
+    "lng": 36.68512
+  },
+  {
+    "name": "Ayn Halaqim",
+    "lat": 34.93998,
+    "lng": 36.32212
+  },
+  {
+    "name": "Tall ‘Umarī",
+    "lat": 34.87405,
+    "lng": 36.91968
+  },
+  {
+    "name": "Zughayr",
+    "lat": 35.5038,
+    "lng": 40.01589
+  },
+  {
+    "name": "Zilā",
+    "lat": 35.49912,
+    "lng": 39.93758
+  },
+  {
+    "name": "Zawr Shammār",
+    "lat": 35.78379,
+    "lng": 39.36559
+  },
+  {
+    "name": "Zalmāwīyah",
+    "lat": 35.3957,
+    "lng": 39.41555
+  },
+  {
+    "name": "Bīr az Zaghārī",
+    "lat": 35.95195,
+    "lng": 39.34975
+  },
+  {
+    "name": "Tall Zāmūk",
+    "lat": 35.96797,
+    "lng": 39.95054
+  },
+  {
+    "name": "Winsah",
+    "lat": 35.51477,
+    "lng": 39.94855
+  },
+  {
+    "name": "Wādī al Wasţānīyah",
+    "lat": 35.52321,
+    "lng": 39.81481
+  },
+  {
+    "name": "Bi’r Umm Ḩusayn ‘Abd Allāh",
+    "lat": 35.98435,
+    "lng": 39.30354
+  },
+  {
+    "name": "Bīr Turkī Safr",
+    "lat": 35.9095,
+    "lng": 39.82348
+  },
+  {
+    "name": "Sha‘ībāt ath Thamād",
+    "lat": 35.80342,
+    "lng": 39.9996
+  },
+  {
+    "name": "Bīr ath Thamād",
+    "lat": 35.82302,
+    "lng": 39.9704
+  },
+  {
+    "name": "Jazīrat Tall Mīlāsh",
+    "lat": 35.75556,
+    "lng": 39.26111
+  },
+  {
+    "name": "Wādī Tall al Bārūd",
+    "lat": 35.60753,
+    "lng": 39.92652
+  },
+  {
+    "name": "Rujm Tār Hajānah",
+    "lat": 35.32072,
+    "lng": 39.01673
+  },
+  {
+    "name": "Ţuhmāz al Wāwī",
+    "lat": 35.93882,
+    "lng": 39.81846
+  },
+  {
+    "name": "Ţashshah",
+    "lat": 35.29316,
+    "lng": 39.31418
+  },
+  {
+    "name": "Surrat Ḩarkā",
+    "lat": 35.89722,
+    "lng": 39.2
+  },
+  {
+    "name": "Bīr as Suqqār",
+    "lat": 35.8817,
+    "lng": 39.3744
+  },
+  {
+    "name": "Silsīn",
+    "lat": 35.77211,
+    "lng": 39.82184
+  },
+  {
+    "name": "Shuraydah",
+    "lat": 35.80272,
+    "lng": 39.2778
+  },
+  {
+    "name": "Shujayrī",
+    "lat": 35.4186,
+    "lng": 39.41926
+  },
+  {
+    "name": "Jazīrat ash Shitī",
+    "lat": 35.75908,
+    "lng": 39.80064
+  },
+  {
+    "name": "Rujm ash Shaykh",
+    "lat": 35.62222,
+    "lng": 39.03611
+  },
+  {
+    "name": "Shaykh Jadīd",
+    "lat": 35.9019,
+    "lng": 39.64298
+  },
+  {
+    "name": "Bīr Shaykh Ḩammād",
+    "lat": 35.65494,
+    "lng": 39.56554
+  },
+  {
+    "name": "Wādī Sharqī as Sahl",
+    "lat": 35.597,
+    "lng": 39.82823
+  },
+  {
+    "name": "Wādī Sharfūnah",
+    "lat": 35.80156,
+    "lng": 39.49347
+  },
+  {
+    "name": "Wādī Shamāl al Būlīyah",
+    "lat": 35.4533,
+    "lng": 39.33874
+  },
+  {
+    "name": "Sha‘fā",
+    "lat": 35.4202,
+    "lng": 39.47814
+  },
+  {
+    "name": "Raqqat Samrah Wasţānīyah",
+    "lat": 35.91178,
+    "lng": 39.08751
+  },
+  {
+    "name": "Jabal as Sammān",
+    "lat": 35.66238,
+    "lng": 39.94566
+  },
+  {
+    "name": "Salḩ al Jabrāhim",
+    "lat": 35.3713,
+    "lng": 39.42025
+  },
+  {
+    "name": "Sahrān",
+    "lat": 35.96908,
+    "lng": 39.76792
+  },
+  {
+    "name": "Wādī as Sahl",
+    "lat": 35.30277,
+    "lng": 40.1825
+  },
+  {
+    "name": "Sabkhāwī",
+    "lat": 35.695,
+    "lng": 39.23674
+  },
+  {
+    "name": "Bīr Sa‘īd",
+    "lat": 35.62951,
+    "lng": 39.50653
+  },
+  {
+    "name": "‘Ayn Şafīyah",
+    "lat": 35.50208,
+    "lng": 39.5483
+  },
+  {
+    "name": "Bīr Şāghū",
+    "lat": 35.98173,
+    "lng": 39.99822
+  },
+  {
+    "name": "Wādī Rujūm ar Rashīd",
+    "lat": 35.35435,
+    "lng": 39.64894
+  },
+  {
+    "name": "Rujūm ar Rashīd",
+    "lat": 35.37795,
+    "lng": 39.63911
+  },
+  {
+    "name": "Wādī Rujm al Hajānah",
+    "lat": 35.15019,
+    "lng": 39.3106
+  },
+  {
+    "name": "Wādī Rujm ‘Aqdān",
+    "lat": 35.61148,
+    "lng": 39.29544
+  },
+  {
+    "name": "Bīr Rijlā",
+    "lat": 35.89092,
+    "lng": 39.78213
+  },
+  {
+    "name": "Rawḑah",
+    "lat": 35.90318,
+    "lng": 39.79931
+  },
+  {
+    "name": "Surrat ar Raḩbī",
+    "lat": 35.83333,
+    "lng": 39.26944
+  },
+  {
+    "name": "Wādī ar Rabbāyah",
+    "lat": 35.13911,
+    "lng": 38.97664
+  },
+  {
+    "name": "Tulūl ar Rabī‘",
+    "lat": 35.17533,
+    "lng": 39.02536
+  },
+  {
+    "name": "Bīr Qurrat Bit",
+    "lat": 35.99651,
+    "lng": 39.51764
+  },
+  {
+    "name": "Ābār Quway‘ān",
+    "lat": 35.61397,
+    "lng": 39.27192
+  },
+  {
+    "name": "Bīr Qawrān",
+    "lat": 35.99213,
+    "lng": 39.36202
+  },
+  {
+    "name": "Bīr Qiblat an Naz̧īm",
+    "lat": 35.29027,
+    "lng": 39.54961
+  },
+  {
+    "name": "Qiblī",
+    "lat": 35.80981,
+    "lng": 39.34128
+  },
+  {
+    "name": "Qaryat Sukkar",
+    "lat": 35.9922,
+    "lng": 39.63235
+  },
+  {
+    "name": "Bīr Qarā Hulayb",
+    "lat": 35.68793,
+    "lng": 39.3129
+  },
+  {
+    "name": "Jabal Naz̧īrāt al Bishrī",
+    "lat": 35.32181,
+    "lng": 39.52815
+  },
+  {
+    "name": "Wādī an Nuwayz̧irah",
+    "lat": 35.27078,
+    "lng": 39.73169
+  },
+  {
+    "name": "Jabal ‘Azmān",
+    "lat": 35.25902,
+    "lng": 39.64924
+  },
+  {
+    "name": "Wādī an Nadīmah",
+    "lat": 35.12593,
+    "lng": 39.10051
+  },
+  {
+    "name": "Mushayrifah",
+    "lat": 35.57774,
+    "lng": 39.35604
+  },
+  {
+    "name": "Muḩammad Rimāḩ",
+    "lat": 35.92643,
+    "lng": 39.84062
+  },
+  {
+    "name": "Muḩammad Ḩusayn",
+    "lat": 35.91427,
+    "lng": 39.63593
+  },
+  {
+    "name": "Bīr Muḩammad al Fayyāḑ",
+    "lat": 35.69136,
+    "lng": 39.62645
+  },
+  {
+    "name": "Muḩammad al ‘Ayyāsh",
+    "lat": 35.94731,
+    "lng": 39.75127
+  },
+  {
+    "name": "Muḩammad ad Dandal",
+    "lat": 35.39927,
+    "lng": 39.44694
+  },
+  {
+    "name": "Jabal Mu‘ayzilah",
+    "lat": 35.64927,
+    "lng": 39.86032
+  },
+  {
+    "name": "Mūtūr ‘Ayfān",
+    "lat": 35.92051,
+    "lng": 39.71762
+  },
+  {
+    "name": "Bīr Mazyūnah",
+    "lat": 35.54044,
+    "lng": 39.34642
+  },
+  {
+    "name": "Arḑ Mazra‘at al Būrshīd",
+    "lat": 35.82847,
+    "lng": 39.69262
+  },
+  {
+    "name": "Wādī Mayy al ‘Arat",
+    "lat": 35.48303,
+    "lng": 39.32196
+  },
+  {
+    "name": "Mat‘ab",
+    "lat": 35.79296,
+    "lng": 39.66462
+  },
+  {
+    "name": "Mashrafat ash Shaḩnāt",
+    "lat": 35.85758,
+    "lng": 39.37483
+  },
+  {
+    "name": "Wādī Mas‘ūdah",
+    "lat": 35.46338,
+    "lng": 39.96539
+  },
+  {
+    "name": "Marzūqah",
+    "lat": 35.18531,
+    "lng": 39.24693
+  },
+  {
+    "name": "Wādī Marwā Sharb",
+    "lat": 35.72554,
+    "lng": 39.72102
+  },
+  {
+    "name": "Tall Manāyif",
+    "lat": 35.07968,
+    "lng": 39.02168
+  },
+  {
+    "name": "Bīr al Ma‘āyir",
+    "lat": 35.86679,
+    "lng": 39.77785
+  },
+  {
+    "name": "Fayḑat al Māliḩah",
+    "lat": 35.21065,
+    "lng": 39.91117
+  },
+  {
+    "name": "Bīr al Mā‘in",
+    "lat": 35.40084,
+    "lng": 39.72335
+  },
+  {
+    "name": "Lajā",
+    "lat": 35.65186,
+    "lng": 39.84015
+  },
+  {
+    "name": "Wādī al Lāţūm",
+    "lat": 34.99468,
+    "lng": 39.16731
+  },
+  {
+    "name": "Bīr al Kuwayr",
+    "lat": 35.02791,
+    "lng": 39.05944
+  },
+  {
+    "name": "Kusūbī",
+    "lat": 35.73241,
+    "lng": 39.76078
+  },
+  {
+    "name": "Jabal al Kushnah",
+    "lat": 35.58254,
+    "lng": 40.00203
+  },
+  {
+    "name": "Sawḩ al Khurayj",
+    "lat": 35.37046,
+    "lng": 39.83234
+  },
+  {
+    "name": "Khuraybah",
+    "lat": 35.40169,
+    "lng": 39.4075
+  },
+  {
+    "name": "Khirbat Ţannūz",
+    "lat": 35.43444,
+    "lng": 39.66758
+  },
+  {
+    "name": "Bīr Khiḑr al ‘Abd",
+    "lat": 35.54689,
+    "lng": 39.26304
+  },
+  {
+    "name": "Khass Ḩibāl",
+    "lat": 35.82778,
+    "lng": 39.51667
+  },
+  {
+    "name": "Khass Ḩibāl",
+    "lat": 35.82581,
+    "lng": 39.51158
+  },
+  {
+    "name": "Khass Dākūr",
+    "lat": 35.81462,
+    "lng": 39.5979
+  },
+  {
+    "name": "Khass ‘Ujayl",
+    "lat": 35.81786,
+    "lng": 39.55346
+  },
+  {
+    "name": "Wādī al Kharāyij",
+    "lat": 35.70785,
+    "lng": 39.58648
+  },
+  {
+    "name": "Bīr al Kharāyij",
+    "lat": 35.70864,
+    "lng": 39.57174
+  },
+  {
+    "name": "Bīr Kharāyij as Suwaydā",
+    "lat": 35.69098,
+    "lng": 39.57086
+  },
+  {
+    "name": "Khalaf al Kubayt",
+    "lat": 35.6483,
+    "lng": 39.2969
+  },
+  {
+    "name": "Wādī Khafīyah",
+    "lat": 35.50854,
+    "lng": 39.40565
+  },
+  {
+    "name": "Bīr Khāfīyah",
+    "lat": 35.43111,
+    "lng": 39.43078
+  },
+  {
+    "name": "Kasrat ‘Affān",
+    "lat": 35.90987,
+    "lng": 39.03939
+  },
+  {
+    "name": "Jabal al Kasrah",
+    "lat": 35.56492,
+    "lng": 39.91974
+  },
+  {
+    "name": "Wādī Kurūdhah",
+    "lat": 35.63073,
+    "lng": 39.79787
+  },
+  {
+    "name": "Julayb Khalīl",
+    "lat": 35.9882,
+    "lng": 39.74036
+  },
+  {
+    "name": "Bīr Jawwār an Nadab",
+    "lat": 35.28477,
+    "lng": 39.86234
+  },
+  {
+    "name": "Wādī al Jammā",
+    "lat": 35.69996,
+    "lng": 39.62383
+  },
+  {
+    "name": "Sha‘īb Jall al Aḩmar",
+    "lat": 35.40996,
+    "lng": 39.06506
+  },
+  {
+    "name": "Bīr Jāsim al ‘Abd Allāh",
+    "lat": 35.92209,
+    "lng": 39.82235
+  },
+  {
+    "name": "Wādī Imḩān",
+    "lat": 35.01028,
+    "lng": 39.53003
+  },
+  {
+    "name": "Rujm al Hayajānah",
+    "lat": 35.33933,
+    "lng": 39.43332
+  },
+  {
+    "name": "Wādī Huwīyat Kayyār",
+    "lat": 35.5573,
+    "lng": 39.20312
+  },
+  {
+    "name": "Ḩuwayjat Shinān",
+    "lat": 35.82696,
+    "lng": 39.21528
+  },
+  {
+    "name": "Ḩuwayjah",
+    "lat": 35.79955,
+    "lng": 39.35715
+  },
+  {
+    "name": "Ḩusayn Ḩamādah",
+    "lat": 35.96009,
+    "lng": 39.75777
+  },
+  {
+    "name": "Wādī Ḩumaymah Sharqīyah",
+    "lat": 35.59629,
+    "lng": 39.56973
+  },
+  {
+    "name": "Wādī al Ḩufūr",
+    "lat": 35.60234,
+    "lng": 39.62872
+  },
+  {
+    "name": "Wādī al Ḩisyān",
+    "lat": 35.60371,
+    "lng": 39.38669
+  },
+  {
+    "name": "Bīr Ḩasan ‘Ammū",
+    "lat": 35.89889,
+    "lng": 39.8342
+  },
+  {
+    "name": "Wādī al Ḩarāmīyah",
+    "lat": 35.54949,
+    "lng": 39.79344
+  },
+  {
+    "name": "Ḩamrat Nāşir",
+    "lat": 35.91555,
+    "lng": 39.1675
+  },
+  {
+    "name": "Ḩamrat Jamāsī",
+    "lat": 35.90139,
+    "lng": 39.12997
+  },
+  {
+    "name": "Ḩamrat Ghanam",
+    "lat": 35.93431,
+    "lng": 39.14392
+  },
+  {
+    "name": "Ḩamrat Balāsim",
+    "lat": 35.88204,
+    "lng": 39.1978
+  },
+  {
+    "name": "Jabal Ḩamrat ‘Alyān",
+    "lat": 35.85097,
+    "lng": 39.90465
+  },
+  {
+    "name": "Jabal Ḩammat Qubaybah",
+    "lat": 35.46916,
+    "lng": 39.45509
+  },
+  {
+    "name": "Bīr Ḩammād al Ḩusayn",
+    "lat": 35.6749,
+    "lng": 39.53426
+  },
+  {
+    "name": "Wādī al Ḩamadā",
+    "lat": 35.79277,
+    "lng": 39.91155
+  },
+  {
+    "name": "Ḩamad as Sajr",
+    "lat": 35.54861,
+    "lng": 39.38333
+  },
+  {
+    "name": "Ḩamad ‘Assāf",
+    "lat": 35.83941,
+    "lng": 39.46252
+  },
+  {
+    "name": "Bīr Ḩamād al Qadr",
+    "lat": 35.91298,
+    "lng": 39.29695
+  },
+  {
+    "name": "Bīr al Ḩabā",
+    "lat": 35.83961,
+    "lng": 39.95188
+  },
+  {
+    "name": "Ḩāwī Khurayţah",
+    "lat": 35.4534,
+    "lng": 39.98503
+  },
+  {
+    "name": "Arḑ Ḩāwī Ḩimār",
+    "lat": 35.57296,
+    "lng": 39.96198
+  },
+  {
+    "name": "Tall al Ḩusāmī",
+    "lat": 35.44429,
+    "lng": 39.84039
+  },
+  {
+    "name": "Bīr Ḩājj Mīlāsh",
+    "lat": 35.83572,
+    "lng": 39.79783
+  },
+  {
+    "name": "Wādī Ghuşūn al Malḩam",
+    "lat": 35.87665,
+    "lng": 39.05151
+  },
+  {
+    "name": "Bīr Ghuraytā",
+    "lat": 35.01778,
+    "lng": 39.81366
+  },
+  {
+    "name": "Ghurayb ‘Abd Allāh",
+    "lat": 35.9743,
+    "lng": 39.74171
+  },
+  {
+    "name": "Bīr Ghadīr",
+    "lat": 35.11812,
+    "lng": 39.72946
+  },
+  {
+    "name": "Wādī al Ghaḑbān",
+    "lat": 34.94206,
+    "lng": 39.40569
+  },
+  {
+    "name": "Ghānim al ‘Alī",
+    "lat": 35.77538,
+    "lng": 39.40332
+  },
+  {
+    "name": "Wādī Fusyā",
+    "lat": 35.54889,
+    "lng": 39.86246
+  },
+  {
+    "name": "Al Karāmah",
+    "lat": 35.86865,
+    "lng": 39.27803
+  },
+  {
+    "name": "Faţsat al Kusūn",
+    "lat": 35.87915,
+    "lng": 39.25537
+  },
+  {
+    "name": "Faţsat ‘Alī Bayram",
+    "lat": 35.85981,
+    "lng": 39.31107
+  },
+  {
+    "name": "Faţsat ‘Abd Ismā‘īl",
+    "lat": 35.85408,
+    "lng": 39.32761
+  },
+  {
+    "name": "Rujm al Faras",
+    "lat": 35.86266,
+    "lng": 39.97827
+  },
+  {
+    "name": "Bīr al Faras",
+    "lat": 35.95464,
+    "lng": 39.79369
+  },
+  {
+    "name": "Faqrat ad Darbūlīyah",
+    "lat": 35.37565,
+    "lng": 39.38214
+  },
+  {
+    "name": "Sha‘īb al Fāţim",
+    "lat": 35.76306,
+    "lng": 39.56688
+  },
+  {
+    "name": "Wādī Dawwārah",
+    "lat": 35.50713,
+    "lng": 39.40303
+  },
+  {
+    "name": "Bīr Dawwārah",
+    "lat": 35.45756,
+    "lng": 39.39853
+  },
+  {
+    "name": "Wādī ad Duwaynah",
+    "lat": 35.20356,
+    "lng": 39.46764
+  },
+  {
+    "name": "Wādī ad Duḩūl",
+    "lat": 35.08437,
+    "lng": 39.84752
+  },
+  {
+    "name": "Dafīnat Juwayfāt",
+    "lat": 35.28149,
+    "lng": 39.39732
+  },
+  {
+    "name": "Wādī ad Dafīnah",
+    "lat": 35.15113,
+    "lng": 39.59839
+  },
+  {
+    "name": "Tall Dubaybah",
+    "lat": 35.22482,
+    "lng": 39.25553
+  },
+  {
+    "name": "Bīr Dawwāsh",
+    "lat": 35.56454,
+    "lng": 39.27223
+  },
+  {
+    "name": "Dalḩah",
+    "lat": 35.85412,
+    "lng": 39.17217
+  },
+  {
+    "name": "Bīr Dafāyin",
+    "lat": 35.24577,
+    "lng": 39.36122
+  },
+  {
+    "name": "Arḑ Dablah",
+    "lat": 35.88321,
+    "lng": 39.64605
+  },
+  {
+    "name": "Wādī Ḑabbah",
+    "lat": 35.22222,
+    "lng": 39.24167
+  },
+  {
+    "name": "Bustān al ‘Ubayd",
+    "lat": 35.50914,
+    "lng": 39.95696
+  },
+  {
+    "name": "Bustān ‘Alī Ḩafqār",
+    "lat": 35.50886,
+    "lng": 39.97114
+  },
+  {
+    "name": "Wādī al Buryāq",
+    "lat": 35.43289,
+    "lng": 39.09505
+  },
+  {
+    "name": "Bīr Barzān",
+    "lat": 35.57881,
+    "lng": 39.39703
+  },
+  {
+    "name": "Wādī al Jīr",
+    "lat": 35.52169,
+    "lng": 39.27747
+  },
+  {
+    "name": "Wādī Bi’r al ‘Amm",
+    "lat": 35.85672,
+    "lng": 39.1188
+  },
+  {
+    "name": "Wādī al Başşāş",
+    "lat": 35.50218,
+    "lng": 39.05933
+  },
+  {
+    "name": "Rujm al Başşāş",
+    "lat": 35.4551,
+    "lng": 39.16859
+  },
+  {
+    "name": "Wādī al Baqar",
+    "lat": 35.66439,
+    "lng": 39.87396
+  },
+  {
+    "name": "Balash",
+    "lat": 35.9936,
+    "lng": 39.90531
+  },
+  {
+    "name": "Nahr al Balīkh",
+    "lat": 35.97222,
+    "lng": 39.08333
+  },
+  {
+    "name": "Bīr at Tuwaym",
+    "lat": 35.9341,
+    "lng": 39.82986
+  },
+  {
+    "name": "Ash Shūlā",
+    "lat": 35.18588,
+    "lng": 39.84881
+  },
+  {
+    "name": "As Subay‘āt",
+    "lat": 35.79722,
+    "lng": 39.40138
+  },
+  {
+    "name": "As Sawā",
+    "lat": 35.53226,
+    "lng": 39.96322
+  },
+  {
+    "name": "As Sarkhān",
+    "lat": 35.8451,
+    "lng": 39.35568
+  },
+  {
+    "name": "As Salām ‘Alaykum",
+    "lat": 35.67079,
+    "lng": 39.31966
+  },
+  {
+    "name": "Arḑ Ka‘yah",
+    "lat": 35.63331,
+    "lng": 39.34358
+  },
+  {
+    "name": "An Numaysah",
+    "lat": 35.78651,
+    "lng": 39.51497
+  },
+  {
+    "name": "Al Maţabb",
+    "lat": 35.81011,
+    "lng": 39.62064
+  },
+  {
+    "name": "Al Ma‘an",
+    "lat": 35.42029,
+    "lng": 39.67317
+  },
+  {
+    "name": "Al Kuwayr",
+    "lat": 35.02836,
+    "lng": 39.02603
+  },
+  {
+    "name": "Al Kunayz",
+    "lat": 35.75014,
+    "lng": 39.79341
+  },
+  {
+    "name": "Al Kamb",
+    "lat": 35.92468,
+    "lng": 39.00484
+  },
+  {
+    "name": "Al Kulayb",
+    "lat": 35.82638,
+    "lng": 39.47279
+  },
+  {
+    "name": "Al Jābir",
+    "lat": 35.77797,
+    "lng": 39.54421
+  },
+  {
+    "name": "Al Ḩamd",
+    "lat": 35.47885,
+    "lng": 39.97164
+  },
+  {
+    "name": "Al Ḩāwī",
+    "lat": 35.48494,
+    "lng": 39.95822
+  },
+  {
+    "name": "Al Falw",
+    "lat": 35.62631,
+    "lng": 39.85226
+  },
+  {
+    "name": "Al ‘Alī",
+    "lat": 35.63675,
+    "lng": 39.83165
+  },
+  {
+    "name": "Bīr Abū Suqqār",
+    "lat": 35.96998,
+    "lng": 39.79473
+  },
+  {
+    "name": "Jurdīyat Abū Lālā",
+    "lat": 35.79216,
+    "lng": 39.86389
+  },
+  {
+    "name": "Abū Ḩammād",
+    "lat": 35.78546,
+    "lng": 39.43659
+  },
+  {
+    "name": "Abū Ḩayyah",
+    "lat": 35.99765,
+    "lng": 39.64942
+  },
+  {
+    "name": "Tall al ‘Uqayşīyah",
+    "lat": 35.40723,
+    "lng": 39.86446
+  },
+  {
+    "name": "Bīr al ‘Uqayşīyah",
+    "lat": 35.40025,
+    "lng": 39.85857
+  },
+  {
+    "name": "Bīr ‘Ulwān Ḩassān",
+    "lat": 35.89044,
+    "lng": 39.62597
+  },
+  {
+    "name": "Wādī al ‘Ulayjī",
+    "lat": 35.61173,
+    "lng": 39.60623
+  },
+  {
+    "name": "Bīr al ‘Ulayjī",
+    "lat": 35.53062,
+    "lng": 39.58322
+  },
+  {
+    "name": "Ābār ‘Irāḑ",
+    "lat": 35.57433,
+    "lng": 39.23167
+  },
+  {
+    "name": "‘Azmān",
+    "lat": 35.98267,
+    "lng": 39.9349
+  },
+  {
+    "name": "Wādī al ‘Ayn",
+    "lat": 35.82372,
+    "lng": 39.2017
+  },
+  {
+    "name": "Wādī al ‘Ayn",
+    "lat": 35.52474,
+    "lng": 39.81356
+  },
+  {
+    "name": "Arḑ ‘Aţţār ‘Anz",
+    "lat": 35.84836,
+    "lng": 39.6379
+  },
+  {
+    "name": "Bīr ‘Anbarān",
+    "lat": 35.92211,
+    "lng": 39.35552
+  },
+  {
+    "name": "Bīr ‘Alyān",
+    "lat": 35.81213,
+    "lng": 39.91351
+  },
+  {
+    "name": "‘Alī Badr",
+    "lat": 35.98678,
+    "lng": 39.69139
+  },
+  {
+    "name": "‘Alī ad Dandal",
+    "lat": 35.40803,
+    "lng": 39.46898
+  },
+  {
+    "name": "Rujm al ‘Ajūz",
+    "lat": 35.54336,
+    "lng": 39.06326
+  },
+  {
+    "name": "‘Abd al Matnī",
+    "lat": 35.96485,
+    "lng": 39.73906
+  },
+  {
+    "name": "Khubbah",
+    "lat": 35.09167,
+    "lng": 35.96667
+  },
+  {
+    "name": "Dhurtī",
+    "lat": 35.0875,
+    "lng": 35.98333
+  },
+  {
+    "name": "Jabal Mu‘ayşirah",
+    "lat": 35.09225,
+    "lng": 36.05307
+  },
+  {
+    "name": "Karīm",
+    "lat": 35.06667,
+    "lng": 36.04167
+  },
+  {
+    "name": "Mazra‘at al Ḩimşīyah",
+    "lat": 35.0188,
+    "lng": 36.07261
+  },
+  {
+    "name": "Balḩalah",
+    "lat": 35.02083,
+    "lng": 36.025
+  },
+  {
+    "name": "‘Asalīyah",
+    "lat": 35.00769,
+    "lng": 36.01801
+  },
+  {
+    "name": "Banmarah",
+    "lat": 35.02083,
+    "lng": 36.10833
+  },
+  {
+    "name": "Muqaybilah",
+    "lat": 35.09887,
+    "lng": 36.11733
+  },
+  {
+    "name": "An Nayḩah",
+    "lat": 35.00833,
+    "lng": 36.15
+  },
+  {
+    "name": "Birmāthat al Mashāyikh",
+    "lat": 35.03333,
+    "lng": 36.2
+  },
+  {
+    "name": "Jabal Maymanat al Kurūsah",
+    "lat": 35.11344,
+    "lng": 36.295
+  },
+  {
+    "name": "Al Ḩarf",
+    "lat": 35.03333,
+    "lng": 36.325
+  },
+  {
+    "name": "Sakar Sārūt",
+    "lat": 35.07395,
+    "lng": 36.466
+  },
+  {
+    "name": "Ballalīn",
+    "lat": 35.04167,
+    "lng": 36.50833
+  },
+  {
+    "name": "Al Yaljah",
+    "lat": 35.025,
+    "lng": 36.525
+  },
+  {
+    "name": "Jabal Ţarq",
+    "lat": 35.00417,
+    "lng": 36.54167
+  },
+  {
+    "name": "Khirbat al Ḩadabī",
+    "lat": 35.08147,
+    "lng": 36.52038
+  },
+  {
+    "name": "Shaykh Muḩammad Ziyārah",
+    "lat": 35.06167,
+    "lng": 36.57849
+  },
+  {
+    "name": "Arḑ Abū Kharmā",
+    "lat": 35.0296,
+    "lng": 36.65622
+  },
+  {
+    "name": "Ash Shakkāt",
+    "lat": 35.12016,
+    "lng": 36.70196
+  },
+  {
+    "name": "Ruqayţah",
+    "lat": 35.10833,
+    "lng": 36.725
+  },
+  {
+    "name": "Qalbah",
+    "lat": 35.07735,
+    "lng": 36.72045
+  },
+  {
+    "name": "Nisrīn",
+    "lat": 35.02083,
+    "lng": 36.69583
+  },
+  {
+    "name": "Tall Ballat Maghār",
+    "lat": 35.01973,
+    "lng": 36.78847
+  },
+  {
+    "name": "Zawr az Ziyārah",
+    "lat": 35.01667,
+    "lng": 36.85833
+  },
+  {
+    "name": "An Najāyir",
+    "lat": 35.1625,
+    "lng": 35.96667
+  },
+  {
+    "name": "Manzalah",
+    "lat": 35.19583,
+    "lng": 36.00833
+  },
+  {
+    "name": "Altūn al Murāqib",
+    "lat": 35.17083,
+    "lng": 36.04583
+  },
+  {
+    "name": "Nawātīf",
+    "lat": 35.15417,
+    "lng": 36.1625
+  },
+  {
+    "name": "Altūn al Jurd",
+    "lat": 35.19583,
+    "lng": 36.14583
+  },
+  {
+    "name": "Shindakhah",
+    "lat": 35.21745,
+    "lng": 36.1812
+  },
+  {
+    "name": "Mashtá Qulay‘āt Wāşil",
+    "lat": 35.19324,
+    "lng": 36.19884
+  },
+  {
+    "name": "Umm Tarazī",
+    "lat": 35.175,
+    "lng": 36.2125
+  },
+  {
+    "name": "Ballūqā",
+    "lat": 35.15833,
+    "lng": 36.2
+  },
+  {
+    "name": "Shaykh Ḩasan",
+    "lat": 35.1271,
+    "lng": 36.26924
+  },
+  {
+    "name": "Ḩaylūnah",
+    "lat": 35.14583,
+    "lng": 36.275
+  },
+  {
+    "name": "Sārūt Abū Ba‘rah",
+    "lat": 35.24271,
+    "lng": 36.41231
+  },
+  {
+    "name": "Aşīlī",
+    "lat": 35.19674,
+    "lng": 36.48917
+  },
+  {
+    "name": "‘Aqrab",
+    "lat": 35.1631,
+    "lng": 36.46512
+  },
+  {
+    "name": "Wādī Tall Armīd",
+    "lat": 35.13832,
+    "lng": 36.45338
+  },
+  {
+    "name": "Wa‘r Ma‘arrzāf",
+    "lat": 35.20523,
+    "lng": 36.57577
+  },
+  {
+    "name": "Tall an Nahr",
+    "lat": 35.15833,
+    "lng": 36.6
+  },
+  {
+    "name": "Bilḩusayn al Walā",
+    "lat": 35.1902,
+    "lng": 36.69541
+  },
+  {
+    "name": "Şufaynah",
+    "lat": 35.14104,
+    "lng": 36.90383
+  },
+  {
+    "name": "Bayt Qānūţā",
+    "lat": 35.28333,
+    "lng": 35.97917
+  },
+  {
+    "name": "Juwaybāt",
+    "lat": 35.22917,
+    "lng": 36.025
+  },
+  {
+    "name": "Sarabyūn",
+    "lat": 35.24167,
+    "lng": 36.01667
+  },
+  {
+    "name": "Bitmānā",
+    "lat": 35.3125,
+    "lng": 36.03333
+  },
+  {
+    "name": "Bayt Wazan",
+    "lat": 35.22917,
+    "lng": 36.08333
+  },
+  {
+    "name": "Z̧ahr al Laḩmah",
+    "lat": 35.31031,
+    "lng": 36.20553
+  },
+  {
+    "name": "Qishāb",
+    "lat": 35.30417,
+    "lng": 36.325
+  },
+  {
+    "name": "Al Ḩuwayr",
+    "lat": 35.275,
+    "lng": 36.54167
+  },
+  {
+    "name": "Qanaş",
+    "lat": 35.22624,
+    "lng": 36.90003
+  },
+  {
+    "name": "Ranīn",
+    "lat": 35.20833,
+    "lng": 36.925
+  },
+  {
+    "name": "Jafānā",
+    "lat": 35.39167,
+    "lng": 36.00833
+  },
+  {
+    "name": "‘Ayn Ţabarjah",
+    "lat": 35.38589,
+    "lng": 36.02505
+  },
+  {
+    "name": "Z̧ahr Abū Qirmah",
+    "lat": 35.32083,
+    "lng": 35.99167
+  },
+  {
+    "name": "Burj al Hawá",
+    "lat": 35.40191,
+    "lng": 36.08944
+  },
+  {
+    "name": "Matwar",
+    "lat": 35.34831,
+    "lng": 36.13309
+  },
+  {
+    "name": "Qarn Ḩalyah",
+    "lat": 35.35438,
+    "lng": 36.16285
+  },
+  {
+    "name": "Tinyās",
+    "lat": 35.37083,
+    "lng": 36.15833
+  },
+  {
+    "name": "Qarnadah",
+    "lat": 35.3875,
+    "lng": 36.16667
+  },
+  {
+    "name": "Tall Kambrayrī",
+    "lat": 35.34542,
+    "lng": 36.32634
+  },
+  {
+    "name": "Tall Khallah",
+    "lat": 35.35407,
+    "lng": 36.34677
+  },
+  {
+    "name": "Tall Yāri‘ūn",
+    "lat": 35.34488,
+    "lng": 36.59955
+  },
+  {
+    "name": "Ḩanān",
+    "lat": 35.33279,
+    "lng": 36.72205
+  },
+  {
+    "name": "Kubbārīyah",
+    "lat": 35.3327,
+    "lng": 36.78725
+  },
+  {
+    "name": "Shaykh Mas‘ūd",
+    "lat": 35.31235,
+    "lng": 36.74037
+  },
+  {
+    "name": "Tall Ţayyibat al Ism",
+    "lat": 35.32699,
+    "lng": 36.84861
+  },
+  {
+    "name": "Fuwayqah",
+    "lat": 35.4625,
+    "lng": 35.92917
+  },
+  {
+    "name": "Khafr Bū at Taḩtā",
+    "lat": 35.4125,
+    "lng": 35.94167
+  },
+  {
+    "name": "Ar Ruways",
+    "lat": 35.425,
+    "lng": 36.00833
+  },
+  {
+    "name": "Al Farqīyah",
+    "lat": 35.42917,
+    "lng": 36.00833
+  },
+  {
+    "name": "Salāribah",
+    "lat": 35.44583,
+    "lng": 36.01667
+  },
+  {
+    "name": "Maḩālibah",
+    "lat": 35.48333,
+    "lng": 36.0625
+  },
+  {
+    "name": "Gharmatah",
+    "lat": 35.4125,
+    "lng": 36.0375
+  },
+  {
+    "name": "Qaţrīyah",
+    "lat": 35.44583,
+    "lng": 36.12917
+  },
+  {
+    "name": "Tall Malik",
+    "lat": 35.43247,
+    "lng": 36.20069
+  },
+  {
+    "name": "Wādī Ḩirmās",
+    "lat": 35.39289,
+    "lng": 36.48617
+  },
+  {
+    "name": "Al Muqayr",
+    "lat": 35.4,
+    "lng": 36.475
+  },
+  {
+    "name": "Nabī Yūnus",
+    "lat": 35.42083,
+    "lng": 36.59583
+  },
+  {
+    "name": "Sinjiwān",
+    "lat": 35.54641,
+    "lng": 35.82482
+  },
+  {
+    "name": "Mazra‘at al Būqā",
+    "lat": 35.5383,
+    "lng": 35.80684
+  },
+  {
+    "name": "Bustān Shākir ‘Ajal",
+    "lat": 35.54669,
+    "lng": 35.77771
+  },
+  {
+    "name": "Ad Dabbāghah",
+    "lat": 35.50794,
+    "lng": 35.80141
+  },
+  {
+    "name": "Shaykh al Ḩimá",
+    "lat": 35.5,
+    "lng": 35.85833
+  },
+  {
+    "name": "Al Yaghnaşah",
+    "lat": 35.55454,
+    "lng": 35.87243
+  },
+  {
+    "name": "Ruwaysat al Ḩursh",
+    "lat": 35.55833,
+    "lng": 35.925
+  },
+  {
+    "name": "As Sāmīyah",
+    "lat": 35.56142,
+    "lng": 35.96162
+  },
+  {
+    "name": "Tāqītah",
+    "lat": 35.54167,
+    "lng": 35.94167
+  },
+  {
+    "name": "Ruwaymīyah",
+    "lat": 35.49167,
+    "lng": 35.95833
+  },
+  {
+    "name": "Ţayyibah",
+    "lat": 35.51963,
+    "lng": 36.01944
+  },
+  {
+    "name": "Dirbāshīyat Farqalū",
+    "lat": 35.54167,
+    "lng": 36
+  },
+  {
+    "name": "Baţarnus",
+    "lat": 35.55081,
+    "lng": 36.01655
+  },
+  {
+    "name": "Bajarīyah",
+    "lat": 35.57002,
+    "lng": 36.0928
+  },
+  {
+    "name": "Khadlū",
+    "lat": 35.575,
+    "lng": 36.075
+  },
+  {
+    "name": "Sittānū",
+    "lat": 35.54551,
+    "lng": 36.04999
+  },
+  {
+    "name": "Dayr Zaytūn",
+    "lat": 35.50663,
+    "lng": 36.03055
+  },
+  {
+    "name": "Qirzalā",
+    "lat": 35.54167,
+    "lng": 36.125
+  },
+  {
+    "name": "Marshatah",
+    "lat": 35.53333,
+    "lng": 36.15417
+  },
+  {
+    "name": "Naqţarūn",
+    "lat": 35.5625,
+    "lng": 36.1375
+  },
+  {
+    "name": "Juwayz",
+    "lat": 35.57572,
+    "lng": 36.12378
+  },
+  {
+    "name": "Bishmātā",
+    "lat": 35.57083,
+    "lng": 36.175
+  },
+  {
+    "name": "Balāţ",
+    "lat": 35.55267,
+    "lng": 36.19359
+  },
+  {
+    "name": "Qaznūrīyah",
+    "lat": 35.525,
+    "lng": 36.17083
+  },
+  {
+    "name": "Al Judaydah",
+    "lat": 35.55417,
+    "lng": 36.31667
+  },
+  {
+    "name": "Shūlīn",
+    "lat": 35.54583,
+    "lng": 36.41667
+  },
+  {
+    "name": "Jabal Shahbū",
+    "lat": 35.52275,
+    "lng": 36.41577
+  },
+  {
+    "name": "Qa‘ūrah",
+    "lat": 35.48656,
+    "lng": 36.44466
+  },
+  {
+    "name": "Tarḩalā",
+    "lat": 35.52083,
+    "lng": 36.49167
+  },
+  {
+    "name": "Warmīyah",
+    "lat": 35.5,
+    "lng": 36.51667
+  },
+  {
+    "name": "Ma‘arrat Ţayrah",
+    "lat": 35.50309,
+    "lng": 36.57684
+  },
+  {
+    "name": "Qirbat Mufīd",
+    "lat": 35.4875,
+    "lng": 36.56667
+  },
+  {
+    "name": "Ḩaysh",
+    "lat": 35.54167,
+    "lng": 36.65
+  },
+  {
+    "name": "Marāḩ",
+    "lat": 35.55833,
+    "lng": 36.65417
+  },
+  {
+    "name": "Khirbat Yābūlīn",
+    "lat": 35.53333,
+    "lng": 36.68333
+  },
+  {
+    "name": "Tall Warā",
+    "lat": 35.52325,
+    "lng": 36.70355
+  },
+  {
+    "name": "Tall aţ Ţawīl",
+    "lat": 35.54167,
+    "lng": 36.8125
+  },
+  {
+    "name": "Shaykh Barakah",
+    "lat": 35.55833,
+    "lng": 36.98333
+  },
+  {
+    "name": "Şarrāf",
+    "lat": 35.60043,
+    "lng": 35.79666
+  },
+  {
+    "name": "As Salmūk",
+    "lat": 35.60833,
+    "lng": 35.8625
+  },
+  {
+    "name": "Maghītah",
+    "lat": 35.6,
+    "lng": 35.83333
+  },
+  {
+    "name": "At Turbah",
+    "lat": 35.66245,
+    "lng": 35.8923
+  },
+  {
+    "name": "Masmīn",
+    "lat": 35.63333,
+    "lng": 35.9
+  },
+  {
+    "name": "Şamandīl",
+    "lat": 35.59215,
+    "lng": 35.96862
+  },
+  {
+    "name": "Yāstīn",
+    "lat": 35.625,
+    "lng": 35.94167
+  },
+  {
+    "name": "Ḩakar",
+    "lat": 35.66667,
+    "lng": 36.04167
+  },
+  {
+    "name": "Barīkhā",
+    "lat": 35.64462,
+    "lng": 36.04999
+  },
+  {
+    "name": "Jubb Sharīfah",
+    "lat": 35.6375,
+    "lng": 36.03333
+  },
+  {
+    "name": "Al Jaffah",
+    "lat": 35.6,
+    "lng": 36.00833
+  },
+  {
+    "name": "Ruwaysah",
+    "lat": 35.6133,
+    "lng": 36.03093
+  },
+  {
+    "name": "Bayt Shlūḩ",
+    "lat": 35.65417,
+    "lng": 36.10417
+  },
+  {
+    "name": "Kafr Salqīn",
+    "lat": 35.61805,
+    "lng": 36.09662
+  },
+  {
+    "name": "Katnīyah",
+    "lat": 35.59583,
+    "lng": 36.15833
+  },
+  {
+    "name": "Al Waţá",
+    "lat": 35.63543,
+    "lng": 36.15642
+  },
+  {
+    "name": "Sukayr",
+    "lat": 35.64167,
+    "lng": 36.25417
+  },
+  {
+    "name": "Ḑalnafah",
+    "lat": 35.59167,
+    "lng": 36.19167
+  },
+  {
+    "name": "Jabal Mattá",
+    "lat": 35.59117,
+    "lng": 36.21814
+  },
+  {
+    "name": "‘Ayn an Nūr",
+    "lat": 35.64065,
+    "lng": 36.2662
+  },
+  {
+    "name": "Aş Şafā",
+    "lat": 35.57083,
+    "lng": 36.41667
+  },
+  {
+    "name": "Mawzarah",
+    "lat": 35.65809,
+    "lng": 36.43811
+  },
+  {
+    "name": "Sfawhūn",
+    "lat": 35.59167,
+    "lng": 36.46667
+  },
+  {
+    "name": "Kharāb Bishallāḩ",
+    "lat": 35.65477,
+    "lng": 36.52281
+  },
+  {
+    "name": "Ma‘arr Ḩiţāţ",
+    "lat": 35.57336,
+    "lng": 36.65784
+  },
+  {
+    "name": "Khirbat Ḩanak",
+    "lat": 35.60954,
+    "lng": 36.63857
+  },
+  {
+    "name": "Tal‘ah",
+    "lat": 35.65686,
+    "lng": 36.67411
+  },
+  {
+    "name": "Marāḩ",
+    "lat": 35.60417,
+    "lng": 36.675
+  },
+  {
+    "name": "Tall Ḩarrān",
+    "lat": 35.59463,
+    "lng": 36.79248
+  },
+  {
+    "name": "Aş Şāt",
+    "lat": 35.59659,
+    "lng": 36.86405
+  },
+  {
+    "name": "Taldum",
+    "lat": 35.57083,
+    "lng": 36.91667
+  },
+  {
+    "name": "Khirbat Abū ‘Anīyah",
+    "lat": 35.61594,
+    "lng": 36.94727
+  },
+  {
+    "name": "Şalīb Turkumān",
+    "lat": 35.69583,
+    "lng": 35.80833
+  },
+  {
+    "name": "Kafr",
+    "lat": 35.72917,
+    "lng": 35.85833
+  },
+  {
+    "name": "Jabal al Qafr",
+    "lat": 35.74618,
+    "lng": 35.86239
+  },
+  {
+    "name": "Jaqrūrān",
+    "lat": 35.75417,
+    "lng": 35.9625
+  },
+  {
+    "name": "Jūrat al Mā’",
+    "lat": 35.72037,
+    "lng": 36.00651
+  },
+  {
+    "name": "Ghārū",
+    "lat": 35.6875,
+    "lng": 35.9875
+  },
+  {
+    "name": "Kurt Fawqānī",
+    "lat": 35.70417,
+    "lng": 36.1125
+  },
+  {
+    "name": "Kurt Taḩtānī",
+    "lat": 35.70216,
+    "lng": 36.10357
+  },
+  {
+    "name": "Khāb al Jawz",
+    "lat": 35.72083,
+    "lng": 36.09167
+  },
+  {
+    "name": "Fazīn",
+    "lat": 35.725,
+    "lng": 36.11667
+  },
+  {
+    "name": "Qarūjah",
+    "lat": 35.7625,
+    "lng": 36.09583
+  },
+  {
+    "name": "Shulayf",
+    "lat": 35.73333,
+    "lng": 36.17917
+  },
+  {
+    "name": "Tartiyākh",
+    "lat": 35.69167,
+    "lng": 36.17917
+  },
+  {
+    "name": "Kadīn",
+    "lat": 35.69583,
+    "lng": 36.18333
+  },
+  {
+    "name": "Al Akrād",
+    "lat": 35.72917,
+    "lng": 36.22917
+  },
+  {
+    "name": "Maghrabāyā",
+    "lat": 35.75833,
+    "lng": 36.25
+  },
+  {
+    "name": "Bishanfah",
+    "lat": 35.70404,
+    "lng": 36.21723
+  },
+  {
+    "name": "Ash Shaykh Sindiyān",
+    "lat": 35.75422,
+    "lng": 36.28281
+  },
+  {
+    "name": "Shaykh Sindiyān",
+    "lat": 35.75403,
+    "lng": 36.28228
+  },
+  {
+    "name": "Al Kūnah",
+    "lat": 35.7,
+    "lng": 36.40417
+  },
+  {
+    "name": "Badawīyah",
+    "lat": 35.7125,
+    "lng": 36.42917
+  },
+  {
+    "name": "Nabī Ayyūb",
+    "lat": 35.72948,
+    "lng": 36.47797
+  },
+  {
+    "name": "Wa‘rat at Turk",
+    "lat": 35.67483,
+    "lng": 36.47134
+  },
+  {
+    "name": "Abdītā",
+    "lat": 35.70833,
+    "lng": 36.53333
+  },
+  {
+    "name": "Ḩashshūn",
+    "lat": 35.7125,
+    "lng": 36.54167
+  },
+  {
+    "name": "Al Majallīyah",
+    "lat": 35.66936,
+    "lng": 36.52542
+  },
+  {
+    "name": "Khirbat Bitarsah",
+    "lat": 35.66575,
+    "lng": 36.54379
+  },
+  {
+    "name": "Khirbat Sarjīlā",
+    "lat": 35.6625,
+    "lng": 36.6
+  },
+  {
+    "name": "Farkīyā",
+    "lat": 35.71667,
+    "lng": 36.60417
+  },
+  {
+    "name": "Safātā",
+    "lat": 35.72083,
+    "lng": 36.65833
+  },
+  {
+    "name": "Al Hartamīyah",
+    "lat": 35.74586,
+    "lng": 36.80601
+  },
+  {
+    "name": "Judaydat Nawwāf",
+    "lat": 35.69655,
+    "lng": 36.9096
+  },
+  {
+    "name": "Al Khuraybah",
+    "lat": 35.68333,
+    "lng": 36.96667
+  },
+  {
+    "name": "Jalbān",
+    "lat": 35.7125,
+    "lng": 36.9625
+  },
+  {
+    "name": "Shaklī Yāzī",
+    "lat": 35.79383,
+    "lng": 35.85769
+  },
+  {
+    "name": "Mīdānjiq",
+    "lat": 35.77083,
+    "lng": 35.93333
+  },
+  {
+    "name": "Jāmūrkīyah",
+    "lat": 35.79583,
+    "lng": 35.95
+  },
+  {
+    "name": "Shaţaq",
+    "lat": 35.80841,
+    "lng": 35.89764
+  },
+  {
+    "name": "Ruwaysitah",
+    "lat": 35.85,
+    "lng": 35.89167
+  },
+  {
+    "name": "Aş Şawwānah",
+    "lat": 35.84996,
+    "lng": 35.87547
+  },
+  {
+    "name": "Kulūk",
+    "lat": 35.84753,
+    "lng": 35.8201
+  },
+  {
+    "name": "Dāwin Yūrdī",
+    "lat": 35.88896,
+    "lng": 35.88973
+  },
+  {
+    "name": "Al Mashrafah",
+    "lat": 35.89411,
+    "lng": 35.94347
+  },
+  {
+    "name": "An Nab‘ayn",
+    "lat": 35.90508,
+    "lng": 35.96862
+  },
+  {
+    "name": "Tītūzliq",
+    "lat": 35.91072,
+    "lng": 35.93415
+  },
+  {
+    "name": "Zaywān Tarrāk",
+    "lat": 35.92104,
+    "lng": 35.92238
+  },
+  {
+    "name": "Qarah Dalak",
+    "lat": 35.91667,
+    "lng": 35.96667
+  },
+  {
+    "name": "Būz Dāgh",
+    "lat": 35.87837,
+    "lng": 36.02122
+  },
+  {
+    "name": "Al Khaḑrā’",
+    "lat": 35.80857,
+    "lng": 35.99363
+  },
+  {
+    "name": "Al Marān",
+    "lat": 35.76721,
+    "lng": 36.00334
+  },
+  {
+    "name": "Jayqūzajiq",
+    "lat": 35.7875,
+    "lng": 36.05556
+  },
+  {
+    "name": "Jaqrūrān",
+    "lat": 35.825,
+    "lng": 36.03333
+  },
+  {
+    "name": "Aqjah Bāyir",
+    "lat": 35.78587,
+    "lng": 36.10335
+  },
+  {
+    "name": "Ḩidādah",
+    "lat": 35.7625,
+    "lng": 36.19167
+  },
+  {
+    "name": "Kindah",
+    "lat": 35.76667,
+    "lng": 36.21667
+  },
+  {
+    "name": "Būghāz",
+    "lat": 35.79733,
+    "lng": 36.18641
+  },
+  {
+    "name": "Biryāş",
+    "lat": 35.82715,
+    "lng": 36.17626
+  },
+  {
+    "name": "Raytanīyah",
+    "lat": 35.84463,
+    "lng": 36.22306
+  },
+  {
+    "name": "Kafr Witār",
+    "lat": 35.79745,
+    "lng": 36.26405
+  },
+  {
+    "name": "Sulayy",
+    "lat": 35.75,
+    "lng": 36.38333
+  },
+  {
+    "name": "Wājī",
+    "lat": 35.81671,
+    "lng": 36.41213
+  },
+  {
+    "name": "Ţallū",
+    "lat": 35.84583,
+    "lng": 36.40833
+  },
+  {
+    "name": "Bifţāmūn",
+    "lat": 35.83305,
+    "lng": 36.43441
+  },
+  {
+    "name": "Al Mushīr",
+    "lat": 35.75417,
+    "lng": 36.39167
+  },
+  {
+    "name": "Junqarah",
+    "lat": 35.74167,
+    "lng": 36.41667
+  },
+  {
+    "name": "Al ‘Alyā",
+    "lat": 35.77295,
+    "lng": 36.47261
+  },
+  {
+    "name": "Basnaqūl",
+    "lat": 35.79583,
+    "lng": 36.5
+  },
+  {
+    "name": "Sanqarah",
+    "lat": 35.81156,
+    "lng": 36.47524
+  },
+  {
+    "name": "Ma‘tarim",
+    "lat": 35.80843,
+    "lng": 36.56436
+  },
+  {
+    "name": "Khirbat Mukhţá",
+    "lat": 35.79437,
+    "lng": 36.55579
+  },
+  {
+    "name": "Tar‘ān",
+    "lat": 35.76078,
+    "lng": 36.63303
+  },
+  {
+    "name": "Rādīkh",
+    "lat": 35.79583,
+    "lng": 36.73333
+  },
+  {
+    "name": "Inqirāt",
+    "lat": 35.78793,
+    "lng": 36.8213
+  },
+  {
+    "name": "Tall Nublah",
+    "lat": 35.82602,
+    "lng": 36.87159
+  },
+  {
+    "name": "Kafr Ḩamīm",
+    "lat": 35.80833,
+    "lng": 36.86667
+  },
+  {
+    "name": "Bulayşā",
+    "lat": 35.76608,
+    "lng": 36.91221
+  },
+  {
+    "name": "Tall aţ Ţūkān",
+    "lat": 35.83056,
+    "lng": 36.925
+  },
+  {
+    "name": "Abū al Khassah",
+    "lat": 35.83333,
+    "lng": 36.90417
+  },
+  {
+    "name": "Yūsufayn",
+    "lat": 35.93372,
+    "lng": 36.21552
+  },
+  {
+    "name": "Shānūrīyah",
+    "lat": 35.86089,
+    "lng": 36.23367
+  },
+  {
+    "name": "Jābūdīyah",
+    "lat": 35.8875,
+    "lng": 36.29167
+  },
+  {
+    "name": "Al Ḩaqabah",
+    "lat": 35.8875,
+    "lng": 36.30833
+  },
+  {
+    "name": "Burjahāb",
+    "lat": 35.8839,
+    "lng": 36.5359
+  },
+  {
+    "name": "Shaykh Yūsuf Ḩarājī",
+    "lat": 35.89268,
+    "lng": 36.67232
+  },
+  {
+    "name": "Sān",
+    "lat": 35.8375,
+    "lng": 36.74167
+  },
+  {
+    "name": "Wādī al ‘Aqīb",
+    "lat": 35.87693,
+    "lng": 36.77379
+  },
+  {
+    "name": "Bajāriz",
+    "lat": 35.89997,
+    "lng": 36.76964
+  },
+  {
+    "name": "Tall al Ḩamy",
+    "lat": 35.92083,
+    "lng": 36.76667
+  },
+  {
+    "name": "Lislāmīn",
+    "lat": 35.85833,
+    "lng": 36.90833
+  },
+  {
+    "name": "Shaykh Manşūr",
+    "lat": 35.9625,
+    "lng": 36.86667
+  },
+  {
+    "name": "Ruşāfah",
+    "lat": 35.87371,
+    "lng": 36.89852
+  },
+  {
+    "name": "Makhārīm",
+    "lat": 35.9,
+    "lng": 36.9125
+  },
+  {
+    "name": "Khawārī",
+    "lat": 35.90417,
+    "lng": 36.93333
+  },
+  {
+    "name": "Wādī Buwayn",
+    "lat": 35.88333,
+    "lng": 36.96667
+  },
+  {
+    "name": "Jallās",
+    "lat": 35.87083,
+    "lng": 36.94167
+  },
+  {
+    "name": "Al Maţāḩ",
+    "lat": 35.9348,
+    "lng": 36.9882
+  },
+  {
+    "name": "Dayr Ishmān",
+    "lat": 35.975,
+    "lng": 36.33333
+  },
+  {
+    "name": "Ruwaysāt",
+    "lat": 35.99167,
+    "lng": 36.36667
+  },
+  {
+    "name": "Az̧ Z̧ahr",
+    "lat": 35.97083,
+    "lng": 36.44167
+  },
+  {
+    "name": "Al Mishmāshī",
+    "lat": 35.95498,
+    "lng": 36.43615
+  },
+  {
+    "name": "Umm Ţāqah",
+    "lat": 35.98389,
+    "lng": 36.44086
+  },
+  {
+    "name": "Kitā",
+    "lat": 35.98333,
+    "lng": 36.475
+  },
+  {
+    "name": "Basīliyā",
+    "lat": 35.975,
+    "lng": 36.49167
+  },
+  {
+    "name": "Qaylūn",
+    "lat": 35.92917,
+    "lng": 36.51667
+  },
+  {
+    "name": "Al Qunayţirah",
+    "lat": 35.98258,
+    "lng": 36.5296
+  },
+  {
+    "name": "Shaykh Abū Bakr",
+    "lat": 35.99167,
+    "lng": 36.675
+  },
+  {
+    "name": "Ţu‘ūm",
+    "lat": 35.97326,
+    "lng": 36.74953
+  },
+  {
+    "name": "Tayzir",
+    "lat": 35.96782,
+    "lng": 36.78858
+  },
+  {
+    "name": "Ijāz",
+    "lat": 35.93173,
+    "lng": 36.87932
+  },
+  {
+    "name": "Tulūl az Zublīyāt",
+    "lat": 32.8443,
+    "lng": 37.01819
+  },
+  {
+    "name": "Arḑ az Zūmāl",
+    "lat": 32.55,
+    "lng": 36.14861
+  },
+  {
+    "name": "Tall Zarāyib Abū Līyah",
+    "lat": 32.91776,
+    "lng": 36.12684
+  },
+  {
+    "name": "‘Ayn az Zahrī",
+    "lat": 32.56577,
+    "lng": 36.84341
+  },
+  {
+    "name": "Wādī az Za‘tarī",
+    "lat": 32.47735,
+    "lng": 36.47726
+  },
+  {
+    "name": "Walghā",
+    "lat": 32.7472,
+    "lng": 36.5249
+  },
+  {
+    "name": "Umm az Zaytūn",
+    "lat": 32.90657,
+    "lng": 36.60573
+  },
+  {
+    "name": "Tha‘lah",
+    "lat": 32.7119,
+    "lng": 36.44868
+  },
+  {
+    "name": "Wādī ath Thālith",
+    "lat": 32.7244,
+    "lng": 36.434
+  },
+  {
+    "name": "Tall Ta‘lat al ‘Atīq",
+    "lat": 32.9757,
+    "lng": 36.69582
+  },
+  {
+    "name": "Ţurbā",
+    "lat": 32.80556,
+    "lng": 36.77778
+  },
+  {
+    "name": "Bīr Sumaydī",
+    "lat": 32.91739,
+    "lng": 36.78799
+  },
+  {
+    "name": "Tall Sulaymān",
+    "lat": 32.64007,
+    "lng": 36.71179
+  },
+  {
+    "name": "Wādī Sindiyānah",
+    "lat": 32.7239,
+    "lng": 36.4339
+  },
+  {
+    "name": "Tall ash Shatārā",
+    "lat": 32.8043,
+    "lng": 36.01572
+  },
+  {
+    "name": "‘Ayn as Sammān",
+    "lat": 32.68951,
+    "lng": 36.77327
+  },
+  {
+    "name": "Şamīd",
+    "lat": 32.94777,
+    "lng": 36.51317
+  },
+  {
+    "name": "Tall Şaghīr",
+    "lat": 32.93596,
+    "lng": 36.21067
+  },
+  {
+    "name": "Raqqat aş Şaqr",
+    "lat": 32.80243,
+    "lng": 36.41941
+  },
+  {
+    "name": "Tall Raqqat al Jīnū",
+    "lat": 32.78333,
+    "lng": 36.38333
+  },
+  {
+    "name": "Rasm as Sīsābī",
+    "lat": 32.88195,
+    "lng": 36.52041
+  },
+  {
+    "name": "Rasm Kawm Kuqayd",
+    "lat": 32.44474,
+    "lng": 36.41122
+  },
+  {
+    "name": "Wādī ar Raqīq",
+    "lat": 32.54892,
+    "lng": 36.43128
+  },
+  {
+    "name": "Wādī ar Ramlīyah",
+    "lat": 32.99859,
+    "lng": 37.10749
+  },
+  {
+    "name": "‘Ayn Ra’s al Badr",
+    "lat": 32.60979,
+    "lng": 36.7357
+  },
+  {
+    "name": "Wādī Rīmah",
+    "lat": 32.82067,
+    "lng": 36.58712
+  },
+  {
+    "name": "Quwayriş",
+    "lat": 32.5698,
+    "lng": 36.63354
+  },
+  {
+    "name": "‘Ayn Qurunfulah",
+    "lat": 32.6596,
+    "lng": 36.76898
+  },
+  {
+    "name": "Qaşr Dabbāgh",
+    "lat": 32.75467,
+    "lng": 36.68262
+  },
+  {
+    "name": "Qaşr al Mabrūm",
+    "lat": 32.92853,
+    "lng": 36.28556
+  },
+  {
+    "name": "Qaşr ‘Adūr",
+    "lat": 32.8079,
+    "lng": 36.40589
+  },
+  {
+    "name": "Qarrāşah",
+    "lat": 32.83124,
+    "lng": 36.4149
+  },
+  {
+    "name": "Tall al Muţawwaq",
+    "lat": 32.92872,
+    "lng": 36.53297
+  },
+  {
+    "name": "‘Ayn al Muq‘ar",
+    "lat": 32.71994,
+    "lng": 36.72654
+  },
+  {
+    "name": "‘Ayn al Munsaliţah",
+    "lat": 32.67896,
+    "lng": 36.70898
+  },
+  {
+    "name": "Mazra‘at Fad‘ā",
+    "lat": 32.7776,
+    "lng": 36.71881
+  },
+  {
+    "name": "Mazra‘at an Nimr",
+    "lat": 32.51817,
+    "lng": 36.59199
+  },
+  {
+    "name": "Mashtal",
+    "lat": 32.67166,
+    "lng": 36.56764
+  },
+  {
+    "name": "Manşūr",
+    "lat": 32.79051,
+    "lng": 36.71405
+  },
+  {
+    "name": "Wādī al Khuḑūr",
+    "lat": 32.72773,
+    "lng": 36.41836
+  },
+  {
+    "name": "Khirbat Umm ‘Atāyiq",
+    "lat": 32.96585,
+    "lng": 36.75528
+  },
+  {
+    "name": "Khirbat Ţurayfah",
+    "lat": 32.66967,
+    "lng": 36.51954
+  },
+  {
+    "name": "Khirbat Qumayrah",
+    "lat": 32.39986,
+    "lng": 36.73924
+  },
+  {
+    "name": "Khirbat Najjārīyah",
+    "lat": 32.87415,
+    "lng": 36.8724
+  },
+  {
+    "name": "Khirbat Junf",
+    "lat": 32.48309,
+    "lng": 36.27876
+  },
+  {
+    "name": "Khirbat Ju‘aylah",
+    "lat": 32.8145,
+    "lng": 36.10153
+  },
+  {
+    "name": "Khirbat Dubaybīnah",
+    "lat": 32.53209,
+    "lng": 36.86112
+  },
+  {
+    "name": "Khirbat aţ Ţayr",
+    "lat": 32.79073,
+    "lng": 36.0472
+  },
+  {
+    "name": "Khirbat al Mushrif",
+    "lat": 32.47214,
+    "lng": 36.3092
+  },
+  {
+    "name": "Muşāb",
+    "lat": 32.99019,
+    "lng": 36.34445
+  },
+  {
+    "name": "Khirbat al Manārah",
+    "lat": 32.43886,
+    "lng": 36.40212
+  },
+  {
+    "name": "Khirbat al Mālikīyah",
+    "lat": 32.85259,
+    "lng": 36.81669
+  },
+  {
+    "name": "Khirbat al Kawm",
+    "lat": 32.48333,
+    "lng": 36.81667
+  },
+  {
+    "name": "Khirbat al Muhayjān",
+    "lat": 32.39852,
+    "lng": 36.83872
+  },
+  {
+    "name": "Khirbat adh Dhabābīr",
+    "lat": 32.98133,
+    "lng": 36.29713
+  },
+  {
+    "name": "Khirbat ad Dayr",
+    "lat": 32.57516,
+    "lng": 36.53569
+  },
+  {
+    "name": "Wādī al Khawābī",
+    "lat": 32.60157,
+    "lng": 36.10827
+  },
+  {
+    "name": "Kawm at Tīnah",
+    "lat": 32.71819,
+    "lng": 36.38133
+  },
+  {
+    "name": "Wādī al Kālī",
+    "lat": 32.74983,
+    "lng": 36.92693
+  },
+  {
+    "name": "Judaydat Nimrah",
+    "lat": 32.82139,
+    "lng": 36.72468
+  },
+  {
+    "name": "Wādī al Ja‘ār",
+    "lat": 32.54601,
+    "lng": 36.52974
+  },
+  {
+    "name": "Tall Ḩubrān",
+    "lat": 32.36277,
+    "lng": 36.82588
+  },
+  {
+    "name": "Ḩubaykī",
+    "lat": 32.56796,
+    "lng": 36.8435
+  },
+  {
+    "name": "Tall Faţḩah",
+    "lat": 32.73414,
+    "lng": 36.66805
+  },
+  {
+    "name": "Tall ‘Ayn Fādah",
+    "lat": 32.981,
+    "lng": 36.14272
+  },
+  {
+    "name": "Fāddā",
+    "lat": 32.44892,
+    "lng": 36.35442
+  },
+  {
+    "name": "Wādī adh Dhīb",
+    "lat": 32.72453,
+    "lng": 36.43427
+  },
+  {
+    "name": "Wādī Diyāsī",
+    "lat": 32.76374,
+    "lng": 36.91517
+  },
+  {
+    "name": "Tall Dannūn",
+    "lat": 32.94722,
+    "lng": 36.73333
+  },
+  {
+    "name": "Birkat az Zurkā",
+    "lat": 32.83902,
+    "lng": 36.52891
+  },
+  {
+    "name": "Bayt Salmān Amān",
+    "lat": 32.41415,
+    "lng": 36.36801
+  },
+  {
+    "name": "Bayt Musallam ‘Ubayd",
+    "lat": 32.38412,
+    "lng": 36.40226
+  },
+  {
+    "name": "Bayt al Mushāfī",
+    "lat": 32.40444,
+    "lng": 36.41678
+  },
+  {
+    "name": "Bayt Abū Ra’s",
+    "lat": 32.40548,
+    "lng": 36.38193
+  },
+  {
+    "name": "Wādī al Barrāqīyah",
+    "lat": 32.41944,
+    "lng": 36.975
+  },
+  {
+    "name": "Barqah",
+    "lat": 32.93044,
+    "lng": 36.13624
+  },
+  {
+    "name": "Barad",
+    "lat": 32.50939,
+    "lng": 36.54259
+  },
+  {
+    "name": "Aş Şūrah",
+    "lat": 32.74891,
+    "lng": 36.26039
+  },
+  {
+    "name": "Khirbat al Jābiyah",
+    "lat": 32.94192,
+    "lng": 36.01217
+  },
+  {
+    "name": "Al ‘Āliyah",
+    "lat": 32.99192,
+    "lng": 36.03051
+  },
+  {
+    "name": "Abū Kātūlah",
+    "lat": 32.40893,
+    "lng": 36.41839
+  },
+  {
+    "name": "Wādī Abū Jāqah",
+    "lat": 32.54192,
+    "lng": 36.53806
+  },
+  {
+    "name": "Wādī Abī al Yābis",
+    "lat": 32.7854,
+    "lng": 36.02575
+  },
+  {
+    "name": "Tall ‘Izrā’īl",
+    "lat": 32.86119,
+    "lng": 36.65472
+  },
+  {
+    "name": "‘Ayn ‘Iḑāb",
+    "lat": 32.57293,
+    "lng": 36.75493
+  },
+  {
+    "name": "‘Ayn al Ḩawm",
+    "lat": 32.761,
+    "lng": 36.7144
+  },
+  {
+    "name": "‘Arīqah",
+    "lat": 32.88994,
+    "lng": 36.48342
+  },
+  {
+    "name": "‘Amrah",
+    "lat": 32.9025,
+    "lng": 36.64209
+  },
+  {
+    "name": "Bi’r al Fāsidah",
+    "lat": 35.13997,
+    "lng": 38.10585
+  },
+  {
+    "name": "Jabal al Fuşaydah",
+    "lat": 35.12222,
+    "lng": 38.07931
+  },
+  {
+    "name": "Rujm Madāḩī",
+    "lat": 35.09691,
+    "lng": 38.31041
+  },
+  {
+    "name": "Wādī Rīf Ḩumaydah",
+    "lat": 35.05841,
+    "lng": 38.14899
+  },
+  {
+    "name": "Ḑuhūr Quţayr al Bayḑā",
+    "lat": 35.02326,
+    "lng": 38.05372
+  },
+  {
+    "name": "Wādī al Quţayr",
+    "lat": 35.05791,
+    "lng": 38.09795
+  },
+  {
+    "name": "Bi’r ar Raḩāwī",
+    "lat": 35.00556,
+    "lng": 38.15556
+  },
+  {
+    "name": "Wādī Ḩasw al Mirākh",
+    "lat": 35.05302,
+    "lng": 38.18508
+  },
+  {
+    "name": "Bīr Şunaybir",
+    "lat": 35.08106,
+    "lng": 38.19308
+  },
+  {
+    "name": "Wādī al Ghawr",
+    "lat": 35.0936,
+    "lng": 38.23262
+  },
+  {
+    "name": "Bīr Kamb al Ghawr",
+    "lat": 35.0926,
+    "lng": 38.22159
+  },
+  {
+    "name": "Kharāb Birkat Qadīm",
+    "lat": 35.13021,
+    "lng": 38.39162
+  },
+  {
+    "name": "Wādī Tuwaynāt",
+    "lat": 35.09864,
+    "lng": 38.38998
+  },
+  {
+    "name": "Wādī Khisārah",
+    "lat": 35.05996,
+    "lng": 38.40107
+  },
+  {
+    "name": "Bīr Abū Ḩaddād",
+    "lat": 35.02157,
+    "lng": 38.48782
+  },
+  {
+    "name": "Jabal Makbā",
+    "lat": 35.05437,
+    "lng": 38.60941
+  },
+  {
+    "name": "Jabal al Ḩamdā",
+    "lat": 35.01919,
+    "lng": 38.62562
+  },
+  {
+    "name": "Jabal Qal‘at Nawwār",
+    "lat": 35.03458,
+    "lng": 38.6838
+  },
+  {
+    "name": "Wādī al Maqbarah",
+    "lat": 35.10558,
+    "lng": 38.7352
+  },
+  {
+    "name": "Fayḑat as Sinn",
+    "lat": 35.15434,
+    "lng": 38.86641
+  },
+  {
+    "name": "Wādī aḑ Ḑāḩik",
+    "lat": 35.05139,
+    "lng": 38.89856
+  },
+  {
+    "name": "Wādī Umm Khāşim",
+    "lat": 35.02472,
+    "lng": 38.9107
+  },
+  {
+    "name": "Al Lāţūm",
+    "lat": 35.01944,
+    "lng": 38.89167
+  },
+  {
+    "name": "Bīr Muḩammad Dāghir",
+    "lat": 35.03804,
+    "lng": 38.8821
+  },
+  {
+    "name": "Al Quwayr",
+    "lat": 35.03611,
+    "lng": 38.975
+  },
+  {
+    "name": "Jubb al Maqātah",
+    "lat": 35.04763,
+    "lng": 38.89852
+  },
+  {
+    "name": "Tulūl al Khaşāyāt",
+    "lat": 35.21514,
+    "lng": 38.03199
+  },
+  {
+    "name": "Bīr al Quşayr",
+    "lat": 35.21237,
+    "lng": 38.07525
+  },
+  {
+    "name": "Khirbat Bīr al Quşayr",
+    "lat": 35.21849,
+    "lng": 38.08269
+  },
+  {
+    "name": "Bīr Şaqqār",
+    "lat": 35.20701,
+    "lng": 38.14906
+  },
+  {
+    "name": "Jabal Abū Ţawīlah",
+    "lat": 35.20773,
+    "lng": 38.25435
+  },
+  {
+    "name": "Wādī ‘Afw Abū Natal",
+    "lat": 35.20831,
+    "lng": 38.32338
+  },
+  {
+    "name": "Ḑahr Abū Ţawīlah",
+    "lat": 35.18718,
+    "lng": 38.34886
+  },
+  {
+    "name": "Wādī Fayḑat Muwaynāt",
+    "lat": 35.16155,
+    "lng": 38.38795
+  },
+  {
+    "name": "Wādī Fakkat ad Dayla‘",
+    "lat": 35.26508,
+    "lng": 38.50324
+  },
+  {
+    "name": "Bīr Ḩarīt",
+    "lat": 35.14706,
+    "lng": 38.63133
+  },
+  {
+    "name": "Wādī Ibn ‘Aţash",
+    "lat": 35.13359,
+    "lng": 38.95463
+  },
+  {
+    "name": "Wādī ‘Aţā Allāh",
+    "lat": 35.14095,
+    "lng": 38.9659
+  },
+  {
+    "name": "‘Ayn Subaykhah",
+    "lat": 35.20255,
+    "lng": 38.8231
+  }
+]

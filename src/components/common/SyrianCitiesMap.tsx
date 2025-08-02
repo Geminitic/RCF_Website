@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import syriaDots from '../../data/syria_dots.json';
+import syrianCities from '../../data/syrian_cities_full.json';
 
 const width = 378;
 const height = 368;
@@ -21,10 +21,23 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const dots = (syriaDots as { x: number; y: number }[]).map((d, i) => ({
-      ...d,
-      name: `Town ${i + 1}`,
-    }));
+    const geojson: any = {
+      type: 'FeatureCollection',
+      features: (syrianCities as { name: string; lat: number; lng: number }[]).map(city => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [city.lng, city.lat] },
+      })),
+    };
+
+    const projection = d3.geoMercator().fitSize([width, height], geojson);
+
+    const dots = (syrianCities as { name: string; lat: number; lng: number }[])
+      .map(city => {
+        const [x, y] = projection([city.lng, city.lat]);
+        return { x, y, name: city.name };
+      })
+      .filter(d => d.x >= 0 && d.x <= width && d.y >= 0 && d.y <= height)
+      .slice(0, 1000);
 
     const tooltip = d3
       .select(container)
