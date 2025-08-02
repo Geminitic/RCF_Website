@@ -1,67 +1,42 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Target,
   Globe,
+  CheckCircle,
   Palette,
   Heart,
   Shield,
   Sparkles,
 } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage, languages } from '../contexts/LanguageContext';
 import VolunteerForms from '../components/common/VolunteerForms';
 import FeaturedLeaders from '../components/community/FeaturedLeaders';
 import '../styles/rhizome-syria.css';
 
 const RhizomeSyriaPage: React.FC = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t, currentLanguage, setLanguage } = useLanguage();
 
-  const board = [
-    {
-      name: 'Ritta Alhayek',
-      nameAr: 'ريتا الحايك',
-      role: 'President',
-      roleAr: 'رئيسة',
-      bio: 'Oversees governance and direction with experience in strategic planning, community systems, and feminist organizing.',
-      bioAr:
-        'تشرف على الحوكمة والتوجه بخبرة في التخطيط الاستراتيجي والأنظمة المجتمعية والتنظيم النسوي.',
-      image:
-        'https://via.placeholder.com/400x400/6B46C1/FFFFFF?text=Board+Member',
-    },
-    {
-      name: 'Abdullah Sejerie',
-      nameAr: 'عبد الله سجرية',
-      role: 'Logistics & Operations',
-      roleAr: 'اللوجستيات والعمليات',
-      bio: 'Leads logistical coordination and field-level implementation, ensuring reliable support systems across all regions.',
-      bioAr:
-        'يقود التنسيق اللوجستي والتنفيذ على مستوى الميدان، مما يضمن أنظمة دعم موثوقة في جميع المناطق.',
-      image:
-        'https://via.placeholder.com/400x400/0EA5E9/FFFFFF?text=Board+Member',
-    },
-    {
-      name: 'Kinda Ali',
-      nameAr: 'كندة علي',
-      role: 'Strategy & Outreach',
-      roleAr: 'الاستراتيجية والتوعية',
-      bio: 'Guides long-term planning and stakeholder engagement, focusing on interregional networks and strategic alliances.',
-      bioAr:
-        'توجه التخطيط طويل المدى ومشاركة أصحاب المصلحة، مع التركيز على الشبكات بين المناطق والتحالفات الاستراتيجية.',
-      image:
-        'https://via.placeholder.com/400x400/fb923c/FFFFFF?text=Board+Member',
-    },
-    {
-      name: 'Silva Ismael',
-      nameAr: 'سيلفا إسماعيل',
-      role: 'Programs Lead',
-      roleAr: 'قائدة البرامج',
-      bio: "Manages Rhizome Syria's programmatic portfolio, with a focus on feminist frameworks, coastal civic organizing, and training modules.",
-      bioAr:
-        'تدير محفظة برامج رايزوم سوريا، مع التركيز على الأطر النسوية والتنظيم المدني الساحلي ووحدات التدريب.',
-      image:
-        'https://via.placeholder.com/400x400/EF4444/FFFFFF?text=Board+Member',
-    },
-  ];
+  useEffect(() => {
+    const host = window.location.hostname;
+    const path = window.location.pathname;
+    if (host.includes('rhizomsyria.org') || path.startsWith('/rhizome-syria')) {
+      const arabic = languages.find((l) => l.code === 'ar');
+      if (arabic) {
+        setLanguage(arabic);
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      }
+    } else {
+      const english = languages.find((l) => l.code === 'en');
+      if (english) {
+        setLanguage(english);
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+      }
+    }
+  }, [setLanguage]);
 
   const methods = [
     { en: 'Open dialogue', ar: 'الحوار المفتوح' },
@@ -71,7 +46,10 @@ const RhizomeSyriaPage: React.FC = () => {
     { en: 'Independent financing', ar: 'التمويل المتسقل' },
     { en: 'Dismantling hierarchy', ar: 'تفكيك الهرمية' },
     { en: 'Data analysis', ar: 'التحليل البياني' },
-    { en: 'Coordinating local resources and knowledge', ar: 'تنسيق المصادر والمعارف المحلية' },
+    {
+      en: 'Coordinating local resources and knowledge',
+      ar: 'تنسيق المصادر والمعارف المحلية',
+    },
     { en: 'Sustainable healthy relations', ar: 'علاقات صحية مستديمة' },
   ];
 
@@ -92,15 +70,14 @@ const RhizomeSyriaPage: React.FC = () => {
       <div
         className="fixed inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
         style={{
-          backgroundImage: `url('/slide0007_image015.png')`,
+          backgroundImage: "url('/slide0007_image015.png')",
           backgroundSize: '80%',
           backgroundPosition: 'center 20%',
         }}
       />
 
-      {/* Hero Section with Logo-Inspired Design */}
-      <section className="rs-hero relative overflow-hidden" style={{ background: "var(--rs-gradient-dawn)" }}>
-        {/* Animated Background Elements */}
+      {/* Hero Section */}
+      <section className="rs-hero relative overflow-hidden" style={{ background: 'var(--rs-gradient-dawn)' }}>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
           <div
@@ -117,21 +94,10 @@ const RhizomeSyriaPage: React.FC = () => {
           />
         </div>
 
-        {/* Spiral Pattern Overlay */}
         <div className="absolute inset-0 opacity-10">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
-              <linearGradient
-                id="spiralGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
+              <linearGradient id="spiralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#6B46C1" />
                 <stop offset="25%" stopColor="#0EA5E9" />
                 <stop offset="50%" stopColor="#fb923c" />
@@ -156,29 +122,22 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className={`text-center ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
           >
-            {/* Logo Integration */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="flex justify-center mb-8"
-            >
-              <img
+            <h1 className="rs-heading-1 mb-6 flex justify-center">
+              <motion.img
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
                 src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
                 alt="Rhizome Syria Logo"
-                className="h-64 md:h-80 w-auto drop-shadow-xl"
+                className="h-72 md:h-96 w-auto drop-shadow-xl"
               />
-            </motion.div>
-
-            <h1 className="rs-heading-1 mb-6">
-              {t('rhizome-syria-title', 'Rhizome Syria', 'رايزوم سوريا')}
             </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="rs-body-large text-white/90 max-w-4xl mx-auto mb-8"
+              className={`text-3xl font-bold text-white max-w-4xl mx-auto mb-8 drop-shadow-lg ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
             >
               {t(
                 'rhizome-syria-subtitle',
@@ -196,11 +155,7 @@ const RhizomeSyriaPage: React.FC = () => {
               <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-400 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center">
                   <Sparkles className="h-5 w-5 mr-2 group-hover:animate-spin" />
-                  {t(
-                    'explore-programs',
-                    'Discover Our Impact',
-                    'اكتشف تأثيرنا'
-                  )}
+                  {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
                 </span>
               </button>
 
@@ -215,7 +170,7 @@ const RhizomeSyriaPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Overview Section */}
+      {/* Mission & Model */}
       <section className="rs-section bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -228,7 +183,7 @@ const RhizomeSyriaPage: React.FC = () => {
             <h2 className="rs-heading-2 mb-6">
               {t('overview-title', 'About Us', 'عن رايزوم سوريا')}
             </h2>
-            <p className="rs-body-large mb-6">
+            <p className="rs-body-large mb-12">
               {t(
                 'overview-intro',
                 'Rhizome Syria is a decentralized civil-society network that harnesses local communities to drive real change.',
@@ -236,130 +191,126 @@ const RhizomeSyriaPage: React.FC = () => {
               )}
             </p>
 
-            <h3 className="rs-heading-3 mb-4">
-              {t('methods-heading', 'Our Approach: How We Work', 'الوسائل')}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
-              {methods.map((item, index) => (
-                <li key={index}>{t(`method-${index}`, item.en, item.ar)}</li>
-              ))}
-            </ul>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="rs-card">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
+                    <Target className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="rs-heading-3">
+                    {t('our-mission', 'Our Mission & Vision', 'مهمتنا')}
+                  </h3>
+                </div>
+                <p className="rs-body">
+                  {t(
+                    'mission-text-1',
+                    "Our vision: unleash each community's potential through a decentralized, horizontal network.",
+                    'الفكرة: تفعيل القوة الكامنة في المجتمعات عبر شبكة علاقات أفقية غير مركزية.'
+                  )}
+                </p>
+                <p className="rs-body mt-4">
+                  {t(
+                    'mission-text-2',
+                    'Syrian communities need a development model anchored in their lived realities.',
+                    'الحاجة: حاجة المجتمعات السورية المتنوعة إلى نموذج تنموي من قلب الواقع المحلي.'
+                  )}
+                </p>
+              </div>
 
-            <h3 className="rs-heading-3 mb-4">
-              {t('goals-heading', 'The Rhizome Philosophy', 'الأهداف')}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-6">
-              {goals.map((item, index) => (
-                <li key={index}>{t(`goal-${index}`, item.en, item.ar)}</li>
-              ))}
-            </ul>
-
-            <p className="rs-body-large">
-              {t(
-                'partnership-text',
-                'Rhizome Syria partners closely with the Rhizome Community Foundation in Canada. Both organizations remain legally independent, yet share governance and coordinate programs under a single strategic vision. This approach keeps Syrians in the lead while connecting them to global resources in a spirit of mutual respect.',
-                'تعمل رايزوم سوريا بالشراكة مع مؤسسة رايزوم المجتمعية الكندية، بقيادة سورية، لإعادة تصور التمويل الدولي وتعزيز وكالة المجتمعات المتأثرة بالتحديات المتقاطعة. يركز هذا النموذج على تمكين المجتمعات المحلية من رسم أولوياتها وابتكار حلول من واقعها مع ربطها بالموارد العالمية وحمايتها من الضغوط الخارجية دون المساس بالمعايير الدولية.'
-              )}
-            </p>
+              <div className="space-y-6">
+                <div className="relative">
+                  <img
+                    src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy.jpeg"
+                    alt="Rhizome Syria Activities"
+                    className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-transparent to-blue-600/20 rounded-2xl" />
+                </div>
+                <div className="rs-card">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center mr-3">
+                      <Globe className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="rs-heading-3 text-orange-800">
+                      {t(
+                        'our-structure',
+                        'Our Model: A Unique Global Partnership',
+                        'هيكلنا'
+                      )}
+                    </h3>
+                  </div>
+                  <p className="rs-body">
+                    {t(
+                      'structure-text',
+                      'Strategic partnerships: broad local cooperation and a development partnership with the Rhizome Community Foundation in Canada ensure autonomy and coordination.',
+                      'شراكات استراتيجية: شراكات محلية واسعة، وشراكة تنموية مع مؤسسة رايزوم المجتمعية كندا، لضمان الاستقلالية والتنسيق.'
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission Section with Vibrant Cards */}
+      {/* Approach */}
       <section className="rs-section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-400 via-blue-400 to-orange-400 rounded-2xl opacity-20 blur-xl" />
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-200">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Target className="h-6 w-6 text-white" />
-                  </div>
-                  <h2
-                    className={`rs-heading-2 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                  >
-                    {t('our-mission', 'Our Mission & Vision', 'مهمتنا')}
-                  </h2>
-                </div>
-
-                <div
-                  className={`space-y-6 text-gray-700 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                >
-                  <p className="rs-body">
-                    {t(
-                      'mission-text-1',
-                      "Our vision: unleash each community's potential through a decentralized, horizontal network.",
-                      'الفكرة: تفعيل القوة الكامنة في المجتمعات عبر شبكة علاقات أفقية غير مركزية.'
-                    )}
-                  </p>
-
-                  <p className="rs-body">
-                    {t(
-                      'mission-text-2',
-                      'Syrian communities need a development model anchored in their lived realities.',
-                      'الحاجة: حاجة المجتمعات السورية المتنوعة إلى نموذج تنموي من قلب الواقع المحلي.'
-                    )}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <div className="relative">
-                <img
-                  src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy.jpeg"
-                  alt="Rhizome Syria Activities"
-                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-transparent to-blue-600/20 rounded-2xl" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={currentLanguage.code === 'ar' ? 'rs-arabic' : ''}
+          >
+            <h2 className="rs-heading-2 mb-12">
+              {t('approach-title', 'Our Approach', 'نهجنا')}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="rs-heading-3 mb-4">
+                  {t('methods-heading', 'Methods', 'الوسائل')}
+                </h3>
+                <ul className="grid sm:grid-cols-2 gap-4">
+                  {methods.map((item, index) => (
+                    <li
+                      key={index}
+                      className={`rs-card flex items-center gap-3 ${currentLanguage.code === 'ar' ? 'rs-arabic flex-row-reverse' : ''}`}
+                    >
+                      <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <span>{t(`method-${index}`, item.en, item.ar)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 rounded-2xl p-6 shadow-xl border border-orange-200">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center mr-3">
-                    <Globe className="h-5 w-5 text-white" />
-                  </div>
-                  <h3
-                    className={`rs-heading-3 text-orange-800 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                  >
-                    {t(
-                      'our-structure',
-                      'Our Model: A Unique Global Partnership',
-                      'هيكلنا'
-                    )}
-                  </h3>
-                </div>
-
-                <p
-                  className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                >
-                  {t(
-                    'structure-text',
-                    'Strategic partnerships: broad local cooperation and a development partnership with the Rhizome Community Foundation in Canada ensure autonomy and coordination.',
-                    'شراكات استراتيجية: شراكات محلية واسعة، وشراكة تنموية مع مؤسسة رايزوم المجتمعية كندا، لضمان الاستقلالية والتنسيق.'
-                  )}
-                </p>
+              <div>
+                <h3 className="rs-heading-3 mb-4">
+                  {t('goals-heading', 'Goals', 'الأهداف')}
+                </h3>
+                <ul className="grid sm:grid-cols-2 gap-4">
+                  {goals.map((item, index) => (
+                    <li
+                      key={index}
+                      className={`rs-card flex items-center gap-3 ${currentLanguage.code === 'ar' ? 'rs-arabic flex-row-reverse' : ''}`}
+                    >
+                      <div className="w-6 h-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <span>{t(`goal-${index}`, item.en, item.ar)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Current Activities with Colorful Grid */}
-      <section className="rs-section relative">
+      {/* Current Activities */}
+      <section className="rs-section">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-50/50 via-blue-50/50 to-orange-50/50" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
@@ -434,39 +385,24 @@ const RhizomeSyriaPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
+                className="relative group"
               >
                 <div
-                  className="absolute -inset-2 bg-gradient-to-r opacity-20 rounded-2xl blur-xl group-hover:opacity-30 transition-opacity"
-                  style={{
-                    background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
-                  }}
+                  className={`absolute -inset-2 bg-gradient-to-r ${activity.gradient} opacity-20 rounded-2xl blur-xl group-hover:opacity-30 transition-opacity`}
                 />
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200">
+                <div className="rs-card relative hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2">
                   <div
                     className={`w-14 h-14 bg-gradient-to-r ${activity.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                   >
                     <activity.icon className="h-7 w-7 text-white" />
                   </div>
 
-                  <h3
-                    className={`rs-heading-3 mb-3 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                  >
-                    {t(
-                      `activity-${index}-title`,
-                      activity.title,
-                      activity.titleAr
-                    )}
+                  <h3 className={`rs-heading-3 mb-3 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+                    {t(`activity-${index}-title`, activity.title, activity.titleAr)}
                   </h3>
 
-                  <p
-                    className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                  >
-                    {t(
-                      `activity-${index}-desc`,
-                      activity.description,
-                      activity.descriptionAr
-                    )}
+                  <p className={`rs-body ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+                    {t(`activity-${index}-desc`, activity.description, activity.descriptionAr)}
                   </p>
                 </div>
               </motion.div>
@@ -475,8 +411,8 @@ const RhizomeSyriaPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Board Section with Enhanced Design */}
-      <section className="rs-section relative">
+      {/* Board */}
+      <section className="rs-section-alt">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-blue-100/50 to-orange-100/50" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
@@ -486,15 +422,57 @@ const RhizomeSyriaPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2
-              className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-orange-400 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-            >
-              {t('our-board-syria', 'Syria Team', 'فريق سوريا')}
+            <h2 className={`rs-heading-2 mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+              {t('board-title', 'Leadership', 'مجلس الإدارة')}
             </h2>
+            <p className={`rs-body-large max-w-3xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+              {t(
+                'board-description',
+                'A diverse board guides Rhizome Syria with experience in governance, logistics, and community organizing.',
+                'يدير رايزوم سوريا مجلس متنوع الخبرات في الحوكمة واللوجستيات والتنظيم المجتمعي.'
+              )}
+            </p>
           </motion.div>
 
-          <div className="rs-team-grid">
-            {board.map((member, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: 'Ritta Alhayek',
+                nameAr: 'ريتا الحايك',
+                role: 'President',
+                roleAr: 'رئيسة',
+                bio: 'Oversees governance and direction with experience in strategic planning, community systems, and feminist organizing.',
+                bioAr: 'تشرف على الحوكمة والتوجه بخبرة في التخطيط الاستراتيجي والأنظمة المجتمعية والتنظيم النسوي.',
+                image: 'https://via.placeholder.com/400x400/6B46C1/FFFFFF?text=Board+Member',
+              },
+              {
+                name: 'Abdullah Sejerie',
+                nameAr: 'عبد الله سجرية',
+                role: 'Logistics & Operations',
+                roleAr: 'اللوجستيات والعمليات',
+                bio: 'Leads logistical coordination and field-level implementation, ensuring reliable support systems across all regions.',
+                bioAr: 'يقود التنسيق اللوجستي والتنفيذ على مستوى الميدان، مما يضمن أنظمة دعم موثوقة في جميع المناطق.',
+                image: 'https://via.placeholder.com/400x400/0EA5E9/FFFFFF?text=Board+Member',
+              },
+              {
+                name: 'Kinda Ali',
+                nameAr: 'كندة علي',
+                role: 'Strategy & Outreach',
+                roleAr: 'الاستراتيجية والتوعية',
+                bio: 'Guides long-term planning and stakeholder engagement, focusing on interregional networks and strategic alliances.',
+                bioAr: 'توجه التخطيط طويل المدى ومشاركة أصحاب المصلحة، مع التركيز على الشبكات بين المناطق والتحالفات الاستراتيجية.',
+                image: 'https://via.placeholder.com/400x400/fb923c/FFFFFF?text=Board+Member',
+              },
+              {
+                name: 'Silva Ismael',
+                nameAr: 'سيلفا إسماعيل',
+                role: 'Programs Lead',
+                roleAr: 'قائدة البرامج',
+                bio: "Manages Rhizome Syria's programmatic portfolio, with a focus on feminist frameworks, coastal civic organizing, and training modules.",
+                bioAr: 'تدير محفظة برامج رايزوم سوريا، مع التركيز على الأطر النسوية والتنظيم المدني الساحلي ووحدات التدريب.',
+                image: 'https://via.placeholder.com/400x400/EF4444/FFFFFF?text=Board+Member',
+              },
+            ].map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -505,27 +483,13 @@ const RhizomeSyriaPage: React.FC = () => {
                 <div className="rs-team-card">
                   <img src={member.image} alt={member.name} />
                   <div className="rs-team-info">
-                    <h3
-                      className={`rs-heading-3 mb-2 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                    >
-                      {t(
-                        `board-member-${index}-name`,
-                        member.name,
-                        member.nameAr
-                      )}
+                    <h3 className={`rs-heading-3 mb-2 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+                      {t(`board-member-${index}-name`, member.name, member.nameAr)}
                     </h3>
-                    <p
-                      className={`rs-team-role ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                    >
-                      {t(
-                        `board-member-${index}-role`,
-                        member.role,
-                        member.roleAr
-                      )}
+                    <p className={`rs-team-role ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
+                      {t(`board-member-${index}-role`, member.role, member.roleAr)}
                     </p>
-                    <p
-                      className={`rs-body text-sm ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                    >
+                    <p className={`rs-body text-sm ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}>
                       {t(`board-member-${index}-bio`, member.bio, member.bioAr)}
                     </p>
                   </div>
@@ -539,15 +503,11 @@ const RhizomeSyriaPage: React.FC = () => {
       {/* Community Champions */}
       <FeaturedLeaders />
 
-      {/* Call to Action with Spiral Design */}
+      {/* Call to Action */}
       <section className="rs-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-400 to-red-500" />
         <div className="absolute inset-0 opacity-20">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path
               d="M50,50 Q20,20 50,5 Q80,20 95,50 Q80,80 50,95 Q20,80 5,50 Q20,20 50,50"
               fill="none"
@@ -567,11 +527,7 @@ const RhizomeSyriaPage: React.FC = () => {
             className={`text-white ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
           >
             <h2 className="rs-heading-2 mb-6">
-              {t(
-                'get-involved-title',
-                'Ready to join or partner?',
-                'مستعد للانضمام أو الشراكة؟'
-              )}
+              {t('get-involved-title', 'Ready to join or partner?', 'مستعد للانضمام أو الشراكة؟')}
             </h2>
             <p className="rs-body-large text-white/90 mb-8 max-w-3xl mx-auto">
               {t(
@@ -620,4 +576,6 @@ const RhizomeSyriaPage: React.FC = () => {
     </div>
   );
 };
+
 export default RhizomeSyriaPage;
+
