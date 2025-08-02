@@ -25,8 +25,8 @@ const InteractivePage: React.FC = () => {
           >
             {t(
               'interactive-subtitle',
-              'Explore our presence across Syria.',
-              'استكشف وجودنا في سوريا.'
+              'Discover Syria.',
+              'اكتشف سوريا.'
             )}
           </motion.p>
           <SyrianCitiesMap />
