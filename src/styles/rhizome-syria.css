@@ -27,6 +27,8 @@
   --rs-gradient-warm: linear-gradient(135deg, var(--rs-primary-orange), var(--rs-primary-red));
   --rs-gradient-cool: linear-gradient(135deg, var(--rs-primary-blue), var(--rs-teal));
   --rs-gradient-sunset: linear-gradient(135deg, var(--rs-primary-yellow), var(--rs-primary-orange), var(--rs-primary-red));
+  /* Fresh colors for the banner */
+  --rs-banner-gradient: linear-gradient(135deg, var(--rs-teal), var(--rs-primary-purple), var(--rs-amber));
   
   /* Typography */
   --rs-font-primary: 'Noto Sans Arabic', 'Poppins', sans-serif;
@@ -183,7 +185,7 @@
 }
 
 .rs-hero {
-  background: var(--rs-gradient-sunset);
+  background: var(--rs-banner-gradient);
   color: var(--rs-white);
   padding: var(--rs-space-3xl) 0;
   position: relative;
