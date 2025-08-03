@@ -22,9 +22,12 @@ const LoadingScreen: React.FC = () => {
 
   if (done) return null;
 
+  const scale = 1 + count / 50; // Zoom into the counter
+  const opacity = 1 - count / 100; // Fade out loader
+
   return (
-    <div className="rhizome-loader">
-      <div className="counter">{count}%</div>
+    <div className="rhizome-loader" style={{ opacity }}>
+      <div className="counter" style={{ transform: `scale(${scale})` }}>{count}%</div>
     </div>
   );
 };
