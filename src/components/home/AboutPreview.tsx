@@ -18,11 +18,14 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img
-              src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg"
-              alt="Community collaboration"
-              className="w-full h-auto rounded-xl shadow-xl"
-            />
+            <div className="w-full h-80 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl shadow-xl flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl font-bold">🌱</span>
+                </div>
+                <p className="text-emerald-700 font-medium">Community Collaboration</p>
+              </div>
+            </div>
             
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200 rounded-full opacity-20 animate-pulse" />

@@ -65,7 +65,7 @@ const RhizomeSyriaPage: React.FC = () => {
       ar: 'العدالة والتمكين: تعزيز سيادة المجتمع المدني وتبني العدالة غير الانتقامية.'
     },
     {
-      en: 'Restorative Justice & Empowerment: We work to strengthen civil society’s sovereignty and champion restorative justice principles that heal and unite.',
+      en: 'Restorative Justice & Empowerment: We work to strengthen civil society's sovereignty and champion restorative justice principles that heal and unite.',
       ar: 'القيادة التشاركية: إشراك المجتمعات المحلية في صناعة القرار من التخطيط حتى التنفيذ.'
     },
     {
@@ -153,12 +153,8 @@ const RhizomeSyriaPage: React.FC = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="flex justify-center mb-8"
             >
-              <div className="relative">
-                <img
-                  src="/20250629_1822_Gradient Logo Design_remix_01jyz38q10e56bpwt8s4ypzwhj.png"
-                  alt="Rhizome Syria Logo"
-                  className="h-[30rem] md:h-[36rem] w-auto drop-shadow-2xl"
-                />
+              <div className="relative w-48 h-48 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500 rounded-full flex items-center justify-center shadow-2xl">
+                <span className="text-white text-6xl font-bold">ريزوم</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-blue-400/20 to-orange-400/20 rounded-full blur-xl" />
               </div>
             </motion.div>
@@ -297,11 +293,14 @@ const RhizomeSyriaPage: React.FC = () => {
               className="space-y-6"
             >
               <div className="relative">
-                <img 
-                  src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy.jpeg" 
-                  alt="Rhizome Syria Activities" 
-                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
-                />
+                <div className="w-full h-80 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl shadow-2xl flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-3xl">🤝</span>
+                    </div>
+                    <p className="text-purple-700 font-medium">Community Activities</p>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-transparent to-blue-600/20 rounded-2xl" />
               </div>
               
