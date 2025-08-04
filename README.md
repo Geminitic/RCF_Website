@@ -10,6 +10,11 @@ Images and other assets have been moved under `public/assets` to keep the reposi
 
 Copy `.env.example` to `.env` and adjust the values as needed. Currently only `PORT` is required for the Express API.
 
+## Refactoring Plan
+
+A comprehensive [refactoring plan](docs/refactoring-plan.md) outlines the proposed
+architecture and features for a modernized, multilingual RCF website.
+
 ## Getting Started
 
 1. **Install dependencies**
@@ -47,4 +52,6 @@ Copy `.env.example` to `.env` and adjust the values as needed. Currently only `P
 - To deploy on Netlify, create a new site pointing to this repository and enable SSL in the Netlify dashboard. If Netlify refuses to provision SSL, verify that your domain DNS records point to Netlify and that no conflicting certificates exist.
 - The codebase does not currently integrate with Supabase or Neon. Any references to those services are likely from previous experiments or external configurations not present in this repository.
 
-\n## License\n\nThis project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
