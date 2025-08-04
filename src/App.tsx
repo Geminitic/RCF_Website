@@ -1,69 +1,45 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LanguageProvider } from './contexts/LanguageContext';
-import { PhotoProvider } from './contexts/PhotoContext';
-import { UserProvider } from './contexts/UserContext';
-import Navigation from './components/layout/Navigation';
-import Footer from './components/layout/Footer';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ProgramsPage from './pages/ProgramsPage';
-import RhizomeSyriaPage from './pages/RhizomeSyriaPage';
-import CommunityWallPage from './pages/CommunityWallPage';
-import CalendarPage from './pages/CalendarPage';
-import ContactPage from './pages/ContactPage';
-import AdminApprovalPage from './pages/AdminApprovalPage';
-import RhizomeSyriaSubpage from './pages/RhizomeSyriaSubpage';
-import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
-import InteractivePage from './pages/InteractivePage';
-import JoinPage from './pages/JoinPage';
-import KnowledgeHubPage from './pages/KnowledgeHubPage';
-import ParticleSystem from './components/common/ParticleSystem';
-import CustomCursor from './components/common/CustomCursor';
-import LoadingScreen from './components/common/LoadingScreen';
+import React, { Suspense } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { ErrorBoundary } from 'react-error-boundary'
+import { useTranslation } from 'react-i18next'
+import { LanguageSwitcher } from './components/features/LanguageSwitcher/LanguageSwitcher'
+import LoadingScreen from './components/common/LoadingScreen'
+import Navigation from './components/layout/Navigation'
+import Footer from './components/layout/Footer'
+import { LanguageProvider } from './contexts/LanguageContext'
+import { PhotoProvider } from './contexts/PhotoContext'
+import './i18n/config'
+
+const HomePage = React.lazy(() => import('./pages/HomePage'))
+const RhizomePage = React.lazy(() => import('./pages/RhizomePage/RhizomePage'))
+const AboutPage = React.lazy(() => import('./pages/AboutPage'))
 
 function App() {
+  const { i18n } = useTranslation()
+
   return (
-    <LanguageProvider>
-      <UserProvider>
-        <PhotoProvider>
-          <Router>
-            <div className="min-h-screen bg-gradient-to-br from-stone-50 to-emerald-50">
-              <LoadingScreen />
-              <CustomCursor />
+    <ErrorBoundary FallbackComponent={() => <div>Something went wrong</div>}>
+      <PhotoProvider>
+        <LanguageProvider>
+          <BrowserRouter>
+            <div className="min-h-screen" dir={i18n.dir()}>
               <Navigation />
-              <main>
+              <div className="p-4 flex justify-end"><LanguageSwitcher /></div>
+              <Suspense fallback={<LoadingScreen />}>
                 <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/programs" element={<ProgramsPage />} />
-                  <Route path="/rhizome-syria" element={<RhizomeSyriaPage />} />
-                  <Route
-                    path="/community-wall"
-                    element={<CommunityWallPage />}
-                  />
-                  <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
-                  <Route path="/calendar" element={<CalendarPage />} />
-                  <Route path="/interactive" element={<InteractivePage />} />
-                  <Route path="/join" element={<JoinPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/admin" element={<AdminApprovalPage />} />
-                  <Route
-                    path="/rhizome-syria-subpage"
-                    element={<RhizomeSyriaSubpage />}
-                  />
-                  <Route
-                    path="/rhizome-canada-subpage"
-                    element={<RhizomeCanadaSubpage />}
-                  />
+                  <Route path="/:lang/home" element={<HomePage />} />
+                  <Route path="/:lang/rhizome" element={<RhizomePage />} />
+                  <Route path="/:lang/about" element={<AboutPage />} />
+                  <Route path="/" element={<Navigate to={`/${i18n.language}/home`} replace />} />
                 </Routes>
-              </main>
+              </Suspense>
               <Footer />
-              <ParticleSystem />
             </div>
-          </Router>
-        </PhotoProvider>
-      </UserProvider>
-    </LanguageProvider>
-  );
+          </BrowserRouter>
+        </LanguageProvider>
+      </PhotoProvider>
+    </ErrorBoundary>
+  )
 }
-export default App;
+
+export default App
