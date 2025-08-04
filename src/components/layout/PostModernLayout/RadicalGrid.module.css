@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 12), 1fr);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid.asymmetric {
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+}
+
+.gap-sm {
+  gap: 1rem;
+}
+
+.gap-md {
+  gap: 2rem;
+}
+
+.gap-lg {
+  gap: 3rem;
+}
+
+.gap-xl {
+  gap: 4rem;
+}
+
+.grid.asymmetric > *:nth-child(3n) {
+  grid-column: span 5;
+}
+
+.grid.asymmetric > *:nth-child(5n) {
+  grid-column: span 7;
+}
+
+.grid.asymmetric > *:nth-child(7n) {
+  grid-column: span 4;
+}
+
+.grid.asymmetric > *:nth-child(11n) {
+  grid-column: span 8;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .grid.asymmetric > * {
+    grid-column: span 1 !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .grid.asymmetric > * {
+    grid-column: span 6;
+  }
+  .grid.asymmetric > *:nth-child(odd) {
+    grid-column: span 6;
+  }
+}
