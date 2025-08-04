@@ -1,0 +1,26 @@
+{
+  "rhizome": {
+    "hero": {
+      "title": "ريزوم",
+      "subtitle": "ربط المجتمعات",
+      "imageAlt": "صورة ريزوم"
+    },
+    "stats": {
+      "communities": "المجتمعات",
+      "years": "سنوات",
+      "impact": "أثر"
+    },
+    "timeline": { "title": "الجدول الزمني" },
+    "stories": { "title": "القصص" },
+    "impact": { "title": "الأثر" }
+  },
+  "map": {
+    "loading": "جارٍ تحميل الخريطة...",
+    "error": "فشل تحميل الخريطة",
+    "retry": "إعادة المحاولة",
+    "province": "المحافظة",
+    "type": "النوع",
+    "population": "السكان",
+    "types": { "city": "مدينة", "town": "بلدة", "village": "قرية" }
+  }
+}

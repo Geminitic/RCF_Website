@@ -1,0 +1,77 @@
+.layout {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: var(--background-primary);
+  transition: all 0.3s ease;
+}
+
+.layout.light {
+  --background-primary: #fefefe;
+  --background-secondary: #f8f9fa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6c757d;
+  --accent-primary: #ff6b6b;
+  --accent-secondary: #4ecdc4;
+  --surface: rgba(255, 255, 255, 0.8);
+}
+
+.layout.dark {
+  --background-primary: #0a0a0a;
+  --background-secondary: #1a1a1a;
+  --text-primary: #fefefe;
+  --text-secondary: #a8a8a8;
+  --accent-primary: #ff8a8a;
+  --accent-secondary: #5eddd4;
+  --surface: rgba(0, 0, 0, 0.8);
+}
+
+.layout.radical {
+  --background-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-primary: #ff0080;
+  --accent-secondary: #00ff80;
+  --surface: rgba(255, 255, 255, 0.1);
+}
+
+.layout.default {
+  padding: 0;
+}
+
+.layout.minimal {
+  padding: 2rem;
+  background: var(--background-primary);
+}
+
+.layout.radical {
+  background: var(--background-primary);
+  position: relative;
+}
+
+.layout.radical::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/textures/noise.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* RTL Support */
+[dir="rtl"] .layout {
+  direction: rtl;
+}
+
+[dir="rtl"] .layout * {
+  text-align: start;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .layout {
+    padding: 1rem;
+  }
+}
