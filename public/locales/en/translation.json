@@ -1,0 +1,26 @@
+{
+  "rhizome": {
+    "hero": {
+      "title": "Rhizome",
+      "subtitle": "Connecting communities",
+      "imageAlt": "Rhizome hero"
+    },
+    "stats": {
+      "communities": "Communities",
+      "years": "Years",
+      "impact": "Impact"
+    },
+    "timeline": { "title": "Timeline" },
+    "stories": { "title": "Stories" },
+    "impact": { "title": "Impact" }
+  },
+  "map": {
+    "loading": "Loading map...",
+    "error": "Failed to load map",
+    "retry": "Retry",
+    "province": "Province",
+    "type": "Type",
+    "population": "Population",
+    "types": { "city": "City", "town": "Town", "village": "Village" }
+  }
+}
