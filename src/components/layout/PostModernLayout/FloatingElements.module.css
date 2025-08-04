@@ -1,0 +1,143 @@
+.floatingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floatingElement {
+  position: absolute;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.organic1 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  top: 10%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.organic2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  bottom: 20%;
+  left: 15%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.geometric1 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: 60%;
+  right: 30%;
+  animation: rotate 10s linear infinite;
+}
+
+.textFragment {
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: 'Arial Black', sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+.dopamineAccent {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ff0080 0%, #00ff80 100%);
+  border-radius: 50%;
+  top: 30%;
+  left: 20%;
+  filter: blur(20px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+[dir='rtl'] .organic1 {
+  right: auto;
+  left: 10%;
+}
+
+[dir='rtl'] .organic2 {
+  left: auto;
+  right: 15%;
+}
+
+[dir='rtl'] .geometric1 {
+  right: auto;
+  left: 30%;
+}
+
+@media (max-width: 768px) {
+  .organic1,
+  .organic2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .geometric1 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .textFragment {
+    font-size: 4rem;
+  }
+
+  .dopamineAccent {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingElement {
+    animation: none;
+    transform: none !important;
+  }
+}
