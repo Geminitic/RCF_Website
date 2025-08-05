@@ -1,0 +1,14 @@
+{
+  "rhizome": {
+    "hero": {
+      "title": "Rhizome Syria",
+      "subtitle": "A network connecting communities and stories across Syria",
+      "imageAlt": "Rhizome hero"
+    },
+    "stats": {
+      "communities": "communities",
+      "years": "years",
+      "impact": "impact"
+    }
+  }
+}
