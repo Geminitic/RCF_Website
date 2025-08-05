@@ -1,0 +1,49 @@
+.layout {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: var(--background-primary);
+  transition: all 0.3s ease;
+}
+
+.layout.default {
+  padding: 0;
+}
+
+.layout.minimal {
+  padding: 2rem;
+  background: var(--background-primary);
+}
+
+.layout.radical {
+  --background-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--background-primary);
+  position: relative;
+}
+
+.layout.radical::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/textures/noise.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
+[dir='rtl'] .layout {
+  direction: rtl;
+}
+
+[dir='rtl'] .layout * {
+  text-align: start;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 1rem;
+  }
+}
