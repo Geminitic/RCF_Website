@@ -39,12 +39,13 @@ const Navigation: React.FC = () => {
       ar: 'مركز المعرفة',
     },
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
-    {
-      key: 'interactive',
-      path: '/interactive',
-      en: 'Interactive',
-      ar: 'تفاعلي',
-    },
+    // Interactive tab temporarily removed pending redesign
+    // {
+    //   key: 'interactive',
+    //   path: '/interactive',
+    //   en: 'Interactive',
+    //   ar: 'تفاعلي',
+    // },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
   ];
 

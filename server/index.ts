@@ -6,10 +6,9 @@ import rateLimit from 'express-rate-limit';
 import { logger } from './utils/logger';
 import { swaggerSpec } from './swagger';
 import swaggerUi from 'swagger-ui-express';
-import eventRoutes from './routes/events';
+// import eventRoutes from './routes/events'; // Calendar API disabled
 import healthRoutes from './routes/health';
 import './jobs/scraper.job';
-import { scrapeAndCache } from './utils/scrape';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,7 +34,7 @@ app.use('/api/', limiter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/api/events', eventRoutes);
+// app.use('/api/events', eventRoutes); // Calendar API disabled
 app.use('/api/health', healthRoutes);
 
 app.use(
@@ -58,9 +57,10 @@ process.on('SIGTERM', () => {
 const server = app.listen(PORT, () => {
   logger.info(`Enhanced Calendar API server listening on port ${PORT}`);
   logger.info(`API Documentation available at http://localhost:${PORT}/api-docs`);
-  scrapeAndCache().catch((err) =>
-    logger.error('Initial scrape failed:', err)
-  );
+  // Calendar scraping disabled until backend is re-enabled
+  // scrapeAndCache().catch((err) =>
+  //   logger.error('Initial scrape failed:', err)
+  // );
 });
 
 export default app;
