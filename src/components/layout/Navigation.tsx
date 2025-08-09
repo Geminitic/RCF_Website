@@ -23,9 +23,11 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // NOTE: Interactive page link is commented out pending future activation.
   const navItems = [
     { key: 'about', path: '/about', en: 'About', ar: 'من نحن' },
     { key: 'programs', path: '/programs', en: 'Programs', ar: 'البرامج' },
+    // { key: 'interactive', path: '/interactive', en: 'Interactive', ar: 'تفاعلي' },
     {
       key: 'rhizome-syria',
       path: '/rhizome-syria',
@@ -39,12 +41,6 @@ const Navigation: React.FC = () => {
       ar: 'مركز المعرفة',
     },
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
-    {
-      key: 'interactive',
-      path: '/interactive',
-      en: 'Interactive',
-      ar: 'تفاعلي',
-    },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
   ];
 

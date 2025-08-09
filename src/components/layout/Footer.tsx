@@ -53,6 +53,8 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               {[
+                // NOTE: Interactive link temporarily disabled; uncomment when ready.
+                // { key: 'interactive', path: '/interactive', en: 'Interactive', ar: 'تفاعلي' },
                 {
                   key: 'knowledge',
                   path: '/knowledge-hub',
@@ -64,12 +66,6 @@ const Footer: React.FC = () => {
                   path: '/calendar',
                   en: 'Event Calendar',
                   ar: 'رزنامة الفعاليات',
-                },
-                {
-                  key: 'interactive',
-                  path: '/interactive',
-                  en: 'Interactive',
-                  ar: 'تفاعلي',
                 },
                 {
                   key: 'join',
