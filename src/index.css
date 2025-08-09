@@ -576,7 +576,8 @@ html {
 }
 
 .counter {
-  font-size: 5rem;
+  font-size: 1rem;
   color: #ffffff;
   font-weight: bold;
+  transition: font-size 0.2s ease-out;
 }

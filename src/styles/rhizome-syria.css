@@ -183,7 +183,7 @@
 }
 
 .rs-hero {
-  background: var(--rs-gradient-sunset);
+  background: var(--rs-primary-orange);
   color: var(--rs-white);
   padding: var(--rs-space-3xl) 0;
   position: relative;

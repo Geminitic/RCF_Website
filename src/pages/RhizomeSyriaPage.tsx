@@ -123,13 +123,13 @@ const RhizomeSyriaPage: React.FC = () => {
       <section className="rs-hero relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-400 to-red-400 rounded-full opacity-20 animate-pulse" />
           <div
             className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-orange-300 to-red-400 rounded-full opacity-20 animate-pulse"
             style={{ animationDelay: '1s' }}
           />
           <div
-            className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-15 animate-pulse"
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-orange-300 to-orange-600 rounded-full opacity-15 animate-pulse"
             style={{ animationDelay: '2s' }}
           />
           <div
@@ -543,7 +543,7 @@ const RhizomeSyriaPage: React.FC = () => {
 
       {/* Call to Action with Spiral Design */}
       <section className="rs-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 via-orange-400 to-red-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600" />
         <div className="absolute inset-0 opacity-20">
           <svg
             className="w-full h-full"
