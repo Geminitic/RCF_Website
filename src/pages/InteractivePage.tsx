@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import SyrianCitiesMap from '../components/common/SyrianCitiesMap';
 import { useLanguage } from '../contexts/LanguageContext';
 
+// NOTE: This page is currently unused and the navigation entry has been
+// disabled. The component remains for potential future reinstatement.
+
 const InteractivePage: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   return (
