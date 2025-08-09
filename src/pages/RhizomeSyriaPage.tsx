@@ -108,7 +108,7 @@ const RhizomeSyriaPage: React.FC = () => {
   ];
 
   return (
-    <div className="rhizome-syria min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50 pt-16 relative overflow-hidden">
+    <div className="rhizome-syria min-h-screen bg-orange-50 pt-16 relative overflow-hidden">
       {/* Syrian Map Background */}
       <div
         className="fixed inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
@@ -123,13 +123,13 @@ const RhizomeSyriaPage: React.FC = () => {
       <section className="rs-hero relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-400 to-red-400 rounded-full opacity-20 animate-pulse" />
           <div
             className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-orange-300 to-red-400 rounded-full opacity-20 animate-pulse"
             style={{ animationDelay: '1s' }}
           />
           <div
-            className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-15 animate-pulse"
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-15 animate-pulse"
             style={{ animationDelay: '2s' }}
           />
           <div
@@ -188,19 +188,6 @@ const RhizomeSyriaPage: React.FC = () => {
               className="h-64 md:h-80 w-auto drop-shadow-xl"
             />
           </h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="rs-body-large text-white/90 max-w-4xl mx-auto mb-8"
-            >
-              {t(
-                'rhizome-syria-subtitle',
-                'Development from the roots for the roots.',
-                'التنمية من الجذور وإليها'
-              )}
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

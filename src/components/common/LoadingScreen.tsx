@@ -24,7 +24,12 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="rhizome-loader">
-      <div className="counter">{count}%</div>
+      <div
+        className="counter"
+        style={{ fontSize: `${3 + count / 20}rem` }}
+      >
+        {count}%
+      </div>
     </div>
   );
 };
