@@ -38,13 +38,8 @@ const Navigation: React.FC = () => {
       en: 'Knowledge Hub',
       ar: 'مركز المعرفة',
     },
+    // { key: 'interactive', path: '/interactive', en: 'Interactive', ar: 'تفاعلي' }, // Temporarily disabled
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
-    {
-      key: 'interactive',
-      path: '/interactive',
-      en: 'Interactive',
-      ar: 'تفاعلي',
-    },
     { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
   ];
 

@@ -14,9 +14,9 @@ import ContactPage from './pages/ContactPage';
 import AdminApprovalPage from './pages/AdminApprovalPage';
 import RhizomeSyriaSubpage from './pages/RhizomeSyriaSubpage';
 import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
-import InteractivePage from './pages/InteractivePage';
 import JoinPage from './pages/JoinPage';
 import KnowledgeHubPage from './pages/KnowledgeHubPage';
+// import InteractivePage from './pages/InteractivePage'; // Temporarily disabled
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
 import LoadingScreen from './components/common/LoadingScreen';
@@ -42,8 +42,8 @@ function App() {
                     element={<CommunityWallPage />}
                   />
                   <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
+                  {/* <Route path="/interactive" element={<InteractivePage />} /> */}
                   <Route path="/calendar" element={<CalendarPage />} />
-                  <Route path="/interactive" element={<InteractivePage />} />
                   <Route path="/join" element={<JoinPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/admin" element={<AdminApprovalPage />} />

@@ -59,17 +59,17 @@ const Footer: React.FC = () => {
                   en: 'Knowledge Hub',
                   ar: 'مركز المعرفة',
                 },
+                // {
+                //   key: 'interactive',
+                //   path: '/interactive',
+                //   en: 'Interactive Map',
+                //   ar: 'الخريطة التفاعلية',
+                // },
                 {
                   key: 'calendar',
                   path: '/calendar',
                   en: 'Event Calendar',
                   ar: 'رزنامة الفعاليات',
-                },
-                {
-                  key: 'interactive',
-                  path: '/interactive',
-                  en: 'Interactive',
-                  ar: 'تفاعلي',
                 },
                 {
                   key: 'join',

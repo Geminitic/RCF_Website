@@ -47,7 +47,7 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Netlify submission handling will be wired in later
     if (!selectedFile) return;
 
     setIsSubmitting(true);
@@ -123,7 +123,14 @@ const PhotoUploadModal: React.FC<PhotoUploadModalProps> = ({ isOpen, onClose }) 
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                name="photo-upload"
+                data-netlify="true"
+                encType="multipart/form-data"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="photo-upload" />
                 {/* File Upload */}
                 <div>
                   <label className={`block text-sm font-medium text-stone-700 mb-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}>
