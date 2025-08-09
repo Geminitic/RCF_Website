@@ -14,12 +14,12 @@ import ContactPage from './pages/ContactPage';
 import AdminApprovalPage from './pages/AdminApprovalPage';
 import RhizomeSyriaSubpage from './pages/RhizomeSyriaSubpage';
 import RhizomeCanadaSubpage from './pages/RhizomeCanadaSubpage';
-import InteractivePage from './pages/InteractivePage';
 import JoinPage from './pages/JoinPage';
 import KnowledgeHubPage from './pages/KnowledgeHubPage';
 import ParticleSystem from './components/common/ParticleSystem';
 import CustomCursor from './components/common/CustomCursor';
 import LoadingScreen from './components/common/LoadingScreen';
+// import InteractivePage from './pages/InteractivePage';
 
 function App() {
   return (
@@ -43,10 +43,14 @@ function App() {
                   />
                   <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
                   <Route path="/calendar" element={<CalendarPage />} />
-                  <Route path="/interactive" element={<InteractivePage />} />
                   <Route path="/join" element={<JoinPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/admin" element={<AdminApprovalPage />} />
+                  {/**
+                   * Interactive map page temporarily disabled until content is ready.
+                   * To re-enable, uncomment the route below along with the import above.
+                   */}
+                  {/* <Route path="/interactive" element={<InteractivePage />} /> */}
                   <Route
                     path="/rhizome-syria-subpage"
                     element={<RhizomeSyriaSubpage />}
