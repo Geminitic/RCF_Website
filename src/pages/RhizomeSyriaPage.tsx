@@ -178,7 +178,7 @@ const RhizomeSyriaPage: React.FC = () => {
             className={`text-center ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
           >
           {/* Logo Integration */}
-          <h1 className="rs-heading-1 mb-6 flex justify-center">
+          <div className="mb-6 flex justify-center">
             <motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -187,7 +187,7 @@ const RhizomeSyriaPage: React.FC = () => {
               alt="Rhizome Syria Logo"
               className="h-64 md:h-80 w-auto drop-shadow-xl"
             />
-          </h1>
+          </div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
