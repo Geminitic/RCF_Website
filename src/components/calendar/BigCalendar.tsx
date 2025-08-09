@@ -14,6 +14,8 @@ interface Props {
   language: 'en' | 'ar';
 }
 
+// NOTE: Currently unused. Retained for potential future use when
+// a full calendar implementation is reintroduced.
 const BigCalendar: React.FC<Props> = ({ events, language }) => {
   const localizer = dateFnsLocalizer({
     format,
