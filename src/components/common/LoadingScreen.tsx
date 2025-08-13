@@ -7,7 +7,7 @@ const LoadingScreen: React.FC = () => {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    // Start with a small scale and grow as the counter increases - faster and bigger
+    // Start with a small scale and grow dramatically as the counter increases
     const interval = setInterval(() => {
       setCount((c) => {
         if (c >= 100) {
@@ -22,15 +22,25 @@ const LoadingScreen: React.FC = () => {
           return 100;
         }
 
-        // Update scale based on count (from 1.0 to 4.0) - bigger scaling
-        const newScale = 1.0 + (c / 100) * 3;
+        // More aggressive early scaling that grows exponentially
+        // Start scaling early (from 1.0) and reach a much larger value (10.0) before 100%
+        // Use a curve that accelerates early and plateaus near the end
+        const newScale = 1.0 + Math.pow(c / 70, 1.5) * 9;
         setScale(newScale);
 
-        // Increase counter faster as it progresses
-        const increment = Math.max(1, Math.floor(c / 20) + 1);
+        // Increase counter with variable speed - slower at start, faster in middle, slower at end
+        let increment;
+        if (c < 30) {
+          increment = 1 + Math.floor(c / 15); // Slower at start
+        } else if (c < 70) {
+          increment = 2 + Math.floor((c - 30) / 10); // Faster in middle
+        } else {
+          increment = 1 + Math.floor((100 - c) / 15); // Slower at end
+        }
+        
         return Math.min(c + increment, 100);
       });
-    }, 20);
+    }, 25);
 
     return () => clearInterval(interval);
   }, []);
