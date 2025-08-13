@@ -195,7 +195,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--rs-primary-purple)] via-[var(--rs-primary-blue)] to-[var(--rs-deep-blue)]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1a0a3d] via-[#0c1f3d] to-[#000a20]">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -204,7 +204,7 @@ const HeroSection: React.FC = () => {
       />
 
       {/* Overlay with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -222,10 +222,18 @@ const HeroSection: React.FC = () => {
             className="flex flex-col items-center gap-6 mb-10 text-center"
           >
             <img
-              src="/assets/logos/rhizome-logo-large.png"
+              src="/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
               alt="Rhizome Community Foundation Logo"
-              className="h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-80 xl:h-[28rem] xl:w-[28rem] 2xl:h-[32rem] 2xl:w-[32rem] object-contain drop-shadow-[0_0_45px_rgba(255,255,255,0.18)] transition-all duration-500"
+              className="h-[40rem] w-[40rem] sm:h-[45rem] sm:w-[45rem] md:h-[50rem] md:w-[50rem] xl:h-[60rem] xl:w-[60rem] 2xl:h-[70rem] 2xl:w-[70rem] object-contain drop-shadow-[0_0_85px_rgba(255,255,255,0.25)] transition-all duration-500"
               draggable={false}
+              style={{ 
+                background: 'transparent', 
+                maxWidth: '100vw', 
+                maxHeight: '95vh',
+                objectFit: 'contain',
+                padding: '0',
+                margin: '0 auto'
+              }}
             />
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
