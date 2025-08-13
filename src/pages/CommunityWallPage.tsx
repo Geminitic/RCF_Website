@@ -61,8 +61,8 @@ const CommunityWallPage: React.FC = () => {
   // Generate additional photos for infinite scroll from open source images
   const generateMorePhotos = useCallback(() => {
     const additionalPhotos = [];
-    const basePhotos = photos.filter((p) => p.approved);
-
+    // We can remove the unused 'basePhotos' variable
+    
     // Define themed keywords that match our foundation's focus
     const themeKeywords = [
       'community',
