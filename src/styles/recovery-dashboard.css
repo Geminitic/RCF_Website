@@ -7,6 +7,7 @@
 .dashboard-header {
   position: relative;
   overflow: hidden;
+  margin-top: 20px; /* Added margin-top to move the header down */
 }
 
 .dashboard-header::after {

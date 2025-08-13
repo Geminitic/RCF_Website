@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+import LazyImage from '../common/LazyImage';
 import {
   ChevronLeft,
   ChevronRight,
@@ -245,7 +246,7 @@ const RhizomeSyriaGallery: React.FC = () => {
               className="absolute inset-0"
             >
               <div className="relative w-full h-full">
-                <img
+                <LazyImage
                   src={galleryImages[currentIndex]}
                   alt={`Rhizome Syria ${currentIndex + 1}`}
                   className="w-full h-full object-cover"
@@ -332,7 +333,7 @@ const RhizomeSyriaGallery: React.FC = () => {
                         setCurrentIndex(index);
                       }}
                     >
-                      <img
+                      <LazyImage
                         src={img}
                         alt={`Thumbnail ${index + 1}`}
                         className="h-full w-full object-cover"

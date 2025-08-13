@@ -219,31 +219,37 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            className="flex flex-col items-center gap-6 mb-10 text-center"
+            className="flex flex-col items-center gap-2 mb-10 text-center"
           >
-            <img
-              src="/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
-              alt="Rhizome Community Foundation Logo"
-              className="h-[40rem] w-[40rem] sm:h-[45rem] sm:w-[45rem] md:h-[50rem] md:w-[50rem] xl:h-[60rem] xl:w-[60rem] 2xl:h-[70rem] 2xl:w-[70rem] object-contain drop-shadow-[0_0_85px_rgba(255,255,255,0.25)] transition-all duration-500"
-              draggable={false}
-              style={{ 
-                background: 'transparent', 
-                maxWidth: '100vw', 
-                maxHeight: '95vh',
-                objectFit: 'contain',
-                padding: '0',
-                margin: '0 auto'
-              }}
-            />
+            <motion.div
+              animate={{ filter: ["drop-shadow(0 0 85px rgba(107,70,193,0.3))", "drop-shadow(0 0 85px rgba(14,165,233,0.3))", "drop-shadow(0 0 85px rgba(251,146,60,0.3))", "drop-shadow(0 0 85px rgba(107,70,193,0.3))"] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img
+                src="/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
+                alt="Rhizome Community Foundation Logo"
+                className="h-[40rem] w-[40rem] sm:h-[45rem] sm:w-[45rem] md:h-[50rem] md:w-[50rem] xl:h-[60rem] xl:w-[60rem] 2xl:h-[70rem] 2xl:w-[70rem] object-contain transition-all duration-500"
+                draggable={false}
+                style={{ 
+                  background: 'transparent', 
+                  maxWidth: '100vw', 
+                  maxHeight: '95vh',
+                  objectFit: 'contain',
+                  padding: '0',
+                  margin: '0 auto'
+                }}
+              />
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.35 }}
-              className="font-bold tracking-tight leading-[1.02] gradient-text drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
+              className="font-bold tracking-tight leading-[1.02] animated-gradient-text drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
               style={{
                 fontFamily: 'var(--hero-heading-font)',
                 fontSize: 'clamp(2.5rem, 4.75vw, 4.75rem)',
                 letterSpacing: '-0.04em',
+                marginTop: '-2rem',
               }}
             >
               {t('hero-title', 'Community Foundation', 'المؤسسة المجتمعية')}

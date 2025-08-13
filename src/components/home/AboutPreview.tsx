@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import LazyImage from '../common/LazyImage';
 
 const AboutPreview: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -18,7 +19,7 @@ const AboutPreview: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img
+            <LazyImage
               src="/WhatsApp Image 2025-06-19 at 12.35.09 PM copy copy.jpeg"
               alt="Community collaboration"
               className="w-full h-auto rounded-xl shadow-xl"

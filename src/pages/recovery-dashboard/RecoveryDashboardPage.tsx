@@ -124,7 +124,7 @@ const RecoveryDashboardPage: React.FC = () => {
   };
 
   return (
-    <div className="recovery-dashboard min-h-screen pt-16 relative">
+    <div className="recovery-dashboard min-h-screen pt-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <header className="dashboard-header bg-gradient-to-r from-purple-700 via-blue-700 to-teal-700 text-white p-6 rounded-2xl shadow-xl mb-8">
           <h1

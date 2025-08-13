@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import LoadingScreen from './components/common/LoadingScreen';
 import CustomCursor from './components/common/CustomCursor';
 import ParticleSystem from './components/common/ParticleSystem';
+import ErrorBoundary from './components/common/ErrorBoundary';
 import './styles/rtl-fixes.css'; // Import RTL-specific styles
 import './styles/unified-theme.css'; // Import unified visual identity
 import './styles/recovery-dashboard.css'; // Import Recovery Dashboard styles
@@ -54,102 +55,130 @@ function App() {
               <Navigation />
               <main>
                 <Routes>
-                  <Route path="/" element={<HomePage />} />
+                  <Route path="/" element={
+                    <ErrorBoundary name="HomePage">
+                      <HomePage />
+                    </ErrorBoundary>
+                  } />
                   <Route
                     path="/about"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <AboutPage />
-                      </Suspense>
+                      <ErrorBoundary name="AboutPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <AboutPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/programs"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <ProgramsPage />
-                      </Suspense>
+                      <ErrorBoundary name="ProgramsPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <ProgramsPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/rhizome-syria"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <RhizomeSyriaWrapper />
-                      </Suspense>
+                      <ErrorBoundary name="RhizomeSyriaWrapper">
+                        <Suspense fallback={<PageLoader />}>
+                          <RhizomeSyriaWrapper />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/community-wall"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <CommunityWallAndCalendarPage />
-                      </Suspense>
+                      <ErrorBoundary name="CommunityWallAndCalendarPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <CommunityWallAndCalendarPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/knowledge-hub"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <KnowledgeHubPage />
-                      </Suspense>
+                      <ErrorBoundary name="KnowledgeHubPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <KnowledgeHubPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   {/* Calendar route redirects to community wall */}
                   <Route
                     path="/calendar"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <CommunityWallAndCalendarPage />
-                      </Suspense>
+                      <ErrorBoundary name="CalendarPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <CommunityWallAndCalendarPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/join"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <JoinPage />
-                      </Suspense>
+                      <ErrorBoundary name="JoinPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <JoinPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/contact"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <ContactPage />
-                      </Suspense>
+                      <ErrorBoundary name="ContactPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <ContactPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/admin"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <AdminApprovalPage />
-                      </Suspense>
+                      <ErrorBoundary name="AdminApprovalPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <AdminApprovalPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/rhizome-syria-subpage"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <RhizomeSyriaSubpage />
-                      </Suspense>
+                      <ErrorBoundary name="RhizomeSyriaSubpage">
+                        <Suspense fallback={<PageLoader />}>
+                          <RhizomeSyriaSubpage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/rhizome-canada-subpage"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <RhizomeCanadaSubpage />
-                      </Suspense>
+                      <ErrorBoundary name="RhizomeCanadaSubpage">
+                        <Suspense fallback={<PageLoader />}>
+                          <RhizomeCanadaSubpage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                   <Route
                     path="/recovery-dashboard"
                     element={
-                      <Suspense fallback={<PageLoader />}>
-                        <RecoveryDashboardPage />
-                      </Suspense>
+                      <ErrorBoundary name="RecoveryDashboardPage">
+                        <Suspense fallback={<PageLoader />}>
+                          <RecoveryDashboardPage />
+                        </Suspense>
+                      </ErrorBoundary>
                     }
                   />
                 </Routes>

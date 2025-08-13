@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Heart, Globe, BookOpen } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import LazyImage from '../common/LazyImage';
+import useLazyLoad from '../../hooks/useLazyLoad';
 
 const OurPillars: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -112,7 +114,7 @@ const OurPillars: React.FC = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-xl hover:translate-y-[-8px] duration-300"
             >
               <div className="h-56 overflow-hidden">
-                <img
+                <LazyImage
                   src={pillar.image}
                   alt={pillar.title}
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
