@@ -12,7 +12,6 @@ import ParticleSystem from './components/common/ParticleSystem';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import './styles/rtl-fixes.css'; // Import RTL-specific styles
 import './styles/unified-theme.css'; // Import unified visual identity
-import './styles/recovery-dashboard.css'; // Import Recovery Dashboard styles
 
 // Lazy load larger page components
 const AboutPage = lazy(() => import('./pages/AboutPage'));
@@ -29,9 +28,6 @@ const AdminApprovalPage = lazy(() => import('./pages/AdminApprovalPage'));
 const RhizomeSyriaSubpage = lazy(() => import('./pages/RhizomeSyriaSubpage'));
 const RhizomeCanadaSubpage = lazy(() => import('./pages/RhizomeCanadaSubpage'));
 const JoinPage = lazy(() => import('./pages/JoinPage'));
-const RecoveryDashboardPage = lazy(
-  () => import('./pages/recovery-dashboard/RecoveryDashboardPage')
-);
 
 // Loading component for suspense fallback
 const PageLoader = () => (
@@ -167,16 +163,6 @@ function App() {
                       <ErrorBoundary name="RhizomeCanadaSubpage">
                         <Suspense fallback={<PageLoader />}>
                           <RhizomeCanadaSubpage />
-                        </Suspense>
-                      </ErrorBoundary>
-                    }
-                  />
-                  <Route
-                    path="/recovery-dashboard"
-                    element={
-                      <ErrorBoundary name="RecoveryDashboardPage">
-                        <Suspense fallback={<PageLoader />}>
-                          <RecoveryDashboardPage />
                         </Suspense>
                       </ErrorBoundary>
                     }

@@ -10,16 +10,6 @@ const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { t, currentLanguage } = useLanguage();
 
-  // Simple theme toggle function that doesn't interfere with existing styles
-  const toggleTheme = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    console.log('Theme toggled to:', newTheme);
-  };
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -217,7 +207,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
       {/* Content */}
-  <div className="relative z-10 w-full max-w-6xl mx-auto px-4" style={{ transform: 'translateX(100px)' }}>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -229,78 +219,54 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            className="flex flex-col items-center gap-3 mb-10"
+            className="flex flex-col items-center gap-2 mb-10 text-center"
           >
-            <div className="relative w-full flex justify-center mx-auto text-center">
+            <motion.div
+              animate={{ filter: ["drop-shadow(0 0 85px rgba(107,70,193,0.3))", "drop-shadow(0 0 85px rgba(14,165,233,0.3))", "drop-shadow(0 0 85px rgba(251,146,60,0.3))", "drop-shadow(0 0 85px rgba(107,70,193,0.3))"] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
               <img
                 src="/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
                 alt="Rhizome Community Foundation Logo"
-                className="h-[40rem] w-[40rem] sm:h-[45rem] sm:w-[45rem] md:h-[50rem] md:w-[50rem] xl:h-[60rem] xl:w-[60rem] 2xl:h-[70rem] 2xl:w-[70rem] object-contain transition-transform duration-500 mx-auto block"
+                className="h-[40rem] w-[40rem] sm:h-[45rem] sm:w-[45rem] md:h-[50rem] md:w-[50rem] xl:h-[60rem] xl:w-[60rem] 2xl:h-[70rem] 2xl:w-[70rem] object-contain transition-all duration-500"
                 draggable={false}
                 style={{ 
                   background: 'transparent', 
                   maxWidth: '100vw', 
                   maxHeight: '95vh',
                   objectFit: 'contain',
-                  padding: 0,
-                  margin: '0 auto',
-                  filter: 'drop-shadow(0 0 55px rgba(107,70,193,0.25))' // subtle static glow only
+                  padding: '0',
+                  margin: '0 auto'
                 }}
               />
-            </div>
-            <motion.div
+            </motion.div>
+            <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.35 }}
-              className="w-full pointer-events-none flex items-center justify-center"
+              className="font-bold tracking-tight leading-[1.02] animated-gradient-text drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
               style={{
-                // Move Arabic heading closer to logo (was at -8rem). English unchanged.
-                marginTop: currentLanguage.code === 'ar' ? '-11.5rem' : '-8rem',
-                height: '10rem'
+                fontFamily: 'var(--hero-heading-font)',
+                fontSize: 'clamp(2.5rem, 4.75vw, 4.75rem)',
+                letterSpacing: '-0.04em',
+                marginTop: '-2rem',
               }}
             >
-              <h1
-                className={`font-bold tracking-tight text-white drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)] ${currentLanguage.code === 'ar' ? 'font-arabic leading-[1.05] text-center' : 'leading-[1.02] text-center'}`}
-                style={{
-                  fontFamily: 'var(--hero-heading-font)',
-                  fontSize: currentLanguage.code === 'ar' ? 'clamp(2.5rem,4.75vw,4.75rem)' : 'clamp(2.5rem,4.75vw,4.75rem)',
-                  letterSpacing: currentLanguage.code === 'ar' ? '0' : '-0.04em',
-                  direction: currentLanguage.code === 'ar' ? 'rtl' : 'ltr',
-                  maxWidth: '1200px',
-                  // Shift Arabic heading: 380px down and 660px left (moved additional 100px left)
-                  transform: currentLanguage.code === 'ar' ? 'translate(-660px, 380px)' : 'none',
-                  textAlign: 'center'
-                }}
-              >
-                {currentLanguage.code === 'ar'
-                  ? (
-                    <span className="block">
-                      <span className="block whitespace-pre">مؤسسة رايزوم</span>
-                      <span className="block whitespace-pre mt-1">المجتمعية</span>
-                    </span>
-                  ) : (
-                    t('hero-title', 'Community Foundation', 'المؤسسة المجتمعية')
-                  )}
-              </h1>
-            </motion.div>
+              {t('hero-title', 'Community Foundation', 'المؤسسة المجتمعية')}
+            </motion.h1>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.55 }}
-            className="text-xl md:text-2xl text-white mb-4 leading-relaxed max-w-4xl mx-auto font-semibold text-center tracking-wide"
-            style={{ 
-              textShadow: '0 4px 12px rgba(0,0,0,0.6)',
-              fontWeight: '600',
-              letterSpacing: '0.02em',
-              filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
-            }}
+            className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-4xl mx-auto font-light"
+            style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}
           >
             {t(
               'hero-subtitle',
-              'Cultivating Community-Led Solutions for Sustainable Growth',
-              'نزرع حلولاً مستدامة تقودها المجتمعات'
+              'Cultivating Community-Led Solutions for Sustainable Growth.',
+              'نزرع حلولاً مستدامة تقودها المجتمعات.'
             )}
           </motion.p>
 
@@ -308,59 +274,55 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.75 }}
-            className="flex flex-col justify-center items-center mb-32 relative mt-8"
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
-            <div className="flex flex-col sm:flex-row gap-14 justify-center items-center">
-              <Link to="/programs">
-                <Button
-                  variant="primary"
-                  className="group px-12 py-6 text-lg md:text-xl rounded-2xl shadow-lg hover:shadow-2xl gap-3 tracking-wide"
-                  rightIcon={
-                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5 rtl:rotate-180" />
-                  }
-                >
-                  {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
-                </Button>
-              </Link>
-              <Link to="/join">
-                <Button
-                  variant="secondary"
-                  className="group px-12 py-6 text-lg md:text-xl rounded-2xl tracking-wide"
-                >
-                  {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
-                </Button>
-              </Link>
-            </div>
-            
-            {/* Scroll Indicator positioned exactly in the middle between buttons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 translate-x-4 mt-6 cursor-pointer"
-              onClick={toggleTheme}
-              title="Toggle Dark/Light Mode"
-            >
-              <motion.div
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-8 h-12 border-2 border-[var(--rs-primary-purple)] rounded-full flex justify-center relative overflow-hidden bg-black/20 backdrop-blur-sm shadow-lg hover:bg-black/30 transition-colors"
+            <Link to="/programs">
+              <Button
+                variant="primary"
+                className="px-10 py-5 text-lg md:text-xl rounded-2xl shadow-lg hover:shadow-2xl"
+                rightIcon={
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
+                }
               >
-                <motion.div
-                  animate={{ y: [0, 20, 0] }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 0.5,
-                    ease: 'easeInOut',
-                  }}
-                  className="w-2 h-4 bg-[var(--rs-primary-purple)] rounded-full mt-2 shadow-md"
-                />
-              </motion.div>
-            </motion.div>
+                {t('explore-programs', 'Discover Our Impact', 'اكتشف تأثيرنا')}
+              </Button>
+            </Link>
+            <Link to="/join">
+              <Button
+                variant="secondary"
+                className="px-10 py-5 text-lg md:text-xl rounded-2xl"
+              >
+                {t('join-community', 'Join Our Network', 'انضم إلى شبكتنا')}
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-8 h-12 border-2 border-[var(--rs-primary-purple)] rounded-full flex justify-center relative overflow-hidden"
+        >
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 0.5,
+              ease: 'easeInOut',
+            }}
+            className="w-2 h-4 bg-[var(--rs-primary-purple)] rounded-full mt-2"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

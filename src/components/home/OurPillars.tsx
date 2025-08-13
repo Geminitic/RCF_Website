@@ -83,15 +83,15 @@ const OurPillars: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center gr-mb-xl"
+          className={`text-center gr-mb-xl ${isArabic ? 'rtl' : 'ltr'}`}
         >
           <h2
-            className="gr-text-xl md:text-5xl font-bold heading-2 gr-mb-md"
-            style={{ fontFamily: 'var(--rs-font-heading)' }}
+            className={`gr-text-xl md:text-5xl font-bold heading-2 gr-mb-md ${isArabic ? 'font-arabic' : ''}`}
+            style={{ fontFamily: 'var(--rs-font-heading)', direction: isArabic ? 'rtl' : 'ltr' }}
           >
             {t('our-pillars-title', 'Our Focus Areas', 'مجالات تركيزنا')}
           </h2>
-          <p className="max-w-3xl mx-auto gr-text-base md:text-xl body">
+          <p className={`max-w-3xl mx-auto gr-text-base md:text-xl body ${isArabic ? 'font-arabic text-right' : 'text-left'}`} style={{ direction: isArabic ? 'rtl' : 'ltr' }}>
             {t(
               'our-pillars-description',
               'These are the key areas where we focus our efforts to create meaningful impact.',

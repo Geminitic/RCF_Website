@@ -19,7 +19,7 @@ export interface ButtonProps
 }
 
 const baseStyles =
-  'relative inline-flex items-center justify-center gap-2 rounded-xl font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-all disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.97]';
+  'relative inline-flex items-center justify-center gap-3 [direction:inherit] rounded-xl font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-all disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.97]';
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -49,7 +49,7 @@ export const Button: React.FC<ButtonProps> = ({
         baseStyles,
         variants[variant],
         fullWidth && 'w-full',
-        'px-6 py-3 text-base md:text-lg',
+  'px-7 py-3.5 text-base md:text-lg',
         'group',
         className
       )}
@@ -58,9 +58,19 @@ export const Button: React.FC<ButtonProps> = ({
       {loading && (
         <span className="absolute left-3 inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
       )}
-      {leftIcon && !loading && <span className="shrink-0">{leftIcon}</span>}
-      <span className="relative z-10 flex items-center">{children}</span>
-      {rightIcon && <span className="shrink-0">{rightIcon}</span>}
+      {leftIcon && !loading && (
+  <span className="shrink-0 flex items-center ltr:-ml-1 rtl:-mr-1">
+          {leftIcon}
+        </span>
+      )}
+      <span className="relative z-10 flex items-center leading-snug tracking-wide">
+        {children}
+      </span>
+      {rightIcon && (
+  <span className="shrink-0 flex items-center ltr:-mr-1 rtl:-ml-1">
+          {rightIcon}
+        </span>
+      )}
     </button>
   );
 };

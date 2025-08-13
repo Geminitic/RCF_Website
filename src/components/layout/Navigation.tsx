@@ -40,20 +40,11 @@ const Navigation: React.FC = () => {
     },
     { key: 'calendar', path: '/calendar', en: 'Calendar', ar: 'التقويم' },
     {
-      key: 'recovery-dashboard',
-      path: '/recovery-dashboard',
-      en: 'Recovery Dashboard',
-      ar: 'لوحة التعافي',
+      key: 'contact',
+      path: '/contact',
+      en: 'Contact',
+      ar: 'اتصل بنا',
     },
-    /* Interactive tab removed as requested
-    {
-      key: 'interactive',
-      path: '/interactive',
-      en: 'Interactive',
-      ar: 'تفاعلي',
-    },
-    */
-    { key: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
   ];
 
   return (

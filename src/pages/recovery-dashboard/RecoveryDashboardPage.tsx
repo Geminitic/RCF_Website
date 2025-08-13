@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import {
   LineChart,
   Line,
@@ -60,8 +59,6 @@ const sectoralFunding = [
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
 const RecoveryDashboardPage: React.FC = () => {
-  const { currentLanguage } = useLanguage();
-  const isArabic = currentLanguage.code === 'ar';
   const [selectedTimeframe, setSelectedTimeframe] = useState('month');
 
   // Function to get icon and color based on indicator ID
@@ -95,17 +92,17 @@ const RecoveryDashboardPage: React.FC = () => {
     }
   };
 
-  // Get label for indicator based on language and ID
+  // Get label for indicator based on ID
   const getIndicatorLabel = (id: string) => {
     switch (id) {
       case 'idp_returns':
-        return isArabic ? 'عودة النازحين' : 'IDP Returns';
+        return 'IDP Returns';
       case 'humanitarian_access':
-        return isArabic ? 'الوصول الإنساني' : 'Humanitarian Access';
+        return 'Humanitarian Access';
       case 'education_access':
-        return isArabic ? 'الوصول إلى التعليم' : 'Education Access';
+        return 'Education Access';
       case 'electricity_hours':
-        return isArabic ? 'ساعات الكهرباء' : 'Electricity (hrs)';
+        return 'Electricity (hrs)';
       default:
         return id;
     }
@@ -127,39 +124,23 @@ const RecoveryDashboardPage: React.FC = () => {
     <div className="recovery-dashboard min-h-screen pt-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <header className="dashboard-header bg-gradient-to-r from-purple-700 via-blue-700 to-teal-700 text-white p-6 rounded-2xl shadow-xl mb-8">
-          <h1
-            className={`text-3xl font-bold mb-2 ${isArabic ? 'rs-arabic' : ''}`}
-          >
-            {isArabic ? 'لوحة تعافي سوريا' : 'Syria Recovery Dashboard'}
+          <h1 className="text-3xl font-bold mb-2">
+            Syria Recovery Dashboard
           </h1>
-          <p className={`text-white/80 mb-4 ${isArabic ? 'rs-arabic' : ''}`}>
-            {isArabic
-              ? 'نظام مراقبة شامل للمؤشرات الحيوية'
-              : 'Comprehensive Vital Signs Monitoring System'}
+          <p className="text-white/80 mb-4">
+            Comprehensive Vital Signs Monitoring System
           </p>
 
           {/* Timeframe selector */}
-          <div
-            className={`flex mt-4 bg-white/10 rounded-lg p-1 w-fit ${isArabic ? 'flex-row-reverse mr-auto' : 'ml-0'}`}
-            role="tablist"
-            aria-label={isArabic ? 'تحديد الإطار الزمني' : 'Select timeframe'}
-          >
+          <div className="flex mt-4 bg-white/10 rounded-lg p-1 w-fit ml-0" role="tablist" aria-label="Select timeframe">
             {['week', 'month', 'quarter', 'year'].map((timeframe) => {
               const active = selectedTimeframe === timeframe;
-              const label = isArabic
-                ? timeframe === 'week'
-                  ? 'أسبوع'
-                  : timeframe === 'month'
-                    ? 'شهر'
-                    : timeframe === 'quarter'
-                      ? 'ربع سنة'
-                      : 'سنة'
-                : timeframe.charAt(0).toUpperCase() + timeframe.slice(1);
+              const label = timeframe.charAt(0).toUpperCase() + timeframe.slice(1);
               return (
                 <Button
                   key={timeframe}
                   variant={active ? 'secondary' : 'outline'}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-md !shadow-none ${active ? 'ring-0' : 'opacity-80 hover:opacity-100'} ${isArabic ? 'rs-arabic' : ''}`}
+                  className={`px-3 py-1.5 text-sm font-medium rounded-md !shadow-none ${active ? 'ring-0' : 'opacity-80 hover:opacity-100'}`}
                   aria-pressed={active}
                   role="tab"
                   onClick={() => setSelectedTimeframe(timeframe)}
@@ -180,35 +161,21 @@ const RecoveryDashboardPage: React.FC = () => {
                 key={indicator.id}
                 className="bg-white p-4 rounded-lg shadow-md dashboard-tile hover:shadow-lg"
               >
-                <div
-                  className={`flex items-center mb-3 ${isArabic ? 'flex-row-reverse' : ''}`}
-                >
-                  <div
-                    className={`h-10 w-10 rounded-lg flex items-center justify-center text-white ${color} ${isArabic ? 'ml-3' : 'mr-3'}`}
-                  >
+                <div className="flex items-center mb-3">
+                  <div className={`h-10 w-10 rounded-lg flex items-center justify-center text-white ${color} mr-3`}>
                     {icon}
                   </div>
-                  <h3
-                    className={`font-semibold ${isArabic ? 'rs-arabic' : ''}`}
-                  >
+                  <h3 className="font-semibold">
                     {getIndicatorLabel(indicator.id)}
                   </h3>
                 </div>
-                <div
-                  className={`flex items-end justify-between ${isArabic ? 'flex-row-reverse' : ''}`}
-                >
+                <div className="flex items-end justify-between">
                   <div className="text-2xl font-bold">{indicator.value}</div>
-                  <div
-                    className={`flex items-center ${getChangeStyle(indicator.status)} ${isArabic ? 'flex-row-reverse' : ''}`}
-                  >
+                  <div className={`flex items-center ${getChangeStyle(indicator.status)}`}>
                     {indicator.status === 'improving' ? (
-                      <TrendingUp
-                        className={`h-4 w-4 ${isArabic ? 'ml-1' : 'mr-1'}`}
-                      />
+                      <TrendingUp className="h-4 w-4 mr-1" />
                     ) : (
-                      <TrendingUp
-                        className={`h-4 w-4 transform rotate-180 ${isArabic ? 'ml-1' : 'mr-1'}`}
-                      />
+                      <TrendingUp className="h-4 w-4 transform rotate-180 mr-1" />
                     )}
                     <span className="text-sm">
                       {indicator.change > 0 ? '+' : ''}
@@ -228,9 +195,9 @@ const RecoveryDashboardPage: React.FC = () => {
         >
           <h2
             id="displacement-trends-heading"
-            className={`text-xl font-bold mb-4 ${isArabic ? 'rs-arabic text-right' : ''}`}
+            className="text-xl font-bold mb-4"
           >
-            {isArabic ? 'اتجاهات السكان النازحين' : 'Displacement Trends'}
+            Displacement Trends
           </h2>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
@@ -244,19 +211,19 @@ const RecoveryDashboardPage: React.FC = () => {
                   type="monotone"
                   dataKey="refugees"
                   stroke="#8884d8"
-                  name={isArabic ? 'لاجئون' : 'Refugees'}
+                  name="Refugees"
                 />
                 <Line
                   type="monotone"
                   dataKey="idps"
                   stroke="#82ca9d"
-                  name={isArabic ? 'نازحون داخليًا' : 'IDPs'}
+                  name="IDPs"
                 />
                 <Line
                   type="monotone"
                   dataKey="returnees"
                   stroke="#ffc658"
-                  name={isArabic ? 'عائدون' : 'Returnees'}
+                  name="Returnees"
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -272,9 +239,9 @@ const RecoveryDashboardPage: React.FC = () => {
           >
             <h2
               id="funding-sector-heading"
-              className={`text-xl font-bold mb-4 ${isArabic ? 'rs-arabic text-right' : ''}`}
+              className="text-xl font-bold mb-4"
             >
-              {isArabic ? 'التمويل حسب القطاع' : 'Funding by Sector'}
+              Funding by Sector
             </h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -311,9 +278,9 @@ const RecoveryDashboardPage: React.FC = () => {
           >
             <h2
               id="cumulative-returns-heading"
-              className={`text-xl font-bold mb-4 ${isArabic ? 'rs-arabic text-right' : ''}`}
+              className="text-xl font-bold mb-4"
             >
-              {isArabic ? 'العودة التراكمية' : 'Cumulative Returns'}
+              Cumulative Returns
             </h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -339,17 +306,13 @@ const RecoveryDashboardPage: React.FC = () => {
 
         {/* Data sources section */}
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-          <h2
-            className={`text-xl font-bold mb-4 ${isArabic ? 'rs-arabic text-right' : ''}`}
-          >
-            {isArabic ? 'مصادر البيانات' : 'Data Sources'}
+          <h2 className="text-xl font-bold mb-4">
+            Data Sources
           </h2>
-          <div
-            className={`flex items-center text-blue-600 mb-4 ${isArabic ? 'flex-row-reverse justify-end' : ''}`}
-          >
-            <RefreshCw className={`h-4 w-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
-            <span className={`text-sm ${isArabic ? 'rs-arabic' : ''}`}>
-              {isArabic ? 'آخر تحديث: أغسطس 2025' : 'Last updated: August 2025'}
+          <div className="flex items-center text-blue-600 mb-4">
+            <RefreshCw className="h-4 w-4 mr-2" />
+            <span className="text-sm">
+              Last updated: August 2025
             </span>
           </div>
 

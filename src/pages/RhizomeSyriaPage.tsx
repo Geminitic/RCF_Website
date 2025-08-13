@@ -4,6 +4,7 @@ import { Target, Globe, Palette, Heart, Shield, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import VolunteerForms from '../components/common/VolunteerForms';
 import RhizomeSyriaGallery from '../components/gallery/RhizomeSyriaGallery';
+import EmbeddedRecoveryDashboard from '../components/rhizome-syria/EmbeddedRecoveryDashboard';
 import '../styles/rhizome-syria.css';
 import { Button } from '../components/ui/Button';
 // Reordered / refactored for unified button styling and accessibility improvements
@@ -831,6 +832,63 @@ const RhizomeSyriaPage: React.FC = () => {
 
       {/* Community Champions - Commented out as requested */}
       {/* <FeaturedLeaders /> */}
+
+      {/* Recovery Dashboard Section */}
+      <section className="rs-section bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 Q25,25 50,0 Q75,25 100,0 L100,100 Q75,75 50,100 Q25,75 0,100 Z"
+              fill="url(#recovery-gradient)"
+            />
+            <defs>
+              <linearGradient id="recovery-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#8B5CF6" />
+                <stop offset="50%" stopColor="#3B82F6" />
+                <stop offset="100%" stopColor="#059669" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2
+              className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
+              {t('recovery-monitoring', 'Syria Recovery Monitoring', 'مراقبة التعافي السوري')}
+            </h2>
+            <p
+              className={`rs-body-large text-gray-600 max-w-4xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
+            >
+              {t(
+                'recovery-monitoring-description',
+                'Real-time data tracking Syria\'s recovery journey through comprehensive monitoring of vital indicators, displacement patterns, and humanitarian access across all regions.',
+                'تتبع البيانات في الوقت الفعلي لرحلة التعافي السوري من خلال المراقبة الشاملة للمؤشرات الحيوية وأنماط النزوح والوصول الإنساني في جميع المناطق.'
+              )}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <EmbeddedRecoveryDashboard />
+          </motion.div>
+        </div>
+      </section>
 
       {/* Call to Action with Spiral Design */}
       <section className="rs-hero relative overflow-hidden">

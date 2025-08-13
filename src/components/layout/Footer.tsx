@@ -18,12 +18,13 @@ const Footer: React.FC = () => {
           >
             <div className="flex items-center space-x-3">
               <img
-                src="/assets/logos/rhizome-logo.png"
+                src="/20250710_0555_Rhizome Logo Design_remix_01jzt2tem6e8zse9br715pa28n (2).png"
                 alt="Rhizome Community Foundation Logo"
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
               <h3
                 className={`text-lg font-semibold ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
+                style={{ textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}
               >
                 {t(
                   'footer-title',
