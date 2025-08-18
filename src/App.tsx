@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -52,11 +51,14 @@ function App() {
               <Navigation />
               <main>
                 <Routes>
-                  <Route path="/" element={
-                    <ErrorBoundary name="HomePage">
-                      <HomePage />
-                    </ErrorBoundary>
-                  } />
+                  <Route
+                    path="/"
+                    element={
+                      <ErrorBoundary name="HomePage">
+                        <HomePage />
+                      </ErrorBoundary>
+                    }
+                  />
                   <Route
                     path="/about"
                     element={

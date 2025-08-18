@@ -5,7 +5,6 @@ import LazyImage from '../common/LazyImage';
 import {
   ChevronLeft,
   ChevronRight,
-  X,
   Maximize,
   Image as ImageIcon,
   Pause,
@@ -135,11 +134,6 @@ const RhizomeSyriaGallery: React.FC = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
     );
-  };
-
-  const handleDotClick = (index: number) => {
-    setDirection(index > currentIndex ? 1 : -1);
-    setCurrentIndex(index);
   };
 
   const variants = {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Component, ErrorInfo, ReactNode } from 'react';
 import { Shield } from 'lucide-react';
 
@@ -32,8 +31,12 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // Log the error to an error reporting service
-    console.error(`Error in ${this.props.name || 'component'}:`, error, errorInfo);
-    
+    console.error(
+      `Error in ${this.props.name || 'component'}:`,
+      error,
+      errorInfo
+    );
+
     // Call the onError callback if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
@@ -46,7 +49,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       if (this.props.fallback) {
         return this.props.fallback;
       }
-      
+
       return (
         <div className="p-6 bg-red-50 border border-red-200 rounded-lg shadow-sm">
           <div className="flex items-center mb-3">

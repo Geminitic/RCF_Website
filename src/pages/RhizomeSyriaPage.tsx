@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Target, Globe, Palette, Heart, Shield, Sparkles } from 'lucide-react';
@@ -846,7 +847,13 @@ const RhizomeSyriaPage: React.FC = () => {
               fill="url(#recovery-gradient)"
             />
             <defs>
-              <linearGradient id="recovery-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="recovery-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#8B5CF6" />
                 <stop offset="50%" stopColor="#3B82F6" />
                 <stop offset="100%" stopColor="#059669" />
@@ -854,7 +861,7 @@ const RhizomeSyriaPage: React.FC = () => {
             </defs>
           </svg>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -866,14 +873,18 @@ const RhizomeSyriaPage: React.FC = () => {
             <h2
               className={`rs-heading-2 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent mb-6 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
             >
-              {t('recovery-monitoring', 'Syria Recovery Monitoring', 'مراقبة التعافي السوري')}
+              {t(
+                'recovery-monitoring',
+                'Syria Recovery Monitoring',
+                'مراقبة التعافي السوري'
+              )}
             </h2>
             <p
               className={`rs-body-large text-gray-600 max-w-4xl mx-auto ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
             >
               {t(
                 'recovery-monitoring-description',
-                'Real-time data tracking Syria\'s recovery journey through comprehensive monitoring of vital indicators, displacement patterns, and humanitarian access across all regions.',
+                "Real-time data tracking Syria's recovery journey through comprehensive monitoring of vital indicators, displacement patterns, and humanitarian access across all regions.",
                 'تتبع البيانات في الوقت الفعلي لرحلة التعافي السوري من خلال المراقبة الشاملة للمؤشرات الحيوية وأنماط النزوح والوصول الإنساني في جميع المناطق.'
               )}
             </p>
