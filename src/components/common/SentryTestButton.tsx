@@ -11,3 +11,4 @@ const SentryTestButton: React.FC = () => (
 );
 
 export default SentryTestButton;
+import * as React from 'react';

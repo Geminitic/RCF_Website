@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+import LazyImage from '../common/LazyImage';
 
 interface Photo {
   url: string;
@@ -80,7 +81,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
                   : 'opacity-0 pointer-events-none'
               }`}
             >
-              <img
+              <LazyImage
                 src={photo.url}
                 alt={photo.caption || `Gallery image ${index + 1}`}
                 className="w-full h-full object-cover"
@@ -112,7 +113,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
             }`}
             onClick={() => setCurrentIndex(index)}
           >
-            <img
+            <LazyImage
               src={photo.url}
               alt={`Thumbnail ${index + 1}`}
               className="w-full h-full object-cover"

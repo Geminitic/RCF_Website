@@ -1,0 +1,185 @@
+/* === Rhizome Design System: Tokens === */
+/* 
+  This file establishes the design tokens for the RCF website, following the principles
+  of a role-based, themeable, and scalable system.
+*/
+
+:root,
+[data-theme='light'] {
+  /* ----------------------------------------- */
+  /* Color Tokens (Light Theme)                */
+  /* ----------------------------------------- */
+  /* Role-based naming inspired by Material 3. See: https://m3.material.io/styles/color/theming/keys-and-roles */
+
+  /* Primary colors are used for key components like buttons and active links. */
+  --color-primary: #312e81; /* indigo-900 */
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e0e7ff; /* indigo-100 */
+  --color-on-primary-container: #3730a3; /* indigo-800 */
+
+  /* Secondary colors are for less prominent components. */
+  --color-secondary: #0d9488; /* teal-600 */
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ccfbf1; /* teal-100 */
+  --color-on-secondary-container: #115e59; /* teal-800 */
+
+  /* Tertiary colors are for contrasting accents. */
+  --color-tertiary: #be185d; /* pink-700 */
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #fce7f3; /* pink-100 */
+  --color-on-tertiary-container: #9d174d; /* pink-800 */
+
+  /* Error colors are for indicating errors. */
+  --color-error: #b91c1c; /* red-700 */
+  --color-on-error: #ffffff;
+  --color-error-container: #fee2e2; /* red-100 */
+  --color-on-error-container: #991b1b; /* red-800 */
+
+  /* Surface colors are for backgrounds of components and pages. */
+  --color-surface-dim: #f0f2f5; /* A bit darker than page bg */
+  --color-surface: #f8fafc; /* slate-50 */
+  --color-surface-bright: #ffffff;
+  --color-on-surface: #1e293b; /* slate-800 */
+  --color-on-surface-variant: #475569; /* slate-600 */
+
+  /* Background color for the entire page. */
+  --color-background: #f8fafc; /* slate-50 */
+  --color-on-background: #1e293b; /* slate-800 */
+
+  /* Outline color for borders and dividers. */
+  --color-outline: #cbd5e1; /* slate-300 */
+  --color-outline-variant: #94a3b8; /* slate-400 */
+
+  /* Shadow colors */
+  --shadow-color: 220 21% 15%;
+}
+
+[data-theme='dark'] {
+  /* ----------------------------------------- */
+  /* Color Tokens (Dark Theme)                 */
+  /* ----------------------------------------- */
+  --color-primary: #a5b4fc; /* indigo-300 */
+  --color-on-primary: #1e1b4b; /* indigo-950 */
+  --color-primary-container: #3730a3; /* indigo-800 */
+  --color-on-primary-container: #e0e7ff; /* indigo-100 */
+
+  --color-secondary: #5eead4; /* teal-300 */
+  --color-on-secondary: #042f2e; /* teal-950 */
+  --color-secondary-container: #115e59; /* teal-800 */
+  --color-on-secondary-container: #ccfbf1; /* teal-100 */
+
+  --color-tertiary: #f9a8d4; /* pink-300 */
+  --color-on-tertiary: #500724; /* pink-950 */
+  --color-tertiary-container: #9d174d; /* pink-800 */
+  --color-on-tertiary-container: #fce7f3; /* pink-100 */
+
+  --color-error: #fca5a5; /* red-300 */
+  --color-on-error: #450a0a; /* red-950 */
+  --color-error-container: #991b1b; /* red-800 */
+  --color-on-error-container: #fee2e2; /* red-100 */
+
+  --color-surface-dim: #111827; /* gray-900 */
+  --color-surface: #1f2937; /* gray-800 */
+  --color-surface-bright: #374151; /* gray-700 */
+  --color-on-surface: #f3f4f6; /* gray-100 */
+  --color-on-surface-variant: #9ca3af; /* gray-400 */
+
+  --color-background: #111827; /* gray-900 */
+  --color-on-background: #f3f4f6; /* gray-100 */
+
+  --color-outline: #4b5563; /* gray-600 */
+  --color-outline-variant: #6b7280; /* gray-500 */
+
+  --shadow-color: 220 21% 5%;
+}
+
+:root {
+  /* ----------------------------------------- */
+  /* Typography Tokens                         */
+  /* ----------------------------------------- */
+  /* Fluid type scale using clamp(). See: https://web.dev/blog/modern-css-techniques#fluid-typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-arabic: 'Noto Sans Arabic', sans-serif;
+
+  /* Base size: 16px on mobile, 18px on desktop */
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  
+  /* Type Scale */
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-lg: clamp(1.25rem, 0.34vw + 1.18rem, 1.42rem);
+  --font-size-xl: clamp(1.56rem, 0.59vw + 1.44rem, 1.78rem);
+  --font-size-2xl: clamp(1.95rem, 0.94vw + 1.76rem, 2.22rem);
+  --font-size-3xl: clamp(2.44rem, 1.46vw + 2.15rem, 2.78rem);
+  --font-size-4xl: clamp(3.05rem, 2.2vw + 2.61rem, 3.47rem);
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ----------------------------------------- */
+  /* Spacing Tokens (8pt Grid)                 */
+  /* ----------------------------------------- */
+  /* See: https://m3.material.io/foundations/layout/applying-layout/spacing */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-7: 1.75rem;  /* 28px */
+  --space-8: 2rem;     /* 32px */
+  --space-9: 2.25rem;  /* 36px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-11: 2.75rem; /* 44px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* ----------------------------------------- */
+  /* Radius Tokens                             */
+  /* ----------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------- */
+  /* Shadow Tokens                             */
+  /* ----------------------------------------- */
+  --shadow-1: 0 1px 2px 0 hsl(var(--shadow-color) / 0.05);
+  --shadow-2: 0 1px 3px 0 hsl(var(--shadow-color) / 0.1), 0 1px 2px -1px hsl(var(--shadow-color) / 0.1);
+  --shadow-3: 0 4px 6px -1px hsl(var(--shadow-color) / 0.1), 0 2px 4px -2px hsl(var(--shadow-color) / 0.1);
+  --shadow-4: 0 10px 15px -3px hsl(var(--shadow-color) / 0.1), 0 4px 6px -4px hsl(var(--shadow-color) / 0.1);
+  --shadow-5: 0 20px 25px -5px hsl(var(--shadow-color) / 0.1), 0 8px 10px -6px hsl(var(--shadow-color) / 0.1);
+  --shadow-6: 0 25px 50px -12px hsl(var(--shadow-color) / 0.25);
+
+  /* ----------------------------------------- */
+  /* Motion Tokens                             */
+  /* ----------------------------------------- */
+  /* See: https://m3.material.io/styles/motion/easing-and-duration/duration-tokens */
+  --duration-short: 150ms;
+  --duration-medium: 250ms;
+  --duration-long: 400ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ----------------------------------------- */
+  /* Z-Index Tokens                            */
+  /* ----------------------------------------- */
+  --z-index-hide: -1;
+  --z-index-auto: auto;
+  --z-index-base: 0;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1100;
+  --z-index-banner: 1200;
+  --z-index-overlay: 1300;
+  --z-index-modal: 1400;
+  --z-index-popover: 1500;
+  --z-index-toast: 1600;
+  --z-index-tooltip: 1700;
+}

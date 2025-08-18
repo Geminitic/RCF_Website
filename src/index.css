@@ -9,6 +9,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Always center hero section content regardless of page direction */
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  direction: ltr !important;
+}
+
 /* Custom Cursor */
 * {
   cursor: none;

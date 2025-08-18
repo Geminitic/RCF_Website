@@ -21,12 +21,6 @@ const KnowledgeHubPage: React.FC = () => {
       icon: <Book className="h-5 w-5" />,
     },
     {
-      id: 'case-studies',
-      title: 'Case Studies',
-      titleAr: 'دراسات الحالة',
-      icon: <FileText className="h-5 w-5" />,
-    },
-    {
       id: 'community',
       title: 'Community',
       titleAr: 'المجتمع',
@@ -133,110 +127,6 @@ const KnowledgeHubPage: React.FC = () => {
       descriptionAr: 'قوالب وأدلة لتوثيق المبادرات المجتمعية',
       icon: FileText,
       color: 'orange',
-    },
-  ];
-
-  const featuredResources = [
-    {
-      title: 'Rhizomatic Community Development Handbook',
-      titleAr: 'دليل التنمية المجتمعية الريزومية',
-      description:
-        'A comprehensive guide to building resilient community networks using rhizomatic principles',
-      descriptionAr:
-        'دليل شامل لبناء شبكات مجتمعية مرنة باستخدام مبادئ الريزوم',
-      type: 'E-Book',
-      typeAr: 'كتاب إلكتروني',
-    },
-    {
-      title: 'Community Asset Mapping Toolkit',
-      titleAr: 'مجموعة أدوات رسم خرائط الأصول المجتمعية',
-      description:
-        'Tools and worksheets to help communities identify and leverage their existing assets and strengths',
-      descriptionAr:
-        'أدوات وأوراق عمل لمساعدة المجتمعات على تحديد والاستفادة من أصولها ونقاط قوتها الحالية',
-      type: 'Toolkit',
-      typeAr: 'مجموعة أدوات',
-    },
-    {
-      title: 'Horizontal Leadership Framework',
-      titleAr: 'إطار القيادة الأفقية',
-      description:
-        'A practical framework for implementing shared leadership in community organizations',
-      descriptionAr: 'إطار عملي لتنفيذ القيادة المشتركة في المنظمات المجتمعية',
-      type: 'Framework',
-      typeAr: 'إطار عمل',
-    },
-    {
-      title: 'Community Knowledge Systems',
-      titleAr: 'أنظمة المعرفة المجتمعية',
-      description:
-        'Approaches to capturing, sharing, and building upon community wisdom and expertise',
-      descriptionAr: 'نهج لالتقاط ومشاركة والبناء على حكمة وخبرة المجتمع',
-      type: 'Research',
-      typeAr: 'بحث',
-    },
-  ];
-
-  // Case Studies content
-  const caseStudies = [
-    {
-      title: 'Syrian Civic Networks',
-      titleAr: 'شبكات المجتمع المدني السوري',
-      location: 'Syria',
-      locationAr: 'سوريا',
-      description:
-        'How community-led networks maintained social cohesion and basic services during conflict',
-      descriptionAr:
-        'كيف حافظت الشبكات المجتمعية على التماسك الاجتماعي والخدمات الأساسية خلال النزاع',
-      outcomes: [
-        'Distributed decision-making prevented single points of failure',
-        'Local knowledge enabled rapid adaptation to changing conditions',
-        'Horizontal connections facilitated resource sharing across communities',
-      ],
-      outcomesAr: [
-        'منع اتخاذ القرار الموزع نقاط الفشل الفردية',
-        'مكّنت المعرفة المحلية من التكيف السريع مع الظروف المتغيرة',
-        'سهلت الروابط الأفقية مشاركة الموارد عبر المجتمعات',
-      ],
-    },
-    {
-      title: 'Canadian Indigenous Governance',
-      titleAr: 'الحوكمة الأصلية الكندية',
-      location: 'Canada',
-      locationAr: 'كندا',
-      description:
-        'Indigenous approaches to collective governance and decision-making',
-      descriptionAr: 'نهج السكان الأصليين في الحوكمة الجماعية واتخاذ القرار',
-      outcomes: [
-        'Council of elders model balances expertise with community voice',
-        'Stewardship ethic centers responsibility to future generations',
-        'Consensus-based processes build stronger implementation',
-      ],
-      outcomesAr: [
-        'يوازن نموذج مجلس الشيوخ بين الخبرة وصوت المجتمع',
-        'تركز أخلاقيات الإشراف على المسؤولية تجاه الأجيال القادمة',
-        'تبني العمليات القائمة على الإجماع تنفيذًا أقوى',
-      ],
-    },
-    {
-      title: 'Community-Led Disaster Response',
-      titleAr: 'استجابة المجتمع للكوارث',
-      location: 'Global',
-      locationAr: 'عالمي',
-      description:
-        'How distributed leadership outperformed centralized systems in crisis response',
-      descriptionAr:
-        'كيف تفوقت القيادة الموزعة على الأنظمة المركزية في الاستجابة للأزمات',
-      outcomes: [
-        'Local nodes acted without waiting for central authorization',
-        'Knowledge sharing happened in real-time through horizontal channels',
-        'Redundant capacities ensured continuity when parts were disrupted',
-      ],
-      outcomesAr: [
-        'تصرفت العقد المحلية دون انتظار التفويض المركزي',
-        'حدثت مشاركة المعرفة في الوقت الفعلي من خلال القنوات الأفقية',
-        'ضمنت القدرات المتكررة الاستمرارية عند تعطل الأجزاء',
-      ],
     },
   ];
 
@@ -478,146 +368,6 @@ const KnowledgeHubPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Featured Resources */}
-              <section className="mb-16">
-                <h3
-                  className={`text-2xl font-bold text-gray-800 mb-6 ${currentLanguage.code === 'ar' ? 'text-right' : 'text-left'}`}
-                >
-                  {t('featured-resources', 'Featured Resources', 'مصادر مميزة')}
-                </h3>
-                <div className="space-y-6">
-                  {featuredResources.map((resource, index) => (
-                    <div
-                      key={index}
-                      className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow"
-                    >
-                      <div
-                        className={`flex flex-col ${currentLanguage.code === 'ar' ? 'items-end text-right' : ''}`}
-                      >
-                        <span
-                          className={`inline-block px-3 py-1 text-xs rounded-full mb-2 bg-indigo-100 text-indigo-800`}
-                        >
-                          {t(
-                            `resource-type-${index}`,
-                            resource.type,
-                            resource.typeAr
-                          )}
-                        </span>
-                        <h4
-                          className={`text-lg font-bold mb-2 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                        >
-                          {t(
-                            `resource-title-${index}`,
-                            resource.title,
-                            resource.titleAr
-                          )}
-                        </h4>
-                        <p
-                          className={`text-gray-600 text-sm ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                        >
-                          {t(
-                            `resource-desc-${index}`,
-                            resource.description,
-                            resource.descriptionAr
-                          )}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Case Studies Section */}
-      {activeSection === 'case-studies' && (
-        <div className="py-12 bg-gradient-to-br from-gray-50 to-indigo-50 min-h-screen">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-12 text-center">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {t('case-studies-title', 'Case Studies', 'دراسات الحالة')}
-                </h2>
-                <p className="text-lg text-gray-600">
-                  {t(
-                    'case-studies-subtitle',
-                    'Real-world examples of rhizomatic principles in action',
-                    'أمثلة واقعية لمبادئ الريزوم في العمل'
-                  )}
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                {caseStudies.map((study, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <div
-                      className={`${currentLanguage.code === 'ar' ? 'text-right' : ''}`}
-                    >
-                      <div className="mb-4">
-                        <span
-                          className={`inline-block px-3 py-1 text-xs rounded-full mb-2 bg-indigo-100 text-indigo-800`}
-                        >
-                          {t(
-                            `case-study-location-${index}`,
-                            study.location,
-                            study.locationAr
-                          )}
-                        </span>
-                        <h3
-                          className={`text-xl font-bold ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                        >
-                          {t(
-                            `case-study-title-${index}`,
-                            study.title,
-                            study.titleAr
-                          )}
-                        </h3>
-                        <p
-                          className={`text-gray-600 mt-2 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                        >
-                          {t(
-                            `case-study-desc-${index}`,
-                            study.description,
-                            study.descriptionAr
-                          )}
-                        </p>
-                      </div>
-
-                      <div
-                        className={`mt-4 ${currentLanguage.code === 'ar' ? 'rs-arabic' : ''}`}
-                      >
-                        <h4 className="font-semibold text-gray-700 mb-2">
-                          {t(
-                            'key-outcomes',
-                            'Key Outcomes',
-                            'النتائج الرئيسية'
-                          )}
-                        </h4>
-                        <ul className="space-y-1 text-sm text-gray-600">
-                          {study.outcomes.map((outcome, i) => (
-                            <li key={i} className="flex items-start">
-                              <span className="text-indigo-500 mr-2">•</span>
-                              <span>
-                                {t(
-                                  `case-study-outcome-${index}-${i}`,
-                                  outcome,
-                                  study.outcomesAr[i]
-                                )}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -693,7 +443,6 @@ const KnowledgeHubPage: React.FC = () => {
       {/* Placeholder for other sections */}
       {activeSection !== 'rhizomatic-organization' &&
         activeSection !== 'resources' &&
-        activeSection !== 'case-studies' &&
         activeSection !== 'community' && (
           <div className="py-12 bg-gradient-to-br from-gray-50 to-indigo-50 min-h-screen">
             <div className="container mx-auto px-4 text-center">

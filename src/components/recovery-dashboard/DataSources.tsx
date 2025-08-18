@@ -387,9 +387,6 @@ const RecoveryDashboardDataSources: React.FC = () => {
                       className={`flex items-center text-xs text-slate-500 ${isArabic ? 'flex-row-reverse' : ''}`}
                     >
                       <Globe className="h-3 w-3 mx-1" />
-                      <span>
-                        {isArabic ? 'اللغات المتاحة:' : 'Available in:'}
-                      </span>
                       <div
                         className={`flex flex-wrap ${isArabic ? 'mr-2' : 'ml-2'}`}
                       >

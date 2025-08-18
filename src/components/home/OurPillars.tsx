@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Heart, Globe, BookOpen } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import LazyImage from '../common/LazyImage';
+import useLazyLoad from '../../hooks/useLazyLoad';
 
 const OurPillars: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -81,15 +83,15 @@ const OurPillars: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center gr-mb-xl"
+          className={`text-center gr-mb-xl ${isArabic ? 'rtl' : 'ltr'}`}
         >
           <h2
-            className="gr-text-xl md:text-5xl font-bold heading-2 gr-mb-md"
-            style={{ fontFamily: 'var(--rs-font-heading)' }}
+            className={`gr-text-xl md:text-5xl font-bold heading-2 gr-mb-md ${isArabic ? 'font-arabic' : ''}`}
+            style={{ fontFamily: 'var(--rs-font-heading)', direction: isArabic ? 'rtl' : 'ltr' }}
           >
             {t('our-pillars-title', 'Our Focus Areas', 'مجالات تركيزنا')}
           </h2>
-          <p className="max-w-3xl mx-auto gr-text-base md:text-xl body">
+          <p className={`max-w-3xl mx-auto gr-text-base md:text-xl body ${isArabic ? 'font-arabic text-right' : 'text-left'}`} style={{ direction: isArabic ? 'rtl' : 'ltr' }}>
             {t(
               'our-pillars-description',
               'These are the key areas where we focus our efforts to create meaningful impact.',
@@ -112,7 +114,7 @@ const OurPillars: React.FC = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-xl hover:translate-y-[-8px] duration-300"
             >
               <div className="h-56 overflow-hidden">
-                <img
+                <LazyImage
                   src={pillar.image}
                   alt={pillar.title}
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
