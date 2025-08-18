@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Target, Globe, Handshake } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';

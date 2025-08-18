@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { lazy, Suspense } from 'react';
 import SentryTestButton from '../components/common/SentryTestButton';
 
