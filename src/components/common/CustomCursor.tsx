@@ -1,5 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
+interface HTMLElementWithCleanup extends HTMLElement {
+  _cursorCleanup?: () => void;
+}
+
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
@@ -16,12 +20,14 @@ const CustomCursor: React.FC = () => {
 
     if (!cursor || !follower) return;
 
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
     if (prefersReducedMotion) return;
 
-    // Check if device is mobile/touch
-    const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+    const isMobile =
+      window.matchMedia('(max-width: 768px)').matches ||
+      'ontouchstart' in window;
     if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -30,7 +36,6 @@ const CustomCursor: React.FC = () => {
     };
 
     const animateCursor = () => {
-      // Main cursor - faster follow
       const dx = mouseX.current - cursorX.current;
       const dy = mouseY.current - cursorY.current;
       cursorX.current += dx * 0.3;
@@ -38,7 +43,6 @@ const CustomCursor: React.FC = () => {
       cursor.style.left = cursorX.current + 'px';
       cursor.style.top = cursorY.current + 'px';
 
-      // Follower - slower follow
       const fdx = mouseX.current - followerX.current;
       const fdy = mouseY.current - followerY.current;
       followerX.current += fdx * 0.15;
@@ -49,16 +53,18 @@ const CustomCursor: React.FC = () => {
       requestAnimationFrame(animateCursor);
     };
 
-    // Add/remove hover classes on interactive elements
     const addHoverListeners = () => {
-      const hoverElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .hover-target');
-      
-      hoverElements.forEach(el => {
+      const hoverElements: NodeListOf<HTMLElementWithCleanup> =
+        document.querySelectorAll(
+          'a, button, [role="button"], input, textarea, select, .hover-target'
+        );
+
+      hoverElements.forEach((el) => {
         const handleMouseEnter = () => {
           cursor.classList.add('hover');
           follower.classList.add('hover');
         };
-        
+
         const handleMouseLeave = () => {
           cursor.classList.remove('hover');
           follower.classList.remove('hover');
@@ -67,47 +73,45 @@ const CustomCursor: React.FC = () => {
         el.addEventListener('mouseenter', handleMouseEnter);
         el.addEventListener('mouseleave', handleMouseLeave);
 
-        // Store cleanup functions
-        (el as any)._cursorCleanup = () => {
+        el._cursorCleanup = () => {
           el.removeEventListener('mouseenter', handleMouseEnter);
           el.removeEventListener('mouseleave', handleMouseLeave);
         };
       });
     };
 
-    // Initial setup
     document.addEventListener('mousemove', handleMouseMove);
     animateCursor();
     addHoverListeners();
 
-    // Re-add listeners when DOM changes (for dynamic content)
     const observer = new MutationObserver(() => {
-      // Clean up old listeners
-      const oldElements = document.querySelectorAll('[data-cursor-listener]');
-      oldElements.forEach(el => {
-        if ((el as any)._cursorCleanup) {
-          (el as any)._cursorCleanup();
+      const oldElements: NodeListOf<HTMLElementWithCleanup> =
+        document.querySelectorAll('[data-cursor-listener]');
+      oldElements.forEach((el) => {
+        if (el._cursorCleanup) {
+          el._cursorCleanup();
         }
       });
-      
-      // Add new listeners with a small delay to ensure elements are ready
+
       setTimeout(addHoverListeners, 100);
     });
 
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       observer.disconnect();
-      
-      // Clean up all listeners
-      const elements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .hover-target');
-      elements.forEach(el => {
-        if ((el as any)._cursorCleanup) {
-          (el as any)._cursorCleanup();
+
+      const elements: NodeListOf<HTMLElementWithCleanup> =
+        document.querySelectorAll(
+          'a, button, [role="button"], input, textarea, select, .hover-target'
+        );
+      elements.forEach((el) => {
+        if (el._cursorCleanup) {
+          el._cursorCleanup();
         }
       });
     };

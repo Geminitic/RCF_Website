@@ -17,7 +17,7 @@ import {
   Globe,
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { usePhoto } from '../contexts/PhotoContext';
+import { usePhoto, Photo } from '../contexts/PhotoContext';
 import { useUser } from '../contexts/UserContext';
 import PhotoUploadModal from '../components/community/PhotoUploadModal';
 
@@ -41,7 +41,7 @@ const CommunityWallPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [loadedPhotos, setLoadedPhotos] = useState(12);
 
   const { ref: loadMoreRef, inView } = useInView({
@@ -58,12 +58,8 @@ const CommunityWallPage: React.FC = () => {
     { key: 'events', en: 'Events', ar: 'الفعاليات' },
   ];
 
-  // Generate additional photos for infinite scroll from open source images
   const generateMorePhotos = useCallback(() => {
-    const additionalPhotos = [];
-    // We can remove the unused 'basePhotos' variable
-    
-    // Define themed keywords that match our foundation's focus
+    const additionalPhotos: Photo[] = [];
     const themeKeywords = [
       'community',
       'syria',
@@ -79,7 +75,6 @@ const CommunityWallPage: React.FC = () => {
       'cultural exchange',
     ];
 
-    // Define potential categories
     const possibleCategories = [
       'community',
       'culture',
@@ -89,7 +84,6 @@ const CommunityWallPage: React.FC = () => {
     ];
 
     for (let i = 0; i < 12; i++) {
-      // Select a random theme keyword and category for each image
       const randomTheme =
         themeKeywords[Math.floor(Math.random() * themeKeywords.length)];
       const randomCategory =
@@ -97,7 +91,6 @@ const CommunityWallPage: React.FC = () => {
           Math.floor(Math.random() * possibleCategories.length)
         ];
 
-      // Generate creative titles based on the theme
       const titleBase = {
         community: { en: 'Community Connection', ar: 'تواصل مجتمعي' },
         syria: { en: 'Syrian Heritage', ar: 'التراث السوري' },
@@ -119,10 +112,8 @@ const CommunityWallPage: React.FC = () => {
         'cultural exchange': { en: 'Cultural Exchange', ar: 'تبادل ثقافي' },
       }[randomTheme] || { en: 'Community Moment', ar: 'لحظة مجتمعية' };
 
-      // Random sequence number to make title unique
       const seq = Math.floor(Math.random() * 100);
 
-      // Create location data
       const locations = [
         { en: 'Damascus, Syria', ar: 'دمشق، سوريا' },
         { en: 'Aleppo, Syria', ar: 'حلب، سوريا' },
@@ -135,7 +126,6 @@ const CommunityWallPage: React.FC = () => {
       const randomLocation =
         locations[Math.floor(Math.random() * locations.length)];
 
-      // Create a unique timestamp for the Unsplash API to avoid caching
       const timestamp = Date.now() + i;
 
       additionalPhotos.push({
@@ -151,7 +141,6 @@ const CommunityWallPage: React.FC = () => {
         uploadDate: new Date(
           Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000
         ).toISOString(),
-        // Use Unsplash source API with our themed keywords for relevant images
         url: `https://source.unsplash.com/600x600/?${encodeURIComponent(randomTheme)}&sig=${timestamp}`,
         approved: true,
         featured: Math.random() > 0.7,
@@ -160,22 +149,19 @@ const CommunityWallPage: React.FC = () => {
       });
     }
     return additionalPhotos;
-  }, [photos]);
+  }, []);
 
   const [allPhotos, setAllPhotos] = useState(() => [
     ...photos.filter((p) => p.approved),
     ...generateMorePhotos(),
   ]);
 
-  // State to track if we're currently loading more photos
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  // Infinite scroll implementation
   useEffect(() => {
     if (inView && !isLoadingMore) {
       setIsLoadingMore(true);
 
-      // Add a small delay to simulate loading and prevent rapid multiple calls
       setTimeout(() => {
         const newPhotos = generateMorePhotos();
         setAllPhotos((prev) => [...prev, ...newPhotos]);
@@ -211,22 +197,20 @@ const CommunityWallPage: React.FC = () => {
 
   const getGridClass = (index: number) => {
     const patterns = [
-      '', // normal
-      'md:col-span-2', // wide
-      'md:row-span-2', // tall
-      'md:col-span-2 md:row-span-2', // large
+      '',
+      'md:col-span-2',
+      'md:row-span-2',
+      'md:col-span-2 md:row-span-2',
     ];
 
-    // Create interesting patterns
-    if (index % 7 === 0) return patterns[3]; // large every 7th
-    if (index % 5 === 0) return patterns[2]; // tall every 5th
-    if (index % 3 === 0) return patterns[1]; // wide every 3rd
-    return patterns[0]; // normal
+    if (index % 7 === 0) return patterns[3];
+    if (index % 5 === 0) return patterns[2];
+    if (index % 3 === 0) return patterns[1];
+    return patterns[0];
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 to-sky-50 pt-16">
-      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-teal-800 via-sky-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -268,7 +252,6 @@ const CommunityWallPage: React.FC = () => {
               </p>
             )}
 
-            {/* Explanation of infinite scroll with open source images */}
             <p
               className={`text-md text-indigo-200 mb-8 max-w-3xl mx-auto ${
                 currentLanguage.code === 'ar' ? 'font-arabic' : ''
@@ -290,7 +273,6 @@ const CommunityWallPage: React.FC = () => {
               </button>
             )}
 
-            {/* Progress Tracker */}
             <div className="max-w-md mx-auto mb-8">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-2">
@@ -324,7 +306,6 @@ const CommunityWallPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Users className="h-8 w-8 mx-auto mb-2" />
@@ -354,11 +335,9 @@ const CommunityWallPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Controls */}
       <section className="py-8 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-stone-400" />
               <input
@@ -376,7 +355,6 @@ const CommunityWallPage: React.FC = () => {
               />
             </div>
 
-            {/* Category Filter */}
             <div className="flex items-center space-x-2">
               <Filter className="h-5 w-5 text-stone-600" />
               <select
@@ -394,7 +372,6 @@ const CommunityWallPage: React.FC = () => {
               </select>
             </div>
 
-            {/* Upload Button */}
             <button
               onClick={() => setShowUploadModal(true)}
               className="flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
@@ -406,7 +383,6 @@ const CommunityWallPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Photo Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px] grid-flow-dense">
@@ -429,7 +405,6 @@ const CommunityWallPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3
                       className={`font-semibold mb-1 line-clamp-2 ${currentLanguage.code === 'ar' ? 'font-arabic' : ''}`}
@@ -485,7 +460,6 @@ const CommunityWallPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Category Badge */}
                   <div className="absolute top-3 left-3">
                     <span className="px-2 py-1 bg-black/50 text-white text-xs rounded-full backdrop-blur-sm">
                       {t(
@@ -500,7 +474,6 @@ const CommunityWallPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Load More Trigger & Loading Indicator */}
           <div ref={loadMoreRef} className="mt-12 text-center pb-8">
             {isLoadingMore ? (
               <motion.div
@@ -549,13 +522,11 @@ const CommunityWallPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Photo Upload Modal */}
       <PhotoUploadModal
         isOpen={showUploadModal}
         onClose={() => setShowUploadModal(false)}
       />
 
-      {/* Photo Detail Modal */}
       <AnimatePresence>
         {selectedPhoto && (
           <motion.div

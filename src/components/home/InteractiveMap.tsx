@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import L from 'leaflet';
 
 interface MapItem {
   id: string;
@@ -160,106 +161,97 @@ const InteractiveMap: React.FC = () => {
   );
 
   useEffect(() => {
-    // Initialize Leaflet map
     if (typeof window !== 'undefined' && mapRef.current) {
-      const L = (window as any).L;
-      if (L) {
-        const map = L.map(mapRef.current, {
-          zoomControl: false,
-          attributionControl: false,
-        }).setView([40.0, -30.0], 2);
+      const map = L.map(mapRef.current, {
+        zoomControl: false,
+        attributionControl: false,
+      }).setView([40.0, -30.0], 2);
 
-        L.tileLayer(
-          'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-          {
-            subdomains: 'abcd',
-            maxZoom: 19,
-          }
-        ).addTo(map);
+      L.tileLayer(
+        'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        {
+          subdomains: 'abcd',
+          maxZoom: 19,
+        }
+      ).addTo(map);
 
-        // Add zoom control to a specific position
-        L.control
-          .zoom({
-            position: 'bottomright',
-          })
-          .addTo(map);
+      L.control
+        .zoom({
+          position: 'bottomright',
+        })
+        .addTo(map);
 
-        // Custom marker icon with Rhizome Syria purple
-        const customIcon = L.divIcon({
-          className: 'custom-div-icon',
-          html: `<div style="background-color: var(--rs-primary-purple); width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
-          iconSize: [15, 15],
-          iconAnchor: [7, 7],
-        });
+      const customIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: var(--rs-primary-purple); width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+        iconSize: [15, 15],
+        iconAnchor: [7, 7],
+      });
 
-        // Event icon with Rhizome Syria teal
-        const eventIcon = L.divIcon({
-          className: 'custom-div-icon',
-          html: `<div style="background-color: var(--rs-teal); width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
-          iconSize: [15, 15],
-          iconAnchor: [7, 7],
-        });
+      const eventIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: var(--rs-teal); width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+        iconSize: [15, 15],
+        iconAnchor: [7, 7],
+      });
 
-        // Town icon with Rhizome Syria blue
-        const townIcon = L.divIcon({
-          className: 'custom-div-icon',
-          html: `<div style="background-color: var(--rs-primary-blue); width: 8px; height: 8px; border-radius: 50%; border: 1px solid white;"></div>`,
-          iconSize: [10, 10],
-          iconAnchor: [5, 5],
-        });
+      const townIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: var(--rs-primary-blue); width: 8px; height: 8px; border-radius: 50%; border: 1px solid white;"></div>`,
+        iconSize: [10, 10],
+        iconAnchor: [5, 5],
+      });
 
-        cities.forEach((item) => {
-          L.marker([item.lat, item.lng], { icon: customIcon })
-            .addTo(map)
-            .on('click', () => setSelectedItem(item));
-        });
+      cities.forEach((item) => {
+        L.marker([item.lat, item.lng], { icon: customIcon })
+          .addTo(map)
+          .on('click', () => setSelectedItem(item));
+      });
 
-        events.forEach((item) => {
-          L.marker([item.lat, item.lng], { icon: eventIcon })
-            .addTo(map)
-            .on('click', () => setSelectedItem(item));
-        });
+      events.forEach((item) => {
+        L.marker([item.lat, item.lng], { icon: eventIcon })
+          .addTo(map)
+          .on('click', () => setSelectedItem(item));
+      });
 
-        const townMarkers = towns.map((t) =>
-          L.marker([t.lat, t.lng], { icon: townIcon })
-        );
+      const townMarkers = towns.map((t) =>
+        L.marker([t.lat, t.lng], { icon: townIcon })
+      );
 
-        const edmontonMarker = L.marker([53.5461, -113.4938], {
-          icon: customIcon,
-        });
+      const edmontonMarker = L.marker([53.5461, -113.4938], {
+        icon: customIcon,
+      });
 
-        const updateVisibility = () => {
-          if (map.getZoom() >= 8) {
-            townMarkers.forEach((m) => m.addTo(map));
-          } else {
-            townMarkers.forEach((m) => map.removeLayer(m));
-          }
-
-          if (map.getZoom() <= 4) {
-            edmontonMarker
-              .addTo(map)
-              .on('click', () => setSelectedItem(globalNodes[0]));
-          } else {
-            map.removeLayer(edmontonMarker);
-          }
-        };
-
-        updateVisibility();
-        map.on('zoomend', updateVisibility);
-
-        // Add custom styles to the map with Rhizome Syria styling
-        const mapContainer = mapRef.current;
-        if (mapContainer) {
-          mapContainer.style.border = '2px solid var(--rs-primary-purple)';
-          mapContainer.style.borderRadius = '12px';
-          mapContainer.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+      const updateVisibility = () => {
+        if (map.getZoom() >= 8) {
+          townMarkers.forEach((m) => m.addTo(map));
+        } else {
+          townMarkers.forEach((m) => map.removeLayer(m));
         }
 
-        return () => {
-          map.off('zoomend', updateVisibility);
-          map.remove();
-        };
+        if (map.getZoom() <= 4) {
+          edmontonMarker
+            .addTo(map)
+            .on('click', () => setSelectedItem(globalNodes[0]));
+        } else {
+          map.removeLayer(edmontonMarker);
+        }
+      };
+
+      updateVisibility();
+      map.on('zoomend', updateVisibility);
+
+      const mapContainer = mapRef.current;
+      if (mapContainer) {
+        mapContainer.style.border = '2px solid var(--rs-primary-purple)';
+        mapContainer.style.borderRadius = '12px';
+        mapContainer.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
       }
+
+      return () => {
+        map.off('zoomend', updateVisibility);
+        map.remove();
+      };
     }
   }, [cities, events, towns, globalNodes]);
 

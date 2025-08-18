@@ -6,11 +6,9 @@ import L from 'leaflet';
 import { DATA_SOURCES } from '../../services/data/dataSources';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for Leaflet default icon paths
-// This is needed because Vite/webpack bundling breaks the default Leaflet icon paths
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete (L.Icon.Default.prototype as L.Icon.Default & { _getIconUrl?: string })
+  ._getIconUrl;
 
-// We'll create custom SVG markers instead of relying on PNG files
 const svgIcon = (color: string) => {
   return L.divIcon({
     html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}" width="24" height="24">
@@ -36,12 +34,10 @@ interface DataSourceMarker {
   };
   languages: string[];
   category: string;
-  position: [number, number]; // Latitude and longitude
+  position: [number, number];
 }
 
-// Sample marker positions for Syrian cities and institutions
 const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
-  // News and Media Sources
   {
     id: 'syria-direct',
     name: {
@@ -55,7 +51,7 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish'],
     category: 'news-media',
-    position: [33.5138, 36.2765], // Damascus
+    position: [33.5138, 36.2765],
   },
   {
     id: 'syrian-observer',
@@ -70,9 +66,8 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English'],
     category: 'news-media',
-    position: [36.2021, 37.1343], // Aleppo
+    position: [36.2021, 37.1343],
   },
-  // Humanitarian Organizations
   {
     id: 'unhcr',
     name: {
@@ -86,7 +81,7 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish', 'Farsi', 'Hebrew'],
     category: 'data-aggregators',
-    position: [33.8869, 35.5131], // Beirut (regional office)
+    position: [33.8869, 35.5131],
   },
   {
     id: 'ocha',
@@ -101,9 +96,8 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish', 'Farsi', 'Hebrew'],
     category: 'data-aggregators',
-    position: [33.5225, 36.3097], // Damascus
+    position: [33.5225, 36.3097],
   },
-  // Research Centers
   {
     id: 'scpr',
     name: {
@@ -117,7 +111,7 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish', 'Farsi', 'Hebrew'],
     category: 'research-institutions',
-    position: [34.8021, 38.9968], // Central Syria
+    position: [34.8021, 38.9968],
   },
   {
     id: 'omran-center',
@@ -132,9 +126,8 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish', 'Farsi', 'Hebrew'],
     category: 'research-institutions',
-    position: [36.2166, 37.1367], // Aleppo area
+    position: [36.2166, 37.1367],
   },
-  // Government Sources
   {
     id: 'egov',
     name: {
@@ -148,9 +141,8 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic', 'Turkish', 'Farsi', 'Hebrew'],
     category: 'government-sources',
-    position: [33.5148, 36.2968], // Damascus
+    position: [33.5148, 36.2968],
   },
-  // OSINT Resources
   {
     id: 'github-osint',
     name: {
@@ -164,9 +156,8 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic'],
     category: 'osint-resources',
-    position: [35.9132, 38.0132], // Raqqa
+    position: [35.9132, 38.0132],
   },
-  // Advertising and Marketing
   {
     id: 'arabad',
     name: {
@@ -180,35 +171,33 @@ const DATA_SOURCE_MARKERS: DataSourceMarker[] = [
     },
     languages: ['English', 'Arabic'],
     category: 'advertising-marketing',
-    position: [35.1413, 36.7551], // Homs
+    position: [35.1413, 36.7551],
   },
 ];
 
-// Custom marker icons by category
 const createCategoryIcon = (category: string) => {
   const getIconColor = (cat: string) => {
     switch (cat) {
       case 'news-media':
-        return '#3B82F6'; // blue-500
+        return '#3B82F6';
       case 'data-aggregators':
-        return '#10B981'; // green-500
+        return '#10B981';
       case 'research-institutions':
-        return '#8B5CF6'; // purple-500
+        return '#8B5CF6';
       case 'government-sources':
-        return '#EF4444'; // red-500
+        return '#EF4444';
       case 'osint-resources':
-        return '#F59E0B'; // yellow-500
+        return '#F59E0B';
       case 'advertising-marketing':
-        return '#F97316'; // orange-500
+        return '#F97316';
       default:
-        return '#6B7280'; // gray-500
+        return '#6B7280';
     }
   };
 
   return svgIcon(getIconColor(category));
 };
 
-// Map bounds adapter component
 const SetBoundsControl = ({ markers }: { markers: DataSourceMarker[] }) => {
   const map = useMap();
 
@@ -225,7 +214,6 @@ const SetBoundsControl = ({ markers }: { markers: DataSourceMarker[] }) => {
   return null;
 };
 
-// Cluster marker component for when markers are close together
 const MarkerCluster = ({
   markers,
   isArabic,
@@ -293,7 +281,6 @@ const DataSourcesMap: React.FC = () => {
   const mapRef = useRef<L.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
 
-  // Filter markers based on search and category
   const filteredMarkers = DATA_SOURCE_MARKERS.filter((marker) => {
     const matchesSearch = searchQuery
       ? (isArabic ? marker.name.ar : marker.name.en)
@@ -311,7 +298,6 @@ const DataSourcesMap: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Helper function to get category color class
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'news-media':
@@ -331,17 +317,15 @@ const DataSourcesMap: React.FC = () => {
     }
   };
 
-  // Helper function to get category name from data sources
-  const getCategoryName = (category: string) => {
-    const categoryData = DATA_SOURCES.find((cat) => cat.id === category);
+  const getCategoryName = (_category: string) => {
+    const categoryData = DATA_SOURCES.find((cat) => cat.id === _category);
     return categoryData
       ? isArabic
         ? categoryData.title.ar
         : categoryData.title.en
-      : category;
+      : _category;
   };
 
-  // Handle map initial load
   useEffect(() => {
     setMapLoaded(true);
 
@@ -352,7 +336,6 @@ const DataSourcesMap: React.FC = () => {
 
   return (
     <div className="data-sources-map bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-4 relative">
-      {/* Header and Search */}
       <div className="mb-4">
         <h2
           className={`text-2xl font-bold mb-2 text-purple-800 ${isArabic ? 'text-right' : 'text-left'}`}
@@ -387,7 +370,6 @@ const DataSourcesMap: React.FC = () => {
         </div>
       </div>
 
-      {/* Category Filter */}
       <div className={`mb-4 ${isArabic ? 'text-right' : 'text-left'}`}>
         <div
           className={`flex flex-wrap gap-2 mb-2 ${isArabic ? 'justify-end' : 'justify-start'}`}
@@ -403,28 +385,33 @@ const DataSourcesMap: React.FC = () => {
           >
             {isArabic ? 'الكل' : 'All'}
           </button>
-          {DATA_SOURCES.map((category) => (
+          {DATA_SOURCES.map((_category, index) => (
             <button
-              key={category.id}
-              className={`text-xs px-2 py-1 rounded-full transition-colors ${
-                selectedCategory === category.id
-                  ? `${getCategoryColor(category.id).replace('bg-', 'bg-').replace('-500', '-100')} ${getCategoryColor(category.id).replace('bg-', 'text-').replace('-500', '-800')}`
-                  : 'bg-slate-100 text-slate-600'
-              }`}
-              onClick={() => setSelectedCategory(category.id)}
-              aria-label={`${isArabic ? 'عرض فئة' : 'Show category'} ${isArabic ? category.title.ar : category.title.en}`}
+              key={index}
+              className={`flex items-center ${isArabic ? 'flex-row-reverse' : ''} cursor-pointer hover:bg-slate-50 rounded px-1`}
+              onClick={() =>
+                setSelectedCategory(
+                  selectedCategory === _category.id ? null : _category.id
+                )
+              }
+              role="button"
+              aria-label={`${isArabic ? 'تصفية بواسطة' : 'Filter by'} ${isArabic ? _category.title.ar : _category.title.en}`}
             >
-              {isArabic ? category.title.ar : category.title.en}
+              <div
+                className={`h-3 w-3 ${getCategoryColor(_category.id)} rounded-full ${isArabic ? 'ml-1' : 'mr-1'}`}
+              ></div>
+              <span className="text-xs text-slate-600">
+                {isArabic ? _category.title.ar : _category.title.en}
+              </span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Interactive Map */}
       <div className="map-container h-96 rounded-lg overflow-hidden relative">
         {mapLoaded && (
           <MapContainer
-            center={[35.0, 38.0]} // Center of Syria
+            center={[35.0, 38.0]}
             zoom={7}
             style={{ height: '100%', width: '100%' }}
             ref={(map) => {
@@ -432,9 +419,8 @@ const DataSourcesMap: React.FC = () => {
                 mapRef.current = map;
               }
             }}
-            zoomControl={false} // We'll position the zoom control ourselves
+            zoomControl={false}
           >
-            {/* Custom position for zoom control */}
             <div className="absolute z-1000 bottom-4 right-4">
               <div className="leaflet-control leaflet-bar">
                 <button
@@ -468,7 +454,6 @@ const DataSourcesMap: React.FC = () => {
           </MapContainer>
         )}
 
-        {/* Map loading state */}
         {!mapLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-slate-100 rounded-lg">
             <div className="text-slate-500">
@@ -477,7 +462,6 @@ const DataSourcesMap: React.FC = () => {
           </div>
         )}
 
-        {/* No results message */}
         {filteredMarkers.length === 0 && mapLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-lg z-10">
             <div className="text-center p-4">
@@ -501,38 +485,36 @@ const DataSourcesMap: React.FC = () => {
         )}
       </div>
 
-      {/* Legend */}
       <div className={`mt-4 ${isArabic ? 'text-right' : 'text-left'}`}>
         <h3 className="text-sm font-semibold text-slate-700 mb-2">
           {isArabic ? 'دليل الفئات' : 'Category Legend'}
         </h3>
         <div
-          className={`flex flex-wrap gap-3 ${isArabic ? 'justify-end' : 'justify-start'}`}
+          className={`flex flex-wrap gap-2 ${isArabic ? 'justify-end' : 'justify-start'}`}
         >
-          {DATA_SOURCES.map((category, index) => (
-            <div
+          {DATA_SOURCES.map((_category, index) => (
+            <button
               key={index}
               className={`flex items-center ${isArabic ? 'flex-row-reverse' : ''} cursor-pointer hover:bg-slate-50 rounded px-1`}
               onClick={() =>
                 setSelectedCategory(
-                  selectedCategory === category.id ? null : category.id
+                  selectedCategory === _category.id ? null : _category.id
                 )
               }
               role="button"
-              aria-label={`${isArabic ? 'تصفية بواسطة' : 'Filter by'} ${isArabic ? category.title.ar : category.title.en}`}
+              aria-label={`${isArabic ? 'تصفية بواسطة' : 'Filter by'} ${isArabic ? _category.title.ar : _category.title.en}`}
             >
               <div
-                className={`h-3 w-3 ${getCategoryColor(category.id)} rounded-full ${isArabic ? 'ml-1' : 'mr-1'}`}
+                className={`h-3 w-3 ${getCategoryColor(_category.id)} rounded-full ${isArabic ? 'ml-1' : 'mr-1'}`}
               ></div>
               <span className="text-xs text-slate-600">
-                {isArabic ? category.title.ar : category.title.en}
+                {isArabic ? _category.title.ar : _category.title.en}
               </span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
-      {/* Source count */}
       <div
         className={`mt-3 text-xs text-slate-500 ${isArabic ? 'text-right' : 'text-left'}`}
       >
@@ -544,6 +526,5 @@ const DataSourcesMap: React.FC = () => {
   );
 };
 
-// Export as both default and named export to support different import styles
 export { DataSourcesMap };
 export default DataSourcesMap;

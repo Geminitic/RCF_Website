@@ -31,7 +31,6 @@ export abstract class BaseTask {
     try {
       logger.info(`Starting ${this.name} refresh...`);
 
-      // Check if we should skip this refresh
       if (await this.shouldSkip()) {
         logger.info(`Skipping ${this.name} refresh - data still fresh`);
         return;
@@ -47,7 +46,6 @@ export abstract class BaseTask {
       }
     } catch (error) {
       logger.error(`${this.name} refresh failed:`, error);
-      // Don't throw - let other tasks continue
     }
   }
 
@@ -71,13 +69,12 @@ export abstract class BaseTask {
         const result = await this.fetchData();
         if (result) return result;
 
-        // If fetchData returns null, we'll retry
         throw new Error('No data returned');
       } catch (error) {
         lastError = error as Error;
 
         if (attempt === retries) {
-          break; // Last attempt failed
+          break;
         }
 
         logger.warn(
@@ -92,14 +89,14 @@ export abstract class BaseTask {
   }
 
   protected async shouldSkip(): Promise<boolean> {
-    // Check if we have recent data in cache
-    const cached = getCache(this.cacheKey);
+    const cached = getCache<{ lastUpdated?: string; updated: string }>(
+      this.cacheKey
+    );
     if (cached) {
       const age =
         Date.now() -
         new Date(cached.data.lastUpdated || cached.data.updated).getTime();
       if (age < this.ttlMs * 0.8) {
-        // If data is more than 80% fresh, skip
         return true;
       }
     }
@@ -110,7 +107,10 @@ export abstract class BaseTask {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  protected async fetchJSON(url: string, options: any = {}): Promise<any> {
+  protected async fetchJSON(
+    url: string,
+    options: RequestInit = {}
+  ): Promise<unknown> {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
 
@@ -142,16 +142,18 @@ export abstract class BaseTask {
     }
   }
 
-  protected async fetchCSV(url: string, options: any = {}): Promise<any[]> {
-    const text = await this.fetchJSON(url, {
+  protected async fetchCSV(
+    url: string,
+    options: RequestInit = {}
+  ): Promise<Record<string, string | null>[]> {
+    const text = (await this.fetchJSON(url, {
       ...options,
       headers: {
         ...options.headers,
         Accept: 'text/csv',
       },
-    });
+    })) as string;
 
-    // Simple CSV parser - replace with proper library if needed
     const lines = text.split('\n');
     const headers = lines[0].split(',');
 
@@ -162,7 +164,7 @@ export abstract class BaseTask {
           obj[header.trim()] = values[index] ? values[index].trim() : null;
           return obj;
         },
-        {} as Record<string, any>
+        {} as Record<string, string | null>
       );
     });
   }

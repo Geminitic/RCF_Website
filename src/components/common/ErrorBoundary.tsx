@@ -22,30 +22,27 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     };
   }
 
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(_error: Error): ErrorBoundaryState {
     return {
       hasError: true,
-      error,
+      error: _error,
     };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    // Log the error to an error reporting service
+  componentDidCatch(_error: Error, _errorInfo: ErrorInfo): void {
     console.error(
       `Error in ${this.props.name || 'component'}:`,
-      error,
-      errorInfo
+      _error,
+      _errorInfo
     );
 
-    // Call the onError callback if provided
     if (this.props.onError) {
-      this.props.onError(error, errorInfo);
+      this.props.onError(_error, _errorInfo);
     }
   }
 
   render(): ReactNode {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       if (this.props.fallback) {
         return this.props.fallback;
       }

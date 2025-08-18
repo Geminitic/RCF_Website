@@ -1,6 +1,5 @@
 import React, {
   createContext,
-  useContext,
   useState,
   useEffect,
   useCallback,
@@ -15,15 +14,9 @@ interface ThemeContextType {
   setTheme: (theme: Theme) => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -48,8 +41,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  }, [theme, setTheme]);
+    setThemeState((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

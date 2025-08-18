@@ -4,7 +4,6 @@ import * as Sentry from '@sentry/react';
 import App from './App.tsx';
 import './index.css';
 
-// Disable right click and text selection globally
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('selectstart', (e) => e.preventDefault());
 
@@ -13,8 +12,11 @@ Sentry.init({
   sendDefaultPii: true,
 });
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}

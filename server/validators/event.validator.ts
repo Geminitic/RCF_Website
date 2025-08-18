@@ -29,10 +29,10 @@ export const eventSchema = Joi.object({
   priority: Joi.number().min(0).max(10).required(),
   category: Joi.string().required(),
   deadline: Joi.boolean().required(),
-  tags: Joi.array().items(Joi.string()).max(5).required()
+  tags: Joi.array().items(Joi.string()).max(5).required(),
 });
 
-export function validateEvent(event: any): Event | null {
+export function validateEvent(event: unknown): Event | null {
   const { error, value } = eventSchema.validate(event);
   return error ? null : (value as Event);
 }
