@@ -1,6 +1,9 @@
 import React, {
   createContext,
+<<<<<<< HEAD
   useContext,
+=======
+>>>>>>> feature/hero-section-updates
   useState,
   useEffect,
   useCallback,
@@ -15,6 +18,7 @@ interface ThemeContextType {
   setTheme: (theme: Theme) => void;
 }
 
+<<<<<<< HEAD
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
@@ -24,6 +28,11 @@ export const useTheme = () => {
   }
   return context;
 };
+=======
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
+>>>>>>> feature/hero-section-updates
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -48,8 +57,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, []);
 
   const toggleTheme = useCallback(() => {
+<<<<<<< HEAD
     setTheme(theme === 'light' ? 'dark' : 'light');
   }, [theme, setTheme]);
+=======
+    setThemeState((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  }, []);
+>>>>>>> feature/hero-section-updates
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

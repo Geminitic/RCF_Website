@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 import { Lightbulb, Heart, Globe, BookOpen } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import LazyImage from '../common/LazyImage';
+<<<<<<< HEAD
 import useLazyLoad from '../../hooks/useLazyLoad';
+=======
+>>>>>>> feature/hero-section-updates
 
 const OurPillars: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
@@ -87,11 +90,25 @@ const OurPillars: React.FC = () => {
         >
           <h2
             className={`gr-text-xl md:text-5xl font-bold heading-2 gr-mb-md ${isArabic ? 'font-arabic' : ''}`}
+<<<<<<< HEAD
             style={{ fontFamily: 'var(--rs-font-heading)', direction: isArabic ? 'rtl' : 'ltr' }}
           >
             {t('our-pillars-title', 'Our Focus Areas', 'مجالات تركيزنا')}
           </h2>
           <p className={`max-w-3xl mx-auto gr-text-base md:text-xl body ${isArabic ? 'font-arabic text-right' : 'text-left'}`} style={{ direction: isArabic ? 'rtl' : 'ltr' }}>
+=======
+            style={{
+              fontFamily: 'var(--rs-font-heading)',
+              direction: isArabic ? 'rtl' : 'ltr',
+            }}
+          >
+            {t('our-pillars-title', 'Our Focus Areas', 'مجالات تركيزنا')}
+          </h2>
+          <p
+            className={`max-w-3xl mx-auto gr-text-base md:text-xl body ${isArabic ? 'font-arabic text-right' : 'text-left'}`}
+            style={{ direction: isArabic ? 'rtl' : 'ltr' }}
+          >
+>>>>>>> feature/hero-section-updates
             {t(
               'our-pillars-description',
               'These are the key areas where we focus our efforts to create meaningful impact.',

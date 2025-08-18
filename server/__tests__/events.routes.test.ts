@@ -32,9 +32,7 @@ describe('Events API integration', () => {
       </div>
     `;
 
-    nock('https://org.example')
-      .get('/')
-      .reply(200, mockHtml);
+    nock('https://org.example').get('/').reply(200, mockHtml);
 
     const scraper = new EventScraper();
     const events = await scraper.scrape('https://org.example');
@@ -43,7 +41,10 @@ describe('Events API integration', () => {
 
     const stored = await cache.get('events');
     expect(stored).toHaveLength(1);
-    expect(stored![0].title).toBe('Community Meetup');
+    expect(stored).not.toBeNull();
+    if (stored) {
+      expect(stored[0].title).toBe('Community Meetup');
+    }
 
     const res = await request(app).get('/api/events');
     expect(res.status).toBe(200);

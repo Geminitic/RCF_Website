@@ -17,7 +17,7 @@ export abstract class BaseScraper {
 
       const response = await this.httpClient.get(url);
       return response.data;
-    } catch (error: any) {
+    } catch (error: Error) {
       console.error(`Failed to fetch ${url}:`, error.message);
       return null;
     }

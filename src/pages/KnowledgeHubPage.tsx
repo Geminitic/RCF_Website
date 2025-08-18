@@ -133,39 +133,45 @@ const KnowledgeHubPage: React.FC = () => {
   // Community section content
   const communityMembers = [
     {
-      name: 'Practice Communities',
-      nameAr: 'مجتمعات الممارسة',
+      name: 'Rhizome Practitioners Network',
+      nameAr: 'شبكة ممارسي الريزوم',
       description:
-        'Communities of practice sharing experiences and innovations in rhizomatic organization',
-      descriptionAr: 'مجتمعات تشارك الخبرات والابتكارات في التنظيم الريزومي',
+        'A global community of practice sharing experiences and innovations in rhizomatic organization',
+      descriptionAr:
+        'مجتمع عالمي للممارسة يشارك الخبرات والابتكارات في التنظيم الريزومي',
+      members: 650,
       focus: 'Practice',
       focusAr: 'الممارسة',
     },
     {
-      name: 'Research & Theory',
-      nameAr: 'البحث والنظرية',
+      name: 'Research Collective',
+      nameAr: 'مجموعة البحث',
       description:
-        'Exploring and documenting emerging organizational forms and approaches',
-      descriptionAr: 'استكشاف وتوثيق الأشكال والنهج التنظيمية الناشئة',
+        'Scholars and practitioners documenting and theorizing emerging organizational forms',
+      descriptionAr:
+        'علماء وممارسون يوثقون ويضعون نظريات للأشكال التنظيمية الناشئة',
+      members: 120,
       focus: 'Research',
       focusAr: 'البحث',
     },
     {
-      name: 'Implementation Groups',
-      nameAr: 'مجموعات التنفيذ',
+      name: 'Community Builders Alliance',
+      nameAr: 'تحالف بناة المجتمع',
       description:
         'Grassroots organizers applying rhizomatic principles to community development',
-      descriptionAr: 'منظمون يطبقون مبادئ الريزوم على التنمية المجتمعية',
+      descriptionAr: 'منظمون شعبيون يطبقون مبادئ الريزوم على التنمية المجتمعية',
+      members: 800,
       focus: 'Implementation',
       focusAr: 'التنفيذ',
     },
     {
-      name: 'Leadership Forums',
-      nameAr: 'منتديات القيادة',
+      name: 'Horizontal Leadership Forum',
+      nameAr: 'منتدى القيادة الأفقية',
       description:
         'Cross-sector conversations on evolving leadership practices for complex challenges',
       descriptionAr:
         'محادثات عبر القطاعات حول تطوير ممارسات القيادة للتحديات المعقدة',
+      members: 450,
       focus: 'Leadership',
       focusAr: 'القيادة',
     },
@@ -336,11 +342,9 @@ const KnowledgeHubPage: React.FC = () => {
                     key={index}
                     className={`bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow border-l-4 border-${category.color}-500`}
                   >
-                    <div
-                      className={`flex ${currentLanguage.code === 'ar' ? 'flex-row-reverse' : ''} items-center mb-4`}
-                    >
+                    <div className="flex items-center mb-4">
                       <div
-                        className={`w-12 h-12 bg-${category.color}-100 rounded-lg flex items-center justify-center ${currentLanguage.code === 'ar' ? 'ml-4 rtl-icon-box' : 'mr-4'}`}
+                        className={`w-12 h-12 bg-${category.color}-100 rounded-lg flex items-center justify-center mr-4 ${currentLanguage.code === 'ar' ? 'rtl-icon-box order-1' : ''}`}
                       >
                         <category.icon
                           className={`h-6 w-6 text-${category.color}-600`}
@@ -410,6 +414,9 @@ const KnowledgeHubPage: React.FC = () => {
                             member.nameAr
                           )}
                         </h3>
+                        <span className="text-indigo-600 font-semibold">
+                          {member.members}+ {t('members', 'members', 'عضو')}
+                        </span>
                       </div>
                       <div className="mb-4">
                         <span
