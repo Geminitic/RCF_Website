@@ -58,128 +58,28 @@ const CommunityWallPage: React.FC = () => {
     { key: 'events', en: 'Events', ar: 'الفعاليات' },
   ];
 
-  const generateMorePhotos = useCallback(() => {
-<<<<<<< HEAD
-    const additionalPhotos = [];
-    // We can remove the unused 'basePhotos' variable
-    
-    // Define themed keywords that match our foundation's focus
-=======
-    const additionalPhotos: Photo[] = [];
->>>>>>> feature/hero-section-updates
-    const themeKeywords = [
-      'community',
-      'syria',
-      'collaboration',
-      'education',
-      'youth empowerment',
-      'civil society',
-      'middle east culture',
-      'community building',
-      'social impact',
-      'humanitarian',
-      'volunteers',
-      'cultural exchange',
-    ];
-
-    const possibleCategories = [
-      'community',
-      'culture',
-      'education',
-      'youth',
-      'events',
-    ];
-
-    for (let i = 0; i < 12; i++) {
-      const randomTheme =
-        themeKeywords[Math.floor(Math.random() * themeKeywords.length)];
-      const randomCategory =
-        possibleCategories[
-          Math.floor(Math.random() * possibleCategories.length)
-        ];
-
-      const titleBase = {
-        community: { en: 'Community Connection', ar: 'تواصل مجتمعي' },
-        syria: { en: 'Syrian Heritage', ar: 'التراث السوري' },
-        collaboration: { en: 'Collaborative Initiative', ar: 'مبادرة تعاونية' },
-        education: { en: 'Educational Workshop', ar: 'ورشة تعليمية' },
-        'youth empowerment': { en: 'Youth Leadership', ar: 'قيادة الشباب' },
-        'civil society': {
-          en: 'Civil Society Forum',
-          ar: 'منتدى المجتمع المدني',
-        },
-        'middle east culture': {
-          en: 'Cultural Celebration',
-          ar: 'احتفال ثقافي',
-        },
-        'community building': { en: 'Community Project', ar: 'مشروع مجتمعي' },
-        'social impact': { en: 'Impact Initiative', ar: 'مبادرة مؤثرة' },
-        humanitarian: { en: 'Humanitarian Effort', ar: 'جهد إنساني' },
-        volunteers: { en: 'Volunteer Action', ar: 'عمل تطوعي' },
-        'cultural exchange': { en: 'Cultural Exchange', ar: 'تبادل ثقافي' },
-      }[randomTheme] || { en: 'Community Moment', ar: 'لحظة مجتمعية' };
-
-      const seq = Math.floor(Math.random() * 100);
-
-      const locations = [
-        { en: 'Damascus, Syria', ar: 'دمشق، سوريا' },
-        { en: 'Aleppo, Syria', ar: 'حلب، سوريا' },
-        { en: 'Homs, Syria', ar: 'حمص، سوريا' },
-        { en: 'Latakia, Syria', ar: 'اللاذقية، سوريا' },
-        { en: 'Toronto, Canada', ar: 'تورونتو، كندا' },
-        { en: 'Edmonton, Canada', ar: 'إدمونتون، كندا' },
-        { en: 'Global Initiative', ar: 'مبادرة عالمية' },
-      ];
-      const randomLocation =
-        locations[Math.floor(Math.random() * locations.length)];
-
-      const timestamp = Date.now() + i;
-
-      additionalPhotos.push({
-        id: `generated-${timestamp}-${i}`,
-        title: `${titleBase.en} #${seq}`,
-        titleAr: `${titleBase.ar} #${seq}`,
-        description: `Open source image representing our ${randomTheme} initiatives`,
-        descriptionAr: `صورة مفتوحة المصدر تمثل مبادراتنا في ${titleBase.ar}`,
-        location: randomLocation.en,
-        locationAr: randomLocation.ar,
-        category: randomCategory,
-        uploadedBy: 'Community Canvas',
-        uploadDate: new Date(
-          Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000
-        ).toISOString(),
-        url: `https://source.unsplash.com/600x600/?${encodeURIComponent(randomTheme)}&sig=${timestamp}`,
-        approved: true,
-        featured: Math.random() > 0.7,
-        likes: Math.floor(Math.random() * 50),
-        comments: [],
-      });
-    }
-    return additionalPhotos;
-  }, []);
-
-  const [allPhotos, setAllPhotos] = useState(() => [
-    ...photos.filter((p) => p.approved),
-    ...generateMorePhotos(),
-  ]);
-
+  const PHOTOS_PER_PAGE = 12;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [displayPhotos, setDisplayPhotos] = useState<Photo[]>([]);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  useEffect(() => {
+    // Initial load and whenever photos from context change
+    setDisplayPhotos(photos.slice(0, PHOTOS_PER_PAGE * currentPage));
+  }, [photos, currentPage]);
 
   useEffect(() => {
     if (inView && !isLoadingMore) {
       setIsLoadingMore(true);
-
       setTimeout(() => {
-        const newPhotos = generateMorePhotos();
-        setAllPhotos((prev) => [...prev, ...newPhotos]);
-        setLoadedPhotos((prev) => prev + newPhotos.length);
+        setCurrentPage((prevPage) => prevPage + 1);
         setIsLoadingMore(false);
       }, 800);
     }
-  }, [inView, isLoadingMore, generateMorePhotos]);
+  }, [inView, isLoadingMore]);
 
   useEffect(() => {
-    let filtered = allPhotos.slice(0, loadedPhotos);
+    let filtered = displayPhotos;
 
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(
@@ -198,7 +98,7 @@ const CommunityWallPage: React.FC = () => {
     }
 
     setFilteredPhotos(filtered);
-  }, [allPhotos, loadedPhotos, selectedCategory, searchTerm]);
+  }, [displayPhotos, selectedCategory, searchTerm]);
 
   const progressPercentage = (uploadedCount / targetCount) * 100;
 
@@ -332,7 +232,7 @@ const CommunityWallPage: React.FC = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Camera className="h-8 w-8 mx-auto mb-2" />
-                <div className="text-2xl font-bold">{allPhotos.length}+</div>
+                <div className="text-2xl font-bold">{photos.length}+</div>
                 <div className="text-sm text-indigo-200">
                   {t('stories', 'Stories', 'قصة')}
                 </div>
