@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import * as React from 'react';
-=======
->>>>>>> feature/hero-section-updates
 import { Component, ErrorInfo, ReactNode } from 'react';
 import { Shield } from 'lucide-react';
 
@@ -26,7 +22,6 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     };
   }
 
-<<<<<<< HEAD
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return {
       hasError: true,
@@ -36,46 +31,24 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     // Log the error to an error reporting service
-    console.error(`Error in ${this.props.name || 'component'}:`, error, errorInfo);
-    
+    console.error(
+      `Error in ${this.props.name || 'component'}:`,
+      error,
+      errorInfo
+    );
     // Call the onError callback if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
-=======
-  static getDerivedStateFromError(_error: Error): ErrorBoundaryState {
-    return {
-      hasError: true,
-      error: _error,
-    };
-  }
-
-  componentDidCatch(_error: Error, _errorInfo: ErrorInfo): void {
-    console.error(
-      `Error in ${this.props.name || 'component'}:`,
-      _error,
-      _errorInfo
-    );
-
-    if (this.props.onError) {
-      this.props.onError(_error, _errorInfo);
->>>>>>> feature/hero-section-updates
+      // removed extra closing braces
     }
   }
 
   render(): ReactNode {
     if (this.state.hasError) {
-<<<<<<< HEAD
       // You can render any custom fallback UI
       if (this.props.fallback) {
         return this.props.fallback;
       }
-      
-=======
-      if (this.props.fallback) {
-        return this.props.fallback;
-      }
-
->>>>>>> feature/hero-section-updates
       return (
         <div className="p-6 bg-red-50 border border-red-200 rounded-lg shadow-sm">
           <div className="flex items-center mb-3">

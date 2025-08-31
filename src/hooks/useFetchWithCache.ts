@@ -27,7 +27,7 @@ export function useFetchWithCache<T>(key: string, fetcher: () => Promise<T>) {
       setData(cached.data);
       // If cache is stale, revalidate in background
       if (Date.now() - cached.timestamp > STALE_TIME) {
-        console.log(`Cache for ${key} is stale, revalidating...`);
+        // Cache is stale, revalidating...
         setLoading(true); // Show loading indicator during revalidation
         try {
           const newData = await fetcherRef.current();

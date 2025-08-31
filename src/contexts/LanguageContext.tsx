@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-/* eslint-disable react-refresh/only-export-components */
 
 interface Language {
   code: 'en' | 'ar';
@@ -18,7 +17,9 @@ const languages: Language[] = [
   { code: 'ar', name: 'العربية', direction: 'rtl' },
 ];
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
@@ -32,8 +33,12 @@ interface LanguageProviderProps {
   children: ReactNode;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(languages[0]);
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({
+  children,
+}) => {
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(
+    languages[0]
+  );
 
   const setLanguage = (language: Language) => {
     setCurrentLanguage(language);
@@ -41,7 +46,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     document.documentElement.lang = language.code;
   };
 
-  const t = (key: string, enText: string, arText: string): string => {
+  const t = (_: string, enText: string, arText: string): string => {
     return currentLanguage.code === 'ar' ? arText : enText;
   };
 

@@ -37,7 +37,7 @@ const LoadingScreen: React.FC = () => {
         } else {
           increment = 1 + Math.floor((100 - c) / 15); // Slower at end
         }
-        
+
         return Math.min(c + increment, 100);
       });
     }, 25);
