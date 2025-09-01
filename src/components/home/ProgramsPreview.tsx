@@ -34,15 +34,6 @@ const ProgramsPreview: React.FC = () => {
       color: 'from-[var(--rs-primary-orange)] to-[var(--rs-primary-yellow)]',
       bgColor: 'from-orange-50 to-yellow-50',
     },
-    {
-      icon: FileText,
-      title: '',
-      titleAr: '',
-      description: '',
-      descriptionAr: '',
-      color: 'from-[var(--rs-primary-red)] to-[var(--rs-primary-orange)]',
-      bgColor: 'from-red-50 to-orange-50',
-    },
   ];
   return (
     <section className="py-20 bg-gradient-to-br from-[var(--rs-light-gray)] to-[var(--rs-cream)] section-alt">

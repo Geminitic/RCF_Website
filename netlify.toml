@@ -15,8 +15,7 @@ NODE_VERSION = "20"
 [functions]
 node_bundler = "esbuild"
 
-[edge_functions]
-included_paths = ["/*"]
+
 
 [[redirects]]
 from = "/*"
