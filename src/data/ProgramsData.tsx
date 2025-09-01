@@ -206,35 +206,6 @@ export const canadaPrograms = [
       'مشاركة الحصاد',
     ],
   },
-  {
-    id: 'c3',
-    title: 'Cultural Integration Initiative',
-    titleAr: 'مبادرة الاندماج الثقافي',
-    category: 'canada',
-    description:
-      'Supporting Syrian newcomers with cultural orientation and integration resources.',
-    descriptionAr:
-      'دعم القادمين السوريين الجدد بالتوجيه الثقافي وموارد الاندماج.',
-    location: 'Major Canadian cities',
-    locationAr: 'المدن الكندية الرئيسية',
-    participants: 200,
-    duration: '1 year',
-    durationAr: 'سنة واحدة',
-    status: 'active',
-    impact: 'Successful integration',
-    impactAr: 'الاندماج الناجح',
-    image: '',
-    features: [
-      'Language exchange programs',
-      'Cultural orientation sessions',
-      'Community support networks',
-    ],
-    featuresAr: [
-      'برامج تبادل اللغة',
-      'جلسات التوجيه الثقافي',
-      'شبكات الدعم المجتمعي',
-    ],
-  },
 ];
 
 // Cross-border Programs
