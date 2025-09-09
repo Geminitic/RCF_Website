@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Dashboard - Offline</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9fafb;
+            color: #4b5563;
+        }
+        
+        .offline-container {
+            max-width: 500px;
+            padding: 40px;
+            text-align: center;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #6b7280;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #374151;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #10b981;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .button:hover {
+            background-color: #059669;
+        }
+        
+        .subtitle {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+        
+        .stored-data {
+            margin-top: 20px;
+            padding: 16px;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .stored-data h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #4b5563;
+        }
+        
+        .stored-data ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .stored-data li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="icon">📡</div>
+        <h1>You're offline</h1>
+        <p>The Recovery Dashboard requires an internet connection to show the latest data. Check your connection and try again.</p>
+        <a href="/recovery-dashboard" class="button">Try again</a>
+        
+        <div class="stored-data">
+            <h3>Cached Information</h3>
+            <div id="cached-data">
+                <p>Checking for stored data...</p>
+            </div>
+        </div>
+        
+        <p class="subtitle">Rhizome Community Foundation Recovery Dashboard</p>
+    </div>
+
+    <script>
+        // Check if we have any stored offline data
+        document.addEventListener('DOMContentLoaded', function() {
+            const cachedDataElement = document.getElementById('cached-data');
+            
+            try {
+                const offlineData = localStorage.getItem('recovery_dashboard_offline_data');
+                
+                if (offlineData && offlineData !== '{}') {
+                    const data = JSON.parse(offlineData);
+                    const keys = Object.keys(data);
+                    
+                    if (keys.length > 0) {
+                        let html = '<ul>';
+                        html += '<li>Last updated: ' + new Date(localStorage.getItem('recovery_dashboard_last_update') || Date.now()).toLocaleString() + '</li>';
+                        html += '<li>Available data endpoints: ' + keys.length + '</li>';
+                        html += '</ul>';
+                        html += '<p>Some limited functionality may be available when you reconnect.</p>';
+                        
+                        cachedDataElement.innerHTML = html;
+                    } else {
+                        cachedDataElement.innerHTML = '<p>No cached data available.</p>';
+                    }
+                } else {
+                    cachedDataElement.innerHTML = '<p>No cached data available.</p>';
+                }
+            } catch (error) {
+                cachedDataElement.innerHTML = '<p>Error accessing cached data.</p>';
+                console.error('Error checking cached data:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Embedded Recovery Dashboard Styles */
+
+.embedded-recovery-dashboard {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.embedded-recovery-dashboard.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.embedded-recovery-dashboard.rtl .font-arabic {
+  font-family: 'Amiri', 'Arabic UI Text', 'Geeza Pro', 'Traditional Arabic', serif;
+}
+
+/* Chart containers */
+.embedded-recovery-dashboard .recharts-wrapper {
+  direction: ltr; /* Always keep charts LTR for readability */
+}
+
+/* Custom gradient backgrounds */
+.embedded-recovery-dashboard .bg-gradient-to-br {
+  background: linear-gradient(135deg, var(--tw-gradient-stops));
+}
+
+/* Indicator cards hover effects */
+.embedded-recovery-dashboard .shadow-md:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Arabic text alignment */
+.embedded-recovery-dashboard.rtl .text-right {
+  text-align: right;
+}
+
+.embedded-recovery-dashboard.rtl .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .embedded-recovery-dashboard h2 {
+    font-size: 1.5rem;
+  }
+  
+  .embedded-recovery-dashboard h3 {
+    font-size: 1.25rem;
+  }
+  
+  .embedded-recovery-dashboard .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .embedded-recovery-dashboard .grid-cols-4,
+  .embedded-recovery-dashboard .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Enhanced visual hierarchy */
+.embedded-recovery-dashboard .text-2xl {
+  font-weight: 700;
+}
+
+.embedded-recovery-dashboard .text-xl {
+  font-weight: 600;
+}
+
+/* Improved color scheme alignment with Rhizome brand */
+.embedded-recovery-dashboard .bg-purple-700 {
+  background-color: rgb(126 34 206);
+}
+
+.embedded-recovery-dashboard .bg-blue-700 {
+  background-color: rgb(29 78 216);
+}
+
+.embedded-recovery-dashboard .bg-teal-700 {
+  background-color: rgb(15 118 110);
+}

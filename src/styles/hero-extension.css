@@ -1,0 +1,30 @@
+/* Hero section enhancements to extend colors under the navigation */
+
+/* Remove the space between hero section and navigation */
+.rs-hero,
+.unified-section,
+[class*='-hero'] {
+  padding-top: 4rem !important; /* Reduced from the typical padding to ensure the hero starts right under the nav */
+  margin-top: 0 !important;
+}
+
+/* Style adjustments for page containers to remove the gap */
+.min-h-screen {
+  padding-top: 0 !important; /* Remove the pt-16 padding that creates the gap */
+}
+
+/* Add padding to the first section content instead */
+.rs-hero .max-w-7xl,
+.unified-section .max-w-7xl,
+[class*='-hero'] .max-w-7xl {
+  padding-top: 4rem !important;
+}
+
+/* Adjust mobile navigation background when expanded */
+@media (max-width: 768px) {
+  .rs-hero,
+  .unified-section,
+  [class*='-hero'] {
+    padding-top: 3.5rem !important;
+  }
+}

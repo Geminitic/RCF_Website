@@ -1,0 +1,337 @@
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+import { photoList } from '../data/photoList';
+
+interface Photo {
+  id: string;
+  url: string;
+  title: string;
+  titleAr: string;
+  description: string;
+  descriptionAr: string;
+  location: string;
+  locationAr: string;
+  category: string;
+  uploadedBy: string;
+  uploadDate: string;
+  approved: boolean;
+  featured: boolean;
+  likes: number;
+  comments: { id: string; name: string; text: string }[];
+}
+
+interface PhotoContextType {
+  photos: Photo[];
+  uploadedCount: number;
+  targetCount: number;
+  addPhoto: (
+    _photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    _approved?: boolean
+  ) => void;
+  likePhoto: (_id: string) => void;
+  addComment: (_id: string, _name: string, _text: string) => void;
+  approvePhoto: (_id: string) => void;
+  deletePhoto: (_id: string) => void;
+  pendingPhotos: Photo[];
+  featuredPhotos: Photo[];
+  communityPhotos: Photo[];
+  allPhotos: Photo[];
+}
+
+const PhotoContext = createContext<PhotoContextType | undefined>(undefined);
+
+export const usePhoto = () => {
+  const context = useContext(PhotoContext);
+  if (!context) {
+    throw new Error('usePhoto must be used within a PhotoProvider');
+  }
+  return context;
+};
+
+interface PhotoProviderProps {
+  children: ReactNode;
+}
+
+export const PhotoProvider: React.FC<PhotoProviderProps> = ({ children }) => {
+  const [photos, setPhotos] = useState<Photo[]>(() => {
+    const base: Photo[] = [
+      // Real community photos - Featured throughout site
+      {
+        id: '1',
+        url: '/484134928_122145258254471410_1133353559349890810_n.jpg',
+        title: 'Community Gathering',
+        titleAr: 'تجمع مجتمعي',
+        description: 'A vibrant community event bringing people together',
+        descriptionAr: 'فعالية مجتمعية نابضة بالحياة تجمع الناس معاً',
+        location: 'Aleppo',
+        locationAr: 'حلب',
+        category: 'community',
+        uploadedBy: 'RCF Team',
+        uploadDate: '2024-01-15',
+        approved: true,
+        featured: true,
+        likes: 24,
+        comments: [],
+      },
+      {
+        id: '2',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.46 AM (2).jpeg',
+        title: 'Community Development',
+        titleAr: 'تنمية المجتمع',
+        description: 'Working together to build stronger communities',
+        descriptionAr: 'العمل معاً لبناء مجتمعات أقوى',
+        location: 'Hama',
+        locationAr: 'حماة',
+        category: 'community',
+        uploadedBy: 'Community Coordinator',
+        uploadDate: '2024-02-05',
+        approved: true,
+        featured: true,
+        likes: 18,
+        comments: [],
+      },
+      {
+        id: '3',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.51 AM (1).jpeg',
+        title: 'Collaborative Learning',
+        titleAr: 'التعلم التعاوني',
+        description: 'Knowledge sharing and skills development',
+        descriptionAr: 'تبادل المعرفة وتنمية المهارات',
+        location: 'Latakia',
+        locationAr: 'اللاذقية',
+        category: 'education',
+        uploadedBy: 'Education Team',
+        uploadDate: '2024-02-10',
+        approved: true,
+        featured: true,
+        likes: 15,
+        comments: [],
+      },
+      {
+        id: '4',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.54 AM.jpeg',
+        title: 'Community Dialogue',
+        titleAr: 'حوار مجتمعي',
+        description: 'Open discussions about local needs and solutions',
+        descriptionAr: 'مناقشات مفتوحة حول الاحتياجات والحلول المحلية',
+        location: 'Damascus',
+        locationAr: 'دمشق',
+        category: 'community',
+        uploadedBy: 'Program Manager',
+        uploadDate: '2024-02-15',
+        approved: true,
+        featured: true,
+        likes: 21,
+        comments: [],
+      },
+      {
+        id: '5',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.52 AM (1).jpeg',
+        title: 'Skills Workshop',
+        titleAr: 'ورشة عمل للمهارات',
+        description: 'Practical training for community members',
+        descriptionAr: 'تدريب عملي لأفراد المجتمع',
+        location: 'Aleppo',
+        locationAr: 'حلب',
+        category: 'education',
+        uploadedBy: 'Capacity Building Team',
+        uploadDate: '2024-02-20',
+        approved: true,
+        featured: true,
+        likes: 16,
+        comments: [],
+      },
+      {
+        id: '6',
+        url: '/WhatsApp Image 2025-07-13 at 6.55.11 AM.jpeg',
+        title: 'Youth Empowerment',
+        titleAr: 'تمكين الشباب',
+        description: 'Young leaders driving positive change',
+        descriptionAr: 'قادة شباب يقودون التغيير الإيجابي',
+        location: 'Homs',
+        locationAr: 'حمص',
+        category: 'youth',
+        uploadedBy: 'Youth Program Lead',
+        uploadDate: '2024-02-25',
+        approved: true,
+        featured: true,
+        likes: 22,
+        comments: [],
+      },
+      {
+        id: '10',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.56 AM (1).jpeg',
+        title: 'Community Workshop',
+        titleAr: 'ورشة مجتمعية',
+        description: 'Hands-on training session for local residents',
+        descriptionAr: 'جلسة تدريب عملية للسكان المحليين',
+        location: 'Toronto, Canada',
+        locationAr: 'تورونتو، كندا',
+        category: 'community',
+        uploadedBy: 'RCF Team',
+        uploadDate: '2024-01-22',
+        approved: true,
+        featured: true,
+        likes: 19,
+        comments: [],
+      },
+      {
+        id: '11',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.56 AM (2).jpeg',
+        title: 'Arts Event',
+        titleAr: 'فعالية فنية',
+        description: 'Showcasing creative work from youth members',
+        descriptionAr: 'عرض أعمال إبداعية من أعضاء الشباب',
+        location: 'Damascus',
+        locationAr: 'دمشق',
+        category: 'culture',
+        uploadedBy: 'Arts Collective',
+        uploadDate: '2024-01-21',
+        approved: true,
+        featured: true,
+        likes: 25,
+        comments: [],
+      },
+      {
+        id: '12',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.55 AM (1).jpeg',
+        title: 'Food Distribution',
+        titleAr: 'توزيع الطعام',
+        description: 'Volunteers distributing meals to families',
+        descriptionAr: 'متطوعون يوزعون وجبات للأسر',
+        location: 'Aleppo',
+        locationAr: 'حلب',
+        category: 'community',
+        uploadedBy: 'Relief Team',
+        uploadDate: '2024-01-19',
+        approved: true,
+        featured: true,
+        likes: 17,
+        comments: [],
+      },
+      {
+        id: '13',
+        url: '/WhatsApp Image 2025-07-13 at 7.01.53 AM (2).jpeg',
+        title: 'Community Meeting',
+        titleAr: 'اجتماع مجتمعي',
+        description: 'Planning upcoming neighbourhood projects',
+        descriptionAr: 'التخطيط لمشاريع الحي القادمة',
+        location: 'Edmonton, Canada',
+        locationAr: 'إدمونتون، كندا',
+        category: 'community',
+        uploadedBy: 'Rhizome Canada',
+        uploadDate: '2024-01-17',
+        approved: true,
+        featured: true,
+        likes: 20,
+        comments: [],
+      },
+    ];
+
+    // Auto-generate extras from all photos in the public folder that aren't already included
+    const existingUrls = new Set(base.map((p) => p.url));
+    const extras: Photo[] = photoList
+      .filter((url) => !existingUrls.has(url))
+      .map((url, i) => ({
+        id: `auto-${i}`,
+        url,
+        title: `Community Photo ${i + 1}`,
+        titleAr: `صورة مجتمعية ${i + 1}`,
+        description: 'Automatically indexed from our community collection',
+        descriptionAr: 'مفهرسة تلقائياً من مجموعة المجتمع',
+        location: 'Various',
+        locationAr: 'متنوع',
+        category: 'community',
+        uploadedBy: 'System',
+        uploadDate: new Date(
+          Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000
+        ).toISOString(),
+        approved: Math.random() > 0.3, // 70% are approved
+        featured: Math.random() > 0.7, // 30% are featured
+        likes: Math.floor(Math.random() * 50),
+        comments: [],
+      }));
+
+    return [...base, ...extras];
+  });
+
+  const targetCount = 5000;
+  const uploadedCount = photos.filter((p) => p.approved).length;
+
+  const pendingPhotos = photos.filter((p) => !p.approved);
+  const featuredPhotos = photos.filter((p) => p.featured);
+  const communityPhotos = photos.filter(
+    (p) => p.approved && p.category === 'community'
+  );
+  const allPhotos = photos;
+
+  const likePhoto = (id: string) => {
+    setPhotos((prev) =>
+      prev.map((photo) =>
+        photo.id === id ? { ...photo, likes: (photo.likes || 0) + 1 } : photo
+      )
+    );
+  };
+
+  const addComment = (id: string, name: string, text: string) => {
+    setPhotos((prev) =>
+      prev.map((photo) =>
+        photo.id === id
+          ? {
+              ...photo,
+              comments: [
+                ...(photo.comments || []),
+                { id: Date.now().toString(), name, text },
+              ],
+            }
+          : photo
+      )
+    );
+  };
+
+  const approvePhoto = (id: string) => {
+    setPhotos((prev) =>
+      prev.map((photo) =>
+        photo.id === id ? { ...photo, approved: true } : photo
+      )
+    );
+  };
+
+  const deletePhoto = (id: string) => {
+    setPhotos((prev) => prev.filter((photo) => photo.id !== id));
+  };
+
+  const addPhoto = (
+    photo: Omit<Photo, 'id' | 'uploadDate' | 'approved'>,
+    approved = false
+  ) => {
+    const newPhoto = {
+      ...photo,
+      id: Date.now().toString(),
+      uploadDate: new Date().toISOString(),
+      approved,
+      likes: 0,
+      comments: [],
+    };
+    setPhotos((prev) => [newPhoto, ...prev]);
+  };
+
+  const value = {
+    photos,
+    uploadedCount,
+    targetCount,
+    addPhoto,
+    likePhoto,
+    addComment,
+    approvePhoto,
+    deletePhoto,
+    pendingPhotos,
+    featuredPhotos,
+    communityPhotos,
+    allPhotos,
+  };
+
+  return (
+    <PhotoContext.Provider value={value}>{children}</PhotoContext.Provider>
+  );
+};

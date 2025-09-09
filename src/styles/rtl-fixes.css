@@ -1,0 +1,326 @@
+/* Additional RTL-specific styling for Arabic content */
+.rs-arabic.partnership-text {
+  line-height: 2;
+  font-size: 1.125rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  text-align: right;
+  max-width: 100%;
+  display: block;
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Global RTL Typography Enhancements */
+[dir='rtl'] body {
+  font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif;
+  letter-spacing: 0;
+}
+
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5,
+[dir='rtl'] h6 {
+  font-family: 'Noto Serif Arabic', 'Amiri', serif;
+  letter-spacing: 0;
+}
+
+[dir='rtl'] p,
+[dir='rtl'] span,
+[dir='rtl'] div {
+  line-height: 1.8;
+}
+
+/* Fix alignment for RTL text */
+[dir='rtl'] .text-left {
+  text-align: right !important;
+}
+
+[dir='rtl'] .text-right {
+  text-align: left !important;
+}
+
+/* COMPLETE ICON RESET AND ALIGNMENT FIXES FOR RTL MODE */
+
+/* Basic icon reset for all SVG icons in flex containers */
+[dir='rtl'] .flex svg,
+[dir='rtl'] .inline-flex svg,
+[dir='rtl'] [class*='flex'] svg {
+  margin: 0 !important; /* Reset all margins */
+}
+
+/* General flex direction reset for RTL */
+[dir='rtl'] .flex,
+[dir='rtl'] .inline-flex,
+[dir='rtl'] [class*='flex items-center'] {
+  flex-direction: row-reverse !important; /* Force RTL direction */
+}
+
+/* Reset spacing after icons - SVG + any element */
+[dir='rtl'] .flex svg + *,
+[dir='rtl'] .inline-flex svg + *,
+[dir='rtl'] .items-center svg + * {
+  margin-right: 8px !important;
+  margin-left: 0 !important;
+}
+
+/* Reset all mr-X classes in RTL */
+[dir='rtl'] .mr-1,
+[dir='rtl'] .mr-2,
+[dir='rtl'] .mr-3,
+[dir='rtl'] .mr-4,
+[dir='rtl'] .mr-5,
+[dir='rtl'] .mr-6 {
+  margin-right: 0 !important;
+  margin-left: 0.25rem !important; /* Small general spacing */
+}
+
+/* Apply proper margins based on size */
+[dir='rtl'] .mr-2 {
+  margin-left: 0.5rem !important;
+}
+[dir='rtl'] .mr-3 {
+  margin-left: 0.75rem !important;
+}
+[dir='rtl'] .mr-4 {
+  margin-left: 1rem !important;
+}
+[dir='rtl'] .mr-5 {
+  margin-left: 1.25rem !important;
+}
+[dir='rtl'] .mr-6 {
+  margin-left: 1.5rem !important;
+}
+
+/* Reset flex gap for RTL */
+[dir='rtl'] [class*='flex'] {
+  gap: inherit !important;
+}
+
+/* Navigation menu fixes */
+[dir='rtl'] .nav-link {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
+}
+
+[dir='rtl'] .nav-link svg {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+/* Fix for space utilities */
+[dir='rtl'] .space-x-1 > :not([hidden]) ~ :not([hidden]),
+[dir='rtl'] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+[dir='rtl'] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+[dir='rtl'] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1 !important; /* Reverse spacing */
+}
+
+/* Global icon box reset */
+[dir='rtl'] .rtl-icon-box,
+[dir='rtl']
+  [class*='bg-gradient-to-r'][class*='rounded-xl'][class*='flex items-center justify-center'],
+[dir='rtl']
+  [class*='bg-gradient-to-r'][class*='rounded-lg'][class*='flex items-center justify-center'],
+[dir='rtl']
+  [class*='flex-shrink-0'][class*='flex items-center justify-center'] {
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+  float: right !important;
+}
+
+/* Knowledge Hub-specific resets */
+[dir='rtl'] .rtl-icon-box.order-1 {
+  margin-right: 0 !important;
+  margin-left: 16px !important;
+  order: 0 !important; /* Override order in RTL */
+}
+
+/* Text alignment for Arabic headings */
+[dir='rtl'] h1.rs-arabic,
+[dir='rtl'] h2.rs-arabic,
+[dir='rtl'] h3.rs-arabic,
+[dir='rtl'] h4.rs-arabic,
+[dir='rtl'] h5.rs-arabic,
+[dir='rtl'] h6.rs-arabic,
+[dir='rtl'] p.rs-arabic {
+  text-align: right !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Syria page specific fixes */
+[dir='rtl']
+  .rs-section
+  .bg-white
+  div[class*='flex items-center justify-center'] {
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+  float: right !important;
+}
+
+/* Headings and paragraphs after icons - no fixed margins, use flex layout */
+[dir='rtl'] .rs-section .bg-white h3.rs-arabic,
+[dir='rtl'] .rs-section .bg-white p.rs-arabic {
+  text-align: right !important;
+  width: 100% !important;
+}
+
+/* Make all content containers flex for consistent alignment */
+[dir='rtl'] .rs-section .bg-white [class*='flex items-center'] {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  width: 100% !important;
+  align-items: flex-start !important; /* Align to top for better text flow */
+}
+
+/* Fix for icon containers with backgrounds */
+[dir='rtl'] div[class*='bg-gradient-to-r'] {
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+}
+
+/* Force RTL container for activity cards */
+[dir='rtl'] .rs-section .flex {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+/* Syria Page Specific Styling */
+[dir='rtl'] .rhizome-syria h1.rs-arabic,
+[dir='rtl'] .rhizome-syria h2.rs-arabic,
+[dir='rtl'] .rhizome-syria h3.rs-arabic,
+[dir='rtl'] .rhizome-syria h4.rs-arabic,
+[dir='rtl'] .rhizome-syria h5.rs-arabic,
+[dir='rtl'] .rhizome-syria h6.rs-arabic {
+  text-align: right !important;
+  width: 100% !important;
+  direction: rtl !important;
+  font-family: 'Noto Serif Arabic', 'Amiri', serif !important;
+  line-height: 1.6 !important;
+}
+
+[dir='rtl'] .rhizome-syria p.rs-arabic,
+[dir='rtl'] .rhizome-syria div.rs-arabic,
+[dir='rtl'] .rhizome-syria span.rs-arabic,
+[dir='rtl'] .rhizome-syria li.rs-arabic {
+  text-align: right !important;
+  width: 100% !important;
+  direction: rtl !important;
+  font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif !important;
+  line-height: 1.8 !important;
+}
+
+/* Fix for method/goal lists */
+[dir='rtl'] .rhizome-syria .flex-wrap {
+  text-align: right !important;
+  direction: rtl !important;
+  justify-content: flex-start !important;
+}
+
+[dir='rtl'] .rhizome-syria .flex-wrap > * {
+  text-align: right !important;
+}
+
+/* Force RTL layout for sections */
+[dir='rtl'] .rhizome-syria .grid,
+[dir='rtl'] .rhizome-syria .grid-cols-1,
+[dir='rtl'] .rhizome-syria .grid-cols-2,
+[dir='rtl'] .rhizome-syria .grid-cols-3 {
+  direction: rtl !important;
+}
+
+/* Style fixes for partner sections and quote sections */
+[dir='rtl'] .rhizome-syria .rs-arabic.partnership-text {
+  text-align: right !important;
+  padding: 1.5rem !important;
+  border-right: 4px solid rgba(255, 255, 255, 0.3) !important;
+  border-left: none !important;
+}
+
+/* Fix activity cards alignment in RTL */
+[dir='rtl'] .rhizome-syria .bg-white {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Extra spacing for Arabic text */
+[dir='rtl'] .rhizome-syria .rs-arabic {
+  letter-spacing: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Knowledge Hub RTL specific styling */
+.rtl-content {
+  text-align: right;
+  direction: rtl;
+  font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif;
+}
+
+.rtl-content h1,
+.rtl-content h2,
+.rtl-content h3,
+.rtl-content h4,
+.rtl-content h5,
+.rtl-content h6 {
+  font-family: 'Noto Serif Arabic', 'Amiri', serif;
+  text-align: right;
+}
+
+.rtl-content p,
+.rtl-content ul,
+.rtl-content ol {
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* Fix for RTL card layouts */
+[dir='rtl'] .card-content {
+  text-align: right;
+}
+
+/* RTL Board Member Cards */
+[dir='rtl'] .board-card {
+  text-align: right;
+}
+
+/* Ensure proper grid alignment in RTL */
+[dir='rtl'] .grid {
+  direction: rtl;
+}
+
+/* Improve Knowledge Hub translation overlay */
+.translation-overlay {
+  background-color: rgba(79, 70, 229, 0.9);
+  backdrop-filter: blur(4px);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.translation-overlay h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.translation-overlay p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Fix padding and spacing in RTL */
+[dir='rtl'] .px-4 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}

@@ -1,0 +1,393 @@
+/* Rhizome Syria Visual Identity System */
+
+/* Color Palette - Extracted from Rhizome Syria Logo */
+:root {
+  /* Primary Colors from Logo */
+  --rs-primary-purple: #6b46c1;
+  --rs-primary-blue: #0ea5e9;
+  --rs-primary-orange: #fb923c;
+  --rs-primary-red: #ef4444;
+  --rs-primary-yellow: #f59e0b;
+
+  /* Secondary Colors */
+  --rs-deep-blue: #1e3a8a;
+  --rs-teal: #0d9488;
+  --rs-coral: #f87171;
+  --rs-amber: #fbbf24;
+
+  /* Neutral Colors */
+  --rs-charcoal: #374151;
+  --rs-warm-gray: #6b7280;
+  --rs-light-gray: #f3f4f6;
+  --rs-cream: #fffbeb;
+  --rs-white: #ffffff;
+
+  /* Gradient Combinations */
+  --rs-gradient-primary: linear-gradient(
+    135deg,
+    var(--rs-primary-purple),
+    var(--rs-primary-blue)
+  );
+  --rs-gradient-warm: linear-gradient(
+    135deg,
+    var(--rs-primary-orange),
+    var(--rs-primary-red)
+  );
+  --rs-gradient-cool: linear-gradient(
+    135deg,
+    var(--rs-primary-blue),
+    var(--rs-teal)
+  );
+  --rs-gradient-sunset: linear-gradient(
+    135deg,
+    var(--rs-primary-yellow),
+    var(--rs-primary-orange),
+    var(--rs-primary-red)
+  );
+  --rs-gradient-dawn: linear-gradient(135deg, #6ee7b7, #3b82f6, #9333ea);
+
+  /* Typography */
+  --rs-font-primary: 'Noto Sans Arabic', 'Poppins', sans-serif;
+  --rs-font-heading: 'Playfair Display', 'Noto Serif Arabic', serif;
+  --rs-font-accent: 'Amiri', 'Noto Sans Arabic', serif;
+
+  /* Spacing System */
+  --rs-space-xs: 0.25rem;
+  --rs-space-sm: 0.5rem;
+  --rs-space-md: 1rem;
+  --rs-space-lg: 1.5rem;
+  --rs-space-xl: 2rem;
+  --rs-space-2xl: 3rem;
+  --rs-space-3xl: 4rem;
+
+  /* Border Radius */
+  --rs-radius-sm: 0.375rem;
+  --rs-radius-md: 0.5rem;
+  --rs-radius-lg: 0.75rem;
+  --rs-radius-xl: 1rem;
+  --rs-radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --rs-shadow-sm: 0 1px 2px 0 rgba(107, 70, 193, 0.05);
+  --rs-shadow-md: 0 4px 6px -1px rgba(107, 70, 193, 0.1);
+  --rs-shadow-lg: 0 10px 15px -3px rgba(107, 70, 193, 0.1);
+  --rs-shadow-xl: 0 20px 25px -5px rgba(107, 70, 193, 0.1);
+
+  /* Cultural Pattern Colors */
+  --rs-pattern-gold: #d97706;
+  --rs-pattern-burgundy: #991b1b;
+  --rs-pattern-emerald: #059669;
+}
+
+/* Rhizome Syria Base Styles */
+.rhizome-syria {
+  font-family: var(--rs-font-primary);
+  color: var(--rs-charcoal);
+  line-height: 1.6;
+}
+
+/* Typography System */
+.rs-heading-1 {
+  font-family: var(--rs-font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: var(--rs-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rs-heading-2 {
+  font-family: var(--rs-font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--rs-primary-purple);
+}
+
+.rs-heading-3 {
+  font-family: var(--rs-font-primary);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rs-deep-blue);
+}
+
+.rs-body-large {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--rs-warm-gray);
+}
+
+.rs-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--rs-charcoal);
+}
+
+.rs-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--rs-warm-gray);
+}
+
+/* Arabic Typography */
+.rs-arabic {
+  font-family: var(--rs-font-accent);
+  direction: rtl;
+  text-align: right;
+}
+
+.rs-arabic .rs-heading-1,
+.rs-arabic .rs-heading-2,
+.rs-arabic .rs-heading-3 {
+  font-family: 'Noto Serif Arabic', serif;
+}
+
+/* Component Styles */
+.rs-card {
+  background: var(--rs-white);
+  border-radius: var(--rs-radius-xl);
+  box-shadow: var(--rs-shadow-md);
+  padding: var(--rs-space-xl);
+  border: 1px solid rgba(107, 70, 193, 0.1);
+  transition: all 0.3s ease;
+}
+
+.rs-card:hover {
+  box-shadow: var(--rs-shadow-xl);
+  transform: translateY(-4px);
+}
+
+.rs-button-primary {
+  background: var(--rs-gradient-primary);
+  color: var(--rs-white);
+  padding: var(--rs-space-md) var(--rs-space-xl);
+  border-radius: var(--rs-radius-lg);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--rs-shadow-md);
+}
+
+.rs-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rs-shadow-lg);
+}
+
+.rs-button-secondary {
+  background: transparent;
+  color: var(--rs-primary-purple);
+  padding: var(--rs-space-md) var(--rs-space-xl);
+  border: 2px solid var(--rs-primary-purple);
+  border-radius: var(--rs-radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rs-button-secondary:hover {
+  background: var(--rs-primary-purple);
+  color: var(--rs-white);
+}
+
+/* Layout Components */
+.rs-header {
+  background: var(--rs-gradient-primary);
+  color: var(--rs-white);
+  padding: var(--rs-space-lg) 0;
+}
+
+.rs-hero {
+  background: var(--rs-gradient-sunset);
+  color: var(--rs-white);
+  padding: var(--rs-space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    repeat;
+  opacity: 0.1;
+}
+
+.rs-section {
+  padding: var(--rs-space-3xl) 0;
+}
+
+.rs-section-alt {
+  background: var(--rs-cream);
+  padding: var(--rs-space-3xl) 0;
+}
+
+/* Cultural Pattern Elements */
+.rs-pattern-border {
+  border-top: 4px solid;
+  border-image: var(--rs-gradient-warm) 1;
+  position: relative;
+}
+
+.rs-pattern-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--rs-pattern-gold) 0px,
+    var(--rs-pattern-gold) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rs-heading-1 {
+    font-size: 2.25rem;
+  }
+
+  .rs-heading-2 {
+    font-size: 1.875rem;
+  }
+
+  .rs-heading-3 {
+    font-size: 1.5rem;
+  }
+
+  .rs-card {
+    padding: var(--rs-space-lg);
+  }
+
+  .rs-hero {
+    padding: var(--rs-space-2xl) 0;
+  }
+}
+
+/* Animation Classes */
+.rs-fade-in {
+  animation: rsFadeIn 0.8s ease-out;
+}
+
+.rs-slide-up {
+  animation: rsSlideUp 0.6s ease-out;
+}
+
+.rs-scale-in {
+  animation: rsScaleIn 0.5s ease-out;
+}
+
+@keyframes rsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rsSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rsScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Logo Integration */
+.rs-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--rs-space-md);
+}
+
+.rs-logo-text {
+  font-family: var(--rs-font-heading);
+  font-weight: 700;
+  background: var(--rs-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Syria Team Grid */
+.rs-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--rs-space-xl);
+}
+
+.rs-team-card {
+  background: var(--rs-white);
+  border-radius: var(--rs-radius-xl);
+  box-shadow: var(--rs-shadow-md);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.rs-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--rs-shadow-xl);
+}
+
+.rs-team-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.rs-team-no-image {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--rs-primary-purple),
+    var(--rs-primary-blue)
+  );
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: var(--rs-font-heading);
+}
+
+.rs-team-info {
+  padding: var(--rs-space-md);
+}
+
+.rs-team-role {
+  color: var(--rs-primary-purple);
+  font-weight: 600;
+  margin-bottom: var(--rs-space-sm);
+}

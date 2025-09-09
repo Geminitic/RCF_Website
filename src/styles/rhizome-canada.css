@@ -1,0 +1,432 @@
+/* Rhizome Canada Visual Identity System */
+
+/* Color Palette - Extracted from Rhizome Canada Logo */
+:root {
+  /* Primary Colors from Logo */
+  --rc-primary-teal: #0D9488;
+  --rc-primary-emerald: #059669;
+  --rc-primary-forest: #064E3B;
+  --rc-accent-mint: #6EE7B7;
+  
+  /* Secondary Colors */
+  --rc-deep-teal: #134E4A;
+  --rc-sage: #6B7280;
+  --rc-pine: #1F2937;
+  --rc-seafoam: #A7F3D0;
+  
+  /* Neutral Colors */
+  --rc-charcoal: #374151;
+  --rc-slate: #64748B;
+  --rc-light-gray: #F8FAFC;
+  --rc-snow: #FEFEFE;
+  --rc-white: #FFFFFF;
+  
+  /* Canadian-inspired Colors */
+  --rc-maple-red: #DC2626;
+  --rc-arctic-blue: #3B82F6;
+  --rc-golden-wheat: #F59E0B;
+  
+  /* Gradient Combinations */
+  --rc-gradient-primary: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-primary-emerald));
+  --rc-gradient-forest: linear-gradient(135deg, var(--rc-primary-forest), var(--rc-primary-teal));
+  --rc-gradient-nature: linear-gradient(135deg, var(--rc-primary-emerald), var(--rc-accent-mint));
+  --rc-gradient-canadian: linear-gradient(135deg, var(--rc-primary-teal), var(--rc-maple-red));
+  
+  /* Typography */
+  --rc-font-primary: 'Inter', 'Poppins', sans-serif;
+  --rc-font-heading: 'Playfair Display', serif;
+  --rc-font-accent: 'Montserrat', sans-serif;
+  
+  /* Spacing System */
+  --rc-space-xs: 0.25rem;
+  --rc-space-sm: 0.5rem;
+  --rc-space-md: 1rem;
+  --rc-space-lg: 1.5rem;
+  --rc-space-xl: 2rem;
+  --rc-space-2xl: 3rem;
+  --rc-space-3xl: 4rem;
+  
+  /* Border Radius */
+  --rc-radius-sm: 0.25rem;
+  --rc-radius-md: 0.5rem;
+  --rc-radius-lg: 0.75rem;
+  --rc-radius-xl: 1rem;
+  --rc-radius-2xl: 1.5rem;
+  
+  /* Shadows */
+  --rc-shadow-sm: 0 1px 2px 0 rgba(13, 148, 136, 0.05);
+  --rc-shadow-md: 0 4px 6px -1px rgba(13, 148, 136, 0.1);
+  --rc-shadow-lg: 0 10px 15px -3px rgba(13, 148, 136, 0.1);
+  --rc-shadow-xl: 0 20px 25px -5px rgba(13, 148, 136, 0.1);
+  
+  /* Nature-inspired Patterns */
+  --rc-pattern-leaf: #10B981;
+  --rc-pattern-bark: #92400E;
+  --rc-pattern-sky: #0EA5E9;
+}
+
+/* Rhizome Canada Base Styles */
+.rhizome-canada {
+  font-family: var(--rc-font-primary);
+  color: var(--rc-charcoal);
+  line-height: 1.6;
+}
+
+/* Typography System */
+.rc-heading-1 {
+  font-family: var(--rc-font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: var(--rc-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rc-heading-2 {
+  font-family: var(--rc-font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--rc-primary-teal);
+}
+
+.rc-heading-3 {
+  font-family: var(--rc-font-accent);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rc-deep-teal);
+}
+
+.rc-body-large {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--rc-slate);
+}
+
+.rc-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--rc-charcoal);
+}
+
+.rc-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--rc-slate);
+}
+
+/* Component Styles */
+.rc-card {
+  background: var(--rc-white);
+  border-radius: var(--rc-radius-xl);
+  box-shadow: var(--rc-shadow-md);
+  padding: var(--rc-space-xl);
+  border: 1px solid rgba(13, 148, 136, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--rc-gradient-primary);
+}
+
+.rc-card:hover {
+  box-shadow: var(--rc-shadow-xl);
+  transform: translateY(-4px);
+}
+
+.rc-button-primary {
+  background: var(--rc-gradient-primary);
+  color: var(--rc-white);
+  padding: var(--rc-space-md) var(--rc-space-xl);
+  border-radius: var(--rc-radius-lg);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--rc-shadow-md);
+  font-family: var(--rc-font-accent);
+}
+
+.rc-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rc-shadow-lg);
+}
+
+.rc-button-secondary {
+  background: transparent;
+  color: var(--rc-primary-teal);
+  padding: var(--rc-space-md) var(--rc-space-xl);
+  border: 2px solid var(--rc-primary-teal);
+  border-radius: var(--rc-radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--rc-font-accent);
+}
+
+.rc-button-secondary:hover {
+  background: var(--rc-primary-teal);
+  color: var(--rc-white);
+}
+
+/* Layout Components */
+.rc-header {
+  background: var(--rc-gradient-forest);
+  color: var(--rc-white);
+  padding: var(--rc-space-lg) 0;
+}
+
+.rc-hero {
+  background: var(--rc-gradient-nature);
+  color: var(--rc-white);
+  padding: var(--rc-space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rc-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0 5.5 4.5 10 10 10s10-4.5 10-10-4.5-10-10-10-10 4.5-10 10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.1;
+}
+
+.rc-section {
+  padding: var(--rc-space-3xl) 0;
+}
+
+.rc-section-alt {
+  background: var(--rc-light-gray);
+  padding: var(--rc-space-3xl) 0;
+}
+
+/* Canadian-inspired Elements */
+.rc-maple-accent {
+  position: relative;
+}
+
+.rc-maple-accent::before {
+  content: '🍁';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.rc-mountain-border {
+  border-top: 4px solid;
+  border-image: var(--rc-gradient-forest) 1;
+  position: relative;
+}
+
+.rc-mountain-border::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--rc-primary-teal) 0px,
+    var(--rc-primary-teal) 15px,
+    var(--rc-primary-emerald) 15px,
+    var(--rc-primary-emerald) 30px
+  );
+  clip-path: polygon(0 100%, 10% 0%, 20% 100%, 30% 0%, 40% 100%, 50% 0%, 60% 100%, 70% 0%, 80% 100%, 90% 0%, 100% 100%);
+}
+
+/* Product Showcase Styles */
+.rc-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--rc-space-xl);
+  margin: var(--rc-space-2xl) 0;
+}
+
+.rc-product-card {
+  background: var(--rc-white);
+  border-radius: var(--rc-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--rc-shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.rc-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--rc-shadow-xl);
+}
+
+.rc-product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--rc-primary-teal);
+}
+
+.rc-product-content {
+  padding: var(--rc-space-xl);
+}
+
+.rc-product-title {
+  font-family: var(--rc-font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--rc-primary-teal);
+  margin-bottom: var(--rc-space-md);
+}
+
+.rc-product-description {
+  color: var(--rc-slate);
+  margin-bottom: var(--rc-space-lg);
+}
+
+.rc-product-price {
+  font-family: var(--rc-font-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--rc-primary-forest);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rc-heading-1 {
+    font-size: 2.25rem;
+  }
+  
+  .rc-heading-2 {
+    font-size: 1.875rem;
+  }
+  
+  .rc-heading-3 {
+    font-size: 1.5rem;
+  }
+  
+  .rc-card {
+    padding: var(--rc-space-lg);
+  }
+  
+  .rc-hero {
+    padding: var(--rc-space-2xl) 0;
+  }
+  
+  .rc-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation Classes */
+.rc-fade-in {
+  animation: rcFadeIn 0.8s ease-out;
+}
+
+.rc-slide-up {
+  animation: rcSlideUp 0.6s ease-out;
+}
+
+.rc-scale-in {
+  animation: rcScaleIn 0.5s ease-out;
+}
+
+.rc-float {
+  animation: rcFloat 3s ease-in-out infinite;
+}
+
+@keyframes rcFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rcSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rcScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rcFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Logo Integration */
+.rc-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--rc-space-md);
+}
+
+.rc-logo-text {
+  font-family: var(--rc-font-heading);
+  font-weight: 700;
+  background: var(--rc-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation Styles */
+.rc-nav {
+  background: var(--rc-white);
+  box-shadow: var(--rc-shadow-md);
+  border-bottom: 3px solid var(--rc-primary-teal);
+}
+
+.rc-nav-item {
+  color: var(--rc-charcoal);
+  font-weight: 500;
+  padding: var(--rc-space-md) var(--rc-space-lg);
+  border-radius: var(--rc-radius-md);
+  transition: all 0.3s ease;
+}
+
+.rc-nav-item:hover {
+  background: var(--rc-gradient-nature);
+  color: var(--rc-white);
+}
+
+.rc-nav-item.active {
+  background: var(--rc-primary-teal);
+  color: var(--rc-white);
+}

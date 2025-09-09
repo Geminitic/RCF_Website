@@ -1,0 +1,148 @@
+/* Golden Ratio Organization */
+:root {
+  --gr-phi: 1.618;
+
+  /* Base size (e.g., base font size) */
+  --gr-base: 1rem; /* 16px */
+
+  /* --- Spacing --- */
+  /* Scaled down from base */
+  --gr-space-xxs: calc(
+    var(--gr-base) / (var(--gr-phi) * var(--gr-phi) * var(--gr-phi))
+  ); /* ~0.236rem */
+  --gr-space-xs: calc(
+    var(--gr-base) / (var(--gr-phi) * var(--gr-phi))
+  ); /* ~0.382rem */
+  --gr-space-sm: calc(var(--gr-base) / var(--gr-phi)); /* ~0.618rem */
+
+  /* Base space */
+  --gr-space-md: var(--gr-base); /* 1rem */
+
+  /* Scaled up from base */
+  --gr-space-lg: calc(var(--gr-base) * var(--gr-phi)); /* ~1.618rem */
+  --gr-space-xl: calc(
+    var(--gr-base) * var(--gr-phi) * var(--gr-phi)
+  ); /* ~2.618rem */
+  --gr-space-xxl: calc(
+    var(--gr-base) * var(--gr-phi) * var(--gr-phi) * var(--gr-phi)
+  ); /* ~4.236rem */
+
+  /* --- Typography --- */
+  --gr-text-sm: calc(
+    var(--gr-base) / var(--gr-phi)
+  ); /* ~0.618rem for smaller text */
+  --gr-text-base: var(--gr-base); /* 1rem */
+  --gr-text-lg: calc(var(--gr-base) * var(--gr-phi)); /* ~1.618rem for h3/h4 */
+  --gr-text-xl: calc(
+    var(--gr-base) * var(--gr-phi) * var(--gr-phi)
+  ); /* ~2.618rem for h2 */
+  --gr-text-xxl: calc(
+    var(--gr-base) * var(--gr-phi) * var(--gr-phi) * var(--gr-phi)
+  ); /* ~4.236rem for h1 */
+
+  /* --- Layout --- */
+  /* 61.8% / 38.2% */
+  --gr-main-width: 61.8%;
+  --gr-sidebar-width: 38.2%;
+}
+
+/* Utility Classes for Golden Ratio Spacing */
+.gr-mt-xxs {
+  margin-top: var(--gr-space-xxs);
+}
+.gr-mt-xs {
+  margin-top: var(--gr-space-xs);
+}
+.gr-mt-sm {
+  margin-top: var(--gr-space-sm);
+}
+.gr-mt-md {
+  margin-top: var(--gr-space-md);
+}
+.gr-mt-lg {
+  margin-top: var(--gr-space-lg);
+}
+.gr-mt-xl {
+  margin-top: var(--gr-space-xl);
+}
+.gr-mt-xxl {
+  margin-top: var(--gr-space-xxl);
+}
+
+.gr-mb-xxs {
+  margin-bottom: var(--gr-space-xxs);
+}
+.gr-mb-xs {
+  margin-bottom: var(--gr-space-xs);
+}
+.gr-mb-sm {
+  margin-bottom: var(--gr-space-sm);
+}
+.gr-mb-md {
+  margin-bottom: var(--gr-space-md);
+}
+.gr-mb-lg {
+  margin-bottom: var(--gr-space-lg);
+}
+.gr-mb-xl {
+  margin-bottom: var(--gr-space-xl);
+}
+.gr-mb-xxl {
+  margin-bottom: var(--gr-space-xxl);
+}
+
+.gr-py-lg {
+  padding-top: var(--gr-space-lg);
+  padding-bottom: var(--gr-space-lg);
+}
+.gr-py-xl {
+  padding-top: var(--gr-space-xl);
+  padding-bottom: var(--gr-space-xl);
+}
+.gr-py-xxl {
+  padding-top: var(--gr-space-xxl);
+  padding-bottom: var(--gr-space-xxl);
+}
+
+.gr-px-lg {
+  padding-left: var(--gr-space-lg);
+  padding-right: var(--gr-space-lg);
+}
+.gr-px-xl {
+  padding-left: var(--gr-space-xl);
+  padding-right: var(--gr-space-xl);
+}
+.gr-px-xxl {
+  padding-left: var(--gr-space-xxl);
+  padding-right: var(--gr-space-xxl);
+}
+
+/* Utility Classes for Golden Ratio Typography */
+.gr-text-sm {
+  font-size: var(--gr-text-sm);
+}
+.gr-text-base {
+  font-size: var(--gr-text-base);
+}
+.gr-text-lg {
+  font-size: var(--gr-text-lg);
+}
+.gr-text-xl {
+  font-size: var(--gr-text-xl);
+}
+.gr-text-xxl {
+  font-size: var(--gr-text-xxl);
+}
+
+.section-padding {
+  padding-top: var(--gr-space-xxl);
+  padding-bottom: var(--gr-space-xxl);
+}
+
+.container-gr {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gr-space-lg);
+  padding-right: var(--gr-space-lg);
+}

@@ -1,0 +1,61 @@
+/* Custom button styles with enhanced contrast */
+.hero-button-secondary {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 700;
+  border: 2px solid white;
+  border-radius: var(--rs-radius-lg);
+  padding: var(--rs-space-md) var(--rs-space-xl);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.hero-button-secondary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.25)
+  );
+  z-index: -1;
+}
+
+.hero-button-secondary:hover {
+  background: white;
+  color: var(--rs-primary-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-shadow: none;
+}
+
+.hero-button-primary {
+  background: var(--rs-gradient-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--rs-radius-lg);
+  padding: var(--rs-space-md) var(--rs-space-xl);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    var(--rs-primary-purple),
+    var(--rs-deep-blue)
+  );
+}
