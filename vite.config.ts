@@ -19,6 +19,8 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 600,
     rollupOptions: {
+      // Ensure Rollup platform-specific binaries are never bundled
+      external: [/^@rollup\/rollup-/],
       // Remove manualChunks to let Vite handle vendor splitting automatically
     },
   },
