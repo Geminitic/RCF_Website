@@ -1,0 +1,712 @@
+[
+  {
+    "name": "Ad Darbāsīyah",
+    "x": 289,
+    "y": 8
+  },
+  {
+    "name": "Al Ḩasakah",
+    "x": 295,
+    "y": 53
+  },
+  {
+    "name": "Al Mālikīyah",
+    "x": 377,
+    "y": 0
+  },
+  {
+    "name": "Al Qāmishlī",
+    "x": 324,
+    "y": 10
+  },
+  {
+    "name": "Al-Malikiyah District",
+    "x": 364,
+    "y": 19
+  },
+  {
+    "name": "Amude",
+    "x": 306,
+    "y": 6
+  },
+  {
+    "name": "Al-Thawrah District",
+    "x": 152,
+    "y": 108
+  },
+  {
+    "name": "Ar Raqqah",
+    "x": 192,
+    "y": 96
+  },
+  {
+    "name": "Ar-Raqqah District",
+    "x": 194,
+    "y": 103
+  },
+  {
+    "name": "Ath Thawrah",
+    "x": 164,
+    "y": 105
+  },
+  {
+    "name": "Tall Abyaḑ",
+    "x": 188,
+    "y": 38
+  },
+  {
+    "name": "Tell Abyad District",
+    "x": 204,
+    "y": 55
+  },
+  {
+    "name": "‘Afrīn",
+    "x": 64,
+    "y": 52
+  },
+  {
+    "name": "‘Ayn al ‘Arab",
+    "x": 153,
+    "y": 22
+  },
+  {
+    "name": "Afrin District",
+    "x": 60,
+    "y": 49
+  },
+  {
+    "name": "Al Atārib",
+    "x": 62,
+    "y": 82
+  },
+  {
+    "name": "Al Bāb",
+    "x": 103,
+    "y": 63
+  },
+  {
+    "name": "Al-Bab District",
+    "x": 104,
+    "y": 68
+  },
+  {
+    "name": "Aleppo",
+    "x": 82,
+    "y": 77
+  },
+  {
+    "name": "As Safīrah",
+    "x": 94,
+    "y": 86
+  },
+  {
+    "name": "Azaz District",
+    "x": 83,
+    "y": 53
+  },
+  {
+    "name": "Dayr Ḩāfir",
+    "x": 114,
+    "y": 80
+  },
+  {
+    "name": "I‘zāz",
+    "x": 75,
+    "y": 46
+  },
+  {
+    "name": "Jarābulus",
+    "x": 132,
+    "y": 28
+  },
+  {
+    "name": "Kafr Şaghīr",
+    "x": 87,
+    "y": 69
+  },
+  {
+    "name": "Khanāşir",
+    "x": 102,
+    "y": 110
+  },
+  {
+    "name": "Manbij",
+    "x": 129,
+    "y": 51
+  },
+  {
+    "name": "Manbij District",
+    "x": 127,
+    "y": 87
+  },
+  {
+    "name": "Mount Simeon District",
+    "x": 77,
+    "y": 92
+  },
+  {
+    "name": "Nubl",
+    "x": 72,
+    "y": 63
+  },
+  {
+    "name": "Şūrān",
+    "x": 85,
+    "y": 48
+  },
+  {
+    "name": "Tādif",
+    "x": 104,
+    "y": 65
+  },
+  {
+    "name": "Tall Rif‘at",
+    "x": 78,
+    "y": 55
+  },
+  {
+    "name": "As-Suwayda",
+    "x": 46,
+    "y": 351
+  },
+  {
+    "name": "As-Suwayda District",
+    "x": 64,
+    "y": 345
+  },
+  {
+    "name": "Şalākhid",
+    "x": 47,
+    "y": 338
+  },
+  {
+    "name": "Şalkhad",
+    "x": 55,
+    "y": 367
+  },
+  {
+    "name": "Salkhad District",
+    "x": 67,
+    "y": 366
+  },
+  {
+    "name": "Shahbā",
+    "x": 50,
+    "y": 339
+  },
+  {
+    "name": "Shahba District",
+    "x": 55,
+    "y": 325
+  },
+  {
+    "name": "Damascus",
+    "x": 30,
+    "y": 288
+  },
+  {
+    "name": "Al Ḩarāk",
+    "x": 31,
+    "y": 348
+  },
+  {
+    "name": "Al Muzayrīb",
+    "x": 14,
+    "y": 351
+  },
+  {
+    "name": "Al-Sanamayn District",
+    "x": 29,
+    "y": 318
+  },
+  {
+    "name": "Aş Şanamayn",
+    "x": 23,
+    "y": 322
+  },
+  {
+    "name": "Ash Shaykh Miskīn",
+    "x": 22,
+    "y": 341
+  },
+  {
+    "name": "Buşrá ash Shām",
+    "x": 41,
+    "y": 366
+  },
+  {
+    "name": "Dar‘ā",
+    "x": 19,
+    "y": 358
+  },
+  {
+    "name": "Ghabāghib",
+    "x": 26,
+    "y": 314
+  },
+  {
+    "name": "Inkhil",
+    "x": 20,
+    "y": 327
+  },
+  {
+    "name": "Izra District",
+    "x": 22,
+    "y": 336
+  },
+  {
+    "name": "Izra‘",
+    "x": 28,
+    "y": 338
+  },
+  {
+    "name": "Jāsim",
+    "x": 16,
+    "y": 329
+  },
+  {
+    "name": "Nawá",
+    "x": 15,
+    "y": 337
+  },
+  {
+    "name": "Ţafas",
+    "x": 16,
+    "y": 349
+  },
+  {
+    "name": "Tasīl",
+    "x": 11,
+    "y": 341
+  },
+  {
+    "name": "Al Mayādīn",
+    "x": 277,
+    "y": 169
+  },
+  {
+    "name": "Ālbū Kamāl",
+    "x": 305,
+    "y": 214
+  },
+  {
+    "name": "Deir ez-Zor",
+    "x": 259,
+    "y": 145
+  },
+  {
+    "name": "Hajīn",
+    "x": 300,
+    "y": 195
+  },
+  {
+    "name": "Subaykhān",
+    "x": 286,
+    "y": 183
+  },
+  {
+    "name": "Al-Salamiyah District",
+    "x": 107,
+    "y": 160
+  },
+  {
+    "name": "As Salamīyah",
+    "x": 75,
+    "y": 170
+  },
+  {
+    "name": "As Suqaylibīyah",
+    "x": 36,
+    "y": 142
+  },
+  {
+    "name": "Ḩalfāyā",
+    "x": 49,
+    "y": 151
+  },
+  {
+    "name": "Hama District",
+    "x": 80,
+    "y": 149
+  },
+  {
+    "name": "Ḩamāh",
+    "x": 58,
+    "y": 161
+  },
+  {
+    "name": "Kafr Zaytā",
+    "x": 48,
+    "y": 142
+  },
+  {
+    "name": "Maşyāf",
+    "x": 33,
+    "y": 166
+  },
+  {
+    "name": "Masyaf District",
+    "x": 33,
+    "y": 163
+  },
+  {
+    "name": "Mūrak",
+    "x": 54,
+    "y": 141
+  },
+  {
+    "name": "Souran",
+    "x": 57,
+    "y": 148
+  },
+  {
+    "name": "Tall Salḩab",
+    "x": 35,
+    "y": 151
+  },
+  {
+    "name": "Ţayyibat al Imām",
+    "x": 55,
+    "y": 150
+  },
+  {
+    "name": "Tremseh",
+    "x": 42,
+    "y": 150
+  },
+  {
+    "name": "Al Ghanţū",
+    "x": 54,
+    "y": 185
+  },
+  {
+    "name": "Al Qaryatayn",
+    "x": 86,
+    "y": 232
+  },
+  {
+    "name": "Al Quşayr",
+    "x": 47,
+    "y": 210
+  },
+  {
+    "name": "Al-Rastan District",
+    "x": 58,
+    "y": 181
+  },
+  {
+    "name": "Ar Rastan",
+    "x": 56,
+    "y": 177
+  },
+  {
+    "name": "Hisya",
+    "x": 58,
+    "y": 217
+  },
+  {
+    "name": "Homs",
+    "x": 56,
+    "y": 192
+  },
+  {
+    "name": "Kafr Lāhā",
+    "x": 42,
+    "y": 179
+  },
+  {
+    "name": "Mukharram al Fawqānī",
+    "x": 77,
+    "y": 186
+  },
+  {
+    "name": "Şadad",
+    "x": 68,
+    "y": 225
+  },
+  {
+    "name": "Tadmur",
+    "x": 148,
+    "y": 205
+  },
+  {
+    "name": "Tadmur District",
+    "x": 170,
+    "y": 216
+  },
+  {
+    "name": "Tallbīsah",
+    "x": 56,
+    "y": 184
+  },
+  {
+    "name": "Tallkalakh",
+    "x": 28,
+    "y": 197
+  },
+  {
+    "name": "Ad Dānā",
+    "x": 58,
+    "y": 76
+  },
+  {
+    "name": "Arīḩā",
+    "x": 49,
+    "y": 107
+  },
+  {
+    "name": "Armanāz",
+    "x": 42,
+    "y": 86
+  },
+  {
+    "name": "Binnish",
+    "x": 55,
+    "y": 96
+  },
+  {
+    "name": "Darkūsh",
+    "x": 36,
+    "y": 93
+  },
+  {
+    "name": "Harem District",
+    "x": 46,
+    "y": 81
+  },
+  {
+    "name": "Ḩārim",
+    "x": 43,
+    "y": 76
+  },
+  {
+    "name": "Idlib",
+    "x": 50,
+    "y": 98
+  },
+  {
+    "name": "Jisr al-Shughur District",
+    "x": 32,
+    "y": 102
+  },
+  {
+    "name": "Jisr ash Shughūr",
+    "x": 32,
+    "y": 107
+  },
+  {
+    "name": "Kafr Takhārīm",
+    "x": 43,
+    "y": 83
+  },
+  {
+    "name": "Kafranbel",
+    "x": 46,
+    "y": 123
+  },
+  {
+    "name": "Khān Shaykhūn",
+    "x": 51,
+    "y": 136
+  },
+  {
+    "name": "Ma‘arratmişrīn",
+    "x": 52,
+    "y": 92
+  },
+  {
+    "name": "Maarrat al-Nu'man District",
+    "x": 60,
+    "y": 129
+  },
+  {
+    "name": "Salqīn",
+    "x": 39,
+    "y": 82
+  },
+  {
+    "name": "Sarāqib",
+    "x": 60,
+    "y": 103
+  },
+  {
+    "name": "Sarmīn",
+    "x": 56,
+    "y": 100
+  },
+  {
+    "name": "Taftanāz",
+    "x": 59,
+    "y": 93
+  },
+  {
+    "name": "Al-Haffah District",
+    "x": 19,
+    "y": 124
+  },
+  {
+    "name": "Jablah",
+    "x": 8,
+    "y": 143
+  },
+  {
+    "name": "Jableh District",
+    "x": 15,
+    "y": 148
+  },
+  {
+    "name": "Kassab",
+    "x": 12,
+    "y": 98
+  },
+  {
+    "name": "Latakia",
+    "x": 0,
+    "y": 129
+  },
+  {
+    "name": "Latakia District",
+    "x": 9,
+    "y": 114
+  },
+  {
+    "name": "Qardaha District",
+    "x": 18,
+    "y": 140
+  },
+  {
+    "name": "Şlinfah",
+    "x": 24,
+    "y": 124
+  },
+  {
+    "name": "Al Qunayţirah",
+    "x": 2,
+    "y": 318
+  },
+  {
+    "name": "‘Irbīn",
+    "x": 34,
+    "y": 286
+  },
+  {
+    "name": "Al Kiswah",
+    "x": 27,
+    "y": 300
+  },
+  {
+    "name": "Al Quţayfah",
+    "x": 48,
+    "y": 270
+  },
+  {
+    "name": "Al-Zabadani District",
+    "x": 19,
+    "y": 272
+  },
+  {
+    "name": "An Nabk",
+    "x": 56,
+    "y": 248
+  },
+  {
+    "name": "At Tall",
+    "x": 31,
+    "y": 280
+  },
+  {
+    "name": "Az Zabadānī",
+    "x": 18,
+    "y": 271
+  },
+  {
+    "name": "Dārayyā",
+    "x": 26,
+    "y": 292
+  },
+  {
+    "name": "Dayr al ‘Aşāfīr",
+    "x": 38,
+    "y": 292
+  },
+  {
+    "name": "Douma",
+    "x": 36,
+    "y": 283
+  },
+  {
+    "name": "Ḩarastā",
+    "x": 34,
+    "y": 284
+  },
+  {
+    "name": "Jaramānā",
+    "x": 33,
+    "y": 290
+  },
+  {
+    "name": "Jayrūd",
+    "x": 56,
+    "y": 265
+  },
+  {
+    "name": "Ma‘lūlā",
+    "x": 45,
+    "y": 262
+  },
+  {
+    "name": "Medaya",
+    "x": 19,
+    "y": 274
+  },
+  {
+    "name": "Qārah",
+    "x": 57,
+    "y": 237
+  },
+  {
+    "name": "Qaţanā",
+    "x": 17,
+    "y": 294
+  },
+  {
+    "name": "Şaydnāyā",
+    "x": 35,
+    "y": 274
+  },
+  {
+    "name": "Yabrūd",
+    "x": 52,
+    "y": 252
+  },
+  {
+    "name": "Ad Duraykīsh",
+    "x": 21,
+    "y": 179
+  },
+  {
+    "name": "Bāniyās",
+    "x": 9,
+    "y": 157
+  },
+  {
+    "name": "Kaff al-Jaa",
+    "x": 25,
+    "y": 164
+  },
+  {
+    "name": "Safita District",
+    "x": 20,
+    "y": 186
+  },
+  {
+    "name": "Satita",
+    "x": 20,
+    "y": 185
+  },
+  {
+    "name": "Tartouss",
+    "x": 6,
+    "y": 180
+  }
+]
