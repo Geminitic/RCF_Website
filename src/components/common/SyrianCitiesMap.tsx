@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import syriaDots from '../../data/syria_dots.json';
+import syrianCities from '../../data/syrian_cities.json';
 
 const width = 378;
 const height = 368;
@@ -21,9 +22,29 @@ const SyrianCitiesMap: React.FC = () => {
       .style('top', 0)
       .style('left', 0);
 
-    const dots = (syriaDots as { x: number; y: number }[]).map((d, i) => ({
-      ...d,
-      name: `Town ${i + 1}`,
+    const rawDots = syriaDots as { x: number; y: number }[];
+    const dots = rawDots
+      .filter(d => d.x >= 15 && d.x <= 363 && d.y >= 15 && d.y <= 353)
+      .map((d, i) => ({
+        ...d,
+        name: `Town ${i + 1}`,
+      }));
+
+    const cityLatRange = d3.extent(syrianCities, c => c.lat) as [number, number];
+    const cityLngRange = d3.extent(syrianCities, c => c.lng) as [number, number];
+    const xScale = d3
+      .scaleLinear()
+      .domain(cityLngRange)
+      .range([15, 363]);
+    const yScale = d3
+      .scaleLinear()
+      .domain(cityLatRange)
+      .range([353, 15]);
+
+    const cityDots = syrianCities.map(c => ({
+      x: xScale(c.lng),
+      y: yScale(c.lat),
+      name: c.name,
     }));
 
     const tooltip = d3
@@ -63,7 +84,7 @@ const SyrianCitiesMap: React.FC = () => {
     gradient.append('stop').attr('offset', '66%').attr('stop-color', '#fb923c');
     gradient.append('stop').attr('offset', '100%').attr('stop-color', '#EF4444');
 
-    const circles = svg
+    svg
       .selectAll('circle')
       .data(dots)
       .enter()
@@ -73,7 +94,19 @@ const SyrianCitiesMap: React.FC = () => {
       .attr('r', 1.5)
       .attr('fill', 'url(#cityGradient)');
 
-    circles
+    const cityCircles = svg
+      .selectAll('circle.city')
+      .data(cityDots)
+      .enter()
+      .append('circle')
+      .attr('class', 'city')
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y)
+      .attr('r', 3)
+      .attr('fill', 'url(#cityGradient)');
+
+
+    cityCircles
       .on('mouseenter', (event, d) => {
         const [x, y] = d3.pointer(event);
         showTooltip(x, y, d.name);
