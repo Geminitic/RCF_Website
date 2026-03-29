@@ -1,0 +1,64 @@
+/* Desert Mosaic Style */
+:root {
+  --dm-sand: #F3E7D8;
+  --dm-clay: #B89D74;
+  --dm-azure: #1766A2;
+  --dm-orange: #F45B29;
+  --dm-rose: #CF304A;
+  --dm-plum: #481A4D;
+  --dm-olive: #656E31;
+
+  --dm-font-primary: 'Montserrat', 'Noto Serif', serif;
+}
+
+.desert-mosaic {
+  font-family: var(--dm-font-primary);
+  color: var(--dm-plum);
+  background: var(--dm-sand);
+  line-height: 1.6;
+}
+
+.dm-card {
+  background: var(--dm-clay);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.dm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--dm-azure),
+    var(--dm-azure) 10px,
+    var(--dm-orange) 10px,
+    var(--dm-orange) 20px,
+    var(--dm-rose) 20px,
+    var(--dm-rose) 30px
+  );
+}
+
+.dm-button-primary {
+  background: var(--dm-azure);
+  color: var(--dm-sand);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.dm-button-primary:hover {
+  opacity: 0.85;
+}
+
+.dm-section-alt {
+  background: var(--dm-clay);
+}

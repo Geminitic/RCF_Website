@@ -1,0 +1,56 @@
+/* Organic Rhizome Style */
+:root {
+  --or-sand: #FFF6E0;
+  --or-cream: #F9E7C8;
+  --or-olive: #6A994E;
+  --or-terra: #E07A5F;
+  --or-yellow: #F9CB40;
+  --or-brown: #48392A;
+  --or-forest: #2D4739;
+
+  --or-font-primary: 'Noto Serif', 'Montserrat', serif;
+}
+
+.organic-rhizome {
+  font-family: var(--or-font-primary);
+  color: var(--or-brown);
+  background: var(--or-sand);
+  line-height: 1.7;
+}
+
+.or-card {
+  background: var(--or-cream);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.or-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--or-olive), var(--or-terra));
+}
+
+.or-button-primary {
+  background: linear-gradient(135deg, var(--or-olive), var(--or-yellow));
+  color: var(--or-cream);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.or-button-primary:hover {
+  opacity: 0.85;
+}
+
+.or-section-alt {
+  background: var(--or-cream);
+}
